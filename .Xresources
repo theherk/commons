@@ -77,16 +77,18 @@
 *color15:               S_base3
 
 !! rxvt-unicode settings
-urxvt*font: xft:Terminus:pixelsize=12
-urxvt*transparent: false
-urxvt*shading: 180
-urxvt*fading: 20
-urxvt*scrollBar: false
-urxvt*saveLines: 500
-urxvt*pointerBlank: true
+!! urxvt*font: xft:Terminus:pixelsize=12
+!! urxvt*transparent: false
+!! urxvt*shading: 180
+!! urxvt*fading: 20
+!! urxvt*scrollBar: false
+!! urxvt*saveLines: 500
+!! urxvt*pointerBlank: true
 
 !! xterm settings
-xterm*faceName: Terminus:style=Regular:size=12
+XTerm*locale: true
+xterm*faceName: Inconsolata for Powerline:style=Regular:size=14
+!! xterm*faceName: Inconsolata:pixelsize=16
 xterm*termName: xterm-256color
 
 !! cursor setting
