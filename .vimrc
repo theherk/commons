@@ -43,8 +43,11 @@ set wildmode=full
 set complete=.,w,b,u,t
 set completeopt=longest,menuone,preview
 
-" Save when losing focus
-au FocusLost * :silent! wall
+" Search Preferences
+set hlsearch "highlight search term
+set ignorecase "case insensitive search
+set smartcase "case insensitive unless there are capital letters
+set incsearch "search as the term is typed
 
 " Resize splits when the window is resized
 au VimResized * :wincmd =
@@ -92,9 +95,6 @@ endif
 if !isdirectory(expand(&directory))
     call mkdir(expand(&directory), "p")
 endif
-
-" }}}
-" Color scheme {{{
 
 " Convenience mappings ---------------------------------------------------- {{{
 
