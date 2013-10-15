@@ -3,3 +3,4 @@
 #
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+
