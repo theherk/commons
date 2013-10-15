@@ -36,6 +36,8 @@ set splitright
 set title
 set linebreak
 set colorcolumn=+1
+set wildmenu "shows opions in complete menu
+set wildmode=full
 
 " Better Completion
 set complete=.,w,b,u,t
