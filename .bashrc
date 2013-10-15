@@ -11,8 +11,15 @@ PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.9.3-p385/bin:$HOME/.rvm/gems/ru
 
 # User specific environment and startup programs
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export PYTHONPATH=/usr/lib/python3.3/site-packages
 
 export PATH
+
+# Powerline for Bash
+#----------------------------------------------------------
+# if [ -f /usr/lib/python3.3/site-packages/powerline/bindings/bash/powerline.sh ]; then
+#     source /usr/lib/python3.3/site-packages/powerline/bindings/bash/powerline.sh
+# fi
 
 # Load better Solarized Colors
 #----------------------------------------------------------
