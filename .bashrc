@@ -164,7 +164,7 @@ function customPrompt {
     if [ "$VENV" != "" ]; then\
         VENV="[$VENV] ";\
     fi;
-    PS1='\[$BOLD\]\[$GREEN\]\u@\h \[$YELLOW\]$VENV\[$ORANGE\]$BRANCH\[$CYAN\]\w \[$CYAN\]\$ \[$RESET\]'
+    PS1='\[$BOLD\]\[$GREEN\]\u@\h \[$YELLOW\]$VENV\[$ORANGE\]$BRANCH\[$CYAN\]\W \[$CYAN\]\$ \[$RESET\]'
 }
 
 PROMPT_COMMAND=customPrompt
