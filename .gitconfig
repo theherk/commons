@@ -1,0 +1,7 @@
+[core]
+	editor = vim
+[user]
+	name = Adam Sherwood\n
+	email = theherk@gmail.com
+[color]
+	ui = true
