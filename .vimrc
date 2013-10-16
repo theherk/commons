@@ -18,6 +18,9 @@ if has("gui_running")
   endif
 endif
 
+" Powerline Font support for Airline
+let g:airline_powerline_fonts = 1
+
 set encoding=utf-8
 set modelines=0
 set autoindent
