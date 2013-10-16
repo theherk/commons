@@ -271,6 +271,11 @@ alias back="cd $OLDPWD"
 # package install
 alias syi="sudo yum install"
 alias sai="sudo apt-get install"
+alias spS="sudo pacman -S"
+
+# ssh connections
+alias sshcrmcs="ssh adam@162.242.164.180"
+alias sshrespond="ssh respond4@responders.us"
 
 # Chromium websites
 function duck {
