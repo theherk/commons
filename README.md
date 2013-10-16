@@ -7,10 +7,9 @@ Installation
 ```
 #!sh
 
-cd ~/path/of/choice
-git clone git@bitbucket.org:theherk/dotfiles.git
 cd ~
-ln -s ~/path/of/choice/<dotfile> .
+git clone --recursive git@bitbucket.org:theherk/dotfiles.git
+ln -s ~/dotfiles/<dotfile> .
 source <dotfile>
 ```
 
