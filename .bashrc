@@ -277,6 +277,11 @@ alias spS="sudo pacman -S"
 alias sshcrmcs="ssh adam@162.242.164.180"
 alias sshrespond="ssh respond4@responders.us"
 
+# Prettify JSON using Python
+prettyjson () {
+  cat $1 | python -mjson.tool > $2
+}
+
 # Chromium websites
 function duck {
     chromium-browser 'https://duckduckgo.com/?q='"$1";
