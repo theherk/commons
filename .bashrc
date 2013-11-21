@@ -10,7 +10,7 @@
 PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.9.3-p385/bin:$HOME/.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/bin
 
 # User specific environment and startup programs
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
+PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/adt-bundle-linux-x86_64-20131030/sdk/platform-tools
 export PYTHONPATH=/usr/lib/python3.3/site-packages
 
 export PATH
@@ -24,7 +24,7 @@ export PATH
 # Load better Solarized Colors
 #----------------------------------------------------------
 
-eval `dircolors ~/.dir_colors`
+# eval `dircolors ~/.dir_colors`
 
 # History Control
 #----------------------------------------------------------
@@ -233,7 +233,7 @@ clock (){
     while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done
 }
 
-# rsync simple
+# rsync simple SRC then DEST
 rsim () {
   rsync -avz -e ssh --progress $1 $2
 }
