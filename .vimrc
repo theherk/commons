@@ -5,19 +5,6 @@ filetype plugin indent on
 
 syntax on
 
-set background=dark
-colorscheme solarized
-
-if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Inconsolata\ for\ Powerline\ 14
-  elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h14
-  elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
-  endif
-endif
-
 " Powerline Font support for Airline
 let g:airline_powerline_fonts = 1
 
