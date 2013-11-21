@@ -39,3 +39,6 @@ nosetests.xml
 # tmp vim files
 .vim/tmp/
 
+# .vim/.netrwhist - no need to keep this
+.vim/.netrwhist
+
