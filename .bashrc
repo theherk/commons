@@ -336,6 +336,10 @@ mmm () {
     fi
 }
 
+thbu () {
+    rsync -avv /media/BiggerJohn/ /media/adam/theherk_gmailcom/
+}
+
 # set editor
 export EDITOR=gvim
 alias edit='gvim'
