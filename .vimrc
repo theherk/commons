@@ -5,6 +5,11 @@ filetype plugin indent on
 
 syntax on
 
+" Set syntax for Markdown
+au BufNewFile,BufRead *.mkdown set filetype=markdown
+au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.txt set filetype=markdown
+
 " Powerline Font support for Airline
 let g:airline_powerline_fonts = 1
 
