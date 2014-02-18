@@ -248,6 +248,14 @@ alias gittree="git log --pretty=oneline --decorate --graph"
 # git completion
 source ~/.git-completion.bash
 
+# git doge
+alias wow="git status"
+alias many="git"
+alias much="git"
+alias so="git"
+alias such="git"
+alias very="git"
+
 # list rvm gems
 # alias rvmls="ls `rvm gemdir`/gems"
 
