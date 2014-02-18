@@ -340,7 +340,7 @@ mmm () {
 }
 
 thbu () {
-    rsync -avv /media/BiggerJohn/ /media/adam/theherk_gmailcom/
+    rsync -auvv /media/BiggerJohn/ /media/adam/theherk_gmailcom/
 }
 
 # set editor
