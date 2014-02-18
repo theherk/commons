@@ -185,6 +185,9 @@ alias ll='ls -alF --color=auto'
 alias la='ls -A --color=auto'
 alias l='ls -CF --color=auto'
 
+# sudo last command
+alias please='sudo $(history -p !!)'
+
 #netinfo - shows network information for your system
 netinfo () {
     echo "--------------- Network Information ---------------"
