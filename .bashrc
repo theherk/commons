@@ -348,9 +348,15 @@ mmm () {
 }
 
 thbu () {
-    rsync -auvv /media/BiggerJohn/ /media/adam/theherk_gmailcom/
-    rsync -auvv ~/Projects/ /media/adam/theherk_gmailcom/Projects/
-    rsync -auvv /media/adam/SAMWISE/ /media/cruzer_backup/
+    rsync -auvv ~/Projects/ /media/BiggerJohn/Projects/
+    if [ "$(ls -A ~/media/adam/SAMWISE/)" ]; then
+        # Not Empty / Mounted
+        rsync -auvv /media/adam/SAMWISE /media/BiggerJohn/cruzer_backup/
+    fi
+    if [ "$(ls -A ~/media/theherk_gmailcom/)" ]; then
+        # Not Empty / Mounted
+        rsync -auvv /media/BiggerJohn/ /media/adam/theherk_gmailcom/
+    fi
 }
 
 # set editor
