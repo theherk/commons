@@ -47,7 +47,10 @@ set smartcase "case insensitive unless there are capital letters
 set incsearch "search as the term is typed
 
 " Resize splits when the window is resized
-au VimResized * :wincmd =
+" Tabular cause this to issue an error
+" Error detected while processing VimResized Auto commands for \"*\":
+" Not allowed here: :wincmd =
+" au VimResized * :wincmd =
 
 " Line Return {{{
 
