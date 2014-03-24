@@ -20,8 +20,8 @@ set showmode
 set showcmd
 set visualbell
 set ruler
-set nonumber
-set norelativenumber
+set number
+set relativenumber
 set laststatus=2
 set history=1000
 set undofile
@@ -70,7 +70,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set wrap
-set textwidth=80
+set textwidth=0
 
 " }}}
 " Backups {{{
