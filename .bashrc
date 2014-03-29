@@ -349,6 +349,7 @@ mmm () {
 
 thbu () {
     rsync -auvv ~/Projects/ /media/BiggerJohn/Projects/
+    rsync -auvv ~/Apps/ /media/BiggerJohn/Apps/
     if [ "$(ls -A ~/media/adam/SAMWISE/)" ]; then
         # Not Empty / Mounted
         rsync -auvv /media/adam/SAMWISE /media/BiggerJohn/cruzer_backup/
