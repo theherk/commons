@@ -350,11 +350,11 @@ mmm () {
 thbu () {
     rsync -auvv ~/Projects/ /media/BiggerJohn/Projects/
     rsync -auvv ~/Apps/ /media/BiggerJohn/Apps/
-    if [ "$(ls -A ~/media/adam/SAMWISE/)" ]; then
+    if [ "$(ls -A /media/adam/SAMWISE/)" ]; then
         # Not Empty / Mounted
         rsync -auvv /media/adam/SAMWISE /media/BiggerJohn/cruzer_backup/
     fi
-    if [ "$(ls -A ~/media/theherk_gmailcom/)" ]; then
+    if [ "$(ls -A /media/adam/theherk_gmailcom/)" ]; then
         # Not Empty / Mounted
         rsync -auvv /media/BiggerJohn/ /media/adam/theherk_gmailcom/
     fi
