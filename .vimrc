@@ -18,20 +18,22 @@ au FileType html setlocal sw=2 ts=2 sts=2
 " Powerline Font support for Airline
 let g:airline_powerline_fonts = 1
 
+let mapleader=" "
 set encoding=utf-8
 set modelines=0
 set autoindent
-set showmode
-set showcmd
+"set showmode
+"set showcmd
 set visualbell
-set ruler
+"set ruler
 set number
 set relativenumber
 set laststatus=2
 set history=1000
 set undofile
 set undoreload=10000
-" set list
+"set listchars=eol:\ \,trail:·,tab:▸\ 
+"set list
 set showbreak=↪
 set splitbelow
 set splitright
@@ -42,10 +44,13 @@ set wildmenu "shows opions in complete menu
 set wildmode=full
 
 " Better Completion
+" -----------------
 set complete=.,w,b,u,t
 set completeopt=longest,menuone,preview
 
 " Search Preferences
+" ------------------
+
 set hlsearch "highlight search term
 set ignorecase "case insensitive search
 set smartcase "case insensitive unless there are capital letters
@@ -57,7 +62,8 @@ set incsearch "search as the term is typed
 " Not allowed here: :wincmd =
 " au VimResized * :wincmd =
 
-" Line Return {{{
+" Line Return
+" -----------
 
 " Make sure Vim returns to the same line when you reopen a file.
 " Thanks, Amit
@@ -69,9 +75,8 @@ augroup line_return
         \ endif
 augroup END
 
-" }}}
-
-" Tabs, spaces, wrapping {{{
+" Tabs, spaces, wrapping
+" ----------------------
 
 set tabstop=4
 set shiftwidth=4
@@ -80,8 +85,8 @@ set expandtab
 set wrap
 set textwidth=0
 
-" }}}
-" Backups {{{
+" Backups
+" -------
 
 set backup                        " enable backups
 set noswapfile                    " it's 2013, Vim.
@@ -101,7 +106,8 @@ if !isdirectory(expand(&directory))
     call mkdir(expand(&directory), "p")
 endif
 
-" Convenience mappings ---------------------------------------------------- {{{
+" Convenience mappings
+" --------------------
 
 " Fuck you, help key.
 noremap  <F1> <nop>
@@ -110,42 +116,55 @@ inoremap <F1> <nop>
 " Stop it, hash key.
 inoremap # X<BS>#
 
-" Kill window
-nnoremap K :q<cr>
-
 " Man
 nnoremap M K
 
 " Toggle line numbers
 nnoremap <leader>n :setlocal number!<cr>
 
-" Sort lines
-nnoremap <leader>s vip:!sort<cr>
-vnoremap <leader>s :!sort<cr>
-
 " Tabs
 nnoremap <leader>( :tabprev<cr>
 nnoremap <leader>) :tabnext<cr>
 
-" Copying text to the system clipboard.
-"
-" For some reason Vim no longer wants to talk to the OS X pasteboard through "*.
-" Computers are bullshit.
-function! g:FuckingCopyTheTextPlease()
-    let old_z = @z
-    normal! gv"zy
-    call system('pbcopy', @z)
-    let @z = old_z
-endfunction
-noremap <leader>p :silent! set paste<CR>"*p:set nopaste<CR>
-" noremap <leader>p mz:r!pbpaste<cr>`z
-vnoremap <leader>y :<c-u>call g:FuckingCopyTheTextPlease()<cr>
-
-" Select entire buffer
-nnoremap vaa ggvGg_
+" Select all
 nnoremap Vaa ggVG
 
-" "Uppercase word" mapping.
+" Saving and quiting
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
+
+" Colemak needs
+" -------------
+
+" Directions for a lefty Colemaker
+noremap r k
+noremap s j
+noremap a h
+noremap t l
+
+" Top and bottom
+noremap R H
+noremap S L
+
+" Line above and below
+nnoremap j O
+nnoremap k o
+
+" New home for append
+nnoremap o a
+nnoremap O A
+
+" Get with the program loser
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+" Uppercase word mapping.
 "
 " This mapping allows you to press <c-u> in insert mode to convert the current
 " word to uppercase.  It's handy when you're writing names of constants and
@@ -170,5 +189,4 @@ nnoremap Vaa ggVG
 " Note that this will overwrite the contents of the z mark.  I never use it, but
 " if you do you'll probably want to use another mark.
 inoremap <C-u> <esc>mzgUiw`za
-" }}}
 
