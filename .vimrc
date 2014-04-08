@@ -10,6 +10,11 @@ au BufNewFile,BufRead *.mkdown set filetype=markdown
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.txt set filetype=markdown
 
+" Set syntax and configuration for HTML
+au BufNewFile,BufRead *.html set filetype=html
+au BufNewFile,BufRead *.htm set filetype=html
+au FileType html setlocal sw=2 ts=2 sts=2
+
 " Powerline Font support for Airline
 let g:airline_powerline_fonts = 1
 
