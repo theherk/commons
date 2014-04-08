@@ -9,7 +9,7 @@ elseif has("gui_win32")
   set guifont=Consolas:h11:cANSI
 endif
 
-" set guioptions-=m  "remove menu bar
+set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
-" set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=r  "remove right-hand scroll bar
 
