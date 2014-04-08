@@ -7,7 +7,7 @@
 # Load RVM into a shell session *as a function*
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.9.3-p385/bin:$HOME/.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/bin
+PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.9.3-p385/bin:$HOME/.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/bin:$HOME/.gem/ruby/2.1.0/bin
 
 # User specific environment and startup programs
 PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.cabal/bin:$HOME/Projects/shell/capture
