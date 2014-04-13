@@ -5,6 +5,12 @@ filetype plugin indent on
 
 syntax on
 
+set background=dark
+colorscheme gruvbox
+
+" Show airline in term
+set t_Co=16
+
 " Set syntax for Markdown
 au BufNewFile,BufRead *.mkdown set filetype=markdown
 au BufNewFile,BufRead *.md set filetype=markdown
