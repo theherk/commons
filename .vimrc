@@ -5,11 +5,13 @@ filetype plugin indent on
 
 syntax on
 
+" Colors
+if !has('gui_running')
+    set t_Co=256
+endif
+
 set background=dark
 colorscheme gruvbox
-
-" Show airline in term
-set t_Co=16
 
 " Set syntax for Markdown
 au BufNewFile,BufRead *.mkdown set filetype=markdown
@@ -20,9 +22,6 @@ au BufNewFile,BufRead *.txt set filetype=markdown
 au BufNewFile,BufRead *.html set filetype=html
 au BufNewFile,BufRead *.htm set filetype=html
 au FileType html setlocal sw=2 ts=2 sts=2
-
-" Powerline Font support for Airline
-let g:airline_powerline_fonts = 1
 
 let mapleader=" "
 set encoding=utf-8
@@ -48,6 +47,59 @@ set linebreak
 set colorcolumn=+1
 set wildmenu "shows opions in complete menu
 set wildmode=full
+
+" Lightline configuration
+let g:lightline = {
+    \ 'colorcheme': 'powerline',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'fugitive': 'LightlineFugitive',
+    \   'readonly': 'LightlineReadonly',
+    \   'modified': 'LightlineModified',
+    \   'filename': 'LightlineFilename',
+    \ },
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '', 'right': '' },
+    \ }
+
+function! LightlineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightlineReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightlineFugitive()
+  if exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? ' '._ : ''
+  endif
+  return ''
+endfunction
+
+function! LightlineFilename()
+  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+       \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
 
 " Better Completion
 " -----------------
@@ -169,6 +221,13 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
+" NERDtree mappings
+nnoremap <leader>n :NERDTreeToggle<cr>
+let g:NERDTreeMapRefresh=''
+let g:NERDTreeMapOpenVSplit='v'
+let g:NERDTreeMapOpenInTab='T'
+let g:NERDTreeMapOpenInTabSilent='\T'
 
 " Uppercase word mapping.
 "
