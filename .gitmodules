@@ -10,9 +10,9 @@
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule "/home/adam/dotfiles/.vim/bundle/gruvbox"]
+[submodule ".vim/bundle/gruvbox"]
 	path = /home/adam/dotfiles/.vim/bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
-[submodule "/home/adam/dotfiles/.vim/bundle/lightline.vim"]
+[submodule ".vim/bundle/lightline.vim"]
 	path = /home/adam/dotfiles/.vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
