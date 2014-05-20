@@ -103,11 +103,7 @@ rsim () {
 alias gls="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
 alias gtree="git log --pretty=oneline --decorate --graph"
 
-# git completion
-source ~/.git-completion.zsh
-
 # git doge - was hilarious for a minute
-
 alias wow="git status"
 alias many="git"
 alias much="git"
