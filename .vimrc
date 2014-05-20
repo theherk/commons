@@ -27,18 +27,18 @@ let mapleader=" "
 set encoding=utf-8
 set modelines=0
 set autoindent
-"set showmode
-"set showcmd
+set showmode
+set showcmd
 set visualbell
-"set ruler
+set ruler
 set number
 set relativenumber
 set laststatus=2
 set history=1000
 set undofile
 set undoreload=10000
-"set listchars=eol:\ \,trail:·,tab:▸\ 
-"set list
+set listchars=eol:\ \,trail:·,tab:▸\ 
+set list
 set showbreak=↪
 set splitbelow
 set splitright
