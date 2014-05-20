@@ -4,27 +4,9 @@
 # Email: theherk@gmail.com
 #----------------------------------------------------------
 
-# Load RVM into a shell session *as a function*
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.9.3-p385/bin:$HOME/.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/bin:$HOME/.gem/ruby/2.1.0/bin
-
-# User specific environment and startup programs
 PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.cabal/bin:$HOME/Projects/shell/capture
 export PYTHONPATH=/usr/lib/python3.3/site-packages
-
 export PATH
-
-# Powerline for Bash
-#----------------------------------------------------------
-# if [ -f /usr/lib/python3.3/site-packages/powerline/bindings/bash/powerline.sh ]; then
-#     source /usr/lib/python3.3/site-packages/powerline/bindings/bash/powerline.sh
-# fi
-
-# Load better Solarized Colors
-#----------------------------------------------------------
-
-# eval `dircolors ~/.dir_colors`
 
 # History Control
 #----------------------------------------------------------
@@ -38,97 +20,6 @@ shopt -s histappend
 # history length
 HISTSIZE=1000
 HISTFILESIZE=2000
-
-# Color Test
-#----------------------------------------------------------
-
-# C1=$(tput setaf 1)
-# C2=$(tput setaf 2)
-# C3=$(tput setaf 3)
-# C4=$(tput setaf 4)
-# C5=$(tput setaf 5)
-# C6=$(tput setaf 6)
-# C7=$(tput setaf 7)
-# C8=$(tput setaf 8)
-# C9=$(tput setaf 9)
-# C10=$(tput setaf 10)
-# C11=$(tput setaf 11)
-# C12=$(tput setaf 12)
-# C13=$(tput setaf 13)
-# C14=$(tput setaf 14)
-# C15=$(tput setaf 15)
-# C16=$(tput setaf 16)
-# C17=$(tput setaf 17)
-# C18=$(tput setaf 18)
-# C19=$(tput setaf 19)
-# C20=$(tput setaf 20)
-# C21=$(tput setaf 21)
-# C22=$(tput setaf 22)
-# C23=$(tput setaf 23)
-# C24=$(tput setaf 24)
-# C25=$(tput setaf 25)
-# C26=$(tput setaf 26)
-# C27=$(tput setaf 27)
-# C28=$(tput setaf 28)
-# C29=$(tput setaf 29)
-# C30=$(tput setaf 30)
-# C31=$(tput setaf 31)
-# C32=$(tput setaf 32)
-# C33=$(tput setaf 33)
-# C34=$(tput setaf 34)
-# C35=$(tput setaf 35)
-# C36=$(tput setaf 36)
-# C37=$(tput setaf 37)
-# C38=$(tput setaf 38)
-# C39=$(tput setaf 39)
-# C40=$(tput setaf 40)
-
-# function customPrompt {
-#     PS1='
-#     \[$C1\]1
-#     \[$C2\]2
-#     \[$C3\]3
-#     \[$C4\]4
-#     \[$C5\]5
-#     \[$C6\]6
-#     \[$C7\]7
-#     \[$C8\]8
-#     \[$C9\]9
-#     \[$C10\]10
-#     \[$C11\]11
-#     \[$C12\]12
-#     \[$C13\]13
-#     \[$C14\]14
-#     \[$C15\]15
-#     \[$C16\]16
-#     \[$C17\]17
-#     \[$C18\]18
-#     \[$C19\]19
-#     \[$C20\]20
-#     \[$C21\]21
-#     \[$C22\]22
-#     \[$C23\]23
-#     \[$C24\]24
-#     \[$C25\]25
-#     \[$C26\]26
-#     \[$C27\]27
-#     \[$C28\]28
-#     \[$C29\]29
-#     \[$C30\]30
-#     \[$C31\]31
-#     \[$C32\]32
-#     \[$C33\]33
-#     \[$C34\]34
-#     \[$C35\]35
-#     \[$C36\]36
-#     \[$C37\]37
-#     \[$C38\]38
-#     \[$C39\]39
-#     \[$C40\]40
-#     \$ \[$RESET\]'
-# }
-
-# PROMPT_COMMAND=customPrompt
 
 # Prompt Settings
 #----------------------------------------------------------
@@ -169,36 +60,12 @@ function customPrompt {
 
 PROMPT_COMMAND=customPrompt
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
 # Aliases and Functions
 #----------------------------------------------------------
 
-# Start XFCE
-alias x='startxfce4'
-
 # List
-alias ls='ls --color=auto'
-alias ll='ls -alF --color=auto'
-alias la='ls -A --color=auto'
-alias l='ls -CF --color=auto'
-
-# sudo last command
-alias please='sudo $(history -p !!)'
-
-#netinfo - shows network information for your system
-netinfo () {
-    echo "--------------- Network Information ---------------"
-    /sbin/ifconfig | awk /'inet addr/ {print $2}'
-    /sbin/ifconfig | awk /'Bcast/ {print $3}'
-    /sbin/ifconfig | awk /'inet addr/ {print $4}'
-    /sbin/ifconfig | awk /'HWaddr/ {print $4,$5}'
-    myip=`lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g' `
-    echo "${myip}"
-    echo "---------------------------------------------------"
-}
+alias ls='ls -lF --color=auto'
+alias ll='ls -AlF --color=auto'
 
 #extract - extract many file types
 extract () {
@@ -231,19 +98,14 @@ dirsize () {
     rm -rf /tmp/list
 }
 
-# clock - A bash clock that can run in your terminal window.
-clock (){
-    while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done
-}
-
 # rsync simple SRC then DEST
 rsim () {
   rsync -avz -e ssh --progress $1 $2
 }
 
 # git pretty logs
-alias gitls="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
-alias gittree="git log --pretty=oneline --decorate --graph"
+alias gls="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
+alias gtree="git log --pretty=oneline --decorate --graph"
 
 # git completion
 source ~/.git-completion.bash
@@ -255,9 +117,6 @@ alias much="git"
 alias so="git"
 alias such="git"
 alias very="git"
-
-# list rvm gems
-# alias rvmls="ls `rvm gemdir`/gems"
 
 # dot shortcuts
 alias home="cd ~"
@@ -276,41 +135,10 @@ alias trash="rm -rf ~/.local/share/Trash/"
 alias shutdown="sudo shutdown -h now"
 alias restart="sudo shutdown -r now"
 
-# back to previous location
-alias back="cd $OLDPWD"
-
-# package install
-alias syi="sudo yum install"
-alias sai="sudo apt-get install"
-alias spS="sudo pacman -S"
-
-# ssh connections
-alias sshcrmcs="ssh adam@162.242.164.180"
-alias sshrespond="ssh respond4@responders.us"
-
 # Prettify JSON using Python
 prettyjson () {
   cat $1 | python -mjson.tool > $2
 }
-
-# Chromium websites
-function duck {
-    chromium-browser 'https://duckduckgo.com/?q='"$1";
-}
-export -f duck
-
-function google {
-    chromium-browser 'https://google.com/?q='"$1"'&output=search#hl=en&output=search&sclient=psy-ab&q='"$1";
-}
-export -f google
-
-function wiki {
-    chromium-browser 'http://en.wikipedia.org/wiki/'"$1";
-}
-export -f wiki
-
-alias xkcd="chromium-browser http://www.xkcd.com"
-alias reddit="chromium-browser http://reddit.com/"
 
 # sudo for aliases
 alias sudo='sudo '
@@ -363,3 +191,4 @@ thbu () {
 # set editor
 export EDITOR=gvim
 alias edit='gvim'
+
