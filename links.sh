@@ -10,7 +10,6 @@ ln -sf ~/dotfiles/.git-completion.zsh ~/
 ln -sf ~/dotfiles/.gitconfig ~/
 ln -sf ~/dotfiles/.gvimrc ~/
 ln -sf ~/dotfiles/.pypirc ~/
-ln -sf ~/dotfiles/.ssh/config ~/.ssh/config
 ln -sf ~/dotfiles/.vim/ ~/
 ln -sf ~/dotfiles/.vimrc ~/
 ln -sf ~/dotfiles/.Xresources ~/
