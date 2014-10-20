@@ -5,3 +5,7 @@
 	email = theherk@gmail.com
 [color]
 	ui = true
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
