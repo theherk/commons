@@ -178,7 +178,7 @@ inoremap # X<BS>#
 nnoremap M K
 
 " Toggle line numbers
-nnoremap <leader>n :setlocal number!<cr>
+nnoremap <leader>l :setlocal number!<cr>
 
 " Tabs
 nnoremap <leader>( :tabprev<cr>
