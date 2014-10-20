@@ -11,7 +11,7 @@ if !has('gui_running')
 endif
 
 set background=dark
-colorscheme gruvbox
+colorscheme solarized
 
 " Set syntax for Markdown
 au BufNewFile,BufRead *.mkdown set filetype=markdown
