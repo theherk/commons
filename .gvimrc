@@ -1,7 +1,7 @@
 " Options that should only exist in GUI
 
 if has("gui_gtk2")
-  set guifont=Inconsolata\ for\ Powerline\ 14
+  set guifont=Inconsolata\ for\ Powerline\ 16
   " set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 12
 elseif has("gui_macvim")
   set guifont=Menlo\ Regular:h14
