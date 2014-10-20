@@ -26,6 +26,10 @@ ZSH=/usr/share/oh-my-zsh/
 # theme
 ZSH_THEME="gentoo"
 
+# for solarized
+eval `dircolors /usr/src/dircolors/dircolors-solarized/dircolors.256dark`
+alias grep='grep --color'
+
 # disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
@@ -39,7 +43,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/home/adam/.gem/ruby/2.1.0/bin:$HOME/bin:/usr/local/bin:$PATH
 
 export LANG=en_US.UTF-8
 
@@ -56,12 +60,19 @@ export ARCHFLAGS="-arch x86_64"
 # Aliases and Functions
 # ---------------------
 
+# get typing
+alias cm='sudo loadkeys colemak'
+
 # list
-alias ls='ls -lF --color=auto'
+alias ls='ls --color=auto'
 alias ll='ls -AlF --color=auto'
 
 # pacman - list installed packages
 alias pacls='sudo pacman -Qqen'
+
+# screencap
+alias sc='screencap.sh'
+alias conv='convert_to_crf20.sh'
 
 #extract - extract many file types
 extract () {
@@ -85,7 +96,7 @@ extract () {
     fi
 }
 
-#dirsize - report size of given directory
+# dirsize - report size of given directory
 dirsize () {
     du -shx * .[a-zA-Z0-9_]* 2> /dev/null | \
     egrep '^ *[0-9.]*[MG]' | sort -n > /tmp/list
@@ -135,15 +146,24 @@ prettyjson () {
 
 # custom backup routine
 thbu () {
-    rsync -auvv ~/Projects/ /media/BiggerJohn/Projects/
-    rsync -auvv ~/Apps/ /media/BiggerJohn/Apps/
-    if [ "$(ls -A /media/adam/SAMWISE/)" ]; then
+    # backup home to BiggerJohn
+    rsync -auvv ~/apps/ /media/BiggerJohn/home_BACKUP_ONLY/apps/
+    rsync -auvv ~/bin/ /media/BiggerJohn/home_BACKUP_ONLY/bin/
+    rsync -auvv ~/Desktop/ /media/BiggerJohn/home_BACKUP_ONLY/Desktop/
+    rsync -auvv ~/Documents/ /media/BiggerJohn/home_BACKUP_ONLY/Documents/
+    rsync -auvv ~/dotfiles/ /media/BiggerJohn/home_BACKUP_ONLY/dotfiles/
+    rsync -auvv ~/Dropbox/ /media/BiggerJohn/home_BACKUP_ONLY/Dropbox/
+    rsync -auvv ~/Lightworks/ /media/BiggerJohn/home_BACKUP_ONLY/Lightworks/
+    rsync -auvv ~/projects/ /media/BiggerJohn/home_BACKUP_ONLY/projects/
+    rsync -auvv ~/todo.mkdown /media/BiggerJohn/home_BACKUP_ONLY/todo.mkdown
+
+    # backup BiggerJohn to theherk_gmailcom
+    if [ "$(ls -A /run/media/adam/theherk_gmailcom/)" ]; then
         # Not Empty / Mounted
-        rsync -auvv /media/adam/SAMWISE /media/BiggerJohn/cruzer_backup/
-    fi
-    if [ "$(ls -A /media/adam/theherk_gmailcom/)" ]; then
-        # Not Empty / Mounted
-        rsync -auvv /media/BiggerJohn/ /media/adam/theherk_gmailcom/
+        rsync -auvv /media/BiggerJohn/ /run/media/adam/theherk_gmailcom/
     fi
 }
+
+# Run archey in interactive terminals
+archey
 
