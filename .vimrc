@@ -32,7 +32,7 @@ set showcmd
 set visualbell
 set ruler
 set number
-set relativenumber
+" set relativenumber
 set laststatus=2
 set history=1000
 set undofile
