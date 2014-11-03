@@ -37,9 +37,6 @@ set laststatus=2
 set history=1000
 set undofile
 set undoreload=10000
-set listchars=eol:\ \,trail:·,tab:▸\ 
-set list
-set showbreak=↪
 set splitbelow
 set splitright
 set title
@@ -47,6 +44,20 @@ set linebreak
 set colorcolumn=+1
 set wildmenu "shows opions in complete menu
 set wildmode=full
+
+" Tabs, spaces, wrapping
+" ----------------------
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set textwidth=0
+set wrap
+set list
+set listchars=trail:·,tab:▸\·
+set showbreak=↪ "breaks cursor - fixed in patch 7.4.478
+" set showbreak=~
 
 " Lightline configuration
 let g:lightline = {
@@ -132,16 +143,6 @@ augroup line_return
         \     execute 'normal! g`"zvzz' |
         \ endif
 augroup END
-
-" Tabs, spaces, wrapping
-" ----------------------
-
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set wrap
-set textwidth=0
 
 " Backups
 " -------
