@@ -24,6 +24,7 @@ au BufNewFile,BufRead *.htm set filetype=html
 au FileType html setlocal sw=2 ts=2 sts=2
 
 let mapleader=" "
+scriptencoding utf-8
 set encoding=utf-8
 set modelines=0
 set autoindent
