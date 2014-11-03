@@ -1,6 +1,33 @@
-execute pathogen#infect()
+" NeoBundle plugin management
+" ---------------------------
 
-set nocompatible
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Bundles
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'itchyny/lightline'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'morhetz/gruvbox'
+
+call neobundle#end()
+
+NeoBundleCheck
+
+" End NeoBundle
+
 filetype plugin indent on
 
 syntax on

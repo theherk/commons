@@ -42,3 +42,6 @@ nosetests.xml
 # .vim/.netrwhist - no need to keep this
 .vim/.netrwhist
 
+# let NeoBundle handle bundles
+.vim/bundle
+
