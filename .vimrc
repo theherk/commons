@@ -40,8 +40,7 @@ set undoreload=10000
 set splitbelow
 set splitright
 set title
-set linebreak
-set colorcolumn=+1
+set colorcolumn=72
 set wildmenu "shows opions in complete menu
 set wildmode=full
 
