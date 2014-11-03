@@ -25,6 +25,8 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'xolox/vim-misc' " required for other xolox plugins
+NeoBundle 'xolox/vim-colorscheme-switcher'
 
 call neobundle#end()
 
