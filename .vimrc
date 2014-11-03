@@ -21,6 +21,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'morhetz/gruvbox'
+NeoBundle 'airblade/vim-gitgutter'
 
 call neobundle#end()
 
