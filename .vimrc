@@ -20,6 +20,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'flazz/vim-colorschemes'
 
