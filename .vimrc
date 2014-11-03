@@ -180,6 +180,19 @@ nnoremap M K
 " Toggle line numbers
 nnoremap <leader>l :setlocal number!<cr>
 
+" Toggle wrapping
+nnoremap <leader>W :setlocal wrap!<cr>
+
+" Toggle color training wheels
+nnoremap <leader>c :call ColorToggle()<cr>
+function! ColorToggle()
+    if &syntax == "On"
+        setlocal syntax=Off
+    else
+        setlocal syntax=On
+    endif
+endfunction
+
 " Tabs
 nnoremap <leader>( :tabprev<cr>
 nnoremap <leader>) :tabnext<cr>
