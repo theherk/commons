@@ -167,7 +167,7 @@ endif
 " Convenience mappings
 " --------------------
 
-" Fuck you, help key.
+" No thanks help key.
 noremap  <F1> <nop>
 inoremap <F1> <nop>
 
