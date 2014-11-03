@@ -65,6 +65,7 @@ set showmode
 set showcmd
 set visualbell
 set ruler
+set cursorline
 set number
 set laststatus=2
 set history=1000
