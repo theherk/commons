@@ -75,8 +75,9 @@ set splitbelow
 set splitright
 set title
 set colorcolumn=72
-set wildmenu "shows opions in complete menu
+set wildmenu "shows options in complete menu
 set wildmode=full
+set backspace=indent,eol,start " allow normal backspace
 
 " Tabs, spaces, wrapping
 " ----------------------
