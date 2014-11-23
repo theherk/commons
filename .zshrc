@@ -74,6 +74,9 @@ alias pacls='sudo pacman -Qqen'
 alias sc='screencap.sh'
 alias conv='convert_to_crf20.sh'
 
+# load JACK module
+alias jackmod='sudo pactl load-module module-jack-sink'
+
 #extract - extract many file types
 extract () {
     if [ -f $1 ] ; then
