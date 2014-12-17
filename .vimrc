@@ -94,8 +94,8 @@ set textwidth=0
 set wrap
 set list
 set listchars=trail:·,tab:▸\·
-set showbreak=↪ "breaks cursor - fixed in patch 7.4.478
-" set showbreak=~
+" set showbreak=↪ "breaks cursor - fixed in patch 7.4.478
+set showbreak=~
 
 " Lightline configuration
 let g:lightline = {
