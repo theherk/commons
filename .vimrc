@@ -295,6 +295,12 @@ nnoremap O A
 " imap <left> <nop>
 " imap <right> <nop>
 
+" Window switching
+nmap <silent> <A-r> :wincmd k
+nmap <silent> <A-s> :wincmd j
+nmap <silent> <A-a> :wincmd h
+nmap <silent> <A-t> :wincmd l
+
 " NERDtree mappings
 nnoremap <leader>n :NERDTreeToggle<cr>
 let g:NERDTreeMapRefresh=''
