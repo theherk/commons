@@ -21,7 +21,7 @@ compinit
 # ---------
 
 # Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
+ZSH=~/.oh-my-zsh/
 
 # theme
 ZSH_THEME="gentoo"
