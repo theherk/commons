@@ -27,6 +27,7 @@ NeoBundle 'morhetz/gruvbox'
 NeoBundle 'theherk/vim-colorschemes'
 NeoBundle 'xolox/vim-misc' " required for other xolox plugins
 NeoBundle 'xolox/vim-colorscheme-switcher'
+NeoBundle 'edkolev/tmuxline.vim'
 
 call neobundle#end()
 
