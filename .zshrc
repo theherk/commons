@@ -37,7 +37,7 @@ DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 
 # plugins
-plugins=(archlinux bower git npm nyan pip python systemd)
+plugins=(bower git npm nyan pip python systemd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -168,5 +168,5 @@ thbu () {
 }
 
 # Run archey in interactive terminals
-archey
+# archey
 
