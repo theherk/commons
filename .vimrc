@@ -296,10 +296,10 @@ nnoremap O A
 " imap <right> <nop>
 
 " Window switching
-nmap <silent> <A-r> :wincmd k
-nmap <silent> <A-s> :wincmd j
-nmap <silent> <A-a> :wincmd h
-nmap <silent> <A-t> :wincmd l
+nmap <silent> <A-r> :wincmd k<cr>
+nmap <silent> <A-s> :wincmd j<cr>
+nmap <silent> <A-a> :wincmd h<cr>
+nmap <silent> <A-t> :wincmd l<cr>
 
 " NERDtree mappings
 nnoremap <leader>n :NERDTreeToggle<cr>
