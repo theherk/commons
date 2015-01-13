@@ -52,6 +52,11 @@ au BufNewFile,BufRead *.mkdown set filetype=markdown
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.txt set filetype=markdown
 
+" Set syntax for YAML
+au BufNewFile,BufRead *.yml set filetype=yaml
+au BufNewFile,BufRead *.yaml set filetype=yaml
+au FileType yaml setlocal sw=2 ts=2 sts=2
+
 " Set syntax and configuration for HTML
 au BufNewFile,BufRead *.html set filetype=html
 au BufNewFile,BufRead *.htm set filetype=html
@@ -102,7 +107,10 @@ let g:lightline = {
     \ 'colorcheme': 'powerline',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+    \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
+    \   'right': [ [ 'syntastic', 'lineinfo' ],
+    \              [ 'percent' ],
+    \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
     \ },
     \ 'component_function': {
     \   'fugitive': 'LightlineFugitive',

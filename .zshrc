@@ -66,6 +66,14 @@ alias cm='sudo loadkeys colemak'
 # list
 alias ls='ls --color=auto'
 alias ll='ls -AlF --color=auto'
+alias llt='ls -AlFtr --color=auto'
+
+# tmux
+alias tms="tmux new-session -s 'Main' -n 'Main'"
+
+# mvn shortcuts
+alias mvni='mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true'
+alias mvnp='mvn clean package -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true'
 
 # pacman - list installed packages
 alias pacls='sudo pacman -Qqen'
@@ -173,3 +181,4 @@ thbu () {
 # source vimx on machines that need +xcopy_clipboard
 if [ -e /usr/bin/vimx ]; then alias vim='/usr/bin/vimx'; fi
 
+export LD_PRELOAD=~/bin/libhostspriv.so
