@@ -309,6 +309,11 @@ nmap <silent> <A-s> :wincmd j<cr>
 nmap <silent> <A-a> :wincmd h<cr>
 nmap <silent> <A-t> :wincmd l<cr>
 
+nmap <silent> <C-w>r :wincmd k<cr>
+nmap <silent> <C-w>s :wincmd j<cr>
+nmap <silent> <C-w>a :wincmd h<cr>
+nmap <silent> <C-w>t :wincmd l<cr>
+
 " NERDtree mappings
 nnoremap <leader>n :NERDTreeToggle<cr>
 let g:NERDTreeMapRefresh=''
