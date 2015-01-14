@@ -125,6 +125,14 @@ rsim () {
 alias gls="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
 alias gtree="git log --pretty=oneline --decorate --graph"
 
+# git that requires shell
+git_rm_submodule () {
+    git submodule deinit $1
+    git rm $1
+    rm -rf .git/modules/$1
+    echo "Submodule $1 removed"
+}
+
 # git doge - was hilarious for a minute
 alias wow="git status"
 alias many="git"
