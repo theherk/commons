@@ -2,13 +2,16 @@
 
 # Force link setup for dotfiles
 
-ln -sf ~/dotfiles/.bashrc ~/
-ln -sf ~/dotfiles/.git-completion.bash ~/
-ln -sf ~/dotfiles/.git-completion.zsh ~/
-ln -sf ~/dotfiles/.gitconfig ~/
-ln -sf ~/dotfiles/.gvimrc ~/
-ln -sf ~/dotfiles/.pypirc ~/
-ln -sf ~/dotfiles/.vim/ ~/
-ln -sf ~/dotfiles/.vimrc ~/
-ln -sf ~/dotfiles/.zshrc ~/
+ln -sf ~/herk-commons/.bashrc ~/
+ln -sf ~/herk-commons/.git-completion.bash ~/
+ln -sf ~/herk-commons/.git-completion.zsh ~/
+ln -sf ~/herk-commons/.gitconfig ~/
+ln -sf ~/herk-commons/.gvimrc ~/
+ln -sf ~/herk-commons/.pypirc ~/
+ln -sf ~/herk-commons/.tmux.conf ~/
+ln -sf ~/herk-commons/.tmuxline ~/
+ln -sf ~/herk-commons/.vim/ ~/
+ln -sf ~/herk-commons/.vimrc ~/
+ln -sf ~/herk-commons/.zprofile ~/
+ln -sf ~/herk-commons/.zshrc ~/
 
