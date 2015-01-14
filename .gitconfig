@@ -9,3 +9,5 @@
 	tool = vimdiff
 [merge]
 	tool = vimdiff
+[alias]
+	subup=submodule update --init
