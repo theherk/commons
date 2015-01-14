@@ -2,10 +2,12 @@
 	editor = vim
 [user]
 	name = Herkermer Sherwood
-	email = hsherwood@caltesting.org
+	email = theherk@gmail.com
 [color]
 	ui = true
 [diff]
 	tool = vimdiff
 [merge]
 	tool = vimdiff
+[alias]
+	subup=submodule update --init
