@@ -60,6 +60,11 @@ export ARCHFLAGS="-arch x86_64"
 # Aliases and Functions
 # ---------------------
 
+# backsearching
+bindkey '^r' history-incremental-search-backward
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
+
 # get typing
 alias cm='sudo loadkeys colemak'
 
