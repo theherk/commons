@@ -91,7 +91,12 @@ vst () {
 }
 
 # tmux
-alias tms="tmux new-session -s 'Main' -n 'Main'"
+alias tms="\
+    tmux new-session -s 'Main' -n 'Main' -d; \
+    tmux new-window -n 'Vim'; \
+    tmux send-keys -t 'Vim' vs ENTER; \
+    tmux select-window -t Main; \
+    tmux attach -t Main"
 
 # mvn shortcuts
 alias mvni='mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true'
