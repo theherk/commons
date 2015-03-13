@@ -76,6 +76,20 @@ alias ls='ls --color=auto'
 alias ll='ls -AlF --color=auto'
 alias llt='ls -AlFtr --color=auto'
 
+# source vimx on machines that need +xcopy_clipboard
+if [ -e /usr/bin/vimx ]; then alias vim='/usr/bin/vimx'; fi
+
+# vim server
+alias vs="vim --servername MainVim"
+vse () {
+    vim --servername MainVim --remote $1
+    tmux select-window -t 'Vim'
+}
+vst () {
+    vim --servername MainVim --remote-tab $1
+    tmux select-window -t 'Vim'
+}
+
 # tmux
 alias tms="tmux new-session -s 'Main' -n 'Main'"
 
