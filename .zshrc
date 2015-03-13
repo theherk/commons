@@ -12,7 +12,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory autocd interactivecomments
 unsetopt beep
-bindkey -v
+#bindkey -v
 zstyle :compinstall filename '/home/adam/.zshrc'
 autoload -Uz compinit
 compinit
