@@ -24,7 +24,7 @@ compinit
 ZSH=~/.oh-my-zsh/
 
 # theme
-ZSH_THEME="gentoo"
+ZSH_THEME="mortalscumbag"
 
 # for solarized
 eval `dircolors /usr/src/dircolors/dircolors-solarized/dircolors.256dark`
