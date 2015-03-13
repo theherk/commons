@@ -62,6 +62,15 @@ au BufNewFile,BufRead *.html set filetype=html
 au BufNewFile,BufRead *.htm set filetype=html
 au FileType html setlocal sw=2 ts=2 sts=2
 
+" Set syntax and configuration for js
+au BufNewFile,BufRead *.javascript set filetype=javascript
+au BufNewFile,BufRead *.js set filetype=javascript
+au FileType javascript setlocal sw=2 ts=2 sts=2
+
+" Set syntax and configuration for scala
+au BufNewFile,BufRead *.scala set filetype=javascript
+au FileType javascript setlocal sw=2 ts=2 sts=2
+
 " Set syntax and configuration for XML
 au FileType xml setlocal sw=2 ts=2 sts=2
 
