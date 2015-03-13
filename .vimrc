@@ -188,6 +188,17 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
+" CtrlP configuration
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_working_path_mode = 'ra'
+
+" Copy/Paste
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+
 " Better Completion
 " -----------------
 set complete=.,w,b,u,t
