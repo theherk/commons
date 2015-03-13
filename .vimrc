@@ -285,6 +285,9 @@ endfunction
 nnoremap <leader>( :tabprev<cr>
 nnoremap <leader>) :tabnext<cr>
 
+" Folding
+nnoremap <leader>f :setlocal foldmethod=indent<cr>
+
 " Select all
 nnoremap Vaa ggVG
 
