@@ -68,6 +68,9 @@ bindkey "^[[B" history-search-forward
 # get typing
 alias cm='sudo loadkeys colemak'
 
+# python
+alias p='python'
+
 # list
 alias ls='ls --color=auto'
 alias ll='ls -AlF --color=auto'
