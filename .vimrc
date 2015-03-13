@@ -337,6 +337,10 @@ nmap <silent> <C-w>s :wincmd j<cr>
 nmap <silent> <C-w>a :wincmd h<cr>
 nmap <silent> <C-w>t :wincmd l<cr>
 
+" Splitting
+
+nmap <silent> <C-w>h :wincmd s<cr>
+
 " NERDtree mappings
 nnoremap <leader>n :NERDTreeToggle<cr>
 let g:NERDTreeMapRefresh=''
