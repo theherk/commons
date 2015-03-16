@@ -37,16 +37,6 @@ NeoBundleCheck
 
 filetype plugin indent on
 
-syntax on
-
-" Colors
-if !has('gui_running')
-    set t_Co=256
-endif
-
-set background=dark
-colorscheme gruvbox
-
 " Set syntax for Markdown
 au BufNewFile,BufRead *.mkdown set filetype=markdown
 au BufNewFile,BufRead *.md set filetype=markdown
@@ -113,7 +103,7 @@ set showbreak=~
 
 " Lightline configuration
 let g:lightline = {
-    \ 'colorcheme': 'powerline',
+    \ 'colorcheme': 'Tomorrow',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
@@ -166,6 +156,16 @@ function! LightlineFilename()
        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
 endfunction
+
+" Colors
+syntax on
+
+if !has('gui_running')
+    set t_Co=256
+endif
+
+set background=dark
+colorscheme Tomorrow-Night-Eighties
 
 " Neosnippet configuration
 " ------------------------
