@@ -103,7 +103,7 @@ set showbreak=~
 
 " Lightline configuration
 let g:lightline = {
-    \ 'colorcheme': 'Tomorrow',
+    \ 'colorscheme': 'Tomorrow',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
@@ -164,8 +164,8 @@ if !has('gui_running')
     set t_Co=256
 endif
 
-set background=dark
-colorscheme Tomorrow-Night-Eighties
+set background=light
+colorscheme Tomorrow
 
 " Neosnippet configuration
 " ------------------------
