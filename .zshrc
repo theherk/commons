@@ -72,6 +72,7 @@ alias cm='sudo loadkeys colemak'
 alias p='python'
 
 # list
+alias l='ls -l --color=auto'
 alias ls='ls --color=auto'
 alias ll='ls -AlF --color=auto'
 alias llt='ls -AlFtr --color=auto'
