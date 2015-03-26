@@ -145,9 +145,10 @@ dirsize () {
 }
 
 # rsync simple SRC then DEST
-rsim () {
-  rsync -avz -e ssh --progress $1 $2
-}
+#rsim () {
+  #rsync -rltvz -e ssh --progress $1 $2
+#}
+alias r="rsync -rltvz -e ssh --progress"
 
 # git pretty logs
 alias gls="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
