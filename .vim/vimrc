@@ -23,6 +23,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'fatih/vim-go'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'theherk/vim-colorschemes'
 NeoBundle 'xolox/vim-misc' " required for other xolox plugins
