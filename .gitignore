@@ -45,3 +45,5 @@ nosetests.xml
 # let NeoBundle handle bundles
 .vim/bundle
 
+# don't add everybody's keys
+bin/addall.sh
