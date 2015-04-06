@@ -10,7 +10,7 @@ dist
 build
 eggs
 parts
-bin
+# bin # actually want these in this repo
 var
 sdist
 develop-eggs
