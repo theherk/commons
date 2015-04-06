@@ -23,6 +23,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'theherk/vim-colorschemes'
@@ -295,6 +296,41 @@ nnoremap Vaa ggVG
 " Saving and quiting
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
+
+" Make easy button
+nnoremap <leader>m :call HMake()<CR>
+
+function! PH(...)
+    let @n=''
+    let @o=''
+    if a:0 == 1
+        let @n=a:1
+        let @o=''
+    elseif a:0 == 2
+        let @n=a:1
+        let @o=a:2
+    elseif a:0 == 0
+        let @n=1
+        let @o=''
+    else
+        echom "PrepHMake takes up to 2 optional arguments:"
+        echom "one argument: parallel number"
+        echom "two arguments: parallel number and output file"
+    endif
+endfunction
+
+function! HMake()
+    let @z=expand("<cword>")
+    execute "lcd %:p:h"
+    if @o != ''
+        execute "Make -j " . @n . " " . @z . " > " . @o
+    else
+        execute "Make -j " . @n . " " . @z
+    endif
+endfunction
+
+" Get me outa here
+:map! q; <ESC>
 
 " Colemak needs
 " -------------
