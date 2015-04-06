@@ -47,6 +47,7 @@ au BufNewFile,BufRead *.txt set filetype=markdown
 " Set syntax for YAML
 au BufNewFile,BufRead *.yml set filetype=yaml
 au BufNewFile,BufRead *.yaml set filetype=yaml
+au BufNewFile,BufRead *.sls set filetype=yaml
 au FileType yaml setlocal sw=2 ts=2 sts=2
 
 " Set syntax and configuration for HTML
