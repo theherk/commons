@@ -26,6 +26,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'morhetz/gruvbox'
+NeoBundle 'stephpy/vim-yaml'
 NeoBundle 'theherk/vim-colorschemes'
 NeoBundle 'xolox/vim-misc' " required for other xolox plugins
 NeoBundle 'xolox/vim-colorscheme-switcher'
