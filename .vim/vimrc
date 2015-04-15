@@ -68,6 +68,10 @@ au FileType javascript setlocal sw=2 ts=2 sts=2
 " Set syntax and configuration for XML
 au FileType xml setlocal sw=2 ts=2 sts=2
 
+" Set syntax and configuration for mail
+au BufNewFile,BufRead *.email set filetype=mail
+au FileType mail setlocal sw=2 ts=2 sts=2 tw=0
+
 let mapleader=" "
 scriptencoding utf-8
 set encoding=utf-8
