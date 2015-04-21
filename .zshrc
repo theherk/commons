@@ -106,6 +106,9 @@ alias mvnp='mvn clean package -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon
 # pacman - list installed packages
 alias pacls='sudo pacman -Qqen'
 
+# generate - password; requires pip install xkcdpass
+alias xp='echo "xkcdpass --count=5 --acrostic='\''flow'\'' --min=4 --max=6 --valid_chars='\''[a-z]'\''"'
+
 # screencap
 alias sc='screencap.sh'
 alias conv='convert_to_crf20.sh'
