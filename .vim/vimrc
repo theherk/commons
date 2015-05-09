@@ -387,6 +387,7 @@ nmap <silent> <C-w>h :wincmd s<cr>
 
 " NERDtree mappings
 nnoremap <leader>n :NERDTreeToggle<cr>
+"nnoremap <leader>n :NERDTreeFocus<cr>
 let g:NERDTreeMapRefresh=''
 let g:NERDTreeMapOpenVSplit='v'
 let g:NERDTreeMapOpenInTab='T'
