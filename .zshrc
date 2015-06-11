@@ -21,13 +21,13 @@ compinit
 # ---------
 
 # Path to your oh-my-zsh installation.
-ZSH=~/.oh-my-zsh/
+ZSH=/usr/share/oh-my-zsh/
 
 # theme
 ZSH_THEME="mortalscumbag"
 
 # for solarized
-eval `dircolors /usr/src/dircolors/dircolors-solarized/dircolors.256dark`
+#eval `dircolors /usr/src/dircolors/dircolors-solarized/dircolors.256dark`
 alias grep='grep --color'
 
 # disable bi-weekly auto-update checks.
