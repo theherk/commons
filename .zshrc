@@ -150,6 +150,9 @@ dirsize () {
     rm -rf /tmp/list
 }
 
+# startx with ssh-agent
+alias startx='ssh-agent startx'
+
 # rsync simple SRC then DEST
 #rsim () {
   #rsync -rltvz -e ssh --progress $1 $2
