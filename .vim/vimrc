@@ -172,6 +172,12 @@ if !has('gui_running')
     set t_Co=256
 endif
 
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen.
+    set t_ut=
+endif
+
 "set background=light
 set background=dark
 colorscheme Tomorrow-Night-Eighties
