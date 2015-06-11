@@ -69,7 +69,10 @@ bindkey "^[[B" history-search-forward
 alias cm='sudo loadkeys colemak'
 
 # python
-alias p='python'
+alias py='python'
+
+# call ipython in virtualenv
+alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 
 # list
 alias l='ls -l --color=auto'
