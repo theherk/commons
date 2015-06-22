@@ -366,22 +366,22 @@ endfunction
 " -------------
 
 " Directions for a lefty Colemaker
-noremap r k
-noremap s j
-noremap a h
-noremap t l
+"noremap r k
+"noremap s j
+"noremap a h
+"noremap t l
 
 " Top and bottom
-noremap R H
-noremap S L
+"noremap R H
+"noremap S L
 
 " Line above and below
-nnoremap j O
-nnoremap k o
+"nnoremap j O
+"nnoremap k o
 
 " New home for append
-nnoremap o a
-nnoremap O A
+"nnoremap o a
+"nnoremap O A
 
 " Get with the program loser
 " map <up> <nop>
@@ -394,15 +394,15 @@ nnoremap O A
 " imap <right> <nop>
 
 " Window switching
-nmap <silent> <A-r> :wincmd k<cr>
-nmap <silent> <A-s> :wincmd j<cr>
-nmap <silent> <A-a> :wincmd h<cr>
-nmap <silent> <A-t> :wincmd l<cr>
+"nmap <silent> <A-r> :wincmd k<cr>
+"nmap <silent> <A-s> :wincmd j<cr>
+"nmap <silent> <A-a> :wincmd h<cr>
+"nmap <silent> <A-t> :wincmd l<cr>
 
-nmap <silent> <C-w>r :wincmd k<cr>
-nmap <silent> <C-w>s :wincmd j<cr>
-nmap <silent> <C-w>a :wincmd h<cr>
-nmap <silent> <C-w>t :wincmd l<cr>
+"nmap <silent> <C-w>r :wincmd k<cr>
+"nmap <silent> <C-w>s :wincmd j<cr>
+"nmap <silent> <C-w>a :wincmd h<cr>
+"nmap <silent> <C-w>t :wincmd l<cr>
 
 " Splitting
 
