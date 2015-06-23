@@ -27,3 +27,9 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-linum-mode t)
 (setq magit-last-seen-setup-instructions "1.4.0")
+(setq-default indent-tabs-mode nil)
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
