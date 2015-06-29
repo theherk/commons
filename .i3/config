@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # font
-font pango:Inconsolata for Powerline 14
+font pango:Ubuntu Mono 14
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
