@@ -28,8 +28,33 @@
 (global-linum-mode t)
 (setq magit-last-seen-setup-instructions "1.4.0")
 (setq-default indent-tabs-mode nil)
+
+;; Markdown
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; YAML
+(autoload 'yaml-mode "yaml-mode"
+  "Major mode for editing yaml files" t)
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
+
+;; Jinja2
+(autoload 'yaml-mode "jinja2-mode"
+  "Major mode for editing jinja2 files" t)
+(add-to-list 'auto-mode-alist '("\\.sls\\'" . jinja2-mode))
+(add-to-list 'auto-mode-alist '("\\.jinja2\\'" . jinja2-mode))
+
+;; Javascript
+(setq js-indent-level 2)
+
+;; Backup files
+(setq backup-directory-alist `(("." . "~/.saves")))
+(setq backup-by-copying t)
+(setq delete-old-versions t
+  kept-new-versions 6
+  kept-old-versions 2
+  version-control t)
