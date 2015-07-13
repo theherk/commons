@@ -43,7 +43,7 @@
 (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
 
 ;; Jinja2
-(autoload 'yaml-mode "jinja2-mode"
+(autoload 'jinja2-mode "jinja2-mode"
   "Major mode for editing jinja2 files" t)
 (add-to-list 'auto-mode-alist '("\\.sls\\'" . jinja2-mode))
 (add-to-list 'auto-mode-alist '("\\.jinja2\\'" . jinja2-mode))
