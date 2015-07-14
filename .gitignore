@@ -1,5 +1,7 @@
 .emacs.d/elpa/archives/**/*
 .emacs.d/auto-save-list
+.emacs.d/data
+.emacs.d/recentf
 *~
 *\#*
 *.py[cod]
