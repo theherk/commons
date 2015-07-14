@@ -2,13 +2,13 @@
 set $mod Mod4
 
 # font
-font pango:Inconsolata for Powerline 14
+font pango:Ubuntu Mono 14
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec konsole
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -146,3 +146,6 @@ client.focused #99cc99 #99cc99 #000000 #2d2d2d
 client.focused_inactive #393939 #393939 #888888 #292d2e
 client.unfocused #2d2d2d #2d2d2d #999999 #292d2e
 client.urgent #2f343a #f2777a #ffffff #f2777a
+
+# Add nm-applet
+exec --no-startup-id nm-applet
