@@ -2,6 +2,7 @@
 .emacs.d/auto-save-list
 .emacs.d/data
 .emacs.d/recentf
+.emacs.d/tramp
 *~
 *\#*
 *.py[cod]
