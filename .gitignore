@@ -3,6 +3,7 @@
 .emacs.d/data
 .emacs.d/recentf
 .emacs.d/tramp
+.vim/nvimrc
 *~
 *\#*
 *.py[cod]
