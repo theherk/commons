@@ -17,7 +17,7 @@
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
-     ("marmalade" . "https://marmalade-repo.org/packages/"))))
+     ("melpa" . "http://melpa.org/packages/"))))
  '(tool-bar-mode nil)
  '(x-select-enable-clipboard t))
 (custom-set-faces
