@@ -35,6 +35,33 @@
 (setq magit-last-seen-setup-instructions "1.4.0")
 (setq-default indent-tabs-mode nil)
 
+;; install packages
+(require 'cl)
+(defvar packages-list
+  '(evil
+    helm
+    jinja2-mode
+    magit
+    markdown-mode
+    color-theme-sanityinc-tomorrow
+    tramp-term
+    yaml-mode)
+  "List of packages needs to be installed at launch")
+
+(defun has-package-not-installed ()
+  (loop for p in packages-list
+        when (not (package-installed-p p)) do (return t)
+        finally (return nil)))
+(when (has-package-not-installed)
+  ;; Check for new packages (package versions)
+  (message "%s" "Get latest versions of all packages...")
+  (package-refresh-contents)
+  (message "%s" " done.")
+  ;; Install the missing packages
+  (dolist (p packages-list)
+    (when (not (package-installed-p p))
+      (package-install p))))
+
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
