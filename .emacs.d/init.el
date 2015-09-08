@@ -28,7 +28,8 @@
  '(default ((t (:inherit nil :stipple nil :background "#2d2d2d" :foreground "#cccccc" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "Ubuntu Mono")))))
 (if window-system
     (tool-bar-mode -1)
-)
+  )
+(menu-bar-mode -1) 
 (toggle-scroll-bar -1)
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-linum-mode t)
