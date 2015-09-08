@@ -12,4 +12,7 @@ ln -sf ~/herk-commons/.tmuxline ~/
 ln -sf ~/herk-commons/.vim/ ~/
 ln -sf ~/herk-commons/.zprofile ~/
 ln -sf ~/herk-commons/.zshrc ~/
+ln -sf ~/herk-commons/.emacs/ ~/
+ln -sf ~/herk-commons/.i3/ ~/
+
 
