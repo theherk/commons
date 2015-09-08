@@ -3,6 +3,7 @@ URxvt.loginShell: true
 URxvt*title: urxvt
 URxvt*termName: rxvt-unicode-256color
 URxvt*urgentOnBell: true
+URxvt.scrollBar: false
 
 URxvt.perl-ext:              default,url-select,matcher,clipboard,font-size
 URxvt.keysym.M-u:            perl:url-select:select_next
