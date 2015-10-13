@@ -149,3 +149,4 @@ client.urgent #2f343a #f2777a #ffffff #f2777a
 
 # Add nm-applet
 exec --no-startup-id nm-applet
+exec --no-startup-id pasystray
