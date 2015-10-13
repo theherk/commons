@@ -39,14 +39,21 @@
 ;; install packages
 (require 'cl)
 (defvar packages-list
-  '(evil
+  '(company
+    company-go
+    evil
+    evil-leader
+    evil-surround
+    evil-nerd-commenter
     helm
     jinja2-mode
     magit
     markdown-mode
     color-theme-sanityinc-tomorrow
     tramp-term
-    yaml-mode)
+    yaml-mode
+    yasnippet
+    helm-c-yasnippet)
   "List of packages needs to be installed at launch")
 
 (defun has-package-not-installed ()
