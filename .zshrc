@@ -230,7 +230,8 @@ thbu () {
 unsetopt MULTIBYTE
 
 autoload zkbd
-#source ~/.zkbd/$TERM-:0 # may be different - check where zkbd saved the configuration:
+# don't forget to run zkbd
+source ~/.zkbd/$TERM-:0 # may be different - check where zkbd saved the configuration:
 
 [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
 [[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
