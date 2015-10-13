@@ -70,6 +70,46 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
+;; Company Mode
+(add-hook 'after-init-hook 'global-company-mode)
+(global-set-key (kbd "C-q")     #'company-complete)
+
+;; Evil Mode
+(global-evil-leader-mode)
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key
+  "0" 'delete-window
+  "1" 'delete-other-windows
+  "2" 'split-window-below
+  "3" 'split-window-right
+  "b" 'helm-buffers-list
+  "f" 'helm-find-files
+  "k" 'kill-buffer
+  "o" 'other-window
+  "s" 'helm-yas-complete
+  "w" 'save-buffer
+  "x" 'helm-M-x)
+;; nerd-commenter leaders
+(evil-leader/set-key
+  "ci" 'evilnc-comment-or-uncomment-lines
+  "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+  "cc" 'evilnc-copy-and-comment-lines
+  "cp" 'evilnc-comment-or-uncomment-paragraphs
+  "cr" 'comment-or-uncomment-region
+  "cv" 'evilnc-toggle-invert-comment-line-by-line
+)
+(require 'evil-surround)
+(global-evil-surround-mode 1)
+(require 'evil)
+(evil-mode 1)
+
+;; json-mode
+(add-hook 'json-mode-hook
+  (function (lambda ()
+            (make-local-variable 'js-indent-level)
+            (setq js-indent-level 2)
+            (setq evil-shift-width js-indent-level))))
+
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
@@ -103,6 +143,21 @@
 ;; MELPA
 (add-to-list 'package-archives
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+;; tramp
+(require 'tramp)
+(add-to-list 'tramp-default-proxies-alist
+  '("172\\.31\\.2\\.156" "\\`root\\'" "/ssh:hsherwood@%h:"))
+
+;; yasnippet
+;; this is a workaround for version differences between helm and yas
+(defalias 'yas--template-file 'yas--template-get-file)
+(require 'yasnippet)
+(yas-global-mode 1)
+;; disable yas in term mode because it breaks tab
+(add-hook 'term-mode-hook (lambda () (yas-minor-mode -1)))
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"))
 
 ;; helm configuration
 ;; ---
