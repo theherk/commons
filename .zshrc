@@ -94,6 +94,11 @@ vst () {
     tmux select-window -t 'Vim'
 }
 
+# virtualenv activate
+venvact () {
+    source ${1}/bin/activate
+}
+
 # tmux
 alias tms="\
     tmux new-session -s 'Main' -n 'Main' -d; \
