@@ -43,7 +43,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=/home/adam/.gem/ruby/2.1.0/bin:$HOME/bin:/usr/local/bin:$HOME/.cabal/bin/:$PATH
+export PATH=/home/h4s/.gem/ruby/2.2.0/bin:$HOME/bin:/usr/local/bin:$HOME/.cabal/bin/:$PATH
 
 export LANG=en_US.UTF-8
 
