@@ -107,6 +107,10 @@
 (require 'evil)
 (evil-mode 1)
 
+;; plantuml-mode
+(setq plantuml-jar-path "/opt/plantuml/plantuml.jar")
+(add-to-list 'auto-mode-alist '("\\.uml\\'" . plantuml-mode))
+
 ;; json-mode
 (add-hook 'json-mode-hook
   (function (lambda ()
