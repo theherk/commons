@@ -3,6 +3,7 @@
 ;; term-mode C-c C-j to character mode C-c C-k back to default line mode
 ;; helm - C-<backspace> to disable auto-completion (to create file)
 ;; to open second instance of named buffer rename-buffer
+;; local sudo /sudo::
 
 (setq package-enable-at-startup nil) (package-initialize)
 (custom-set-variables
