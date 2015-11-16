@@ -40,7 +40,8 @@
 ;; install packages
 (require 'cl)
 (defvar packages-list
-  '(company
+  '(beacon
+    company
     company-go
     evil
     evil-leader
@@ -52,6 +53,7 @@
     markdown-mode
     color-theme-sanityinc-tomorrow
     tramp-term
+    web-mode
     yaml-mode
     yasnippet
     helm-c-yasnippet)
@@ -86,6 +88,7 @@
   "b" 'helm-buffers-list
   "f" 'helm-find-files
   "k" 'kill-buffer
+  "m" 'magit-status
   "o" 'other-window
   "s" 'helm-yas-complete
   "w" 'save-buffer
