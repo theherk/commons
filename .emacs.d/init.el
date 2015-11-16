@@ -130,6 +130,11 @@
   "Major mode for editing yaml files" t)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
+(add-hook 'yaml-mode-hook
+  (function (lambda ()
+            (make-local-variable 'yaml-indent-level)
+            (setq yaml-indent-level 2)
+            (setq evil-shift-width yaml-indent-level))))
 
 ;; Jinja2
 (autoload 'jinja2-mode "jinja2-mode"
