@@ -259,3 +259,6 @@ source ~/.zkbd/$TERM-:0 # may be different - check where zkbd saved the configur
 [[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
+
+# added by travis gem
+[ -f /home/h4s/.travis/travis.sh ] && source /home/h4s/.travis/travis.sh
