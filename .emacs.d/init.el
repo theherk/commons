@@ -162,6 +162,15 @@
 (add-to-list 'tramp-default-proxies-alist
   '("172\\.31\\.2\\.156" "\\`root\\'" "/ssh:hsherwood@%h:"))
 
+;; web-mode
+(setq-default indent-tabs-mode nil)
+(add-hook 'web-mode-hook
+  (function (lambda ()
+            (setq web-mode-markup-indent-offset 2)
+            (setq web-mode-css-indent-offset 2)
+            (setq web-mode-code-indent-offset 2)
+            (setq evil-shift-width web-mode-indent-offset))))
+
 ;; yasnippet
 ;; this is a workaround for version differences between helm and yas
 (defalias 'yas--template-file 'yas--template-get-file)
