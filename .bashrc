@@ -192,3 +192,6 @@ thbu () {
 export EDITOR=gvim
 alias edit='gvim'
 
+
+# added by travis gem
+[ -f /home/h4s/.travis/travis.sh ] && source /home/h4s/.travis/travis.sh
