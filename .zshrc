@@ -184,6 +184,8 @@ git_rm_submodule () {
     echo "Submodule $1 removed"
 }
 
+# git super push
+alias gitsuperpush="git push --force --tags origin 'refs/heads/*'"
 # git doge - was hilarious for a minute
 alias wow="git status"
 alias many="git"
