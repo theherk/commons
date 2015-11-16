@@ -181,6 +181,9 @@
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets"))
 
+;; beacon
+(beacon-mode 1)
+
 ;; helm configuration
 ;; ---
 
