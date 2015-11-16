@@ -99,6 +99,11 @@ venvact () {
     source ${1}/bin/activate
 }
 
+# curl with pretty js output
+curljs () {
+    curl -s ${1} | underscore pretty --color
+}
+
 # tmux
 alias tms="\
     tmux new-session -s 'Main' -n 'Main' -d; \
