@@ -109,6 +109,9 @@
 (evil-mode 1)
 (require 'evil-org)
 
+;; line height for zoomed linenum
+(eval-after-load "linum"
+  '(set-face-attribute 'linum nil :height 120))
 
 ;; plantuml-mode
 (setq plantuml-jar-path "/opt/plantuml/plantuml.jar")
