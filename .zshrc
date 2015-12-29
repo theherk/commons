@@ -94,10 +94,16 @@ vst () {
     tmux select-window -t 'Vim'
 }
 
-# virtualenv activate
-venvact () {
-    source ${1}/bin/activate
+# venv create and activate $VENVS
+export VENVS=~/.venvs/
+venvnew () {
+    pyvenv ${VENVS}${1}
+    venvact ${1}
 }
+venvact () {
+    source ${VENVS}${1}/bin/activate
+}
+alias lv="ls $VENVS"
 
 # curl with pretty js output
 curljs () {
