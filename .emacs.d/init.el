@@ -116,6 +116,11 @@
 ;; plantuml-mode
 (setq plantuml-jar-path "/opt/plantuml/plantuml.jar")
 (add-to-list 'auto-mode-alist '("\\.uml\\'" . plantuml-mode))
+(add-hook 'plantuml-mode-hook
+  (function (lambda ()
+            (make-local-variable 'plantuml-indent-level)
+            (setq plantuml-indent-level 2)
+            (setq evil-shift-width plantuml-indent-level))))
 
 ;; json-mode
 (add-hook 'json-mode-hook
