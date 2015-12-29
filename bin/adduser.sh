@@ -3,10 +3,12 @@
 USR=$1
 KEY=$2
 GRPS=$3
-useradd ${USR}
+mkdir -p /home/${USR}
+useradd -d /home/${USR} -s /bin/bash ${USR}
 usermod -G ${GRPS} ${USR}
 passwd -d ${USR}
-mkdir /home/${USR}/.ssh
+chown ${USR}:${USR} /home/${USR}
+mkdir -p /home/${USR}/.ssh
 chmod 0700 /home/${USR}/.ssh
 chown ${USR}:${USR} /home/${USR}/.ssh
 touch /home/${USR}/.ssh/authorized_keys
