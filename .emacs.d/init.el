@@ -91,9 +91,12 @@
   "k" 'kill-buffer
   "m" 'magit-status
   "o" 'other-window
+  "p" 'compile
   "s" 'helm-yas-complete
   "w" 'save-buffer
+  "q" 'delete-window
   "x" 'helm-M-x)
+
 ;; nerd-commenter leaders
 (evil-leader/set-key
   "ci" 'evilnc-comment-or-uncomment-lines
