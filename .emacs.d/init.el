@@ -118,6 +118,10 @@
             (setq js-indent-level 2)
             (setq evil-shift-width js-indent-level))))
 
+;; Browser - Mostly for org
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome-stable")
+
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
