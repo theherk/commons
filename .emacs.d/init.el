@@ -47,6 +47,7 @@
     evil-leader
     evil-surround
     evil-nerd-commenter
+    evil-org
     helm
     jinja2-mode
     magit
@@ -106,6 +107,8 @@
 (global-evil-surround-mode 1)
 (require 'evil)
 (evil-mode 1)
+(require 'evil-org)
+
 
 ;; plantuml-mode
 (setq plantuml-jar-path "/opt/plantuml/plantuml.jar")
