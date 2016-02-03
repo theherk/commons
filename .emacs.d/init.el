@@ -161,7 +161,10 @@
 (add-to-list 'auto-mode-alist '("\\.jinja2\\'" . jinja2-mode))
 
 ;; Javascript
-(setq js-indent-level 2)
+(add-hook 'js-mode-hook
+  (function (lambda ()
+            (setq js-indent-level 2)
+            (setq evil-shift-width js-indent-level))))
 
 ;; Backup files
 (setq backup-directory-alist `(("." . "~/.saves")))
