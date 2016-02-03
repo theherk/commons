@@ -240,7 +240,7 @@
 
 (require 'helm-config)
 (helm-mode t)
-(helm-adaptative-mode t)
+(helm-adaptive-mode t)
 
 (global-set-key (kbd "C-x c!")   #'helm-calcul-expression)
 (global-set-key (kbd "C-x c:")   #'helm-eval-expression-with-eldoc)
