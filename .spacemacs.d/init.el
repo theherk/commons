@@ -27,11 +27,13 @@ values."
      better-defaults
      emacs-lisp
      git
+     javascript
      markdown
      org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
+     python
      spell-checking
      syntax-checking
      version-control
@@ -235,12 +237,20 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+  (setq-default js2-basic-offset 2
+                js-indent-level 2)
   )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  (add-hook 'python-mode-hook (lambda ()
+                                (flycheck-mode 1)
+                                (semantic-mode 1)
+                                (setq flycheck-checker 'python-pylint
+                                      flycheck-checker-error-threshold 900
+                                      flycheck-pylintrc "~/.pylintrc")))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
