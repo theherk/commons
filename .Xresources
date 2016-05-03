@@ -5,30 +5,30 @@ URxvt*termName: rxvt-unicode-256color
 URxvt*urgentOnBell: true
 URxvt.scrollBar: false
 
-URxvt.perl-ext:              default,url-select,matcher,clipboard,font-size
-URxvt.keysym.M-u:            perl:url-select:select_next
-URxvt.url-select.launcher:   /usr/bin/google-chrome-stable
-URxvt.url-select.underline:  true
-URxvt.keysym.C-Up:           perl:font-size:increase
-URxvt.keysym.C-Down:         perl:font-size:decrease
-URxvt.keysym.C-S-Up:         perl:font-size:incglobal
-URxvt.keysym.C-S-Down:       perl:font-size:decglobal
-URxvt.iso14755:              false
-URxvt.iso14755_52:           false
-URxvt.keysym.M-c:            perl:clipboard:copy
-URxvt.keysym.M-v:            perl:clipboard:paste
+URxvt.perl-ext: default,url-select,matcher,clipboard,font-size
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/google-chrome-stable
+URxvt.url-select.underline: true
+URxvt.keysym.C-Up: perl:font-size:increase
+URxvt.keysym.C-Down: perl:font-size:decrease
+URxvt.keysym.C-S-Up: perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
 
-Xft.antialias:  true
-Xft.autohint:   false
-Xft.dpi:        96
-Xft.hinting:    true
-Xft.hitstyle:   hintslight
-Xft.lcdfilter:  lcddefault
-Xft.rgba:       rgb
+Xft.antialias: true
+Xft.autohint: true
+Xft.dpi: 96
+Xft.hinting: true
+Xft.hitstyle: hintsfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
 
 URxvt.cursorBlink: true
 
-Xcursor.theme: aterblue
+Xcursor.theme: xcursor-base
 Xcursor.size: 32
 
 URxvt*font: xft:Inconsolata\ for\ Powerline-13:size:13
@@ -37,53 +37,52 @@ URxvt*italicFont: xft:Inconsolata\ for\ Powerline-13:pixelsize:13:italic
 URxvt*boldItalicFont: xft:Inconsolata\ for\ Powerline-13:pixelsize:13:bold:italic
 
 !TomorrowNightEighties
-#define t_background        #2d2d2d
-#define t_current_line      #393939
-#define t_selection      	#515151
-#define t_foreground      	#cccccc
-#define t_comment	     	#999999
-#define t_red		     	#f2777a
-#define t_orange	     	#f99157
-#define t_yellow        	#ffcc66
-#define t_green	        	#99cc99
-#define t_aqua	        	#66cccc
-#define t_blue	        	#6699cc
-#define t_purple        	#cc99cc
+#define t_background #2d2d2d
+#define t_current_line #393939
+#define t_selection #515151
+#define t_foreground #cccccc
+#define t_comment	#999999
+#define t_red	#f2777a
+#define t_orange #f99157
+#define t_yellow #ffcc66
+#define t_green	#99cc99
+#define t_aqua #66cccc
+#define t_blue #6699cc
+#define t_purple #cc99cc
 
 
-*.foreground:   t_foreground
-*.background:   t_background
-*.cursorColor:  #aeafad
+*.foreground: t_foreground
+*.background: t_background
+*.cursorColor: #aeafad
 
 ! Black / Grey
-*.color0:       #000000
-*.color8:       #666666
+*.color0: #000000
+*.color8: #666666
 
 ! Red / Bright Red
-*.color1:       t_red
-*.color9:       #FF3334
+*.color1: t_red
+*.color9: #FF3334
 
 ! Green + Bright Green
-*.color2:       t_green
-*.color10:      #9ec400
+*.color2: t_green
+*.color10: #9ec400
 
 ! Yellow (Orange) + Bright Yellow (Yellow)
-*.color3:       t_orange
-*.color11:      t_yellow
+*.color3: t_orange
+*.color11: t_yellow
 
 ! Blue + Bright Blue
-*.color4:       t_blue
-*.color12:      t_blue
+*.color4: t_blue
+*.color12: t_blue
 
 ! Magenta (Purple) + Bright Magenta
-*.color5:       t_purple
-*.color13:      #b777e0
+*.color5: t_purple
+*.color13: #b777e0
 
 ! Cyan (Aqua) + Bright Cyan
-*.color6:       t_aqua
-*.color14:      #54ced6
+*.color6: t_aqua
+*.color14: #54ced6
 
 ! Light Grey (Selection) + White (Current Line)
-*.color7:       t_selection
-*.color15:      t_current_line
-
+*.color7: t_selection
+*.color15: t_current_line
