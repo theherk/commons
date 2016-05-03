@@ -269,4 +269,4 @@ source ~/.zkbd/$TERM* # may be different - check where zkbd saved the configurat
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 
 # added by travis gem
-[ -f /home/h4s/.travis/travis.sh ] && source /home/h4s/.travis/travis.sh
+#[ -f /home/h4s/.travis/travis.sh ] && source /home/h4s/.travis/travis.sh
