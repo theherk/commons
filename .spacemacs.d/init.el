@@ -27,6 +27,7 @@ values."
      better-defaults
      emacs-lisp
      git
+     go
      javascript
      markdown
      org
@@ -43,7 +44,10 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(
+     tramp-term
+     )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -239,6 +243,7 @@ any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
   (setq-default js2-basic-offset 2
                 js-indent-level 2)
+  (setq tramp-chunksize 500)
   )
 
 (defun dotspacemacs/user-config ()
@@ -251,6 +256,7 @@ layers configuration. You are free to put any user code."
                                 (setq flycheck-checker 'python-pylint
                                       flycheck-checker-error-threshold 900
                                       flycheck-pylintrc "~/.pylintrc")))
+  (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
