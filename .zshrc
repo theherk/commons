@@ -43,8 +43,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export GOPATH=~/herk-stuff/go/
-export PATH=/home/h4s/.gem/ruby/2.2.0/bin:$HOME/bin:/usr/local/bin:$HOME/.cabal/bin/:$GOPATH/bin/:$PATH
+export GOPATH=$HOME/projects/go/
+export PATH=/usr/local/bin:$HOME/bin:$GOPATH/bin/:$HOME/.gem/ruby/2.2.0/bin:$HOME/.cabal/bin/:$PATH
 
 export LANG=en_US.UTF-8
 
