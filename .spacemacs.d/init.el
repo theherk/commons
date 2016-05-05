@@ -26,18 +26,25 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
+     emoji
+     ;; eyebrowse
+     dockerfile
      git
      go
      javascript
      markdown
      org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
      python
+     salt
+     search-engine
+     shell
      spell-checking
      syntax-checking
+     terraform
+     themes-megapack
      version-control
+     ;; vim-powerline
+     xkcd
      yaml
      )
    ;; List of additional packages that will be installed without being
