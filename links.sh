@@ -6,6 +6,7 @@ ln -sf ~/herk-commons/.bashrc ~/
 ln -sf ~/herk-commons/.git-completion.bash ~/
 ln -sf ~/herk-commons/.git-completion.zsh ~/
 ln -sf ~/herk-commons/.gitconfig ~/
+ln -sf ~/herk-commons/.editorconfig ~/
 ln -sf ~/herk-commons/.pypirc ~/
 ln -sf ~/herk-commons/.tmux.conf ~/
 ln -sf ~/herk-commons/.tmuxline ~/
