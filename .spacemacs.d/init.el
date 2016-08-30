@@ -17,7 +17,10 @@ values."
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
-   '(
+    '(
+       nginx
+       windows-scripts
+       rust
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -26,19 +29,29 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
+     emoji
+     ;; eyebrowse
+     dockerfile
      git
      go
+     gtags
+     html
      javascript
      markdown
      org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     plantuml
      python
+     salt
+     search-engine
+     shell
      spell-checking
      syntax-checking
+     terraform
+     themes-megapack
      version-control
-     yaml
+     ;; vim-powerline
+     xkcd
+      yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -46,10 +59,11 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(
+     editorconfig
      tramp-term
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -241,8 +255,8 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
-  (setq-default js2-basic-offset 2
-                js-indent-level 2)
+  (setq-default js2-basic-offset 4
+                js-indent-level 4)
   (setq tramp-chunksize 500)
   )
 
@@ -256,8 +270,35 @@ layers configuration. You are free to put any user code."
                                 (setq flycheck-checker 'python-pylint
                                       flycheck-checker-error-threshold 900
                                       flycheck-pylintrc "~/.pylintrc")))
+  (setq python-shell-interpreter-args "--simple-prompt")
   (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
-  )
+  (setq browse-url-browser-function 'browse-url-generic
+        engine/browser-function 'browse-url-generic
+        browse-url-generic-program "google-chrome-stable")
+  (editorconfig-mode 1)
+  (add-hook 'after-change-major-mode-hook 'editorconfig-apply 'append)
+  (add-hook 'js2-mode-hook
+    (defun my-js2-mode-setup ()
+      (flycheck-mode t)
+      (when (executable-find "eslint")
+        (flycheck-select-checker 'javascript-eslint))))
+  (setq sp-highlight-pair-overlay nil)
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(markdown-command "~/.cabal/bin/pandoc")
+ '(markdown-open-command "~/.cabal/bin/pandoc")
+ '(paradox-github-token t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))

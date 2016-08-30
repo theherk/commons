@@ -81,6 +81,9 @@ alias ls='ls --color=auto'
 alias ll='ls -AlF --color=auto'
 alias llt='ls -AlFtr --color=auto'
 
+# xclip
+alias xc='xclip -sel clip'
+
 # source vimx on machines that need +xcopy_clipboard
 if [ -e /usr/bin/vimx ]; then alias vim='/usr/bin/vimx'; fi
 
@@ -118,6 +121,9 @@ alias tms="\
     tmux send-keys -t 'Vim' vs ENTER; \
     tmux select-window -t Main; \
     tmux attach -t Main"
+
+# git remote update
+alias new-remote='git remote set-url origin "git@gitlab.eng.cleardata.com:$(git remote -v | grep origin | head -1 | awk '"'"'{print $2}'"'"' | cut -d ":" -f 2)"'
 
 # mvn shortcuts
 alias mvni='mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true'
