@@ -17,7 +17,10 @@ values."
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
-   '(
+    '(
+       nginx
+       windows-scripts
+       rust
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -31,9 +34,12 @@ values."
      dockerfile
      git
      go
+     gtags
+     html
      javascript
      markdown
      org
+     plantuml
      python
      salt
      search-engine
@@ -45,7 +51,7 @@ values."
      version-control
      ;; vim-powerline
      xkcd
-     yaml
+      yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
