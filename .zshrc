@@ -81,6 +81,9 @@ alias ls='ls --color=auto'
 alias ll='ls -AlF --color=auto'
 alias llt='ls -AlFtr --color=auto'
 
+# xclip
+alias xc='xclip -sel clip'
+
 # source vimx on machines that need +xcopy_clipboard
 if [ -e /usr/bin/vimx ]; then alias vim='/usr/bin/vimx'; fi
 
