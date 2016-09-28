@@ -271,7 +271,8 @@ layers configuration. You are free to put any user code."
                                 (setq flycheck-checker 'python-pylint
                                       flycheck-checker-error-threshold 900
                                       flycheck-pylintrc "~/.pylintrc")))
-  (setq python-shell-interpreter-args "--simple-prompt")
+  ;; (setq python-shell-interpreter "ipython")
+  ;; (setq python-shell-interpreter-args "--simple-prompt")
   (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
   (setq browse-url-browser-function 'browse-url-generic
         engine/browser-function 'browse-url-generic
