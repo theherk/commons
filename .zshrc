@@ -54,7 +54,8 @@ fi
 
 # User configuration
 
-export GOPATH=$HOME/projects/go/
+export P=$HOME/projects
+export GOPATH=$P/go
 export PATH=/usr/local/bin:$HOME/bin:$GOPATH/bin/:$HOME/.gem/ruby/2.2.0/bin:$HOME/.cabal/bin/:$PATH
 
 export LANG=en_US.UTF-8
