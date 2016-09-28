@@ -93,6 +93,17 @@ alias ls='ls --color=auto'
 alias ll='ls -AlF --color=auto'
 alias llt='ls -AlFtr --color=auto'
 
+# tree
+
+alias t1='tree -L 1'
+alias t='tree -L 1'
+alias t2='tree -L 2'
+alias tt='tree -L 2'
+alias t3='tree -L 3'
+alias ttt='tree -L 3'
+alias t4='tree -L 4'
+alias tttt='tree -L 4'
+
 # xclip
 alias xc='xclip -sel clip'
 
