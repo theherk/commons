@@ -39,7 +39,18 @@ COMPLETION_WAITING_DOTS="true"
 # plugins
 plugins=(bower git npm nyan pip python systemd)
 
-source $ZSH/oh-my-zsh.sh
+if [[ $TERM == "dumb" ]]; then	# in emacs
+    PS1='%(?..[%?])%!:%~%# '
+    # for tramp to not hang, need the following. cf:
+    # http://www.emacswiki.org/emacs/TrampMode
+    unsetopt zle
+    unsetopt prompt_cr
+    unsetopt prompt_subst
+    unfunction precmd
+    unfunction preexec
+else
+    source $ZSH/oh-my-zsh.sh
+fi
 
 # User configuration
 
