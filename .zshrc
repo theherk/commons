@@ -121,6 +121,12 @@ vst () {
     tmux select-window -t 'Vim'
 }
 
+# aws profile
+awsp () {
+    export AWS_PROFILE=${1}
+}
+alias awsu='unset AWS_PROFILE'
+
 # venv create and activate $VENVS
 export VENVS=~/.venvs/
 venvnew () {
