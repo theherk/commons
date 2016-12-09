@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: godebug breakpoint
+# key: godb
+# contributor: Herkermer Sherwood <theherk@gmail.com>
+# --
+_ = "breakpoint" // godebug breakpoint - Don't forget to delete me.$0
