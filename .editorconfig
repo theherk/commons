@@ -31,6 +31,12 @@ indent_style = space
 [*.js]
 indent_size = 4
 
+[*.json]
+indent_size = 2
+
+[*.config]
+indent_size = 2
+
 [*.{yaml,yml}]
 indent_size = 2
 
