@@ -7,6 +7,15 @@
 #
 #----------------------------------------------------------
 
+# for tramp
+#if [[ "$TERM" == "dumb" ]]
+#then
+#  unsetopt zle
+#  unsetopt prompt_cr
+#  unsetopt prompt_subst
+#  PS1='$ '
+#fi && return
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000

@@ -258,7 +258,6 @@ any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
   (setq-default js2-basic-offset 4
                 js-indent-level 4)
-  (setq tramp-chunksize 500)
   )
 
 (defun dotspacemacs/user-config ()
@@ -288,6 +287,10 @@ layers configuration. You are free to put any user code."
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
   (setcdr yas-snippet-dirs (cons "~/.spacemacs.d/private/snippets" (rest yas-snippet-dirs)))
+  (setq tramp-chunksize 500)
+  (setq projectile-mode-line "Projectile")
+  ;; (eval-after-load 'tramp '(setenv "SHELL" "/bin/sh"))
+  ;; (setq tramp-shell-prompt-pattern "^[^$>\n]*[#$%>] *\\(\[[0-9;]*[a-zA-Z] *\\)*")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
