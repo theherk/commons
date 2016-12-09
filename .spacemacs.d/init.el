@@ -285,6 +285,7 @@ layers configuration. You are free to put any user code."
       (when (executable-find "eslint")
         (flycheck-select-checker 'javascript-eslint))))
   (setq sp-highlight-pair-overlay nil)
+  (setcdr yas-snippet-dirs (cons "~/.spacemacs.d/private/snippets" (rest yas-snippet-dirs)))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
