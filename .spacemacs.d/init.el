@@ -285,6 +285,8 @@ layers configuration. You are free to put any user code."
       (when (executable-find "eslint")
         (flycheck-select-checker 'javascript-eslint))))
   (setq sp-highlight-pair-overlay nil)
+  (setq gofmt-command "goimports")
+  (add-hook 'before-save-hook 'gofmt-before-save)
   (setcdr yas-snippet-dirs (cons "~/.spacemacs.d/private/snippets" (rest yas-snippet-dirs)))
 )
 
