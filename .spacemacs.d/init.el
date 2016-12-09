@@ -32,7 +32,7 @@ values."
      emacs-lisp
      emoji
      ;; eyebrowse
-     dockerfile
+     docker
      git
      go
      gtags
