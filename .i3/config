@@ -156,3 +156,7 @@ client.urgent #2f343a #f2777a #ffffff #f2777a
 # Add nm-applet
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
+
+# make qjackctl and cadence windows floating
+for_window [class="qjackctl" instance="qjackctl"] floating enable
+for_window [class="Cadence.py" instance="cadence.py"] floating enable
