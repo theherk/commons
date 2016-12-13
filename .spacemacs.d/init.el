@@ -291,6 +291,9 @@ layers configuration. You are free to put any user code."
   (setq projectile-mode-line "Projectile")
   ;; (eval-after-load 'tramp '(setenv "SHELL" "/bin/sh"))
   ;; (setq tramp-shell-prompt-pattern "^[^$>\n]*[#$%>] *\\(\[[0-9;]*[a-zA-Z] *\\)*")
+  (setq go-use-gometalinter t)
+  (spacemacs/set-leader-keys "jB" 'pop-tag-mark)
+  (spacemacs/set-leader-keys "G" 'pop-tag-mark)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
