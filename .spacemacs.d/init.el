@@ -275,7 +275,7 @@ layers configuration. You are free to put any user code."
   (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
   (setq browse-url-browser-function 'browse-url-generic
         engine/browser-function 'browse-url-generic
-        browse-url-generic-program "google-chrome-stable")
+        browse-url-generic-program "chromium")
   (editorconfig-mode 1)
   (add-hook 'after-change-major-mode-hook 'editorconfig-apply 'append)
   (add-hook 'js2-mode-hook
