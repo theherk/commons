@@ -261,8 +261,6 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
-  (setq-default js2-basic-offset 4
-                js-indent-level 4)
   )
 
 (defun dotspacemacs/user-config ()
