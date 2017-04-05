@@ -238,6 +238,9 @@ git_rm_submodule () {
     echo "Submodule $1 removed"
 }
 
+# stdout json to underscore pretty
+alias up="underscore pretty"
+
 # git super push
 alias gitsuperpush="git push --force --tags origin 'refs/heads/*'"
 # git doge - was hilarious for a minute
