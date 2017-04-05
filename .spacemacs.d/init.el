@@ -297,6 +297,10 @@ layers configuration. You are free to put any user code."
   (setq go-use-gometalinter t)
   (spacemacs/set-leader-keys "jB" 'pop-tag-mark)
   (spacemacs/set-leader-keys "G" 'pop-tag-mark)
+  (setq powerline-default-separator 'nil)
+  (spaceline-toggle-buffer-size-off)
+  (spaceline-toggle-minor-modes-off)
+  (spaceline-toggle-purpose-off)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
