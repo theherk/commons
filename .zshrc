@@ -87,6 +87,9 @@ bindkey '^r' history-incremental-search-backward
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
+# make and switch to a temp dir
+alias tmpd='cd $(mktemp -d)'
+
 # get typing
 alias cm='sudo loadkeys colemak'
 
