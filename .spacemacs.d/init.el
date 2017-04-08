@@ -125,11 +125,16 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Ubuntu Mono"
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
+   ;; dotspacemacs-default-font '("Source Code Pro"
+   ;;                             :size 14
+   ;;                             :weight semibold
+   ;;                             :width normal
+   ;;                             :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -257,8 +262,6 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
-  (setq-default js2-basic-offset 4
-                js-indent-level 4)
   )
 
 (defun dotspacemacs/user-config ()
@@ -295,6 +298,10 @@ layers configuration. You are free to put any user code."
   (setq go-use-gometalinter t)
   (spacemacs/set-leader-keys "jB" 'pop-tag-mark)
   (spacemacs/set-leader-keys "G" 'pop-tag-mark)
+  (setq powerline-default-separator 'nil)
+  (spaceline-toggle-buffer-size-off)
+  (spaceline-toggle-minor-modes-off)
+  (spaceline-toggle-purpose-off)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

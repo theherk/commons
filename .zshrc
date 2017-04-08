@@ -87,6 +87,9 @@ bindkey '^r' history-incremental-search-backward
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
+# make and switch to a temp dir
+alias tmpd='cd $(mktemp -d)'
+
 # get typing
 alias cm='sudo loadkeys colemak'
 
@@ -234,6 +237,9 @@ git_rm_submodule () {
     rm -rf .git/modules/$1
     echo "Submodule $1 removed"
 }
+
+# stdout json to underscore pretty
+alias up="underscore pretty"
 
 # git super push
 alias gitsuperpush="git push --force --tags origin 'refs/heads/*'"
