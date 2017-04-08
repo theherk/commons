@@ -14,7 +14,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym Mod1+space exec dmenu_run
+bindsym Mod1+space exec dmenu_run -i -b -fn 'Ubuntu Mono:normal:pixelsize=20' -nb '#2d2d2d' -nf '#cccccc' -sf '#333333' -sb '#99cc99' -l 10
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
