@@ -20,7 +20,7 @@ URxvt.keysym.M-v: perl:clipboard:paste
 
 Xft.antialias: true
 Xft.autohint: true
-Xft.dpi: 96
+Xft.dpi: 72 !96
 Xft.hinting: true
 Xft.hitstyle: hintsfull
 Xft.lcdfilter: lcddefault
@@ -31,10 +31,10 @@ URxvt.cursorBlink: true
 Xcursor.theme: xcursor-base
 Xcursor.size: 32
 
-URxvt*font: xft:Inconsolata\ for\ Powerline-13:size:13
-URxvt*boldFont: xft:Inconsolata\ for\ Powerline-13:pixelsize:13:bold
-URxvt*italicFont: xft:Inconsolata\ for\ Powerline-13:pixelsize:13:italic
-URxvt*boldItalicFont: xft:Inconsolata\ for\ Powerline-13:pixelsize:13:bold:italic
+URxvt*font: xft:Ubuntu \Mono \derivative \Powerline-20:size:20
+URxvt*boldFont: xft:Ubuntu \Mono \derivative \Powerline-20:pixelsize:20:bold
+URxvt*italicFont: xft:Ubuntu \Mono \derivative \Powerline-20:pixelsize:20:italic
+URxvt*boldItalicFont: xft:Ubuntu \Mono \derivative \Powerline-20:pixelsize:20:bold:italic
 
 !TomorrowNightEighties
 #define t_background #2d2d2d
