@@ -118,40 +118,50 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  ;; editorconfig
+  (editorconfig-mode 1)
+  (add-hook 'after-change-major-mode-hook 'editorconfig-apply 'append)
+
+  ;; go
+  (setq gofmt-command "goimports")
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  (setq go-use-gometalinter t)
+
+  ;; javascript
+  (add-hook 'js2-mode-hook
+    (defun my-js2-mode-setup ()
+      (flycheck-mode t)
+      (when (executable-find "eslint")
+        (flycheck-select-checker 'javascript-eslint))))
+
+  ;; misc
+  (setq browse-url-browser-function 'browse-url-generic
+    engine/browser-function 'browse-url-generic
+    browse-url-generic-program "chromium")
+  (spacemacs/set-leader-keys "jB" 'pop-tag-mark)
+  (spacemacs/set-leader-keys "G" 'pop-tag-mark)
+
+  ;; modeline
+  (spaceline-toggle-buffer-size-off)
+  (spaceline-toggle-minor-modes-off)
+  (spaceline-toggle-purpose-off)
+
+  ;; python
   (add-hook 'python-mode-hook (lambda ()
                                 (flycheck-mode 1)
                                 (semantic-mode 1)
                                 (setq flycheck-checker 'python-pylint
                                   flycheck-checker-error-threshold 900
                                   flycheck-pylintrc "~/.pylintrc")))
-  ;; (setq python-shell-interpreter "ipython")
-  ;; (setq python-shell-interpreter-args "--simple-prompt")
-  (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
-  (setq browse-url-browser-function 'browse-url-generic
-    engine/browser-function 'browse-url-generic
-    browse-url-generic-program "chromium")
-  (editorconfig-mode 1)
-  (add-hook 'after-change-major-mode-hook 'editorconfig-apply 'append)
-  (add-hook 'js2-mode-hook
-    (defun my-js2-mode-setup ()
-      (flycheck-mode t)
-      (when (executable-find "eslint")
-        (flycheck-select-checker 'javascript-eslint))))
-  (setq sp-highlight-pair-overlay nil)
-  (setq gofmt-command "goimports")
-  (add-hook 'before-save-hook 'gofmt-before-save)
+
+  ;; snippets
   (setcdr yas-snippet-dirs (cons "~/.spacemacs.d/private/snippets" (rest yas-snippet-dirs)))
-  (setq tramp-chunksize 500)
-  (setq projectile-mode-line "Projectile")
-  ;; (eval-after-load 'tramp '(setenv "SHELL" "/bin/sh"))
-  ;; (setq tramp-shell-prompt-pattern "^[^$>\n]*[#$%>] *\\(\[[0-9;]*[a-zA-Z] *\\)*")
-  (setq go-use-gometalinter t)
-  (spacemacs/set-leader-keys "jB" 'pop-tag-mark)
-  (spacemacs/set-leader-keys "G" 'pop-tag-mark)
   (setq powerline-default-separator 'nil)
-  (spaceline-toggle-buffer-size-off)
-  (spaceline-toggle-minor-modes-off)
-  (spaceline-toggle-purpose-off)
+
+  ;; tramp
+  (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
+  (setq tramp-chunksize 500)
+  ;; (setq projectile-mode-line "Projectile") https://github.com/bbatsov/projectile/issues/893
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
