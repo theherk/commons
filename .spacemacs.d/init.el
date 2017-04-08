@@ -18,43 +18,36 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
     '(
-       typescript
+       auto-completion
+       better-defaults
        csv
+       emacs-lisp
+       emoji
+       docker
+       git
+       go
+       gtags
+       html
+       javascript
+       markdown
        nginx
-       windows-scripts
+       org
+       plantuml
+       python
        rust
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     auto-completion
-     better-defaults
-     emacs-lisp
-     emoji
-     ;; eyebrowse
-     docker
-     git
-     go
-     gtags
-     html
-     javascript
-     markdown
-     org
-     plantuml
-     python
-     salt
-     search-engine
-     shell
-     spell-checking
-     syntax-checking
-     terraform
-     themes-megapack
-     version-control
-     ;; vim-powerline
-     xkcd
-      yaml
-     )
+       salt
+       search-engine
+       shell
+       spell-checking
+       syntax-checking
+       terraform
+       themes-megapack
+       typescript
+       version-control
+       windows-scripts
+       xkcd
+       yaml
+       )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
