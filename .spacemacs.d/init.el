@@ -58,10 +58,10 @@ values."
    dotspacemacs-check-for-update t
    dotspacemacs-editing-style 'vim
    dotspacemacs-verbose-loading nil
-   dotspacemacs-startup-banner 'official
-   dotspacemacs-startup-lists '(recents projects)
+   dotspacemacs-startup-banner 'random
+   dotspacemacs-startup-lists nil
    dotspacemacs-startup-recent-list-size 5
-   dotspacemacs-scratch-mode 'text-mode
+   dotspacemacs-scratch-mode 'markdown-mode
    dotspacemacs-themes '(sanityinc-tomorrow-eighties
                          spacemacs-dark
                          spacemacs-light)
@@ -87,24 +87,24 @@ values."
    dotspacemacs-helm-resize nil
    dotspacemacs-helm-no-header nil
    dotspacemacs-helm-position 'bottom
-   dotspacemacs-enable-paste-micro-state nil
+   dotspacemacs-enable-paste-micro-state t
    dotspacemacs-which-key-delay 0.4
    dotspacemacs-which-key-position 'bottom
    dotspacemacs-loading-progress-bar t
    dotspacemacs-fullscreen-at-startup nil
    dotspacemacs-fullscreen-use-non-native nil
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    dotspacemacs-active-transparency 90
    dotspacemacs-inactive-transparency 90
    dotspacemacs-mode-line-unicode-symbols t
-   dotspacemacs-smooth-scrolling t
-   dotspacemacs-line-numbers nil
-   dotspacemacs-smartparens-strict-mode nil
-   dotspacemacs-highlight-delimiters 'all
+   dotspacemacs-smooth-scrolling nil
+   dotspacemacs-line-numbers 'relative
+   dotspacemacs-smartparens-strict-mode t
+   dotspacemacs-highlight-delimiters 'current
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
    dotspacemacs-default-package-repository nil
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
    ))
 
 (defun dotspacemacs/user-init ()
