@@ -1,0 +1,19 @@
+{
+  "floating": "auto_off",
+  "layout": "splith",
+  "nodes": [
+    {
+      "floating": "auto_off",
+      "fullscreen_mode": 1,
+      "name": "Slack - ClearDATA",
+      "percent": 1,
+      "swallows": [
+        {
+          "class": "^Slack$",
+          "instance": "^slack$"
+        }
+      ],
+      "type": "con"
+    }
+  ]
+}

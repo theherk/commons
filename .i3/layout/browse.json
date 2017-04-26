@@ -1,0 +1,18 @@
+{
+  "floating": "auto_off",
+  "layout": "splith",
+  "nodes": [
+    {
+      "floating": "auto_off",
+      "fullscreen_mode": 1,
+      "percent": 1,
+      "swallows": [
+        {
+          "class": "^Chromium$",
+          "instance": "^chromium$"
+        }
+      ],
+      "type": "con"
+    }
+  ]
+}

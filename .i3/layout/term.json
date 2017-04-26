@@ -1,0 +1,20 @@
+{
+  "floating": "auto_off",
+  "fullscreen_mode": 1,
+  "layout": "splith",
+  "nodes": [
+    {
+      "floating": "auto_off",
+      "fullscreen_mode": 1,
+      "name": "tmux",
+      "percent": 1,
+      "swallows": [
+        {
+          "class": "^URxvt$",
+          "instance": "^urxvt$"
+        }
+      ],
+      "type": "con"
+    }
+  ]
+}
