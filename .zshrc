@@ -90,6 +90,9 @@ bindkey "^[[B" history-search-forward
 # plantuml
 alias fuglify='plantuml'
 
+# go list dependencies
+# go list -f '{{.Deps}}' | tr "[" " " | tr "]" " " | xargs go list -f '{{if not .Standard}}{{.ImportPath}}{{end}}' | grep -v cleardata | grep -v golang.org
+
 # make and switch to a temp dir
 alias tmpd='cd $(mktemp -d)'
 
