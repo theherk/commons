@@ -146,13 +146,19 @@ awsp () {
 alias awsu='unset AWS_PROFILE'
 
 # venv create and activate $VENVS
-export VENVS=~/.venvs/
-venvnew () {
-    pyvenv ${VENVS}${1}
+export VENVS=~/.venvs
+venv2 () {
+    virtualenv -p /usr/bin/python2 $VENVS/${1}
     venvact ${1}
+    pip install ipython
+}
+venv3 () {
+    python3 -m venv $VENVS/${1}
+    venvact ${1}
+    pip install ipython
 }
 venvact () {
-    source ${VENVS}${1}/bin/activate
+    source ${VENVS}/${1}/bin/activate
 }
 alias lv="ls $VENVS"
 
