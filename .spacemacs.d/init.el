@@ -113,6 +113,12 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+  (setq-default dotspacemacs-configuration-layers
+    '(
+       (colors :variables
+         colors-colorize-identifiers 'all
+         colors-enable-nyan-cat-progress-bar t)
+       ))
   )
 
 (defun dotspacemacs/user-config ()
