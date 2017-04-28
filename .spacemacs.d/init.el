@@ -10,6 +10,7 @@ values."
     '(
        auto-completion
        better-defaults
+       colors
        csv
        emacs-lisp
        emoji
