@@ -153,6 +153,8 @@ layers configuration. You are free to put any user code."
   (spaceline-toggle-buffer-size-off)
   (spaceline-toggle-minor-modes-off)
   (spaceline-toggle-purpose-off)
+  (display-time-mode 1)
+  (setq display-time-24hr-format t)
 
   ;; python
   (add-hook 'python-mode-hook (lambda ()
