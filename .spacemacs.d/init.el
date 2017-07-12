@@ -10,6 +10,7 @@ values."
     '(
        auto-completion
        better-defaults
+       c-c++
        colors
        csv
        emacs-lisp
