@@ -36,6 +36,12 @@ URxvt*boldFont: xft:Ubuntu \Mono \derivative \Powerline-13:pixelsize:13:bold
 URxvt*italicFont: xft:Ubuntu \Mono \derivative \Powerline-13:pixelsize:13:italic
 URxvt*boldItalicFont: xft:Ubuntu \Mono \derivative \Powerline-13:pixelsize:13:bold:italic
 
+! BIG - xrdb .Xresources
+! URxvt*font: xft:Ubuntu \Mono \derivative \Powerline-13:size:13
+! URxvt*boldFont: xft:Ubuntu \Mono \derivative \Powerline-13:pixelsize:13:bold
+! URxvt*italicFont: xft:Ubuntu \Mono \derivative \Powerline-13:pixelsize:13:italic
+! URxvt*boldItalicFont: xft:Ubuntu \Mono \derivative \Powerline-13:pixelsize:13:bold:italic
+
 !TomorrowNightEighties
 #define t_background #2d2d2d
 #define t_current_line #393939
