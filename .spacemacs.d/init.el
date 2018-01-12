@@ -147,8 +147,9 @@ layers configuration. You are free to put any user code."
   (setq browse-url-browser-function 'browse-url-generic
     engine/browser-function 'browse-url-generic
     browse-url-generic-program "chromium")
+  (spacemacs/set-leader-keys "d" 'evil-execute-macro)
   (spacemacs/set-leader-keys "jB" 'pop-tag-mark)
-  (spacemacs/set-leader-keys "G" 'pop-tag-mark)
+  (spacemacs/set-leader-keys "G" 'helm-gtags-pop-stack)
 
   ;; modeline
   (spaceline-toggle-buffer-size-off)
