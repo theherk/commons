@@ -1,59 +1,18 @@
-.pypirc
+*~
+*\#*
+*.py[cod]
+.coverage
 .emacs.d/elpa
 .emacs.d/elpa/archives/**/*
 .emacs.d/auto-save-list
 .emacs.d/data
 .emacs.d/recentf
 .emacs.d/tramp
-.vim/nvimrc
-*~
-*\#*
-*.py[cod]
-
-# C extensions
-*.so
-
-# Packages
-*.egg
-*.egg-info
-dist
-build
-eggs
-parts
-# bin # actually want these in this repo
-var
-sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
-
-# Installer logs
-pip-log.txt
-
-# Unit test / coverage reports
-.coverage
+.pypirc
 .tox
+.vim/
+GPATH
+GRTAGS
+GTAGS
 nosetests.xml
-
-# Translations
-*.mo
-
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
-
-# sensitive files
-
-# tmp vim files
-.vim/tmp/
-
-# .vim/.netrwhist - no need to keep this
-.vim/.netrwhist
-
-# let NeoBundle handle bundles
-.vim/bundle
-
-# don't add everybody's keys
-bin/addall.sh
+pip-log.txt
