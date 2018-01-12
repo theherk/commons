@@ -1,5 +1,6 @@
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore
 [user]
 	name = Herkermer Sherwood
 	email = theherk@gmail.com
