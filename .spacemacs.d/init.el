@@ -30,6 +30,7 @@ values."
        salt
        search-engine
        shell
+       slack
        spell-checking
        syntax-checking
        terraform
