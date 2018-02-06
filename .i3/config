@@ -173,3 +173,6 @@ exec --no-startup-id pasystray
 # make qjackctl and cadence windows floating
 for_window [class="qjackctl" instance="qjackctl"] floating enable
 for_window [class="Cadence.py" instance="cadence.py"] floating enable
+
+# no title bars
+for_window [class="^.*"] border pixel 0
