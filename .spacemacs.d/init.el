@@ -67,12 +67,12 @@ values."
     dotspacemacs-startup-lists nil
     dotspacemacs-startup-recent-list-size 5
     dotspacemacs-scratch-mode 'markdown-mode
-    dotspacemacs-themes '(sanityinc-tomorrow-eighties
+    dotspacemacs-themes '(sanityinc-tomorrow-blue
                            spacemacs-dark
                            spacemacs-light)
     dotspacemacs-colorize-cursor-according-to-state t
     dotspacemacs-default-font '("Ubuntu Mono"
-                                 :size 20
+                                 :size 18
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.1)
@@ -102,6 +102,7 @@ values."
     dotspacemacs-active-transparency 90
     dotspacemacs-inactive-transparency 90
     dotspacemacs-mode-line-unicode-symbols t
+    dotspacemacs-mode-line-theme 'spacemacs
     dotspacemacs-smooth-scrolling nil
     dotspacemacs-line-numbers 'relative
     dotspacemacs-smartparens-strict-mode t
@@ -148,11 +149,12 @@ layers configuration. You are free to put any user code."
   ;; misc
   (setq browse-url-browser-function 'browse-url-generic
     engine/browser-function 'browse-url-generic
-    browse-url-generic-program "chromium")
+    browse-url-generic-program "open")
   (setq-default evil-escape-key-sequence ";n")
   (spacemacs/set-leader-keys "d" 'evil-execute-macro)
   (spacemacs/set-leader-keys "jB" 'pop-tag-mark)
   (spacemacs/set-leader-keys "G" 'helm-gtags-pop-stack)
+  (setq term-scroll-show-maximum-output t)
 
   ;; modeline
   (spaceline-toggle-buffer-size-off)
