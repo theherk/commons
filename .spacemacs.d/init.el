@@ -23,9 +23,11 @@ values."
        javascript
        markdown
        nginx
+       node
        org
        plantuml
        python
+       react
        rust
        salt
        search-engine
