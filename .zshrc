@@ -48,6 +48,8 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias awsu='unset AWS_PROFILE'
+alias cfmt='cargo +nightly fmt'
+alias cclip='cargo +nightly clippy'
 alias cm='sudo loadkeys colemak'
 alias conv='convert_to_crf20.sh'
 alias ed='emacs --daemon'
@@ -61,15 +63,16 @@ alias gt='gogtags -v'
 alias gtree="git log --pretty=oneline --decorate --graph"
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias jackmod='sudo pactl load-module module-jack-sink'
-alias l='ls -l --color=auto'
-alias ll='ls -AlF --color=auto'
-alias llt='ls -AlFtr --color=auto'
-alias ls='ls --color=auto'
+alias l='ls -l'
+alias ll='ls -AlF'
+alias llt='ls -AlFtr'
+# alias ls='ls --color=auto'
 alias lv="ls $VENVS"
 alias mvni='mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true'
 alias mvnp='mvn clean package -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true'
 alias packern='packer --noedit --noconfirm'
 alias pacls='sudo pacman -Qqen'
+alias puml='java -jar $HOME/bin/plantuml.jar'
 alias py='python'
 alias r="rsync -rltvz -e ssh --progress"
 alias restart="sudo shutdown -r now"
@@ -77,10 +80,13 @@ alias rm="rm -iv"
 alias sc='screencap.sh'
 alias shutdown="sudo shutdown -h now"
 alias startx='ssh-agent startx'
+alias t='tree'
 alias t1='tree -L 1'
 alias t2='tree -L 2'
 alias t3='tree -L 3'
 alias t4='tree -L 4'
+alias t5='tree -L 5'
+alias tree='tree -C'
 alias tmpd='cd $(mktemp -d)'
 alias tms="\
     tmux new-session -s 'Main' -n 'Main' -d; \
@@ -91,6 +97,7 @@ alias tms="\
 alias trash="rm -rf ~/.local/share/Trash/"
 alias up="underscore pretty"
 alias vs="vim --servername MainVim"
+alias wow="git status"
 alias xc='xclip -sel clip'
 alias xp='echo "xkcdpass --count=5 --acrostic='\''flow'\'' --min=4 --max=6 --valid_chars='\''[a-z]'\''"'
 
@@ -123,6 +130,9 @@ extract () {
     else
         echo "'$1' is not a valid file"
     fi
+}
+jsonesc () {
+    python -c 'import json,sys; print(json.dumps('$1'))'
 }
 prettyjson () {
     cat $1 | python -mjson.tool > $2
