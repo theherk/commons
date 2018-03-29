@@ -4,12 +4,6 @@
 #----------------------------------------------------------
 
 export ARCHFLAGS="-arch x86_64"
-export P=$HOME/projects
-export GOPATH=$P/go
-export LANG=en_US.UTF-8
-export PATH=/usr/local/bin:$HOME/bin:$GOPATH/bin/:$HOME/.cargo/bin:$HOME/.cabal/bin/:$PATH
-export VENVS=$HOME/.venvs
-export WORKON_HOME=$VENVS
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
