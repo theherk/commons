@@ -14,9 +14,9 @@ zstyle :compinstall filename '/home/h4s/.zshrc'
 autoload -Uz compinit
 compinit
 
-# ZSH=/usr/share/oh-my-zsh/
-ZSH=$HOME/.oh-my-zsh/
 plugins=(archlinux aws bower git golang npm nyan pip python sudo systemd)
+ZSH=/usr/share/oh-my-zsh/
+# ZSH=$HOME/.oh-my-zsh/
 DISABLE_AUTO_UPDATE="true"
 ZSH_THEME="spaceship"
 SPACESHIP_CHAR_SYMBOL="❯ "
