@@ -2,7 +2,7 @@
 
 # Force link setup for dotfiles
 
-ln -sf ~/herk-commons/.i3/ ~/
+ln -sf ~/herk-commons/.i3/ ~/.config/i3
 ln -sf ~/herk-commons/.config/dunst/ ~/.config/
 ln -sf ~/herk-commons/.config/i3status/ ~/.config/
 ln -sf ~/herk-commons/.spacemacs.d/ ~/
