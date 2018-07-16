@@ -19,7 +19,8 @@ ZSH=/usr/share/oh-my-zsh/
 plugins=(archlinux aws bower git golang nyan pip python sudo systemd)
 DISABLE_AUTO_UPDATE="true"
 ZSH_THEME="spaceship"
-SPACESHIP_CHAR_SYMBOL="❯ "
+SPACESHIP_CHAR_SYMBOL="➜  "
+# SPACESHIP_GIT_SYMBOL="📎"
 SPACESHIP_BATTERY_SHOW="false"
 
 if [[ $TERM == "dumb" ]]; then # in emacs
@@ -182,7 +183,6 @@ unsetopt MULTIBYTE
 
 autoload zkbd
 # don't forget to run zkbd
-# source ~/.zkbd/$TERM-:0 # may be different - check where zkbd saved the configuration:
 source ~/.zkbd/$TERM* # may be different - check where zkbd saved the configuration:
 [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
 [[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode

@@ -6,4 +6,4 @@ export SSH_AUTH_SOCK
 xrdb -merge ~/.Xresources
 
 exec i3
-
+#exec gnome-session

@@ -1,10 +1,20 @@
+Xcursor.theme: xcursor-base
+
+Xft.dpi: 210
+Xft.autohint: 0
+Xft.hitstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.hinting: 0
+Xft.antialias: 1
+Xft.rgba: rgb
+
+URxvt.cursorBlink: true
 URxvt.skipBuiltinGlyphs: true
 URxvt.loginShell: true
 URxvt*title: urxvt
 URxvt*termName: rxvt-unicode-256color
 URxvt*urgentOnBell: true
 URxvt.scrollBar: false
-
 URxvt.perl-ext: default,url-select,matcher,clipboard,font-size
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/google-chrome-stable
@@ -18,77 +28,27 @@ URxvt.iso14755_52: false
 URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
 
-Xft.antialias: true
-Xft.autohint: true
-Xft.dpi: 108
-Xft.hinting: true
-Xft.hitstyle: hintsfull
-Xft.lcdfilter: lcddefault
-Xft.rgba: rgb
+URxvt*letterSpace: 2
+URxvt*font:           xft:Ubuntu Mono:pixelsize:14,style=regular:minspace=False, xft:DejaVu Sans:pixelsize=10
+URxvt*boldFont:       xft:Ubuntu Mono:pixelsize:14:bold:minspace=False, xft:DejaVu Sans:pixelsize=10
+URxvt*italicFont:     xft:Ubuntu Mono:pixelsize:14:italic:minspace=False, xft:DejaVu Sans:pixelsize=10
+URxvt*boldItalicFont: xft:Ubuntu Mono:pixelsize:14:bold:italic:minspace=False, xft:DejaVu Sans:pixelsize=10
 
-URxvt.cursorBlink: true
-
-Xcursor.theme: xcursor-base
-Xcursor.size: 32
-
-URxvt*font: xft:Ubuntu \Mono \derivative \Powerline-13:size:13
-URxvt*boldFont: xft:Ubuntu \Mono \derivative \Powerline-13:pixelsize:13:bold
-URxvt*italicFont: xft:Ubuntu \Mono \derivative \Powerline-13:pixelsize:13:italic
-URxvt*boldItalicFont: xft:Ubuntu \Mono \derivative \Powerline-13:pixelsize:13:bold:italic
-
-! BIG - xrdb .Xresources
-! URxvt*font: xft:Ubuntu \Mono \derivative \Powerline-13:size:13
-! URxvt*boldFont: xft:Ubuntu \Mono \derivative \Powerline-13:pixelsize:13:bold
-! URxvt*italicFont: xft:Ubuntu \Mono \derivative \Powerline-13:pixelsize:13:italic
-! URxvt*boldItalicFont: xft:Ubuntu \Mono \derivative \Powerline-13:pixelsize:13:bold:italic
-
-!TomorrowNightEighties
-#define t_background #2d2d2d
-#define t_current_line #393939
-#define t_selection #515151
-#define t_foreground #cccccc
-#define t_comment	#999999
-#define t_red	#f2777a
-#define t_orange #f99157
-#define t_yellow #ffcc66
-#define t_green	#99cc99
-#define t_aqua #66cccc
-#define t_blue #6699cc
-#define t_purple #cc99cc
-
-
-*.foreground: t_foreground
-*.background: t_background
-*.cursorColor: #aeafad
-
-! Black / Grey
-*.color0: #000000
-*.color8: #666666
-
-! Red / Bright Red
-*.color1: t_red
-*.color9: #FF3334
-
-! Green + Bright Green
-*.color2: t_green
-*.color10: #9ec400
-
-! Yellow (Orange) + Bright Yellow (Yellow)
-*.color3: t_orange
-*.color11: t_yellow
-
-! Blue + Bright Blue
-*.color4: t_blue
-*.color12: t_blue
-
-! Magenta (Purple) + Bright Magenta
-*.color5: t_purple
-*.color13: #b777e0
-
-! Cyan (Aqua) + Bright Cyan
-*.color6: t_aqua
-*.color14: #54ced6
-
-! Light Grey (Selection) + White (Current Line)
-*.color7: t_selection
-*.color15: t_current_line
+*.foreground: #F8F8F2
+*.background: #282A36
+*.color0:     #000000
+*.color8:     #4D4D4D
+*.color1:     #FF5555
+*.color9:     #FF6E67
+*.color2:     #50FA7B
+*.color10:    #5AF78E
+*.color3:     #F1FA8C
+*.color11:    #F4F99D
+*.color4:     #BD93F9
+*.color12:    #CAA9FA
+*.color5:     #FF79C6
+*.color13:    #FF92D0
+*.color6:     #8BE9FD
+*.color14:    #9AEDFE
+*.color7:     #BFBFBF
+*.color15:    #E6E6E6

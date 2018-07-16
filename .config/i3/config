@@ -1,84 +1,57 @@
-# mod to super
 set $mod Mod4
-
-# font
-font pango:Ubuntu Mono 14
-
-# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec urxvt
+font pango:Ubuntu 16
 
-# kill focused window
+bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
-# change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 bindsym $mod+o focus right
-bindsym $mod+Tab focus right
 bindsym $mod+Shift+o focus left
-
-# alternatively, you can use the cursor keys:
+bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
 
-# move focused window
 bindsym $mod+Shift+H move left
 bindsym $mod+Shift+J move down
 bindsym $mod+Shift+K move up
 bindsym $mod+Shift+L move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+s split v
-
-# split in vertical orientation
-bindsym $mod+v split h
-
-# enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
 bindsym $mod+q layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+s split v
+bindsym $mod+v split h
 
-# focus the child container
-bindsym $mod+d focus child
-
-# set workspaces
-set $wsp1 1: browse
-set $wsp2 2: emacs
-set $wsp3 3: term
+set $wsp1 1
+set $wsp2 2
+set $wsp3 3
 set $wsp4 4
 set $wsp5 5
 set $wsp6 6
 set $wsp7 7
 set $wsp8 8
 set $wsp9 9
-set $wsp10 0: comms
+set $wsp10 0
 
-# switch to workspace
 bindsym $mod+1 workspace $wsp1
 bindsym $mod+2 workspace $wsp2
 bindsym $mod+3 workspace $wsp3
@@ -93,7 +66,6 @@ bindsym $mod+0 workspace $wsp10
 bindsym $mod+n workspace next
 bindsym $mod+p workspace prev
 
-# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $wsp1
 bindsym $mod+Shift+2 move container to workspace $wsp2
 bindsym $mod+Shift+3 move container to workspace $wsp3
@@ -105,74 +77,60 @@ bindsym $mod+Shift+8 move container to workspace $wsp8
 bindsym $mod+Shift+9 move container to workspace $wsp9
 bindsym $mod+Shift+0 move container to workspace $wsp10
 
-# reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart
-# exit i3 (logs you out of your X session)
 bindsym $mod+Shift+E exec "i3-nagbar -t warning -m 'exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+set $bgb #282a36
+set $bg #282a36AA
+set $fg #f8f8f2
+set $tf #f8f8f2AA
+set $hi #f1fa7c
+set $tx #040404
+set $pk #ff79c6
+set $yw #f1fa7c
+set $gn #50fa7b
+set $rd #ff5555
+set $id #ff79c6
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-  status_command i3status
-  colors {
-    separator #515151
-    background #2d2d2d
-    statusline #cccccc
-    focused_workspace #99cc99 #99cc99 #000000
-    active_workspace #333333 #333333 #ffffff
-    inactive_workspace #2d2d2d #2d2d2d #999999
-    urgent_workspace #f2777a #f2777a #ffffff
-  }
-}
+#                        border  background  text  indicator
+client.focused           $id     $pk         $tx     $id
+client.unfocused         $bg     $bg         $tf     $id
+client.focused_inactive  $bg     $bg         $pk     $id
+client.urgent            $yw     $yw         $tx     $id
+client.placeholder       $bg     $bg         $bg     $bg
+client.background $bgb
 
-client.focused #99cc99 #99cc99 #000000 #2d2d2d
-client.focused_inactive #393939 #393939 #888888 #292d2e
-client.unfocused #2d2d2d #2d2d2d #999999 #292d2e
-client.urgent #2f343a #f2777a #ffffff #f2777a
+# rofi
+bindsym Mod1+space exec "rofi --combi-modi window#drun -font 'Ubuntu 24' -lines 10 -width 50 -padding 20 -show run"
 
-# dmenu (a program launcher)
-bindsym Mod1+space exec dmenu_run -i -b -fn 'Ubuntu Mono:normal:pixelsize=20' -nb '#2d2d2d' -nf '#cccccc' -sf '#333333' -sb '#99cc99' -l 10
+# assign [class="^Firefox$"] $wsp1
+# assign [class="^Emacs$"] $wsp2
+# assign [class="^Termite$"] $wsp3
 
 # Startup
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id dunst &
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
-# exec --no-startup-id "i3-msg 'workspace $wsp1; append_layout ~/.i3/layout/browse.json'"
-# exec --no-startup-id "i3-msg 'workspace $wsp2; append_layout ~/.i3/layout/emacs.json'"
-# exec --no-startup-id "i3-msg 'workspace $wsp3; append_layout ~/.i3/layout/term.json'"
-# exec --no-startup-id "i3-msg 'workspace $wsp10; append_layout ~/.i3/layout/comms.json'"
 
-# make qjackctl and cadence windows floating
-for_window [class="qjackctl" instance="qjackctl"] floating enable
-for_window [class="Cadence.py" instance="cadence.py"] floating enable
-
-# no title bars
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
+gaps inner 2
+gaps outer 2
+smart_borders on
+# for_window [class="qjackctl" instance="qjackctl"] floating enable
+# for_window [class="Cadence.py" instance="cadence.py"] floating enable

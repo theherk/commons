@@ -23,7 +23,6 @@ values."
        javascript
        markdown
        nginx
-       node
        org
        plantuml
        python
@@ -36,7 +35,6 @@ values."
        spell-checking
        syntax-checking
        terraform
-       themes-megapack
        typescript
        version-control
        windows-scripts
@@ -45,6 +43,7 @@ values."
        )
     dotspacemacs-additional-packages
     '(
+       dracula-theme
        editorconfig
        tramp-term
        )
@@ -67,15 +66,14 @@ values."
     dotspacemacs-startup-lists nil
     dotspacemacs-startup-recent-list-size 5
     dotspacemacs-scratch-mode 'markdown-mode
-    dotspacemacs-themes '(sanityinc-tomorrow-blue
+    dotspacemacs-themes '(dracula
                            spacemacs-dark
                            spacemacs-light)
     dotspacemacs-colorize-cursor-according-to-state t
     dotspacemacs-default-font '("Ubuntu Mono"
-                                 :size 18
+                                 :size 28
                                  :weight normal
-                                 :width normal
-                                 :powerline-scale 1.1)
+                                 :width normal)
     dotspacemacs-leader-key "SPC"
     dotspacemacs-emacs-leader-key "M-m"
     dotspacemacs-major-mode-leader-key ","

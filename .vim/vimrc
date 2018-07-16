@@ -27,7 +27,7 @@ NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'stephpy/vim-yaml'
-NeoBundle 'theherk/vim-colorschemes'
+NeoBundle 'dracula/vim'
 NeoBundle 'xolox/vim-misc' " required for other xolox plugins
 NeoBundle 'xolox/vim-colorscheme-switcher'
 NeoBundle 'edkolev/tmuxline.vim'
@@ -111,7 +111,7 @@ set showbreak=~
 
 " Lightline configuration
 let g:lightline = {
-    \ 'colorscheme': 'Tomorrow_Night_Eighties',
+    \ 'colorscheme': 'dracula',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
@@ -178,7 +178,7 @@ endif
 
 "set background=light
 set background=dark
-colorscheme Tomorrow-Night-Eighties
+colorscheme dracula
 
 " Neosnippet configuration
 " ------------------------
@@ -439,4 +439,3 @@ let g:NERDTreeMapOpenInTabSilent='\T'
 " Note that this will overwrite the contents of the z mark.  I never use it, but
 " if you do you'll probably want to use another mark.
 inoremap <C-u> <esc>mzgUiw`za
-
