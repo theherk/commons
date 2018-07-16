@@ -1,24 +1,24 @@
 #!/bin/sh
 
-# Force link setup for dotfiles
-
-ln -sf ~/herk-commons/.i3/ ~/.config/i3
-ln -sf ~/herk-commons/.config/dunst/ ~/.config/
-ln -sf ~/herk-commons/.config/i3status/ ~/.config/
-ln -sf ~/herk-commons/.spacemacs.d/ ~/
-ln -sf ~/herk-commons/.vim/ ~/
-ln -sf ~/herk-commons/bin/ ~/
-ln -sf ~/herk-commons/.bashrc ~/
-ln -sf ~/herk-commons/.editorconfig ~/
-ln -sf ~/herk-commons/.eslintrc ~/
-ln -sf ~/herk-commons/.git-completion.bash ~/
-ln -sf ~/herk-commons/.git-completion.zsh ~/
-ln -sf ~/herk-commons/.gitconfig ~/
-ln -sf ~/herk-commons/.gitignore ~/
-ln -sf ~/herk-commons/.pypirc ~/
-ln -sf ~/herk-commons/.tmux.conf ~/
-ln -sf ~/herk-commons/.tmuxline ~/
-ln -sf ~/herk-commons/.xinitrc ~/
-ln -sf ~/herk-commons/.Xresources ~/
-ln -sf ~/herk-commons/.zprofile ~/
-ln -sf ~/herk-commons/.zshrc ~/
+ln -sf ~/commons/.bashrc ~/
+ln -sf ~/commons/bin/ ~/
+ln -sf ~/commons/.config/dunst/ ~/.config/
+ln -sf ~/commons/.config/i3/ ~/.config/
+ln -sf ~/commons/.config/polybar/ ~/.config/
+ln -sf ~/commons/.config/rofi/ ~/.config/
+ln -sf ~/commons/.config/termite/ ~/.config/
+ln -sf ~/commons/.editorconfig ~/
+ln -sf ~/commons/.emacs.d/snippets/ ~/emacs.d/
+ln -sf ~/commons/.eslintrc ~/
+ln -sf ~/commons/.git-completion.bash ~/
+ln -sf ~/commons/.git-completion.zsh ~/
+ln -sf ~/commons/.gitconfig ~/
+ln -sf ~/commons/.gitignore ~/
+ln -sf ~/commons/.pypirc ~/
+ln -sf ~/commons/.spacemacs.d/ ~/
+ln -sf ~/commons/.tmux.conf ~/
+ln -sf ~/commons/.vim/ ~/
+ln -sf ~/commons/.xinitrc ~/
+ln -sf ~/commons/.Xresources ~/
+ln -sf ~/commons/.zprofile ~/
+ln -sf ~/commons/.zshrc ~/
