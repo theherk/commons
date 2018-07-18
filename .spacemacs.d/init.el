@@ -9,11 +9,10 @@ values."
     dotspacemacs-configuration-layers
     '(
        auto-completion
-       better-defaults
-       c-c++
+       ;; c-c++
        colors
-       csv
-       emacs-lisp
+       ;; csv
+       ;; emacs-lisp
        emoji
        docker
        git
@@ -22,11 +21,11 @@ values."
        html
        javascript
        markdown
-       nginx
+       ;; nginx
        org
        plantuml
        python
-       react
+       ;; react
        rust
        salt
        search-engine
@@ -37,7 +36,7 @@ values."
        terraform
        typescript
        version-control
-       windows-scripts
+       ;; windows-scripts
        xkcd
        yaml
        )
