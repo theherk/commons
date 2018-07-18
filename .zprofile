@@ -18,3 +18,4 @@ export P=$HOME/projects
 export G=$GOPATH/src
 
 export BROWSER=/usr/bin/firefox
+export LESS="-F -X $LESS" # only paginate if more than one page
