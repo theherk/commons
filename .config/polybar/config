@@ -135,7 +135,7 @@ date =  %Y-%m-%d %%{F#bd93f9}%H:%M%%{F-}
 [module/memory]
 type = internal/memory
 format = <label> <bar-used>
-label = %{A:termite -e htop &:}%{A-}
+label = %{A:termite -e htop &:}%{F#bd93f9}%{F-}%{A-}
 bar-used-width = 8
 bar-used-foreground-0 = ${bar/main.green}
 bar-used-foreground-1 = ${bar/main.green}
