@@ -37,7 +37,7 @@ fi
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
 else
-    export EDITOR='gvim'
+    export EDITOR='emacsclient'
 fi
 
 bindkey '^r' history-incremental-search-backward

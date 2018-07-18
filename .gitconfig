@@ -1,5 +1,5 @@
 [core]
-	editor = vim
+	editor = emacsclient
 	excludesfile = ~/.gitignore
 [user]
 	name = Adam Sherwood
