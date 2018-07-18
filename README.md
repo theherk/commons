@@ -1,5 +1,26 @@
-TheHerk dotfiles
-================
+theherk commons
+===============
+
+These are the configuration details and files I use to configure my environment. Feel free to peruse if it suits you.
+
+I use [Antergos](https://antergos.com/); I don't want to hear it. I earned my striped on Arch. For years, I installed the arch way. It isn't hard, even when using luks and lvm, but I've been working with computers since the 80's, and frankly I like the simplicity of Antergos installation.
+
+Beyond that some key features:
+
+- [Dracula](https://draculatheme.com/) all the things
+- [Spacemacs](http://spacemacs.org/)
+- termite (no more wrestling with urxvt)
+- tmux
+- zsh
+- slack
+- firefox
+- i3 (starting to try out i3-gaps)
+- polybar
+- rofi
+- Bruce Lee
+- [screenshots below](#screenshots)
+
+I'm sure I'm missing some information, but the configuration should have everything required.
 
 Installation
 ------------
@@ -28,6 +49,25 @@ Firefox is bad about gtk dark themes causing form fields to be unreadable. Easy 
 | Purple     | #bd93f9 | 189, 147, 249 | 141                        |
 | Red        | #ff5555 | 255, 85, 85   | 203                        |
 | Yellow     | #f1fa8c | 241, 250, 140 | 228                        |
+
+Screenshots
+-----------
+
+#### rofi ####
+
+![rofi](https://s3-us-west-2.amazonaws.com/theherk-pub/commons-screenshots/rofi.png "rofi")
+
+#### emacs ####
+
+![emacs](https://s3-us-west-2.amazonaws.com/theherk-pub/commons-screenshots/emacs.png "emacs")
+
+#### tmux ####
+
+![tmux](https://s3-us-west-2.amazonaws.com/theherk-pub/commons-screenshots/tmux.png "tmux")
+
+#### browse ####
+
+![browse](https://s3-us-west-2.amazonaws.com/theherk-pub/commons-screenshots/browse.png "browse")
 
 Enjoy
 ---
