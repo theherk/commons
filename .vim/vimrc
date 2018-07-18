@@ -111,7 +111,7 @@ set showbreak=~
 
 " Lightline configuration
 let g:lightline = {
-    \ 'colorscheme': 'dracula',
+    \ 'colorscheme': 'Dracula',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
