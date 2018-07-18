@@ -4,24 +4,33 @@ width = 100%
 height = 48
 
 background = #282a36
+current = #44475a
 foreground = #f8f8f2
+comment = #6272a4
+cyan = #8be8fd
+green = #50fa7b
+orange = #ffb86c
+pink = #ff79c6
+purple = #bd93f9
+red = #ff5555
+yellow = #f1fa8c
 
 line-color = ${self.background}
 line-size = 4
 
-spacing = 2
+spacing = 1
 border-left-size = 10
 border-right-size = 10
 # border-top-size = ${self.line-size}
 # border-top-color = ${self.background}
-padding = 4
-module-margin = 4
+padding = 2
+module-margin = 2
 
-font-0 = "Ubuntu Mono:style=Regular:size=18;3"
-font-1 = "Ubuntu Mono:style=Bold:size=22;3"
-font-2 = "Material Icons:style=Regular:size=22;4"
-font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=22;4"
-font-4 = "Font Awesome 5 Brands:style=Regular:pixelsize=22;4"
+font-0 = "Ubuntu Mono:style=Bold:size=22;3"
+font-1 = "DejaVu Sans:style=Bold:pixelsize=22;2"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=22;4"
+font-3 = "Font Awesome 5 Brands:style=Regular:pixelsize=22;4"
+font-4 = "Material Icons:style=Regular:size=22;8"
 
 tray-position = right
 tray-maxsize = 32
@@ -32,8 +41,8 @@ modules-right = filesystem cpu memory wired-network battery0 date
 type = internal/i3
 format = <label-state> <label-mode>
 wrapping-scroll = false
-ws-icon-0 = 0;%{T5}%{T-}
-ws-icon-1 = 1;%{T5}%{T-}
+ws-icon-0 = 0;
+ws-icon-1 = 1;
 ws-icon-2 = 2;
 ws-icon-3 = 3;
 ws-icon-4 = 4;4
@@ -42,16 +51,16 @@ ws-icon-6 = 6;6
 ws-icon-7 = 7;7
 ws-icon-8 = 8;8
 ws-icon-9 = 9;9
-label-focused = %{T4}%icon%%{T-}
+label-focused = %icon%
 label-focused-padding = 4
-label-focused-foreground = #8be9fd
-label-focused-background = #44475a
-label-focused-underline= #ff79c6
+label-focused-foreground = ${bar/main.cyan}
+label-focused-background = ${bar/main.current}
+label-focused-underline= ${bar/main.pink}
 label-unfocused = ${self.label-focused}
 label-unfocused-padding = ${self.label-focused-padding}
-label-unfocused-foreground = #f8f8f2
+label-unfocused-foreground = ${bar/main.foreground}
 label-unfocused-background = ${bar/main.background}
-label-unfocused-underline= #282a36
+label-unfocused-underline= ${bar/main.background}
 label-visible = ${self.label-focused}
 label-visible-padding = ${self.label-unfocused-padding}
 label-visible-foreground = ${self.label-focused-foreground}
@@ -61,7 +70,7 @@ label-urgent = ${self.label-focused}
 label-urgent-padding = ${self.label-focused-padding}
 label-urgent-foreground = ${self.label-unfocused-foreground}
 label-urgent-background = ${self.label-focused-background}
-label-urgent-underline= #ff5555
+label-urgent-underline= ${bar/main.red}
 
 [module/battery0]
 type = internal/battery
@@ -74,50 +83,50 @@ format-full = <ramp-capacity><label-full>
 time-format = %H:%M
 label-charging = %percentage%%
 label-discharging = %percentage%%
-label-full = %{F#50fa7b}Full%{F-}
+label-full = Full
+label-full-foreground = ${bar/main.green}
 ramp-capacity-0 = 
-ramp-capacity-0-foreground = #f53c3c
+ramp-capacity-0-foreground = ${bar/main.red}
 ramp-capacity-1 = 
-ramp-capacity-1-foreground = #ffa900
+ramp-capacity-1-foreground = ${bar/main.red}
 ramp-capacity-2 = 
+ramp-capacity-2-foreground = ${bar/main.orange}
 ramp-capacity-3 = 
+ramp-capacity-3-foreground = ${bar/main.green}
 ramp-capacity-4 = 
+ramp-capacity-4-foreground = ${bar/main.green}
 bar-capacity-width = 10
 bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
-bar-capacity-fill = █
-bar-capacity-fill-foreground = #ddffffff
-bar-capacity-fill-font = 3
-bar-capacity-empty = █
-bar-capacity-empty-font = 3
-bar-capacity-empty-foreground = #44ffffff
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-framerate = 750
+animation-charging-foreground = ${bar/main.cyan}
+animation-charging-framerate = 1000
 
 [module/cpu]
 type = internal/cpu
 interval = 0.5
-format = <label> <ramp-coreload>
-label = 
-ramp-coreload-0 = ▁
-ramp-coreload-0-foreground = #50fa7b
-ramp-coreload-1 = ▂
-ramp-coreload-1-foreground = #50fa7b
-ramp-coreload-2 = ▃
-ramp-coreload-2-foreground = #50fa7b
-ramp-coreload-3 = ▄
-ramp-coreload-3-foreground = #50fa7b
-ramp-coreload-4 = ▅
-ramp-coreload-4-foreground = #fba922
-ramp-coreload-5 = ▆
-ramp-coreload-5-foreground = #fba922
-ramp-coreload-6 = ▇
-ramp-coreload-6-foreground = #fba922
-ramp-coreload-7 = ▇
-ramp-coreload-7-foreground = #ff5555
+format = <label> <ramp-load>
+label = %{A:termite -e htop &:}%{A-}
+label-foreground = ${bar/main.purple}
+ramp-load-0 = ▁
+ramp-load-0-foreground = ${bar/main.green}
+ramp-load-1 = ▂
+ramp-load-1-foreground = ${bar/main.green}
+ramp-load-2 = ▃
+ramp-load-2-foreground = ${bar/main.green}
+ramp-load-3 = ▄
+ramp-load-3-foreground = ${bar/main.green}
+ramp-load-4 = ▅
+ramp-load-4-foreground = ${bar/main.green}
+ramp-load-5 = ▆
+ramp-load-5-foreground = ${bar/main.orange}
+ramp-load-6 = ▇
+ramp-load-6-foreground = ${bar/main.orange}
+ramp-load-7 = ▇
+ramp-load-7-foreground = ${bar/main.red}
 
 [module/date]
 type = internal/date
@@ -126,20 +135,17 @@ date =  %Y-%m-%d %%{F#bd93f9}%H:%M%%{F-}
 [module/memory]
 type = internal/memory
 format = <label> <bar-used>
-label = 
+label = %{A:termite -e htop &:}%{A-}
 bar-used-width = 8
-bar-used-foreground-0 = #aaff77
-bar-used-foreground-1 = #aaff77
-bar-used-foreground-2 = #fba922
-bar-used-foreground-3 = #ff5555
+bar-used-foreground-0 = ${bar/main.green}
+bar-used-foreground-1 = ${bar/main.green}
+bar-used-foreground-2 = ${bar/main.orange}
+bar-used-foreground-3 = ${bar/main.red}
 bar-used-indicator = |
-bar-used-indicator-font = 6
-bar-used-indicator-foreground = #ff
+bar-used-indicator-foreground = ${bar/main.cyan}
 bar-used-fill = ─
-bar-used-fill-font = 6
 bar-used-empty = ─
-bar-used-empty-font = 6
-bar-used-empty-foreground = #444444
+bar-used-empty-foreground = ${bar/main.current}
 
 [module/wireless-network]
 type = internal/network
@@ -148,27 +154,30 @@ interval = 3.0
 ping-interval = 10
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
-label-disconnected =    not connected
-label-disconnected-foreground = #66
+label-disconnected = 
+label-disconnected-foreground = ${bar/main.pink}
 ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
+ramp-signal-3-foreground = ${bar/main.green}
 ramp-signal-4 = 
+ramp-signal-4-foreground = ${bar/main.green}
 animation-packetloss-0 = 
-animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-0-foreground = ${bar/main.red}
 animation-packetloss-1 = 
-animation-packetloss-1-foreground = ${bar/top.foreground}
+animation-packetloss-1-foreground = ${bar/main.foreground}
 animation-packetloss-framerate = 500
 
 [module/wired-network]
 type = internal/network
 interface = enp0s3
 interval = 3.0
-label-connected = %{F#50fa7b}%{F-} %local_ip%
-label-disconnected-foreground = #ff5555
+label-connected =  %{F#f8f8f2}%local_ip%%{F-}
+label-connected-foreground = ${bar/main.green}
+label-disconnected-foreground = ${bar/main.pink}
 
 [module/filesystem]
 type = internal/fs
 mount-0 = /
-label-mounted =  %percentage_used%% / %total%
+label-mounted = %{F#bd93f9}%{F-} %percentage_used%% %{F#8be8fd}/%{F-} %total%
