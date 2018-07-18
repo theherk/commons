@@ -148,7 +148,7 @@ layers configuration. You are free to put any user code."
   ;; misc
   (setq browse-url-browser-function 'browse-url-generic
     engine/browser-function 'browse-url-generic
-    browse-url-generic-program "open")
+    browse-url-generic-program "xdg-open")
   (setq-default evil-escape-key-sequence ";n")
   (spacemacs/set-leader-keys "d" 'evil-execute-macro)
   (spacemacs/set-leader-keys "jB" 'pop-tag-mark)
