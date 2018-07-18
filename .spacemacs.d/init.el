@@ -61,7 +61,9 @@ values."
     dotspacemacs-check-for-update t
     dotspacemacs-editing-style 'vim
     dotspacemacs-verbose-loading nil
-    dotspacemacs-startup-banner 'random
+    ;; Artwork by matlocktheartist
+    ;; https://www.deviantart.com/matlocktheartist/art/Bruce-Lee-Puzzled-322967405
+    dotspacemacs-startup-banner (substitute-in-file-name "${HOME}/commons/img/bruce-matlocktheartist_400w.png")
     dotspacemacs-startup-lists nil
     dotspacemacs-startup-recent-list-size 5
     dotspacemacs-scratch-mode 'markdown-mode
