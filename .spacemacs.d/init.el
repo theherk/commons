@@ -153,6 +153,7 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys "d" 'evil-execute-macro)
   (spacemacs/set-leader-keys "jB" 'pop-tag-mark)
   (spacemacs/set-leader-keys "G" 'helm-gtags-pop-stack)
+  (spacemacs/set-leader-keys "qc" 'server-edit)
   (setq term-scroll-show-maximum-output t)
 
   ;; modeline
