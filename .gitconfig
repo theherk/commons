@@ -1,7 +1,6 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
-	pager = cat
 [user]
 	name = Adam Sherwood
 	email = theherk@gmail.com
