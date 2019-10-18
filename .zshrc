@@ -195,5 +195,3 @@ source ~/.zkbd/$TERM* # may be different - check where zkbd saved the configurat
 [[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
-
-source /usr/bin/virtualenvwrapper.sh
