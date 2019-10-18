@@ -1,0 +1,2 @@
+#!/bin/sh
+feh  --bg-scale '/home/h4s/Pictures/bruce.png' 
