@@ -57,6 +57,8 @@ alias ed='emacs --daemon'
 alias ec='emacsclient'
 alias ecf='emacsclient -c&'
 alias ect='emacsclient -t'
+alias fr='find . -iname "*.rar"'
+alias fz='find . -iname "*.7z"'
 alias gls="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
 alias grep='grep --color'
 alias gsuperpush="git push --force --tags origin 'refs/heads/*'"
@@ -118,14 +120,14 @@ extract () {
             *.tar.bz2)   tar xjf $1 ;;
             *.tar.gz)    tar xzf $1 ;;
             *.bz2)       bunzip2 $1 ;;
-            *.rar)       rar x $1 ;;
+            *.rar)       unrar e $1 ;;
             *.gz)        gunzip $1 ;;
             *.tar)       tar xf $1 ;;
             *.tbz2)      tar xjf $1 ;;
             *.tgz)       tar xzf $1 ;;
             *.zip)       unzip $1 ;;
             *.Z)         uncompress $1 ;;
-            *.7z)        7z x $1 ;;
+            *.7z)        7z e $1 ;;
             *)           echo "'$1' cannot be extracted via extract()" ;;
         esac
     else
