@@ -102,7 +102,7 @@ alias up="underscore pretty"
 alias vs="vim --servername MainVim"
 alias wow="git status"
 alias xc='xclip -sel clip'
-alias xp='echo "xkcdpass --count=5 --acrostic='\''flow'\'' --min=4 --max=6 --valid_chars='\''[a-z]'\''"'
+alias xkcd='echo "xkcdpass --count=5 --acrostic='\''flow'\'' --min=4 --max=6 --valid_chars='\''[a-z]'\''"'
 
 awsp () {
     export AWS_PROFILE=${1}
