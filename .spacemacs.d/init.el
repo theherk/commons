@@ -137,6 +137,7 @@ layers configuration. You are free to put any user code."
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
   (setq go-use-gometalinter t)
+  (setq flycheck-gometalinter-fast t)
 
   ;; javascript
   (add-hook 'js2-mode-hook
