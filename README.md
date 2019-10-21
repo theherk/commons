@@ -3,10 +3,10 @@ theherk commons
 
 These are the configuration details and files I use to configure my environment. Feel free to peruse if it suits you.
 
-I use [Antergos](https://antergos.com/); I don't want to hear it. I earned my stripes on Arch. For years, I installed the arch way. It isn't hard, even when using `luks` and `lvm`, but I've been working with computers since the 80's, and frankly I like the simplicity of the Antergos installation.
+Features
+--------
 
-Beyond that, some key features:
-
+- [Arch](https://www.archlinux.org/)
 - [Dracula](https://draculatheme.com/) all the things
 - [Spacemacs](http://spacemacs.org/)
 - termite (no more wrestling with urxvt)
