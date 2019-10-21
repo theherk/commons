@@ -66,9 +66,9 @@ alias gt='gogtags -v'
 alias gtree="git log --pretty=oneline --decorate --graph"
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias jackmod='sudo pactl load-module module-jack-sink'
-alias l='ls -l'
-alias ll='ls -AlF'
-alias llt='ls -AlFtr'
+alias l='ls -lh'
+alias ll='ls -AlFh'
+alias llt='ls -AlFtrh'
 # alias ls='ls --color=auto'
 alias lv="ls $VENVS"
 alias mvni='mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true'
