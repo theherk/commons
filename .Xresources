@@ -1,4 +1,5 @@
 Xcursor.theme: xcursor-base
+Xcursor.size: 32
 
 Xft.dpi: 210
 Xft.autohint: 0
