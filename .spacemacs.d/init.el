@@ -156,6 +156,7 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys "G" 'helm-gtags-pop-stack)
   (spacemacs/set-leader-keys "qc" 'server-edit)
   (setq term-scroll-show-maximum-output t)
+  (setq markdown-command "blackfriday-tool")
 
   ;; modeline
   (spaceline-toggle-buffer-size-off)
