@@ -1,7 +1,7 @@
 set $mod Mod4
 floating_modifier $mod
 
-font pango:Ubuntu 16
+font pango:Ubuntu 14
 
 bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
