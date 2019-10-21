@@ -75,7 +75,8 @@ alias mvni='mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon
 alias mvnp='mvn clean package -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true'
 alias packern='packer --noedit --noconfirm'
 alias pacls='sudo pacman -Qqen'
-alias puml='java -jar $HOME/bin/plantuml.jar'
+# alias puml='java -jar $HOME/bin/plantuml.jar'
+alias puml='plantuml'
 alias py='python'
 alias r="rsync -rltvz -e ssh --progress"
 alias restart="sudo shutdown -r now"
