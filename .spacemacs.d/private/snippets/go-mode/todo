@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: go todo
+# key: t
+# contributor: Adam Sherwood <theherk@gmail.com>
+# --
+// TODO: $0
