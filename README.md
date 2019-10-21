@@ -25,11 +25,26 @@ I'm sure I'm missing some information, but the configuration should have everyth
 Installation
 ------------
 
+#### Get this repository. ####
+
     git clone git@gitlab.com:theherk/commons.git ~
-    < ~/commons/pkgs xargs -I{} -d'\n' sudo pacman -S {}
-    < ~/commons/pkgs-aur xargs -I{} -d'\n' yaourt pacman -S {}
+
+#### Install packages, yay (AUR helper), and AUR packages. ####
+
+    sudo pacman -S - < ~/commons/pkgs
+    cd $(mktemp -d)
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    yay -S - < ~/commons/pkgs-aur
+
+#### Install spacemacs and neobundle. ####
+
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
     curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh # yeah... don't be dumb
+
+#### Link everything where to needs to be. ####
+
     ~/commons/links.sh
 
 Firefox is bad about gtk dark themes causing form fields to be unreadable. Easy fix found [here](https://bugzilla.mozilla.org/show_bug.cgi?id=1283086#c23); add key `widget.content.gtk-theme-override`, and set the string to `Adwaita:light`.
