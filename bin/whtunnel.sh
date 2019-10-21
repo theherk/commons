@@ -8,5 +8,4 @@ autossh -vv -- $SSH_OPTIONS -o 'ControlPath none' -R 39111:localhost:39122 h4s@2
 
 # connect from home using: ssh localhost -p 39111 with proper identity
 # ensure sshd running on both ends
-# tunnel web traffic with: sshuttle -r h4s@localhost:39111 0.0.0.0/
-0
+# tunnel web traffic with: sshuttle -r h4s@localhost:39111 0.0.0.0/0
