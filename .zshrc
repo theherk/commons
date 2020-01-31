@@ -48,6 +48,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias archey="archey-go --no-uptime --no-up-since --no-de --no-gtk3-theme --no-gtk3-icon-theme --no-gtk3-font --no-gtk3-cursor-theme --no-swap"
 alias awsu='unset AWS_PROFILE'
 alias cfmt='cargo +nightly fmt'
 alias cclip='cargo +nightly clippy'
