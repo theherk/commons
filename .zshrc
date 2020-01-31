@@ -199,3 +199,11 @@ source ~/.zkbd/$TERM* # may be different - check where zkbd saved the configurat
 [[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
+
+
+
+alias xp='cat p|xc'
+alias r='unrar e'
+alias z='7z e'
+alias fz='find . -iname "*.7z"'
+alias fr='find . -iname "*.rar"'
