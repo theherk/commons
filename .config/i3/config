@@ -129,8 +129,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 
 for_window [class="^.*"] border pixel 2
-gaps inner 2
-gaps outer 2
-smart_borders on
+# gaps inner 4
+# gaps bottom 0
+# smart_borders on
 # for_window [class="qjackctl" instance="qjackctl"] floating enable
 # for_window [class="Cadence.py" instance="cadence.py"] floating enable

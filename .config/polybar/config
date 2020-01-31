@@ -19,10 +19,7 @@ line-color = ${self.background}
 line-size = 4
 
 spacing = 1
-border-left-size = 10
-border-right-size = 10
-# border-top-size = ${self.line-size}
-# border-top-color = ${self.background}
+border-top-size = 1
 padding = 2
 module-margin = 2
 
@@ -52,7 +49,7 @@ ws-icon-7 = 7;7
 ws-icon-8 = 8;8
 ws-icon-9 = 9;9
 label-focused = %icon%
-label-focused-padding = 4
+label-focused-padding = 3
 label-focused-foreground = ${bar/main.cyan}
 label-focused-background = ${bar/main.current}
 label-focused-underline= ${bar/main.pink}

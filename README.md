@@ -14,7 +14,7 @@ Features
 - zsh
 - slack
 - firefox
-- i3 (starting to try out i3-gaps)
+- i3
 - polybar
 - rofi
 - Bruce Lee
