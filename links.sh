@@ -1,5 +1,6 @@
 #!/bin/sh
 
+ln -sf ~/commons/.bash_profile ~/
 ln -sf ~/commons/.bashrc ~/
 ln -sf ~/commons/.config/dunst/ ~/.config/
 ln -sf ~/commons/.config/i3/ ~/.config/
