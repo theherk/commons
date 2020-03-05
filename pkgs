@@ -1,11 +1,11 @@
 adobe-source-han-sans-otc-fonts
 adobe-source-han-serif-otc-fonts
+base-devel
 dunst
 emacs
 firefox
-chromium
-gvim
 i3-wm
+kubectl
 lxappearance
 rofi
 termite
@@ -15,3 +15,5 @@ ttf-baekmuk
 ttf-dejavu
 ttf-font-awesome
 ttf-freefont
+ttf-ubuntu-font-family
+zsh
