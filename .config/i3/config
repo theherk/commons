@@ -132,5 +132,15 @@ for_window [class="^.*"] border pixel 2
 # gaps inner 4
 # gaps bottom 0
 # smart_borders on
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [window_role="menu"] floating enable
+for_window [window_role="GtkFileChooserDialog"] resize set 1200 800
+floating_minimum_size 75 x 50
+floating_maximum_size 1024 x 768
+# Enter name of file to save
 # for_window [class="qjackctl" instance="qjackctl"] floating enable
 # for_window [class="Cadence.py" instance="cadence.py"] floating enable
