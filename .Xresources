@@ -9,32 +9,6 @@ Xft.hinting: 0
 Xft.antialias: 1
 Xft.rgba: rgb
 
-URxvt.cursorBlink: true
-URxvt.skipBuiltinGlyphs: true
-URxvt.loginShell: true
-URxvt*title: urxvt
-URxvt*termName: rxvt-unicode-256color
-URxvt*urgentOnBell: true
-URxvt.scrollBar: false
-URxvt.perl-ext: default,url-select,matcher,clipboard,font-size
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/google-chrome-stable
-URxvt.url-select.underline: true
-URxvt.keysym.C-Up: perl:font-size:increase
-URxvt.keysym.C-Down: perl:font-size:decrease
-URxvt.keysym.C-S-Up: perl:font-size:incglobal
-URxvt.keysym.C-S-Down: perl:font-size:decglobal
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
-
-URxvt*letterSpace: 2
-URxvt*font:           xft:Ubuntu Mono:pixelsize:14,style=regular:minspace=False, xft:DejaVu Sans:pixelsize=10
-URxvt*boldFont:       xft:Ubuntu Mono:pixelsize:14:bold:minspace=False, xft:DejaVu Sans:pixelsize=10
-URxvt*italicFont:     xft:Ubuntu Mono:pixelsize:14:italic:minspace=False, xft:DejaVu Sans:pixelsize=10
-URxvt*boldItalicFont: xft:Ubuntu Mono:pixelsize:14:bold:italic:minspace=False, xft:DejaVu Sans:pixelsize=10
-
 *.foreground: #F8F8F2
 *.background: #282A36
 *.color0:     #000000
