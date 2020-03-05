@@ -9,7 +9,7 @@ Features
 - [Arch](https://www.archlinux.org/); or [Manjaro](https://manjaro.org/)
 - [Dracula](https://draculatheme.com/) all the things
 - [Spacemacs](http://spacemacs.org/)
-- termite (no more wrestling with urxvt)
+- termite
 - tmux
 - zsh
 - slack
