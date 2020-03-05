@@ -18,4 +18,3 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/bin:$PATH
-export PATH=$PATH:/Applications/Firefox.app/Contents/MacOS
