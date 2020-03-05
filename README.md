@@ -28,6 +28,8 @@ Installation
 #### Get this repository. ####
 
     git clone git@gitlab.com:theherk/commons.git ~
+    # or ...
+    git clone https://gitlab.com/theherk/commons.git ~
 
 #### Install packages, yay (AUR helper), and AUR packages. ####
 
