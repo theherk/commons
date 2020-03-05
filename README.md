@@ -33,12 +33,12 @@ Installation
 
 #### Install packages, yay (AUR helper), and AUR packages. ####
 
-    sudo pacman -S - < ~/commons/pkgs
+    sudo pacman -S --noconfirm - < ~/commons/pkgs
     cd $(mktemp -d)
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si
-    yay -S - < ~/commons/pkgs-aur
+    yay -S --noconfirm - < ~/commons/pkgs-aur
 
 #### Install spacemacs and neobundle. ####
 
