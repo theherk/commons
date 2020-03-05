@@ -6,10 +6,6 @@
 	email = theherk@gmail.com
 [color]
 	ui = true
-[diff]
-	tool = vimdiff
-[merge]
-	tool = vimdiff
 [alias]
 	subup=submodule update --init
 [url "git@github.com:commure/"]
