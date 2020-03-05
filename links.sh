@@ -1,7 +1,6 @@
 #!/bin/sh
 
 ln -sf ~/commons/.bashrc ~/
-ln -sf ~/commons/bin/ ~/
 ln -sf ~/commons/.config/dunst/ ~/.config/
 ln -sf ~/commons/.config/i3/ ~/.config/
 ln -sf ~/commons/.config/polybar/ ~/.config/
@@ -22,3 +21,4 @@ ln -sf ~/commons/.xinitrc ~/
 ln -sf ~/commons/.Xresources ~/
 ln -sf ~/commons/.zprofile ~/
 ln -sf ~/commons/.zshrc ~/
+ln -sf ~/commons/bin/ ~/
