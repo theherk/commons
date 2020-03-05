@@ -42,7 +42,7 @@ Installation
 
 #### Install spacemacs and neobundle. ####
 
-    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    rm -rf ~/.emacs.d && git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 #### Link everything where to needs to be. ####
 
