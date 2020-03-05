@@ -8,7 +8,5 @@
 	ui = true
 [alias]
 	subup=submodule update --init
-[url "git@github.com:commure/"]
-	insteadOf = https://github.com/commure/
 [color "diff"]
 	whitespace = red reverse
