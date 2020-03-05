@@ -1,9 +1,3 @@
-#----------------------------------------------------------
-# .bashrc
-# Author: Adam Sherwood
-# Email: theherk@gmail.com
-#----------------------------------------------------------
-
 PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:$HOME/.cabal/bin:$HOME/Projects/shell/capture
 export PYTHONPATH=/usr/lib/python3.3/site-packages
 export PATH

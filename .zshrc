@@ -1,8 +1,3 @@
-#----------------------------------------------------------
-# Author: Adam Sherwood
-# Email: theherk@gmail.com
-#----------------------------------------------------------
-
 export ARCHFLAGS="-arch x86_64"
 
 HISTFILE=~/.histfile
