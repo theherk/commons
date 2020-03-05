@@ -43,7 +43,6 @@ Installation
 #### Install spacemacs and neobundle. ####
 
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-    curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh # yeah... don't be dumb
 
 #### Link everything where to needs to be. ####
 
