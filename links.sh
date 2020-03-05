@@ -17,7 +17,6 @@ ln -sf ~/commons/.gitignore ~/
 ln -sf ~/commons/.pypirc ~/
 ln -sf ~/commons/.spacemacs.d/ ~/
 ln -sf ~/commons/.tmux.conf ~/
-ln -sf ~/commons/.vim/ ~/
 ln -sf ~/commons/.xinitrc ~/
 ln -sf ~/commons/.Xresources ~/
 ln -sf ~/commons/.zprofile ~/
