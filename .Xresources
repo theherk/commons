@@ -1,7 +1,7 @@
 Xcursor.theme: xcursor-base
 Xcursor.size: 32
 
-Xft.dpi: 210
+Xft.dpi: 192
 Xft.autohint: 0
 Xft.hitstyle: hintfull
 Xft.lcdfilter: lcddefault
