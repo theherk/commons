@@ -14,6 +14,7 @@ export LESS="-F -X -R $LESS" # only paginate if more than one page
 
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
