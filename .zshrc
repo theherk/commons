@@ -1,29 +1,19 @@
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory autocd interactivecomments
+setopt appendhistory
 unsetopt beep
 zstyle :compinstall filename '/home/h4s/.zshrc'
 autoload -Uz compinit && compinit
-autoload -U promptinit; promptinit
-prompt spaceship
+# autoload -U promptinit; promptinit
+# prompt spaceship
 
-ZSH=/usr/share/oh-my-zsh/
-plugins=(archlinux aws bower git golang pip python sudo systemd)
+ZSH=$HOME/.oh-my-zsh/
 DISABLE_AUTO_UPDATE="true"
-ZSH_THEME="spaceship"
-SPACESHIP_CHAR_SYMBOL="➜  "
+ZSH_THEME="dracula"
+# ZSH_THEME="spaceship"
+# SPACESHIP_PROMPT_ORDER=(user host dir exec_time line_sep jobs exit_code char)
+# SPACESHIP_CHAR_SYMBOL="➜  "
 
-# save for later; something about tramp maybe
-# if [[ $TERM == "dumb" ]]; then # in emacs
-#     PS1='%(?..[%?])%!:%~%# '
-#     unsetopt zle
-#     unsetopt prompt_cr
-#     unsetopt prompt_subst
-#     unfunction precmd
-#     unfunction preexec
-# else
-#     source $ZSH/oh-my-zsh.sh
-# fi
 source $ZSH/oh-my-zsh.sh
 
 if [[ -n $SSH_CONNECTION ]]; then
@@ -55,6 +45,9 @@ alias ez='7z e'
 alias fr='find . -iname "*.rar"'
 alias fz='find . -iname "*.7z"'
 alias gls="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
+alias gproxy='ssh -f -nNT gitproxy'
+alias gproxy-off='ssh -O exit gitproxy'
+alias gproxy-status='ssh -O check gitproxy'
 alias grep='grep --color'
 alias gsuperpush="git push --force --tags origin 'refs/heads/*'"
 alias gt='gogtags -v'
@@ -78,6 +71,8 @@ alias t2='tree -L 2'
 alias t3='tree -L 3'
 alias t4='tree -L 4'
 alias t5='tree -L 5'
+alias tn="trans en:no -b "
+alias te="trans no:en -b "
 alias tree='tree -C'
 alias tmpd='cd $(mktemp -d)'
 alias trash="rm -rf ~/.local/share/Trash/"
@@ -138,19 +133,19 @@ venvact () {
 }
 
 # sometimes home doesn't work. fix from here: https://wiki.archlinux.org/index.php/Zsh#Key_bindings
-unsetopt MULTIBYTE
+# unsetopt MULTIBYTE
 
-autoload zkbd
+# autoload zkbd
 # don't forget to run zkbd
-source ~/.zkbd/$TERM* # may be different - check where zkbd saved the configuration:
-[[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
-[[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
-[[ -n ${key[Home]} ]] && bindkey "${key[Home]}" beginning-of-line
-[[ -n ${key[PageUp]} ]] && bindkey "${key[PageUp]}" up-line-or-history
-[[ -n ${key[Delete]} ]] && bindkey "${key[Delete]}" delete-char
-[[ -n ${key[End]} ]] && bindkey "${key[End]}" end-of-line
-[[ -n ${key[PageDown]} ]] && bindkey "${key[PageDown]}" down-line-or-history
-[[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search
-[[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
-[[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
-[[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
+# source ~/.zkbd/$TERM* # may be different - check where zkbd saved the configuration:
+# [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
+# [[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
+# [[ -n ${key[Home]} ]] && bindkey "${key[Home]}" beginning-of-line
+# [[ -n ${key[PageUp]} ]] && bindkey "${key[PageUp]}" up-line-or-history
+# [[ -n ${key[Delete]} ]] && bindkey "${key[Delete]}" delete-char
+# [[ -n ${key[End]} ]] && bindkey "${key[End]}" end-of-line
+# [[ -n ${key[PageDown]} ]] && bindkey "${key[PageDown]}" down-line-or-history
+# [[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search
+# [[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
+# [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
+# [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
