@@ -68,13 +68,13 @@ values."
     dotspacemacs-startup-recent-list-size 5
     dotspacemacs-scratch-mode 'markdown-mode
     dotspacemacs-themes '(dracula
-                           spacemacs-dark
-                           spacemacs-light)
+                          spacemacs-dark
+                          spacemacs-light)
     dotspacemacs-colorize-cursor-according-to-state t
     dotspacemacs-default-font '("Ubuntu Mono"
-                                 :size 28
-                                 :weight normal
-                                 :width normal)
+                                :size 24
+                                :weight normal
+                                :width normal)
     dotspacemacs-leader-key "SPC"
     dotspacemacs-emacs-leader-key "M-m"
     dotspacemacs-major-mode-leader-key ","
