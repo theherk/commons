@@ -103,7 +103,7 @@ values."
     dotspacemacs-inactive-transparency 90
     dotspacemacs-mode-line-unicode-symbols t
     dotspacemacs-mode-line-theme 'spacemacs
-    dotspacemacs-smooth-scrolling nil
+    dotspacemacs-smooth-scrolling t
     dotspacemacs-line-numbers 'relative
     dotspacemacs-smartparens-strict-mode t
     dotspacemacs-highlight-delimiters 'current
