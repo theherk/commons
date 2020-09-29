@@ -9,34 +9,35 @@ values."
     dotspacemacs-configuration-layers
     '(
        auto-completion
-       ;; c-c++
-       colors
-       ;; csv
-       ;; emacs-lisp
+       c-c++
+       (colors :variables
+               colors-enable-nyan-cat-progress-bar t)
+       emacs-lisp
        emoji
        docker
        git
        go
+       (go :variables
+           gofmt-command "goimports")
+       groovy
        gtags
        html
        javascript
-       markdown
-       ;; nginx
+       (markdown :variables
+                 markdown-asymmetric-header t
+                 markdown-command "blackfriday-tool")
        org
        plantuml
        python
-       ;; react
+       react
        rust
        salt
-       search-engine
        shell
-       slack
-       spell-checking
        syntax-checking
        terraform
        typescript
        version-control
-       ;; windows-scripts
+       windows-scripts
        xkcd
        yaml
        )
@@ -117,12 +118,6 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
-  (setq-default dotspacemacs-configuration-layers
-    '(
-       (colors :variables
-         colors-colorize-identifiers 'all
-         colors-enable-nyan-cat-progress-bar t)
-       ))
   )
 
 (defun dotspacemacs/user-config ()
@@ -134,29 +129,7 @@ layers configuration. You are free to put any user code."
   (add-hook 'after-change-major-mode-hook 'editorconfig-apply 'append)
 
   ;; go
-  (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
-  (setq go-use-gometalinter t)
-  (setq flycheck-gometalinter-fast t)
-
-  ;; javascript
-  (add-hook 'js2-mode-hook
-    (defun my-js2-mode-setup ()
-      (flycheck-mode t)
-      (when (executable-find "eslint")
-        (flycheck-select-checker 'javascript-eslint))))
-
-  ;; misc
-  (setq browse-url-browser-function 'browse-url-generic
-    engine/browser-function 'browse-url-generic
-    browse-url-generic-program "xdg-open")
-  (setq-default evil-escape-key-sequence ";n")
-  (spacemacs/set-leader-keys "d" 'evil-execute-macro)
-  (spacemacs/set-leader-keys "jB" 'pop-tag-mark)
-  (spacemacs/set-leader-keys "G" 'helm-gtags-pop-stack)
-  (spacemacs/set-leader-keys "qc" 'server-edit)
-  (setq term-scroll-show-maximum-output t)
-  (setq markdown-command "blackfriday-tool")
 
   ;; modeline
   (spaceline-toggle-buffer-size-off)
@@ -165,20 +138,7 @@ layers configuration. You are free to put any user code."
   (display-time-mode 1)
   (setq display-time-24hr-format t)
 
-  ;; python
-  (add-hook 'python-mode-hook (lambda ()
-                                (flycheck-mode 1)
-                                (semantic-mode 1)
-                                (setq flycheck-checker 'python-pylint
-                                  flycheck-checker-error-threshold 900
-                                  flycheck-pylintrc "~/.pylintrc")))
-
   ;; snippets
   (setcdr yas-snippet-dirs (cons "~/.spacemacs.d/private/snippets" (rest yas-snippet-dirs)))
   (setq powerline-default-separator 'nil)
-
-  ;; tramp
-  (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
-  (setq tramp-chunksize 500)
-  ;; (setq projectile-mode-line "Projectile") https://github.com/bbatsov/projectile/issues/893
   )
