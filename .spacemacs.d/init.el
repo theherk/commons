@@ -34,7 +34,9 @@ values."
        salt
        shell
        syntax-checking
-       terraform
+       (terraform :variables
+         terraform-auto-format-on-save t
+         terraform-backend 'lsp)
        typescript
        version-control
        windows-scripts
