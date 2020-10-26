@@ -15,7 +15,7 @@ ZSH_THEME="dracula"
 # SPACESHIP_CHAR_SYMBOL="➜  "
 
 source $ZSH/oh-my-zsh.sh
-[[  ]] && source <(kubectl completion zsh)
+source <(kubectl completion zsh)
 
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
