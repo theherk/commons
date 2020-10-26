@@ -73,6 +73,26 @@ Screenshots
 
 ![browse](https://s3-us-west-2.amazonaws.com/theherk-pub/commons-screenshots/browse.png "browse")
 
+Windows
+-------
+
+If stuck using a Windows environment, I use the following in my WSL 2 environment.
+
+[VcXsrv](https://sourceforge.net/projects/vcxsrv/) is the X-service to run applications natively in Windows.
+
+Here is a snippet I tag onto my .zprofile:
+
+```
+# WSL stuff
+
+export DISPLAY=$(ip route | awk '{print $3; exit}'):0
+export LIBGL_ALWAYS_INDIRECT=1
+export GDK_SCALE=2
+
+export WINHOME=/mnt/c/Users/h4s
+export WINP=$WINHOME/projects
+```
+
 Credits
 -------
 
