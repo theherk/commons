@@ -8,7 +8,6 @@ ln -sf ~/commons/.config/polybar/ ~/.config/
 ln -sf ~/commons/.config/rofi/ ~/.config/
 ln -sf ~/commons/.config/termite/ ~/.config/
 ln -sf ~/commons/.editorconfig ~/
-ln -sf ~/commons/.emacs.d/snippets/ ~/.emacs.d/
 ln -sf ~/commons/.eslintrc ~/
 ln -sf ~/commons/.git-completion.bash ~/
 ln -sf ~/commons/.git-completion.zsh ~/
