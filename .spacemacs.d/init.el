@@ -1,63 +1,58 @@
 ;; -*- mode: emacs-lisp -*-
 (defun dotspacemacs/layers ()
-  "Configuration Layers declaration.
-You should not put any user code in this function besides modifying the variable
-values."
   (setq-default
     dotspacemacs-distribution 'spacemacs
     dotspacemacs-configuration-layer-path '()
     dotspacemacs-configuration-layers
-    '(
+    '(nginx
        auto-completion
        c-c++
        (colors :variables
-               colors-enable-nyan-cat-progress-bar t)
+         colors-enable-nyan-cat-progress-bar t)
        emacs-lisp
        emoji
        docker
        git
        go
        (go :variables
-           gofmt-command "goimports")
-       groovy
+         gofmt-command "goimports")
+       (groovy :variables
+         groovy-backend 'lsp
+         groovy-lsp-jar-path "/home/h4s/projects/github.com/prominic/groovy-language-server/build/libs/groovy-language-server-all.jar")
        gtags
        html
        javascript
        (markdown :variables
-                 markdown-asymmetric-header t
-                 markdown-command "blackfriday-tool")
+         markdown-asymmetric-header t
+         markdown-command "blackfriday-tool")
        org
        plantuml
        python
+       (ranger :variables
+         ranger-show-preview t
+         ranger-cleanup-on-disable t
+         ranger-cleanup-eagerly t)
        react
        rust
        salt
-       shell
+       (shell :variables
+         shell-default-shell 'eshell
+         close-window-with-terminal t)
        syntax-checking
        (terraform :variables
          terraform-auto-format-on-save t
          terraform-backend 'lsp)
+       themes-megapack
        typescript
        version-control
        windows-scripts
        xkcd
-       yaml
-       )
-    dotspacemacs-additional-packages
-    '(
-       dracula-theme
-       editorconfig
-       tramp-term
-       )
+       yaml)
+    dotspacemacs-additional-packages '(dracula-theme editorconfig tramp-term)
     dotspacemacs-excluded-packages '()
     dotspacemacs-delete-orphan-packages t))
 
 (defun dotspacemacs/init ()
-  "Initialization function.
-This function is called at the very startup of Spacemacs initialization
-before layers configuration.
-You should not put any user code in there besides modifying the variable
-values."
   (setq-default
     dotspacemacs-elpa-https t
     dotspacemacs-elpa-timeout 5
@@ -70,14 +65,9 @@ values."
     dotspacemacs-startup-lists nil
     dotspacemacs-startup-recent-list-size 5
     dotspacemacs-scratch-mode 'markdown-mode
-    dotspacemacs-themes '(dracula
-                          spacemacs-dark
-                          spacemacs-light)
+    dotspacemacs-themes '(doom-dracula dracula spacemacs-dark spacemacs-light)
     dotspacemacs-colorize-cursor-according-to-state t
-    dotspacemacs-default-font '("Ubuntu Mono"
-                                :size 24
-                                :weight normal
-                                :width normal)
+    dotspacemacs-default-font '("Ubuntu Mono" :size 20 :weight normal :width normal)
     dotspacemacs-leader-key "SPC"
     dotspacemacs-emacs-leader-key "M-m"
     dotspacemacs-major-mode-leader-key ","
@@ -104,7 +94,7 @@ values."
     dotspacemacs-active-transparency 90
     dotspacemacs-inactive-transparency 90
     dotspacemacs-mode-line-unicode-symbols t
-    dotspacemacs-mode-line-theme 'spacemacs
+    dotspacemacs-mode-line-theme 'all-the-icons
     dotspacemacs-smooth-scrolling t
     dotspacemacs-line-numbers 'relative
     dotspacemacs-smartparens-strict-mode t
@@ -116,16 +106,10 @@ values."
     ))
 
 (defun dotspacemacs/user-init ()
-  "Initialization function for user code.
-It is called immediately after `dotspacemacs/init'.  You are free to put almost
-any user code here.  The exception is org related code, which should be placed
-in `dotspacemacs/user-config'."
+  (setq frame-resize-pixelwise t)
   (setq-default git-magit-status-fullscreen t))
 
 (defun dotspacemacs/user-config ()
-  "Configuration function for user code.
-This function is called at the very end of Spacemacs initialization after
-layers configuration. You are free to put any user code."
   ;; editorconfig
   (editorconfig-mode 1)
   (add-hook 'after-change-major-mode-hook 'editorconfig-apply 'append)
@@ -142,5 +126,22 @@ layers configuration. You are free to put any user code."
 
   ;; snippets
   (setcdr yas-snippet-dirs (cons "~/.spacemacs.d/private/snippets" (rest yas-snippet-dirs)))
-  (setq powerline-default-separator 'nil)
+
+  ;; translate
+  (defun trans-en-no-region (&optional b e)
+    (interactive "r")
+    (shell-command-on-region b e "trans en:no -b")
+    (end-of-line)
+    (newline-and-indent)
+    (insert-buffer "*Shell Command Output*"))
+  (defun trans-no-en-region (&optional b e)
+    (interactive "r")
+    (shell-command-on-region b e "trans no:en -b")
+    (end-of-line)
+    (newline-and-indent)
+    (insert-buffer "*Shell Command Output*"))
+  (spacemacs/declare-prefix "C-t" "translate")
+  (spacemacs/set-leader-keys "C-t n" 'trans-en-no-region)
+  (spacemacs/set-leader-keys "C-t e" 'trans-no-en-region)
+  )
   )
