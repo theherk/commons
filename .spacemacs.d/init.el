@@ -9,12 +9,14 @@
        c-c++
        (colors :variables
          colors-enable-nyan-cat-progress-bar t)
+       dap
        emacs-lisp
        emoji
        docker
        git
        go
        (go :variables
+         go-backend 'lsp
          gofmt-command "goimports")
        (groovy :variables
          groovy-backend 'lsp
