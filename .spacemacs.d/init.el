@@ -126,6 +126,15 @@
   (display-time-mode 1)
   (setq display-time-24hr-format t)
 
+  ;; project layout
+  ;; TODO: Create this helpful function, and run from helm-find-files as eshell alias.
+  ;; 1. Create new perspective layout named projectile project.
+  ;;     - Switch to if exists.
+  ;; 2. Open file of README.md if directory.
+  ;; 3. Create new eyebrowse workspace (2) with full projectile e-shell.
+  ;; 4. Switch back to file opened.
+  ;; (defun open-project ())
+
   ;; snippets
   (setcdr yas-snippet-dirs (cons "~/.spacemacs.d/private/snippets" (rest yas-snippet-dirs)))
 
