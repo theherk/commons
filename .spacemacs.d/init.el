@@ -96,7 +96,7 @@
     dotspacemacs-active-transparency 90
     dotspacemacs-inactive-transparency 90
     dotspacemacs-mode-line-unicode-symbols t
-    dotspacemacs-mode-line-theme 'all-the-icons
+    dotspacemacs-mode-line-theme '(all-the-icons :separator none)
     dotspacemacs-smooth-scrolling t
     dotspacemacs-line-numbers 'relative
     dotspacemacs-smartparens-strict-mode t
