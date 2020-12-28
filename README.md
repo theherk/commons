@@ -7,31 +7,25 @@ Features
 --------
 
 - [Arch](https://www.archlinux.org/); or [Manjaro](https://manjaro.org/)
-- [Dracula](https://draculatheme.com/) all the things
-- [Spacemacs](http://spacemacs.org/)
-- termite
-- tmux
-- zsh
-- slack
-- firefox
-- i3
-- polybar
-- rofi
+- [Dracula](https://draculatheme.com/)
+- [Doom Emacs](https://github.com/hlissner/doom-emacs)
+- optional:
+    - termite
+    - tmux
+    - zsh
 - Bruce Lee
 - [screenshots below](#screenshots)
-
-I'm sure I'm missing some information, but the configuration should have everything required.
 
 Installation
 ------------
 
-#### Get this repository. ####
+#### Get this repository.
 
     git clone git@gitlab.com:theherk/commons.git ~
     # or ...
     git clone https://gitlab.com/theherk/commons.git ~
 
-#### Install packages, yay (AUR helper), and AUR packages. ####
+#### Install packages, yay (AUR helper), and AUR packages.
 
     sudo pacman -S --noconfirm - < ~/commons/pkgs
     cd $(mktemp -d)
@@ -40,36 +34,34 @@ Installation
     makepkg -si
     yay -S --noconfirm - < ~/commons/pkgs-aur
 
-#### Install spacemacs and neobundle. ####
+#### Install Doom.
 
-    rm -rf ~/.emacs.d && git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    # install emacs 27, fd, and ripgrep
+    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+    ~/.emacs.d/bin/doom install
 
-#### Link everything where to needs to be. ####
+#### Link everything where to needs to be.
 
     ~/commons/links.sh
-
-#### Link spaceship prompt. ####
-
-    sudo ln -s /usr/lib/spaceship-prompt/spaceship.zsh-theme /usr/share/oh-my-zsh/custom/themes/spaceship.zsh-theme
 
 Firefox is bad about gtk dark themes causing form fields to be unreadable. Easy fix found [here](https://bugzilla.mozilla.org/show_bug.cgi?id=1283086#c23); add key `widget.content.gtk-theme-override`, and set the string to `Adwaita:light`.
 
 Screenshots
 -----------
 
-#### rofi ####
+#### rofi
 
 ![rofi](https://s3-us-west-2.amazonaws.com/theherk-pub/commons-screenshots/rofi.png "rofi")
 
-#### emacs ####
+#### emacs
 
 ![emacs](https://s3-us-west-2.amazonaws.com/theherk-pub/commons-screenshots/emacs.png "emacs")
 
-#### tmux ####
+#### tmux
 
 ![tmux](https://s3-us-west-2.amazonaws.com/theherk-pub/commons-screenshots/tmux.png "tmux")
 
-#### browse ####
+#### browse
 
 ![browse](https://s3-us-west-2.amazonaws.com/theherk-pub/commons-screenshots/browse.png "browse")
 
@@ -79,6 +71,13 @@ Windows
 If stuck using a Windows environment, I use the following in my WSL 2 environment.
 
 [VcXsrv](https://sourceforge.net/projects/vcxsrv/) is the X-service to run applications natively in Windows.
+
+- shell:startup config.xlaunch
+- Multiple windows, Dispay -1
+- Clipboard, no Primary Selection
+- Native opengl
+- Disable access control, also add to firewall exceptions.
+- Additional parameters: `-xkbmodel pc105 -xkblayout us -xkbvariant colemak`
 
 Here is a snippet I tag onto my .zprofile:
 
@@ -91,6 +90,9 @@ export GDK_SCALE=2
 
 export WINHOME=/mnt/c/Users/h4s
 export WINP=$WINHOME/projects
+
+eval $(ssh-agent)
+export SSH_AUTH_SOCK
 ```
 
 Credits
