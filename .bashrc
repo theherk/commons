@@ -37,11 +37,5 @@ function customPrompt {
 }
 PROMPT_COMMAND=customPrompt
 
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
 alias ls='ls -lF --color=auto'
 alias ll='ls -AlF --color=auto'
-
-source ~/.git-completion.bash
