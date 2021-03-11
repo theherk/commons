@@ -11,3 +11,6 @@
 (setq org-directory "~/org/")
 
 (setq display-line-numbers-type nil)
+(map! :leader
+  :desc "toggle wrap"
+  "t t" #'toggle-truncate-lines)
