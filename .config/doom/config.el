@@ -11,6 +11,9 @@
 (setq org-directory "~/org/")
 
 (setq display-line-numbers-type nil)
+
+(add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
+
 (map! :leader
   :desc "toggle wrap"
   "t t" #'toggle-truncate-lines)
