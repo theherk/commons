@@ -3,8 +3,8 @@
 (setq user-full-name "Adam Sherwood"
       user-mail-address "theherk@gmail.com")
 
-(setq doom-font (font-spec :family "Ubuntu Mono" :size 20 :weight 'light)
-      doom-big-font (font-spec :family "Ubuntu" :size 36 :weight 'normal))
+(setq doom-font (font-spec :family "Ubuntu Mono" :size 22 :weight 'light)
+      doom-big-font (font-spec :family "Ubuntu" :size 30 :weight 'normal))
 
 (setq doom-theme 'doom-dracula)
 
