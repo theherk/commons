@@ -11,3 +11,5 @@
 	subup=submodule update --init
 [color "diff"]
 	whitespace = red reverse
+[init]
+	defaultBranch = main
