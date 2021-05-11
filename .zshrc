@@ -34,9 +34,9 @@ alias ez='7z e'
 alias fr='find . -iname "*.rar"'
 alias fz='find . -iname "*.7z"'
 alias gls="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
-alias gproxy='ssh -f -nNT gitproxy'
-alias gproxy-off='ssh -O exit gitproxy'
-alias gproxy-status='ssh -O check gitproxy'
+alias gproxy='sudo ssh -f -nNT gitproxy'
+alias gproxy-off='sudo ssh -O exit gitproxy'
+alias gproxy-status='sudo ssh -O check gitproxy'
 alias grep='grep --color'
 alias gsuperpush="git push --force --tags origin 'refs/heads/*'"
 alias gtree="git log --pretty=oneline --decorate --graph"
