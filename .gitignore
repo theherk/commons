@@ -9,6 +9,7 @@
 .emacs.d/recentf
 .emacs.d/tramp
 .pypirc
+.shadowenv.d
 .tox
 .vim/
 GPATH
