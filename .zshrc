@@ -110,3 +110,5 @@ venv3 () {
 venvact () {
     source ${VENVS}/${1}/bin/activate
 }
+
+eval "$(shadowenv init zsh)"
