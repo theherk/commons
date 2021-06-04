@@ -20,6 +20,7 @@ brew install \
     fd \
     ghc \
     git \
+    jq \
     kubectl \
     markdown \
     npm \
