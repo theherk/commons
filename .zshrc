@@ -5,7 +5,7 @@ unsetopt beep
 zstyle :compinstall filename '/home/h4s/.zshrc'
 autoload -Uz compinit && compinit
 
-ZSH=$HOME/.oh-my-zsh/
+ZSH=$HOME/.oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 ZSH_THEME="dracula"
 
