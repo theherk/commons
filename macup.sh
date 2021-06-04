@@ -28,6 +28,7 @@ brew install \
     ripgrep \
     shadowenv \
     spellcheck \
+    wget
 npm i -g js-beautify
 npm i -g stylelint
 npm audit fix
