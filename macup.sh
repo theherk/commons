@@ -28,6 +28,7 @@ brew install \
     ripgrep \
     shadowenv \
     spellcheck \
+    terraform \
     wget
 npm i -g js-beautify
 npm i -g stylelint
