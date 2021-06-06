@@ -6,10 +6,13 @@
 (setq doom-font (font-spec :family "Ubuntu Mono" :size 22 :weight 'light)
       doom-big-font (font-spec :family "Ubuntu" :size 30 :weight 'normal))
 
-(setq doom-theme 'doom-dracula)
 ;; alpha
 ;; (set-frame-parameter (selected-frame) 'alpha '(90 65))
 ;; (add-to-list 'default-frame-alist '(alpha 90 65))
+
+;; theme
+;; (setq doom-theme 'doom-dracula)
+;; (setq doom-theme 'doom-xcode)
 
 (setq org-directory "~/org/")
 
