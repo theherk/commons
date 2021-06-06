@@ -44,8 +44,6 @@ Installation
 
     ~/commons/links.sh
 
-Firefox is bad about gtk dark themes causing form fields to be unreadable. Easy fix found [here](https://bugzilla.mozilla.org/show_bug.cgi?id=1283086#c23); add key `widget.content.gtk-theme-override`, and set the string to `Adwaita:light`.
-
 Screenshots
 -----------
 
