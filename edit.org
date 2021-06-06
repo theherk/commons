@@ -1,0 +1,22 @@
+#+TITLE: Editing Notes
+#+AUTHOR: Adam Sherwood
+#+EMAIL: theherk@gmail.com
+#+DESCRIPTION: Reminders to myself about editing.
+
+* Editing
++ Set individal file coding with: ~-*- coding: utf-8 -*-~.
++ Reset a buffer with coding: ~revert-buffer-with-coding-system~.
++ selective-display `C-3 C-x $`
++ C-z to switch emacs/vim modes
++ select task status: <spc>-m-t
++ edit link - `C-c C-l`
++ permanent search results - `C-c C-o`
++ last search - `spc '`
++ insert src - `<s <tab>`
+
+** multi-edit
+1. initiate a search with `SPC /` Z Z
+2. enter in edit mode with `C-c C-e`
+3. go to the occurrence and enter in `iedit state` with `SPC s e`
+4. edit the occurrences then leave the `iedit state`
+5. press `C-c C-c`
