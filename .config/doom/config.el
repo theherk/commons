@@ -7,6 +7,9 @@
       doom-big-font (font-spec :family "Ubuntu" :size 30 :weight 'normal))
 
 (setq doom-theme 'doom-dracula)
+;; alpha
+;; (set-frame-parameter (selected-frame) 'alpha '(90 65))
+;; (add-to-list 'default-frame-alist '(alpha 90 65))
 
 (setq org-directory "~/org/")
 
