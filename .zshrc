@@ -57,6 +57,7 @@ alias tree='tree -C'
 alias tmpd='cd $(mktemp -d)'
 alias trash="rm -rf ~/.local/share/Trash/"
 alias up="underscore pretty"
+alias util-list="aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 alias wow="git status"
 alias xc='xclip -sel clip'
 alias xkcd='echo "xkcdpass --count=5 --acrostic='\''flow'\'' --min=4 --max=6 --valid_chars='\''[a-z]'\''"'
@@ -97,6 +98,12 @@ jsonesc () {
 }
 prettyjson () {
     cat $1 | python -mjson.tool > $2
+}
+util-start() {
+    aws ec2 start-instances --instance-ids $1
+}
+util-connect() {
+    aws ssm start-session --target $1
 }
 venv2 () {
     virtualenv -p /usr/bin/python2 $VENVS/${1}
