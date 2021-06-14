@@ -16,6 +16,7 @@ go get -u \
     golang.org/x/tools/...
 brew install \
     coreutils \
+    direnv \
     editorconfig \
     fd \
     ghc \
