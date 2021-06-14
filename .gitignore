@@ -2,6 +2,7 @@
 *\#*
 *.py[cod]
 .coverage
+.DS_Store
 .emacs.d/elpa
 .emacs.d/elpa/archives/**/*
 .emacs.d/auto-save-list
