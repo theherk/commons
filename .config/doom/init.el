@@ -178,3 +178,6 @@
        :config
        ;;literate
        (default +bindings +smartparens))
+
+;; https://github.com/hlissner/doom-emacs/issues/401
+(setq evil-respect-visual-line-mode t)
