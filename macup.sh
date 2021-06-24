@@ -18,6 +18,7 @@ brew install \
     coreutils \
     direnv \
     editorconfig \
+    direnv \
     fd \
     ghc \
     git \
