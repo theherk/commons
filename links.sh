@@ -6,7 +6,7 @@ ln -sf ~/commons/.config/termite/ ~/.config/
 ln -sf ~/commons/.config/doom/ ~/.config/
 ln -sf ~/commons/.editorconfig ~/
 ln -sf ~/commons/.eslintrc ~/
-ln -sf ~/commons/.gitconfig ~/
+ln -sf ~/commons/global-gitconfig ~/.gitconfig
 ln -sf ~/commons/.gitignore ~/
 ln -sf ~/commons/.pypirc ~/
 ln -sf ~/commons/.tmux.conf ~/

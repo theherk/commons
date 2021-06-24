@@ -1,15 +1,3 @@
-[core]
-	editor = emacsclient
-	excludesfile = ~/.gitignore
-	pager = less -FRSX
 [user]
 	name = Adam Sherwood
 	email = theherk@gmail.com
-[color]
-	ui = true
-[alias]
-	subup=submodule update --init
-[color "diff"]
-	whitespace = red reverse
-[init]
-	defaultBranch = main
