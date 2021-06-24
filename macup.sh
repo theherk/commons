@@ -14,12 +14,14 @@ go get -u \
     github.com/motemen/gore \
     github.com/nsf/gocode \
     golang.org/x/tools/...
+# brew tap homebrew/cask-fonts
 brew install \
     coreutils \
     direnv \
     editorconfig \
     direnv \
     fd \
+    font-ubuntu-nerd-font \
     ghc \
     git \
     jq \
@@ -30,8 +32,10 @@ brew install \
     ripgrep \
     shadowenv \
     spellcheck \
+    starship \
     terraform \
     wget
+
 npm i -g js-beautify
 npm i -g stylelint
 npm audit fix

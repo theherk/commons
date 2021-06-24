@@ -120,3 +120,4 @@ venvact () {
 }
 
 eval "$(shadowenv init zsh)"
+eval "$(starship init zsh)"
