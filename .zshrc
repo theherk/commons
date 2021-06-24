@@ -64,7 +64,11 @@ alias xkcd='echo "xkcdpass --count=5 --acrostic='\''flow'\'' --min=4 --max=6 --v
 alias xp='cat p|xc'
 
 awsp () {
-    export AWS_PROFILE=${1}
+    if [ -z "$1" ]; then
+        echo $AWS_PROFILE
+    else
+        export AWS_PROFILE=${1}
+    fi
 }
 dirsize () {
     du -shx * .[a-zA-Z0-9_]* 2> /dev/null | \
