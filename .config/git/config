@@ -1,6 +1,5 @@
 [core]
 	editor = emacsclient
-	excludesfile = ~/.gitignore
 	pager = less -FRSX
 [user]
 	email = theherk@gmail.com
