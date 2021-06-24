@@ -3,8 +3,8 @@
 	excludesfile = ~/.gitignore
 	pager = less -FRSX
 [user]
-	name = Adam Sherwood
 	email = theherk@gmail.com
+	name = Adam Sherwood
 [color]
 	ui = true
 [alias]
