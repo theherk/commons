@@ -127,3 +127,4 @@ venvact () {
 
 eval "$(shadowenv init zsh)"
 eval "$(starship init zsh)"
+eval "$(direnv hook zsh)"
