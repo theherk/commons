@@ -9,6 +9,7 @@
 .emacs.d/data
 .emacs.d/recentf
 .emacs.d/tramp
+.envrc
 .pypirc
 .shadowenv.d
 .tox
