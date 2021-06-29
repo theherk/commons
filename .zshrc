@@ -46,7 +46,8 @@ alias gtree="git log --pretty=oneline --decorate --graph"
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias l='ls -lh'
 alias ll='ls -AlFh'
-alias ls='ls --color=auto'
+# alias ls='ls --color=auto'
+alias ls='ls -G'
 alias pacls='sudo pacman -Qqen'
 alias r="rsync -rltvz -e ssh --progress"
 alias restart="sudo shutdown -r now"
