@@ -24,7 +24,6 @@ bindkey '^r' history-incremental-search-backward
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
-alias archey="archey-go --no-uptime --no-up-since --no-de --no-gtk3-theme --no-gtk3-icon-theme --no-gtk3-font --no-gtk3-cursor-theme --no-swap"
 alias awsl='aws sso login --profile $AWS_PROFILE'
 alias awsu='unset AWS_PROFILE'
 alias cm='sudo loadkeys colemak'
