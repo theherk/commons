@@ -48,7 +48,9 @@ pyenv install 3.9.5
 pyenv global 3.9.5
 pip install black nose pytest pyflakes isort pipenv
 rustup toolchain add nightly
-cargo +nightly install racer # maybe fail
+cargo +nightly install racer
+rustup default nightly
+rustup component add rust-src
 # install emacs
 brew tap d12frosted/emacs-plus
 brew install emacs-plus --HEAD --with-modern-doom3-icon
