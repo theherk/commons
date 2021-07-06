@@ -15,6 +15,5 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/bin:$PATH
-eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export PATH=$HOME/.emacs.d/bin:$PATH
