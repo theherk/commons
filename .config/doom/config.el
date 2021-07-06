@@ -41,3 +41,6 @@
 (setq evil-respect-visual-line-mode t)
 
 (setq fancy-splash-image "~/commons/img/bruce-matlocktheartist_200w.png")
+
+(after! sh-script
+  (set-company-backend! 'sh-mode nil))
