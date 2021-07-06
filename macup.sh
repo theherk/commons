@@ -17,6 +17,7 @@ go get -u \
 # brew tap homebrew/cask-fonts
 brew install \
     archey \
+    aspell \
     coreutils \
     direnv \
     editorconfig \
