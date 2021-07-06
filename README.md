@@ -33,6 +33,12 @@ You can't really just run this unattended.
 
 But you can follow [the script](macup.sh) as copypasta steps.
 
+#### Nushell configuration.
+
+nushell uses a different configuration path on mac os vs other systems.
+
+    ln -sf ~/commons/.config/nu/config.toml (config path)
+
 Screenshots
 -----------
 
