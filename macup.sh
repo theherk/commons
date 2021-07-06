@@ -31,6 +31,7 @@ brew install \
     markdown \
     npm \
     plantuml \
+    pyenv \
     ripgrep \
     shadowenv \
     spellcheck \
@@ -43,6 +44,8 @@ npm i -g stylelint
 npm audit fix
 npm i --pack-lock-only
 npm audit fix # seems to work after package lock
+pyenv install 3.9.5
+pyenv global 3.9.5
 rustup toolchain add nightly
 cargo +nightly install racer # maybe fail
 # install emacs
