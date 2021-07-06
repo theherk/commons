@@ -46,6 +46,7 @@ npm i --pack-lock-only
 npm audit fix # seems to work after package lock
 pyenv install 3.9.5
 pyenv global 3.9.5
+pip install black nose pytest pyflakes isort pipenv
 rustup toolchain add nightly
 cargo +nightly install racer # maybe fail
 # install emacs
