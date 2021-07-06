@@ -58,3 +58,4 @@ doom install
 # install fonts from https://fonts.google.com/specimen/Ubuntu
 # install fonts from https://fonts.google.com/specimen/Ubuntu+Mono
 doom sync
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
