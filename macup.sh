@@ -14,7 +14,7 @@ go get -u \
     github.com/motemen/gore \
     github.com/nsf/gocode \
     golang.org/x/tools/...
-# brew tap homebrew/cask-fonts
+brew tap homebrew/cask-fonts
 brew install \
     archey \
     aspell \
