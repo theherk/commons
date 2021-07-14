@@ -33,7 +33,7 @@ brew install \
     pyenv \
     ripgrep \
     shadowenv \
-    spellcheck \
+    shellcheck \
     starship \
     terraform \
     wget
