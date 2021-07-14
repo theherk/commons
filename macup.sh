@@ -23,6 +23,8 @@ brew install \
     editorconfig \
     direnv \
     fd \
+    font-fira-code \
+    font-fira-code-nerd-font \
     font-ubuntu-nerd-font \
     ghc \
     git \
