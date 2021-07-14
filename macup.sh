@@ -9,9 +9,9 @@ xcode-select --install
 # install go from https://golang.org/doc/install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # install rust
 go get -u \
-    github.com/cweill/gotests \
+    github.com/cweill/gotests/... \
     github.com/fatih/gomodifytags \
-    github.com/motemen/gore \
+    github.com/motemen/gore/... \
     github.com/nsf/gocode \
     golang.org/x/tools/...
 brew tap homebrew/cask-fonts
