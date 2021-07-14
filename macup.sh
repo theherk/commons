@@ -37,9 +37,7 @@ brew install \
     starship \
     terraform \
     wget
-
-npm i -g js-beautify
-npm i -g stylelint
+npm i -g js-beautify stylelint
 npm audit fix
 npm i --pack-lock-only
 npm audit fix # seems to work after package lock
@@ -61,6 +59,9 @@ doom install
 # install fonts from https://fonts.google.com/specimen/Ubuntu+Mono
 brew install --cask fontforge
 git clone --recurse-submodules  https://github.com/ToxicFrog/Ligaturizer.git
+# For my purposes, all fonts listed for processing can be removed aside from
+# Ubuntu fonts in Ligaturizer/build.py.
 cd Ligaturizer && make && cp fonts/output/* ~/Library/Fonts/
 doom sync
+# If I install VSCode, this line lets me scroll normally.
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
