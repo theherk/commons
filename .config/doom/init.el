@@ -13,6 +13,7 @@
        doom-dashboard
        (emoji +unicode)
        hl-todo
+       ligatures
        modeline
        nav-flash
        ophints

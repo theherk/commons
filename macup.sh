@@ -61,5 +61,8 @@ git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d # install 
 doom install
 # install fonts from https://fonts.google.com/specimen/Ubuntu
 # install fonts from https://fonts.google.com/specimen/Ubuntu+Mono
+brew install --cask fontforge
+git clone --recurse-submodules  https://github.com/ToxicFrog/Ligaturizer.git
+cd Ligaturizer && make && cp fonts/output/* ~/Library/Fonts/
 doom sync
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
