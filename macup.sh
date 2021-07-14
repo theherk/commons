@@ -52,8 +52,9 @@ rustup default nightly
 rustup component add rust-src
 # install emacs
 brew tap d12frosted/emacs-plus
-brew install emacs-plus --HEAD --with-modern-doom3-icon
-ln -s /usr/local/opt/emacs-plus@27/Emacs.app /Applications/
+brew install emacs-plus@28 --with-modern-doom3-icon
+# ln -s /usr/local/opt/emacs-plus@28/Emacs.app /Applications/
+cp -r /usr/local/opt/emacs-plus@28/Emacs.app /Applications/
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d # install doom
 doom install
 # install fonts from https://fonts.google.com/specimen/Ubuntu
