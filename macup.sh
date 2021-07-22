@@ -32,6 +32,7 @@ brew install \
     plantuml \
     pyenv \
     ripgrep \
+    rust-analyzer \
     shadowenv \
     spellcheck \
     starship \
