@@ -42,6 +42,9 @@ npm i -g js-beautify stylelint
 npm audit fix
 npm i --pack-lock-only
 npm audit fix # seems to work after package lock
+# With M1, need:
+# export PYTHON_CONFIGURE_OPTS="--build=aarch64-apple-darwin20.5.0"
+# see: https://github.com/pyenv/pyenv/issues/1768#issuecomment-871602950
 pyenv install 3.9.5
 pyenv global 3.9.5
 pip install black nose pytest pyflakes isort pipenv
