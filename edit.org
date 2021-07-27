@@ -20,3 +20,15 @@
 3. go to the occurrence and enter in iedit state with =SPC s e=
 4. edit the occurrences then leave the iedit state
 5. press =C-c C-c=
+
+* org-mode
+
+Set startup options with directive =STARTUP=. [[https://orgmode.org/manual/In_002dbuffer-Settings.html][Buffer Settings]]
+
+#+begin_src org
+#+STARTUP: overview
+#+end_src
+
+Open the agenda with =SPC o A=. You can show all tasks from there, but you can also expose only tasks in the current org file using =SPC t o t=.
+
+Archive todo entries with =SPC m A=. You can move archive entries the archive file back back out using =org-refile= or =SPC m s r=
