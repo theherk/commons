@@ -39,6 +39,10 @@
   :desc "toggle wrap"
   "t t" #'toggle-truncate-lines)
 
+(map! :leader
+  :desc "org show todo tree"
+  "t o t" #'org-show-todo-tree)
+
 ;; https://github.com/hlissner/doom-emacs/issues/401
 (setq evil-respect-visual-line-mode t)
 
