@@ -44,7 +44,7 @@
   "t o t" #'org-show-todo-tree)
 
 ;; https://github.com/hlissner/doom-emacs/issues/401
-(setq evil-respect-visual-line-mode t)
+;; (setq evil-respect-visual-line-mode t)
 
 (setq fancy-splash-image "~/commons/img/bruce-matlocktheartist_200w.png")
 
