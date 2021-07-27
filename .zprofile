@@ -7,8 +7,6 @@ export P=$HOME/projects
 export GOPATH=$P/go
 export G=$GOPATH/src
 
-export BROWSER=/usr/bin/firefox
-
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
