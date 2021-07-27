@@ -20,7 +20,7 @@
 
 (setq display-line-numbers-type nil)
 
-(add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
+;; (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
 
 (defun theherk/org-link-yank (&optional arg)
   "Extract URL from org-mode link and add it to kill ring."
