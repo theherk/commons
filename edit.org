@@ -29,6 +29,14 @@ Set startup options with directive =STARTUP=. [[https://orgmode.org/manual/In_00
 #+STARTUP: overview
 #+end_src
 
+Each tree can have its visibility set individually using the =VISIBILITY= property.[[https://orgmode.org/manual/Initial-visibility.html][ Initial Visibility]]
+
+#+begin_src org
+:PROPERTIES:
+:VISIBILITY: children
+:END:
+#+end_src
+
 Open the agenda with =SPC o A=. You can show all tasks from there, but you can also expose only tasks in the current org file using =SPC t o t=.
 
 Archive todo entries with =SPC m A=. You can move archive entries the archive file back back out using =org-refile= or =SPC m s r=
