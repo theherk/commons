@@ -74,7 +74,7 @@
        plantuml
        (python +lsp +pyright +pyenv)
        rst
-       rust
+       (rust +lsp)
        sh
        web
        yaml
