@@ -12,3 +12,5 @@
 	whitespace = red reverse
 [init]
 	defaultBranch = main
+[includeIf "gitdir:~/projects/dnb.no/"]
+    path = ~/.config/git/dnb.no

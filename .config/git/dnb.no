@@ -1,0 +1,5 @@
+[user]
+	email = adam.lawrence.sherwood@dnb.no
+	name = Adam Lawrence Sherwood
+[url "ssh://git@git.tech-01.net"]
+	insteadOf = https://bitbucket.tech.dnb.no/scm
