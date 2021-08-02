@@ -1,3 +1,8 @@
+#+TITLE: emacs literate configuration
+#+AUTHOR: Adam Lawrence Sherwood
+#+EMAIL: theherk@gmail.com
+#+STARTUP: overview
+
 * theherk's literate doom configuration
 
 According to [[https://nullprogram.com/blog/2016/12/22/][this blog]], this lexical-binding can improve performance.
