@@ -7,6 +7,9 @@
        company
        ivy
 
+       :config
+       literate
+
        :ui
        deft
        doom

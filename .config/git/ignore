@@ -3,6 +3,7 @@
 *.py[cod]
 .coverage
 .DS_Store
+.config/doom/config.el
 .emacs.d/elpa
 .emacs.d/elpa/archives/**/*
 .emacs.d/auto-save-list

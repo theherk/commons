@@ -1,0 +1,121 @@
+* theherk's literate doom configuration
+
+According to [[https://nullprogram.com/blog/2016/12/22/][this blog]], this lexical-binding can improve performance.
+
+#+begin_src elisp
+;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+#+end_src
+
+User identification. You can find more information in the [[https://www.gnu.org/software/emacs/manual/html_node/elisp/User-Identification.html][official documentation]].
+
+#+begin_src elisp
+(setq user-full-name "Adam Sherwood"
+      user-mail-address "theherk@gmail.com")
+#+end_src
+
+** Display configuration
+
+I am still undecided on usage of variable pitch font. I cannot recall what issue it was causing for me, but it had to do with ligatures. It is probably fine.
+
+#+begin_src elisp
+(setq
+  doom-font (font-spec :family "Ubuntu Mono Ligaturized" :size 22)
+  doom-big-font (font-spec :family "Ubuntu Mono Ligaturized" :size 28))
+  ;; doom-variable-pitch-font (font-spec :family "Ubuntu" :size 28)
+#+end_src
+
+This can set the windows alpha, and I may want that sometime, but generally I use emacs edge-to-edge and on macOS, one cannot use transparency in full screen.
+
+#+begin_src elisp
+;; alpha
+;; (set-frame-parameter (selected-frame) 'alpha '(90 65))
+;; (add-to-list 'default-frame-alist '(alpha 90 65))
+#+end_src
+
+I use dracula everywhere nearly all the time, but these themes are pretty nice to, when I want a change of pace.
+
+#+begin_src elisp
+;; theme
+(setq doom-theme 'doom-dracula)
+;; (setq doom-theme 'doom-challenger-deep)
+;; (setq doom-theme 'doom-city-lights)
+;; (setq doom-theme 'doom-ephemeral)
+;; (setq doom-theme 'doom-moonlight)
+;; (setq doom-theme 'doom-nord)
+;; (setq doom-theme 'doom-one-light)
+#+end_src
+
+The line I am on is always in the modeline, so generally I don't need to see these. And if I do, it is always just a ~SPC t l~ away.
+
+#+begin_src elisp
+(setq display-line-numbers-type nil)
+#+end_src
+
+Toggle line wrapping.
+
+#+begin_src elisp
+(map! :leader
+  :desc "toggle wrap"
+  "t t" #'toggle-truncate-lines)
+#+end_src
+
+Who doesn't want Bruce Lee to greet them at the beginning of a work session. He's there to remind you:
+
+#+begin_quote
+Do not pray for an easy life, pray for the strength to endure a difficult one.
+#+end_quote
+
+#+begin_src elisp
+(setq fancy-splash-image "~/commons/img/bruce-matlocktheartist_200w.png")
+#+end_src
+
+** org-mode
+
+This is the directory in which emacs should look for org files that I use for agenda. I link files here from elsewhere.
+
+#+begin_src elisp
+(setq org-directory "~/org/")
+;; (after! org
+;;   (setq org-agenda-files '("~/projects/dnb.no/adam.sherwood/notes")))
+#+end_src
+
+When the point is over a link in org-mode ~SPC m l y~ will yank that link.
+
+#+begin_src elisp
+(defun theherk/org-link-yank (&optional arg)
+  "Extract URL from org-mode link and add it to kill ring."
+  (interactive "P")
+  (let* ((link (org-element-lineage (org-element-context) '(link) t))
+          (type (org-element-property :type link))
+          (url (org-element-property :path link))
+          (url (concat type ":" url)))
+    (kill-new url)
+    (message (concat "Copied URL: " url))))
+(map! :leader
+  :desc "yank org link"
+  "m l y" #'theherk/org-link-yank)
+#+end_src
+
+While org's agenda todo list is usually sufficient, this let's you collapse a current org-mode file to expose only the TODO's within.
+
+#+begin_src elisp
+(map! :leader
+  :desc "org show todo tree"
+  "t o t" #'org-show-todo-tree)
+#+end_src
+
+** miscellaneous
+
+I still have some issues with line handling and reaching the end of non-truncated lines sometimes. This is a workaround I had at some point. I'm keeping it around for posterity.
+
+#+begin_src elisp
+;; https://github.com/hlissner/doom-emacs/issues/401
+;; (setq evil-respect-visual-line-mode t)
+#+end_src
+
+For some reason, without this disabled, sh wants to autocomplete everything and search every path, so it is really slow.
+
+#+begin_src elisp
+(after! sh-script
+  (set-company-backend! 'sh-mode nil))
+#+end_src
