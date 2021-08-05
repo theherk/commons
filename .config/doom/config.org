@@ -124,3 +124,9 @@ For some reason, without this disabled, sh wants to autocomplete everything and 
 (after! sh-script
   (set-company-backend! 'sh-mode nil))
 #+end_src
+
+To avoid the error =command not found: pdflatex=, we need to manipulate the path in macos.
+
+#+begin_src elisp
+(exec-path-from-shell-initialize)
+#+end_src
