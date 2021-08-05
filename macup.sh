@@ -27,6 +27,7 @@ brew install \
     git \
     jq \
     kubectl \
+    maxtex \
     markdown \
     npm \
     plantuml \
