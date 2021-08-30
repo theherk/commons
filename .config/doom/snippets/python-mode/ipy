@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: IPython Breakpoint
+# key: ipy
+# contributor: Adam Sherwood <theherk@gmail.com>
+# --
+import IPython; IPython.embed() # IPython breakpoint - Don't forget to delete me.$0
