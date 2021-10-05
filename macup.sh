@@ -18,6 +18,8 @@ brew tap homebrew/cask-fonts
 brew install \
     archey \
     aspell \
+    caddy \
+    clang-format \
     coreutils \
     direnv \
     editorconfig \
@@ -25,12 +27,16 @@ brew install \
     fd \
     ghc \
     git \
+    gnu-units \
+    gnupg \
     jq \
     kubectl \
     mactex \
     markdown \
+    newman \
     npm \
     plantuml \
+    postman \
     pyenv \
     ripgrep \
     rust-analyzer \
