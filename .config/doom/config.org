@@ -109,6 +109,14 @@ While org's agenda todo list is usually sufficient, this let's you collapse a cu
   "t o t" #'org-show-todo-tree)
 #+end_src
 
+** global shortcuts
+
+#+begin_src elisp
+(map! :leader
+  :desc "make targets"
+  "c m" #'makefile-executor-execute-target)
+#+end_src
+
 ** miscellaneous
 
 I still have some issues with line handling and reaching the end of non-truncated lines sometimes. This is a workaround I had at some point. I'm keeping it around for posterity.
