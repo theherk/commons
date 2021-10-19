@@ -111,6 +111,12 @@ While org's agenda todo list is usually sufficient, this let's you collapse a cu
   :desc "org show todo tree"
   "t o t" #'org-show-todo-tree)
 #+end_src
+** projectile
+
+#+begin_src elisp
+;; (setq projectile-project-search-path '(("~/projects/" . 4))
+;;       projectile-sort-order 'recentf)
+#+end_src
 
 ** global shortcuts
 
