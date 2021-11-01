@@ -35,6 +35,7 @@ brew install \
     markdown \
     newman \
     npm \
+    pinentry-mac \
     plantuml \
     postman \
     pyenv \
@@ -76,3 +77,5 @@ cd Ligaturizer && make && cp fonts/output/* ~/Library/Fonts/
 doom sync
 # If I install VSCode, this line lets me scroll normally.
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+# Add pinentry for mac into gpg configuration.
+echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
