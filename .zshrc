@@ -106,6 +106,11 @@ jsonesc () {
 prettyjson () {
     cat $1 | python -mjson.tool > $2
 }
+sc() {
+        cmd="sceptre ${@#config/}"
+        echo $cmd
+        eval $cmd
+}
 util-start() {
     aws ec2 start-instances --instance-ids $1
 }
