@@ -4,6 +4,7 @@
 [user]
 	email = theherk@gmail.com
 	name = Adam Sherwood
+	signingkey = theherk@gmail.com
 [color]
 	ui = true
 [alias]
