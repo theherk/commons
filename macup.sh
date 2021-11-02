@@ -79,3 +79,4 @@ doom sync
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # Add pinentry for mac into gpg configuration.
 echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+# Install apptivate.
