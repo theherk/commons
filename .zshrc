@@ -107,9 +107,15 @@ prettyjson () {
     cat $1 | python -mjson.tool > $2
 }
 sc() {
-        cmd="sceptre ${@#config/}"
-        echo $cmd
-        eval $cmd
+    if [ ! -n "$NEXUS_USER" ]; then
+        export NEXUS_USER="unset"
+    fi
+    if [ ! -n "$NEXUS_PWD" ]; then
+        export NEXUS_PWD="unset"
+    fi
+    cmd="sceptre ${@#config/}"
+    echo $cmd
+    eval $cmd
 }
 util-start() {
     aws ec2 start-instances --instance-ids $1
