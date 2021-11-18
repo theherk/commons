@@ -25,8 +25,8 @@ I am still undecided on usage of variable pitch font. I cannot recall what issue
 #+begin_src elisp
 (setq
   doom-font (font-spec :family "Ubuntu Mono Ligaturized" :size 22)
-  doom-big-font (font-spec :family "Ubuntu Mono Ligaturized" :size 28))
-  ;; doom-variable-pitch-font (font-spec :family "Ubuntu" :size 28)
+  doom-big-font (font-spec :family "Ubuntu Mono Ligaturized" :size 28)
+  doom-variable-pitch-font (font-spec :family "Ubuntu" :size 20))
 #+end_src
 
 This can set the windows alpha, and I may want that sometime, but generally I use emacs edge-to-edge and on macOS, one cannot use transparency in full screen.
