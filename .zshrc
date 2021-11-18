@@ -124,17 +124,17 @@ util-connect() {
     aws ssm start-session --target $1
 }
 venv2 () {
-    virtualenv -p /usr/bin/python2 $VENVS/${1}
-    venvact ${1}
+    virtualenv -p /usr/bin/python2 .venv
+    venvact .venv
     pip install ipython
 }
 venv3 () {
-    python3 -m venv $VENVS/${1}
-    venvact ${1}
+    python3 -m venv .venv
+    venvact .venv
     pip install ipython
 }
 venvact () {
-    source ${VENVS}/${1}/bin/activate
+    source .venv/bin/activate
 }
 
 eval "$(shadowenv init zsh)"
