@@ -59,6 +59,7 @@ alias tree='tree -C'
 alias tmpd='cd $(mktemp -d)'
 alias trash="rm -rf ~/.local/share/Trash/"
 alias up="underscore pretty"
+alias buildhost-list="aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 alias util-list="aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 alias wow="git status"
 alias xc='xclip -sel clip'
