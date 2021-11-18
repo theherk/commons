@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: resolve
+# key: resolve
+# contributor: Adam Sherwood <theherk@gmail.com>
+# --
+ip_list = list({addr[-1][0] for addr in socket.getaddrinfo(host, 0, 0, 0, 0)})$0
