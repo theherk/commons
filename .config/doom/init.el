@@ -21,7 +21,7 @@
        nav-flash
        ophints
        (popup +defaults)
-       treemacs
+       (treemacs +lsp)
        unicode
        vc-gutter
        vi-tilde-fringe
