@@ -38,6 +38,7 @@ alias fz='find . -iname "*.7z"'
 alias g='gproxy2'
 alias gl='gproxy2 login'
 alias gls="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
+# alias grep='grep --color'
 alias gsuperpush="git push --force --tags origin 'refs/heads/*'"
 alias gtree="git log --pretty=oneline --decorate --graph"
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
