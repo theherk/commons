@@ -77,6 +77,13 @@ Do not pray for an easy life, pray for the strength to endure a difficult one.
 (setq fancy-splash-image "~/commons/img/bruce-matlocktheartist_200w.png")
 #+end_src
 
+*** treemacs
+
+#+begin_src elisp
+(with-eval-after-load 'doom-themes
+  (doom-themes-treemacs-config))
+#+end_src
+
 ** org-mode
 
 This is the directory in which emacs should look for org files that I use for agenda. I link files here from elsewhere.
