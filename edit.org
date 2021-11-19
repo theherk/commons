@@ -44,6 +44,19 @@ Each tree can have its visibility set individually using the =VISIBILITY= proper
 Open the agenda with =SPC o A=. You can show all tasks from there, but you can also expose only tasks in the current org file using =SPC t o t=.
 
 Archive todo entries with =SPC m A=. You can move archive entries the archive file back back out using =org-refile= or =SPC m s r=
+* python-mode
+
+Use direnv for best venv, virtualenv, pyenv handling. Add the following:
+
+#+begin_src rc
+source_up
+export AWS_PROFILE=maybe
+layout pyenv 3.8.10
+#+end_src
+
+This will automatically create a virtual environment with the given python executable.
+
+Remember to run =lsp-workspace-restart=.
 
 * Just handy commands
 
