@@ -81,6 +81,7 @@ Do not pray for an easy life, pray for the strength to endure a difficult one.
 
 #+begin_src elisp
 (with-eval-after-load 'doom-themes
+  (setq doom-themes-treemacs-theme "doom-colors")
   (doom-themes-treemacs-config))
 #+end_src
 
