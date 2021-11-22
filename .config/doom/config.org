@@ -134,10 +134,19 @@ While org's agenda todo list is usually sufficient, this let's you collapse a cu
 
 ** global shortcuts
 
+Execute make targets.
+
 #+begin_src elisp
 (map! :leader
   :desc "make targets"
   "c m" #'makefile-executor-execute-target)
+#+end_src
+
+LSP doc glance
+#+begin_src elisp
+(map! :leader
+  :desc "lsp ui doc glance"
+  "c g" #'lsp-ui-doc-glance)
 #+end_src
 
 ** miscellaneous
