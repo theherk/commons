@@ -2,6 +2,7 @@
 *\#*
 *.py[cod]
 .coverage
+.direnv
 .DS_Store
 .config/doom/config.el
 .emacs.d/elpa
