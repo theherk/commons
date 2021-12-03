@@ -14,6 +14,22 @@
 + last search - =spc '=
 + insert src - ~<s <tab>~
 
+** align
+
+Align things like trailing comments with =align-regexp=.
+
+before:
+#+begin_src yaml
+- thing # This is a short thing.
+- aLongerThing # This is a long thing.
+#+end_src
+
+after =M-x align-regexp # RET:
+#+begin_src yaml
+- thing        # This is a short thing.
+- aLongerThing # This is a long thing.
+#+end_src
+
 ** multi-edit
 1. initiate a search with =SPC /= =Z Z=
 2. enter in edit mode with =C-c C-e=
