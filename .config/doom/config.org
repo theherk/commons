@@ -41,16 +41,19 @@ I use dracula everywhere nearly all the time, but these themes are pretty nice t
 
 #+begin_src elisp
 ;; theme
-;; (setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-old-hope)
+;; (setq doom-theme 'doom-ayu-light)
+;; (setq doom-theme 'doom-ayu-mirage)
 ;; (setq doom-theme 'doom-challenger-deep)
 ;; (setq doom-theme 'doom-city-lights)
+;; (setq doom-theme 'doom-dracula)
 ;; (setq doom-theme 'doom-ephemeral)
-(setq doom-theme 'doom-ir-black)
+;; (setq doom-theme 'doom-ir-black)
 ;; (setq doom-theme 'doom-monokai-octagon)
 ;; (setq doom-theme 'doom-moonlight)
 ;; (setq doom-theme 'doom-nord)
-;; (setq doom-theme 'doom-old-hope)
 ;; (setq doom-theme 'doom-one-light)
+;; (setq doom-theme 'doom-solarized-dark)
 #+end_src
 
 The line I am on is always in the modeline, so generally I don't need to see these. And if I do, it is always just a ~SPC t l~ away.
