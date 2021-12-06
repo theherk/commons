@@ -16,6 +16,7 @@ go get -u \
     golang.org/x/tools/...
 brew tap homebrew/cask-fonts
 brew install \
+    alacritty \
     archey \
     aspell \
     caddy \
