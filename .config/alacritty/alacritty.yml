@@ -1,0 +1,23 @@
+import:
+  - ~/.config/alacritty/an-old-hope-black.yml
+window:
+  dimensions:
+    columns: 120
+    lines: 48
+  padding:
+   x: 20
+   y: 20
+scrolling:
+  history: 10000
+font:
+  normal:
+    family: Ubuntu Mono Ligaturized
+  bold:
+    family: Ubuntu Mono Ligaturized
+  size: 22.0
+draw_bold_text_with_bright_colors: false
+cursor:
+  style:
+    shape: Block
+    blinking: Off
+live_config_reload: true

@@ -1,0 +1,65 @@
+theme_colors:
+  very_light_grey: &very_light_grey '#cbcdd2'
+  light_grey: &light_grey '#848794'
+  grey: &grey '#686b78'
+  dark_grey: &dark_grey '#45474f'
+  very_dark_grey: &very_dark_grey '#1c1d21'
+
+  vader: &vader '#eb3d54'
+  luke: &luke '#ef7c2a'
+  threepio: &threepio '#e5cd52'
+  yoda: &yoda '#78bd65'
+  artoo: &artoo '#4fb4d8'
+
+colors:
+  primary:
+    background: *very_dark_grey
+    foreground: *light_grey
+    bright_foreground: *very_light_grey
+  cursor:
+    text: *dark_grey
+    cursor: *threepio
+  vi_mode_cursor:
+    text: *dark_grey
+    cursor: *threepio
+  search:
+    matches:
+      foreground: *dark_grey
+      background: *threepio
+    focused_match:
+      foreground: *light_grey
+      background: *vader
+    bar:
+      background: *light_grey
+      foreground: *dark_grey
+  hints:
+    start:
+      foreground: *dark_grey
+      background: *threepio
+    end:
+      foreground: *threepio
+      background: *dark_grey
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: *light_grey
+    background: *dark_grey
+  normal:
+    black: *very_dark_grey
+    red: *vader
+    green: *yoda
+    yellow: *threepio
+    blue: *artoo
+    magenta: *luke
+    cyan: *artoo
+    white: *very_light_grey
+  bright:
+    black: *very_dark_grey
+    red: *vader
+    green: *yoda
+    yellow: *threepio
+    blue: *artoo
+    magenta: *luke
+    cyan: *artoo
+    white: *very_light_grey
