@@ -1,5 +1,6 @@
 #!/bin/sh
 
+ln -sf ~/commons/.config/alacritty/ ~/.config/
 ln -sf ~/commons/.config/doom/ ~/.config/
 ln -sf ~/commons/.config/git/ ~/.config/
 ln -sf ~/commons/.config/starship.toml ~/.config/starship.toml
