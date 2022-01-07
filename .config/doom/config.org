@@ -94,6 +94,25 @@ Disable LSP ui doc mode.
   (doom-themes-treemacs-config))
 #+end_src
 
+
+
+** python-mode
+
+Use direnv for best venv, virtualenv, pyenv handling. Add =layout pyenv <version>= to .envrc. This will automatically create a virtual environment with the given python executable.
+
+Remember to run =lsp-workspace-restart=.
+
+*** Get pytest from executable
+
+This is suggested [[https://github.com/hlissner/doom-emacs/issues/2424#issuecomment-723091495][here]], but doesn't seem to work.
+
+#+begin_src elisp
+(add-hook! python-mode
+  (advice-add 'python-pytest-file :before
+              (lambda (&rest args)
+                (setq python-pytest-executable (+python-executable-find "pytest")))))
+#+end_src
+
 ** org-mode
 
 This is the directory in which emacs should look for org files that I use for agenda. I link files here from elsewhere.
