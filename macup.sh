@@ -26,6 +26,7 @@ brew install \
     editorconfig \
     direnv \
     fd \
+    fzf \
     ghc \
     git \
     gnu-units \
@@ -40,6 +41,7 @@ brew install \
     plantuml \
     postman \
     pyenv \
+    pygments \
     ripgrep \
     rust-analyzer \
     shadowenv \
