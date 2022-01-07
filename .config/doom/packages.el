@@ -3,3 +3,4 @@
 
 (package! rego-mode)
 (package! exec-path-from-shell)
+(package! ox-jira)
