@@ -29,7 +29,8 @@ fi
 
 export PAGER="less -FRSX"
 
-bindkey '^r' history-incremental-search-backward
+# bindkey '^r' history-incremental-search-backward # without fzf
+bindkey "ç" fzf-cd-widget
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
