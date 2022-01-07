@@ -7,7 +7,16 @@ autoload -Uz compinit && compinit
 
 ZSH=$HOME/.oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
-ZSH_THEME="dracula"
+plugins=(
+    cargo
+    colorize # ccat cless
+    fzf
+    golang
+    ripgrep
+    rust
+    terraform
+    tmux
+)
 
 source $ZSH/oh-my-zsh.sh
 source <(kubectl completion zsh)
