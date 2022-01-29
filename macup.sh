@@ -3,7 +3,7 @@ ssh-add .ssh/id_rsa
 git clone git@gitlab.com:theherk/commons.git
 mkdir .config projects
 ./commons/links.sh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"            # install oh-my-zsh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" # install brew
 xcode-select --install
 # install go from https://golang.org/doc/install
@@ -19,6 +19,7 @@ brew install \
     alacritty \
     archey \
     aspell \
+    bat \
     caddy \
     clang-format \
     coreutils \
@@ -33,6 +34,8 @@ brew install \
     gnupg \
     jq \
     kubectl \
+    lazygit \
+    lazydocker \
     mactex \
     markdown \
     newman \
@@ -73,7 +76,7 @@ doom install
 # install fonts from https://fonts.google.com/specimen/Ubuntu
 # install fonts from https://fonts.google.com/specimen/Ubuntu+Mono
 brew install --cask fontforge
-git clone --recurse-submodules  https://github.com/ToxicFrog/Ligaturizer.git
+git clone --recurse-submodules https://github.com/ToxicFrog/Ligaturizer.git
 # For my purposes, all fonts listed for processing can be removed aside from
 # Ubuntu fonts in Ligaturizer/build.py.
 cd Ligaturizer && make && cp fonts/output/* ~/Library/Fonts/
@@ -81,5 +84,5 @@ doom sync
 # If I install VSCode, this line lets me scroll normally.
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # Add pinentry for mac into gpg configuration.
-echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+echo "pinentry-program /usr/local/bin/pinentry-mac" >>~/.gnupg/gpg-agent.conf
 # Install apptivate.
