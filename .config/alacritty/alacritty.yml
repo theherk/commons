@@ -10,7 +10,6 @@ window:
   decorations: none
   startup_mode: Fullscreen
   dynamic_title: false
-background_opacity: 0.7
 scrolling:
   history: 10000
 font:
