@@ -42,6 +42,7 @@ brew install \
     npm \
     pinentry-mac \
     plantuml \
+    podman \
     postman \
     pyenv \
     pygments \
