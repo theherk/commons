@@ -52,7 +52,8 @@ brew install \
     shellcheck \
     starship \
     terraform \
-    wget
+    wget \
+    xh
 npm i -g js-beautify stylelint
 npm audit fix
 npm i --pack-lock-only
