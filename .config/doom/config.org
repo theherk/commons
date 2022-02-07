@@ -165,6 +165,7 @@ Execute make targets.
 #+end_src
 
 LSP doc glance
+
 #+begin_src elisp
 (map! :leader
   :desc "lsp ui doc glance"

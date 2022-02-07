@@ -46,7 +46,7 @@ alias ez='7z e'
 alias fr='find . -iname "*.rar"'
 alias fz='find . -iname "*.7z"'
 alias g='gproxy2'
-alias gl='gproxy2 login'
+alias gl='gproxy-auto.sh'
 alias gls="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
 # alias grep='grep --color'
 alias gsuperpush="git push --force --tags origin 'refs/heads/*'"
