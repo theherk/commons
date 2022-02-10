@@ -85,3 +85,17 @@ Remember to run =lsp-workspace-restart=.
 help: ## show help message
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m\033[0m\n"} /^[$$()% a-zA-Z./_-]+:.*?##/ { printf "  \033[36m%-16s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
 #+end_src
+
+
+* AWS envrc
+
+These commands are examples of how to run through state directories and create .envrc files.
+
+#+begin_src shell
+for d in $(find . -type d -name "dev*"); do echo "source_up\nexport AWS_PROFILE=cpp-$(basename $d)" > ${d}/.envrc; done
+for d in $(find . -type d -name "dev*"); do direnv allow $d; done
+for d in $(find . -type d \( -name "sit*" -o -name "uat*" \)); do echo "source_up\nexport AWS_PROFILE=cpp-$(basename $d)" > ${d}/.envrc; done
+for d in $(find . -type d \( -name "sit*" -o -name "uat*" \)); do direnv allow $d; done
+for d in $(find . -type d -name "prod*"); do echo "source_up\nexport AWS_PROFILE=cpp-$(basename $d)-ro" > ${d}/.envrc; done
+for d in $(find . -type d -name "prod*"); do direnv allow $d; done
+#+end_src
