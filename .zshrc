@@ -35,6 +35,7 @@ bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
 alias awsl='aws sso login --profile $AWS_PROFILE'
+alias awsr="aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'"
 alias awsu='unset AWS_PROFILE'
 alias cm='sudo loadkeys colemak'
 alias ed='emacs --daemon'
