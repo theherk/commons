@@ -40,6 +40,7 @@ brew install \
     markdown \
     newman \
     npm \
+    onefetch \
     pinentry-mac \
     plantuml \
     podman \
