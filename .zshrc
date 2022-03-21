@@ -8,7 +8,8 @@ autoload -Uz compinit && compinit
 ZSH=$HOME/.oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 plugins=(
-    cargo
+    aws
+    brew
     colorize # ccat cless
     fzf
     golang
