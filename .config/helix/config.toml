@@ -1,0 +1,7 @@
+theme = "onedark"
+
+[editor]
+mouse = false
+
+[editor.file-picker]
+hidden = true
