@@ -147,6 +147,13 @@ While org's agenda todo list is usually sufficient, this let's you collapse a cu
   :desc "org show todo tree"
   "t o t" #'org-show-todo-tree)
 #+end_src
+
+Make org pretty with [[https://github.com/minad/org-modern][org-modern]].
+
+#+begin_src elisp
+(add-hook 'org-mode-hook #'org-modern-mode)
+#+end_src
+
 ** projectile
 
 #+begin_src elisp
