@@ -66,6 +66,7 @@ alias restart="sudo shutdown -r now"
 alias rm="rm -iv"
 alias shutdown="sudo shutdown -h now"
 alias startx='ssh-agent startx'
+alias tft='TF_LOG=trace TF_LOG_PATH=tf-trace-$(date +%FT%T+01).log'
 alias tn="trans en:no -b "
 alias te="trans no:en -b "
 alias tree='tree -C'
