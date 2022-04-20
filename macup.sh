@@ -15,6 +15,7 @@ go get -u \
     github.com/nsf/gocode \
     golang.org/x/tools/...
 brew tap homebrew/cask-fonts
+brew tap helix-editor/helix
 brew install \
     alacritty \
     archey \
@@ -32,6 +33,7 @@ brew install \
     git \
     gnu-units \
     gnupg \
+    helix \
     jq \
     kubectl \
     lazygit \
