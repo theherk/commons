@@ -19,6 +19,7 @@ brew tap helix-editor/helix
 brew install \
     alacritty \
     archey \
+    asciinema \
     aspell \
     bat \
     caddy \
@@ -40,6 +41,7 @@ brew install \
     lazydocker \
     mactex \
     markdown \
+    navi \
     newman \
     npm \
     onefetch \
@@ -53,6 +55,7 @@ brew install \
     rust-analyzer \
     shadowenv \
     shellcheck \
+    sk \
     starship \
     terraform \
     wget \
