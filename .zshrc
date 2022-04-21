@@ -49,6 +49,7 @@ alias er='unrar e'
 alias ez='7z e'
 alias fr='find . -iname "*.rar"'
 alias fz='find . -iname "*.7z"'
+alias hxr='hx $(sk --ansi -i -c '\''rg --color=always --hidden --line-number "{}"'\'' | cut -d: -f1-2)'
 alias g='gproxy2'
 alias gl='gproxy-auto.sh'
 alias gls="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
