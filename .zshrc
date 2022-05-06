@@ -52,10 +52,7 @@ alias fz='find . -iname "*.7z"'
 alias hxr='hx $(sk --ansi -i -c '\''rg --color=always --hidden --line-number "{}"'\'' | cut -d: -f1-2)'
 alias g='gproxy2'
 alias gl='gproxy-auto.sh'
-alias gls="git log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
 # alias grep='grep --color'
-alias gsuperpush="git push --force --tags origin 'refs/heads/*'"
-alias gtree="git log --pretty=oneline --decorate --graph"
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias l='ls -lh'
 alias ll='ls -AlFh'

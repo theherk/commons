@@ -7,10 +7,14 @@
 	signingkey = theherk@gmail.com
 [color]
 	ui = true
-[alias]
-	subup=submodule update --init
 [color "diff"]
 	whitespace = red reverse
+[alias]
+	ls="log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
+	subup=submodule update --init
+	superpush=push --force --tags origin refs/heads/*
+	t="log --pretty=oneline --decorate --graph"
+	tree="log --pretty=oneline --decorate --graph"
 [fetch]
     prune = true
 [init]
