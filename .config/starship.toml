@@ -2,5 +2,8 @@
 success_symbol = "[➜](bold green)"
 error_symbol = "[➜](bold red)"
 
+[git_branch]
+symbol = "🌳 "
+
 [terraform]
 format = "[$symbol$version]($style) "
