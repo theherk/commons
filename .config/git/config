@@ -11,6 +11,8 @@
 	subup=submodule update --init
 [color "diff"]
 	whitespace = red reverse
+[fetch]
+    prune = true
 [init]
 	defaultBranch = main
 [includeIf "gitdir:~/projects/dnb.no/"]
