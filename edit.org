@@ -89,13 +89,25 @@ help: ## show help message
 
 * AWS envrc
 
-These commands are examples of how to run through state directories and create .envrc files.
+These commands are examples of how to run through directories and create .envrc files.
+
+First export this template:
 
 #+begin_src shell
-for d in $(find . -type d -name "dev*"); do echo "source_up\nexport AWS_PROFILE=cpp-$(basename $d)" > ${d}/.envrc; done
-for d in $(find . -type d -name "dev*"); do direnv allow $d; done
-for d in $(find . -type d \( -name "sit*" -o -name "uat*" \)); do echo "source_up\nexport AWS_PROFILE=cpp-$(basename $d)" > ${d}/.envrc; done
-for d in $(find . -type d \( -name "sit*" -o -name "uat*" \)); do direnv allow $d; done
-for d in $(find . -type d -name "prod*"); do echo "source_up\nexport AWS_PROFILE=cpp-$(basename $d)-ro" > ${d}/.envrc; done
-for d in $(find . -type d -name "prod*"); do direnv allow $d; done
+export TMPL='source_up\nexport AWS_PROFILE=${P}'
+#+end_src
+
+Then go to the root of there repositories to run the following commands.
+
+
+#+begin_src shell
+P=default-for-start envsubst < <(echo $TMPL) > .envrc
+for d in $(find . -type d -name "dev*"); do P=$(basename $d) envsubst < <(echo $TMPL) > ${d}/.envrc; done
+for d in $(find . -type d \( -name "sit*" -o -name "uat*" \)); do P=$(basename ${d/(sit|uat)/int}) envsubst < <(echo $TMPL) > ${d}/.envrc; done
+for d in $(find . -type d -name "prod*"); do P=$(basename $d)-ro envsubst < <(echo $TMPL) > ${d}/.envrc; done
+for f in $(find . -type f -name ".envrc"); do direnv allow $(dirname $f); done
+#+end_src
+
+
+#+begin_src shell
 #+end_src
