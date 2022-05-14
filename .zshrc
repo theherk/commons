@@ -64,6 +64,7 @@ alias restart="sudo shutdown -r now"
 alias rm="rm -iv"
 alias shutdown="sudo shutdown -h now"
 alias startx='ssh-agent startx'
+alias tfn='tee >(awk '"'"'match($0, /#.* (module\.\S+)/, g) { m=g[1] } match($0, /^(.*) resource .*{$/, g) { print g[1] " " m }'"'"' | sort)'
 alias tft='TF_LOG=trace TF_LOG_PATH=tf-trace-$(date +%FT%T+01).log'
 alias tfw='rg --color never "will be|must be" | rg -v "will be read" | sed "s/ be /|/g" | sort -t "|" -k2 | awk '"'"'BEGIN{FS="|"}{o=$NF!=a&&a?"\n"$2"\n"$1:!a?$2"\n"$1:$1;a=$NF;print o}'"'"' | sed -E "s/ will| must//" | sed "s/# //"'
 alias tn="trans en:no -b "
