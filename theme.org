@@ -1,0 +1,52 @@
+#+TITLE: Theme Notes
+#+AUTHOR: Adam Sherwood
+#+EMAIL: theherk@gmail.com
+#+DESCRIPTION: Information about theme configurations.
+
+* Colors
+
+- [[https://github.com/sdras/night-owl-vscode-theme][night owl]]
+- [[https://github.com/mohkale/an-old-hope-theme][an old hope]]
+- [[https://draculatheme.com/][dracula]]
+
+** Switching
+
+The following places require updates to theme:
+
+- emacs: ~/.config/doom/config.org
+- alacritty: ~/.config/alacritty/alacritty.yml
+- tmux: ~/.tmux.conf
+- firefox
+- slack
+
+*** firefox themes
+
+- [[https://addons.mozilla.org/en-US/firefox/addon/night-owl-theme/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][night owl]]
+- [[https://addons.mozilla.org/en-US/firefox/addon/dracula-dark/][dracula]]
+- [[https://addons.mozilla.org/en-US/firefox/addon/matte-black-orange/][matte black orange (for an old hope)]]
+
+*** slack themes
+
+night owl
+
+#+begin_src
+#011627,#1D3B53,#1D3B53,#82AAFF,#1D3B53,#D6DEEB,#ADDB67,#7E57C2,#0A151F,#D6DEEB
+#+end_src
+
+an old hope
+
+#+begin_src
+#1C1D21,#44475A,#45474F,#4FB4D8,#B55510,#CBCDD2,#78BD65,#EB3D54,#1C1D21,#E5CD52
+#+end_src
+
+* Fonts
+
+- [[https://rubjo.github.io/victor-mono/][victor mono]]
+- [[https://design.ubuntu.com/font/][ubuntu]]
+
+** Switching
+
+The following places require updates to font:
+
+- emacs: ~/.config/doom/config.org
+- alacritty: ~/.config/alacritty/alacritty.yml
