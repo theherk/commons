@@ -93,7 +93,7 @@ dirsize () {
         egrep '^ *[0-9.]*[MG]' | sort -n > /tmp/list
     egrep '^ *[0-9.]*M' /tmp/list
     egrep '^ *[0-9.]*G' /tmp/list
-    rm -rf /tmp/list
+    rm -rf /tmp/list > /dev/null
 }
 extract () {
     if [ -f $1 ] ; then
