@@ -34,6 +34,7 @@ brew install \
     git \
     gnu-units \
     gnupg \
+    grip \
     helix \
     jq \
     kubectl \
@@ -45,11 +46,13 @@ brew install \
     newman \
     npm \
     onefetch \
+    pandoc \
     pinentry-mac \
     plantuml \
     podman \
     postman \
     pyenv \
+    pylsp \
     pygments \
     ripgrep \
     rust-analyzer \
