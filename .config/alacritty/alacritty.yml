@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/an-old-hope-black.yml
+  - ~/.config/alacritty/night-owl.yml
 window:
   dimensions:
     columns: 120
@@ -19,6 +19,7 @@ font:
     family: Ubuntu Mono Ligaturized
   size: 22.0
 draw_bold_text_with_bright_colors: false
+custom_cursor_colors: true
 cursor:
   style:
     shape: Block
