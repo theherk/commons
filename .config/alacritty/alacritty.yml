@@ -14,10 +14,10 @@ scrolling:
   history: 10000
 font:
   normal:
-    family: Ubuntu Mono Ligaturized
+    family: VictorMono Nerd Font
   bold:
-    family: Ubuntu Mono Ligaturized
-  size: 22.0
+    family: VictorMono Nerd Font
+  size: 20.0
 draw_bold_text_with_bright_colors: false
 custom_cursor_colors: true
 cursor:
