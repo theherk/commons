@@ -52,6 +52,7 @@
        spell
 
        :tools
+       debugger (+lsp)
        direnv
        docker
        editorconfig
