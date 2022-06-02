@@ -22,3 +22,4 @@ GRTAGS
 GTAGS
 nosetests.xml
 pip-log.txt
+plan*
