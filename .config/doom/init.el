@@ -70,7 +70,7 @@
        emacs-lisp
        (go +lsp)
        json
-       (java +meghanada)
+       (java +lsp)
        javascript
        latex
        markdown
