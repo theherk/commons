@@ -111,3 +111,9 @@ for f in $(find . -type f -name ".envrc"); do direnv allow $(dirname $f); done
 
 #+begin_src shell
 #+end_src
+
+* vim sudo cheat
+
+#+begin_src vim
+cmap w!! w !sudo tee > /dev/null %
+#+end_src
