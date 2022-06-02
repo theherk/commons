@@ -39,6 +39,10 @@ an old hope
 #1C1D21,#44475A,#45474F,#4FB4D8,#B55510,#CBCDD2,#78BD65,#EB3D54,#1C1D21,#E5CD52
 #+end_src
 
+*** themer
+
+[[https://themer.dev/?colors.dark.shade0=%23011627&colors.dark.shade7=%23d6deeb&colors.dark.accent0=%23ef5350&colors.dark.accent1=%23c792ea&colors.dark.accent2=%23c5e478&colors.dark.accent3=%2322da6e&colors.dark.accent4=%23c792ea&colors.dark.accent5=%2382aaff&colors.dark.accent6=%2321c7a8&colors.dark.accent7=%23c792ea&activeColorSet=dark&calculateIntermediaryShades.dark=true&calculateIntermediaryShades.light=true][night owl]]
+
 * Fonts
 
 - [[https://rubjo.github.io/victor-mono/][victor mono]]
