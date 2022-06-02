@@ -3,5 +3,6 @@
 
 (package! exec-path-from-shell)
 ;; (package! org-modern)
+(package! night-owl-theme)
 (package! ox-jira)
 (package! rego-mode)

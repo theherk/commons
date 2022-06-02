@@ -37,11 +37,9 @@ This can set the windows alpha, and I may want that sometime, but generally I us
 ;; (add-to-list 'default-frame-alist '(alpha 90 65))
 #+end_src
 
-I use dracula everywhere nearly all the time, but these themes are pretty nice to, when I want a change of pace.
-
 #+begin_src elisp
 ;; theme
-(setq doom-theme 'doom-old-hope)
+(setq doom-theme 'night-owl)
 ;; (setq doom-theme 'doom-ayu-light)
 ;; (setq doom-theme 'doom-ayu-mirage)
 ;; (setq doom-theme 'doom-challenger-deep)
@@ -52,6 +50,7 @@ I use dracula everywhere nearly all the time, but these themes are pretty nice t
 ;; (setq doom-theme 'doom-monokai-octagon)
 ;; (setq doom-theme 'doom-moonlight)
 ;; (setq doom-theme 'doom-nord)
+;; (setq doom-theme 'doom-old-hope)
 ;; (setq doom-theme 'doom-one-light)
 ;; (setq doom-theme 'doom-solarized-dark)
 #+end_src
