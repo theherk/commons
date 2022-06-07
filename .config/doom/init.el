@@ -73,6 +73,7 @@
        (java +lsp)
        javascript
        latex
+       lua
        markdown
        org
        plantuml
