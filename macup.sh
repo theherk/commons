@@ -33,6 +33,7 @@ brew install \
     fzf \
     ghc \
     git \
+    gitui \
     gnu-units \
     gnupg \
     grip \
