@@ -17,6 +17,7 @@ plugins=(
     rust
     terraform
     tmux
+    zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
