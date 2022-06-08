@@ -1,7 +1,13 @@
-theme = "onedark"
+theme = "night_owl"
 
 [editor]
-mouse = false
+mouse = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
 
 [editor.file-picker]
 hidden = true
+# max-depth = 3
