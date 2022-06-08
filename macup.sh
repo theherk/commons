@@ -16,7 +16,10 @@ go get -u \
     golang.org/x/tools/...
 brew tap homebrew/cask-fonts
 brew tap helix-editor/helix
-brew install --cask homebrew/cask-fonts/font-victor-mono-nerd-font
+brew tap wez/wezterm
+brew install --cask \
+    homebrew/cask-fonts/font-victor-mono-nerd-font \
+    wez/wezterm/wezterm
 brew install \
     alacritty \
     archey \

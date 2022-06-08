@@ -1,0 +1,12 @@
+# Night Owl
+[colors]
+foreground = "#d6deeb"
+background = "#011627"
+cursor_bg = "#c792ea"
+cursor_border = "#c792ea"
+cursor_fg = "#011627"
+selection_bg = "#3c5b74"
+selection_fg = "#c792ea"
+
+ansi = ["#011627","#ef5350","#22da6e","#c5e478","#82aaff","#c792ea","#21c7a8","#ffffff"]
+brights = ["#575656","#ef5350","#22da6e","#ffeb95","#82aaff","#c792ea","#7fdbca","#ffffff"]
