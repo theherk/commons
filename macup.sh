@@ -21,7 +21,6 @@ brew install --cask \
     homebrew/cask-fonts/font-victor-mono-nerd-font \
     wez/wezterm/wezterm
 brew install \
-    alacritty \
     archey \
     asciinema \
     aspell \
@@ -57,7 +56,6 @@ brew install \
     podman \
     postman \
     pyenv \
-    pylsp \
     pygments \
     ripgrep \
     rust-analyzer \
