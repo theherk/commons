@@ -56,6 +56,7 @@ alias gl='gproxy-auto.sh'
 # alias grep='grep --color'
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias l='ls -lh'
+alias lg='lazygit'
 alias ll='ls -AlFh'
 # alias ls='ls --color=auto'
 alias ls='ls -G'
