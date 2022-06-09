@@ -20,7 +20,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source <(completion zsh)
+source <(kubectl completion zsh)
 
 export EDITOR='hx'
 export PAGER="less -FRSX"
