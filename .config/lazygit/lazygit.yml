@@ -1,0 +1,14 @@
+gui:
+  showBottomLine: true
+  showIcons: true
+  theme:
+    selectedLineBgColor:
+      - reverse
+    selectedRangeBgColor:
+      - reverse
+git:
+  parseEmoji: true
+os:
+  editCommand: 'hx'
+  editCommandTemplate: '{{editor}} {{filename}}:{{line}}'
+promptToReturnFromSubprocess: false
