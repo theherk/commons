@@ -54,8 +54,8 @@ alias tn="trans en:no -b "
 alias te="trans no:en -b "
 alias tmpd='cd $(mktemp -d)'
 alias up="underscore pretty"
-alias buildhost-list="aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 alias util-list="aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' --output text --query 'Reservations[*].Instances[*].InstanceId'"
+alias util-list-buildhost="aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 alias wow="git status"
 alias xc='xclip -sel clip'
 alias xp='cat p|xc'
