@@ -3,7 +3,7 @@ ssh-add .ssh/id_rsa
 git clone git@gitlab.com:theherk/commons.git
 mkdir .config projects
 ./commons/links.sh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"            # install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # install oh-my-zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" # install brew
@@ -16,6 +16,7 @@ go get -u \
     github.com/motemen/gore/... \
     github.com/nsf/gocode \
     golang.org/x/tools/...
+brew tap cjbassi/ytop
 brew tap homebrew/cask-fonts
 brew tap helix-editor/helix
 brew tap wez/wezterm
@@ -38,6 +39,7 @@ brew install \
     fzf \
     ghc \
     git \
+    git-delta \
     gitui \
     gnu-units \
     gnupg \
@@ -58,6 +60,7 @@ brew install \
     plantuml \
     podman \
     postman \
+    procs \
     pyenv \
     pygments \
     ripgrep \
@@ -67,6 +70,7 @@ brew install \
     sk \
     starship \
     terraform \
+    tokei \
     wget \
     xh
 npm i -g js-beautify stylelint
