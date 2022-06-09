@@ -1,24 +1,34 @@
-[core]
-	editor = emacsclient
-	pager = less -FRSX
-[user]
-	email = theherk@gmail.com
-	name = Adam Sherwood
-	signingkey = theherk@gmail.com
-[color]
-	ui = true
-[color "diff"]
-	whitespace = red reverse
 [alias]
 	ls="log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
 	subup=submodule update --init
 	superpush=push --force --tags origin refs/heads/*
 	t="log --pretty=oneline --decorate --graph"
 	tree="log --pretty=oneline --decorate --graph"
+[color]
+	ui = true
+[color "diff"]
+	whitespace = red reverse
+[core]
+	editor = hx
+    pager = delta
+[delta]
+	line-numbers = true
+    navigate = true
+[diff]
+    colorMoved = default
 [fetch]
     prune = true
 [init]
 	defaultBranch = main
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+    conflictstyle = diff3
+[user]
+	email = theherk@gmail.com
+	name = Adam Sherwood
+	signingkey = theherk@gmail.com
+
 [includeIf "gitdir:~/projects/dnb.no/"]
     path = ~/.config/git/dnb.no
 [commit]
