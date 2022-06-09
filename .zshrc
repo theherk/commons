@@ -28,7 +28,6 @@ export PAGER="less -FRSX"
 alias awsl='aws sso login --profile $AWS_PROFILE'
 alias awsr="aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'"
 alias awsu='unset AWS_PROFILE'
-alias cm='sudo loadkeys colemak'
 alias dumplynx='lynx -dump -stdin'
 alias dumpw3m='w3m -dump -T text/html'
 alias ed='emacs --daemon'
@@ -40,34 +39,25 @@ alias ez='7z e'
 alias fr='find . -iname "*.rar"'
 alias fz='find . -iname "*.7z"'
 alias hxr='hx $(sk --ansi -i -c '\''rg --color=always --hidden --line-number "{}"'\'' | cut -d: -f1-2)'
-alias g='gproxy2'
 alias gl='gproxy-auto.sh'
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias l='exa -l --icons'
 alias ll='exa -alFh --icons'
 alias ls='exa'
 alias lt='exa -T --icons'
-alias pacls='sudo pacman -Qqen'
 alias r="rsync -rltvz -e ssh --progress"
-alias restart="sudo shutdown -r now"
-alias rm="rm -iv"
-alias shutdown="sudo shutdown -h now"
-alias startx='ssh-agent startx'
 alias tfn='tee >(awk '"'"'match($0, /# (\S+\.(\[.+\]|\S+)+)/, g) { m=g[1] } match($0, /^(.* )resource .*{$/, g) { print g[1] m }'"'"' | sort)'
 alias tfpp='tfp | tee plan'
 alias tft='TF_LOG=trace TF_LOG_PATH=tf-trace-$(date +%FT%T+01).log'
 alias tfw='rg --color never "will be|must be" | rg -v "will be read" | sed "s/ be /|/g" | sort -t "|" -k2 | awk '"'"'BEGIN{FS="|"}{o=$NF!=a&&a?"\n"$2"\n"$1:!a?$2"\n"$1:$1;a=$NF;print o}'"'"' | sed -E "s/ will| must//" | sed "s/# //"'
 alias tn="trans en:no -b "
 alias te="trans no:en -b "
-alias tree='tree -C'
 alias tmpd='cd $(mktemp -d)'
-alias trash="rm -rf ~/.local/share/Trash/"
 alias up="underscore pretty"
 alias buildhost-list="aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 alias util-list="aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 alias wow="git status"
 alias xc='xclip -sel clip'
-alias xkcd='echo "xkcdpass --count=5 --acrostic='\''flow'\'' --min=4 --max=6 --valid_chars='\''[a-z]'\''"'
 alias xp='cat p|xc'
 
 awsp () {
