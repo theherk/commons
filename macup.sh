@@ -4,6 +4,8 @@ git clone git@gitlab.com:theherk/commons.git
 mkdir .config projects
 ./commons/links.sh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"            # install oh-my-zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" # install brew
 xcode-select --install
 # install go from https://golang.org/doc/install
@@ -29,8 +31,9 @@ brew install \
     clang-format \
     coreutils \
     direnv \
-    editorconfig \
     direnv \
+    editorconfig \
+    exa \
     fd \
     fzf \
     ghc \

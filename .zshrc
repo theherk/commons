@@ -10,13 +10,13 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(
     aws
     brew
-    colorize # ccat cless
     fzf
     golang
     ripgrep
     rust
     terraform
     tmux
+    zsh-autosuggestions
     zsh-vi-mode
 )
 
@@ -53,13 +53,11 @@ alias fz='find . -iname "*.7z"'
 alias hxr='hx $(sk --ansi -i -c '\''rg --color=always --hidden --line-number "{}"'\'' | cut -d: -f1-2)'
 alias g='gproxy2'
 alias gl='gproxy-auto.sh'
-# alias grep='grep --color'
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
-alias l='ls -lh'
-alias lg='lazygit'
-alias ll='ls -AlFh'
-# alias ls='ls --color=auto'
-alias ls='ls -G'
+alias l='exa -l --icons'
+alias ll='exa -alFh --icons'
+alias ls='exa'
+alias lt='exa -T --icons'
 alias pacls='sudo pacman -Qqen'
 alias r="rsync -rltvz -e ssh --progress"
 alias restart="sudo shutdown -r now"
