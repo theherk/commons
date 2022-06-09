@@ -42,6 +42,7 @@ alias hxr='hx $(sk --ansi -i -c '\''rg --color=always --hidden --line-number "{}
 alias gl='gproxy-auto.sh'
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias l='exa -l --icons'
+alias lg='lazygit'
 alias ll='exa -alFh --icons'
 alias ls='exa'
 alias lt='exa -T --icons'
