@@ -3,7 +3,12 @@
 #+EMAIL: theherk@gmail.com
 #+DESCRIPTION: Reminders to myself about editing.
 
-* Editing
+* Helix
+
++ change case with =~=
+
+* Emacs
+
 + Set individal file coding with: ~-*- coding: utf-8 -*-~.
 + Reset a buffer with coding: =revert-buffer-with-coding-system=.
 + selective-display =C-3 C-x $=
