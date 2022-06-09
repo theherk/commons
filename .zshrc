@@ -15,19 +15,18 @@ plugins=(
     ripgrep
     rust
     terraform
-    tmux
     zsh-autosuggestions
     zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
-source <(kubectl completion zsh)
 
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
 else
     export EDITOR='emacsclient'
 fi
+source <(completion zsh)
 
 export PAGER="less -FRSX"
 
