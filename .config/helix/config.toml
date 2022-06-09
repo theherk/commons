@@ -9,5 +9,4 @@ normal = "block"
 select = "underline"
 
 [editor.file-picker]
-hidden = true
-# max-depth = 3
+hidden = false
