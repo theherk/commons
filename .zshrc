@@ -25,11 +25,6 @@ source <(completion zsh)
 export EDITOR='hx'
 export PAGER="less -FRSX"
 
-# bindkey '^r' history-incremental-search-backward # without fzf
-bindkey "ç" fzf-cd-widget
-bindkey "^[[A" history-search-backward
-bindkey "^[[B" history-search-forward
-
 alias awsl='aws sso login --profile $AWS_PROFILE'
 alias awsr="aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'"
 alias awsu='unset AWS_PROFILE'
