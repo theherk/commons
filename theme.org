@@ -13,11 +13,13 @@
 
 The following places require updates to theme:
 
-- emacs: ~/.config/doom/config.org
-- alacritty: ~/.config/alacritty/alacritty.yml
-- tmux: ~/.tmux.conf
+- alacritty: .config/alacritty/alacritty.yml
+- emacs: .config/doom/config.org
 - firefox
+- gitui: .config/gitui/theme.ron
 - slack
+- tmux: .tmux.conf
+- wezterm: .config/wezterm/wezterm.lua
 
 *** firefox themes
 
