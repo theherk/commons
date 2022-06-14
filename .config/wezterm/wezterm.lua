@@ -83,7 +83,5 @@ return {
   window_frame = {
     font = wezterm.font({family="VictorMono Nerd Font", weight="Bold"}),
     font_size = 18.0,
-    active_titlebar_bg = "#011627",
-    inactive_titlebar_bg = "#011627",
   },
 }
