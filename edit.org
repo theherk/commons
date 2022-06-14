@@ -46,7 +46,7 @@ after =M-x align-regexp # RET:
 
 Open files with local root the easy way: ~SPC f f~ then =/sudo::/=.
 
-* org-mode
+** org-mode
 
 Set startup options with directive =STARTUP=. [[https://orgmode.org/manual/In_002dbuffer-Settings.html][Buffer Settings]]
 
@@ -65,7 +65,12 @@ Each tree can have its visibility set individually using the =VISIBILITY= proper
 Open the agenda with =SPC o A=. You can show all tasks from there, but you can also expose only tasks in the current org file using =SPC t o t=.
 
 Archive todo entries with =SPC m A=. You can move archive entries the archive file back back out using =org-refile= or =SPC m s r=
-* python-mode
+** dired
+
++ toggle details: ~dired-hide-details-mode~, =(=
++ toggle git details: ~dired-git-info-mode~, =)=
+
+** python-mode
 
 Use direnv for best venv, virtualenv, pyenv handling. Add the following:
 
@@ -79,7 +84,7 @@ This will automatically create a virtual environment with the given python execu
 
 Remember to run =lsp-workspace-restart=.
 
-* Just handy commands
+** Just handy commands
 
 + window-enlargen: =SPC w o=, amazing and works in popups
 + balance-windows: =SPC w ==, set things back to even
