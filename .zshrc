@@ -16,7 +16,6 @@ plugins=(
     rust
     terraform
     zsh-autosuggestions
-    zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
