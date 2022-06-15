@@ -1,4 +1,4 @@
-theme = "night_owl"
+theme = "dracula_at_night"
 
 [editor]
 mouse = true
