@@ -5,7 +5,7 @@
 
 (doom! :completion
        company
-       ivy
+       (vertico +icons)
 
        :config
        literate
