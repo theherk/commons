@@ -16,7 +16,7 @@
        doom-dashboard
        (emoji +unicode)
        hl-todo
-       ligatures
+       (ligatures +extra)
        modeline
        nav-flash
        ophints
@@ -40,6 +40,7 @@
        (dired +icons)
        electric
        (ibuffer +icons)
+       tramp
        undo
        vc
 
@@ -61,7 +62,7 @@
        lsp
        magit
        make
-       terraform
+       (terraform +lsp)
 
        :os
        (:if IS-MAC macos)
@@ -74,7 +75,7 @@
        javascript
        latex
        lua
-       markdown
+       (markdown +grip)
        org
        plantuml
        (python +lsp +pyright +pyenv)
