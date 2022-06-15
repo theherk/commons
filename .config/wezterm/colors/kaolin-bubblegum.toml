@@ -1,0 +1,15 @@
+# Colorscheme based on kaolin-bubblegum theme (https://github.com/ogdenwebb/emacs-kaolin-themes)
+[colors]
+background = "#14171e"
+foreground = "#e4e4e8"
+
+cursor_bg = "#41b0f3" # blue
+# cursor_bg = "#e4e4e8" # white
+cursor_fg = "#0c0d12"
+cursor_border = "#e4e4e8"
+
+selection_bg = "#272c3a"
+selection_fg = "#e6e6e8"
+
+ansi = ["#18181b", "#e84c58", "#63e8c1", "#eed891", "#41b0f3", "#c79af4", "#6bd9db", "#e6e6e8"]
+brights = ["#879193", "#e361c3", "#31e183", "#cfb05f", "#97b8de", "#fbaed2", "#a2c5c5", "#efeff1"]
