@@ -55,9 +55,8 @@ return {
   color_scheme = "kaolin-bubblegum",
   font = wezterm.font("VictorMono Nerd Font"),
   font_size = 20.0,
-  hide_tab_bar_if_only_one_tab = true,
   tab_bar_at_bottom = true,
-  tab_max_width = 48,
+  tab_max_width = 96,
   use_fancy_tab_bar = false,
 
   colors = {
