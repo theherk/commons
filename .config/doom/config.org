@@ -94,8 +94,6 @@ Disable LSP ui doc mode.
   (doom-themes-treemacs-config))
 #+end_src
 
-
-
 ** python-mode
 
 Use direnv for best venv, virtualenv, pyenv handling. Add =layout pyenv <version>= to .envrc. This will automatically create a virtual environment with the given python executable.
