@@ -76,7 +76,7 @@
        latex
        lua
        (markdown +grip)
-       org
+       (org +brain)
        plantuml
        (python +lsp +pyright +pyenv)
        rst
