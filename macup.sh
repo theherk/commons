@@ -32,7 +32,7 @@ brew install \
     clang-format \
     coreutils \
     direnv \
-    direnv \
+    dropbox \
     editorconfig \
     exa \
     fd \
