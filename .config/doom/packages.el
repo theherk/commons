@@ -9,3 +9,7 @@
 (package! org-modern)
 ;; (package! ox-jira)
 (package! rego-mode)
+
+;; org-roam needs unpinned to use latest.
+(unpin! org-roam)
+(package! org-roam-ui)
