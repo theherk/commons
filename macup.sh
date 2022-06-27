@@ -108,6 +108,5 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # Add pinentry for mac into gpg configuration.
 echo "pinentry-program /usr/local/bin/pinentry-mac" >>~/.gnupg/gpg-agent.conf
 # Install apptivate.
-git clone https://github.com/jeffreytse/zsh-vi-mode \\n $ZSH_CUSTOM/plugins/zsh-vi-mode
 # Setup dropbox org sync.
 ln -sf ~/Dropbox/org ~/
