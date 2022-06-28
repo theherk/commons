@@ -10,26 +10,26 @@
 	whitespace = red reverse
 [core]
 	editor = hx
-    pager = delta
+	pager = delta
 [delta]
 	line-numbers = true
-    navigate = true
+	navigate = true
 [diff]
-    colorMoved = default
+	colorMoved = default
 [fetch]
-    prune = true
+	prune = true
 [init]
 	defaultBranch = main
 [interactive]
-    diffFilter = delta --color-only
+	diffFilter = delta --color-only
 [merge]
-    conflictstyle = diff3
+	conflictstyle = diff3
 [user]
 	email = theherk@gmail.com
 	name = Adam Sherwood
 	signingkey = theherk@gmail.com
 
 [includeIf "gitdir:~/projects/dnb.no/"]
-    path = ~/.config/git/dnb.no
+	path = ~/.config/git/dnb.no
 [commit]
 	gpgsign = true
