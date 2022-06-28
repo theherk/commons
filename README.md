@@ -6,7 +6,7 @@ _update 2021-06-29_: The koolaid is delicious. I have removed most things that w
 
 ## Features
 
-- [Dracula](https://draculatheme.com/)
+- [Kaolin Emacs Themes](https://github.com/ogdenwebb/emacs-kaolin-themes) / [Kaolin Inspired Themes](https://github.com/alternateved/kaolin-inspired)
 - [Doom Emacs](https://github.com/hlissner/doom-emacs)
 - [Bruce Lee](https://en.wikipedia.org/wiki/Bruce_Lee)
 - [screenshots below](#screenshots)
@@ -30,12 +30,6 @@ You can't really just run this unattended.
 
 But you can follow [the script](macup.sh) as copypasta steps.
 
-#### Nushell configuration.
-
-nushell uses a different configuration path on mac os vs other systems.
-
-    ln -sf ~/commons/.config/nu/config.toml (config path)
-
 ## emacs literate configuration
 
 You can find my configuration [here](.config/doom/config.org).
@@ -44,17 +38,32 @@ You can find my configuration [here](.config/doom/config.org).
 
 #### emacs
 
-![emacs](img/emacs.png "emacs")
+![emacs-splash](img/emacs-splash.png "emacs-splash")
 
-#### tmux / term
+![emacs-treemacs](img/emacs-treemacs.png "emacs-treemacs")
 
-![tmux](img/tmux.png "tmux")
+![emacs-dired](img/emacs-dired.png "emacs-dired")
+
+![emacs-org-zen](img/emacs-org-zen.png "emacs-org-zen")
+
+#### firefox
+
+![firefox-music](img/firefox-music.png "firefox-music")
+
+#### slack
+
+![slack](img/slack.png "slack")
+
+#### wuzterm
+
+![wuzterm-lists](img/wuzterm-lists.png "wuzterm-lists")
+
+![wuzterm-sysinfo](img/wuzterm-sysinfo.png "wuzterm-sysinfo")
 
 ## Credits
 
 More are warranted, but the two I can think to mention off the bat are:
 
 - [matlocktheartist](https://www.deviantart.com/matlocktheartist/art/Bruce-Lee-Puzzled-322967405) for providing the awesome Bruce Lee art.
-- [Zeno Rocha](https://zenorocha.com/) for creating the [Dracula Theme](https://draculatheme.com/).
 
 ## Enjoy
