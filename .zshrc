@@ -94,6 +94,23 @@ extract () {
         echo "'$1' is not a valid file"
     fi
 }
+gfixtags () {
+    for t in $(gvtags); do gtr $t ${t#v}; done
+    for t in $(gvtags); do git tag -d $t; done
+}
+gtr () {
+    SOURCE_TAG=${1} NEW_TAG=${2}; deref() { git for-each-ref "refs/tags/$SOURCE_TAG" --format="%($1)" ; }; GIT_COMMITTER_NAME="$(deref taggername)" GIT_COMMITTER_EMAIL="$(deref taggeremail)" GIT_COMMITTER_DATE="$(deref taggerdate)" git tag "$NEW_TAG" "$(deref "*objectname")" -a -sm "$(deref contents:subject)"
+
+    # If any of the tags have bodies, this will add the contents.
+    # SOURCE_TAG=${1} NEW_TAG=${2}; deref() { git for-each-ref "refs/tags/$SOURCE_TAG" --format="%($1)" ; }; GIT_COMMITTER_NAME="$(deref taggername)" GIT_COMMITTER_EMAIL="$(deref taggeremail)" GIT_COMMITTER_DATE="$(deref taggerdate)" git tag "$NEW_TAG" "$(deref "*objectname")" -a -sm "$(deref contents:subject)\n\n$(deref contents:body)"
+}
+gvtags () {
+    for t in $(git tag); do
+        if [[ $t =~ ^v ]]; then
+            echo $t
+        fi;
+    done
+}
 jsonesc () {
     python -c 'import json,sys; print(json.dumps('$1'))'
 }
