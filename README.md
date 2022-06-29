@@ -10,6 +10,23 @@ _update 2021-06-29_: The koolaid is delicious. I have removed most things that w
 - [Doom Emacs](https://github.com/hlissner/doom-emacs)
 - [Bruce Lee](https://en.wikipedia.org/wiki/Bruce_Lee)
 - [screenshots below](#screenshots)
+- [bat](https://github.com/sharkdp/bat) in lieu of `cat`
+- [caddy](https://caddyserver.com/) for running simple servers
+- [direnv](https://direnv.net/)
+- [dropbox](https://www.dropbox.com/) for syncing org folder
+- [exa](https://github.com/ogham/exa) in lieu of `ls`
+- [fd](https://github.com/sharkdp/fd) for searching files
+- [fzf](https://github.com/junegunn/fzf) for fuzzy finding; mostly command history
+- [git-delta](https://github.com/ducaale/xh) as a highlighting pager
+- [grip](https://github.com/joeyespo/grip) for rendering markdown
+- [helix](https://helix-editor.com/) for simple edits in the shell
+- [navi](https://github.com/denisidoro/navi) for command reference
+- [podman](https://podman.io/) in lieu of docker desktop
+- [pyenv](https://github.com/pyenv/pyenv) for all my python environment needs
+- [ripgrep](https://github.com/BurntSushi/ripgrep) for the best in-file search tool out there
+- [skim](https://github.com/lotabout/skim) for some fuzzy finding
+- [starship](https://starship.rs/) for the best prompt
+- [xh](https://github.com/ducaale/xh) for http requests
 
 ## Installation
 
