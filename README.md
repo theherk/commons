@@ -36,6 +36,10 @@ You can find my configuration [here](.config/doom/config.org).
 
 ## Screenshots
 
+#### desktop
+
+![desktop](img/desktop.png "desktop")
+
 #### emacs
 
 ![emacs-splash](img/emacs-splash.png "emacs-splash")
