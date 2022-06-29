@@ -94,6 +94,14 @@ Disable LSP ui doc mode.
   (doom-themes-treemacs-config))
 #+end_src
 
+** groovy-mode
+
+Load all files called =*jenkinsfile*= in groovy-mode.
+
+#+begin_src elisp
+(add-to-list 'auto-mode-alist '("[Jj]enkinsfile" . groovy-mode))
+#+end_src
+
 ** python-mode
 
 Use direnv for best venv, virtualenv, pyenv handling. Add =layout pyenv <version>= to .envrc. This will automatically create a virtual environment with the given python executable.
