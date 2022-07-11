@@ -167,7 +167,7 @@ org-roam and org-roam-ui settings
     :after org-roam)
 
 (use-package! org-roam-ui
-    :after org-roam
+    :after org
     :config
     (setq org-roam-ui-sync-theme t
           org-roam-ui-follow t
