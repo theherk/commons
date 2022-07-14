@@ -33,6 +33,8 @@ brew install \
     coreutils \
     direnv \
     dropbox \
+    dua-cli \
+    dust \
     editorconfig \
     exa \
     fd \
