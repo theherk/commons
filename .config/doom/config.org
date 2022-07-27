@@ -90,10 +90,10 @@ There are some symbols in the current font that don't seem to work for prettify-
 
 #+begin_src elisp
 (plist-put! +ligatures-extra-symbols
-            :str           "§"
-            :bool          "⏻"
-            :true          "⊤"
-            :false          "⊥")
+            :str "§"
+            :bool "⏻"
+            :true "⊤"
+            :false "⊥")
 #+end_src
 
 *** treemacs
