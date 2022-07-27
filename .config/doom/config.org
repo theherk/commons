@@ -86,6 +86,16 @@ Disable LSP ui doc mode.
 (setq lsp-ui-doc-enable nil)
 #+end_src
 
+There are some symbols in the current font that don't seem to work for prettify-symbols-mode, so let's override them.
+
+#+begin_src elisp
+(plist-put! +ligatures-extra-symbols
+            :str           "§"
+            :bool          "⏻"
+            :true          "⊤"
+            :false          "⊥")
+#+end_src
+
 *** treemacs
 
 #+begin_src elisp
