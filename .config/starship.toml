@@ -3,7 +3,7 @@ success_symbol = "[ᐅ](bold green)"
 error_symbol = "[✗](bold red)"
 
 [git_branch]
-symbol = "🌳 "
+symbol = " "
 
 [terraform]
 format = "[$symbol$version]($style) "
