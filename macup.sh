@@ -97,6 +97,11 @@ brew install emacs-plus@28 --with-modern-doom3-icon
 cp -r /usr/local/opt/emacs-plus@28/Emacs.app /Applications/
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d # install doom
 doom install
+brew services start emacs-plus
+# create automator routine emacs-everywhere and bind M-S-space
+# can be imported from icloud; basically command script service invoking
+# /opt/homebrew/bin/emacsclient --eval "(emacs-everywhere)"
+# needs to be full path result of which emacsclient
 # install fonts from https://fonts.google.com/specimen/Ubuntu
 # install fonts from https://fonts.google.com/specimen/Ubuntu+Mono
 brew install --cask fontforge
