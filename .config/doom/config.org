@@ -201,6 +201,13 @@ org-roam and org-roam-ui settings
   "n r u o" #'org-roam-ui-open)
 #+end_src
 
+Load gfm as soon as org is loaded.
+
+#+begin_src elisp
+(eval-after-load "org"
+  '(require 'ox-gfm nil t))
+#+end_src
+
 ** projectile
 
 #+begin_src elisp
