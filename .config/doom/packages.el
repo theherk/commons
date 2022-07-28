@@ -7,7 +7,9 @@
 ;; (package! night-owl-theme)
 ;; (package! md4rd)
 (package! org-modern)
+(package! ox-gfm)
 ;; (package! ox-jira)
+(package! ox-pandoc)
 (package! rego-mode)
 
 ;; org-roam needs unpinned to use latest.
