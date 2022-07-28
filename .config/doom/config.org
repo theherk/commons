@@ -104,6 +104,12 @@ There are some symbols in the current font that don't seem to work for prettify-
   (doom-themes-treemacs-config))
 #+end_src
 
+** everywhere
+
+#+begin_src elisp
+(setq emacs-everywhere-frame-parameters '((name . "emacs-everywhere") (height . 18) (width . 80)))
+#+end_src
+
 ** groovy-mode
 
 Load all files called =*jenkinsfile*= in groovy-mode.
@@ -111,6 +117,7 @@ Load all files called =*jenkinsfile*= in groovy-mode.
 #+begin_src elisp
 (add-to-list 'auto-mode-alist '("[Jj]enkinsfile" . groovy-mode))
 #+end_src
+
 
 ** python-mode
 
