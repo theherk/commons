@@ -3,7 +3,10 @@
 ;; 'SPC h d h' for docs.
 ;; 'K' for module docs.
 
-(doom! :completion
+(doom! :app
+       everywhere
+
+       :completion
        company
        (vertico +icons)
 
