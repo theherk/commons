@@ -1,17 +1,13 @@
 [alias]
-	ls="log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'"
 	subup=submodule update --init
 	superpush=push --force --tags origin refs/heads/*
 	t="log --pretty=oneline --decorate --graph"
 	tree="log --pretty=oneline --decorate --graph"
-[color]
-	ui = true
-[color "diff"]
-	whitespace = red reverse
 [core]
 	editor = hx
 	pager = delta
 [delta]
+    light = false
 	line-numbers = true
 	navigate = true
 [diff]

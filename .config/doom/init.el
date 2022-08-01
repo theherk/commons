@@ -19,7 +19,7 @@
        doom-dashboard
        (emoji +unicode)
        hl-todo
-       (ligatures +extra)
+       ligatures
        modeline
        nav-flash
        ophints
