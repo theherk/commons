@@ -80,16 +80,6 @@ Do not pray for an easy life, pray for the strength to endure a difficult one.
 (setq fancy-splash-image "~/commons/img/bruce-matlocktheartist_200w.png")
 #+end_src
 
-There are some symbols in the current font that don't seem to work for prettify-symbols-mode, so let's override them.
-
-#+begin_src elisp
-(plist-put! +ligatures-extra-symbols
-            :str "§"
-            :bool "⏻"
-            :true "⊤"
-            :false "⊥")
-#+end_src
-
 *** treemacs
 
 #+begin_src elisp
