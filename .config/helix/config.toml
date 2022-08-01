@@ -1,4 +1,4 @@
-theme = "dracula_at_night"
+theme = "tokyonight"
 
 [editor]
 mouse = true
