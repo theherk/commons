@@ -62,7 +62,7 @@
        editorconfig
        (eval +overlay)
        lookup
-       lsp
+       (lsp +peek)
        magit
        make
        (terraform +lsp)
