@@ -78,6 +78,7 @@
        javascript
        latex
        lua
+       nim
        (markdown +grip)
        (org +roam2)
        plantuml
