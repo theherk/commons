@@ -1,5 +1,24 @@
 local wezterm = require 'wezterm';
 
+local selected_scheme = "tokyonight";
+local scheme = wezterm.get_builtin_color_schemes()[selected_scheme]
+
+local C_ACTIVE_BG = scheme.selection_bg;
+local C_ACTIVE_FG = scheme.ansi[6];
+local C_BG = scheme.background;
+local C_HL_1 = scheme.ansi[5];
+local C_HL_2 = scheme.ansi[4];
+local C_INACTIVE_FG;
+local bg = wezterm.color.parse(scheme.background);
+local h, s, l, a = bg:hsla();
+if l > 0.5 then
+    C_INACTIVE_FG = bg:complement_ryb():darken(0.3);
+else
+    C_INACTIVE_FG = bg:complement_ryb():lighten(0.3);
+end
+
+-- Overrides if scheme doesn't exist.
+
 -- Kaolin Bubblegum
 -- local C_ACTIVE_BG = "#454459";
 -- local C_ACTIVE_FG = "#6bd9db";
@@ -15,22 +34,6 @@ local wezterm = require 'wezterm';
 -- local C_HL_1 = "#f2c866";
 -- local C_HL_2 = "#e36d5b";
 -- local C_INACTIVE_FG = "#4b5254";
-
--- Night Owl
--- local C_ACTIVE_BG = "#674ba5";
--- local C_ACTIVE_FG = "#e2dded";
--- local C_BG = "#011627";
--- local C_HL_1 = "#7fdbca";
--- local C_HL_2 = "#addb67";
--- local C_INACTIVE_FG = "#8ba2b6";
-
--- tokyonight
-local C_ACTIVE_BG = "#454459";
-local C_ACTIVE_FG = "#7dcfff";
-local C_BG = "#1a1b26";
-local C_HL_1 = "#7aa2f7";
-local C_HL_2 = "#bb9af7";
-local C_INACTIVE_FG = "#575673";
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   if tab.is_active then
@@ -61,7 +64,7 @@ end
 
 return {
   leader = { key="a", mods="CTRL"},
-  color_scheme = "tokyonight",
+  color_scheme = selected_scheme,
   font = wezterm.font("VictorMono Nerd Font"),
   font_size = 20.0,
   tab_bar_at_bottom = true,
