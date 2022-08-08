@@ -87,14 +87,22 @@ return {
         bg_color = C_BG,
         fg_color = C_INACTIVE_FG,
       },
-    },
+    }
   },
 
   keys = {
     {key="a", mods="LEADER|CTRL", action=wezterm.action{SendString="\x01"}},
+
+    -- Mode
+    {key="x", mods="LEADER", action=wezterm.action.ActivateCopyMode},
+    {key=" ", mods="LEADER", action=wezterm.action.QuickSelect},
+
+    -- Pane Management
     {key="s", mods="LEADER", action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
     {key="v", mods="LEADER", action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
     {key="w", mods="LEADER", action=wezterm.action{CloseCurrentPane={confirm=false}}},
+
+    -- Navigation
     {key = "h", mods="LEADER", action=wezterm.action{ActivatePaneDirection="Left"}},
     {key = "l", mods="LEADER", action=wezterm.action{ActivatePaneDirection="Right"}},
     {key = "k", mods="LEADER", action=wezterm.action{ActivatePaneDirection="Up"}},
@@ -117,5 +125,5 @@ return {
   window_frame = {
     font = wezterm.font({family="VictorMono Nerd Font", weight="Bold"}),
     font_size = 18.0,
-  },
+  }
 }
