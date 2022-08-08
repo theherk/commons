@@ -56,11 +56,11 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     {Foreground={Color=C_HL_1}},
     {Text="|"},
   }
-end)
+end
+)
 
 return {
   leader = { key="a", mods="CTRL"},
-  -- color_scheme = "kaolin-bubblegum",
   color_scheme = "tokyonight",
   font = wezterm.font("VictorMono Nerd Font"),
   font_size = 20.0,
