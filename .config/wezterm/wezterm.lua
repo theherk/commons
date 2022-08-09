@@ -12,9 +12,9 @@ local C_INACTIVE_FG;
 local bg = wezterm.color.parse(scheme.background);
 local h, s, l, a = bg:hsla();
 if l > 0.5 then
-    C_INACTIVE_FG = bg:complement_ryb():darken(0.3);
+  C_INACTIVE_FG = bg:complement_ryb():darken(0.3);
 else
-    C_INACTIVE_FG = bg:complement_ryb():lighten(0.3);
+  C_INACTIVE_FG = bg:complement_ryb():lighten(0.3);
 end
 
 -- Overrides if scheme doesn't exist.
@@ -34,6 +34,26 @@ end
 -- local C_HL_1 = "#f2c866";
 -- local C_HL_2 = "#e36d5b";
 -- local C_INACTIVE_FG = "#4b5254";
+
+scheme.tab_bar = {
+  background = C_BG,
+  new_tab = {
+    bg_color = C_BG,
+    fg_color = C_HL_2,
+  },
+  active_tab = {
+    bg_color = C_ACTIVE_BG,
+    fg_color = C_ACTIVE_FG,
+  },
+  inactive_tab = {
+    bg_color = C_BG,
+    fg_color = C_INACTIVE_FG,
+  },
+  inactive_tab_hover = {
+    bg_color = C_BG,
+    fg_color = C_INACTIVE_FG,
+  }
+}
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   if tab.is_active then
@@ -64,35 +84,15 @@ end
 
 return {
   leader = { key="a", mods="CTRL"},
+  color_schemes = {
+    [selected_scheme] = scheme
+  },
   color_scheme = selected_scheme,
   font = wezterm.font("VictorMono Nerd Font"),
   font_size = 20.0,
   tab_bar_at_bottom = true,
   tab_max_width = 96,
   use_fancy_tab_bar = false,
-
-  colors = {
-    tab_bar = {
-      background = C_BG,
-      new_tab = {
-        bg_color = C_BG,
-        fg_color = C_HL_2,
-      },
-      active_tab = {
-        bg_color = C_ACTIVE_BG,
-        fg_color = C_ACTIVE_FG,
-      },
-      inactive_tab = {
-        bg_color = C_BG,
-        fg_color = C_INACTIVE_FG,
-      },
-      inactive_tab_hover = {
-        bg_color = C_BG,
-        fg_color = C_INACTIVE_FG,
-      },
-    }
-  },
-
   keys = {
     {key="a", mods="LEADER|CTRL", action=wezterm.action{SendString="\x01"}},
 
