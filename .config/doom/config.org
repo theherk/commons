@@ -211,13 +211,15 @@ Execute make targets.
 
 LSP
 
+lsp-ui-imenu is a less helpful alternative.
+
 #+begin_src elisp
 (map! :leader
   :desc "lsp ui doc glance"
   "c g" #'lsp-ui-doc-glance)
 (map! :leader
-  :desc "lsp ui menu"
-  "o l" #'lsp-ui-imenu)
+  :desc "symbol explorer"
+  "o l" #'lsp-treemacs-symbols)
 #+end_src
 
 ** miscellaneous
