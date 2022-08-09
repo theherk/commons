@@ -209,12 +209,15 @@ Execute make targets.
   "c m" #'makefile-executor-execute-target)
 #+end_src
 
-LSP doc glance
+LSP
 
 #+begin_src elisp
 (map! :leader
   :desc "lsp ui doc glance"
   "c g" #'lsp-ui-doc-glance)
+(map! :leader
+  :desc "lsp ui menu"
+  "o l" #'lsp-ui-imenu)
 #+end_src
 
 ** miscellaneous
