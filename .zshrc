@@ -24,6 +24,9 @@ source <(kubectl completion zsh)
 export EDITOR='hx'
 export PAGER="less -FRSX"
 
+# Good autosuggest color
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
+
 alias awsl='aws sso login --profile $AWS_PROFILE'
 alias awsr="aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'"
 alias awsu='unset AWS_PROFILE'
