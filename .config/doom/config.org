@@ -37,23 +37,12 @@ This can set the windows alpha, and I may want that sometime, but generally I us
 ;; (add-to-list 'default-frame-alist '(alpha 90 65))
 #+end_src
 
+Now that Prot has release [[https://github.com/protesilaos/ef-themes][ef-themes]], I see no reason to use any others.
+
 #+begin_src elisp
-;; theme
-(setq doom-theme 'kaolin-bubblegum)
-;; (setq doom-theme 'doom-ayu-light)
-;; (setq doom-theme 'doom-ayu-mirage)
-;; (setq doom-theme 'doom-challenger-deep)
-;; (setq doom-theme 'doom-city-lights)
-;; (setq doom-theme 'doom-dracula)
-;; (setq doom-theme 'doom-ephemeral)
-;; (setq doom-theme 'doom-ir-black)
-;; (setq doom-theme 'doom-monokai-octagon)
-;; (setq doom-theme 'doom-moonlight)
-;; (setq doom-theme 'night-owl)
-;; (setq doom-theme 'doom-nord)
-;; (setq doom-theme 'doom-old-hope)
-;; (setq doom-theme 'doom-one-light)
-;; (setq doom-theme 'doom-solarized-dark)
+(require 'ef-themes)
+(mapc #'disable-theme custom-enabled-themes)
+(load-theme 'ef-winter :no-confirm)
 #+end_src
 
 The line I am on is always in the modeline, so generally I don't need to see these. And if I do, it is always just a ~SPC t l~ away.
