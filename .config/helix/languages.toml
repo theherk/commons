@@ -1,0 +1,4 @@
+[[language]]
+name = "python"
+auto-format = true
+formatter = { command = "black", args = ["-", "-q"] }
