@@ -179,6 +179,10 @@ Load gfm as soon as org is loaded.
 #+begin_src elisp
 (eval-after-load "org"
   '(require 'ox-gfm nil t))
+(eval-after-load "org"
+  '(require 'ox-jira nil t))
+(eval-after-load "org"
+  '(require 'ox-pandoc nil t))
 #+end_src
 
 ** projectile
