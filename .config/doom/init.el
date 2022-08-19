@@ -20,7 +20,7 @@
        (emoji +unicode)
        hl-todo
        ligatures
-       (modeline +light)
+       (modeline)
        nav-flash
        ophints
        (popup +defaults)
