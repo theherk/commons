@@ -20,6 +20,8 @@ User identification. You can find more information in the [[https://www.gnu.org/
 
 ** Display configuration
 
+*** Font
+
 I am still undecided on usage of variable pitch font. I cannot recall what issue it was causing for me, but it had to do with ligatures. It is probably fine.
 
 #+begin_src elisp
@@ -27,7 +29,57 @@ I am still undecided on usage of variable pitch font. I cannot recall what issue
   doom-font (font-spec :family "VictorMono Nerd Font" :size 20)
   doom-big-font (font-spec :family "VictorMono Nerd Font" :size 24)
   doom-variable-pitch-font (font-spec :family "VictorMono Nerd Font" :size 20))
+
 #+end_src
+
+*** Modeline:
+
+
+#+begin_src elisp
+(custom-set-faces
+  '(mode-line ((t (:height 0.8))))
+  '(mode-line-inactive ((t (:height 0.8)))))
+#+end_src
+
+Hack from #187.
+
+#+begin_src elisp
+(defun my-doom-modeline--font-height ()
+  "Calculate the actual char height of the mode-line."
+  (+ (frame-char-height) 2))
+(advice-add #'doom-modeline--font-height :override #'my-doom-modeline--font-height)
+#+end_src
+
+#+begin_src elisp
+(use-package doom-modeline
+  :hook (after-init . doom-modeline-mode)
+  :custom
+  (doom-modeline-height 1)
+  (doom-modeline-bar-width 0)
+  (doom-modeline-buffer-state-icon t)
+  (doom-modeline-buffer-modification-icon t))
+#+end_src
+
+*** Theme
+Now that Prot has release [[https://github.com/protesilaos/ef-themes][ef-themes]], I see no reason to use any others.
+
+#+begin_src elisp
+(require 'ef-themes)
+(mapc #'disable-theme custom-enabled-themes)
+(load-theme 'ef-winter :no-confirm)
+#+end_src
+
+Who doesn't want Bruce Lee to greet them at the beginning of a work session. He's there to remind you:
+
+#+begin_quote
+Do not pray for an easy life, pray for the strength to endure a difficult one.
+#+end_quote
+
+#+begin_src elisp
+(setq fancy-splash-image "~/commons/img/bruce-matlocktheartist_200w.png")
+#+end_src
+
+**** Alpha
 
 This can set the windows alpha, and I may want that sometime, but generally I use emacs edge-to-edge and on macOS, one cannot use transparency in full screen.
 
@@ -37,13 +89,7 @@ This can set the windows alpha, and I may want that sometime, but generally I us
 ;; (add-to-list 'default-frame-alist '(alpha 90 65))
 #+end_src
 
-Now that Prot has release [[https://github.com/protesilaos/ef-themes][ef-themes]], I see no reason to use any others.
-
-#+begin_src elisp
-(require 'ef-themes)
-(mapc #'disable-theme custom-enabled-themes)
-(load-theme 'ef-winter :no-confirm)
-#+end_src
+*** Lines
 
 The line I am on is always in the modeline, so generally I don't need to see these. And if I do, it is always just a ~SPC t l~ away.
 
@@ -57,16 +103,6 @@ Toggle line wrapping.
 (map! :leader
   :desc "toggle wrap"
   "t t" #'toggle-truncate-lines)
-#+end_src
-
-Who doesn't want Bruce Lee to greet them at the beginning of a work session. He's there to remind you:
-
-#+begin_quote
-Do not pray for an easy life, pray for the strength to endure a difficult one.
-#+end_quote
-
-#+begin_src elisp
-(setq fancy-splash-image "~/commons/img/bruce-matlocktheartist_200w.png")
 #+end_src
 
 *** treemacs
@@ -91,7 +127,6 @@ Load all files called =*jenkinsfile*= in groovy-mode.
 (add-to-list 'auto-mode-alist '("[Jj]enkinsfile" . groovy-mode))
 #+end_src
 
-
 ** python-mode
 
 Use direnv for best venv, virtualenv, pyenv handling. Add =layout pyenv <version>= to .envrc. This will automatically create a virtual environment with the given python executable.
@@ -111,12 +146,8 @@ This is suggested [[https://github.com/hlissner/doom-emacs/issues/2424#issuecomm
 
 ** org-mode
 
-This is the directory in which emacs should look for org files that I use for agenda. I link files here from elsewhere.
-
 #+begin_src elisp
 (setq org-directory "~/org/")
-;; (after! org
-;;   (setq org-agenda-files '("~/projects/dnb.no/adam.sherwood/notes")))
 #+end_src
 
 When the point is over a link in org-mode ~SPC m l y~ will yank that link.
@@ -174,7 +205,7 @@ org-roam and org-roam-ui settings
   "n r u o" #'org-roam-ui-open)
 #+end_src
 
-Load gfm as soon as org is loaded.
+Load ox exporters (gfm, jira, and pandoc) as soon as org is loaded. No clue why running all these in one =progn= within the =eval-after-load=, but here we are.
 
 #+begin_src elisp
 (eval-after-load "org"
@@ -194,7 +225,7 @@ Load gfm as soon as org is loaded.
 
 ** global shortcuts
 
-Execute make targets.
+*** Make
 
 #+begin_src elisp
 (map! :leader
@@ -202,7 +233,7 @@ Execute make targets.
   "c m" #'makefile-executor-execute-target)
 #+end_src
 
-LSP
+*** LSP
 
 lsp-ui-imenu is a less helpful alternative.
 
