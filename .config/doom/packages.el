@@ -4,8 +4,6 @@
 (package! ef-themes)
 (package! exec-path-from-shell)
 (package! hackernews)
-;; (package! night-owl-theme)
-;; (package! md4rd)
 (package! org-modern)
 (package! ox-gfm)
 ;; (package! ox-jira)
