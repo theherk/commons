@@ -18,6 +18,7 @@
 + permanent search results - =C-c C-o=
 + last search - =spc '=
 + insert src - ~<s <tab>~
++ save without autocomplete - type filename then =C-j=
 
 ** align
 
