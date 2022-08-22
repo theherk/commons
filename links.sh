@@ -1,6 +1,7 @@
 #!/bin/sh
 
 ln -sf ~/commons/.aliases ~/
+ln -sf ~/commons/.bashrc ~/
 ln -sf ~/commons/.config/alacritty/ ~/.config/
 ln -sf ~/commons/.config/doom/ ~/.config/
 ln -sf ~/commons/.config/git/ ~/.config/
