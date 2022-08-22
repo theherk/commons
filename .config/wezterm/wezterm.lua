@@ -88,6 +88,10 @@ return {
     [selected_scheme] = scheme
   },
   color_scheme = selected_scheme,
+  inactive_pane_hsb = {
+    saturation = 0.6,
+    brightness = 0.6,
+  },
   font = wezterm.font("VictorMono Nerd Font"),
   font_size = 26,
   tab_bar_at_bottom = true,
