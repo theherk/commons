@@ -123,10 +123,5 @@ return {
     {key="9", mods="LEADER", action=wezterm.action{ActivateTab=8}},
     {key="0", mods="LEADER", action=wezterm.action{ActivateTab=-1}},
     {key="0", mods="SUPER", action=wezterm.action{ActivateTab=-1}},
-  },
-
-  window_frame = {
-    font = wezterm.font({family="VictorMono Nerd Font", weight="Bold"}),
-    font_size = 18.0,
   }
 }
