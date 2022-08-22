@@ -1,8 +1,9 @@
 [alias]
 	subup=submodule update --init
 	superpush=push --force --tags origin refs/heads/*
-	t="log --pretty=oneline --decorate --graph"
 	tree="log --pretty=oneline --decorate --graph"
+[checkout]
+	defaultRemote = origin
 [core]
 	editor = hx
 	pager = delta
