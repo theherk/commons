@@ -21,6 +21,8 @@
 	diffFilter = delta --color-only
 [merge]
 	conflictstyle = diff3
+[pull]
+	rebase = true
 [user]
 	email = theherk@gmail.com
 	name = Adam Sherwood
