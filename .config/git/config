@@ -12,7 +12,7 @@
 	line-numbers = true
 	navigate = true
 [diff]
-	colorMoved = default
+	colorMoved = zebra
 [fetch]
 	prune = true
 [init]
