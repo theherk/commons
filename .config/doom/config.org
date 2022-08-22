@@ -34,11 +34,10 @@ I am still undecided on usage of variable pitch font. I cannot recall what issue
 
 *** Modeline:
 
-
 #+begin_src elisp
 (custom-set-faces
-  '(mode-line ((t (:height 0.8))))
-  '(mode-line-inactive ((t (:height 0.8)))))
+  '(mode-line ((t (:height 0.9))))
+  '(mode-line-inactive ((t (:height 0.9)))))
 #+end_src
 
 Hack from #187.
