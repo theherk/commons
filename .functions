@@ -67,6 +67,10 @@ sc() {
     eval $cmd
 }
 
+t() { # tree with depth
+    exa -T -L $1
+}
+
 util-start() {
     aws ec2 start-instances --instance-ids $1
 }
