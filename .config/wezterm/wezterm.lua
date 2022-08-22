@@ -89,7 +89,7 @@ return {
   },
   color_scheme = selected_scheme,
   font = wezterm.font("VictorMono Nerd Font"),
-  font_size = 20.0,
+  font_size = 26,
   tab_bar_at_bottom = true,
   tab_max_width = 96,
   use_fancy_tab_bar = false,
