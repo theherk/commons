@@ -5,14 +5,16 @@ export VENVS=$HOME/.venvs
 
 export P=$HOME/projects
 export GOPATH=$P/go
-export G=$GOPATH/src
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
+export PATH=/usr/local/opt/mysql-client/bin:$PATH
+export PATH=$HOME/.amplify/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH
 export PATH=$HOME/.emacs.d/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
