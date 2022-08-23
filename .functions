@@ -55,6 +55,10 @@ prettyjson () {
     cat $1 | python -mjson.tool > $2
 }
 
+rgh () { # search history
+    history | rg $1
+}
+
 sc() {
     if [ ! -n "$NEXUS_USER" ]; then
         export NEXUS_USER="unset"
