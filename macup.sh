@@ -72,7 +72,7 @@ brew install \
     sk \
     starship \
     terraform \
-    terraform-lsp \
+    terraform-ls \
     tokei \
     wget \
     xh
