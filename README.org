@@ -239,13 +239,27 @@ pip install black nose pytest pyflakes isort pipenv
 
 * Screenshots
 
+** Desktop
+
 #+html: <p align="center"><img src="./img/desktop.png" alt="desktop" /></p>
+
+** Emacs
+
 #+html: <p align="center"><img src="./img/emacs-splash.png" alt="emacs splash screen" /></p>
 #+html: <p align="center"><img src="./img/emacs-treemacs.png" alt="emacs treemacs" /></p>
 #+html: <p align="center"><img src="./img/emacs-dired.png" alt="emacs dired" /></p>
 #+html: <p align="center"><img src="./img/emacs-org-zen.png" alt="emacs org zen" /></p>
+
+** Firefox
+
 #+html: <p align="center"><img src="./img/firefox-music.png" alt="firefox" /></p>
+
+** Slack
+
 #+html: <p align="center"><img src="./img/slack.png" alt="slack" /></p>
+
+** Wezterm
+
 #+html: <p align="center"><img src="./img/wezterm-lists.png" alt="wezterm lists" /></p>
 #+html: <p align="center"><img src="./img/wezterm-sysinfo.png" alt="wezterm sysinfo" /></p>
 
