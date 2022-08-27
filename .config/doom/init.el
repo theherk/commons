@@ -65,7 +65,7 @@
        (lsp +peek)
        magit
        make
-       (terraform +lsp)
+       terraform
 
        :os
        (:if IS-MAC macos)
