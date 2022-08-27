@@ -93,7 +93,7 @@ return {
     brightness = 0.6,
   },
   font = wezterm.font("VictorMono Nerd Font"),
-  font_size = 24,
+  font_size = 22,
   tab_bar_at_bottom = true,
   tab_max_width = 96,
   use_fancy_tab_bar = false,
