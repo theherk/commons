@@ -1,0 +1,258 @@
+#+TITLE: theherk commons
+#+SUBTITLE: Common Environment Configuration
+#+AUTHOR: Adam Sherwood
+#+EMAIL: theherk@gmail.com
+
+These are the configuration details and files I use to configure my environment. Feel free to peruse if it suits you.
+
+* Tools
+
+** Editors
+
+I use Emacs almost exclusively, though I still haven't used it as long as I did Vim; 7 years to about 24 respectively. I have really enjoyed the work happening on Helix, but it is unlikely that Emacs will ever be replaced. It is just too good.
+
+- [[https://github.com/hlissner/doom-emacs][Doom Emacs]]: [[file:.config/doom/config.org][configuration]], [[https://github.com/protesilaos/ef-themes][ef-themes winter]]
+- [[https://helix-editor.com/][Helix Editor]]: [[https://github.com/helix-editor/helix/wiki/Themes#tokyo-night][tokyonight]]
+
+** Terminal
+
+- [[https://github.com/akermu/emacs-libvterm][vterm]]
+- [[https://wezfurlong.org/wezterm/][Wezterm]]: [[file:.config/wezterm/wezterm.lua][configuration]], [[https://wezfurlong.org/wezterm/colorschemes/t/index.html#tokyonight][tokyonight]]
+
+** Font
+
+I use [[https://rubjo.github.io/victor-mono/][VictorMono]], and it is superb.
+
+** Languages
+
+I use these mostly, though others are supported.
+
+- [[https://www.rust-lang.org/][Rust]]
+- [[https://www.python.org/][Python]]
+- [[https://go.dev/][Go]]
+
+** Utilities
+
+A partial list of installed tools:
+
+- [[https://asciinema.org/][asciinema]]: Record and share terminal sessions.
+- [[https://github.com/sharkdp/bat][bat]]: A cat clone.
+- [[https://github.com/caddyserver/caddy][caddy]]: Simple file server.
+- [[https://www.gnu.org/software/coreutils/][coreutils]]: GNU core utilities.
+- [[https://direnv.net/][direnv]]: Environment manipulation.
+- [[https://formulae.brew.sh/cask/dropbox][dropbox]]: Only for syncing org directory.
+- [[https://editorconfig.org/][editorconfig]]: Enforce some text styles.
+- [[https://the.exa.website/][exa]]: A modern replacement for ls.
+- [[https://github.com/sharkdp/fd][fd]]: Fast, user-friendly find.
+- [[https://github.com/junegunn/fzf][fzf]]: Command-line fuzzy finder.
+- [[https://www.mozilla.org/en-US/firefox/new/][firefox]]: [[https://color.firefox.com/?theme=XQAAAAIOAQAAAAAAAABBKYhm849SCia2CaaEGccwS-xMDPr0sKyHm0LFtsAuOs5Hgc59MzILXCVRpjcIcxKwXf-yc__PKRtJvTLuqCwxEvSIG5G-JU2nV8QMryjBVOlGDzRqLdB29oIFwqvIfpV4XWTC1uKCh3ILvcnJhfHuMoyL5sRfBa2iZxDB_ya6eVp-KaVwghWkUDYPaLkOR63d33whjJPzYrpf2sh9d2ppdtku_Z76zswg][color]]
+- [[https://github.com/dandavison/delta][git-delta]]: Syntax highlighting pager.
+- [[https://github.com/extrawurst/gitui][gitui]]: Fast terminal ui for git.
+- [[https://github.com/joeyespo/grip][grip]]: Preview markdown.
+- [[https://github.com/denisidoro/navi][navi]]: Interactive cheatsheet tool for the command-line.
+- [[https://ohmyz.sh/][oh-my-zsh]]: Zsh configuration management.
+- [[https://pandoc.org/][pandoc]]: Universal document converter.
+- [[https://podman.io/][podman]]: Daemonless container engine.
+- [[https://github.com/pyenv/pyenv][pyenv]]: Simple python version management.
+- [[https://github.com/BurntSushi/ripgrep][ripgrep]]: Amazing search tool.
+- [[https://github.com/Shopify/shadowenv][shadowenv]]: Slightly better, but less integrated environment manipulation.
+- [[https://github.com/lotabout/skim][skim]]: Awesome fuzzy finder.
+- [[https://starship.rs/][starship]]: Customizable prompt.
+- [[https://www.terraform.io/][terraform]]: Infrastructure management tool.
+- [[https://github.com/XAMPPRocky/tokei][tokei]]: Great tool for counting code.
+- [[https://github.com/ducaale/xh][xh]]: Friendly tool for sending http requests.
+
+* Installation
+
+Get this from git. For you:
+
+#+begin_src shell
+git clone https://gitlab.com/theherk/commons.git ~
+#+end_src
+
+For me:
+
+#+begin_src shell
+ssh-keygen
+ssh-add .ssh/id_rsa
+#+end_src
+
+Then add this key to Github. Followed by:
+
+#+begin_src shell
+git clone git@gitlab.com:theherk/commons.git ~
+#+end_src
+
+* Usage
+
+First, after getting the repository:
+
+#+begin_src shell
+mkdir .config projects
+./commons/links.sh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # install oh-my-zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+#+end_src
+
+That will link all the configurations where they need to be. Then we just need to set about installing things. This is tailored to MacOS, since that is what I use nearly always, now.
+
+#+begin_src shell
+xcode-select --install
+#+end_src
+
+*** Install many tools:
+
+#+begin_src shell
+brew tap cjbassi/ytop
+brew tap homebrew/cask-fonts
+brew tap helix-editor/helix
+brew tap wez/wezterm
+brew install --cask \
+    apptivate \
+    homebrew/cask-fonts/font-victor-mono-nerd-font \
+    wez/wezterm/wezterm
+brew install \
+    archey \
+    asciinema \
+    aspell \
+    bat \
+    caddy \
+    clang-format \
+    coreutils \
+    direnv \
+    dropbox \
+    dua-cli \
+    dust \
+    editorconfig \
+    exa \
+    fd \
+    fzf \
+    ghc \
+    git \
+    git-delta \
+    gitui \
+    gnu-units \
+    gnupg \
+    grip \
+    helix \
+    jq \
+    kubectl \
+    lazygit \
+    lazydocker \
+    mactex \
+    markdown \
+    navi \
+    newman \
+    npm \
+    onefetch \
+    pandoc \
+    pinentry-mac \
+    plantuml \
+    podman \
+    postman \
+    procs \
+    pyenv \
+    pygments \
+    ripgrep \
+    rust-analyzer \
+    shadowenv \
+    shellcheck \
+    sk \
+    starship \
+    terraform \
+    terraform-ls \
+    tokei \
+    wget \
+    xh
+#+end_src
+
+*** Install Emacs.
+
+There are slight differenced in amd64 and arm64 paths.
+
+#+begin_src shell
+brew tap d12frosted/emacs-plus
+brew install emacs-plus@28 --with-modern-doom3-icon
+# ln -s /usr/local/opt/emacs-plus@28/Emacs.app /Applications/
+cp -r /usr/local/opt/emacs-plus@28/Emacs.app /Applications/
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d # install doom
+doom install
+brew services start emacs-plus
+# create automator routine emacs-everywhere and bind M-S-space
+# can be imported from icloud; basically command script service invoking
+# /opt/homebrew/bin/emacsclient --eval "(emacs-everywhere)"
+# needs to be full path result of which emacsclient
+doom sync
+ln -sf ~/Dropbox/org ~/
+#+end_src
+
+*** Add pinentry for mac into gpg configuration.
+
+#+begin_src shell
+echo "pinentry-program /usr/local/bin/pinentry-mac" >>~/.gnupg/gpg-agent.conf
+#+end_src
+
+*** Install more programming tools.
+
+1. Install Go from https://golang.org/doc/install.
+
+   Followed by:
+
+   #+begin_src shell
+go get -u \
+    github.com/cweill/gotests/... \
+    github.com/fatih/gomodifytags \
+    github.com/motemen/gore/... \
+    github.com/nsf/gocode \
+    golang.org/x/tools/...
+   #+end_src
+
+2. Install Rust.
+
+   #+begin_src shell
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # install rust
+rustup toolchain add nightly
+cargo +nightly install racer
+rustup default nightly
+rustup component add rust-src
+   #+end_src
+
+3. Some npm tools.
+
+   #+begin_src shell
+npm i -g js-beautify stylelint
+npm audit fix
+npm i --pack-lock-only
+npm audit fix # seems to work after package lock
+   #+end_src
+
+4. Prepare Python.
+
+#+begin_src shell
+# With M1, need:
+# export PYTHON_CONFIGURE_OPTS="--build=aarch64-apple-darwin20.5.0"
+# see: https://github.com/pyenv/pyenv/issues/1768#issuecomment-871602950
+pyenv install 3.9.5
+pyenv global 3.9.5
+pip install black nose pytest pyflakes isort pipenv
+#+end_src
+
+* Screenshots
+
+#+html: <p align="center"><img src="./img/desktop.png" alt="desktop" /></p>
+#+html: <p align="center"><img src="./img/emacs-splash.png" alt="emacs splash screen" /></p>
+#+html: <p align="center"><img src="./img/emacs-treemacs.png" alt="emacs treemacs" /></p>
+#+html: <p align="center"><img src="./img/emacs-dired.png" alt="emacs dired" /></p>
+#+html: <p align="center"><img src="./img/emacs-org-zen.png" alt="emacs org zen" /></p>
+#+html: <p align="center"><img src="./img/firefox-music.png" alt="firefox" /></p>
+#+html: <p align="center"><img src="./img/slack.png" alt="slack" /></p>
+#+html: <p align="center"><img src="./img/wezterm-lists.png" alt="wezterm lists" /></p>
+#+html: <p align="center"><img src="./img/wezterm-sysinfo.png" alt="wezterm sysinfo" /></p>
+
+* Credits
+
+More are warranted, but the two I can think to mention off the bat are:
+
+- [[https://www.deviantart.com/matlocktheartist/art/Bruce-Lee-Puzzled-322967405][matlocktheartist]] for providing the awesome Bruce Lee art.
+
+* Enjoy
