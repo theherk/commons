@@ -194,9 +194,9 @@ echo "pinentry-program /usr/local/bin/pinentry-mac" >>~/.gnupg/gpg-agent.conf
 
 *** Install more programming tools.
 
-1. Install Go from https://golang.org/doc/install.
+**** Install Go from https://golang.org/doc/install.
 
-   Followed by:
+Followed by:
 
    #+begin_src shell
 go get -u \
@@ -207,7 +207,7 @@ go get -u \
     golang.org/x/tools/...
    #+end_src
 
-2. Install Rust.
+**** Install Rust.
 
    #+begin_src shell
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # install rust
@@ -217,7 +217,7 @@ rustup default nightly
 rustup component add rust-src
    #+end_src
 
-3. Some npm tools.
+**** Some npm tools.
 
    #+begin_src shell
 npm i -g js-beautify stylelint
@@ -226,7 +226,7 @@ npm i --pack-lock-only
 npm audit fix # seems to work after package lock
    #+end_src
 
-4. Prepare Python.
+**** Prepare Python.
 
 #+begin_src shell
 # With M1, need:
