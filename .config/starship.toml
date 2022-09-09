@@ -1,3 +1,5 @@
+format = "$directory\n$character"
+
 [aws]
 disabled = true
 format = ' [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
@@ -12,6 +14,7 @@ min_time = 5_000
 
 [directory]
 read_only = " "
+style =  "italic purple dimmed"
 
 [docker_context]
 format = " [$symbol$context]($style)"
@@ -24,10 +27,6 @@ symbol = "🌧 "
 [git_branch]
 format = " [$symbol$branch(:$remote_branch)]($style)"
 symbol = " "
-
-# [git_metrics]
-# disabled = false
-# format = ' ([+$added]($added_style))([-$deleted]($deleted_style))'
 
 [golang]
 format = " [$symbol($version )]($style)"
