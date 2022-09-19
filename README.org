@@ -174,7 +174,8 @@ There are slight differenced in amd64 and arm64 paths.
 
 #+begin_src shell
 brew tap d12frosted/emacs-plus
-brew install emacs-plus@28 --with-modern-doom3-icon
+# brew install emacs-plus@28 --with-modern-doom3-icon
+brew install emacs-plus@28 --with-cacodemon-icon
 # ln -s /usr/local/opt/emacs-plus@28/Emacs.app /Applications/
 cp -r /usr/local/opt/emacs-plus@28/Emacs.app /Applications/
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d # install doom
