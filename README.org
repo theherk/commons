@@ -170,7 +170,7 @@ brew install \
 
 *** Install Emacs.
 
-There are slight differenced in amd64 and arm64 paths.
+There are slight differences in amd64 and arm64 paths.
 
 #+begin_src shell
 brew tap d12frosted/emacs-plus
