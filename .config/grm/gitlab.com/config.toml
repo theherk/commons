@@ -1,0 +1,6 @@
+provider = "gitlab"
+token_command = "security find-generic-password -w -s gitlab.com -a theherk@gmail.com"
+root = "."
+
+[filters]
+owner = true
