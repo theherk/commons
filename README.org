@@ -90,7 +90,7 @@ git clone git@gitlab.com:theherk/commons.git ~
 First, after getting the repository:
 
 #+begin_src shell
-mkdir .config projects
+mkdir -p .config projects
 ./commons/links.sh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # install oh-my-zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
@@ -239,6 +239,33 @@ pyenv install 3.9.5
 pyenv global 3.9.5
 pip install black nose pytest pyflakes isort pipenv
 #+end_src
+
+*** Setup git forge
+
+This is an optional step, and will merge all owner repositories to their correct homes in =~/projects/=.
+
+First, ensure the requisite directories exist, install [[https://github.com/hakoerber/git-repo-manager][git-repo-manager]], and link the configuration files into the correct locations.
+
+    #+begin_src shell
+mkdir -p $P/github.com $P/gitlab.com
+cargo +nightly install git-repo-manager
+ln -sf ~/commons/.config/grm/github.com/config.toml $P/github.com/config.toml
+ln -sf ~/commons/.config/grm/gitlab.com/config.toml $P/gitlab.com/config.toml
+    #+end_src
+
+Then, you must store personal access tokens in the keyring.
+
+    #+begin_src shell
+pwa github.com theherk@gmail.com
+pwa gitlab.com theherk@gmail.com
+    #+end_src
+
+Lastly, sync the repositories. These could be shared manifests, but for now this granular approach is chosen.
+
+    #+begin_src shell
+cd $P/github.com && grm repos sync config
+cd $P/gitlab.com && grm repos sync config
+    #+end_src
 
 * Screenshots
 
