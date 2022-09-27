@@ -9,11 +9,6 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH=/usr/local/opt/mysql-client/bin:$PATH
-export PATH=$HOME/.amplify/bin:$PATH
-export PATH=$HOME/.cabal/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.nimble/bin:$PATH
-export PATH=$GOPATH/bin:$PATH
 
 # On ARM MacOS homebrew uses some different paths,
 # Generally this is found in:
@@ -26,16 +21,22 @@ elif [ -d "/usr/local/opt/coreutils/libexec/gnubin" ]; then
   export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 fi
 
-export PATH=$HOME/.emacs.d/bin:$PATH
-export PATH=$HOME/bin:$PATH
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-fi
-
 # Similarly to the comments above, homebrew itself has a few locations.
 if [ -e /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [ -e /usr/local/Homebrew/bin/brew ]; then
   eval "$(/usr/local/Homebrew/bin/brew shellenv)"
+fi
+
+export PATH=$HOME/.amplify/bin:$PATH
+export PATH=$HOME/.cabal/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.nimble/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
+
+export PATH=$HOME/.emacs.d/bin:$PATH
+export PATH=$HOME/bin:$PATH
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
 fi
