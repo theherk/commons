@@ -18,7 +18,7 @@ alias ll='exa -alF --icons'
 alias ls='exa'
 alias lt='exa -T --icons'
 alias r="rsync -rltvz -e ssh --progress"
-alias tfn='tee >(awk '"'"'match($0, /# (\S+\.(\[.+\]|\S+)+)/, g) { m=g[1]; l=$0 } match($0, /^(.* )resource .*{$/, g) { if (l!~/has changed/) print g[1] m }'"'"' | sort)'
+alias tfn='tee >(awk '"'"'match($0, /# (\S+\.(\[.+\]|\S+)+)/, g) { m=g[1]; l=$0 } match($0, /^(.* )resource .*{$/, g) { if (l!~/has changed/ && l!~/will be read/) print g[1] m }'"'"' | sort)'
 alias tfpp='tfp | tee plan'
 alias tft='TF_LOG=trace TF_LOG_PATH=tf-trace-$(date +%FT%T+01).log'
 alias tfw='rg --color never "will be|must be" | rg -v "will be read" | sed "s/ be /|/g" | sort -t "|" -k2 | awk '"'"'BEGIN{FS="|"}{o=$NF!=a&&a?"\n"$2"\n"$1:!a?$2"\n"$1:$1;a=$NF;print o}'"'"' | sed -E "s/ will| must//" | sed "s/# //"'
