@@ -110,17 +110,12 @@ export TMPL='source_up\nexport AWS_PROFILE=${P}'
 
 Then go to the root of there repositories to run the following commands.
 
-
 #+begin_src shell
 P=default-for-start envsubst < <(echo $TMPL) > .envrc
 for d in $(find . -type d -name "dev*"); do P=$(basename $d) envsubst < <(echo $TMPL) > ${d}/.envrc; done
 for d in $(find . -type d \( -name "sit*" -o -name "uat*" \)); do P=$(basename ${d/(sit|uat)/int}) envsubst < <(echo $TMPL) > ${d}/.envrc; done
 for d in $(find . -type d -name "prod*"); do P=$(basename $d)-ro envsubst < <(echo $TMPL) > ${d}/.envrc; done
 for f in $(find . -type f -name ".envrc"); do direnv allow $(dirname $f); done
-#+end_src
-
-
-#+begin_src shell
 #+end_src
 
 * vim sudo cheat
