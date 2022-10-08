@@ -5,49 +5,64 @@
 
 * Colors
 
-- [[https://github.com/ogdenwebb/emacs-kaolin-themes][kaolin themes - bubblegum]] and [[https://github.com/alternateved/kaolin-inspired][kaolin-inspired]]
-- [[https://github.com/sdras/night-owl-vscode-theme][night owl]]
 - [[https://github.com/mohkale/an-old-hope-theme][an old hope]]
 - [[https://draculatheme.com/][dracula]]
+- [[https://github.com/ogdenwebb/emacs-kaolin-themes][kaolin themes - bubblegum]] and [[https://github.com/alternateved/kaolin-inspired][kaolin-inspired]]
+- [[https://github.com/sdras/night-owl-vscode-theme][night owl]]
+- [[https://github.com/atom/one-light-syntax][onelight]]
 
 ** Switching
 
 The following places require updates to theme:
 
-- alacritty: .config/alacritty/alacritty.yml
 - emacs: .config/doom/config.org
 - firefox
 - gitui: .config/gitui/theme.ron
+- helix: .config/helix/config.toml
 - slack
-- tmux: .tmux.conf
 - wezterm: .config/wezterm/wezterm.lua
+
+Aside from firefox and slack, a simple light / dark toggle can be done with:
+
+#+begin_src shell
+light-dark-toggle.sh
+#+end_src
+
+On MacOS you can toggle the system theme and run this file by importing the shortcut file provided herein, /light-dark-toggle.shortcut, and clicking the light-dark-toggle shortcut in the menu bar.
 
 *** firefox themes
 
-- [[https://color.firefox.com/?theme=XQAAAAIOAQAAAAAAAABBKYhm849SCia2CaaEGccwS-xMDPr0sKyHm0LFtsAuOs5Hgc59MzILXCVRpjcIcxKwXf-yc__PKRtJvTLuqCwxEvSIG5G-JU2nV8QMryjBVOlGDzRqLdB29oIFwqvIfpV4XWTC1uKCh3ILvcnJhfHuMoyL5sRfBa2iZxDB_ya6eVp-KaVwghWkUDYPaLkOR63d33whjJPzYrpf2sh9d2ppdtku_Z76zswg][kaolin bubblegum]]
-- [[https://addons.mozilla.org/en-US/firefox/addon/night-owl-theme/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][night owl]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/dracula-dark/][dracula]]
+- [[https://color.firefox.com/?theme=XQAAAAIOAQAAAAAAAABBKYhm849SCia2CaaEGccwS-xMDPr0sKyHm0LFtsAuOs5Hgc59MzILXCVRpjcIcxKwXf-yc__PKRtJvTLuqCwxEvSIG5G-JU2nV8QMryjBVOlGDzRqLdB29oIFwqvIfpV4XWTC1uKCh3ILvcnJhfHuMoyL5sRfBa2iZxDB_ya6eVp-KaVwghWkUDYPaLkOR63d33whjJPzYrpf2sh9d2ppdtku_Z76zswg][kaolin bubblegum]]
 - [[https://addons.mozilla.org/en-US/firefox/addon/matte-black-orange/][matte black orange (for an old hope)]]
+- [[https://addons.mozilla.org/en-US/firefox/addon/night-owl-theme/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][night owl]]
+- [[https://color.firefox.com/?theme=XQAAAAJYAQAAAAAAAABBqYhm849SCia48_6EGccwS-xMDPsqui0WXAF6EJDWcx9sS_Bi3Mg0XfKVOpjLZbrt6cUGi1jsiVZ6ZGU23ffeKNdpwwjgYMgW0oKsEDc7Cv07-jfqgvFCbZPMWLqUeUYM-R5VeXc1bEnt673_ihe18VLZcWDVqBVOIardk0mbhg6ADhg11U_PbEzLv3issg9Pf5qxW-CdwKwykF-kMnpHWuqal-oprPfiw0z9csiaoKVWrw-jAJDejZVvTlkCcbwmpd2IoKoLXTv4G__u42w][onelight]]
 
 *** slack themes
 
-kaolin bubblegum
+- an old hope
 
-#+begin_src
-#14171E,#e84c58,#272C3A,#41B0F3,#272C3A,#E4E4E8,#A2C5C5,#EED891,#14171E,#c79af4
-#+end_src
-
-night owl
-
-#+begin_src
-#011627,#1D3B53,#1D3B53,#82AAFF,#1D3B53,#D6DEEB,#ADDB67,#7E57C2,#0A151F,#D6DEEB
-#+end_src
-
-an old hope
-
-#+begin_src
+    #+begin_src
 #1C1D21,#44475A,#45474F,#4FB4D8,#B55510,#CBCDD2,#78BD65,#EB3D54,#1C1D21,#E5CD52
-#+end_src
+    #+end_src
+
+- kaolin bubblegum
+
+    #+begin_src
+#14171E,#E84C58,#272C3A,#41B0F3,#272C3A,#E4E4E8,#A2C5C5,#EED891,#14171E,#C79AF4
+    #+end_src
+
+- night owl
+
+    #+begin_src
+#011627,#1D3B53,#1D3B53,#82AAFF,#1D3B53,#D6DEEB,#ADDB67,#7E57C2,#0A151F,#D6DEEB
+    #+end_src
+
+- onelight
+
+    #+begin_src
+#FAFAFA,#EDEDED,#A6C5EF,#B500A9,#EDEDED,#282C34,#24A443,#DC003F,#E3E3E3,#0061FF
+    #+end_src
 
 *** themer
 
@@ -64,5 +79,4 @@ an old hope
 The following places require updates to font:
 
 - emacs: ~/.config/doom/config.org
-- alacritty: ~/.config/alacritty/alacritty.yml
 - wezterm: ~/.config/wezterm/wezterm.lua
