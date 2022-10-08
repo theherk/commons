@@ -1,0 +1,10 @@
+diff --git a/.config/helix/config.toml b/.config/helix/config.toml
+index 76bc5d0..d1dfb6e 100644
+--- a/.config/helix/config.toml
++++ b/.config/helix/config.toml
+@@ -1,4 +1,4 @@
+-theme = "tokyonight"
++theme = "onelight"
+ 
+ [editor]
+ mouse = true

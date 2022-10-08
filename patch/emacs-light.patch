@@ -1,0 +1,27 @@
+diff --git a/.config/doom/config.org b/.config/doom/config.org
+index 3109d4d..230bf7c 100644
+--- a/.config/doom/config.org
++++ b/.config/doom/config.org
+@@ -63,9 +63,7 @@ Hack from #187.
+ Now that Prot has release [[https://github.com/protesilaos/ef-themes][ef-themes]], I see no reason to use any others.
+ 
+ #+begin_src elisp
+-(require 'ef-themes)
+-(mapc #'disable-theme custom-enabled-themes)
+-(load-theme 'ef-winter :no-confirm)
++(setq doom-theme 'doom-one-light)
+ #+end_src
+ 
+ Who doesn't want Bruce Lee to greet them at the beginning of a work session. He's there to remind you:
+diff --git a/.config/doom/packages.el b/.config/doom/packages.el
+index 6608107..2226983 100644
+--- a/.config/doom/packages.el
++++ b/.config/doom/packages.el
+@@ -4,7 +4,6 @@
+ ;; org-roam needs unpinned to use latest.
+ (unpin! org-roam)
+ 
+-(package! ef-themes)
+ (package! exec-path-from-shell)
+ (package! hackernews)
+ (package! org-modern)

@@ -1,0 +1,12 @@
+diff --git a/.config/wezterm/wezterm.lua b/.config/wezterm/wezterm.lua
+index 92309f9..764183f 100644
+--- a/.config/wezterm/wezterm.lua
++++ b/.config/wezterm/wezterm.lua
+@@ -1,6 +1,6 @@
+ local wezterm = require 'wezterm';
+ 
+-local selected_scheme = "tokyonight";
++local selected_scheme = "OneHalfLight";
+ local scheme = wezterm.get_builtin_color_schemes()[selected_scheme]
+ 
+ local C_ACTIVE_BG = scheme.selection_bg;

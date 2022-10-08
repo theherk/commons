@@ -1,0 +1,13 @@
+diff --git a/.config/git/config b/.config/git/config
+index 96347dc..a4652f4 100644
+--- a/.config/git/config
++++ b/.config/git/config
+@@ -8,7 +8,7 @@
+ 	editor = hx
+ 	pager = delta
+ [delta]
+-    light = false
++    light = true
+ 	line-numbers = true
+ 	navigate = true
+ [diff]
