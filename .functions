@@ -83,12 +83,16 @@ t() { # tree with depth
     exa -T -L $1
 }
 
+util-connect() {
+    aws ssm start-session --target $1
+}
+
 util-start() {
     aws ec2 start-instances --instance-ids $1
 }
 
-util-connect() {
-    aws ssm start-session --target $1
+util-stop() {
+    aws ec2 stop-instances --instance-ids $1
 }
 
 venv2 () {
