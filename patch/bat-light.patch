@@ -1,0 +1,7 @@
+diff --git a/.config/bat/config b/.config/bat/config
+index e5d2d58..6d08829 100644
+--- a/.config/bat/config
++++ b/.config/bat/config
+@@ -1 +1 @@
+---theme="OneHalfDark"
++--theme="OneHalfLight"
