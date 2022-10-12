@@ -7,8 +7,8 @@
        everywhere
 
        :completion
-       company
-       (vertico +icons)
+       (company +childframe)
+       (vertico +childframe +icons)
 
        :config
        literate
