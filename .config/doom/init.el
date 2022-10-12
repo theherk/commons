@@ -43,7 +43,6 @@
        (dired +icons)
        electric
        (ibuffer +icons)
-       tramp
        undo
        vc
 
@@ -56,14 +55,14 @@
        spell
 
        :tools
-       debugger (+lsp)
+       (debugger +lsp)
        direnv
        docker
        editorconfig
        (eval +overlay)
        lookup
        (lsp +peek)
-       magit
+       (magit +forge)
        make
        terraform
 
