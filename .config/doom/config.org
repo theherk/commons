@@ -126,6 +126,13 @@ Load all files called =*jenkinsfile*= in groovy-mode.
 (add-to-list 'auto-mode-alist '("[Jj]enkinsfile" . groovy-mode))
 #+end_src
 
+** magit
+
+#+begin_src elisp
+(after! magit
+  (setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     ")))
+#+end_src
+
 ** python-mode
 
 Use direnv for best venv, virtualenv, pyenv handling. Add =layout pyenv <version>= to .envrc. This will automatically create a virtual environment with the given python executable.
