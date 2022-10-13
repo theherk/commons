@@ -223,6 +223,14 @@ Load ox exporters (gfm, jira, and pandoc) as soon as org is loaded. No clue why 
 
 ** global shortcuts
 
+Switch window with letters when there are more than two.
+
+#+begin_src elisp
+(map! :leader
+  :desc "switch window"
+  "w w" #'switch-window)
+#+end_src
+
 *** Make
 
 #+begin_src elisp
