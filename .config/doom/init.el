@@ -28,7 +28,7 @@
        unicode
        vc-gutter
        vi-tilde-fringe
-       window-select
+       (window-select +switch-window)
        workspaces
        zen
 
