@@ -231,6 +231,13 @@ Switch window with letters when there are more than two.
   "w w" #'switch-window)
 #+end_src
 
+After collapsing all with =z m=, I want to use tab to toggle the fold.
+
+#+begin_src elisp
+(map!
+ :nv [tab] #'+fold/toggle)
+#+end_src
+
 *** Make
 
 #+begin_src elisp
@@ -261,8 +268,7 @@ I want evil's / to using =isearch-forward= rather than =evil-ex-search-forward=.
 
 (map!
  :nv "/" #'isearch-forward
- :nv "?" #'isearch-backward
- )
+ :nv "?" #'isearch-backward)
 #+end_src
 
 ** miscellaneous
