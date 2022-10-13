@@ -38,10 +38,12 @@ I am still undecided on usage of variable pitch font. I cannot recall what issue
 (use-package doom-modeline
   :hook (after-init . doom-modeline-mode)
   :custom
-  (doom-modeline-height 1)
-  (doom-modeline-bar-width 0)
+  (doom-modeline-bar-width 6)
   (doom-modeline-buffer-state-icon t)
-  (doom-modeline-buffer-modification-icon t))
+  (doom-modeline-buffer-modification-icon t)
+  (doom-modeline-height 1)
+  (doom-modeline-persp-name t)
+  (doom-modeline-workspace-name t))
 #+end_src
 
 *** Theme
