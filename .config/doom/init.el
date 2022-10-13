@@ -51,7 +51,7 @@
        vterm
 
        :checkers
-       syntax
+       (syntax +childframe)
        spell
 
        :tools
