@@ -35,21 +35,6 @@ I am still undecided on usage of variable pitch font. I cannot recall what issue
 *** Modeline:
 
 #+begin_src elisp
-(custom-set-faces
-  '(mode-line ((t (:height 0.9))))
-  '(mode-line-inactive ((t (:height 0.9)))))
-#+end_src
-
-Hack from #187.
-
-#+begin_src elisp
-(defun my-doom-modeline--font-height ()
-  "Calculate the actual char height of the mode-line."
-  (+ (frame-char-height) 2))
-(advice-add #'doom-modeline--font-height :override #'my-doom-modeline--font-height)
-#+end_src
-
-#+begin_src elisp
 (use-package doom-modeline
   :hook (after-init . doom-modeline-mode)
   :custom
