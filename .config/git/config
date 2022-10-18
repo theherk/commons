@@ -32,3 +32,5 @@
 	path = ~/.config/git/dnb.no
 [commit]
 	gpgsign = true
+[tag]
+	gpgSign = true
