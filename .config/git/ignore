@@ -17,6 +17,7 @@
 .shadowenv.d
 .tox
 .vim/
+_update.sh
 GPATH
 GRTAGS
 GTAGS
