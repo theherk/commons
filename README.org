@@ -202,7 +202,7 @@ ln -sf ~/Dropbox/org ~/
 *** Add pinentry for mac into gpg configuration.
 
 #+begin_src shell
-echo "pinentry-program /usr/local/bin/pinentry-mac" >>~/.gnupg/gpg-agent.conf
+echo "pinentry-program $(which pinentry-mac)" >>~/.gnupg/gpg-agent.conf
 #+end_src
 
 *** Install more programming tools.
