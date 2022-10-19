@@ -264,12 +264,14 @@ lsp-ui-imenu is a less helpful alternative.
 I want evil's / to using =isearch-forward= rather than =evil-ex-search-forward=. It annoys me that in org-mode overview or with anything collapsed, =evil-ex-search-forward= doesn't find text in the collapsed area.
 
 #+begin_src elisp
-(setq evil-search-module 'isearch)
+;; (setq evil-search-module 'isearch)
 
-(map!
- :nv "/" #'isearch-forward
- :nv "?" #'isearch-backward)
+;; (map!
+;;  :nv "/" #'isearch-forward
+;;  :nv "?" #'isearch-backward)
 #+end_src
+
+Apparently, search is all messed up currently. This is a workaround for searching folds in the custom fold implementation of org-mode. However, isearch itself seems to be broken at the moment, and just refuses to continue a search in all modes. So, for now I'll switch back, and just deal with it in org-mode.
 
 ** miscellaneous
 
