@@ -227,7 +227,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # install rust
 rustup toolchain add nightly
 cargo +nightly install racer
 rustup default nightly
-rustup component add rust-src
+rustup component add rust-src rustc-dev llvm-tools-preview
    #+end_src
 
 **** Some npm tools.
