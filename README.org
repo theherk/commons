@@ -212,12 +212,12 @@ echo "pinentry-program /usr/local/bin/pinentry-mac" >>~/.gnupg/gpg-agent.conf
 Followed by:
 
    #+begin_src shell
-go get -u \
-    github.com/cweill/gotests/... \
-    github.com/fatih/gomodifytags \
-    github.com/motemen/gore/... \
-    github.com/nsf/gocode \
-    golang.org/x/tools/...
+go install \
+    github.com/cweill/gotests/...@latest \
+    github.com/fatih/gomodifytags@latest \
+    github.com/motemen/gore/...@latest \
+    github.com/nsf/gocode@latest \
+    golang.org/x/tools/...@latest
    #+end_src
 
 **** Install Rust.
