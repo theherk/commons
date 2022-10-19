@@ -9,7 +9,7 @@ alias er='unrar e'
 alias ez='7z e'
 alias fr='find . -iname "*.rar"'
 alias fz='find . -iname "*.7z"'
-alias hxr='hx $(sk --ansi -i -c '\''rg --color=always --hidden --line-number "{}"'\'' | cut -d: -f1-2)'
+alias hxr='hx $(sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2)'
 alias gl='gproxy-auto.sh'
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias l='exa -l --icons'
