@@ -93,6 +93,13 @@ First, after getting the repository, install [[https://brew.sh/][Homebrew]]:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 #+end_src
 
+Then, you must install temurin. It will be needed for the oh-my-zsh installation to succeed.
+
+#+begin_src shell
+brew install temurin
+#+end_src
+
+Now, install zsh tools and link all the configurations.
 
 #+begin_src shell
 mkdir -p .config projects
