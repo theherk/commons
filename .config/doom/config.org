@@ -238,6 +238,12 @@ After collapsing all with =z m=, I want to use tab to toggle the fold.
  :nv [tab] #'+fold/toggle)
 #+end_src
 
+Expand region by semantic units.
+
+#+begin_src elisp
+(map! "M-o" #'er/expand-region)
+#+end_src
+
 *** Make
 
 #+begin_src elisp
