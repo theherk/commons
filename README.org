@@ -87,7 +87,12 @@ git clone git@github.com:theherk/commons.git ~/commons
 
 * Usage
 
-First, after getting the repository:
+First, after getting the repository, install [[https://brew.sh/][Homebrew]]:
+
+#+begin_src shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#+end_src
+
 
 #+begin_src shell
 mkdir -p .config projects
