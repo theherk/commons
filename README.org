@@ -242,12 +242,13 @@ npm audit fix # seems to work after package lock
 **** Prepare Python.
 
 #+begin_src shell
-# With M1, need:
-# export PYTHON_CONFIGURE_OPTS="--build=aarch64-apple-darwin20.5.0"
+# With M1:
 # see: https://github.com/pyenv/pyenv/issues/1768#issuecomment-871602950
-pyenv install 3.9.5
-pyenv global 3.9.5
-pip install black nose pytest pyflakes isort pipenv
+# also: https://stackoverflow.com/questions/71577626/issues-installing-python-3-8-10-on-macos-12-3-monterey
+pyenv install 3.9.11
+pyenv install 3.10.3
+pyenv global 3.10.3
+pip install black isort keyring nose pipenv pyflakes pyppeteer pytest
 #+end_src
 
 *** Setup git forge
