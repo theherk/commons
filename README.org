@@ -176,6 +176,7 @@ brew install \
     terraform \
     terraform-ls \
     tokei \
+    translate-shell \
     wget \
     xh
 #+end_src
