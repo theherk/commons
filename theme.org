@@ -39,6 +39,20 @@ On MacOS you can toggle the system theme and run this file by importing the shor
 - [[https://addons.mozilla.org/en-US/firefox/addon/night-owl-theme/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search][night owl]]
 - [[https://color.firefox.com/?theme=XQAAAAJYAQAAAAAAAABBqYhm849SCia48_6EGccwS-xMDPsqui0WXAF6EJDWcx9sS_Bi3Mg0XfKVOpjLZbrt6cUGi1jsiVZ6ZGU23ffeKNdpwwjgYMgW0oKsEDc7Cv07-jfqgvFCbZPMWLqUeUYM-R5VeXc1bEnt673_ihe18VLZcWDVqBVOIardk0mbhg6ADhg11U_PbEzLv3issg9Pf5qxW-CdwKwykF-kMnpHWuqal-oprPfiw0z9csiaoKVWrw-jAJDejZVvTlkCcbwmpd2IoKoLXTv4G__u42w][onelight]]
 
+**** Refined Github
+
+It is nice to improve the bar with this custom css when in light mode. It can be done in the plugin preferences.
+
+#+begin_src css
+.Header {
+  background-color: #9E9E9E;
+}
+
+.header-search-wrapper {
+  background-color: #9E9E9E;
+}
+#+end_src
+
 *** slack themes
 
 - an old hope
