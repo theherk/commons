@@ -10,6 +10,7 @@
 - [[https://github.com/ogdenwebb/emacs-kaolin-themes][kaolin themes - bubblegum]] and [[https://github.com/alternateved/kaolin-inspired][kaolin-inspired]]
 - [[https://github.com/sdras/night-owl-vscode-theme][night owl]]
 - [[https://github.com/atom/one-light-syntax][onelight]]
+- [[https://github.com/enkia/tokyo-night-vscode-theme][tokyonight]]
 
 ** Switching
 
@@ -62,6 +63,12 @@ On MacOS you can toggle the system theme and run this file by importing the shor
 
     #+begin_src
 #FAFAFA,#EDEDED,#A6C5EF,#B500A9,#EDEDED,#282C34,#24A443,#DC003F,#E3E3E3,#0061FF
+    #+end_src
+
+- tokyonight
+
+    #+begin_src
+#1E2336,#121016,#282E44,#B6BFE5,#282E44,#8C94B8,#8DCE59,#8366AF,#1E2336,#8C94B8
     #+end_src
 
 *** themer
