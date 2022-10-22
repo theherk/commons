@@ -4,7 +4,6 @@
 ;; org-roam needs unpinned to use latest.
 (unpin! org-roam)
 
-(package! ef-themes)
 (package! exec-path-from-shell)
 (package! hackernews)
 (package! org-modern)

@@ -47,12 +47,9 @@ I am still undecided on usage of variable pitch font. I cannot recall what issue
 #+end_src
 
 *** Theme
-Now that Prot has release [[https://github.com/protesilaos/ef-themes][ef-themes]], I see no reason to use any others.
 
 #+begin_src elisp
-(require 'ef-themes)
-(mapc #'disable-theme custom-enabled-themes)
-(load-theme 'ef-winter :no-confirm)
+(setq doom-theme 'doom-tokyo-night)
 #+end_src
 
 Who doesn't want Bruce Lee to greet them at the beginning of a work session. He's there to remind you:
