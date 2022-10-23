@@ -1,4 +1,5 @@
 [alias]
+	c=commit -m
 	subup=submodule update --init
 	superpush=push --force --tags origin refs/heads/*
 	tree="log --pretty=oneline --decorate --graph"
