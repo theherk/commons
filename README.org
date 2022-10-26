@@ -280,6 +280,16 @@ cd $P/github.com && grm repos sync config
 cd $P/gitlab.com && grm repos sync config
     #+end_src
 
+*** Here be dagrons (with consummate V's of course)
+
+Sometimes you use =sudo= a lot. A responsible nerd will tell you not to do this, but =¯\_(ツ)_/¯=... Well, I set up an ssh tunnel to proxy for git several times daily so... Look, what I'm trying to say is, "We don't get into this business to input /extra/ keystrokes."
+
+#+begin_src shell
+echo 'h4s ALL = NOPASSWD: /usr/bin/ssh' >> /etc/sudoers
+#+end_src
+
+If you get an error =zsh: permission denied: /etc/sudoers=, and you don't know how to get around it, I implore you; do not do this.
+
 * Screenshots
 
 ** Desktop
