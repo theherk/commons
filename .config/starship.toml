@@ -20,9 +20,8 @@ style =  "italic purple dimmed"
 format = " [$symbol$context]($style)"
 
 [env_var.AWS_PROFILE]
-format = " [$symbol $env_value]($style)"
+format = "[$env_value]($style)"
 style = "bold cyan"
-symbol = "🌧 "
 
 [git_branch]
 format = " [$symbol$branch(:$remote_branch)]($style)"
