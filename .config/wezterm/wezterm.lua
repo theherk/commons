@@ -70,9 +70,10 @@ return {
     [selected_scheme] = scheme
   },
   color_scheme = selected_scheme,
+  window_background_opacity = 0.93,
   inactive_pane_hsb = {
-    saturation = 0.6,
-    brightness = 0.6,
+    saturation = 0.66,
+    brightness = 0.54,
   },
   font = wezterm.font("VictorMono Nerd Font"),
   font_size = 20,
