@@ -130,10 +130,12 @@ brew install \
     asciinema \
     aspell \
     bat \
+    bottom \
     caddy \
     clang-format \
     coreutils \
     direnv \
+    doll \
     dropbox \
     dua-cli \
     dust \
@@ -178,7 +180,8 @@ brew install \
     tokei \
     translate-shell \
     wget \
-    xh
+    xh \
+    zenith
 #+end_src
 
 *** Install Emacs.
