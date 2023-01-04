@@ -3,6 +3,12 @@
 ;; 'SPC h d h' for docs.
 ;; 'K' for module docs.
 
+;; It is possible that adding the childframe module flag for vertico
+;; first is required. When loaded for both vertico and comany at the
+;; same time, there was an issue with the icons on the left side. It
+;; is unclear if this was the solution. Another possiblity is that
+;; adding this module flag after the icons flag is the solution.
+
 (doom! :app
        everywhere
 
