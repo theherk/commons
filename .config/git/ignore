@@ -17,10 +17,10 @@
 .shadowenv.d
 .tox
 .vim/
+_plan*
 _update.sh
 GPATH
 GRTAGS
 GTAGS
 nosetests.xml
 pip-log.txt
-plan*
