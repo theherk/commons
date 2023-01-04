@@ -70,7 +70,7 @@ return {
     [selected_scheme] = scheme
   },
   color_scheme = selected_scheme,
-  window_background_opacity = 0.93,
+  window_background_opacity = 0.88,
   inactive_pane_hsb = {
     saturation = 0.66,
     brightness = 0.54,
