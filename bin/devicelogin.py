@@ -105,4 +105,4 @@ if __name__ == "__main__":
     if not args.delete_password and not args.token:
         argparser.print_usage()
     else:
-        asyncio.get_event_loop().run_until_complete(main(args))
+        asyncio.new_event_loop().run_until_complete(main(args))
