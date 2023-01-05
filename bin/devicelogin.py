@@ -48,7 +48,8 @@ async def main(args):
         return
     password = get_password(args.username)
     browser = await launch(
-        headless=args.non_headless, args=["--no-sandbox", "--disable-setuid-sandbox"]
+        headless=not args.non_headless,
+        args=["--no-sandbox", "--disable-setuid-sandbox"],
     )
     print("devicelogin page")
     page = await browser.newPage()
@@ -91,8 +92,8 @@ if __name__ == "__main__":
         "--non-headless",
         "-n",
         required=False,
-        default=True,
-        action="store_false",
+        default=False,
+        action="store_true",
         help="Show browser window",
     )
     argparser.add_argument(
