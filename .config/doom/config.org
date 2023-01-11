@@ -62,6 +62,12 @@ Do not pray for an easy life, pray for the strength to endure a difficult one.
 (setq fancy-splash-image "~/commons/img/bruce-matlocktheartist_200w.png")
 #+end_src
 
+Remove the title bar from 29 forward.
+
+#+begin_src elisp
+;; (add-to-list 'default-frame-alist '(undecorated-round . t))
+#+end_src
+
 **** Alpha
 
 This can set the windows alpha, and I may want that sometime, but generally I use emacs edge-to-edge and on macOS, one cannot use transparency in full screen.
