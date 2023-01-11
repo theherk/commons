@@ -80,6 +80,7 @@ return {
   tab_bar_at_bottom = true,
   tab_max_width = 96,
   use_fancy_tab_bar = false,
+  window_decorations = "RESIZE",
   keys = {
     {key="a", mods="LEADER|CTRL", action=wezterm.action{SendString="\x01"}},
 
