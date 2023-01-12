@@ -293,6 +293,10 @@ defaults write com.apple.dock autohide -bool true
 killall Dock
 #+end_src
 
+**** Notifications
+
+Since the dock is usually hidden, use [[https://github.com/xiaogdgenuine/Doll][Doll]] to load apps into menu bar.
+
 *** Here be dagrons (with consummate V's of course)
 
 Sometimes you use =sudo= a lot. A responsible nerd will tell you not to do this, but =¯\_(ツ)_/¯=... Well, I set up an ssh tunnel to proxy for git several times daily so... Look, what I'm trying to say is, "We don't get into this business to input /extra/ keystrokes."
