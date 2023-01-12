@@ -282,6 +282,16 @@ Lastly, sync the repositories. These could be shared manifests, but for now this
 cd $P/github.com && grm repos sync config
 cd $P/gitlab.com && grm repos sync config
     #+end_src
+*** MacOS windows manager
+
+**** Dock
+
+#+begin_src shell
+defaults write com.apple.dock tilesize -float 32
+defaults read com.apple.dock orientation -string right
+defaults write com.apple.dock autohide -bool true
+killall Dock
+#+end_src
 
 *** Here be dagrons (with consummate V's of course)
 
