@@ -103,6 +103,14 @@ Toggle line wrapping.
   (doom-themes-treemacs-config))
 #+end_src
 
+*** Menu Bar
+
+The menu bar for emacs is awesome if you use it. I don't and it takes up real estate for doll icons.
+
+#+begin_src elisp
+(menu-bar-mode -1)
+#+end_src
+
 ** everywhere
 
 #+begin_src elisp
