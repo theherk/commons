@@ -18,9 +18,11 @@ else
 end
 
 scheme.tab_bar = {
-  background = C_BG,
+  -- background = C_BG,
+  background = "none",
   new_tab = {
-    bg_color = C_BG,
+    -- bg_color = C_BG,
+    bg_color = "none",
     fg_color = C_HL_2,
   },
   active_tab = {
@@ -46,7 +48,8 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
       {Text=": "},
       {Foreground={Color=C_ACTIVE_FG}},
       {Text=tab.active_pane.title .. " "},
-      {Background={Color=C_BG}},
+      -- {Background={Color=C_BG}},
+      {Background={Color="none"}},
       {Foreground={Color=C_HL_1}},
       {Text="|"},
     }
@@ -58,6 +61,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     {Text=": "},
     {Foreground={Color=C_INACTIVE_FG}},
     {Text=tab.active_pane.title .. " "},
+    {Background={Color="none"}},
     {Foreground={Color=C_HL_1}},
     {Text="|"},
   }
