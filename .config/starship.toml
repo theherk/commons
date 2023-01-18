@@ -1,4 +1,4 @@
-format = "$directory\n$character"
+format = "$directory$env_var\n$character"
 
 [aws]
 disabled = true
