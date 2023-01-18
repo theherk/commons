@@ -202,6 +202,7 @@ brew services start emacs-plus
 # needs to be full path result of which emacsclient
 doom sync
 ln -sf ~/Dropbox/org ~/
+ln -sf ~/commons/.config/ispell/ ~/.emacs.d/.local/etc/
 #+end_src
 
 *** Add pinentry for mac into gpg configuration.
