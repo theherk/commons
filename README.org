@@ -218,33 +218,33 @@ gpgconf --kill gpg-agent
 
 Followed by:
 
-   #+begin_src shell
+#+begin_src shell
 go install \
     github.com/cweill/gotests/...@latest \
     github.com/fatih/gomodifytags@latest \
     github.com/motemen/gore/...@latest \
     github.com/nsf/gocode@latest \
     golang.org/x/tools/...@latest
-   #+end_src
+#+end_src
 
 **** Install Rust.
 
-   #+begin_src shell
+#+begin_src shell
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # install rust
 rustup toolchain add nightly
 cargo +nightly install racer
 rustup default nightly
 rustup component add rust-src rustc-dev llvm-tools-preview
-   #+end_src
+#+end_src
 
 **** Some npm tools.
 
-   #+begin_src shell
+#+begin_src shell
 npm i -g js-beautify stylelint
 npm audit fix
 npm i --pack-lock-only
 npm audit fix # seems to work after package lock
-   #+end_src
+#+end_src
 
 **** Prepare Python.
 
@@ -264,26 +264,27 @@ This is an optional step, and will merge all owner repositories to their correct
 
 First, ensure the requisite directories exist, install [[https://github.com/hakoerber/git-repo-manager][git-repo-manager]], and link the configuration files into the correct locations.
 
-    #+begin_src shell
+#+begin_src shell
 mkdir -p $P/github.com $P/gitlab.com
 cargo +nightly install git-repo-manager
 ln -sf ~/commons/.config/grm/github.com/config.toml $P/github.com/config.toml
 ln -sf ~/commons/.config/grm/gitlab.com/config.toml $P/gitlab.com/config.toml
-    #+end_src
+#+end_src
 
 Then, you must store personal access tokens in the keyring.
 
-    #+begin_src shell
+#+begin_src shell
 pwa github.com theherk@gmail.com
 pwa gitlab.com theherk@gmail.com
-    #+end_src
+#+end_src
 
 Lastly, sync the repositories. These could be shared manifests, but for now this granular approach is chosen.
 
-    #+begin_src shell
+#+begin_src shell
 cd $P/github.com && grm repos sync config
 cd $P/gitlab.com && grm repos sync config
-    #+end_src
+#+end_src
+
 *** MacOS windows manager
 
 **** Dock
