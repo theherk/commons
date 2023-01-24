@@ -1,6 +1,7 @@
-personal_ws-1.1 en 29
+personal_ws-1.1 en 39
 auth
 backend
+bitbucket
 ccp
 cloudformation
 config
@@ -10,14 +11,22 @@ dnb
 dns
 env
 failover
+fargate
 filesystem
 gitlab
+grafana
+hardcode
+herk
+hoc
 https
 init
+instantiation
+integrations
 jira
 mutex
 mv
 namespace
+podman
 recordsets
 stateful
 svc
@@ -25,6 +34,7 @@ terraform
 tf
 theherk
 uat
+ulimit
 userexperience
 usr
 yaml
