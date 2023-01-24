@@ -13,8 +13,8 @@
        everywhere
 
        :completion
-       (company +childframe)
-       (vertico +childframe +icons)
+       company
+       (vertico +icons)
 
        :config
        literate
@@ -57,7 +57,7 @@
        vterm
 
        :checkers
-       (syntax +childframe)
+       syntax
        spell
 
        :tools
