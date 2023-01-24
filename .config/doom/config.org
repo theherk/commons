@@ -243,6 +243,17 @@ Switch window with letters when there are more than two.
   "w w" #'switch-window)
 #+end_src
 
+Swap workspaces.
+
+#+begin_src elisp
+(map! :leader
+  :desc "swap workspace left"
+  "TAB {" #'+workspace/swap-left)
+(map! :leader
+  :desc "swap workspace right"
+  "TAB }" #'+workspace/swap-right)
+#+end_src
+
 After collapsing all with =z m=, I want to use tab to toggle the fold.
 
 #+begin_src elisp
