@@ -87,7 +87,7 @@
        (markdown +grip)
        (org +roam2)
        plantuml
-       (python +lsp +pyright +pyenv)
+       (python +lsp +pyright +pyenv +tree-sitter)
        rst
        (rust +lsp)
        sh
