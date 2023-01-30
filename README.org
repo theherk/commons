@@ -125,6 +125,7 @@ brew tap wez/wezterm
 brew install --cask \
     apptivate \
     homebrew/cask-fonts/font-victor-mono-nerd-font \
+    keepingyouawake \
     wez/wezterm/wezterm
 brew install \
     archey \
