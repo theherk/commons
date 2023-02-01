@@ -1,11 +1,14 @@
-personal_ws-1.1 en 39
+personal_ws-1.1 en 52
 auth
 backend
 bitbucket
+ccoe
 ccp
 cloudformation
 config
+configs
 cpp
+cshasl
 dev
 dnb
 dns
@@ -19,15 +22,24 @@ hardcode
 herk
 hoc
 https
+iam
 init
 instantiation
 integrations
+ishasl
 jira
+mft
+micronaut
 mutex
 mv
 namespace
+onboarding
+pla
 podman
+privatelinks
+pshasl
 recordsets
+sonarqube
 stateful
 svc
 terraform
@@ -37,4 +49,5 @@ uat
 ulimit
 userexperience
 usr
+vpce
 yaml
