@@ -53,7 +53,8 @@ A partial list of installed tools:
 - [[https://github.com/dandavison/delta][git-delta]]: Syntax highlighting pager.
 - [[https://github.com/extrawurst/gitui][gitui]]: Fast terminal ui for git.
 - [[https://github.com/joeyespo/grip][grip]]: Preview markdown.
-- [[https://keepingyouawake.app/][KeepingYouAwake]]: Prevents your Mac from going to sleep with one click.
+- [[https://keepingyouawake.app/][keepingyouawake]]: Prevents your Mac from going to sleep with one click.
+- [[https://github.com/keycastr/keycastr][keycastr]]: keystroke visualizer
 - [[https://github.com/denisidoro/navi][navi]]: Interactive cheatsheet tool for the command-line.
 - [[https://ohmyz.sh/][oh-my-zsh]]: Zsh configuration management.
 - [[https://pandoc.org/][pandoc]]: Universal document converter.
@@ -128,6 +129,7 @@ brew install --cask \
     apptivate \
     homebrew/cask-fonts/font-victor-mono-nerd-font \
     keepingyouawake \
+    keycastr \
     wez/wezterm/wezterm
 brew install \
     archey \
