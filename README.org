@@ -193,10 +193,11 @@ brew install \
 
 *** Change Shell to Fish.
 
+First, you must add to the "List of acceptable shells". Then you can change to it.
+
 #+begin_src shell
-chsh -s /opt/homebrew/bin/fish
-# or this as the case may be:
-chsh -s /usr/local/Homebrew/bin/fish
+echo $(which fish) | sudo tee -a /etc/shells
+chsh -s $(which fish)
 #+end_src
 
 *** Install Emacs.
