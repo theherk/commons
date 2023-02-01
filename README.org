@@ -18,6 +18,7 @@ I use Emacs almost exclusively, though I still haven't used it as long as I did 
 
 ** Terminal
 
+- [[https://fishshell.com/][fish]]
 - [[https://github.com/akermu/emacs-libvterm][vterm]]
 - [[https://wezfurlong.org/wezterm/][Wezterm]]: [[file:.config/wezterm/wezterm.lua][configuration]], [[https://wezfurlong.org/wezterm/colorschemes/t/index.html#tokyonight][tokyonight]]
 
@@ -185,6 +186,14 @@ brew install \
     wget \
     xh \
     zenith
+#+end_src
+
+*** Change Shell to Fish.
+
+#+begin_src shell
+chsh -s /opt/homebrew/bin/fish
+# or this as the case may be:
+chsh -s /usr/local/Homebrew/bin/fish
 #+end_src
 
 *** Install Emacs.
