@@ -148,6 +148,7 @@ brew install \
     editorconfig \
     exa \
     fd \
+    fish \
     fzf \
     ghc \
     git \
