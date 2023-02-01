@@ -90,7 +90,7 @@
        (python +lsp +pyright +pyenv +tree-sitter)
        rst
        (rust +lsp)
-       sh
+       (sh +fish +lsp)
        web
        yaml
 
