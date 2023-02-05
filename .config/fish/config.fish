@@ -64,6 +64,7 @@ if status is-interactive
     abbr -a ls --position command exa
     abbr -a lt --position command exa -T --icons
     abbr -a norcal --position command ncal -s NO -w
+    abbr -a of --position command onefetch
     abbr -a pc --position anywhere --set-cursor "%| pbcopy"
     abbr -a r --position command rsync -rltvz -e ssh --progress
     abbr -a rcal --position command rusti-cal -c --starting-day 1
