@@ -1,5 +1,3 @@
-[core]
-	sshCommand = ssh -F ~/.ssh/gproxy.cfg
 [user]
 	email = adam.lawrence.sherwood@dnb.no
 	name = Adam Lawrence Sherwood
