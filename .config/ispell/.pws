@@ -1,10 +1,12 @@
-personal_ws-1.1 en 52
+personal_ws-1.1 en 55
 auth
 backend
+balancers
 bitbucket
 ccoe
 ccp
 cloudformation
+cloudfront
 config
 configs
 cpp
@@ -36,6 +38,7 @@ namespace
 onboarding
 pla
 podman
+presign
 privatelinks
 pshasl
 recordsets
