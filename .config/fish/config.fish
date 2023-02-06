@@ -68,6 +68,7 @@ if status is-interactive
     abbr -a pc --position anywhere --set-cursor "%| pbcopy"
     abbr -a r --position command rsync -rltvz -e ssh --progress
     abbr -a rcal --position command rusti-cal -c --starting-day 1
+    abbr -a tf --position command terraform
     abbr -a tfa --position command terraform apply
     abbr -a tfd --position command terraform destroy
     abbr -a tfi --position command terraform init
