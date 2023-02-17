@@ -186,6 +186,11 @@ Make org pretty with [[https://github.com/minad/org-modern][org-modern]].
 (add-hook 'org-mode-hook #'org-modern-mode)
 #+end_src
 
+Load animations by default.
+
+#+begin_src elisp
+(add-hook 'org-mode-hook #'org-inline-anim-mode)
+#+end_src
 org-roam and org-roam-ui settings
 
 #+begin_src elisp
