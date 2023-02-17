@@ -57,6 +57,7 @@ if status is-interactive
     abbr -a hxr --position command 'hx (sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2)'
     abbr -a g --position command gitui
     abbr -a gl --position command gproxy-auto.sh
+    abbr -a gr --position command 'cd (git root)'
     abbr -a ipy --position command python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'
     abbr -a l --position command exa -l --icons
     abbr -a lg --position command lazygit

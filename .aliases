@@ -12,6 +12,7 @@ alias fr='find . -iname "*.rar"'
 alias fz='find . -iname "*.7z"'
 alias g='gitui'
 alias gl='gproxy-auto.sh'
+alias gr='cd $(git root)'
 alias hxr='hx $(sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2)'
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias l='exa -l --icons'
