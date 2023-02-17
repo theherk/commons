@@ -101,12 +101,12 @@ if status is-interactive
 
     function pwa # add password to keyring
         argparse --min-args 2 --max-args 2 -- $argv
-        security add-generic-password -s $argv[0] -a $argv[1] -w
+        security add-generic-password -s $argv[1] -a $argv[2] -w
     end
 
     function pwf # find password in keyring
         argparse --min-args 2 --max-args 2 -- $argv
-        security find-generic-password -w -s $argv[0] -a $argv[1]
+        security find-generic-password -w -s $argv[1] -a $argv[2]
     end
 
     function rgh # search history
