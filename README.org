@@ -79,8 +79,8 @@ git clone https://github.com/theherk/commons.git ~/commons
 For me:
 
 #+begin_src shell
-ssh-keygen
-ssh-add .ssh/id_rsa
+ssh-keygen -t ed25519
+ssh-add .ssh/id_ed25519.pub
 #+end_src
 
 Then add this key to Github. Followed by:
