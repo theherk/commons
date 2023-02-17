@@ -6,6 +6,7 @@
 
 (package! exec-path-from-shell)
 (package! hackernews)
+(package! org-inline-anim)
 (package! org-modern)
 (package! org-roam-ui)
 (package! ox-gfm)
