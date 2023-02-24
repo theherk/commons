@@ -14,7 +14,7 @@ min_time = 5_000
 
 [directory]
 read_only = " "
-style =  "italic purple dimmed"
+style =  "italic purple"
 
 [docker_context]
 format = " [$symbol$context]($style)"
