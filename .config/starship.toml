@@ -1,61 +1,25 @@
-format = "$directory$env_var\n$character"
+format = "$shell$directory$env_var\n$character"
 
 [aws]
 disabled = true
-format = ' [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
 
 [character]
 success_symbol = "[ᐅ](bold green)"
 error_symbol = "[✗](bold red)"
 
 [cmd_duration]
-format = " [$duration]($style)"
 min_time = 5_000
 
 [directory]
-read_only = " "
-style =  "italic purple"
-
-[docker_context]
-format = " [$symbol$context]($style)"
+style = "italic purple"
 
 [env_var.AWS_PROFILE]
 format = "[$env_value]($style)"
 style = "bold cyan"
 
-[git_branch]
-format = " [$symbol$branch(:$remote_branch)]($style)"
-symbol = " "
-
-[golang]
-format = " [$symbol($version )]($style)"
-symbol = " "
-version_format = "${raw}"
-
-[java]
-format = " [${symbol}(${version} )]($style)"
-version_format = "${raw}"
-
-[nim]
-format = " [$symbol($version )]($style)"
-version_format = "${raw}"
-
-[nodejs]
-format = " [$symbol($version )]($style)"
-version_format = "${raw}"
-
-[package]
-format = " [$symbol$version]($style)"
-version_format = "${raw}"
-
 [python]
-format = ' [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-symbol = " "
-version_format = "${raw}"
+disabled = true
 
-[rust]
-format = " [$symbol($version )]($style)"
-version_format = "${raw}"
 [shell]
 disabled = false
 bash_indicator = "ℬ"
@@ -65,10 +29,9 @@ nu_indicator = "ℕ"
 zsh_indicator = "ℤ"
 
 [terraform]
-format = " [$symbol$version]($style)"
+disabled = true
 # symbol = "ﭨ " # looks great outside vterm
 symbol = " "
-version_format = "${raw}"
 
 [username]
-format = "[$user]($style)[](purple) "
+format = "[$user]($style)[](purple)"
