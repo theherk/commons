@@ -56,6 +56,13 @@ version_format = "${raw}"
 [rust]
 format = " [$symbol($version )]($style)"
 version_format = "${raw}"
+[shell]
+disabled = false
+bash_indicator = "ℬ"
+# fish_indicator = "ƒ"
+fish_indicator = "🐠"
+nu_indicator = "ℕ"
+zsh_indicator = "ℤ"
 
 [terraform]
 format = " [$symbol$version]($style)"
