@@ -166,3 +166,5 @@ if status is-interactive
         end
     end
 end
+
+alias ls=exa
