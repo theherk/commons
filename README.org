@@ -141,6 +141,7 @@ brew install \
     clang-format \
     coreutils \
     direnv \
+    diskonaut \
     doll \
     dropbox \
     dua-cli \
