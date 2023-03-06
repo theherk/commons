@@ -1,4 +1,5 @@
-personal_ws-1.1 en 57
+personal_ws-1.1 en 60
+args
 auth
 backend
 balancers
@@ -44,6 +45,8 @@ privatelinks
 pshasl
 recordsets
 regnskap
+resolvers
+scaler
 sonarqube
 stateful
 svc
