@@ -9,6 +9,7 @@
 (package! org-inline-anim)
 (package! org-modern)
 (package! org-roam-ui)
+(package! ox-clip)
 (package! ox-gfm)
 (package! ox-jira)
 (package! ox-pandoc)
