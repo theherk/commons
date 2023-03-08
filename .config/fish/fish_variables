@@ -3,6 +3,7 @@
 SETUVAR --export CARGO_HOME:/Users/h4s/\x2ecargo
 SETUVAR --export EDITOR:hx
 SETUVAR --export --path GOPATH:/Users/h4s/projects/go
+SETUVAR --export HTML_TIDY:/Users/h4s/\x2econfig/tidy/config\x2etxt
 SETUVAR --export JAVA_HOME:/Library/Java/JavaVirtualMachines/temurin\x2d19\x2ejdk/Contents/Home
 SETUVAR --export P:/Users/h4s/projects
 SETUVAR --export VENVS:/Users/h4s/\x2evenvs

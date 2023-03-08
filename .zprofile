@@ -4,6 +4,7 @@ export CARGO_HOME=$HOME/.cargo
 export VENVS=$HOME/.venvs
 export P=$HOME/projects
 export GOPATH=$P/go
+export HTML_TIDY=$HOME/.config/tidy/config.txt
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 export PATH=/usr/local/bin:$PATH

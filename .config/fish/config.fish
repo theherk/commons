@@ -4,6 +4,7 @@ set -U -x CARGO_HOME $HOME/.cargo
 set -U -x VENVS $HOME/.venvs
 set -U -x P $HOME/projects
 set -U -x GOPATH $P/go
+set -U -x HTML_TIDY $HOME/.config/tidy/config.txt
 set -U -x JAVA_HOME (/usr/libexec/java_home)
 
 fish_add_path -pP /usr/local/bin
