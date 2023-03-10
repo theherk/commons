@@ -6,6 +6,7 @@
 * Helix
 
 + change case with =~=
++ use =A-;= to reverse selection
 
 * Emacs
 
