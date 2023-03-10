@@ -333,6 +333,9 @@ For some reason, without this disabled, sh wants to autocomplete everything and 
 
 To avoid the error =command not found: pdflatex=, we need to manipulate the path in macos.
 
+This is actually done by Doom, so this may be causing more issues than solving. See: https://github.com/purcell/exec-path-from-shell/issues/112.
+
 #+begin_src elisp
-(exec-path-from-shell-initialize)
+;;(when (memq window-system '(mac ns x))
+;;  (exec-path-from-shell-initialize))
 #+end_src
