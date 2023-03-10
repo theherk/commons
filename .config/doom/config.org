@@ -238,6 +238,14 @@ Load ox exporters (gfm, jira, and pandoc) as soon as org is loaded. No clue why 
       projectile-sort-order 'recentf)
 #+end_src
 
+** vertico
+
+Enable mouse scrolling.
+
+#+begin_src elisp
+(vertico-mouse-mode)
+#+end_src
+
 ** global shortcuts
 
 Switch window with letters when there are more than two.
