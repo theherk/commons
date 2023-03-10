@@ -20,6 +20,7 @@
 + last search - =spc '=
 + insert src - ~<s <tab>~
 + save without autocomplete - type filename then =C-j=
++ use =--= to add ripgrep args to searches
 
 ** align
 
