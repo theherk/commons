@@ -61,7 +61,7 @@ if status is-interactive
     abbr -a g --position command gitui
     abbr -a gl --position command gproxy-auto.sh
     abbr -a gr --position command 'cd (git root)'
-    abbr -a ipy --position command python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'
+    abbr -a ipy --position command python -c '"import IPython; IPython.terminal.ipapp.launch_new_instance()"'
     abbr -a l --position command exa -l --icons
     abbr -a lg --position command lazygit
     abbr -a ll --position command exa -alF --icons --git --time-style long-iso
