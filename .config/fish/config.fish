@@ -6,6 +6,7 @@ set -U -x P $HOME/projects
 set -U -x GOPATH $P/go
 set -U -x HTML_TIDY $HOME/.config/tidy/config.txt
 set -U -x JAVA_HOME (/usr/libexec/java_home)
+set -g -x VOLTA_HOME "$HOME/.volta"
 
 fish_add_path -pP /usr/local/bin
 fish_add_path -pP /usr/local/go/bin
@@ -15,6 +16,7 @@ fish_add_path -pP $HOME/.cabal/bin
 fish_add_path -pP $HOME/.cargo/bin
 fish_add_path -pP $HOME/.nimble/bin
 fish_add_path -pP $GOPATH/bin
+fish_add_path -pP $VOLTA_HOME/bin
 
 fish_add_path -pP $HOME/.emacs.d/bin
 fish_add_path -pP $HOME/bin

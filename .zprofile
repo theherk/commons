@@ -6,6 +6,7 @@ export P=$HOME/projects
 export GOPATH=$P/go
 export HTML_TIDY=$HOME/.config/tidy/config.txt
 export JAVA_HOME=$(/usr/libexec/java_home)
+export VOLTA_HOME=$HOME/.volta
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
@@ -34,6 +35,7 @@ export PATH=$HOME/.cabal/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.nimble/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
+export PATH=$VOLTA_HOME/bin:$PATH
 
 export PATH=$HOME/.emacs.d/bin:$PATH
 export PATH=$HOME/bin:$PATH
