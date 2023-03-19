@@ -48,6 +48,10 @@ Using better jumper.
 - jump in: =C-i=
 - jump out: =C-o=
 
+** magit
+
+- Save settings in transient: =C-x C-s=
+
 ** multi-edit
 1. initiate a search with =SPC /= =Z Z=
 2. enter in edit mode with =C-c C-e=
