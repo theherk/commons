@@ -48,8 +48,10 @@ I am still undecided on usage of variable pitch font. I cannot recall what issue
 
 *** Theme
 
+Load slightly customized version of tokyo night. This has green replaces with purple in places.
+
 #+begin_src elisp
-(setq doom-theme 'doom-tokyo-night)
+(setq doom-theme 'h4s-tokyo-night)
 #+end_src
 
 Who doesn't want Bruce Lee to greet them at the beginning of a work session. He's there to remind you:
