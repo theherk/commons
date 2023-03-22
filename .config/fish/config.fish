@@ -90,6 +90,7 @@ if status is-interactive
     abbr -a util-list-buildhost --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' --output text --query 'Reservations[*].Instances[*].InstanceId'"
     abbr -a wow --position command git status
     abbr -a xc --position anywhere --set-cursor "%| xclip -sel clip"
+    abbr -a z --position command zellij
 
     function last_history_item
         echo $history[1]

@@ -37,3 +37,4 @@ alias util-list-buildhost="aws ec2 describe-instances --filters 'Name=tag:Name,V
 alias wow="git status"
 alias xc='xclip -sel clip'
 alias xp='cat p|xc'
+alias z='zellij'

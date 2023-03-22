@@ -67,6 +67,7 @@ A partial list of installed tools:
 - [[https://www.terraform.io/][terraform]]: Infrastructure management tool.
 - [[https://github.com/XAMPPRocky/tokei][tokei]]: Great tool for counting code.
 - [[https://github.com/ducaale/xh][xh]]: Friendly tool for sending http requests.
+- [[https://zellij.dev/][zellij]]: A terminal workspace with batteries included; multiplexer.
 
 * Installation
 
@@ -189,6 +190,7 @@ brew install \
     translate-shell \
     wget \
     xh \
+    zellij \
     zenith
 #+end_src
 
