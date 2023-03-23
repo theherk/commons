@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm';
+local act = wezterm.action
 
 local selected_scheme = "tokyonight";
 local scheme = wezterm.get_builtin_color_schemes()[selected_scheme]
@@ -68,6 +69,20 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 end
 )
 
+wezterm.on('update-right-status', function(window, pane)
+  text = ""
+  if window:active_key_table() then
+    text = text .. wezterm.format({
+    {Foreground={Color=C_HL_1}},
+    {Text='TABLE: '},
+    {Foreground={Color=C_HL_2}},
+    {Text=window:active_key_table()},
+  })
+  end
+  window:set_right_status(text)
+end
+)
+
 return {
   leader = { key="a", mods="CTRL"},
   color_schemes = {
@@ -85,35 +100,49 @@ return {
   tab_max_width = 96,
   use_fancy_tab_bar = false,
   window_decorations = "RESIZE",
+  key_tables = {
+    resize_pane = {
+      { key = 'h', action = act.AdjustPaneSize { 'Left', 1 } },
+      { key = 'l', action = act.AdjustPaneSize { 'Right', 1 } },
+      { key = 'k', action = act.AdjustPaneSize { 'Up', 1 } },
+      { key = 'j', action = act.AdjustPaneSize { 'Down', 1 } },
+      { key = 'Escape', action = 'PopKeyTable' },
+    },
+  },
   keys = {
-    {key="a", mods="LEADER|CTRL", action=wezterm.action{SendString="\x01"}},
+    { key = "a", mods = "LEADER|CTRL", action = act.SendString "\x01" },
 
     -- Mode
-    {key="x", mods="LEADER", action=wezterm.action.ActivateCopyMode},
-    {key=" ", mods="LEADER", action=wezterm.action.QuickSelect},
+    { key = "x", mods="LEADER", action = act.ActivateCopyMode },
+    { key = " ", mods="LEADER", action = act.QuickSelect },
 
     -- Pane Management
-    {key="s", mods="LEADER", action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
-    {key="v", mods="LEADER", action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
-    {key="w", mods="LEADER", action=wezterm.action{CloseCurrentPane={confirm=false}}},
+    { key = "s", mods="LEADER", action = act.SplitVertical { domain="CurrentPaneDomain" } },
+    { key = "v", mods="LEADER", action = act.SplitHorizontal { domain="CurrentPaneDomain" } },
+    { key = "w", mods="LEADER", action = act.CloseCurrentPane { confirm=false } },
+    { key = 'H', mods = 'LEADER', action = act.AdjustPaneSize { 'Left', 5 } },
+    { key = 'J', mods = 'LEADER', action = act.AdjustPaneSize { 'Down', 5 } },
+    { key = 'K', mods = 'LEADER', action = act.AdjustPaneSize { 'Up', 5 } },
+    { key = 'L', mods = 'LEADER', action = act.AdjustPaneSize { 'Right', 5 } },
+    { key = 'r', mods = 'LEADER', action = act.ActivateKeyTable { name = 'resize_pane', one_shot = false } },
 
     -- Navigation
-    {key = "h", mods="LEADER", action=wezterm.action{ActivatePaneDirection="Left"}},
-    {key = "l", mods="LEADER", action=wezterm.action{ActivatePaneDirection="Right"}},
-    {key = "k", mods="LEADER", action=wezterm.action{ActivatePaneDirection="Up"}},
-    {key = "j", mods="LEADER", action=wezterm.action{ActivatePaneDirection="Down"}},
-    {key="]", mods="LEADER", action=wezterm.action{ActivateTabRelative=1}},
-    {key="[", mods="LEADER", action=wezterm.action{ActivateTabRelative=-1}},
-    {key="1", mods="LEADER", action=wezterm.action{ActivateTab=0}},
-    {key="2", mods="LEADER", action=wezterm.action{ActivateTab=1}},
-    {key="3", mods="LEADER", action=wezterm.action{ActivateTab=2}},
-    {key="4", mods="LEADER", action=wezterm.action{ActivateTab=3}},
-    {key="5", mods="LEADER", action=wezterm.action{ActivateTab=4}},
-    {key="6", mods="LEADER", action=wezterm.action{ActivateTab=5}},
-    {key="7", mods="LEADER", action=wezterm.action{ActivateTab=6}},
-    {key="8", mods="LEADER", action=wezterm.action{ActivateTab=7}},
-    {key="9", mods="LEADER", action=wezterm.action{ActivateTab=8}},
-    {key="0", mods="LEADER", action=wezterm.action{ActivateTab=-1}},
-    {key="0", mods="SUPER", action=wezterm.action{ActivateTab=-1}},
-  }
+    { key = "h", mods="LEADER", action = act.ActivatePaneDirection "Left" },
+    { key = "l", mods="LEADER", action = act.ActivatePaneDirection "Right" },
+    { key = "k", mods="LEADER", action = act.ActivatePaneDirection "Up" },
+    { key = "j", mods="LEADER", action = act.ActivatePaneDirection "Down" },
+    { key = "]", mods="LEADER", action = act.ActivateTabRelative(1) },
+    { key = "[", mods="LEADER", action = act.ActivateTabRelative(-1) },
+    { key = "1", mods="LEADER", action = act.ActivateTab(0) },
+    { key = "2", mods="LEADER", action = act.ActivateTab(1) },
+    { key = "3", mods="LEADER", action = act.ActivateTab(2) },
+    { key = "4", mods="LEADER", action = act.ActivateTab(3) },
+    { key = "5", mods="LEADER", action = act.ActivateTab(4) },
+    { key = "6", mods="LEADER", action = act.ActivateTab(5) },
+    { key = "7", mods="LEADER", action = act.ActivateTab(6) },
+    { key = "8", mods="LEADER", action = act.ActivateTab(7) },
+    { key = "9", mods="LEADER", action = act.ActivateTab(8) },
+    { key = "0", mods="LEADER", action = act.ActivateTab(-1) },
+    { key = "0", mods="SUPER", action = act.ActivateTab(-1) },
+  },
 }
