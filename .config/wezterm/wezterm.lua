@@ -40,47 +40,54 @@ scheme.tab_bar = {
   }
 }
 
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-  if tab.is_active then
+wezterm.on(
+  "format-tab-title",
+  function(tab, tabs, panes, config, hover, max_width)
+    if tab.is_active then
+      return {
+        { Foreground = { Color=C_HL_1 } },
+        { Text = " " .. tab.tab_index+1 },
+        { Foreground = { Color=C_HL_2 } },
+        { Text = ": " },
+        { Foreground = { Color=C_ACTIVE_FG } },
+        { Text = tab.active_pane.title .. " "},
+        -- { Background = { Color=C_BG } },
+        { Background = { Color = "none" } },
+        { Foreground = { Color = C_HL_1 } },
+        { Text = "|" },
+      }
+    end
     return {
-      {Foreground={Color=C_HL_1}},
-      {Text=" " .. tab.tab_index+1},
-      {Foreground={Color=C_HL_2}},
-      {Text=": "},
-      {Foreground={Color=C_ACTIVE_FG}},
-      {Text=tab.active_pane.title .. " "},
-      -- {Background={Color=C_BG}},
-      {Background={Color="none"}},
-      {Foreground={Color=C_HL_1}},
-      {Text="|"},
+      { Foreground = { Color = C_HL_1 } },
+      { Text = " " .. tab.tab_index+1 },
+      { Foreground = { Color = C_HL_2 } },
+      { Text = ": " },
+      { Foreground = { Color = C_INACTIVE_FG } },
+      { Text = tab.active_pane.title .. " " },
+      { Background = { Color = "none" } },
+      { Foreground = { Color = C_HL_1 } },
+      { Text = "|" },
     }
   end
-  return {
-    {Foreground={Color=C_HL_1}},
-    {Text=" " .. tab.tab_index+1},
-    {Foreground={Color=C_HL_2}},
-    {Text=": "},
-    {Foreground={Color=C_INACTIVE_FG}},
-    {Text=tab.active_pane.title .. " "},
-    {Background={Color="none"}},
-    {Foreground={Color=C_HL_1}},
-    {Text="|"},
-  }
-end
 )
 
-wezterm.on('update-right-status', function(window, pane)
-  text = ""
-  if window:active_key_table() then
-    text = text .. wezterm.format({
-    {Foreground={Color=C_HL_1}},
-    {Text='TABLE: '},
-    {Foreground={Color=C_HL_2}},
-    {Text=window:active_key_table()},
-  })
+wezterm.on(
+  'update-right-status',
+  function(window, pane)
+    text = ""
+    if window:active_key_table() then
+      fmt = wezterm.format(
+        {
+          { Foreground = { Color = C_HL_1 } },
+          { Text='TABLE: '},
+          { Foreground = { Color = C_HL_2 } },
+          { Text = window:active_key_table() },
+        }
+      )
+      text = text .. fmt
+    end
+    window:set_right_status(text)
   end
-  window:set_right_status(text)
-end
 )
 
 return {
