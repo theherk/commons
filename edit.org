@@ -51,6 +51,7 @@ Using better jumper.
 ** magit
 
 - Save settings in transient: =C-x C-s=
+- Change settings in revision buffer (see: [[https://emacs.stackexchange.com/a/52857][here]]): =D=
 
 ** multi-edit
 1. initiate a search with =SPC /= =Z Z=
