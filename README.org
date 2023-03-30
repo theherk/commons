@@ -175,6 +175,7 @@ brew install \
     postman \
     procs \
     pyenv \
+    pyenv-virtualenv \
     pygments \
     ripgrep \
     rust-analyzer \
