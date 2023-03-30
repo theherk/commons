@@ -8,6 +8,9 @@
 ;; same time, there was an issue with the icons on the left side. It
 ;; is unclear if this was the solution. Another possiblity is that
 ;; adding this module flag after the icons flag is the solution.
+;;
+;; Further clarification. It seems one must add childframe alone to
+;; vertico, then after sync and open, add icons to vertico.
 
 (doom! :app
        everywhere
