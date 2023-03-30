@@ -132,7 +132,6 @@ brew install --cask \
     keycastr \
     wez/wezterm/wezterm
 brew install \
-    archey \
     asciinema \
     aspell \
     bat \
