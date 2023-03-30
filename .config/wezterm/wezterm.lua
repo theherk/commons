@@ -18,6 +18,12 @@ else
   C_INACTIVE_FG = bg:complement_ryb():lighten(0.3);
 end
 
+function tconcat(t1, t2)
+  for _, v in ipairs(t2) do
+    table.insert(t1, v)
+  end
+end
+
 scheme.tab_bar = {
   -- background = C_BG,
   background = "none",
