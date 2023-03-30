@@ -49,50 +49,64 @@ scheme.tab_bar = {
 wezterm.on(
   "format-tab-title",
   function(tab, tabs, panes, config, hover, max_width)
-    if tab.is_active then
-      return {
-        { Foreground = { Color=C_HL_1 } },
-        { Text = " " .. tab.tab_index+1 },
-        { Foreground = { Color=C_HL_2 } },
-        { Text = ": " },
-        { Foreground = { Color=C_ACTIVE_FG } },
-        { Text = tab.active_pane.title .. " "},
-        -- { Background = { Color=C_BG } },
-        { Background = { Color = "none" } },
-        { Foreground = { Color = C_HL_1 } },
-        { Text = "|" },
-      }
-    end
-    return {
-      { Foreground = { Color = C_HL_1 } },
+    local title = {
+      { Foreground = { Color=C_HL_1 } },
       { Text = " " .. tab.tab_index+1 },
-      { Foreground = { Color = C_HL_2 } },
+      { Foreground = { Color=C_HL_2 } },
       { Text = ": " },
-      { Foreground = { Color = C_INACTIVE_FG } },
-      { Text = tab.active_pane.title .. " " },
+    }
+    if tab.is_active then
+      tconcat(title, {
+        { Foreground = { Color=C_ACTIVE_FG } },
+        { Text = tab.active_pane.title .. " " },
+      })
+    else
+      tconcat(title, {
+        { Foreground = { Color = C_INACTIVE_FG } },
+        { Text = tab.active_pane.title .. " " },
+      })
+    end
+    local pane = tab.active_pane
+    if pane.is_zoomed then
+      tconcat(title, {
+        { Text='🔍 '},
+      })
+    end
+    tconcat(title, {
+      -- { Background = { Color=C_BG } },
       { Background = { Color = "none" } },
       { Foreground = { Color = C_HL_1 } },
       { Text = "|" },
-    }
+    })
+    return title
   end
 )
 
 wezterm.on(
   'update-right-status',
   function(window, pane)
-    text = ""
+    local text = {}
     if window:active_key_table() then
-      fmt = wezterm.format(
-        {
-          { Foreground = { Color = C_HL_1 } },
-          { Text='TABLE: '},
-          { Foreground = { Color = C_HL_2 } },
-          { Text = window:active_key_table() },
-        }
-      )
-      text = text .. fmt
+      tconcat(text, {
+        { Foreground = { Color = C_HL_1 } },
+        { Text=' TABLE: '},
+        { Foreground = { Color = C_HL_2 } },
+        { Text = window:active_key_table() },
+      })
     end
-    window:set_right_status(text)
+    local tab = pane:tab()
+    for _, p in ipairs(tab:panes_with_info()) do
+      wezterm.log_info('zoomed: ' .. tostring(p.is_zoomed))
+      if p.is_zoomed then
+        tconcat(text, {
+          { Text=' 🔍'},
+        })
+      end
+    end
+    tconcat(text, {
+      { Text=' '},
+    })
+    window:set_right_status(wezterm.format(text))
   end
 )
 
@@ -138,6 +152,8 @@ return {
     { key = 'K', mods = 'LEADER', action = act.AdjustPaneSize { 'Up', 5 } },
     { key = 'L', mods = 'LEADER', action = act.AdjustPaneSize { 'Right', 5 } },
     { key = 'r', mods = 'LEADER', action = act.ActivateKeyTable { name = 'resize_pane', one_shot = false } },
+    { key = 'z', mods = 'LEADER', action = act.TogglePaneZoomState },
+    { key = 'Z', mods = 'LEADER', action = act.TogglePaneZoomState },
 
     -- Navigation
     { key = "h", mods="LEADER", action = act.ActivatePaneDirection "Left" },
