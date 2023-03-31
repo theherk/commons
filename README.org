@@ -200,8 +200,9 @@ First, you must add to the "List of acceptable shells". Then you can change to i
 #+begin_src shell
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-fisher install PatrickF1/fzf.fish
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install \
+    jorgebucaran/fisher \
+    PatrickF1/fzf.fish
 #+end_src
 
 *** Install Emacs.
