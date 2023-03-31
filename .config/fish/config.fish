@@ -22,6 +22,8 @@ fish_add_path -pP $HOME/.emacs.d/bin
 fish_add_path -pP $HOME/bin
 
 if status is-interactive
+    fish_vi_key_bindings
+
     # On ARM MacOS homebrew uses some different paths,
     # Generally this is found in:
     # /usr/local/opt/coreutils/libexec/gnubin
