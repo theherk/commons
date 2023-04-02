@@ -110,6 +110,16 @@ if status is-interactive
         export AWS_PROFILE=$argv
     end
 
+    function awspd # Set latest cached creds as default
+        set CLI ~/.aws/cli/cache
+        set SSO ~/.aws/sso/cache
+        aws sts get-caller-identity
+        aws configure set aws_access_key_id (bat $CLI/(exa -U $CLI | tail -1) | jq -r .Credentials.AccessKeyId) &&
+            aws configure set aws_secret_access_key (bat $CLI/(exa -U $CLI | tail -1) | jq -r .Credentials.SecretAccessKey) &&
+            aws configure set aws_session_token (bat $CLI/(exa -U $CLI | tail -1) | jq -r .Credentials.SessionToken) &&
+            aws configure set region (bat $SSO/(exa -U $SSO | tail -2 | head -1) | jq -r .region)
+    end
+
     function pwa # add password to keyring
         argparse --min-args 2 --max-args 2 -- $argv
         security add-generic-password -s $argv[1] -a $argv[2] -w
