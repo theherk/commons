@@ -141,3 +141,11 @@ for f in $(find . -type f -name ".envrc"); do direnv allow $(dirname $f); done
 #+begin_src vim
 cmap w!! w !sudo tee > /dev/null %
 #+end_src
+
+* CLI miscellany
+
+Run applications where developer can't be verified (didn't want to pay to be verified).
+
+#+begin_src shell
+xattr -d com.apple.quarantine /Applications/Meld.app
+#+end_src
