@@ -74,6 +74,7 @@
        (magit +forge)
        make
        terraform
+       tree-sitter
 
        :os
        (:if IS-MAC macos)
@@ -88,7 +89,7 @@
        lua
        nim
        (markdown +grip)
-       (org +roam2)
+       (org +roam2 +pretty)
        plantuml
        (python +lsp +pyright +pyenv +tree-sitter)
        rst
