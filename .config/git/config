@@ -1,5 +1,6 @@
 [alias]
-	c=commit -m
+	c=commit
+	cm=commit -m
 	root=rev-parse --show-toplevel
 	subup=submodule update --init
 	superpush=push --force --tags origin refs/heads/*
