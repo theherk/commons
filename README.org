@@ -45,6 +45,7 @@ A partial list of installed tools:
 - [[https://direnv.net/][direnv]]: Environment manipulation.
 - [[https://github.com/xiaogdgenuine/Doll][doll]]: Move dock applications to menu bar.
 - [[https://formulae.brew.sh/cask/dropbox][dropbox]]: Only for syncing org directory.
+- [[https://github.com/Byron/dua-cli][dua]]: Disk usage analyzer cli with interactive option.
 - [[https://editorconfig.org/][editorconfig]]: Enforce some text styles.
 - [[https://the.exa.website/][exa]]: A modern replacement for ls.
 - [[https://github.com/sharkdp/fd][fd]]: Fast, user-friendly find.
