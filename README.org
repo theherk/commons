@@ -243,7 +243,7 @@ Followed by:
 go install \
     github.com/cweill/gotests/...@latest \
     github.com/fatih/gomodifytags@latest \
-    github.com/motemen/gore/...@latest \
+    github.com/x-motemen/gore/...@latest \
     github.com/nsf/gocode@latest \
     golang.org/x/tools/...@latest
 #+end_src
