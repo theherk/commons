@@ -54,6 +54,7 @@ if status is-interactive
     abbr -a awsl --position command aws sso login --profile \$AWS_PROFILE
     abbr -a awsr --position command aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'
     abbr -a awsu --position command unset AWS_PROFILE
+    abbr -a awswhoami --position command aws sts get-caller-identity
     abbr -a bubu --position command "brew update && brew outdated && brew upgrade && brew cleanup"
     abbr -a clock --position command rsclock -c
     abbr -a dumplynx --position anywhere --set-cursor "%| lynx -dump -stdin"
