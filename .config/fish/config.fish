@@ -22,12 +22,12 @@ fish_add_path -pP $HOME/.emacs.d/bin
 fish_add_path -pP $HOME/bin
 
 if status is-interactive
-    fish_vi_key_bindings
     set -gx fish_vi_force_cursor 1
     set -gx fish_cursor_default block blink
     set -gx fish_cursor_insert line blink
     set -gx fish_cursor_replace_one underscore blink
     set -gx fish_cursor_visual block
+    fish_vi_key_bindings
 
     # On ARM MacOS homebrew uses some different paths,
     # Generally this is found in:
