@@ -20,6 +20,21 @@ User identification. You can find more information in the [[https://www.gnu.org/
 
 ** Display configuration
 
+*** Cursor
+
+Pulsing is possible by adding this to packages.el.
+
+#+begin_src elisp
+;; (package! pulsing-cursor :recipe (:host github :repo "jasonjckn/pulsing-cursor"))
+#+end_src
+
+Then uncommenting this here.
+
+#+begin_src elisp
+;; (use-package pulsing-cursor
+;;   :config (pulsing-cursor-mode +1))
+#+end_src
+
 *** Font
 
 I am still undecided on usage of variable pitch font. I cannot recall what issue it was causing for me, but it had to do with ligatures. It is probably fine.
