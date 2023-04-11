@@ -112,6 +112,7 @@ wezterm.on(
 
 return {
   leader = { key="a", mods="CTRL"},
+  check_for_updates = false,
   color_schemes = {
     [selected_scheme] = scheme
   },
