@@ -79,6 +79,14 @@ sc() {
     eval $cmd
 }
 
+ssmp() { # get ssm parameter value
+    aws ssm get-parameter --name $1 | jq -r .Parameter.Value
+}
+
+ssmpd() { # get ssm parameter value with decryption
+    aws ssm get-parameter --with-decryption --name $1 | jq -r .Parameter.Value
+}
+
 t() { # tree with depth
     exa -T -L $1
 }
