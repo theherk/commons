@@ -135,6 +135,14 @@ if status is-interactive
         history | rg $argv
     end
 
+    function ssmp # get ssm parameter value
+        aws ssm get-parameter --name $argv | jq -r .Parameter.Value
+    end
+
+    function ssmpd # get ssm parameter value with decryption
+        aws ssm get-parameter --with-decryption --name $argv | jq -r .Parameter.Value
+    end
+
     function t # tree with depth
         argparse --name tree --min-args 0 --max-args 1 -- $argv
         if test (count $argv) -lt 1
