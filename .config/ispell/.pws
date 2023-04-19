@@ -1,20 +1,27 @@
-personal_ws-1.1 en 62
+personal_ws-1.1 en 71
 args
 auth
+authorizer
+awk
 backend
+balancer
 balancers
 bitbucket
 ccoe
 ccp
+changelog
 cloudformation
 cloudfront
 config
 configs
+copypasta
 cpp
 cshasl
 dev
 dnb
 dns
+dotenv
+dynatrace
 env
 failover
 fargate
@@ -37,6 +44,7 @@ micronaut
 mutex
 mv
 namespace
+observability
 onboarding
 pla
 podman
@@ -50,6 +58,7 @@ resolvers
 scaler
 sonarqube
 stateful
+subnet
 svc
 terraform
 tf
