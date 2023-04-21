@@ -258,6 +258,11 @@ VSpaceCode.whichkey
 " | xargs -L 1 codium --install-extension
 #+end_src
 
+Disable the native press-and-hold behavior for the vim plugin. This is a different command than given in the documentation, and can be found in [[https://github.com/VSCodeVim/Vim/issues/8052#issuecomment-1422383241][this issue]] and [[https://stackoverflow.com/a/73897433/2081835][this StackOverflow answer]].
+
+#+begin_src shell
+defaults write com.vscodium ApplePressAndHoldEnabled -bool false
+#+end_src
 *** Add pinentry for mac into gpg configuration.
 
 #+begin_src shell
