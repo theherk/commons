@@ -6,6 +6,8 @@ ln -sf ~/commons/.aliases ~/
 ln -sf ~/commons/.bashrc ~/
 ln -sf ~/commons/.config/alacritty/ ~/.config/
 ln -sf ~/commons/.config/bat/ ~/.config/
+ln -sf ~/commons/.config/codium/keybindings.json ~/Library/Application\ Support/VSCodium/User/
+ln -sf ~/commons/.config/codium/settings.json ~/Library/Application\ Support/VSCodium/User/
 ln -sf ~/commons/.config/doom/ ~/.config/
 ln -sf ~/commons/.config/fish/config.fish ~/.config/fish/
 ln -sf ~/commons/.config/git/ ~/.config/

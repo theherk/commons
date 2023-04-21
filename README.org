@@ -131,6 +131,7 @@ brew install --cask \
     homebrew/cask-fonts/font-victor-mono-nerd-font \
     keepingyouawake \
     keycastr \
+    vscodium \
     wez/wezterm/wezterm
 brew install \
     asciinema \
@@ -224,6 +225,37 @@ brew services start emacs-plus
 doom sync
 ln -sf ~/Dropbox/org ~/
 ln -sf ~/commons/.config/ispell/ ~/.emacs.d/.local/etc/
+#+end_src
+*** Setup Codium
+
+Adding a setup for [[https://vscodium.com/][VSCodium]] because the AI integration is tighter for now. As I am evaluating [[https://codeium.com/][Codeium]], [[https://aws.amazon.com/codewhisperer/][CodeWhisperer]], and [[https://github.com/features/copilot][Copilot]], I need to test the various integrations. I'm not quite ready to transition completely. ❤️ Emacs.
+
+#+begin_src shell
+echo "
+bmalehorn.vscode-fish
+bodil.file-browser
+Codeium.codeium
+DaltonMenezes.aura-theme
+eamodio.gitlens
+EditorConfig.EditorConfig
+enkia.tokyo-night
+garlandcrow.vscode-helix
+golang.go
+hashicorp.hcl
+hashicorp.terraform
+jacobdufault.fuzzy-search
+jdinhlife.gruvbox
+kahole.magit
+mikoz.black-py
+ms-python.python
+PKief.material-icon-theme
+rust-lang.rust-analyzer
+slbtty.Lisp-Syntax
+vscode-org-mode.org-mode
+vscodevim.vim
+VSpaceCode.vspacecode
+VSpaceCode.whichkey
+" | xargs -L 1 codium --install-extension
 #+end_src
 
 *** Add pinentry for mac into gpg configuration.
