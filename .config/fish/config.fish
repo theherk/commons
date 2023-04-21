@@ -56,6 +56,7 @@ if status is-interactive
     abbr -a awsu --position command unset AWS_PROFILE
     abbr -a awswhoami --position command aws sts get-caller-identity
     abbr -a bubu --position command "brew update && brew outdated && brew upgrade && brew cleanup"
+    abbr -a c --position command codium
     abbr -a clock --position command rsclock -c
     abbr -a dumplynx --position anywhere --set-cursor "%| lynx -dump -stdin"
     abbr -a dumpw3m --position anywhere --set-cursor "%| w3m -dump -T text/html"
