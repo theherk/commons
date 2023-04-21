@@ -230,6 +230,14 @@ ln -sf ~/commons/.config/ispell/ ~/.emacs.d/.local/etc/
 
 Adding a setup for [[https://vscodium.com/][VSCodium]] because the AI integration is tighter for now. As I am evaluating [[https://codeium.com/][Codeium]], [[https://aws.amazon.com/codewhisperer/][CodeWhisperer]], and [[https://github.com/features/copilot][Copilot]], I need to test the various integrations. I'm not quite ready to transition completely. ❤️ Emacs.
 
+First, get it out of quarantine.
+
+#+begin_src shell
+xattr -d com.apple.quarantine /Applications/VSCodium.app/
+#+end_src
+
+Then install extensions.
+
 #+begin_src shell
 echo "
 bmalehorn.vscode-fish
@@ -263,6 +271,7 @@ Disable the native press-and-hold behavior for the vim plugin. This is a differe
 #+begin_src shell
 defaults write com.vscodium ApplePressAndHoldEnabled -bool false
 #+end_src
+
 *** Add pinentry for mac into gpg configuration.
 
 #+begin_src shell
