@@ -10,6 +10,7 @@
   "magit.display-buffer-function": "same-column",
   "magit.forge-enabled": true,
   "magit.code-path": "codium",
+  "python.formatting.provider": "black",
   "search.showLineNumbers": true,
   "terminal.integrated.fontSize": 14,
   "vim.easymotion": true,
