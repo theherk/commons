@@ -2,6 +2,7 @@
   "codeium.enableSearch": true,
   "editor.codeLensFontFamily": "VictorMono Nerd Font",
   "editor.fontFamily": "VictorMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
   "editor.guides.indentation": false,
