@@ -10,6 +10,15 @@
   "editor.renderWhitespace": "trailing",
   "editor.scrollbar.horizontalScrollbarSize": 8,
   "editor.scrollbar.verticalScrollbarSize": 8,
+  "emojisense.languages": {
+    "markdown": true,
+    "org": true,
+    "plaintext": {
+      "markupCompletionsEnabled": false,
+      "emojiDecoratorsEnabled": false
+    },
+    "scminput": true
+  },
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.currentLine.pullRequests.enabled": false,
