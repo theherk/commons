@@ -263,6 +263,7 @@ vscode-org-mode.org-mode
 vscodevim.vim
 VSpaceCode.vspacecode
 VSpaceCode.whichkey
+ziglang.vscode-zig
 " | xargs -L 1 codium --install-extension
 #+end_src
 
