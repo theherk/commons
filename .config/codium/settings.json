@@ -8,6 +8,8 @@
   "editor.guides.indentation": false,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "trailing",
+  "editor.scrollbar.horizontalScrollbarSize": 8,
+  "editor.scrollbar.verticalScrollbarSize": 8,
   "gitlens.codeLens.enabled": false,
   "gitlens.plusFeatures.enabled": false,
   "gitlens.showWelcomeOnInstall": false,
