@@ -132,5 +132,20 @@
 		"key": "ctrl+l",
 		"command": "file-browser.stepIn",
 		"when": "inFileBrowser"
+	},
+	{
+    "key": "Cmd+e",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorFocus"
+	},
+	{
+    "key": "Cmd+m",
+    "command": "workbench.action.toggleMaximizedPanel",
+		"when": "terminalFocus"
+	},
+	{
+    "key": "Cmd+m",
+    "command": "workbench.action.toggleEditorVisibility",
+		"when": "!terminalFocus"
 	}
 ]
