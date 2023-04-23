@@ -20,6 +20,7 @@
   "magit.forge-enabled": true,
   "magit.code-path": "codium",
   "python.formatting.provider": "black",
+  "rust-analyzer.lens.location": "above_whole_item",
   "search.showLineNumbers": true,
   "terminal.integrated.fontSize": 14,
   "vim.easymotion": true,
