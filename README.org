@@ -240,6 +240,8 @@ Then install extensions.
 
 #+begin_src shell
 echo "
+belfz.search-crates-io
+bierner.emojisense
 bmalehorn.vscode-fish
 bodil.file-browser
 Codeium.codeium
@@ -247,8 +249,10 @@ DaltonMenezes.aura-theme
 eamodio.gitlens
 EditorConfig.EditorConfig
 enkia.tokyo-night
+foam.foam-vscode
 garlandcrow.vscode-helix
 golang.go
+Gruntfuggly.todo-tree
 hashicorp.hcl
 hashicorp.terraform
 jacobdufault.fuzzy-search
