@@ -8432,6 +8432,7 @@
       }
     }
   ],
+  "window.openFoldersInNewWindow": "off",
   "window.zoomLevel": 2,
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Aura Dark (Soft Text)",
