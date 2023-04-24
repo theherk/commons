@@ -250,6 +250,7 @@ DaltonMenezes.aura-theme
 eamodio.gitlens
 EditorConfig.EditorConfig
 enkia.tokyo-night
+esbenp.prettier-vscode
 foam.foam-vscode
 garlandcrow.vscode-helix
 golang.go
