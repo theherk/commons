@@ -29,6 +29,9 @@
   "magit.display-buffer-function": "same-column",
   "magit.forge-enabled": true,
   "magit.code-path": "codium",
+  "projectManager.git.baseFolders": [
+    "~/projects"
+  ],
   "python.formatting.provider": "black",
   "rust-analyzer.lens.location": "above_whole_item",
   "search.showLineNumbers": true,
@@ -7234,7 +7237,7 @@
           "name": "+Switch project",
           "icon": "project",
           "type": "command",
-          "command": "workbench.action.openRecent"
+          "command": "projectManager.listProjects"
         },
         {
           "key": "t",

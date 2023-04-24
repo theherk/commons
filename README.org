@@ -240,6 +240,7 @@ Then install extensions.
 
 #+begin_src shell
 echo "
+alefragnani.project-manager
 belfz.search-crates-io
 bierner.emojisense
 bmalehorn.vscode-fish
@@ -260,6 +261,11 @@ jdinhlife.gruvbox
 kahole.magit
 mikoz.black-py
 ms-python.python
+ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
+ms-toolsai.vscode-jupyter-cell-tags
+ms-toolsai.vscode-jupyter-slideshow
 PKief.material-icon-theme
 rust-lang.rust-analyzer
 slbtty.Lisp-Syntax
