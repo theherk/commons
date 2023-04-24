@@ -8442,6 +8442,6 @@
   "window.openFoldersInNewWindow": "off",
   "window.zoomLevel": 2,
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Aura Dark (Soft Text)",
+  "workbench.colorTheme": "Aura Soft Dark",
   "workbench.iconTheme": "material-icon-theme"
 }
