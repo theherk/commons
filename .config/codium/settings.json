@@ -1232,6 +1232,13 @@
           "command": "git.clone"
         },
         {
+          "key": "g",
+          "name": "Status",
+          "icon": "preview",
+          "type": "command",
+          "command": "magit.status"
+        },
+        {
           "key": "i",
           "name": "Initialize repository",
           "icon": "repo-create",
