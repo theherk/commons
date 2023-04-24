@@ -21,6 +21,7 @@
   },
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.currentLine.enabled": false,
   "gitlens.currentLine.pullRequests.enabled": false,
   "gitlens.graph.dimMergeCommits": true,
   "gitlens.plusFeatures.enabled": false,
