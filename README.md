@@ -3,9 +3,9 @@
 
 These are the configuration details and files I use to configure my environment. Feel free to peruse if it suits you.
 
-<p align="center"><img src="./img/bruce-matlocktheartist_200w.png" alt="Bruce Lee by matlocktheartist" /></p>
+<p align="center"><img src="./img/bruce-matlocktheartist_200w.png" alt="Bruce Lee by matlocktheartist" width="100" height="154"/></p>
 
-<p align="center"><a href="#screenshots">Screenshots</a> | <a href="./INSTALLATION.md">Installation</a></p>
+<p align="center"><a href="#screenshots"> 📷️ Screenshots</a> | <a href="./INSTALLATION.md"> 🚀 Installation</a></p>
 
 ## Tools
 
