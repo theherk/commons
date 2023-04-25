@@ -297,7 +297,7 @@ Since the dock is usually hidden, use [Doll](https://github.com/xiaogdgenuine/Do
 > Sometimes you use `sudo` a lot. A responsible nerd will tell you not to do this, but `¯\_(ツ)_/¯`... Well, I set up an ssh tunnel to proxy for git several times daily so... Look, what I'm trying to say is, "We don't get into this business to input *extra* keystrokes."
 
 ```sh
-    echo 'h4s ALL = NOPASSWD: /usr/bin/ssh' >> /etc/sudoers
+echo 'h4s ALL = NOPASSWD: /usr/bin/ssh' >> /etc/sudoers
 ```
 
 If you get an error `zsh: permission denied: /etc/sudoers`, and you don't know how to get around it, I implore you; do not do this.
