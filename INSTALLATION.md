@@ -134,6 +134,7 @@ Then install extensions.
 ```sh
 echo "
 alefragnani.project-manager
+ban.spellright
 belfz.search-crates-io
 bierner.emojisense
 bmalehorn.vscode-fish
@@ -146,12 +147,14 @@ enkia.tokyo-night
 esbenp.prettier-vscode
 foam.foam-vscode
 garlandcrow.vscode-helix
+genieai.chatgpt-vscode
 golang.go
 Gruntfuggly.todo-tree
 hashicorp.hcl
 hashicorp.terraform
 jacobdufault.fuzzy-search
 jdinhlife.gruvbox
+jebbs.markdown-extended
 kahole.magit
 mikoz.black-py
 ms-python.python
@@ -162,11 +165,13 @@ ms-toolsai.vscode-jupyter-cell-tags
 ms-toolsai.vscode-jupyter-slideshow
 PKief.material-icon-theme
 rust-lang.rust-analyzer
+skn0tt.markdown-link-expander
 slbtty.Lisp-Syntax
 vscode-org-mode.org-mode
 vscodevim.vim
 VSpaceCode.vspacecode
 VSpaceCode.whichkey
+yzhang.markdown-all-in-one
 ziglang.vscode-zig
 " | xargs -L 1 codium --install-extension
 ```
