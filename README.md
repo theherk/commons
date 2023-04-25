@@ -1,0 +1,106 @@
+# theherk commons
+## Common Environment Configuration
+
+These are the configuration details and files I use to configure my environment. Feel free to peruse if it suits you.
+
+<p align="center"><img src="./img/bruce-matlocktheartist_200w.png" alt="Bruce Lee by matlocktheartist" /></p>
+
+<p align="center"><a href="#screenshots">Screenshots</a> | <a href="./INSTALLATION.md">Installation</a></p>
+
+## Tools
+
+### Editors
+
+1. [VSCodium - Open Source Binaries of VSCode](https://vscodium.com/)
+2. [GitHub - doomemacs/doomemacs: An Emacs framework for the stubborn martian hacker](https://github.com/doomemacs/doomemacs)
+3. [Helix](https://helix-editor.com/)
+
+I had about 8 years experience with Emacs and about 25 with Vim before that. But just recently I have started working quite a bit with both Codium and Helix. Emacs is special, and as far as I'm concerned the GOAT. However, many tools are being developed for VS Code first, simply due to the massive adoption. That means that I am both able to get quicker access to tools like LSP's or AI for example, and at the same time better able to help guide those around me, because so many colleagues are using VS Code.
+
+Since Codium is completely open source and is able to disable telemetry, thanks to other tools like OpenVSX [^1], it is not only useable but pleasant.
+
+### Terminal
+
+- [fish shell](https://fishshell.com/)
+- [WezTerm](https://wezfurlong.org/wezterm/): [configuration](.config/wezterm/wezterm.lua)
+
+### Miscellaneous Other Tools
+
+A partial list of installed tools:
+
+- [asciinema](https://asciinema.org/): Record and share terminal sessions.
+- [bat](https://github.com/sharkdp/bat): A cat clone.
+- [caddy](https://github.com/caddyserver/caddy): Simple file server.
+- [coreutils](https://www.gnu.org/software/coreutils/): GNU core utilities.
+- [direnv](https://direnv.net/): Environment manipulation.
+- [doll](https://github.com/xiaogdgenuine/Doll): Move dock applications to menu bar.
+- [dropbox](https://formulae.brew.sh/cask/dropbox): Only for syncing org directory.
+- [dua](https://github.com/Byron/dua-cli): Disk usage analyzer cli with interactive option.
+- [editorconfig](https://editorconfig.org/): Enforce some text styles.
+- [exa](https://the.exa.website/): A modern replacement for ls.
+- [fd](https://github.com/sharkdp/fd): Fast, user-friendly find.
+- [fzf](https://github.com/junegunn/fzf): Command-line fuzzy finder.
+- [firefox](https://www.mozilla.org/en-US/firefox/new/): Best web browser.
+- [delta](https://github.com/dandavison/delta): Syntax highlighting pager.
+- [gitui](https://github.com/extrawurst/gitui): Fast terminal ui for git.
+- [grip](https://github.com/joeyespo/grip): Preview markdown.
+- [keycastr](https://github.com/keycastr/keycastr): keystroke visualizer
+- [navi](https://github.com/denisidoro/navi): Interactive cheatsheet tool for the command-line.
+- [pandoc](https://pandoc.org/): Universal document converter.
+- [podman](https://podman.io/): Daemonless container engine.
+- [pyenv](https://github.com/pyenv/pyenv): Simple python version management.
+- [ripgrep](https://github.com/BurntSushi/ripgrep): Amazing search tool.
+- [shadowenv](https://github.com/Shopify/shadowenv): Slightly better, but less integrated environment manipulation.
+- [skim](https://github.com/lotabout/skim): Awesome fuzzy finder.
+- [starship](https://starship.rs/): Customizable prompt.
+- [terraform](https://www.terraform.io/): Infrastructure management tool.
+- [tokei](https://github.com/XAMPPRocky/tokei): Great tool for counting code.
+- [xh](https://github.com/ducaale/xh): Friendly tool for sending http requests.
+- [zellij](https://zellij.dev/): A terminal workspace with batteries included; multiplexer.
+
+### Font
+
+I use [Victor Mono](https://rubjo.github.io/victor-mono/), and it is superb.
+
+## Languages
+
+I use these mostly, though others are supported.
+
+- [Rust Programming Language](https://www.rust-lang.org/)
+- [Welcome to Python.org](https://www.python.org/)
+- [The Go Programming Language](https://go.dev/)
+- [Terraform by HashiCorp](https://www.terraform.io/)
+
+## Screenshots
+
+### Desktop
+
+<p align="center"><img src="./img/desktop.png" alt="desktop" /></p>
+
+### Codium
+
+<p align="center"><img src="./img/codium-welcome.png" alt="Codium Welcome" /></p>
+<p align="center"><img src="./img/codium.png" alt="Codium terraform" /></p>
+
+### Emacs
+
+<p align="center"><img src="./img/emacs-doom.png" alt="Emacs Doom Welcome" /></p>
+
+### Slack
+
+<p align="center"><img src="./img/slack.png" alt="slack" /></p>
+
+### Wezterm
+
+<p align="center"><img src="./img/wezterm-cal-and-clock.png" alt="WezTerm rcal and clock" /></p>
+<p align="center"><img src="./img/wezterm-onefetch.png" alt="Wezterm onefetch" /></p>
+
+## Credits
+
+More are warranted, but the two I can think to mention off the bat are:
+
+- [matlocktheartist](https://www.deviantart.com/matlocktheartist/art/Bruce-Lee-Puzzled-322967405) for providing the awesome Bruce Lee art.
+
+## Enjoy
+
+[^1]: [Open VSX](https://open-vsx.org/)
