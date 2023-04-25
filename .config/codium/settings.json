@@ -33,6 +33,9 @@
   "python.formatting.provider": "black",
   "rust-analyzer.lens.location": "above_whole_item",
   "search.showLineNumbers": true,
+  "spellright.languageContext": {},
+  "spellright.language": ["en"],
+  "spellright.documentTypes": ["latex", "plaintext", "markdown"],
   "terminal.integrated.fontSize": 14,
   "vim.easymotion": true,
   "vim.normalModeKeyBindingsNonRecursive": [
