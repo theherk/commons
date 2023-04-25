@@ -149,6 +149,28 @@
       ]
     },
     {
+      "key": "a",
+      "name": "+AI",
+      "icon": "hubot",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "a",
+          "name": "Ask Anything (Genie)",
+          "icon": "question",
+          "type": "command",
+          "command": "chatgpt-vscode.freeText"
+        },
+        {
+          "key": "b",
+          "name": "Sidebar Conversation View",
+          "icon": "pinned",
+          "type": "command",
+          "command": "chatgpt-vscode.view.focus"
+        }
+      ]
+    },
+    {
       "key": "b",
       "name": "+Buffers",
       "icon": "file",
