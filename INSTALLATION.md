@@ -302,6 +302,6 @@ Since the dock is usually hidden, use [Doll](https://github.com/xiaogdgenuine/Do
 echo 'h4s ALL = NOPASSWD: /usr/bin/ssh' >> /etc/sudoers
 ```
 
-::: warning Last warning!
-If you get an error `zsh: permission denied: /etc/sudoers`, and you don't know how to get around it, I implore you; do not do this.
-:::
+> **Warning**
+>
+> **Last warning!** If you get an error `zsh: permission denied: /etc/sudoers`, and you don't know how to get around it, I implore you; do not do this.
