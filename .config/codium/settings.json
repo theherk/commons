@@ -4712,9 +4712,17 @@
   "window.openFoldersInNewWindow": "off",
   "window.zoomLevel": 2,
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Aura Soft Dark",
+  "workbench.colorCustomizations": {
+    "editor.selectionBackground": "#3d375ecf",
+    "editor.selectionHighlightBackground": "#3d375ecf"
+  },
+  "workbench.colorTheme": "Aura Dark (Soft Text)",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
   "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
