@@ -38,6 +38,7 @@
   "spellright.documentTypes": ["latex", "plaintext", "markdown"],
   "terminal.integrated.fontSize": 14,
   "vim.easymotion": true,
+  "vim.foldfix": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<space>"],
