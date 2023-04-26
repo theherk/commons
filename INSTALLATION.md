@@ -148,6 +148,8 @@ esbenp.prettier-vscode
 foam.foam-vscode
 garlandcrow.vscode-helix
 genieai.chatgpt-vscode
+GitHub.vscode-pull-request-github
+GitLab.gitlab-workflow
 golang.go
 Gruntfuggly.todo-tree
 hashicorp.hcl
