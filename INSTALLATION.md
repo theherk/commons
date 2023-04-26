@@ -159,6 +159,7 @@ jdinhlife.gruvbox
 jebbs.markdown-extended
 kahole.magit
 mikoz.black-py
+MohammadBaqer.better-folding
 ms-python.python
 ms-toolsai.jupyter
 ms-toolsai.jupyter-keymap
