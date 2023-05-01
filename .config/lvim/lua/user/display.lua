@@ -1,6 +1,7 @@
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.log.level = "info"
+vim.g.tokyonight_style = "night"
 lvim.colorscheme = "tokyonight-night"
 lvim.transparent_window = true
 vim.o.guicursor = vim.o.guicursor .. ",a:blinkon1"
