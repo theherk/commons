@@ -4,3 +4,4 @@ lvim.log.level = "info"
 lvim.colorscheme = "tokyonight-night"
 lvim.transparent_window = true
 vim.o.guicursor = vim.o.guicursor .. ",a:blinkon1"
+vim.opt.timeoutlen = 0
