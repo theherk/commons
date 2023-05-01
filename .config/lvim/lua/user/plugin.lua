@@ -7,6 +7,9 @@ lvim.plugins = {
     end,
   },
   {
+    "folke/tokyonight.nvim"
+  },
+  {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
