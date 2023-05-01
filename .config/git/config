@@ -11,9 +11,9 @@
 	editor = lvim
 	pager = delta
 [delta]
-  light = false
+	light = false
 	line-numbers = true
-  paging = auto
+	paging = auto
 [diff]
 	colorMoved = zebra
 [fetch]
