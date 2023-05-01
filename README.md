@@ -74,14 +74,19 @@ I use these mostly, though others are supported.
 
 <p align="center"><img src="./img/desktop.png" alt="desktop" /></p>
 
-### Codium
+### LunarVim
 
-<p align="center"><img src="./img/codium-welcome.png" alt="Codium Welcome" /></p>
-<p align="center"><img src="./img/codium.png" alt="Codium terraform" /></p>
+<p align="center"><img src="./img/lunarvim-dashboard.png" alt="LunarVim Welcome" /></p>
+<p align="center"><img src="./img/lunarvim-rust.png" alt="LunarVim Rust" /></p>
 
 ### Emacs
 
 <p align="center"><img src="./img/emacs-doom.png" alt="Emacs Doom Welcome" /></p>
+
+### Codium
+
+<p align="center"><img src="./img/codium-welcome.png" alt="Codium Welcome" /></p>
+<p align="center"><img src="./img/codium.png" alt="Codium terraform" /></p>
 
 ### Slack
 
