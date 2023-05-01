@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm';
 local act = wezterm.action
 
-local selected_scheme = "tokyonight";
+local selected_scheme = "tokyonight_night";
 local scheme = wezterm.get_builtin_color_schemes()[selected_scheme]
 
 local C_ACTIVE_BG = scheme.selection_bg;
