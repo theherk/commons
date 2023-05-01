@@ -11,13 +11,10 @@ These are the configuration details and files I use to configure my environment.
 
 ### Editors
 
-1. [VSCodium - Open Source Binaries of VSCode](https://vscodium.com/)
-2. [GitHub - doomemacs/doomemacs: An Emacs framework for the stubborn martian hacker](https://github.com/doomemacs/doomemacs)
+1. [Neovim](https://neovim.io/) / [LunarVim](https://www.lunarvim.org/): 1993-2015, 2023-current
+2. [GitHub - doomemacs/doomemacs: An Emacs framework for the stubborn martian hacker](https://github.com/doomemacs/doomemacs): 2015-2023
 3. [Helix](https://helix-editor.com/)
-
-I had about 8 years experience with Emacs and about 25 with Vim before that. But just recently I have started working quite a bit with both Codium and Helix. Emacs is special, and as far as I'm concerned the GOAT. However, many tools are being developed for VS Code first, simply due to the massive adoption. That means that I am both able to get quicker access to tools like LSP's or AI for example, and at the same time better able to help guide those around me, because so many colleagues are using VS Code.
-
-Since Codium is completely open source and is able to disable telemetry, thanks to other tools like OpenVSX [^1], it is not only useable but pleasant.
+4. [VSCodium - Open Source Binaries of VSCode](https://vscodium.com/)
 
 ### Terminal
 

@@ -19,6 +19,7 @@ fish_add_path -pP $GOPATH/bin
 fish_add_path -pP $VOLTA_HOME/bin
 
 fish_add_path -pP $HOME/.emacs.d/bin
+fish_add_path -pP $HOME/.local/bin
 fish_add_path -pP $HOME/bin
 
 if status is-interactive

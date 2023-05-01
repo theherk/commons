@@ -15,6 +15,7 @@ ln -sf ~/commons/.config/gitui/ ~/.config/
 ln -sf ~/commons/.config/helix/ ~/.config/
 ln -sf ~/commons/.config/lazygit/ ~/.config/
 ln -sf ~/commons/.config/lazygit/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
+ln -sf ~/commons/.config/lvim/ ~/.config/
 ln -sf ~/commons/.config/nu/ ~/.config/
 ln -sf ~/commons/.config/starship.toml ~/.config/starship.toml
 ln -sf ~/commons/.config/tidy/ ~/.config/

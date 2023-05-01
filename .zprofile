@@ -38,6 +38,7 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=$VOLTA_HOME/bin:$PATH
 
 export PATH=$HOME/.emacs.d/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
 if command -v pyenv 1>/dev/null 2>&1; then

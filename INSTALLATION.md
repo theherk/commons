@@ -82,6 +82,7 @@ brew install \
     navi \
     newman \
     npm \
+    nvim \
     onefetch \
     pandoc \
     pinentry-mac \
@@ -207,6 +208,10 @@ ln -sf ~/commons/.config/ispell/ ~/.emacs.d/.local/etc/
 
     echo "pinentry-program $(which pinentry-mac)" >>~/.gnupg/gpg-agent.conf
     gpgconf --kill gpg-agent
+
+## Configure Neovim / LunarVim
+
+    curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh | LV_BRANCH='release-1.3/neovim-0.9' bash
 
 ## Install more programming tools.
 
