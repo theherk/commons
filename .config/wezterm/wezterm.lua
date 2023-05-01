@@ -11,7 +11,7 @@ local C_HL_1 = scheme.ansi[5];
 local C_HL_2 = scheme.ansi[4];
 local C_INACTIVE_FG;
 local bg = wezterm.color.parse(scheme.background);
-local h, s, l, a = bg:hsla();
+local _, _, l, _ = bg:hsla();
 if l > 0.5 then
   C_INACTIVE_FG = bg:complement_ryb():darken(0.3);
 else
