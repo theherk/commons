@@ -28,6 +28,8 @@ if status is-interactive
     set -gx fish_cursor_replace_one underscore blink
     set -gx fish_cursor_visual block
     fish_vi_key_bindings
+    bind -M insert \cf accept-autosuggestion # Default but for vim.
+    bind -M insert \ce accept-autosuggestion # Maybe better.
 
     # On ARM MacOS homebrew uses some different paths,
     # Generally this is found in:
