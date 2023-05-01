@@ -9,8 +9,8 @@ gui:
 git:
   parseEmoji: true
 os:
-  editCommand: 'hx'
-  editCommandTemplate: '{{editor}} {{filename}}:{{line}}'
+  editCommand: 'lvim'
+  editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
 promptToReturnFromSubprocess: false
 git:
   paging:

@@ -1,5 +1,5 @@
 set -U fish_greeting
-set -U -x EDITOR hx
+set -U -x EDITOR lvim
 set -U -x CARGO_HOME $HOME/.cargo
 set -U -x VENVS $HOME/.venvs
 set -U -x P $HOME/projects
