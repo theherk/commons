@@ -7,12 +7,11 @@ gui:
     selectedRangeBgColor:
       - reverse
 git:
+  paging:
+    colorArg: always
+    pager: delta --paging=never
   parseEmoji: true
 os:
   editCommand: 'lvim'
   editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
 promptToReturnFromSubprocess: false
-git:
-  paging:
-    colorArg: always
-    useConfig: true
