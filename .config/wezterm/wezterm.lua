@@ -163,6 +163,8 @@ return {
     { key = "j", mods = "LEADER",      action = act.ActivatePaneDirection "Down" },
     { key = "]", mods = "LEADER",      action = act.ActivateTabRelative(1) },
     { key = "[", mods = "LEADER",      action = act.ActivateTabRelative(-1) },
+    { key = '}', mods = 'LEADER',      action = act.MoveTabRelative(1) },
+    { key = '{', mods = 'LEADER',      action = act.MoveTabRelative(-1) },
     { key = "1", mods = "LEADER",      action = act.ActivateTab(0) },
     { key = "2", mods = "LEADER",      action = act.ActivateTab(1) },
     { key = "3", mods = "LEADER",      action = act.ActivateTab(2) },
