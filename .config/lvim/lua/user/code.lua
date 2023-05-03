@@ -24,28 +24,38 @@ lsp.configure("yamlls", {
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   {
+    command = "terraform_fmt",
+    filetypes = { "hcl", "terraform", "tf" },
+  },
+  {
     command = "black",
-    filetypes = { "python" }
+    filetypes = { "python" },
   },
   {
     command = "prettier",
     extra_args = { "--print-width", "100" },
     filetypes = { "javascript", "typescript", "typescriptreact" },
   },
-  {
-    command = "beautysh",
-    filetypes = { "bash", "sh", "zsh" },
-  },
 }
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  { command = "flake8", filetypes = { "python" } },
+  {
+    command = "flake8",
+    filetypes = { "python" },
+  },
+  {
+    command = "terraform_validate",
+    filetypes = { "terraform", "tf" },
+  },
   {
     command = "shellcheck",
     args = { "--severity", "warning" },
   },
-  { command = "zsh",    filetypes = { "zsh" } },
+  {
+    command = "zsh",
+    filetypes = { "zsh" },
+  },
 }
 
 local code_actions = require "lvim.lsp.null-ls.code_actions"
