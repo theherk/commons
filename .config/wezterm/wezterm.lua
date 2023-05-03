@@ -144,6 +144,9 @@ return {
     { key = "x", mods = "LEADER",      action = act.ActivateCopyMode },
     { key = " ", mods = "LEADER",      action = act.QuickSelect },
 
+    -- Paste; Cmd-v or C-a p
+    { key = "p", mods = "LEADER",      action = act.PasteFrom 'Clipboard' },
+
     -- Pane Management
     { key = "s", mods = "LEADER",      action = act.SplitVertical { domain = "CurrentPaneDomain" } },
     { key = "v", mods = "LEADER",      action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
