@@ -1,4 +1,4 @@
-local wezterm = require 'wezterm';
+local wezterm = require "wezterm";
 local act = wezterm.action
 
 local selected_scheme = "tokyonight_night";
@@ -69,7 +69,7 @@ wezterm.on(
     local pane = tab.active_pane
     if pane.is_zoomed then
       tconcat(title, {
-        { Text = '🔍 ' },
+        { Text = "🔍 " },
       })
     end
     tconcat(title, {
@@ -83,28 +83,28 @@ wezterm.on(
 )
 
 wezterm.on(
-  'update-right-status',
+  "update-right-status",
   function(window, pane)
     local text = {}
     if window:active_key_table() then
       tconcat(text, {
         { Foreground = { Color = C_HL_1 } },
-        { Text = ' TABLE: ' },
+        { Text = " TABLE: " },
         { Foreground = { Color = C_HL_2 } },
         { Text = window:active_key_table() },
       })
     end
     local tab = pane:tab()
     for _, p in ipairs(tab:panes_with_info()) do
-      wezterm.log_info('zoomed: ' .. tostring(p.is_zoomed))
+      wezterm.log_info("zoomed: " .. tostring(p.is_zoomed))
       if p.is_zoomed then
         tconcat(text, {
-          { Text = ' 🔍' },
+          { Text = " 🔍" },
         })
       end
     end
     tconcat(text, {
-      { Text = ' ' },
+      { Text = " " },
     })
     window:set_right_status(wezterm.format(text))
   end
@@ -130,11 +130,11 @@ return {
   window_decorations = "RESIZE",
   key_tables = {
     resize_pane = {
-      { key = 'h',      action = act.AdjustPaneSize { 'Left', 1 } },
-      { key = 'l',      action = act.AdjustPaneSize { 'Right', 1 } },
-      { key = 'k',      action = act.AdjustPaneSize { 'Up', 1 } },
-      { key = 'j',      action = act.AdjustPaneSize { 'Down', 1 } },
-      { key = 'Escape', action = 'PopKeyTable' },
+      { key = "h",      action = act.AdjustPaneSize { "Left", 1 } },
+      { key = "l",      action = act.AdjustPaneSize { "Right", 1 } },
+      { key = "k",      action = act.AdjustPaneSize { "Up", 1 } },
+      { key = "j",      action = act.AdjustPaneSize { "Down", 1 } },
+      { key = "Escape", action = "PopKeyTable" },
     },
   },
   keys = {
@@ -145,19 +145,19 @@ return {
     { key = " ", mods = "LEADER",      action = act.QuickSelect },
 
     -- Paste; Cmd-v or C-a p
-    { key = "p", mods = "LEADER",      action = act.PasteFrom 'Clipboard' },
+    { key = "p", mods = "LEADER",      action = act.PasteFrom "Clipboard" },
 
     -- Pane Management
     { key = "s", mods = "LEADER",      action = act.SplitVertical { domain = "CurrentPaneDomain" } },
     { key = "v", mods = "LEADER",      action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
     { key = "w", mods = "LEADER",      action = act.CloseCurrentPane { confirm = false } },
-    { key = 'H', mods = 'LEADER',      action = act.AdjustPaneSize { 'Left', 5 } },
-    { key = 'J', mods = 'LEADER',      action = act.AdjustPaneSize { 'Down', 5 } },
-    { key = 'K', mods = 'LEADER',      action = act.AdjustPaneSize { 'Up', 5 } },
-    { key = 'L', mods = 'LEADER',      action = act.AdjustPaneSize { 'Right', 5 } },
-    { key = 'r', mods = 'LEADER',      action = act.ActivateKeyTable { name = 'resize_pane', one_shot = false } },
-    { key = 'z', mods = 'LEADER',      action = act.TogglePaneZoomState },
-    { key = 'Z', mods = 'LEADER',      action = act.TogglePaneZoomState },
+    { key = "H", mods = "LEADER",      action = act.AdjustPaneSize { "Left", 5 } },
+    { key = "J", mods = "LEADER",      action = act.AdjustPaneSize { "Down", 5 } },
+    { key = "K", mods = "LEADER",      action = act.AdjustPaneSize { "Up", 5 } },
+    { key = "L", mods = "LEADER",      action = act.AdjustPaneSize { "Right", 5 } },
+    { key = "r", mods = "LEADER",      action = act.ActivateKeyTable { name = "resize_pane", one_shot = false } },
+    { key = "z", mods = "LEADER",      action = act.TogglePaneZoomState },
+    { key = "Z", mods = "LEADER",      action = act.TogglePaneZoomState },
 
     -- Navigation
     { key = "h", mods = "LEADER",      action = act.ActivatePaneDirection "Left" },
@@ -166,8 +166,8 @@ return {
     { key = "j", mods = "LEADER",      action = act.ActivatePaneDirection "Down" },
     { key = "]", mods = "LEADER",      action = act.ActivateTabRelative(1) },
     { key = "[", mods = "LEADER",      action = act.ActivateTabRelative(-1) },
-    { key = '}', mods = 'LEADER',      action = act.MoveTabRelative(1) },
-    { key = '{', mods = 'LEADER',      action = act.MoveTabRelative(-1) },
+    { key = "}", mods = "LEADER",      action = act.MoveTabRelative(1) },
+    { key = "{", mods = "LEADER",      action = act.MoveTabRelative(-1) },
     { key = "1", mods = "LEADER",      action = act.ActivateTab(0) },
     { key = "2", mods = "LEADER",      action = act.ActivateTab(1) },
     { key = "3", mods = "LEADER",      action = act.ActivateTab(2) },
