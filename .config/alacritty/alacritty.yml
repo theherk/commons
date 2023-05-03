@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/night-owl.yml
+  - ~/.config/alacritty/tokyonight.yml
 window:
   dimensions:
     columns: 120
