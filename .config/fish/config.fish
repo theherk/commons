@@ -49,6 +49,11 @@ if status is-interactive
         eval (/usr/local/Homebrew/bin/brew shellenv)
     end
 
+    # Load directory shortcuts.
+    if test -e ~/.dirs
+        source ~/.dirs
+    end
+
     starship init fish | source
     direnv hook fish | source
     status --is-interactive; and pyenv init - | source

@@ -27,6 +27,10 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
 source $HOME/.aliases
 source $HOME/.functions
 
+if [ -f $HOME/.dirs ]; then
+  source $HOME/.dirs
+fi
+
 eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
