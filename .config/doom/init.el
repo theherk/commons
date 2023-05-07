@@ -12,12 +12,9 @@
 ;; Further clarification. It seems one must add childframe alone to
 ;; vertico, then after sync and open, add icons to vertico.
 
-(doom! :app
-       everywhere
-
-       :completion
-       (company +childframe)
-       (vertico +childframe +icons)
+(doom! :completion
+       company
+       (vertico +icons)
 
        :config
        literate
@@ -30,13 +27,11 @@
        hl-todo
        ligatures
        modeline
-       nav-flash
        ophints
        (popup +defaults)
        (treemacs +lsp)
        unicode
        vc-gutter
-       vi-tilde-fringe
        (window-select +switch-window)
        workspaces
        zen
@@ -56,22 +51,18 @@
        vc
 
        :term
-       eshell
        vterm
 
        :checkers
-       (syntax +childframe)
+       syntax
        spell
 
        :tools
-       (debugger +lsp)
        direnv
-       docker
        editorconfig
-       (eval +overlay)
        lookup
        (lsp +peek)
-       (magit +forge)
+       magit
        make
        terraform
        tree-sitter
@@ -81,16 +72,12 @@
 
        :lang
        emacs-lisp
-       (go +lsp)
        json
-       (java +lsp)
        javascript
        latex
        lua
-       nim
        (markdown +grip)
        (org +roam2 +pretty)
-       plantuml
        (python +lsp +pyright +pyenv +tree-sitter)
        rst
        (rust +lsp)

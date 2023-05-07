@@ -5,12 +5,6 @@
 
 * theherk's literate doom configuration
 
-According to [[https://nullprogram.com/blog/2016/12/22/][this blog]], this lexical-binding can improve performance.
-
-#+begin_src elisp
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
-#+end_src
-
 User identification. You can find more information in the [[https://www.gnu.org/software/emacs/manual/html_node/elisp/User-Identification.html][official documentation]].
 
 #+begin_src elisp
@@ -20,24 +14,7 @@ User identification. You can find more information in the [[https://www.gnu.org/
 
 ** Display configuration
 
-*** Cursor
-
-Pulsing is possible by adding this to packages.el.
-
-#+begin_src elisp
-;; (package! pulsing-cursor :recipe (:host github :repo "jasonjckn/pulsing-cursor"))
-#+end_src
-
-Then uncommenting this here.
-
-#+begin_src elisp
-;; (use-package pulsing-cursor
-;;   :config (pulsing-cursor-mode +1))
-#+end_src
-
 *** Font
-
-I am still undecided on usage of variable pitch font. I cannot recall what issue it was causing for me, but it had to do with ligatures. It is probably fine.
 
 #+begin_src elisp
 (setq
@@ -45,20 +22,6 @@ I am still undecided on usage of variable pitch font. I cannot recall what issue
   doom-big-font (font-spec :family "VictorMono Nerd Font" :size 24)
   doom-variable-pitch-font (font-spec :family "VictorMono Nerd Font" :size 20))
 
-#+end_src
-
-*** Modeline:
-
-#+begin_src elisp
-(use-package doom-modeline
-  :hook (after-init . doom-modeline-mode)
-  :custom
-  (doom-modeline-bar-width 6)
-  (doom-modeline-buffer-state-icon t)
-  (doom-modeline-buffer-modification-icon t)
-  (doom-modeline-height 1)
-  (doom-modeline-persp-name t)
-  (doom-modeline-workspace-name t))
 #+end_src
 
 *** Theme
@@ -87,12 +50,7 @@ Remove the title bar from 29 forward.
 
 **** Alpha
 
-This can set the windows alpha, and I may want that sometime, but generally I use emacs edge-to-edge and on macOS, one cannot use transparency in full screen.
-
 #+begin_src elisp
-;; alpha
-;; (set-frame-parameter (selected-frame) 'alpha '(90 65))
-;; (add-to-list 'default-frame-alist '(alpha 90 65))
 (doom/set-frame-opacity 88)
 #+end_src
 
@@ -128,12 +86,6 @@ The menu bar for emacs is awesome if you use it. I don't and it takes up real es
 (menu-bar-mode -1)
 #+end_src
 
-** everywhere
-
-#+begin_src elisp
-(setq emacs-everywhere-frame-parameters '((name . "emacs-everywhere") (height . 18) (width . 80)))
-#+end_src
-
 ** groovy-mode
 
 Load all files called =*jenkinsfile*= in groovy-mode.
@@ -148,12 +100,6 @@ Load all files called =*jenkinsfile*= in groovy-mode.
 (after! magit
   (setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     ")))
 #+end_src
-
-** python-mode
-
-Use direnv for best venv, virtualenv, pyenv handling. Add =layout pyenv <version>= to .envrc. This will automatically create a virtual environment with the given python executable.
-
-Remember to run =lsp-workspace-restart=.
 
 *** Get pytest from executable
 
@@ -208,7 +154,6 @@ Load animations by default.
 #+begin_src elisp
 (add-hook 'org-mode-hook #'org-inline-anim-mode)
 #+end_src
-org-roam and org-roam-ui settings
 
 #+begin_src elisp
 (use-package! websocket
@@ -316,43 +261,4 @@ lsp-ui-imenu is a less helpful alternative.
 (map! :leader
   :desc "symbol explorer"
   "o l" #'lsp-treemacs-symbols)
-#+end_src
-
-*** Search
-
-I want evil's / to using =isearch-forward= rather than =evil-ex-search-forward=. It annoys me that in org-mode overview or with anything collapsed, =evil-ex-search-forward= doesn't find text in the collapsed area.
-
-#+begin_src elisp
-;; (setq evil-search-module 'isearch)
-
-;; (map!
-;;  :nv "/" #'isearch-forward
-;;  :nv "?" #'isearch-backward)
-#+end_src
-
-Apparently, search is all messed up currently. This is a workaround for searching folds in the custom fold implementation of org-mode. However, isearch itself seems to be broken at the moment, and just refuses to continue a search in all modes. So, for now I'll switch back, and just deal with it in org-mode.
-
-** miscellaneous
-
-I still have some issues with line handling and reaching the end of non-truncated lines sometimes. This is a workaround I had at some point. I'm keeping it around for posterity.
-
-#+begin_src elisp
-;; https://github.com/hlissner/doom-emacs/issues/401
-;; (setq evil-respect-visual-line-mode t)
-#+end_src
-
-For some reason, without this disabled, sh wants to autocomplete everything and search every path, so it is really slow.
-
-#+begin_src elisp
-(after! sh-script
-  (set-company-backend! 'sh-mode nil))
-#+end_src
-
-To avoid the error =command not found: pdflatex=, we need to manipulate the path in macos.
-
-This is actually done by Doom, so this may be causing more issues than solving. See: https://github.com/purcell/exec-path-from-shell/issues/112.
-
-#+begin_src elisp
-;;(when (memq window-system '(mac ns x))
-;;  (exec-path-from-shell-initialize))
 #+end_src
