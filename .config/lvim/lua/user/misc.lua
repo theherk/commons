@@ -8,6 +8,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "comment",
   "html",
   "markdown_inline",
+  "org",
   "python",
   "regex"
 }
