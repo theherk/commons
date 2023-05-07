@@ -23,6 +23,13 @@ lvim.plugins = {
     "kevinhwang91/nvim-bqf",
   },
   {
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({})
+    end
+  },
+  {
     "preservim/vim-markdown",
   },
   {
