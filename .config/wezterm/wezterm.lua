@@ -116,7 +116,7 @@ wezterm.on(
 return {
   leader = { key = "a", mods = "CTRL" },
   check_for_updates = false,
-  command_palette_font_size = 24,
+  command_palette_font_size = 20,
   command_palette_bg_color = C_PANEL_BG,
   command_palette_fg_color = C_ACTIVE_FG,
   color_schemes = {
