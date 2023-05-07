@@ -20,6 +20,9 @@ lvim.plugins = {
     end,
   },
   {
+    "kevinhwang91/nvim-bqf",
+  },
+  {
     "preservim/vim-markdown",
   },
   {
