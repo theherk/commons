@@ -16,4 +16,10 @@ lvim.plugins = {
   {
     "preservim/vim-markdown",
   },
+  {
+    "Wansmer/treesj",
+    config = function()
+      require('treesj').setup({})
+    end,
+  },
 }
