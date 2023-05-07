@@ -2,7 +2,7 @@
 
 mkdir -p ~/.config/fish
 
-ln -sf ~/commons/.aliases ~/
+ln -sf ~/commons/.aliases.sh ~/
 ln -sf ~/commons/.bashrc ~/
 ln -sf ~/commons/.config/alacritty/ ~/.config/
 ln -sf ~/commons/.config/bat/ ~/.config/
@@ -23,7 +23,7 @@ ln -sf ~/commons/.config/wezterm/ ~/.config/
 ln -sf ~/commons/.config/zellij/ ~/.config/
 ln -sf ~/commons/.editorconfig ~/
 ln -sf ~/commons/.eslintrc ~/
-ln -sf ~/commons/.functions ~/
+ln -sf ~/commons/.functions.sh ~/
 ln -sf ~/commons/.pypirc ~/
 ln -sf ~/commons/.tmux.conf ~/
 ln -sf ~/commons/.zprofile ~/

@@ -24,8 +24,8 @@ export EDITOR='lvim'
 export PAGER="less -FRSX"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
 
-source $HOME/.aliases
-source $HOME/.functions
+source $HOME/.aliases.sh
+source $HOME/.functions.sh
 
 if [ -f $HOME/.dirs ]; then
   source $HOME/.dirs
