@@ -2,6 +2,7 @@ local actions = require("telescope.actions")
 
 lvim.builtin.which_key.mappings["J"] = { "<cmd>TSJToggle<CR>", "Treesj Toggle" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["ss"] = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "Current Buf Fuzzy" }
 lvim.builtin.which_key.mappings["/"] = { "<cmd>Telescope live_grep<CR>", "Grep" }
 lvim.builtin.telescope.defaults.mappings.i = {
   ["<esc>"] = actions.close,
