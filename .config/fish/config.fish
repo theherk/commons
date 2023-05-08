@@ -7,7 +7,9 @@ set -U -x GOPATH $P/go
 set -U -x HTML_TIDY $HOME/.config/tidy/config.txt
 set -U -x JAVA_HOME (/usr/libexec/java_home)
 set -g -x VOLTA_HOME "$HOME/.volta"
+
 set fzf_fd_opts --hidden --exclude=.git
+set fzf_preview_dir_cmd exa --all --color=always
 
 fish_add_path -pP /usr/local/bin
 fish_add_path -pP /usr/local/go/bin
