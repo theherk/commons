@@ -6,6 +6,10 @@ require('orgmode').setup({
 
 lvim.plugins = {
   {
+    "felipec/vim-sanegx",
+    event = "BufRead",
+  },
+  {
     "folke/todo-comments.nvim",
     event = "BufRead",
     config = function()
