@@ -24,6 +24,13 @@ lvim.plugins = {
     cmd = "TroubleToggle",
   },
   {
+    "ggandor/leap.nvim",
+    name = "leap",
+    config = function()
+      require("leap").add_default_mappings()
+    end,
+  },
+  {
     "iamcco/markdown-preview.nvim",
     config = function()
       vim.fn["mkdp#util#install"]()
