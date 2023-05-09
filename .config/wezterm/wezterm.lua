@@ -58,6 +58,12 @@ wezterm.on(
       { Foreground = { Color = C_HL_2 } },
       { Text = ": " },
     }
+    local pane = tab.active_pane
+    if pane.is_zoomed then
+      tconcat(title, {
+        { Text = "🔍 " },
+      })
+    end
     if tab.is_active then
       tconcat(title, {
         { Foreground = { Color = C_ACTIVE_FG } },
@@ -67,12 +73,6 @@ wezterm.on(
       tconcat(title, {
         { Foreground = { Color = C_INACTIVE_FG } },
         { Text = tab.active_pane.title .. " " },
-      })
-    end
-    local pane = tab.active_pane
-    if pane.is_zoomed then
-      tconcat(title, {
-        { Text = "🔍 " },
       })
     end
     tconcat(title, {
