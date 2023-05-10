@@ -1,5 +1,6 @@
-personal_ws-1.1 en 72
+personal_ws-1.1 en 78
 args
+atlassian
 auth
 authorizer
 awk
@@ -10,8 +11,10 @@ bitbucket
 ccoe
 ccp
 changelog
+chatgpt
 cloudformation
 cloudfront
+codeium
 config
 configs
 copypasta
@@ -38,6 +41,7 @@ instantiation
 integrations
 ishasl
 jira
+kantega
 maths
 mft
 micronaut
@@ -52,6 +56,7 @@ prepend
 presign
 privatelinks
 pshasl
+raycast
 recordsets
 regnskap
 resolvers
@@ -64,6 +69,7 @@ svc
 terraform
 tf
 theherk
+toolchain
 uat
 ulimit
 uncommenting
