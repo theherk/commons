@@ -7,6 +7,7 @@ lvim.builtin.which_key.mappings["/"] = { "<cmd>Telescope live_grep<CR>", "Grep" 
 lvim.builtin.telescope.defaults.mappings.i = {
   ["<esc>"] = actions.close,
 }
+lvim.builtin.telescope.defaults.path_display = { "truncate" }
 
 lvim.builtin.which_key.mappings["o"] = {
   name = "Options",
