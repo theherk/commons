@@ -8,6 +8,12 @@ require('orgmode').setup({
 
 lvim.plugins = {
   {
+    "Exafunction/codeium.vim",
+    config = function()
+      vim.g.codeium_enabled = false
+    end,
+  },
+  {
     "felipec/vim-sanegx",
     event = "BufRead",
   },
