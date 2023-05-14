@@ -77,6 +77,7 @@ brew install \
     kubectl \
     lazygit \
     lazydocker \
+    llvm \
     mactex \
     markdown \
     navi \
@@ -212,6 +213,12 @@ ln -sf ~/commons/.config/ispell/ ~/.emacs.d/.local/etc/
 ## Configure Neovim / LunarVim
 
     curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh | LV_BRANCH='release-1.3/neovim-0.9' bash
+
+### Install norg requires C++14
+
+After plugins are installed, you can install this grammar which requires up-to-date compiler which should have been installed via `brew install llvm`.
+
+    CC=/opt/homebrew/opt/llvm/bin/clang++ lvim -c "TSInstallSync norg"
 
 ## Install more programming tools.
 

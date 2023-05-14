@@ -76,6 +76,35 @@ lvim.plugins = {
     "neovim/nvim-lspconfig",
   },
   {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    opts = {
+      load = {
+        ["core.defaults"] = {},
+        ["core.concealer"] = {},
+        ["core.dirman"] = {
+          config = {
+            workspaces = {
+              notes = "~/org/neorg",
+            },
+          },
+        },
+        ["core.export"] = {},
+        ["core.export.markdown"] = {},
+        ["core.integrations.telescope"] = {},
+        ["core.presenter"] = {
+          config = {
+            zen_mode = "zen-mode"
+          }
+        },
+      },
+    },
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-neorg/neorg-telescope" },
+    },
+  },
+  {
     "nvim-orgmode/orgmode",
     config = function()
       require('orgmode').setup({})
