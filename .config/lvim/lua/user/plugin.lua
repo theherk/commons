@@ -32,6 +32,22 @@ lvim.plugins = {
     cmd = "TroubleToggle",
   },
   {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
+        plugins = {
+          wezterm = {
+            enabled = true,
+            font = "+2",
+          },
+        },
+        window = {
+          width = 0.77,
+        }
+      }
+    end
+  },
+  {
     "ggandor/leap.nvim",
     name = "leap",
     config = function()
