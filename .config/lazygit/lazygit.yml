@@ -12,6 +12,8 @@ git:
     pager: delta --paging=never
   parseEmoji: true
 os:
-  editCommand: 'lvim'
-  editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
+  edit: 'lvim {{filename}}'
+  editAtLine: 'lvim +{{line}} {{filename}}'
+  editAtLineAndWait: 'lvim --remote-wait +{{line}} {{filename}}'
+  editInTerminal: true
 promptToReturnFromSubprocess: false
