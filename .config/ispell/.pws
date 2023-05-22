@@ -1,4 +1,4 @@
-personal_ws-1.1 en 78
+personal_ws-1.1 en 84
 args
 atlassian
 auth
@@ -12,6 +12,7 @@ ccoe
 ccp
 changelog
 chatgpt
+cidr's
 cloudformation
 cloudfront
 codeium
@@ -26,6 +27,7 @@ dns
 dotenv
 dynatrace
 env
+evry
 failover
 fargate
 filesystem
@@ -54,6 +56,7 @@ pla
 podman
 prepend
 presign
+privatelink
 privatelinks
 pshasl
 raycast
@@ -65,6 +68,7 @@ schemas
 sonarqube
 stateful
 subnet
+subnets
 svc
 terraform
 tf
@@ -73,6 +77,8 @@ toolchain
 uat
 ulimit
 uncommenting
+uri's
+url's
 userexperience
 usr
 vpce
