@@ -94,6 +94,7 @@ if status is-interactive
     abbr -a pc --position anywhere --set-cursor "%| pbcopy"
     abbr -a r --position command rsync -rltvz -e ssh --progress
     abbr -a rcal --position command rusti-cal -c --starting-day 1
+    abbr -a repocache --position command 'fd -HI "^\.git\$" $P 2>/dev/null > $HOME/.projects'
     abbr -a tf --position command terraform
     abbr -a tfa --position command terraform apply
     abbr -a tfd --position command terraform destroy
@@ -134,6 +135,26 @@ if status is-interactive
             aws configure set aws_secret_access_key (bat $CLI/(exa -U $CLI | tail -1) | jq -r .Credentials.SecretAccessKey) &&
             aws configure set aws_session_token (bat $CLI/(exa -U $CLI | tail -1) | jq -r .Credentials.SessionToken) &&
             aws configure set region (bat $SSO/(exa -U $SSO | tail -2 | head -1) | jq -r .region)
+    end
+
+    function gitp # Switch to git project directory from .projects. See alias repocache.
+        set REPO "$(cat "$HOME"/.projects | xargs dirname | sed s:"$HOME":~: | fzf)"
+        if test -n "$REPO"
+            cd (string replace '~' $HOME $REPO)
+        end
+    end
+
+    function mkdir -d "Create a directory and set CWD"
+        command mkdir $argv
+        if test $status = 0
+            switch $argv[(count $argv)]
+                case '-*'
+
+                case '*'
+                    cd $argv[(count $argv)]
+                    return
+            end
+        end
     end
 
     function pwa # add password to keyring
@@ -196,19 +217,6 @@ if status is-interactive
 
     function venvact
         source .venv/bin/activate
-    end
-
-    function mkdir -d "Create a directory and set CWD"
-        command mkdir $argv
-        if test $status = 0
-            switch $argv[(count $argv)]
-                case '-*'
-
-                case '*'
-                    cd $argv[(count $argv)]
-                    return
-            end
-        end
     end
 end
 

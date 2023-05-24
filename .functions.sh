@@ -41,6 +41,11 @@ gfixtags () {
     for t in $(gvtags); do git tag -d $t; done
 }
 
+gitp() { # Switch to git project directory from .projects. See alias repocache.
+  REPO="$(cat "$HOME"/.projects | xargs dirname | sed s:"$HOME":~: | fzf)"
+  [ "$REPO" = "" ] || cd "${REPO/\~/$HOME}" || return
+}
+
 gtr () {
     SOURCE_TAG=${1} NEW_TAG=${2}; deref() { git for-each-ref "refs/tags/$SOURCE_TAG" --format="%($1)" ; }; GIT_COMMITTER_NAME="$(deref taggername)" GIT_COMMITTER_EMAIL="$(deref taggeremail)" GIT_COMMITTER_DATE="$(deref taggerdate)" git tag "$NEW_TAG" "$(deref "*objectname")" -a -sm "$(deref contents:subject)"
 
