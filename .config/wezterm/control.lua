@@ -50,6 +50,7 @@ local keys = {
               )
             end
           end),
+          fuzzy = true,
           title = "Select Project",
           choices = choices,
         },
