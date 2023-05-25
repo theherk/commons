@@ -19,6 +19,7 @@ local keys = {
   { key = "a",  mods = "LEADER|CTRL", action = act.SendString "\x01" },
 
   -- Workpace and Pallette
+  { key = "d",  mods = "LEADER",      action = act.SwitchToWorkspace { name = "default" } },
   { key = "m",  mods = "LEADER",      action = act.ShowLauncher },
   { key = "P",  mods = "SUPER|SHIFT", action = act.ActivateCommandPalette },
   { key = "\t", mods = "LEADER",      action = act.SwitchWorkspaceRelative(1) },
