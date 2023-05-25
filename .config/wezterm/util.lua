@@ -52,6 +52,7 @@ function module.update_right_status(window, pane)
     })
   end
   local tab = pane:tab()
+  if tab == nil then return end
   for _, p in ipairs(tab:panes_with_info()) do
     wezterm.log_info("zoomed: " .. tostring(p.is_zoomed))
     if p.is_zoomed then
