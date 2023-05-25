@@ -1,4 +1,5 @@
 local theme = require "theme"
+local util = require "util"
 local wezterm = require "wezterm"
 
 local act = wezterm.action
@@ -21,6 +22,35 @@ local keys = {
   { key = "m",  mods = "LEADER",      action = act.ShowLauncher },
   { key = "P",  mods = "SUPER|SHIFT", action = act.ActivateCommandPalette },
   { key = "\t", mods = "LEADER",      action = act.SwitchWorkspaceRelative(1) },
+
+  {
+    key = "P",
+    mods = "LEADER",
+    action = wezterm.action_callback(function(window, pane)
+      local choices = {}
+      for _, v in pairs(util.file_lines(os.getenv("HOME") .. "/.projects")) do
+        table.insert(choices, { label = v })
+      end
+
+      window:perform_action(
+        act.InputSelector {
+          action = wezterm.action_callback(function(window, pane, id, label)
+            if not id and not label then
+              wezterm.log_info "cancelled"
+            else
+              window:perform_action(
+                act.SwitchToWorkspace({ name = label }),
+                pane
+              )
+            end
+          end),
+          title = "Select Project",
+          choices = choices,
+        },
+        pane
+      )
+    end),
+  },
 
   {
     key = "W",

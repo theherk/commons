@@ -1,4 +1,5 @@
 local wezterm = require "wezterm"
+
 local module = {}
 local colors = {}
 

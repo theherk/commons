@@ -1,6 +1,22 @@
 local wezterm = require "wezterm"
 local theme = require "theme"
+
 local module = {}
+
+function module.file_exists(file)
+  local f = io.open(file, "rb")
+  if f then f:close() end
+  return f ~= nil
+end
+
+function module.file_lines(file)
+  if not module.file_exists(file) then return {} end
+  local lines = {}
+  for line in io.lines(file) do
+    lines[#lines + 1] = line
+  end
+  return lines
+end
 
 function module.format_tab_title(tab, tabs, panes, config, hover, max_width)
   local title = {
