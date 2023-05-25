@@ -42,7 +42,7 @@ gfixtags () {
 }
 
 gitp() { # Switch to git project directory from .projects. See alias repocache.
-  REPO="$(cat "$HOME"/.projects | xargs dirname | sed s:"$HOME":~: | fzf)"
+  REPO="$(cat "$HOME"/.projects | sed s:"$HOME":~: | fzf --reverse)"
   [ "$REPO" = "" ] || cd "${REPO/\~/$HOME}" || return
 }
 

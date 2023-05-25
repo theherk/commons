@@ -94,7 +94,7 @@ if status is-interactive
     abbr -a pc --position anywhere --set-cursor "%| pbcopy"
     abbr -a r --position command rsync -rltvz -e ssh --progress
     abbr -a rcal --position command rusti-cal -c --starting-day 1
-    abbr -a repocache --position command 'fd -HI "^\.git\$" $P 2>/dev/null > $HOME/.projects'
+    abbr -a repocache --position command 'fd -HI -d 4 "^\.git\$" $P | xargs dirname 2>/dev/null > $HOME/.projects'
     abbr -a tf --position command terraform
     abbr -a tfa --position command terraform apply
     abbr -a tfd --position command terraform destroy
@@ -138,7 +138,7 @@ if status is-interactive
     end
 
     function gitp # Switch to git project directory from .projects. See alias repocache.
-        set REPO "$(cat "$HOME"/.projects | xargs dirname | sed s:"$HOME":~: | fzf)"
+        set REPO "$(cat "$HOME"/.projects | sed s:"$HOME":~: | fzf --reverse)"
         if test -n "$REPO"
             cd (string replace '~' $HOME $REPO)
         end
