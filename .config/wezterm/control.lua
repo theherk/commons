@@ -34,7 +34,11 @@ end)
 local action_project_switcher = wezterm.action_callback(function(window, pane)
   local choices = {}
   for _, v in pairs(util.file_lines(os.getenv("HOME") .. "/.projects")) do
-    table.insert(choices, { label = v })
+    fmt_label = wezterm.format {
+      { Foreground = { Color = theme.colors.hl_1 } },
+      { Text = v },
+    }
+    table.insert(choices, { id = v, label = fmt_label })
   end
 
   window:perform_action(
@@ -46,9 +50,9 @@ local action_project_switcher = wezterm.action_callback(function(window, pane)
           local cur = wezterm.mux.get_active_workspace()
           window:perform_action(
             act.SwitchToWorkspace {
-              name = label,
+              name = id,
               spawn = {
-                cwd = label,
+                cwd = id,
               },
             },
             pane
@@ -57,9 +61,8 @@ local action_project_switcher = wezterm.action_callback(function(window, pane)
           wezterm.log_info("prev_workspace: " .. wezterm.GLOBAL.prev_workspace)
         end
       end),
-      fuzzy = true,
-      title = "Select Project",
       choices = choices,
+      fuzzy = true,
     },
     pane
   )
