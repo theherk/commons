@@ -15,10 +15,10 @@ local bg = wezterm.color.parse(scheme.background);
 local _, _, l, _ = bg:hsla();
 if l > 0.5 then
   colors.inactive_fg = bg:complement_ryb():darken(0.3);
-  colors.panel_bg = bg:darken(0.1);
+  colors.panel_bg = bg:darken(0.069);
 else
   colors.inactive_fg = bg:complement_ryb():lighten(0.3);
-  colors.panel_bg = bg:lighten(0.1);
+  colors.panel_bg = bg:lighten(0.069);
 end
 
 scheme.tab_bar = {
@@ -51,8 +51,8 @@ function module.apply_to_config(config)
     [selected_scheme] = scheme
   }
   config.command_palette_bg_color = colors.panel_bg
-  config.command_palette_fg_color = colors.active_fg
-  config.command_palette_font_size = 20
+  config.command_palette_fg_color = colors.hl_1
+  config.command_palette_font_size = 19
   config.inactive_pane_hsb = {
     saturation = 0.66,
     brightness = 0.54,
