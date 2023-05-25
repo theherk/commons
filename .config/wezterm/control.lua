@@ -5,6 +5,38 @@ local wezterm = require "wezterm"
 local act = wezterm.action
 local module = {}
 
+
+local action_project_switcher = wezterm.action_callback(function(window, pane)
+  local choices = {}
+  for _, v in pairs(util.file_lines(os.getenv("HOME") .. "/.projects")) do
+    table.insert(choices, { label = v })
+  end
+
+  window:perform_action(
+    act.InputSelector {
+      action = wezterm.action_callback(function(window, pane, id, label)
+        if not id and not label then
+          wezterm.log_info "cancelled"
+        else
+          window:perform_action(
+            act.SwitchToWorkspace {
+              name = label,
+              spawn = {
+                cwd = label,
+              },
+            },
+            pane
+          )
+        end
+      end),
+      fuzzy = true,
+      title = "Select Project",
+      choices = choices,
+    },
+    pane
+  )
+end)
+
 local key_tables = {
   resize_pane = {
     { key = "h",      action = act.AdjustPaneSize { "Left", 1 } },
@@ -21,43 +53,10 @@ local keys = {
   -- Workpace and Pallette
   { key = "d",  mods = "LEADER",      action = act.SwitchToWorkspace { name = "default" } },
   { key = "m",  mods = "LEADER",      action = act.ShowLauncher },
+  { key = "p",  mods = "SUPER",       action = action_project_switcher, },
+  { key = "P",  mods = "LEADER",      action = action_project_switcher, },
   { key = "P",  mods = "SUPER|SHIFT", action = act.ActivateCommandPalette },
   { key = "\t", mods = "LEADER",      action = act.SwitchWorkspaceRelative(1) },
-
-  {
-    key = "P",
-    mods = "LEADER",
-    action = wezterm.action_callback(function(window, pane)
-      local choices = {}
-      for _, v in pairs(util.file_lines(os.getenv("HOME") .. "/.projects")) do
-        table.insert(choices, { label = v })
-      end
-
-      window:perform_action(
-        act.InputSelector {
-          action = wezterm.action_callback(function(window, pane, id, label)
-            if not id and not label then
-              wezterm.log_info "cancelled"
-            else
-              window:perform_action(
-                act.SwitchToWorkspace {
-                  name = label,
-                  spawn = {
-                    cwd = label,
-                  },
-                },
-                pane
-              )
-            end
-          end),
-          fuzzy = true,
-          title = "Select Project",
-          choices = choices,
-        },
-        pane
-      )
-    end),
-  },
 
   {
     key = "W",
