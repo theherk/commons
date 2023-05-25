@@ -40,7 +40,12 @@ local keys = {
               wezterm.log_info "cancelled"
             else
               window:perform_action(
-                act.SwitchToWorkspace({ name = label }),
+                act.SwitchToWorkspace {
+                  name = label,
+                  spawn = {
+                    cwd = label,
+                  },
+                },
                 pane
               )
             end
