@@ -1,3 +1,12 @@
+customCommands:
+  - key: "W" # see: https://github.com/jesseduffield/lazygit/issues/1984#issuecomment-1249827818
+    prompts:
+      - type: "input"
+        title: "Commit"
+        initialValue: ""
+    command: git commit -m "{{index .PromptResponses 0}}" --no-verify
+    context: "global"
+    subprocess: true
 gui:
   showBottomLine: true
   showIcons: true
