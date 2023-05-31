@@ -25,6 +25,7 @@ alias r="rsync -rltvz -e ssh --progress"
 alias rcal='rusti-cal -c --starting-day 1'
 alias repocache='fd -HI -d 5 "^\.git\$" $P | xargs dirname 2>/dev/null > $HOME/.projects'
 alias tfn='gawk '"'"'match($0, /# (\S+\.(\[.+\]|\S+)+)/, g) { m=g[1]; l=$0 } match($0, /^(.* )resource .*{$/, g) { if (l!~/has changed/ && l!~/will be read/) print g[1] m }'"'"' | sort'
+alias tfp='terraform plan -lock=false'
 alias tfpn='bat _plan | tfn'
 alias tfpp='tfp | tee _plan'
 alias tft='TF_LOG=trace TF_LOG_PATH=tf-trace-$(date +%FT%T+01).log'
