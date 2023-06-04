@@ -1,5 +1,7 @@
 local actions = require("telescope.actions")
 
+vim.g.maplocalleader = ","
+
 lvim.builtin.which_key.mappings["J"] = { "<cmd>TSJToggle<CR>", "Treesj Toggle" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["ss"] = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "Current Buf Fuzzy" }
