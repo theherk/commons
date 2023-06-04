@@ -1,11 +1,5 @@
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
-require('orgmode').setup_ts_grammar()
-
-require('orgmode').setup({
-  org_agenda_files = { "~/org/*" },
-})
-
 lvim.plugins = {
   {
     "Exafunction/codeium.vim",
@@ -107,7 +101,10 @@ lvim.plugins = {
   {
     "nvim-orgmode/orgmode",
     config = function()
-      require('orgmode').setup({})
+      require('orgmode').setup_ts_grammar()
+      require('orgmode').setup({
+        org_agenda_files = { "~/org/*" },
+      })
     end
   },
   {
