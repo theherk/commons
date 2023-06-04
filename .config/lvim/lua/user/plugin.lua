@@ -85,6 +85,14 @@ lvim.plugins = {
           ["core.export"] = {},
           ["core.export.markdown"] = {},
           ["core.integrations.telescope"] = {},
+          ["core.keybinds"] = {
+            config = {
+              hook = function(keybinds)
+                keybinds.remap_event("norg", "i", "<C-CR>", "core.itero.next-iteration")
+                keybinds.remap_event("norg", "n", "<C-CR>", "core.itero.next-iteration")
+              end,
+            }
+          },
           ["core.presenter"] = {
             config = {
               zen_mode = "zen-mode"
