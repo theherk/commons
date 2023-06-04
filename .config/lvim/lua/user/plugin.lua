@@ -68,27 +68,32 @@ lvim.plugins = {
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
-    opts = {
-      load = {
-        ["core.defaults"] = {},
-        ["core.concealer"] = {},
-        ["core.dirman"] = {
-          config = {
-            workspaces = {
-              notes = "~/org/neorg",
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {},
+          ["core.concealer"] = {},
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                main = "~/org/neorg",
+                icloud = "~/Library/Mobile Documents/com~apple~CloudDocs/neorg",
+              },
+              default_workspace = "main"
             },
           },
+          ["core.export"] = {},
+          ["core.export.markdown"] = {},
+          ["core.integrations.telescope"] = {},
+          ["core.presenter"] = {
+            config = {
+              zen_mode = "zen-mode"
+            }
+          },
+          ["core.summary"] = {},
         },
-        ["core.export"] = {},
-        ["core.export.markdown"] = {},
-        ["core.integrations.telescope"] = {},
-        ["core.presenter"] = {
-          config = {
-            zen_mode = "zen-mode"
-          }
-        },
-      },
-    },
+      }
+    end,
     dependencies = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-neorg/neorg-telescope" },
