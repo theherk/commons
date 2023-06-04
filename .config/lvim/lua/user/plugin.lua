@@ -14,9 +14,7 @@ lvim.plugins = {
   {
     "folke/todo-comments.nvim",
     event = "BufRead",
-    config = function()
-      require("todo-comments").setup()
-    end,
+    config = true,
   },
   {
     "folke/tokyonight.nvim"
@@ -62,9 +60,7 @@ lvim.plugins = {
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({})
-    end
+    config = true,
   },
   {
     "neovim/nvim-lspconfig",
@@ -114,9 +110,7 @@ lvim.plugins = {
     "saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
     dependencies = "nvim-lua/plenary.nvim",
-    config = function()
-      require('crates').setup()
-    end,
+    config = true,
   },
   {
     "simrat39/rust-tools.nvim",
@@ -173,8 +167,6 @@ lvim.plugins = {
   },
   {
     "Wansmer/treesj",
-    config = function()
-      require('treesj').setup({})
-    end,
+    config = true,
   },
 }
