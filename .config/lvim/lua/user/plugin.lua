@@ -95,15 +95,6 @@ lvim.plugins = {
     },
   },
   {
-    "nvim-orgmode/orgmode",
-    config = function()
-      require('orgmode').setup_ts_grammar()
-      require('orgmode').setup({
-        org_agenda_files = { "~/org/*" },
-      })
-    end
-  },
-  {
     "preservim/vim-markdown",
   },
   {
