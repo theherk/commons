@@ -11,6 +11,13 @@ lvim.builtin.telescope.defaults.mappings.i = {
 }
 lvim.builtin.telescope.defaults.path_display = { "truncate" }
 
+lvim.builtin.which_key.mappings["n"] = {
+  name = "Neorg",
+  f = { "<cmd>Telescope neorg find_norg_files<cr>", "find files" },
+  r = { "<cmd>Neorg return<cr>", "return" },
+  w = { "<cmd>Telescope neorg switch_workspace<cr>", "workspace" },
+}
+
 lvim.builtin.which_key.mappings["o"] = {
   name = "Options",
   w = { "<cmd>:set wrap!<cr>", "Wrap" },
