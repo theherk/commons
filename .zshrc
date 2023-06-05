@@ -31,6 +31,12 @@ if [ -f $HOME/.dirs ]; then
   source $HOME/.dirs
 fi
 
+# Load local machine exports.
+# This is probably where you will find work related exports.
+if [ -f $HOME/.local-exports ]; then
+  source $HOME/.local-exports
+fi
+
 eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"

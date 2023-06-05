@@ -57,6 +57,12 @@ if status is-interactive
         source ~/.dirs
     end
 
+    # Load local machine exports.
+    # This is probably where you will find work related exports.
+    if test -e ~/.local-exports
+        source ~/.local-exports
+    end
+
     starship init fish | source
     direnv hook fish | source
     status --is-interactive; and pyenv init - | source
