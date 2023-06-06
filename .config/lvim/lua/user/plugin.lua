@@ -78,7 +78,7 @@ lvim.plugins = {
               workspaces = {
                 main = "~/org/neorg",
                 icloud = "~/Library/Mobile Documents/com~apple~CloudDocs/neorg",
-                onedrive = "~/Library/CloudStorage/OneDrive-DNBBankASA",
+                onedrive = os.getenv("ONEDRIVE") or "~/Library/CloudStorage/OneDrive"
               },
               default_workspace = os.getenv("NEORG_DEFAULT_WORKSPACE") or "main"
             },
