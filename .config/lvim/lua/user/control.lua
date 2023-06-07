@@ -11,6 +11,12 @@ lvim.builtin.which_key.mappings["ss"] = { "<cmd>Telescope current_buffer_fuzzy_f
 lvim.builtin.which_key.mappings["/"] = { "<cmd>Telescope live_grep<CR>", "Grep" }
 lvim.builtin.which_key.mappings["Z"] = { "<cmd>ZenMode<CR>", "Zen" }
 
+lvim.builtin.which_key.mappings["pC"] = {
+  name = "Codeium",
+  e = { "<cmd>let codeium_enabled = v:true<cr>", "enable" },
+  d = { "<cmd>let codeium_enabled = v:false<cr>", "disable" },
+}
+
 lvim.builtin.which_key.mappings["n"] = {
   name = "Neorg",
   f = { "<cmd>Telescope neorg find_norg_files<cr>", "find files" },
