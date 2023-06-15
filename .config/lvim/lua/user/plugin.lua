@@ -83,9 +83,18 @@ lvim.plugins = {
               default_workspace = os.getenv("NEORG_DEFAULT_WORKSPACE") or "main"
             },
           },
-          ["core.export"] = {},
+          ["core.export"] = {
+            config = {
+              export_dir = "~/org/export/<language>"
+            }
+          },
           ["core.export.markdown"] = {},
           ["core.integrations.telescope"] = {},
+          ["core.journal"] = {
+            config = {
+              workspace = os.getenv("NEORG_DEFAULT_WORKSPACE") or "main"
+            }
+          },
           ["core.keybinds"] = {
             config = {
               hook = function(keybinds)

@@ -19,11 +19,19 @@ lvim.builtin.which_key.mappings["pC"] = {
 
 lvim.builtin.which_key.mappings["n"] = {
   name = "Neorg",
+  e = { "<cmd>Neorg export to-file <cr>", "export to-file" },
   f = { "<cmd>Telescope neorg find_norg_files<cr>", "find files" },
   l = { "<cmd>Telescope neorg insert_link<cr>", "insert link" },
   L = { "<cmd>Telescope neorg insert_file_link<cr>", "insert file link" },
   r = { "<cmd>Neorg return<cr>", "return" },
   w = { "<cmd>Telescope neorg switch_workspace<cr>", "workspace" },
+
+  j = {
+    name = "Journal",
+    m = { "<cmd>Neorg journal tomorrow<cr>", "tomorrow" },
+    t = { "<cmd>Neorg journal today<cr>", "today" },
+    y = { "<cmd>Neorg journal yesterday<cr>", "yesterday" },
+  }
 }
 
 lvim.builtin.which_key.mappings["o"] = {
