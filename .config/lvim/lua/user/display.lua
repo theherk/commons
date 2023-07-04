@@ -1,3 +1,4 @@
+vim.o.guifont = "VictorMono Nerd Font:h20"
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.log.level = "info"
