@@ -55,6 +55,9 @@ lvim.plugins = {
     end,
   },
   {
+    "junegunn/vim-easy-align",
+  },
+  {
     "kevinhwang91/nvim-bqf",
   },
   {

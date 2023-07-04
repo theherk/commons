@@ -52,3 +52,5 @@ lvim.builtin.which_key.mappings["t"] = {
 
 lvim.keys.normal_mode["[b"] = ":bprev<CR>"
 lvim.keys.normal_mode["]b"] = ":bnext<CR>"
+lvim.keys.normal_mode["ga"] = "<Plug>(EasyAlign)"
+lvim.keys.visual_mode["ga"] = "<Plug>(EasyAlign)"
