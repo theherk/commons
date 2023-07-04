@@ -22,6 +22,7 @@ lvim.builtin.which_key.mappings["n"] = {
   e = { "<cmd>Neorg export to-file <cr>", "export to-file" },
   f = { "<cmd>Telescope neorg find_norg_files<cr>", "find files" },
   l = { "<cmd>Telescope neorg insert_link<cr>", "insert link" },
+  m = { "<cmd>Neorg inject-metadata<cr>", "inject metadata" },
   L = { "<cmd>Telescope neorg insert_file_link<cr>", "insert file link" },
   r = { "<cmd>Neorg return<cr>", "return" },
   w = { "<cmd>Telescope neorg switch_workspace<cr>", "workspace" },
