@@ -1,4 +1,22 @@
 set -U fish_greeting
+
+# On ARM MacOS homebrew uses some different paths,
+# Generally this is found in:
+# /usr/local/opt/coreutils/libexec/gnubin
+# But on M1, it is exported from:
+# /opt/homebrew/opt/coreutils/libexec/gnubin
+if test -d /opt/homebrew/opt/coreutils/libexec/gnubin
+    fish_add_path -pP /opt/homebrew/opt/coreutils/libexec/gnubin
+else if test -d /usr/local/Homebrew/opt/coreutils/libexec/gnubin
+    fish_add_path -pP /usr/local/Homebrew/opt/coreutils/libexec/gnubin
+end
+
+if test -e /opt/homebrew/bin/brew
+    eval (/opt/homebrew/bin/brew shellenv)
+else if test -e /usr/local/Homebrew/bin/brew
+    eval (/usr/local/Homebrew/bin/brew shellenv)
+end
+
 set -U -x EDITOR lvim
 set -U -x CARGO_HOME $HOME/.cargo
 set -U -x VENVS $HOME/.venvs
@@ -35,22 +53,6 @@ if status is-interactive
     bind -M insert \cf accept-autosuggestion # Default but for vim.
     bind -M insert \ce accept-autosuggestion # Maybe better.
 
-    # On ARM MacOS homebrew uses some different paths,
-    # Generally this is found in:
-    # /usr/local/opt/coreutils/libexec/gnubin
-    # But on M1, it is exported from:
-    # /opt/homebrew/opt/coreutils/libexec/gnubin
-    if test -d /opt/homebrew/opt/coreutils/libexec/gnubin
-        fish_add_path -pP /opt/homebrew/opt/coreutils/libexec/gnubin
-    else if test -d /usr/local/Homebrew/opt/coreutils/libexec/gnubin
-        fish_add_path -pP /usr/local/Homebrew/opt/coreutils/libexec/gnubin
-    end
-
-    if test -e /opt/homebrew/bin/brew
-        eval (/opt/homebrew/bin/brew shellenv)
-    else if test -e /usr/local/Homebrew/bin/brew
-        eval (/usr/local/Homebrew/bin/brew shellenv)
-    end
 
     # Load directory shortcuts.
     if test -e ~/.dirs
