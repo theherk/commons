@@ -280,17 +280,20 @@ mkdir -p $P/github.com $P/gitlab.com
 cargo +nightly install git-repo-manager
 ln -sf ~/commons/.config/grm/github.com/config.toml $P/github.com/config.toml
 ln -sf ~/commons/.config/grm/gitlab.com/config.toml $P/gitlab.com/config.toml
+ln -sf ~/commons/.config/grm/gitlab.tech.dnb.no/config.toml $P/gitlab.tech.dnb.no/config.toml
 ```
 
 Then, you must store personal access tokens in the keyring.
 
     pwa github.com theherk@gmail.com
     pwa gitlab.com theherk@gmail.com
+    pwa gitlab.tech.dnb.no adam.lawrence.sherwood@dnb.no
 
 Lastly, sync the repositories. These could be shared manifests, but for now this granular approach is chosen.
 
     cd $P/github.com && grm repos sync config
     cd $P/gitlab.com && grm repos sync config
+    cd $P/gitlab.tech.dnb.no && grm repos sync config
 
 ## MacOS windows manager
 

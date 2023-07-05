@@ -1,0 +1,13 @@
+provider = "gitlab"
+api_url = "https://gitlab.tech.dnb.no"
+token_command = "security find-generic-password -w -s gitlab.tech.dnb.no -a adam.lawrence.sherwood@dnb.no"
+root = "."
+
+[filters]
+owner = true
+groups = [
+  "dnb/ccp",
+  "dnb/cppshasl",
+  "dnb/cptf",
+  "dnb/dnb-common",
+]
