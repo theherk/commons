@@ -55,6 +55,10 @@ lvim.plugins = {
     end,
   },
   {
+    "is0n/fm-nvim",
+    config = true,
+  },
+  {
     "junegunn/vim-easy-align",
   },
   {
