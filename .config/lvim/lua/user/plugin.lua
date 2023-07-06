@@ -59,8 +59,8 @@ lvim.plugins = {
     config = function()
       require("fm-nvim").setup {
         cmds = {
-          fzf_cmd  = "fzf --reverse --preview 'bat --color=always --theme=OneHalfDark {}'",
-          skim_cmd = "sk --reverse --preview 'bat --color=always --theme=OneHalfDark {}'",
+          fzf_cmd  = "fzf --reverse --preview 'bat --color=always {}'",
+          skim_cmd = "sk --reverse --preview 'bat --color=always {}'",
         },
       }
     end,
