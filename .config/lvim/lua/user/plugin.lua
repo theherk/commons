@@ -66,6 +66,10 @@ lvim.plugins = {
     config = true,
   },
   {
+    "leoluz/nvim-dap-go",
+    config = true,
+  },
+  {
     "neovim/nvim-lspconfig",
   },
   {
