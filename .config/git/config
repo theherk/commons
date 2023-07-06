@@ -31,7 +31,7 @@
 	name = Adam Sherwood
 	signingkey = theherk@gmail.com
 
-[includeIf "gitdir:~/projects/dnb.no/"]
+[includeIf "gitdir:~/projects/gitlab.tech.dnb.no/"]
 	path = ~/.config/git/dnb.no
 [commit]
 	gpgsign = true
