@@ -56,7 +56,14 @@ lvim.plugins = {
   },
   {
     "is0n/fm-nvim",
-    config = true,
+    config = function()
+      require("fm-nvim").setup {
+        cmds = {
+          fzf_cmd  = "fzf --reverse --preview 'bat --color=always --theme=OneHalfDark {}'",
+          skim_cmd = "sk --reverse --preview 'bat --color=always --theme=OneHalfDark {}'",
+        },
+      }
+    end,
   },
   {
     "junegunn/vim-easy-align",
