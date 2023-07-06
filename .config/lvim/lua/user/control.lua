@@ -4,6 +4,7 @@ vim.g.maplocalleader = ","
 
 lvim.builtin.telescope.defaults.mappings.i = { ["<esc>"] = actions.close }
 lvim.builtin.telescope.defaults.path_display = { "truncate" }
+lvim.builtin.telescope.pickers.buffers.initial_mode = "insert"
 
 lvim.builtin.which_key.mappings["J"] = { "<cmd>TSJToggle<CR>", "Treesj Toggle" }
 lvim.builtin.which_key.mappings["ox"] = { "<cmd>Xplr<CR>", "Xplr" }
