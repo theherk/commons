@@ -193,9 +193,9 @@ Load ox exporters (gfm, jira, and pandoc) as soon as org is loaded. No clue why 
 #+begin_src elisp
 (setq projectile-project-search-path
       '(("~/projects/bitbucket.org/" . 3)
-        ("~/projects/dnb.no/" . 3)
         ("~/projects/github.com/" . 3)
         ("~/projects/gitlab.com" . 3)
+        ("~/projects/gitlab.tech.dnb.no/" . 4)
         ("~/projects/sr.ht/" . 3))
       projectile-sort-order 'recentf)
 #+end_src
