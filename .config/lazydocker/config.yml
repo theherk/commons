@@ -1,0 +1,9 @@
+gui:
+  theme:
+    selectedLineBgColor:
+      - reverse
+    selectedRangeBgColor:
+      - reverse
+  returnImmediately: true
+oS:
+  openCommand: lvim {{filename}}

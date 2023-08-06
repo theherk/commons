@@ -98,10 +98,11 @@ if status is-interactive
     abbr -a gr --position command 'cd (git root)'
     abbr -a ipy --position command python -c '"import IPython; IPython.terminal.ipapp.launch_new_instance()"'
     abbr -a l --position command exa -l --icons
-    abbr -a lg --position command lazygit
     abbr -a ll --position command exa -alF --icons --git --time-style long-iso
     abbr -a ls --position command exa
     abbr -a lt --position command exa -T --icons
+    abbr -a lzd --position command lazydocker
+    abbr -a lzg --position command lazygit
     abbr -a norcal --position command ncal -s NO -w
     abbr -a of --position command onefetch
     abbr -a pc --position anywhere --set-cursor "%| pbcopy"

@@ -42,6 +42,8 @@ A partial list of installed tools:
 - [gitui](https://github.com/extrawurst/gitui): Fast terminal ui for git.
 - [grip](https://github.com/joeyespo/grip): Preview markdown.
 - [keycastr](https://github.com/keycastr/keycastr): keystroke visualizer
+- [lazydocker](https://github.com/jesseduffield/lazydocker): Container management TUI.
+- [lazygit](https://github.com/jesseduffield/lazygit): The best git interface outside emacs.
 - [navi](https://github.com/denisidoro/navi): Interactive cheatsheet tool for the command-line.
 - [pandoc](https://pandoc.org/): Universal document converter.
 - [podman](https://podman.io/): Daemonless container engine.

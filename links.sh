@@ -13,8 +13,8 @@ ln -sf ~/commons/.config/fish/config.fish ~/.config/fish/config.fish
 ln -sf ~/commons/.config/git/ ~/.config/
 ln -sf ~/commons/.config/gitui/ ~/.config/
 ln -sf ~/commons/.config/helix/ ~/.config/
+ln -sf ~/commons/.config/lazydocker/ ~/.config/
 ln -sf ~/commons/.config/lazygit/ ~/.config/
-ln -sf ~/commons/.config/lazygit/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
 ln -sf ~/commons/.config/lvim/ ~/.config/
 ln -sf ~/commons/.config/nix/ ~/.config/
 ln -sf ~/commons/.config/nu/ ~/.config/

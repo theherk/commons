@@ -16,10 +16,11 @@ alias gr='cd $(git root)'
 alias hxr='hx $(sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2)'
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias l='exa -l --icons'
-alias lg='lazygit'
 alias ll='exa -alF --icons --git --time-style long-iso'
 alias ls='exa'
 alias lt='exa -T --icons'
+alias lzd='lazydocker'
+alias lzg='lazygit'
 alias norcal='ncal -s NO -w'
 alias r="rsync -rltvz -e ssh --progress"
 alias rcal='rusti-cal -c --starting-day 1'
