@@ -6,8 +6,10 @@ root = "."
 [filters]
 owner = true
 groups = [
+  "dnb/cbcommon",
   "dnb/ccp",
   "dnb/cppshasl",
   "dnb/cptf",
+  "dnb/dcf",
   "dnb/dnb-common",
 ]
