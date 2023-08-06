@@ -25,6 +25,7 @@ set -U -x GOPATH $P/go
 set -U -x HTML_TIDY $HOME/.config/tidy/config.txt
 set -U -x JAVA_HOME (/usr/libexec/java_home)
 set -g -x VOLTA_HOME "$HOME/.volta"
+set -g -x XDG_CONFIG_HOME "$HOME/.config"
 
 set fzf_fd_opts --hidden --exclude=.git
 set fzf_preview_dir_cmd exa --all --color=always
