@@ -57,3 +57,21 @@ map("n", "<leader>Z", "<cmd>ZenMode<CR>", { desc = "Zen" })
 
 map("n", "ga", "<Plug>(EasyAlign)", { desc = "EasyAlign" })
 map("v", "ga", "<Plug>(EasyAlign)", { desc = "EasyAlign" })
+
+-- Overwriting defaults to get border on terms.
+local Util = require("lazyvim.util")
+map("n", "<leader>gg", function()
+  Util.float_term({ "lazygit" }, { border = "single", cwd = Util.get_root(), esc_esc = false, ctrl_hjkl = false })
+end, { desc = "Lazygit (root dir)" })
+map("n", "<leader>gG", function()
+  Util.float_term({ "lazygit" }, { border = "single", esc_esc = false, ctrl_hjkl = false })
+end, { desc = "Lazygit (cwd)" })
+local lazyterm = function()
+  Util.float_term(nil, { border = "single", cwd = Util.get_root() })
+end
+map("n", "<leader>ft", lazyterm, { desc = "Terminal (root dir)" })
+map("n", "<leader>fT", function()
+  Util.float_term()
+end, { desc = "Terminal (cwd)" })
+map("n", "<c-/>", lazyterm, { desc = "Terminal (root dir)" })
+map("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
