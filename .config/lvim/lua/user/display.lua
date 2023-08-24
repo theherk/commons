@@ -4,7 +4,6 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.log.level = "info"
 vim.g.tokyonight_style = "night"
 lvim.colorscheme = "tokyonight-night"
-lvim.transparent_window = true
 vim.o.conceallevel = 0 -- 2
 vim.o.guicursor = vim.o.guicursor .. ",a:blinkon1"
 vim.o.timeoutlen = 0
@@ -13,3 +12,13 @@ vim.o.timeoutlen = 0
 -- https://github.com/preservim/vim-markdown/issues/622
 vim.opt.foldlevelstart = 6
 vim.g.vim_markdown_folding_level = 2
+
+-- Alpha
+vim.cmd "au ColorScheme * highlight TelescopeBorder ctermbg=none guibg=none"
+vim.cmd "au ColorScheme * highlight TelescopeTitle ctermbg=none guibg=none"
+vim.cmd "au ColorScheme * highlight TelescopePromptNormal ctermbg=none guibg=none"
+vim.cmd "au ColorScheme * highlight TelescopeResultsNormal ctermbg=none guibg=none"
+local custom = require "lualine.themes.tokyonight"
+custom.normal.c.bg = "none"
+lvim.builtin.lualine.options.theme = custom
+lvim.transparent_window = true

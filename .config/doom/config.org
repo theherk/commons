@@ -51,7 +51,7 @@ Remove the title bar from 29 forward.
 **** Alpha
 
 #+begin_src elisp
-(doom/set-frame-opacity 88)
+(doom/set-frame-opacity 94)
 #+end_src
 
 *** Lines

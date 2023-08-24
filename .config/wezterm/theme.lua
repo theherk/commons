@@ -34,11 +34,11 @@ scheme.tab_bar = {
     fg_color = colors.active_fg,
   },
   inactive_tab = {
-    bg_color = colors.bg,
+    bg_color = "none",
     fg_color = colors.inactive_fg,
   },
   inactive_tab_hover = {
-    bg_color = colors.bg,
+    bg_color = "none",
     fg_color = colors.inactive_fg,
   }
 }
@@ -62,7 +62,7 @@ function module.apply_to_config(config)
   config.tab_bar_at_bottom = true
   config.tab_max_width = 96
   config.use_fancy_tab_bar = false
-  config.window_background_opacity = 0.88
+  config.window_background_opacity = 0.94247
   config.window_decorations = "RESIZE"
 end
 
