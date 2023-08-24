@@ -1,24 +1,24 @@
-local wezterm = require "wezterm"
+local wezterm = require("wezterm")
 
 local module = {}
 local colors = {}
 
-local selected_scheme = "tokyonight_night";
+local selected_scheme = "tokyonight_night"
 local scheme = wezterm.get_builtin_color_schemes()[selected_scheme]
 
-colors.active_bg = scheme.selection_bg;
-colors.active_fg = scheme.ansi[6];
-colors.bg = scheme.background;
-colors.hl_1 = scheme.ansi[5];
-colors.hl_2 = scheme.ansi[4];
-local bg = wezterm.color.parse(scheme.background);
-local _, _, l, _ = bg:hsla();
+colors.active_bg = scheme.selection_bg
+colors.active_fg = scheme.ansi[6]
+colors.bg = scheme.background
+colors.hl_1 = scheme.ansi[5]
+colors.hl_2 = scheme.ansi[4]
+local bg = wezterm.color.parse(scheme.background)
+local _, _, l, _ = bg:hsla()
 if l > 0.5 then
-  colors.inactive_fg = bg:complement_ryb():darken(0.3);
-  colors.panel_bg = bg:darken(0.069);
+  colors.inactive_fg = bg:complement_ryb():darken(0.3)
+  colors.panel_bg = bg:darken(0.069)
 else
-  colors.inactive_fg = bg:complement_ryb():lighten(0.3);
-  colors.panel_bg = bg:lighten(0.069);
+  colors.inactive_fg = bg:complement_ryb():lighten(0.3)
+  colors.panel_bg = bg:lighten(0.069)
 end
 
 scheme.tab_bar = {
@@ -40,7 +40,7 @@ scheme.tab_bar = {
   inactive_tab_hover = {
     bg_color = "none",
     fg_color = colors.inactive_fg,
-  }
+  },
 }
 
 module.colors = colors
@@ -48,7 +48,7 @@ module.colors = colors
 function module.apply_to_config(config)
   config.color_scheme = selected_scheme
   config.color_schemes = {
-    [selected_scheme] = scheme
+    [selected_scheme] = scheme,
   }
   config.command_palette_bg_color = colors.panel_bg
   config.command_palette_fg_color = colors.hl_1
