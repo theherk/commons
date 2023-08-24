@@ -52,7 +52,9 @@ brew install \
     bat \
     bottom \
     caddy \
+    cbonsai \
     clang-format \
+    cmatrix \
     coreutils \
     direnv \
     diskonaut \
@@ -87,6 +89,7 @@ brew install \
     onefetch \
     pandoc \
     pinentry-mac \
+    pipes-sh \
     plantuml \
     podman \
     postman \
