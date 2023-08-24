@@ -11,15 +11,18 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Look like this may not be needed.
--- local lsp = require("lsp-zero")
--- lsp.configure("yamlls", {
---   settings = {
---     yaml = {
---       keyOrdering = false
---     }
---   }
--- })
+local lsp = require("lsp-zero")
+lsp.configure("yamlls", {
+  settings = {
+    yaml = {
+      keyOrdering = false,
+      schemas = {
+        ["https://json.schemastore.org/swagger-2.0.json"] = "**/swagger.yaml",
+        ["https://gitlab.com/gitlab-org/gitlab/-/blob/master/app/assets/javascripts/editor/schema/ci.json"] = "**/.gitlab-ci.yml",
+      },
+    }
+  }
+})
 
 -- -- linters, formatters and code actions <https://www.lunarvim.org/docs/languages#lintingformatting>
 local formatters = require "lvim.lsp.null-ls.formatters"
