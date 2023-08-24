@@ -31,6 +31,7 @@ lvim.builtin.which_key.mappings["d"] = {
   h = { "<cmd>DiffviewFileHistory<cr>", "DiffviewFileHistory" },
   l = { "<cmd>DiffviewLog<cr>", "DiffviewLog" },
   r = { "<cmd>DiffviewRefresh<cr>", "DiffviewRefresh" },
+  q = { "<cmd>DiffviewClose<cr>", "DiffviewClose" },
 }
 
 lvim.builtin.which_key.mappings["n"] = {
