@@ -17,7 +17,7 @@ else if test -e /usr/local/Homebrew/bin/brew
     eval (/usr/local/Homebrew/bin/brew shellenv)
 end
 
-set -U -x EDITOR lvim
+set -U -x EDITOR nvim
 set -U -x CARGO_HOME $HOME/.cargo
 set -U -x VENVS $HOME/.venvs
 set -U -x P $HOME/projects
@@ -54,11 +54,11 @@ if status is-interactive
     bind -M insert \cf accept-autosuggestion # Default but for vim.
     bind -M insert \ce accept-autosuggestion # Maybe better.
 
-  if test -z (pgrep ssh-agent | string collect)
-      eval (ssh-agent -c)
-      set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
-      set -Ux SSH_AGENT_PID $SSH_AGENT_PID
-  end
+    if test -z (pgrep ssh-agent | string collect)
+        eval (ssh-agent -c)
+        set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
+        set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+    end
 
     # Load directory shortcuts.
     if test -e ~/.dirs
@@ -86,7 +86,7 @@ if status is-interactive
     abbr -a clock --position command rsclock -c
     abbr -a dumplynx --position anywhere --set-cursor "%| lynx -dump -stdin"
     abbr -a dumpw3m --position anywhere --set-cursor "%| w3m -dump -T text/html"
-    abbr -a e --position command lvim
+    abbr -a e --position command nvim
     abbr -a ef --position command emacsclient -c -n -e "(make-frame)"
     abbr -a es --position command brew services restart emacs-plus
     abbr -a er --position command unrar e
@@ -126,7 +126,7 @@ if status is-interactive
     abbr -a up --position anywhere --set-cursor "%| underscore pretty"
     abbr -a util-list --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' --output text --query 'Reservations[*].Instances[*].InstanceId'"
     abbr -a util-list-buildhost --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' --output text --query 'Reservations[*].Instances[*].InstanceId'"
-    abbr -a vr --position command 'sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2 | sed "s/\(.*\):\(.*\)/\+\2 \1/" | xargs lvim'
+    abbr -a vr --position command 'sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2 | sed "s/\(.*\):\(.*\)/\+\2 \1/" | xargs nvim'
     abbr -a wow --position command git status
     abbr -a xc --position anywhere --set-cursor "%| xclip -sel clip"
     abbr -a z --position command zellij

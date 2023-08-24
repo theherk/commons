@@ -6,4 +6,4 @@ gui:
       - reverse
   returnImmediately: true
 oS:
-  openCommand: lvim {{filename}}
+  openCommand: nvim {{filename}}
