@@ -2,7 +2,7 @@
 ;;; $DOOMDIR/packages.el
 
 ;; org-roam needs unpinned to use latest.
-;; (unpin! org-roam)
+(unpin! org-roam)
 
 (package! exec-path-from-shell)
 (package! org-inline-anim)
