@@ -205,6 +205,10 @@ lvim.plugins = {
     ft = { "rust", "rs" },
   },
   {
+    "sindrets/diffview.nvim",
+    event = "BufRead",
+  },
+  {
     "Wansmer/treesj",
     config = true,
   },

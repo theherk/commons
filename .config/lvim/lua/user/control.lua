@@ -23,6 +23,16 @@ lvim.builtin.which_key.mappings["pC"] = {
   d = { "<cmd>let codeium_enabled = v:false<cr>", "disable" },
 }
 
+lvim.builtin.which_key.mappings["d"] = {
+  name = "Diff",
+  d = { "<cmd>DiffviewOpen<cr>", "DiffviewOpen" },
+  c = { "<cmd>DiffviewClose<cr>", "DiffviewClose" },
+  f = { "<cmd>DiffviewToggleFiles<cr>", "DiffviewToggleFiles" },
+  h = { "<cmd>DiffviewFileHistory<cr>", "DiffviewFileHistory" },
+  l = { "<cmd>DiffviewLog<cr>", "DiffviewLog" },
+  r = { "<cmd>DiffviewRefresh<cr>", "DiffviewRefresh" },
+}
+
 lvim.builtin.which_key.mappings["n"] = {
   name = "Neorg",
   e = { "<cmd>Neorg export to-file <cr>", "export to-file" },
