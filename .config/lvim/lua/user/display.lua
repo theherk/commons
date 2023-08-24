@@ -5,7 +5,7 @@ lvim.log.level = "info"
 vim.g.tokyonight_style = "night"
 lvim.colorscheme = "tokyonight-night"
 lvim.transparent_window = true
-vim.o.conceallevel = 2
+vim.o.conceallevel = 0 -- 2
 vim.o.guicursor = vim.o.guicursor .. ",a:blinkon1"
 vim.o.timeoutlen = 0
 
