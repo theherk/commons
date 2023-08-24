@@ -12,9 +12,9 @@ gui:
   showIcons: true
   theme:
     selectedLineBgColor:
-      - reverse
+      - '#24283b'
     selectedRangeBgColor:
-      - reverse
+      - '#24283b'
 git:
   paging:
     colorArg: always
