@@ -23,6 +23,9 @@ wk.register({
   },
 })
 
+  -- stylua: ignore
+map("i", "<C-e>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
+
 map("n", "<leader>Ce", "<cmd>let codeium_enabled = v:true<cr>", { desc = "Codeium Enable" })
 map("n", "<leader>Cd", "<cmd>let codeium_enabled = v:false<cr>", { desc = "Codeium Disable" })
 map("n", "<leader>Dd", "<cmd>DiffviewOpen<cr>", { desc = "DiffviewOpen" })
