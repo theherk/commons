@@ -4,6 +4,48 @@ local icons = require("lazyvim.config").icons
 
 return {
   {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = true,
+  },
+  {
+    "folke/tokyonight.nvim",
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+  },
+  {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup({
+        plugins = {
+          wezterm = {
+            enabled = true,
+            font = "+2",
+          },
+        },
+        window = {
+          width = 0.77,
+        },
+      })
+    end,
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    build = "cd app && npm install",
+    ft = "markdown",
+    config = function()
+      vim.g.mkdp_auto_start = 1
+    end,
+  },
+  {
+    "junegunn/vim-easy-align",
+  },
+  {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
       opts.options.theme = custom
