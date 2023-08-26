@@ -52,13 +52,12 @@ function module.apply_to_config(config)
   }
   config.command_palette_bg_color = colors.panel_bg
   config.command_palette_fg_color = colors.hl_1
-  config.command_palette_font_size = 19
   config.inactive_pane_hsb = {
     saturation = 0.66,
     brightness = 0.54,
   }
   config.font = wezterm.font("VictorMono Nerd Font")
-  config.font_size = 20
+  config.font_size = 19
   config.tab_bar_at_bottom = true
   config.tab_max_width = 96
   config.use_fancy_tab_bar = false
