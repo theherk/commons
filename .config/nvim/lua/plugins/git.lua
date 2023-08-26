@@ -1,5 +1,23 @@
 return {
   {
+    "emmanueltouzery/agitator.nvim",
+    dependencies = {
+      "NeogitOrg/neogit",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "sindrets/diffview.nvim",
+    },
+  },
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "sindrets/diffview.nvim",
+    },
+    config = true,
+  },
+  {
     "sindrets/diffview.nvim",
     event = "BufRead",
     -- Feels like this should be better.

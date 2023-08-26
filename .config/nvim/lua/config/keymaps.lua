@@ -23,7 +23,7 @@ wk.register({
   },
 })
 
-  -- stylua: ignore
+-- stylua: ignore
 map("i", "<C-e>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
 
 map("n", "<leader>Ce", "<cmd>let codeium_enabled = v:true<cr>", { desc = "Codeium Enable" })
@@ -35,9 +35,10 @@ map("n", "<leader>Dh", "<cmd>DiffviewFileHistory<cr>", { desc = "DiffviewFileHis
 map("n", "<leader>Dl", "<cmd>DiffviewLog<cr>", { desc = "DiffviewLog" })
 map("n", "<leader>Dr", "<cmd>DiffviewRefresh<cr>", { desc = "DiffviewRefresh" })
 map("n", "<leader>Dq", "<cmd>DiffviewClose<cr>", { desc = "DiffviewClose" })
-map("n", "<leader>fs", "<cmd>w<CR>", { desc = "Save" })
-map("n", "<leader>J", "<cmd>TSJToggle<CR>", { desc = "Treesj" })
-map("n", "<leader>m", "<cmd>TSJToggle<CR>", { desc = "Treesj" })
+map("n", "<leader>fs", "<cmd>w<cr>", { desc = "Save" })
+map("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
+map("n", "<leader>J", "<cmd>TSJToggle<cr>", { desc = "Treesj" })
+map("n", "<leader>m", "<cmd>TSJToggle<cr>", { desc = "Treesj" })
 map("n", "<leader>ne", "<cmd>Neorg export to-file <cr>", { desc = "Export" })
 map("n", "<leader>nf", "<cmd>Telescope neorg find_norg_files<cr>", { desc = "Find" })
 map("n", "<leader>nl", "<cmd>Telescope neorg insert_link<cr>", { desc = "Insert Link" })
@@ -48,26 +49,29 @@ map("n", "<leader>nw", "<cmd>Telescope neorg switch_workspace<cr>", { desc = "Wo
 map("n", "<leader>njm", "<cmd>Neorg journal tomorrow<cr>", { desc = "Tomorrow" })
 map("n", "<leader>njt", "<cmd>Neorg journal today<cr>", { desc = "Today" })
 map("n", "<leader>njy", "<cmd>Neorg journal yesterday<cr>", { desc = "Yesterday" })
-map("n", "<leader>of", "<cmd>Fzf<CR>", { desc = "Fzf" })
-map("n", "<leader>os", "<cmd>Skim<CR>", { desc = "Skim" })
+map("n", "<leader>of", "<cmd>Fzf<cr>", { desc = "Fzf" })
+map("n", "<leader>os", "<cmd>Skim<cr>", { desc = "Skim" })
 map("n", "<leader>ow", "<cmd>:set wrap!<cr>", { desc = "Wrap" })
-map("n", "<leader>ox", "<cmd>Xplr<CR>", { desc = "Xplr" })
-map("n", "<leader>P", "<cmd>Telescope projects<CR>", { desc = "Projects" })
-map("n", "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Current Buf Fuzzy" })
+map("n", "<leader>ox", "<cmd>Xplr<cr>", { desc = "Xplr" })
+map("n", "<leader>P", "<cmd>Telescope projects<cr>", { desc = "Projects" })
+map("n", "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Current Buf Fuzzy" })
 map("n", "<leader>tt", "<cmd>TroubleToggle<cr>", { desc = "Trouble" })
-map("n", "<leader>Z", "<cmd>ZenMode<CR>", { desc = "Zen" })
+map("n", "<leader>Z", "<cmd>ZenMode<cr>", { desc = "Zen" })
 
 map("n", "ga", "<Plug>(EasyAlign)", { desc = "EasyAlign" })
 map("v", "ga", "<Plug>(EasyAlign)", { desc = "EasyAlign" })
 
+local agitator = require("agitator")
+-- stylua: ignore
+map("n", "<leader>gb", function() return agitator.git_blame_toggle() end, { desc = "Blame (agitator)" })
+-- stylua: ignore
+map("n", "<leader>gt", function() return agitator.git_time_machine() end, { desc = "Time Machine (agitator)" })
+
 -- Overwriting defaults to get border on terms.
 local Util = require("lazyvim.util")
-map("n", "<leader>gg", function()
-  Util.float_term({ "lazygit" }, { border = "single", cwd = Util.get_root(), esc_esc = false, ctrl_hjkl = false })
-end, { desc = "Lazygit (root dir)" })
 map("n", "<leader>gG", function()
-  Util.float_term({ "lazygit" }, { border = "single", esc_esc = false, ctrl_hjkl = false })
-end, { desc = "Lazygit (cwd)" })
+  Util.float_term({ "lazygit" }, { border = "single", cwd = Util.get_root(), esc_esc = false, ctrl_hjkl = false })
+end, { desc = "Lazygit" })
 local lazyterm = function()
   Util.float_term(nil, { border = "single", cwd = Util.get_root() })
 end
