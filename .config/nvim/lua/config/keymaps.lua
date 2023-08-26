@@ -15,11 +15,11 @@ end
 local wk = require("which-key")
 wk.register({
   ["<leader>"] = {
-    C = { name = "Codeium" },
-    D = { name = "Diffview" },
-    n = { name = "Neorg" },
-    o = { name = "Open / Options" },
-    t = { name = "Trouble" },
+    C = { name = "+Codeium" },
+    D = { name = "+Diffview" },
+    n = { name = "+Neorg" },
+    o = { name = "+Open / Options" },
+    t = { name = "+Trouble" },
   },
 })
 
