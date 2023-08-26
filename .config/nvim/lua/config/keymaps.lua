@@ -32,7 +32,6 @@ map("n", "<leader>Dh", "<cmd>DiffviewFileHistory<cr>", { desc = "DiffviewFileHis
 map("n", "<leader>Dl", "<cmd>DiffviewLog<cr>", { desc = "DiffviewLog" })
 map("n", "<leader>Dr", "<cmd>DiffviewRefresh<cr>", { desc = "DiffviewRefresh" })
 map("n", "<leader>Dq", "<cmd>DiffviewClose<cr>", { desc = "DiffviewClose" })
-map("n", "<leader>fg", "<cmd>Telescope git_files<CR>", { desc = "Git Files" })
 map("n", "<leader>fs", "<cmd>w<CR>", { desc = "Save" })
 map("n", "<leader>J", "<cmd>TSJToggle<CR>", { desc = "Treesj" })
 map("n", "<leader>m", "<cmd>TSJToggle<CR>", { desc = "Treesj" })
