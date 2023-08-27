@@ -21,7 +21,7 @@ return {
     "sindrets/diffview.nvim",
     event = "BufRead",
     -- Feels like this should be better.
-    -- However, it breaks the whicheky register.
+    -- However, it breaks the whichkey register.
     -- keys = {
     --   { "Dd", "<cmd>DiffviewOpen<cr>", desc = "DiffviewOpen" },
     --   { "Dc", "<cmd>DiffviewClose<cr>", desc = "DiffviewClose" },

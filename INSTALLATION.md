@@ -49,6 +49,7 @@ brew install --cask \
 brew install \
     asciinema \
     aspell \
+    bash-language-server \
     bat \
     bottom \
     caddy \
