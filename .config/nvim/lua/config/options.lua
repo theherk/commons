@@ -2,7 +2,7 @@ vim.g.maplocalleader = ","
 
 vim.o.conceallevel = 0 -- 2
 vim.o.guicursor = vim.o.guicursor .. ",a:blinkon1"
-vim.o.timeoutlen = 0
+-- vim.o.timeoutlen = 0
 
 -- Default folding is dubious.
 -- https://github.com/preservim/vim-markdown/issues/622
