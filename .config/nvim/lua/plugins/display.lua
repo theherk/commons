@@ -295,13 +295,13 @@ return {
           theme = custom,
           globalstatus = true,
           disabled_filetypes = { statusline = { "dashboard", "alpha" } },
-          section_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
         },
         sections = {
           lualine_a = {
             {
               "mode",
-              separator = { left = "" },
+              separator = { left = "" },
               right_padding = 2,
             }
           },
@@ -344,7 +344,7 @@ return {
             -- stylua: ignore
             {
               function() return "  " .. require("dap").status() end,
-              cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
+              cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
               color = Util.fg("Debug"),
             },
             { require("lazy.status").updates, cond = require("lazy.status").has_updates, color = Util.fg("Special") },
@@ -358,7 +358,7 @@ return {
             },
           },
           lualine_y = {
-            { "progress", separator = " ", padding = { left = 1, right = 0 } },
+            { "progress", separator = " ",                  padding = { left = 1, right = 0 } },
             { "location", padding = { left = 0, right = 1 } },
           },
           lualine_z = {
@@ -366,7 +366,7 @@ return {
               function()
                 return " " .. os.date("%R")
               end,
-              separator = { right = "" },
+              separator = { right = "" },
               left_padding = 2,
             },
           },
