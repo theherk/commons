@@ -34,6 +34,7 @@ return {
             name = "+debug",
             d = { function() require("dapui").toggle({}) end, "dap ui" },
           },
+          e = { "<cmd>Neotree toggle<cr>", "tree" },
           f = {
             name = "+file",
             f = { "<cmd>Telescope find_files<cr>", "find" },
