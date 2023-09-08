@@ -88,6 +88,7 @@ return {
             name = "+toggle",
             c = { function() Util.toggle("conceallevel", false, { 0, conceallevel }) end, "conceal" },
             d = { Util.toggle_diagnostics, "diagnostics" },
+            f = { require("plugins.lsp.format").toggle, "fmt on save" },
             l = { function() Util.toggle_number() end, "line numbers" },
             s = { function() Util.toggle("spell") end, "spelling" },
             w = { function() Util.toggle("wrap") end, "wrap" },
