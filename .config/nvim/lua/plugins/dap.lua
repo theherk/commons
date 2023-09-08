@@ -8,8 +8,8 @@ return {
       "rcarriga/nvim-dap-ui",
       -- stylua: ignore
       keys = {
-        { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
-        { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
+        { "<leader>du", function() require("dapui").toggle({}) end, desc = "dap ui" },
+        { "<leader>de", function() require("dapui").eval() end, desc = "eval", mode = { "n", "v" } },
       },
       opts = {},
       config = function(_, opts)
@@ -90,10 +90,10 @@ return {
   },
 
   config = function()
-    local Config = require("lazyvim.config")
+    local icons = require("config.icons").icons
     vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
 
-    for name, sign in pairs(Config.icons.dap) do
+    for name, sign in pairs(icons.dap) do
       sign = type(sign) == "table" and sign or { sign }
       vim.fn.sign_define(
         "Dap" .. name,
