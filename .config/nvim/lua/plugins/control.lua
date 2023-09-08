@@ -120,9 +120,6 @@ return {
         ["<cr>"] = "↵",
         ["<tab>"] = "⇥",
       },
-      layout = {
-        align = "center",
-      },
       window = {
         border = "single",
       },
