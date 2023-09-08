@@ -28,6 +28,11 @@ return {
           },
           c = {
             name = "+code",
+            f = { require("plugins.lsp.format").format({ force = true }), "fmt" },
+          },
+          d = {
+            name = "+debug",
+            d = { function() require("dapui").toggle({}) end, "dap ui" },
           },
           f = {
             name = "+file",
