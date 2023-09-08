@@ -63,7 +63,7 @@ return {
           o = {
             name = "+op",
             f = { "<cmd>Fzf<cr>", "fzf" },
-            p = { "<cmd>Neotree<cr>", "tree" },
+            p = { "<cmd>Neotree toggle<cr>", "tree" },
             s = { "<cmd>Skim<cr>", "skim" },
             t = { Util.lazyterm, "term" },
             w = { "<cmd>:set wrap!<cr>", "wrap" },
