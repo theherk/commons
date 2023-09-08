@@ -15,10 +15,10 @@ return {
       "nvim-telescope/telescope.nvim",
       "sindrets/diffview.nvim",
     },
+    config = true,
     opts = {
-      disable_commit_confirmation = true,
       disable_insert_on_commit = false,
-    }
+    },
   },
   {
     "lewis6991/gitsigns.nvim",

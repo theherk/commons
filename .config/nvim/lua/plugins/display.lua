@@ -3,7 +3,7 @@ return {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
     keys = {
-      { "<leader>bp", "<cmd>BufferLineTogglePin<cr>", desc = "Toggle pin" },
+      { "<leader>bp", "<cmd>BufferLineTogglePin<cr>",            desc = "Toggle pin" },
       { "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<cr>", desc = "Delete non-pinned buffers" },
     },
     opts = {
@@ -17,7 +17,7 @@ return {
         diagnostics_indicator = function(_, _, diag)
           local icons = require("config.icons").icons.diagnostics
           local ret = (diag.error and icons.Error .. diag.error .. " " or "")
-            .. (diag.warning and icons.Warn .. diag.warning or "")
+              .. (diag.warning and icons.Warn .. diag.warning or "")
           return vim.trim(ret)
         end,
         offsets = {
@@ -92,13 +92,53 @@ return {
     },
     -- stylua: ignore
     keys = {
-      { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },
-      { "<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
-      { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },
+      {
+        "<S-Enter>",
+        function() require("noice").redirect(vim.fn.getcmdline()) end,
+        mode = "c",
+        "Redirect Cmdline"
+      },
+      {
+        "<leader>snl",
+        function() require("noice").cmd("last") end,
+        desc =
+        "Noice Last Message"
+      },
+      {
+        "<leader>snh",
+        function() require("noice").cmd("history") end,
+        desc =
+        "Noice History"
+      },
       { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
-      { "<leader>snd", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
-      { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll forward", mode = {"i", "n", "s"} },
-      { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll backward", mode = {"i", "n", "s"}},
+      {
+        "<leader>snd",
+        function() require("noice").cmd("dismiss") end,
+        desc =
+        "Dismiss All"
+      },
+      {
+        "<c-f>",
+        function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end,
+        silent = true,
+        expr = true,
+        desc =
+        "Scroll forward",
+        mode = {
+          "i", "n", "s"
+        }
+      },
+      {
+        "<c-b>",
+        function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end,
+        silent = true,
+        expr = true,
+        desc =
+        "Scroll backward",
+        mode = {
+          "i", "n", "s"
+        }
+      },
     },
   },
   {
@@ -108,6 +148,12 @@ return {
   },
   {
     "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function(_, opts)
+      require("tokyonight").setup(opts)
+      vim.cmd([[colorscheme tokyonight]])
+    end,
     opts = {
       transparent = true,
       style = "night",
@@ -235,7 +281,7 @@ return {
       show_current_context = false,
     },
   },
-  { "MunifTanjim/nui.nvim", lazy = true },
+  { "MunifTanjim/nui.nvim",        lazy = true },
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
