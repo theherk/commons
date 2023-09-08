@@ -4,7 +4,7 @@ local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
 return {
   {
     "folke/which-key.nvim",
-    config = function()
+    config = function(_, opts)
       local wk = require("which-key")
       wk.register({
         ["<leader>"] = {
@@ -102,6 +102,7 @@ return {
           },
           Z = { "<cmd>ZenMode<cr>", "zen" },
         },
+        wk.setup(opts),
       })
     end,
     event = "VeryLazy",
@@ -109,6 +110,19 @@ return {
       vim.o.timeout = true
       vim.o.timeoutlen = 111
     end,
-    opts = {},
+    opts = {
+      key_labels = {
+        ["<leader>"] = "␣",
+        ["<space>"] = "␣",
+        ["<cr>"] = "↵",
+        ["<tab>"] = "⇥",
+      },
+      layout = {
+        align = "center",
+      },
+      window = {
+        border = "single",
+      },
+    },
   },
 }
