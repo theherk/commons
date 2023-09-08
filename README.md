@@ -57,11 +57,11 @@ A partial list of installed tools:
 - [xh](https://github.com/ducaale/xh): Friendly tool for sending http requests.
 - [zellij](https://zellij.dev/): A terminal workspace with batteries included; multiplexer.
 
-### Font
+### Font ✏️
 
 I use [Victor Mono](https://rubjo.github.io/victor-mono/), and it is superb.
 
-## Languages
+## Languages 📙
 
 I use these mostly, though others are supported.
 
@@ -70,7 +70,7 @@ I use these mostly, though others are supported.
 - [The Go Programming Language](https://go.dev/)
 - [Terraform by HashiCorp](https://www.terraform.io/)
 
-## Screenshots
+## Screenshots 🖼️
 
 ### Desktop
 
@@ -104,6 +104,6 @@ More are warranted, but the two I can think to mention off the bat are:
 
 - [matlocktheartist](https://www.deviantart.com/matlocktheartist/art/Bruce-Lee-Puzzled-322967405) for providing the awesome Bruce Lee art.
 
-## Enjoy
+## Enjoy 🤗
 
 [^1]: [Open VSX](https://open-vsx.org/)
