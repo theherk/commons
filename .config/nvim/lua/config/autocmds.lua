@@ -8,6 +8,16 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
   command = "checktime",
 })
 
+-- Commit like magit.
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = augroup("neogit_commit"),
+  pattern = { "COMMIT_EDITMSG" },
+  callback = function()
+    vim.keymap.set({ "n", "i" }, "<c-c><c-c>", "<esc><cmd>wq<cr>", { noremap = true, buffer = true })
+    vim.keymap.set({ "n", "i" }, "<c-c><c-k>", "<esc><cmd>q!<cr>", { noremap = true, buffer = true })
+  end,
+})
+
 -- Highlight on yank.
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup("highlight_yank"),
