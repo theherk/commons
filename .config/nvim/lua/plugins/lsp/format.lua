@@ -51,7 +51,6 @@ function M.format(opts)
   }, require("config.util").opts("nvim-lspconfig").format or {}))
 end
 
----@param formatters LazyVimFormatters
 function M.notify(formatters)
   local lines = { "# Active:" }
 
@@ -59,14 +58,14 @@ function M.notify(formatters)
     local line = "- **" .. client.name .. "**"
     if client.name == "null-ls" then
       line = line
-        .. " ("
-        .. table.concat(
-          vim.tbl_map(function(f)
-            return "`" .. f.name .. "`"
-          end, formatters.null_ls),
-          ", "
-        )
-        .. ")"
+          .. " ("
+          .. table.concat(
+            vim.tbl_map(function(f)
+              return "`" .. f.name .. "`"
+            end, formatters.null_ls),
+            ", "
+          )
+          .. ")"
     end
     table.insert(lines, line)
   end
@@ -98,7 +97,7 @@ function M.get_formatters(bufnr)
   -- check if we have any null-ls formatters for the current filetype
   local null_ls = package.loaded["null-ls"] and require("null-ls.sources").get_available(ft, "NULL_LS_FORMATTING") or {}
 
-  ---@class LazyVimFormatters
+  ---@class Formatters
   local ret = {
     ---@type lsp.Client[]
     active = {},
@@ -127,9 +126,9 @@ end
 ---@param client lsp.Client
 function M.supports_format(client)
   if
-    client.config
-    and client.config.capabilities
-    and client.config.capabilities.documentFormattingProvider == false
+      client.config
+      and client.config.capabilities
+      and client.config.capabilities.documentFormattingProvider == false
   then
     return false
   end
@@ -140,7 +139,7 @@ end
 function M.setup(opts)
   M.opts = opts
   vim.api.nvim_create_autocmd("BufWritePre", {
-    group = vim.api.nvim_create_augroup("LazyVimFormat", {}),
+    group = vim.api.nvim_create_augroup("Format", {}),
     callback = function()
       if M.opts.autoformat then
         M.format()

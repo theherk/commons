@@ -9,28 +9,28 @@ function M.get()
     require("plugins.lsp.format").format({ force = true })
   end
   if not M._keys then
-  ---@class PluginLspKeys
+    ---@class PluginLspKeys
     -- stylua: ignore
-    M._keys =  {
-      { "<leader>cd", vim.diagnostic.open_float, desc = "Line Diagnostics" },
-      { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
-      { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "Goto Definition", has = "definition" },
-      { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
-      { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
-      { "gI", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, desc = "Goto Implementation" },
-      { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "Goto T[y]pe Definition" },
+    M._keys = {
+      { "<leader>cd", vim.diagnostic.open_float, desc = "line diag" },
+      { "<leader>cl", "<cmd>LspInfo<cr>", desc = "lsp info" },
+      { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "def", has = "definition" },
+      { "gr", "<cmd>Telescope lsp_references<cr>", desc = "refs" },
+      { "gD", vim.lsp.buf.declaration, desc = "declaration" },
+      { "gI", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, desc = "impl" },
+      { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "type def" },
       { "K", vim.lsp.buf.hover, desc = "Hover" },
-      { "gK", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" },
-      { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
-      { "]d", M.diagnostic_goto(true), desc = "Next Diagnostic" },
-      { "[d", M.diagnostic_goto(false), desc = "Prev Diagnostic" },
-      { "]e", M.diagnostic_goto(true, "ERROR"), desc = "Next Error" },
-      { "[e", M.diagnostic_goto(false, "ERROR"), desc = "Prev Error" },
-      { "]w", M.diagnostic_goto(true, "WARN"), desc = "Next Warning" },
-      { "[w", M.diagnostic_goto(false, "WARN"), desc = "Prev Warning" },
-      { "<leader>cf", format, desc = "Format Document", has = "formatting" },
-      { "<leader>cf", format, desc = "Format Range", mode = "v", has = "rangeFormatting" },
-      { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" },
+      { "gK", vim.lsp.buf.signature_help, desc = "sig help", has = "signatureHelp" },
+      { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "sig help", has = "signatureHelp" },
+      { "]d", M.diagnostic_goto(true), desc = "next diag" },
+      { "[d", M.diagnostic_goto(false), desc = "prev diag" },
+      { "]e", M.diagnostic_goto(true, "ERROR"), desc = "next err" },
+      { "[e", M.diagnostic_goto(false, "ERROR"), desc = "prev err" },
+      { "]w", M.diagnostic_goto(true, "WARN"), desc = "next warn" },
+      { "[w", M.diagnostic_goto(false, "WARN"), desc = "prev warn" },
+      { "<leader>cf", format, desc = "fmt doc", has = "formatting" },
+      { "<leader>cf", format, desc = "fmt range", mode = "v", has = "rangeFormatting" },
+      { "<leader>ca", vim.lsp.buf.code_action, desc = "action", mode = { "n", "v" }, has = "codeAction" },
       {
         "<leader>cA",
         function()
@@ -43,7 +43,7 @@ function M.get()
             },
           })
         end,
-        desc = "Source Action",
+        desc = "src action",
         has = "codeAction",
       }
     }
@@ -55,11 +55,11 @@ function M.get()
           return ":" .. inc_rename.config.cmd_name .. " " .. vim.fn.expand("<cword>")
         end,
         expr = true,
-        desc = "Rename",
+        desc = "rename",
         has = "rename",
       }
     else
-      M._keys[#M._keys + 1] = { "<leader>cr", vim.lsp.buf.rename, desc = "Rename", has = "rename" }
+      M._keys[#M._keys + 1] = { "<leader>cr", vim.lsp.buf.rename, desc = "rename", has = "rename" }
     end
   end
   return M._keys
