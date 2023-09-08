@@ -75,6 +75,7 @@ return {
           },
           s = {
             name = "+search",
+            k = { "<cmd>Telescope keymaps<cr>", "keymaps" },
             s = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "buffer" },
           },
           t = { "<cmd>TroubleToggle<cr>", "trouble" },
