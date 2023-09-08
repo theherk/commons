@@ -57,6 +57,7 @@ if not Util.has("trouble.nvim") then
 end
 
 -- Terminal Mappings
+vim.keymap.set("n", "<c-\\>", Util.lazyterm, { desc = "Terminal (root dir)" })
 vim.keymap.set("n", "<c-/>", Util.lazyterm, { desc = "Terminal (root dir)" })
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 vim.keymap.set("t", "<c-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
