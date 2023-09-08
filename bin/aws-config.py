@@ -24,7 +24,7 @@ class Block:
     sso_start_url: str = "https://company.awsapps.com/start"
 
     def __str__(self):
-        h = f"profile " if self.name != "default" else self.name
+        h = "profile " if self.name != "default" else self.name
         if self.name != "default":
             h += f"{self.name}-{self.region}"
         if "SupportRole" in self.sso_role_name:
