@@ -182,15 +182,15 @@ return {
               ["<leader>c"] = { name = "+code" },
               ["<leader>cx"] = { name = "+extract" },
               ["<leader>cxm"] = {
-                [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
+                [[<esc><cmd>lua require('jdtls').extract_method(true)<cr>]],
                 "Extract Method",
               },
               ["<leader>cxv"] = {
-                [[<ESC><CMD>lua require('jdtls').extract_variable_all(true)<CR>]],
+                [[<esc><cmd>lua require('jdtls').extract_variable_all(true)<cr>]],
                 "Extract Variable",
               },
               ["<leader>cxc"] = {
-                [[<ESC><CMD>lua require('jdtls').extract_constant(true)<CR>]],
+                [[<esc><cmd>lua require('jdtls').extract_constant(true)<cr>]],
                 "Extract Constant",
               },
             }, { mode = "v", buffer = args.buf })
@@ -205,9 +205,9 @@ return {
                 -- custom keymaps for Java test runner (not yet compatible with neotest)
                 wk.register({
                   ["<leader>t"] = { name = "+test" },
-                  ["<leader>tt"] = { require("jdtls.dap").test_class, "Run All Test" },
-                  ["<leader>tr"] = { require("jdtls.dap").test_nearest_method, "Run Nearest Test" },
-                  ["<leader>tT"] = { require("jdtls.dap").pick_test, "Run Test" },
+                  ["<leader>ta"] = { require("jdtls.dap").test_class, "all" },
+                  ["<leader>tn"] = { require("jdtls.dap").test_nearest_method, "nearest" },
+                  ["<leader>tT"] = { require("jdtls.dap").pick_test, "one" },
                 }, { mode = "n", buffer = args.buf })
               end
             end

@@ -83,7 +83,10 @@ return {
             k = { "<cmd>Telescope keymaps<cr>", "keymaps" },
             s = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "buffer" },
           },
-          t = { "<cmd>TroubleToggle<cr>", "trouble" },
+          t = {
+            name = "+test",
+            t = { "<cmd>TroubleToggle<cr>", "trouble" },
+          },
           u = {
             name = "+toggle",
             c = { function() Util.toggle("conceallevel", false, { 0, conceallevel }) end, "conceal" },
