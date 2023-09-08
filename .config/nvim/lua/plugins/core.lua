@@ -26,12 +26,12 @@ return {
       local plugin = require("lazy.core.config").spec.plugins["mini.surround"]
       local opts = require("lazy.core.plugin").values(plugin, "opts", false)
       local mappings = {
-        { opts.mappings.add,            desc = "Add surrounding",                     mode = { "n", "v" } },
-        { opts.mappings.delete,         desc = "Delete surrounding" },
-        { opts.mappings.find,           desc = "Find right surrounding" },
-        { opts.mappings.find_left,      desc = "Find left surrounding" },
-        { opts.mappings.highlight,      desc = "Highlight surrounding" },
-        { opts.mappings.replace,        desc = "Replace surrounding" },
+        { opts.mappings.add, desc = "Add surrounding", mode = { "n", "v" } },
+        { opts.mappings.delete, desc = "Delete surrounding" },
+        { opts.mappings.find, desc = "Find right surrounding" },
+        { opts.mappings.find_left, desc = "Find left surrounding" },
+        { opts.mappings.highlight, desc = "Highlight surrounding" },
+        { opts.mappings.replace, desc = "Replace surrounding" },
         { opts.mappings.update_n_lines, desc = "Update `MiniSurround.config.n_lines`" },
       }
       mappings = vim.tbl_filter(function(m)
@@ -57,7 +57,7 @@ return {
     opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp" } },
     -- stylua: ignore
     keys = {
-      { "<leader>qs", function() require("persistence").load() end,                desc = "restore" },
+      { "<leader>qs", function() require("persistence").load() end, desc = "restore" },
       { "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "restore last" },
     },
   },
@@ -67,12 +67,10 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     config = true,
     keys = {
-      { "]t",         function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
-      { "[t",         function() require("todo-comments").jump_prev() end, desc = "Previous todo comment" },
-      { "<leader>xt", "<cmd>TodoTrouble<cr>",                              desc = "Todo (Trouble)" },
-      { "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>",      desc = "Todo/Fix/Fixme (Trouble)" },
-      { "<leader>st", "<cmd>TodoTelescope<cr>",                            desc = "Todo" },
-      { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>",    desc = "Todo/Fix/Fixme" },
+      { "]t", function() require("todo-comments").jump_next() end, desc = "next todo" },
+      { "[t", function() require("todo-comments").jump_prev() end, desc = "prev todo" },
+      { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "todo" },
+      { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "todo/fix/fixme" },
     },
   },
   {
@@ -167,7 +165,7 @@ return {
     "L3MON4D3/LuaSnip",
     config = true,
   },
-  { "nvim-lua/plenary.nvim",                       lazy = true },
+  { "nvim-lua/plenary.nvim", lazy = true },
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
