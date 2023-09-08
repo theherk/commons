@@ -1,31 +1,31 @@
 return {
-  {
-    "hrsh7th/nvim-cmp",
-    commit = "6c84bc75c64f778e9f1dcb798ed41c7fcb93b639", -- lock update (break codeium)
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      local cmp = require("cmp")
-      opts.sources = cmp.config.sources(vim.list_extend({ { name = "codeium" } }, opts.sources))
-      local format_kinds = opts.formatting.format
-      -- Seems to overwrite lazyvim's setup. Hmm?
-      -- opts.formatting.format = function(entry, item)
-      --   if entry.source.name == "codeium" then
-      --     -- item.kind = { Text = "" }
-      --   end
-      --   return item
-      -- end
-    end,
-  },
-  {
-    "jcdickinson/codeium.nvim",
-    enabled = false,
-    event = "VeryLazy",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = function()
-      require("codeium").setup({})
-    end,
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   -- commit = "6c84bc75c64f778e9f1dcb798ed41c7fcb93b639", -- lock update (break codeium)
+  --   ---@param opts cmp.ConfigSchema
+  --   opts = function(_, opts)
+  --     local cmp = require("cmp")
+  --     opts.sources = cmp.config.sources(vim.list_extend({ { name = "codeium" } }, opts.sources))
+  --     local format_kinds = opts.formatting.format
+  --     -- Seems to overwrite lazyvim's setup. Hmm?
+  --     -- opts.formatting.format = function(entry, item)
+  --     --   if entry.source.name == "codeium" then
+  --     --     -- item.kind = { Text = "" }
+  --     --   end
+  --     --   return item
+  --     -- end
+  --   end,
+  -- },
+  -- {
+  --   "jcdickinson/codeium.nvim",
+  --   enabled = false,
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "hrsh7th/nvim-cmp",
+  --   },
+  --   config = function()
+  --     require("codeium").setup({})
+  --   end,
+  -- },
 }
