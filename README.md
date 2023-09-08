@@ -11,7 +11,7 @@ These are the configuration details and files I use to configure my environment.
 
 ### Editors
 
-1. [Neovim](https://neovim.io/) / [LunarVim](https://www.lunarvim.org/): 1993-2015, 2023-current
+1. [Neovim](https://neovim.io/): 1993-2015, 2023-current
 2. [GitHub - doomemacs/doomemacs: An Emacs framework for the stubborn martian hacker](https://github.com/doomemacs/doomemacs): 2015-2023
 3. [Helix](https://helix-editor.com/)
 4. [VSCodium - Open Source Binaries of VSCode](https://vscodium.com/)
@@ -76,10 +76,10 @@ I use these mostly, though others are supported.
 
 <p align="center"><img src="./img/desktop.png" alt="desktop" /></p>
 
-### LunarVim
+### Vim
 
-<p align="center"><img src="./img/lunarvim-dashboard.png" alt="LunarVim Welcome" /></p>
-<p align="center"><img src="./img/lunarvim-rust.png" alt="LunarVim Rust" /></p>
+<p align="center"><img src="./img/vim-dash.png" alt="Vim Dashboard" /></p>
+<p align="center"><img src="./img/vim-rust.png" alt="Vim Rust" /></p>
 
 ### Emacs
 
@@ -87,7 +87,6 @@ I use these mostly, though others are supported.
 
 ### Codium
 
-<p align="center"><img src="./img/codium-welcome.png" alt="Codium Welcome" /></p>
 <p align="center"><img src="./img/codium.png" alt="Codium terraform" /></p>
 
 ### Slack
