@@ -20,6 +20,7 @@ return {
           ["-"] = "which_key_ignore",
           ["`"] = "which_key_ignore",
           ["|"] = "which_key_ignore",
+          ["/"] = { "<cmd>Telescope live_grep<cr>", "grep" },
           b = {
             name = "+buffer",
             d = { function() require("mini.bufremove").delete(0, false) end, "delete" },
