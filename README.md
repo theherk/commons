@@ -7,21 +7,21 @@ These are the configuration details and files I use to configure my environment.
 
 <p align="center"><a href="#screenshots"> 📷️ Screenshots</a> | <a href="./INSTALLATION.md"> 🚀 Installation</a></p>
 
-## Tools
+## Tools 🛠️
 
-### Editors
+### Editors ⌨️
 
-1. [Neovim](https://neovim.io/): 1993-2015, 2023-current
-2. [GitHub - doomemacs/doomemacs: An Emacs framework for the stubborn martian hacker](https://github.com/doomemacs/doomemacs): 2015-2023
-3. [Helix](https://helix-editor.com/)
-4. [VSCodium - Open Source Binaries of VSCode](https://vscodium.com/)
+1. [neovim](https://neovim.io/): 1993-2015, 2023-current ❤️
+2. [doom emacs](https://github.com/doomemacs/doomemacs): 2015-2023 🪦
+3. [Helix](https://helix-editor.com/) 🦀
+4. [Codium](https://vscodium.com/) 🤒
 
-### Terminal
+### Terminal 🖥️
 
-- [fish shell](https://fishshell.com/)
-- [WezTerm](https://wezfurlong.org/wezterm/): [configuration](.config/wezterm/wezterm.lua)
+- [fish](https://fishshell.com/) 🐠
+- [wezterm](https://wezfurlong.org/wezterm/) 💻: [configuration](.config/wezterm/wezterm.lua)
 
-### Miscellaneous Other Tools
+### Miscellaneous Other Tools 🎒
 
 A partial list of installed tools:
 
