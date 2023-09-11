@@ -62,7 +62,17 @@ local action_project_switcher = wezterm.action_callback(function(window, pane)
   )
 end)
 
+local copy_mode = nil
+if wezterm.gui then
+  copy_mode = wezterm.gui.default_key_tables().copy_mode
+  table.insert(copy_mode, { key = "j", mods = "CTRL", action = act.CopyMode { MoveByPage = 0.5 } })
+  table.insert(copy_mode, { key = "k", mods = "CTRL", action = act.CopyMode { MoveByPage = -0.5 } })
+  table.insert(copy_mode, { key = "n", mods = "CTRL", action = act.CopyMode { MoveByPage = 1 } })
+  table.insert(copy_mode, { key = "p", mods = "CTRL", action = act.CopyMode { MoveByPage = -1 } })
+end
+
 local key_tables = {
+  copy_mode = copy_mode,
   resize_pane = {
     { key = "h", action = act.AdjustPaneSize({ "Left", 1 }) },
     { key = "l", action = act.AdjustPaneSize({ "Right", 1 }) },
@@ -143,6 +153,12 @@ local keys = {
   { key = "9", mods = "LEADER", action = act.ActivateTab(8) },
   { key = "0", mods = "LEADER", action = act.ActivateTab(-1) },
   { key = "0", mods = "SUPER", action = act.ActivateTab(-1) },
+
+  -- Scrolling
+  { key = "j", mods = "CTRL", action = act.ScrollByPage(0.5) },
+  { key = "k", mods = "CTRL", action = act.ScrollByPage(-0.5) },
+  { key = "n", mods = "CTRL", action = act.ScrollByPage(1) },
+  { key = "p", mods = "CTRL", action = act.ScrollByPage(-1) },
 }
 
 function module.apply_to_config(config)
