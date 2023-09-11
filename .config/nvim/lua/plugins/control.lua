@@ -25,6 +25,7 @@ return {
             name = "+buffer",
             d = { function() require("mini.bufremove").delete(0, false) end, "delete" },
             D = { function() require("mini.bufremove").delete(0, true) end, "DELETE" },
+            f = { "<cmd>Telescope buffers<cr>", "find" },
           },
           c = {
             name = "+code",
