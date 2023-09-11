@@ -50,6 +50,11 @@ vim.keymap.set("v", ">", ">gv")
 -- EasyAlign
 vim.keymap.set("v", "ga", "<Plug>(EasyAlign)")
 
+-- Harpoon
+vim.keymap.set({ "i", "n" }, "]f", require("harpoon.ui").nav_next, { desc = "harpoon next file" })
+vim.keymap.set({ "i", "n" }, "[f", require("harpoon.ui").nav_prev, { desc = "harpoon prev file" })
+vim.keymap.set({ "i", "n" }, "<c-m>", require("harpoon.ui").toggle_quick_menu, { desc = "harpoon marks" })
+
 -- Trouble jumps.
 if not Util.has("trouble.nvim") then
   vim.keymap.set("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })

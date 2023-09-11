@@ -39,6 +39,7 @@ return {
           f = {
             name = "+file",
             f = { "<cmd>Telescope find_files<cr>", "find" },
+            m = { require("harpoon.mark").add_file, "mark" },
             s = { "<cmd>w<cr>", "write" }
           },
           g = {
@@ -126,5 +127,12 @@ return {
         border = "single",
       },
     },
+  },
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = { { "nvim-lua/plenary.nvim" } },
+    config = function()
+      require("telescope").load_extension('harpoon')
+    end,
   },
 }
