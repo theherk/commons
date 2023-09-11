@@ -65,10 +65,10 @@ end)
 local copy_mode = nil
 if wezterm.gui then
   copy_mode = wezterm.gui.default_key_tables().copy_mode
-  table.insert(copy_mode, { key = "j", mods = "CTRL", action = act.CopyMode { MoveByPage = 0.5 } })
-  table.insert(copy_mode, { key = "k", mods = "CTRL", action = act.CopyMode { MoveByPage = -0.5 } })
-  table.insert(copy_mode, { key = "n", mods = "CTRL", action = act.CopyMode { MoveByPage = 1 } })
-  table.insert(copy_mode, { key = "p", mods = "CTRL", action = act.CopyMode { MoveByPage = -1 } })
+  table.insert(copy_mode, { key = "j", mods = "SUPER", action = act.CopyMode { MoveByPage = 0.5 } })
+  table.insert(copy_mode, { key = "k", mods = "SUPER", action = act.CopyMode { MoveByPage = -0.5 } })
+  table.insert(copy_mode, { key = "J", mods = "SUPER", action = act.CopyMode { MoveByPage = 1 } })
+  table.insert(copy_mode, { key = "K", mods = "SUPER", action = act.CopyMode { MoveByPage = -1 } })
 end
 
 local key_tables = {
@@ -155,10 +155,10 @@ local keys = {
   { key = "0", mods = "SUPER", action = act.ActivateTab(-1) },
 
   -- Scrolling
-  { key = "j", mods = "CTRL", action = act.ScrollByPage(0.5) },
-  { key = "k", mods = "CTRL", action = act.ScrollByPage(-0.5) },
-  { key = "n", mods = "CTRL", action = act.ScrollByPage(1) },
-  { key = "p", mods = "CTRL", action = act.ScrollByPage(-1) },
+  { key = "j", mods = "SUPER", action = act.ScrollByPage(0.5) },
+  { key = "k", mods = "SUPER", action = act.ScrollByPage(-0.5) },
+  { key = "J", mods = "SUPER", action = act.ScrollByPage(1) },
+  { key = "K", mods = "SUPER", action = act.ScrollByPage(-1) },
 }
 
 function module.apply_to_config(config)
