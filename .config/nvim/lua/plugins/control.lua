@@ -135,4 +135,31 @@ return {
       require("telescope").load_extension('harpoon')
     end,
   },
+  {
+    "voldikss/vim-browser-search",
+    config = function()
+      -- Better to update the defaults since they aren't removed otherwise.
+      -- vim.g.browser_search_engines = {}
+      vim.g.browser_search_builtin_engines = {
+        duckduckgo = "https://duckduckgo.com/?q=%s",
+        github = "https://github.com/search?q=%s",
+        gitlab = "https://gitlab.com/search?search=%s",
+        google = "https://google.com/search?q=%s",
+        mdn = "https://developer.mozilla.org/en-US/search?q=%s",
+        scholar = "https://scholar.google.com/scholar?q=%s",
+        stackoverflow = "https://stackoverflow.com/search?q=%s",
+        translate = "https://translate.google.com/?sl=auto&tl=en&text=%s",
+        wikipedia = "https://en.wikipedia.org/wiki/%s",
+        youtube = "https://www.youtube.com/results?search_query=%s&page=&utm_source=opensearch"
+      }
+      vim.g.browser_search_default_engine = "duckduckgo"
+    end,
+    event = "VeryLazy",
+    keys = {
+      -- Command BrowserSearch always searches one less than index given.
+      { "<leader>sb", ":BrowserSearch<space>", desc = "browser" },
+      { "<c-k>", "<Plug>SearchNormal", desc = "browser search" },
+      { "<c-k>", "<Plug>SearchVisual", desc = "browser search", mode = "v" },
+    },
+  }
 }
