@@ -83,9 +83,15 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = {
     "norg",
   },
-  callback = function(event)
+  callback = function(_)
     vim.opt.conceallevel = 3
   end,
+})
+
+-- Autoload populated journal in neorg.
+vim.api.nvim_create_autocmd("BufNewFile", {
+  command = "Neorg templates fload journal",
+  pattern = { "*/journal/*.norg" },
 })
 
 -- Wrap and check for spell in given filetypes.
