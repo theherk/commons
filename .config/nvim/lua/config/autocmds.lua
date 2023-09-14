@@ -77,6 +77,17 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Conceal more for certain filetypes.
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("conceal_norg"),
+  pattern = {
+    "norg",
+  },
+  callback = function(event)
+    vim.opt.conceallevel = 3
+  end,
+})
+
 -- Wrap and check for spell in given filetypes.
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("wrap_spell"),
