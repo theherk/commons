@@ -79,11 +79,13 @@ return {
         },
         ["core.summary"] = {},
         -- ["core.tempus"] = {}, -- requires 0.10.0+
+        ["external.templates"] = {},
       },
     },
     dependencies = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-neorg/neorg-telescope" },
+      { "pysan3/neorg-templates", dependencies = { "L3MON4D3/LuaSnip" } },
     },
   },
 }
