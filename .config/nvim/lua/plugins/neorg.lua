@@ -25,6 +25,8 @@ return {
         ["core.integrations.telescope"] = {},
         ["core.journal"] = {
           config = {
+            strategy = "flat",
+            use_template = false,
             workspace = os.getenv("NEORG_DEFAULT_WORKSPACE") or "main",
           },
         },
