@@ -119,7 +119,7 @@ if status is-interactive
     abbr -a tfpn --position command "gawk -f ~/bin/tfn.awk _plan | sort"
     abbr -a tfp --position command terraform plan -lock=false
     abbr -a tfpp --position command "terraform plan -lock=false | tee _plan"
-    abbr -a tft --position anywhere --set-cursor "TF_LOG=trace TF_LOG_PATH=tf-trace-(date +%FT%T+01).log %"
+    abbr -a tft --position anywhere --set-cursor="@" "TF_LOG=trace TF_LOG_PATH=tf-trace-(date +%FT%T+01).log @"
     abbr -a tn --position command trans en:no -b
     abbr -a te --position command trans no:en -b
     abbr -a tmpd --position command cd (mktemp -d)
