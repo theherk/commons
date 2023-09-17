@@ -42,7 +42,6 @@ brew tap helix-editor/helix
 brew tap wez/wezterm
 brew install --cask \
     homebrew/cask-fonts/font-victor-mono-nerd-font \
-    keepingyouawake \
     keycastr \
     vscodium \
     neovide \
