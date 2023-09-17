@@ -101,5 +101,3 @@ More are warranted, but the two I can think to mention off the bat are:
 - [matlocktheartist](https://www.deviantart.com/matlocktheartist/art/Bruce-Lee-Puzzled-322967405) for providing the awesome Bruce Lee art.
 
 ## Enjoy 🤗
-
-[^1]: [Open VSX](https://open-vsx.org/)
