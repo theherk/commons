@@ -43,12 +43,10 @@ brew tap wez/wezterm
 brew install --cask \
     homebrew/cask-fonts/font-victor-mono-nerd-font \
     keycastr \
-    vscodium \
     neovide \
     wez/wezterm/wezterm
 brew install \
     asciinema \
-    aspell \
     bash-language-server \
     bat \
     bottom \
@@ -126,93 +124,6 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
     jorgebucaran/fisher \
     PatrickF1/fzf.fish
 ```
-
-## Setup Codium
-
-Adding a setup for [VSCodium](https://vscodium.com/) because the AI integration is tighter for now. As I am evaluating [Codeium](https://codeium.com/), [CodeWhisperer](https://aws.amazon.com/codewhisperer/), and [Copilot](https://github.com/features/copilot), I need to test the various integrations. I'm not quite ready to transition completely. ❤️ Emacs.
-
-First, get it out of quarantine.
-
-    xattr -d com.apple.quarantine /Applications/VSCodium.app/
-
-Then install extensions.
-
-```sh
-echo "
-alefragnani.project-manager
-ban.spellright
-belfz.search-crates-io
-bierner.emojisense
-bmalehorn.vscode-fish
-bodil.file-browser
-Codeium.codeium
-DaltonMenezes.aura-theme
-eamodio.gitlens
-EditorConfig.EditorConfig
-enkia.tokyo-night
-esbenp.prettier-vscode
-foam.foam-vscode
-garlandcrow.vscode-helix
-genieai.chatgpt-vscode
-GitHub.vscode-pull-request-github
-GitLab.gitlab-workflow
-golang.go
-Gruntfuggly.todo-tree
-hashicorp.hcl
-hashicorp.terraform
-jacobdufault.fuzzy-search
-jdinhlife.gruvbox
-jebbs.markdown-extended
-kahole.magit
-mikoz.black-py
-MohammadBaqer.better-folding
-ms-python.python
-ms-toolsai.jupyter
-ms-toolsai.jupyter-keymap
-ms-toolsai.jupyter-renderers
-ms-toolsai.vscode-jupyter-cell-tags
-ms-toolsai.vscode-jupyter-slideshow
-PKief.material-icon-theme
-rust-lang.rust-analyzer
-skn0tt.markdown-link-expander
-slbtty.Lisp-Syntax
-vscode-org-mode.org-mode
-vscodevim.vim
-VSpaceCode.vspacecode
-VSpaceCode.whichkey
-yzhang.markdown-all-in-one
-ziglang.vscode-zig
-" | xargs -L 1 codium --install-extension
-```
-
-Disable the native press-and-hold behavior for the vim plugin. This is a different command than given in the documentation, and can be found in [this issue](https://github.com/VSCodeVim/Vim/issues/8052#issuecomment-1422383241) and [this StackOverflow answer](https://stackoverflow.com/a/73897433/2081835).
-
-    defaults write com.vscodium ApplePressAndHoldEnabled -bool false
-
-## Install Emacs.
-
-There are slight differences in amd64 and arm64 paths.
-
-```sh
-brew tap d12frosted/emacs-plus
-brew install emacs-plus@29 --with-memeplex-slim-icon --with-native-comp --with-xwidgets --with-imagemagick
-cp -r /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications/
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d # install doom
-doom install
-brew services start emacs-plus
-# create automator routine emacs-everywhere and bind M-S-space
-# can be imported from icloud; basically command script service invoking
-# /opt/homebrew/bin/emacsclient --eval "(emacs-everywhere)"
-# needs to be full path result of which emacsclient
-doom sync
-ln -sf ~/Dropbox/org ~/
-ln -sf ~/commons/.config/ispell/ ~/.emacs.d/.local/etc/
-```
-
-### Add pinentry for mac into gpg configuration.
-
-    echo "pinentry-program $(which pinentry-mac)" >>~/.gnupg/gpg-agent.conf
-    gpgconf --kill gpg-agent
 
 ## Configure Neovim
 
@@ -399,3 +310,94 @@ echo 'h4s ALL = NOPASSWD: /usr/bin/ssh' >> /etc/sudoers
 > **Warning**
 >
 > **Last warning!** If you get an error `zsh: permission denied: /etc/sudoers`, and you don't know how to get around it, I implore you; do not do this.
+
+---
+
+Unimportant, completely optional or historical configurations follow.
+
+## Install Emacs.
+
+There are slight differences in amd64 and arm64 paths.
+
+```sh
+brew tap d12frosted/emacs-plus
+brew install emacs-plus@29 --with-memeplex-slim-icon --with-native-comp --with-xwidgets --with-imagemagick
+cp -r /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications/
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d # install doom
+doom install
+brew services start emacs-plus
+# create automator routine emacs-everywhere and bind M-S-space
+# can be imported from icloud; basically command script service invoking
+# /opt/homebrew/bin/emacsclient --eval "(emacs-everywhere)"
+# needs to be full path result of which emacsclient
+doom sync
+ln -sf ~/Dropbox/org ~/
+ln -sf ~/commons/.config/ispell/ ~/.emacs.d/.local/etc/
+```
+
+### Add pinentry for mac into gpg configuration.
+
+    echo "pinentry-program $(which pinentry-mac)" >>~/.gnupg/gpg-agent.conf
+    gpgconf --kill gpg-agent
+
+## Setup Codium
+
+I'm not using this, but I preserve the configuration in case I need to test something.
+
+First, get it out of quarantine.
+
+    xattr -d com.apple.quarantine /Applications/VSCodium.app/
+
+Then install extensions.
+
+```sh
+echo "
+alefragnani.project-manager
+ban.spellright
+belfz.search-crates-io
+bierner.emojisense
+bmalehorn.vscode-fish
+bodil.file-browser
+Codeium.codeium
+DaltonMenezes.aura-theme
+eamodio.gitlens
+EditorConfig.EditorConfig
+enkia.tokyo-night
+esbenp.prettier-vscode
+foam.foam-vscode
+garlandcrow.vscode-helix
+genieai.chatgpt-vscode
+GitHub.vscode-pull-request-github
+GitLab.gitlab-workflow
+golang.go
+Gruntfuggly.todo-tree
+hashicorp.hcl
+hashicorp.terraform
+jacobdufault.fuzzy-search
+jdinhlife.gruvbox
+jebbs.markdown-extended
+kahole.magit
+mikoz.black-py
+MohammadBaqer.better-folding
+ms-python.python
+ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
+ms-toolsai.vscode-jupyter-cell-tags
+ms-toolsai.vscode-jupyter-slideshow
+PKief.material-icon-theme
+rust-lang.rust-analyzer
+skn0tt.markdown-link-expander
+slbtty.Lisp-Syntax
+vscode-org-mode.org-mode
+vscodevim.vim
+VSpaceCode.vspacecode
+VSpaceCode.whichkey
+yzhang.markdown-all-in-one
+ziglang.vscode-zig
+" | xargs -L 1 codium --install-extension
+```
+
+Disable the native press-and-hold behavior for the vim plugin. This is a different command than given in the documentation, and can be found in [this issue](https://github.com/VSCodeVim/Vim/issues/8052#issuecomment-1422383241) and [this StackOverflow answer](https://stackoverflow.com/a/73897433/2081835).
+
+    defaults write com.vscodium ApplePressAndHoldEnabled -bool false
