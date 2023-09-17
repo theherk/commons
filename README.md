@@ -72,10 +72,6 @@ I use these mostly, though others are supported.
 
 ## Screenshots 🖼️
 
-### Desktop
-
-<p align="center"><img src="./img/desktop.png" alt="desktop" /></p>
-
 ### Vim
 
 <p align="center"><img src="./img/vim-dash.png" alt="Vim Dashboard" /></p>
