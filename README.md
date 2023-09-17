@@ -41,10 +41,11 @@ A partial list of installed tools:
 - [delta](https://github.com/dandavison/delta): Syntax highlighting pager.
 - [gitui](https://github.com/extrawurst/gitui): Fast terminal ui for git.
 - [grip](https://github.com/joeyespo/grip): Preview markdown.
-- [keycastr](https://github.com/keycastr/keycastr): keystroke visualizer
+- [keycastr](https://github.com/keycastr/keycastr): Keystroke visualizer.
 - [lazydocker](https://github.com/jesseduffield/lazydocker): Container management TUI.
 - [lazygit](https://github.com/jesseduffield/lazygit): The best git interface outside emacs.
 - [navi](https://github.com/denisidoro/navi): Interactive cheatsheet tool for the command-line.
+- [neovide](https://neovide.dev/): Neovim Client in Rust.
 - [pandoc](https://pandoc.org/): Universal document converter.
 - [podman](https://podman.io/): Daemonless container engine.
 - [pyenv](https://github.com/pyenv/pyenv): Simple python version management.

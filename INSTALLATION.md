@@ -45,6 +45,7 @@ brew install --cask \
     keepingyouawake \
     keycastr \
     vscodium \
+    neovide \
     wez/wezterm/wezterm
 brew install \
     asciinema \
@@ -223,6 +224,78 @@ My configuration is largely built by cribbing from the legend folke, but it is b
 After plugins are installed, you can install this grammar which requires up-to-date compiler which should have been installed via `brew install llvm`.
 
     CC=/opt/homebrew/opt/llvm/bin/clang++ lvim -c "TSInstallSync norg"
+
+### Configure Neovide for opening from Finder
+
+This is useful for quickly opening downloaded files. Since all my instances of Neovim are transient and per-project within Wezterm, this provides simplicity that is separate from that process.
+
+Create Automator application to run this applescript:
+
+```applescript
+on replace_chars(this_text, search_string, replacement_string)
+	set AppleScript's text item delimiters to the search_string
+	set the item_list to every text item of this_text
+	set AppleScript's text item delimiters to the replacement_string
+	set this_text to the item_list as string
+	set AppleScript's text item delimiters to ""
+	return this_text
+end replace_chars
+
+on activate_open_instance(win_title, is_first_time)
+	tell application "System Events"
+		set neovideProcList to a reference to (every process whose name is "neovide")
+		repeat with proc in neovideProcList
+			set PID to proc's unix id
+			set myFiles to paragraphs of (do shell script "lsof -F -p" & space & PID & space & "| grep ^n/ | cut -c2-")
+			set fName to my replace_chars(win_title, "'", "")
+			if myFiles contains fName then
+				tell proc
+					set frontmost to true
+				end tell
+				return true
+			end if
+		end repeat
+	end tell
+
+	return false
+end activate_open_instance
+
+on run {input, parameters}
+	if input is not {} then
+		set posixPaths to {}
+
+		repeat with fileItem in input
+			set posixPath to POSIX path of (fileItem as text)
+			set end of posixPaths to quoted form of posixPath
+		end repeat
+
+		set AppleScript's text item delimiters to space
+		set filePathsString to (posixPaths as string)
+		set AppleScript's text item delimiters to ""
+
+		set firstPosixPath to item 1 of posixPaths
+
+		if true or not my activate_open_instance(firstPosixPath, false) then
+			set enablePathVar to "eval \"$(/usr/libexec/path_helper -s)\"; PATH=$PATH:/opt/homebrew/bin neovide"
+			set cmd to "$(/usr/bin/env neovide)"
+
+			do shell script enablePathVar & space & cmd & space & filePathsString
+			delay 0.3
+			my activate_open_instance(firstPosixPath, true)
+		end if
+	else
+		set enablePathVar to "eval \"$(/usr/libexec/path_helper -s)\"; PATH=$PATH:/opt/homebrew/bin neovide"
+		set cmd to "$(/usr/bin/env neovide)"
+
+		do shell script enablePathVar & space & cmd
+		delay 0.3
+		my activate_open_instance("", true)
+	end if
+	return input
+end run
+```
+
+May already exist in iCloud. Copy this to `/Applications/`, and now it can be set as the default filetype opener.
 
 ## Install more programming tools.
 
