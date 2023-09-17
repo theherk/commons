@@ -38,6 +38,7 @@ alias up="underscore pretty"
 alias util-list="aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 alias util-list-buildhost="aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 alias vr='sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2 | sed "s/\(.*\):\(.*\)/\+\2 \1/" | xargs nvim'
+alias wezy='wezterm imgcat'
 alias wow="git status"
 alias xc='xclip -sel clip'
 alias xp='cat p|xc'

@@ -127,6 +127,7 @@ if status is-interactive
     abbr -a util-list --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' --output text --query 'Reservations[*].Instances[*].InstanceId'"
     abbr -a util-list-buildhost --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' --output text --query 'Reservations[*].Instances[*].InstanceId'"
     abbr -a vr --position command 'sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2 | sed "s/\(.*\):\(.*\)/\+\2 \1/" | xargs nvim'
+    abbr -a wezi --position command wezterm imgcat
     abbr -a wow --position command git status
     abbr -a xc --position anywhere --set-cursor "%| xclip -sel clip"
     abbr -a z --position command zellij
