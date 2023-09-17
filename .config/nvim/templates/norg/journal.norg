@@ -3,7 +3,7 @@ title: {TODAY}
 description:
 authors: {AUTHOR}
 categories: [
-journal
+  journal
 ]
 created: {TODAY}
 updated: {TODAY}
