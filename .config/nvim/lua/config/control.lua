@@ -54,6 +54,15 @@ vim.keymap.set("v", "ga", "<Plug>(EasyAlign)")
 vim.keymap.set({ "i", "n" }, "]f", require("harpoon.ui").nav_next, { desc = "harpoon next file" })
 vim.keymap.set({ "i", "n" }, "[f", require("harpoon.ui").nav_prev, { desc = "harpoon prev file" })
 vim.keymap.set({ "i", "n" }, "<c-h>", require("harpoon.ui").toggle_quick_menu, { desc = "harpoon marks" })
+vim.keymap.set({ "i", "n" }, "<c-1>", function() require("harpoon.ui").nav_file(1) end, { desc = "harpoon file 1" })
+vim.keymap.set({ "i", "n" }, "<c-2>", function() require("harpoon.ui").nav_file(2) end, { desc = "harpoon file 2" })
+vim.keymap.set({ "i", "n" }, "<c-3>", function() require("harpoon.ui").nav_file(3) end, { desc = "harpoon file 3" })
+vim.keymap.set({ "i", "n" }, "<c-4>", function() require("harpoon.ui").nav_file(4) end, { desc = "harpoon file 4" })
+vim.keymap.set({ "i", "n" }, "<c-5>", function() require("harpoon.ui").nav_file(5) end, { desc = "harpoon file 5" })
+vim.keymap.set({ "i", "n" }, "<c-6>", function() require("harpoon.ui").nav_file(6) end, { desc = "harpoon file 6" })
+vim.keymap.set({ "i", "n" }, "<c-7>", function() require("harpoon.ui").nav_file(7) end, { desc = "harpoon file 7" })
+vim.keymap.set({ "i", "n" }, "<c-8>", function() require("harpoon.ui").nav_file(8) end, { desc = "harpoon file 8" })
+vim.keymap.set({ "i", "n" }, "<c-9>", function() require("harpoon.ui").nav_file(9) end, { desc = "harpoon file 9" })
 
 -- Trouble jumps.
 if not Util.has("trouble.nvim") then
