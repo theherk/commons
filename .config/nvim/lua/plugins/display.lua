@@ -28,6 +28,8 @@ return {
             text_align = "left",
           },
         },
+        show_buffer_close_icons = false,
+        sort_by = "relative_directory",
       },
     },
   },
