@@ -50,3 +50,13 @@ vim.g.markdown_recommended_style = 0
 -- https://github.com/preservim/vim-markdown/issues/622
 vim.opt.foldlevelstart = 6
 vim.g.vim_markdown_folding_level = 2
+
+-- Neovide
+vim.o.guifont = "VictorMono Nerd Font:h18"
+local alpha = function()
+  return string.format("%x", math.floor(255 * vim.g.transparency))
+end
+-- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
+vim.g.neovide_transparency = 0.0
+vim.g.transparency = 0.94247
+vim.g.neovide_background_color = "#16161e" .. alpha()
