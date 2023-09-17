@@ -60,3 +60,7 @@ end
 vim.g.neovide_transparency = 0.0
 vim.g.transparency = 0.94247
 vim.g.neovide_background_color = "#16161e" .. alpha()
+
+if vim.g.neovide then
+  vim.cmd("cd ~/Downloads/")
+end
