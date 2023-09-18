@@ -31,6 +31,7 @@ A partial list of installed tools:
 - [coreutils](https://www.gnu.org/software/coreutils/): GNU core utilities.
 - [direnv](https://direnv.net/): Environment manipulation.
 - [doll](https://github.com/xiaogdgenuine/Doll): Move dock applications to menu bar.
+- [dozer](https://github.com/Mortennn/Dozer): Hide menu bar icons on macOS.
 - [dropbox](https://formulae.brew.sh/cask/dropbox): Only for syncing org directory.
 - [dua](https://github.com/Byron/dua-cli): Disk usage analyzer cli with interactive option.
 - [editorconfig](https://editorconfig.org/): Enforce some text styles.
