@@ -53,7 +53,7 @@ vim.keymap.set("v", "ga", "<Plug>(EasyAlign)")
 -- Harpoon
 vim.keymap.set({ "i", "n" }, "]f", require("harpoon.ui").nav_next, { desc = "harpoon next file" })
 vim.keymap.set({ "i", "n" }, "[f", require("harpoon.ui").nav_prev, { desc = "harpoon prev file" })
-vim.keymap.set({ "i", "n" }, "<c-h>", require("harpoon.ui").toggle_quick_menu, { desc = "harpoon marks" })
+vim.keymap.set({ "i", "n" }, "<c-,>", require("harpoon.ui").toggle_quick_menu, { desc = "harpoon marks" })
 vim.keymap.set({ "i", "n" }, "<c-1>", function() require("harpoon.ui").nav_file(1) end, { desc = "harpoon file 1" })
 vim.keymap.set({ "i", "n" }, "<c-2>", function() require("harpoon.ui").nav_file(2) end, { desc = "harpoon file 2" })
 vim.keymap.set({ "i", "n" }, "<c-3>", function() require("harpoon.ui").nav_file(3) end, { desc = "harpoon file 3" })
