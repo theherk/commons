@@ -18,6 +18,7 @@
 .tox
 .vim/
 _plan*
+_update.md
 _update.sh
 GPATH
 GRTAGS
