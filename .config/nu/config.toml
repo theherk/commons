@@ -1,2 +1,0 @@
-prompt = "STARSHIP_SHELL= starship prompt"
-startup = ["alias nuopen = open", "alias open = ^open"]

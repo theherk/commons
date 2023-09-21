@@ -1,4 +1,5 @@
 .config/lazygit/state.yml
+.config/nushell/history.txt
 fish_variables
 gproxy
 gpt-commit.py
