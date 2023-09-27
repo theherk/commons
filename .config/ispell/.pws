@@ -1,4 +1,4 @@
-personal_ws-1.1 en 84
+personal_ws-1.1 en 85
 args
 atlassian
 auth
@@ -63,6 +63,7 @@ raycast
 recordsets
 regnskap
 resolvers
+salesengine
 scaler
 schemas
 sonarqube
