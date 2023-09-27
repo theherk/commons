@@ -234,6 +234,11 @@ if status is-interactive
     function venvact
         source .venv/bin/activate
     end
+
+    # Unsure about this; fits the theme, but extra keystrokes.
+    # function fish_greeting
+    #     wezterm imgcat --position (math "($COLUMNS - 20) /2"),6 --hold ~/commons/img/bruce-matlocktheartist_400w.png
+    # end
 end
 
 alias ls=exa
