@@ -22,7 +22,7 @@ disabled = true
 
 [shell]
 disabled = false
-bash_indicator = "ℬ"
+bash_indicator = "𝔹"
 # fish_indicator = "ƒ"
 fish_indicator = "🐠"
 nu_indicator = "ℕ"
