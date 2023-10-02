@@ -8,8 +8,8 @@ customCommands:
     context: "global"
     subprocess: true
 gui:
+  nerdFontsVersion: "3"
   showBottomLine: true
-  showIcons: true
   theme:
     selectedLineBgColor:
       - '#24283b'
