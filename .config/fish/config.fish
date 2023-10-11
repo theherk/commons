@@ -153,6 +153,16 @@ if status is-interactive
             aws configure set region (bat $SSO/(exa -U $SSO | tail -2 | head -1) | jq -r .region)
     end
 
+    function fester-deployments # List fester deployments in configuration.
+        argparse --min-args 1 --max-args 2 -- $argv
+        switch (count $argv)
+            case 1
+                yq '.[][] |= (map(pick(["region"])))' $argv[1]
+            case 2
+                yq '.[][] |= (map(pick(["region"]) | select(.[] == "'"$argv[2]"'")))' $argv[1]
+        end
+    end
+
     function gitp # Switch to git project directory from .projects. See alias repocache.
         set REPO "$(cat "$HOME"/.projects | sed s:"$HOME":~: | fzf --reverse)"
         if test -n "$REPO"
