@@ -235,6 +235,13 @@ return {
     cmd = { "TSUpdateSync" },
     opts = {
       highlight = { enable = true },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          node_incremental = "v",
+          node_decremental = "V",
+        },
+      },
       indent = { enable = true },
       ensure_installed = {
         "bash",
