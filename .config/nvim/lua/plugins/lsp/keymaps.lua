@@ -12,7 +12,6 @@ function M.get()
     ---@class PluginLspKeys
     -- stylua: ignore
     M._keys = {
-      { "<leader>cd", vim.diagnostic.open_float, desc = "line diag" },
       { "<leader>cl", "<cmd>LspInfo<cr>", desc = "lsp info" },
       { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "def", has = "definition" },
       { "gr", "<cmd>Telescope lsp_references<cr>", desc = "refs" },
@@ -22,12 +21,6 @@ function M.get()
       { "K", vim.lsp.buf.hover, desc = "Hover" },
       { "gK", vim.lsp.buf.signature_help, desc = "sig help", has = "signatureHelp" },
       { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "sig help", has = "signatureHelp" },
-      { "]d", M.diagnostic_goto(true), desc = "next diag" },
-      { "[d", M.diagnostic_goto(false), desc = "prev diag" },
-      { "]e", M.diagnostic_goto(true, "ERROR"), desc = "next err" },
-      { "[e", M.diagnostic_goto(false, "ERROR"), desc = "prev err" },
-      { "]w", M.diagnostic_goto(true, "WARN"), desc = "next warn" },
-      { "[w", M.diagnostic_goto(false, "WARN"), desc = "prev warn" },
       { "<leader>cf", format, desc = "fmt doc", has = "formatting" },
       { "<leader>cf", format, desc = "fmt range", mode = "v", has = "rangeFormatting" },
       { "<leader>ca", vim.lsp.buf.code_action, desc = "action", mode = { "n", "v" }, has = "codeAction" },
