@@ -1,5 +1,7 @@
 local M = {}
 
+local Util = require("config.util")
+
 ---@type PluginLspKeys
 M._keys = nil
 
@@ -61,7 +63,7 @@ end
 ---@param method string
 function M.has(buffer, method)
   method = method:find("/") and method or "textDocument/" .. method
-  local clients = vim.lsp.get_active_clients({ bufnr = buffer })
+  local clients = Util.get_clients({ bufnr = buffer })
   for _, client in ipairs(clients) do
     if client.supports_method(method) then
       return true
@@ -87,7 +89,7 @@ function M.resolve(buffer)
   end
 
   local opts = require("config.util").opts("nvim-lspconfig")
-  local clients = vim.lsp.get_active_clients({ bufnr = buffer })
+  local clients = Util.get_clients({ bufnr = buffer })
   for _, client in ipairs(clients) do
     local maps = opts.servers[client.name] and opts.servers[client.name].keys or {}
     for _, keymap in ipairs(maps) do
@@ -97,18 +99,17 @@ function M.resolve(buffer)
   return keymaps
 end
 
-function M.on_attach(client, buffer)
+function M.on_attach(_, buffer)
   local Keys = require("lazy.core.handler.keys")
   local keymaps = M.resolve(buffer)
 
   for _, keys in pairs(keymaps) do
     if not keys.has or M.has(buffer, keys.has) then
       local opts = Keys.opts(keys)
-      ---@diagnostic disable-next-line: no-unknown
       opts.has = nil
       opts.silent = opts.silent ~= false
       opts.buffer = buffer
-      vim.keymap.set(keys.mode or "n", keys[1], keys[2], opts)
+      vim.keymap.set(keys.mode or "n", keys.lhs, keys.rhs, opts)
     end
   end
 end
