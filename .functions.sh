@@ -6,6 +6,12 @@ awsp () {
     fi
 }
 
+baseurl() { # Get base url from full url. scheme://domain
+    scheme=${1%%://*}
+    without_scheme=${1##"$scheme"://}
+    echo "$scheme://${without_scheme%%/*}"
+}
+
 colordump () { # Dump primary term colors.
   for c in {0..15}; do
     printf "\033[48;5;%sm%3d\033[0m " "$c" "$c"
