@@ -46,7 +46,6 @@ indent_style = space
 indent_size = 2
 
 [*.lua]
-align_array_table = false
 collapse_simple_statement = Always
 indent_style = space
 indent_size = 2
