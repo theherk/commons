@@ -21,7 +21,7 @@ return {
         tsserver = {
           keys = {
             { "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", desc = "organize imports" },
-            { "<leader>cR", "<cmd>TypescriptRenameFile<CR>",      desc = "rename file" },
+            { "<leader>cR", "<cmd>TypescriptRenameFile<CR>", desc = "rename file" },
           },
           settings = {
             typescript = {
@@ -81,8 +81,7 @@ return {
             command = "node",
             -- 💀 Make sure to update this path to point to your installation
             args = {
-              require("mason-registry").get_package("js-debug-adapter"):get_install_path()
-              .. "/js-debug/src/dapDebugServer.js",
+              require("mason-registry").get_package("js-debug-adapter"):get_install_path() .. "/js-debug/src/dapDebugServer.js",
               "${port}",
             },
           },

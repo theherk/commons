@@ -40,7 +40,7 @@ return {
             name = "+file",
             f = { "<cmd>Telescope find_files<cr>", "find" },
             m = { require("harpoon.mark").add_file, "mark" },
-            s = { "<cmd>w<cr>", "write" }
+            s = { "<cmd>w<cr>", "write" },
           },
           g = {
             name = "+git",
@@ -133,9 +133,7 @@ return {
   {
     "ThePrimeagen/harpoon",
     dependencies = { { "nvim-lua/plenary.nvim" } },
-    config = function()
-      require("telescope").load_extension('harpoon')
-    end,
+    config = function() require("telescope").load_extension("harpoon") end,
   },
   {
     "voldikss/vim-browser-search",
@@ -152,7 +150,7 @@ return {
         stackoverflow = "https://stackoverflow.com/search?q=%s",
         translate = "https://translate.google.com/?sl=auto&tl=en&text=%s",
         wikipedia = "https://en.wikipedia.org/wiki/%s",
-        youtube = "https://www.youtube.com/results?search_query=%s&page=&utm_source=opensearch"
+        youtube = "https://www.youtube.com/results?search_query=%s&page=&utm_source=opensearch",
       }
       vim.g.browser_search_default_engine = "duckduckgo"
     end,
@@ -163,5 +161,5 @@ return {
       { "<c-k>", "<Plug>SearchNormal", desc = "browser search" },
       { "<c-k>", "<Plug>SearchVisual", desc = "browser search", mode = "v" },
     },
-  }
+  },
 }
