@@ -65,6 +65,10 @@ return {
                     r = { "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_recurring<cr>", "recurring" },
                     u = { "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_undone<cr>", "undone" },
                   },
+                  u = {
+                    name = "+toggle",
+                    c = { "<cmd>Neorg toggle-concealer<cr>", "concealer" },
+                  },
                 },
               })
               keys.remap_event("norg", "i", "<c-cr>", "core.itero.next-iteration")
