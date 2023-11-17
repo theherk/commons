@@ -402,3 +402,63 @@ ziglang.vscode-zig
 Disable the native press-and-hold behavior for the vim plugin. This is a different command than given in the documentation, and can be found in [this issue](https://github.com/VSCodeVim/Vim/issues/8052#issuecomment-1422383241) and [this StackOverflow answer](https://stackoverflow.com/a/73897433/2081835).
 
     defaults write com.vscodium ApplePressAndHoldEnabled -bool false
+
+## Configure Arc
+
+### Extensions
+
+- [Vimium C](https://chromewebstore.google.com/detail/vimium-c-all-by-keyboard/hfjbmagddngcpeloejdejnfgbamkjaeg)
+- [Bitwarden](https://chromewebstore.google.com/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb)
+- [uBlock Origin](https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)
+- [SponsorBlock](https://chromewebstore.google.com/detail/sponsorblock-for-youtube/mnjggcdmjocbbbhaepdhchncahnbgone)
+- [Dark Reader](https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)
+
+### Vimium C
+
+#### Custom key mappings
+
+```
+map K previousTab
+map J nextTab
+```
+
+#### Custom CSS
+
+```css
+/* #ui */
+
+.D > .LH {
+  background: #1a1b26;
+  color: #2ac3de;
+  border-color: #bb9af7;
+  scale: 1.33;
+}
+
+/* #omni */
+
+#bar {
+  background: #1a1b26;
+  border-color: #bb9af7;
+}
+
+#input {
+  background: #24283b;
+  border-color: #bb9af7;
+}
+
+.item {
+  background: #1a1b26;
+}
+
+.top {
+  color: #9aa5ce;
+}
+
+.bottom {
+  color: #a9b1d6;
+}
+
+.history {
+  fill: #e0af68;
+}
+```
