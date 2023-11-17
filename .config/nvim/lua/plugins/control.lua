@@ -57,6 +57,7 @@ return {
             e = { "<cmd>Neorg export to-file <cr>", "export" },
             f = { "<cmd>Telescope neorg find_norg_files<cr>", "find" },
             h = { "<cmd>Telescope neorg search_headings<cr>", "headings" },
+            i = { "<cmd>Neorg index<cr>", "index" },
             l = { "<cmd>Telescope neorg insert_link<cr>", "link" },
             L = { "<cmd>Telescope neorg insert_file_link<cr>", "file link" },
             m = { "<cmd>Neorg inject-metadata<cr>", "meta" },
