@@ -56,7 +56,7 @@ function module.apply_to_config(config)
     saturation = 0.66,
     brightness = 0.54,
   }
-  config.font = wezterm.font("VictorMono Nerd Font")
+  config.font = wezterm.font("VictorMono NF")
   config.font_size = 19
   config.tab_bar_at_bottom = true
   config.tab_max_width = 96

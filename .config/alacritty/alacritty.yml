@@ -14,9 +14,9 @@ scrolling:
   history: 10000
 font:
   normal:
-    family: VictorMono Nerd Font
+    family: VictorMono NF
   bold:
-    family: VictorMono Nerd Font
+    family: VictorMono NF
   size: 20.0
 draw_bold_text_with_bright_colors: false
 custom_cursor_colors: true

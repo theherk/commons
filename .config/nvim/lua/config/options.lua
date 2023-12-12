@@ -52,7 +52,7 @@ vim.opt.foldlevelstart = 6
 vim.g.vim_markdown_folding_level = 2
 
 -- Neovide
-vim.o.guifont = "VictorMono Nerd Font:h18"
+vim.o.guifont = "VictorMono NF:h18"
 local alpha = function()
   return string.format("%x", math.floor(255 * vim.g.transparency))
 end
