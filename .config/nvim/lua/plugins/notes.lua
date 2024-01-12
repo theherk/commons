@@ -92,4 +92,25 @@ return {
       { "pysan3/neorg-templates", dependencies = { "L3MON4D3/LuaSnip" } },
     },
   },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "main",
+          path = "~/org/foam",
+        },
+        {
+          name = "onedrive",
+          path = os.getenv("FOAM_ONEDRIVE") or "~/Library/CloudStorage/OneDrive/foam",
+        },
+      },
+    },
+  },
 }
