@@ -3,7 +3,7 @@
   "editor.codeLensFontFamily": "VictorMono NF",
   "editor.fontFamily": "VictorMono NF, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.guides.indentation": false,
   "editor.minimap.enabled": false,
