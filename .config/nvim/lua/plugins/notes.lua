@@ -112,5 +112,6 @@ return {
         },
       },
     },
+    detect_cwd = true,
   },
 }
