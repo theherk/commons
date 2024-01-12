@@ -87,6 +87,7 @@ if status is-interactive
     abbr -a dumplynx --position anywhere --set-cursor "%| lynx -dump -stdin"
     abbr -a dumpw3m --position anywhere --set-cursor "%| w3m -dump -T text/html"
     abbr -a e --position command nvim
+    abbr -a e10 --position command ~/nvim-macos/bin/nvim
     abbr -a ef --position command emacsclient -c -n -e "(make-frame)"
     abbr -a es --position command brew services restart emacs-plus
     abbr -a er --position command unrar e
