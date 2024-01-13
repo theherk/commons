@@ -54,6 +54,13 @@ return {
           L = "which_key_ignore",
           n = {
             name = "+notes",
+            f = { "<cmd>ObsidianQuickSwitch<cr>", "find" },
+            j = {
+              name = "+journal",
+              m = { "<cmd>ObsidianTomorrow<cr>", "tomorrow" },
+              t = { "<cmd>ObsidianToday<cr>", "today" },
+              y = { "<cmd>ObsidianYesterday<cr>", "yesterday" },
+            },
             n = {
               name = "+neorg",
               e = { "<cmd>Neorg export to-file <cr>", "export" },
@@ -72,16 +79,10 @@ return {
                 y = { "<cmd>Neorg journal yesterday<cr>", "yesterday" },
               },
             },
-            o = {
-              name = "+obsidian",
-              f = { "<cmd>ObsidianQuickSwitch<cr>", "find" },
-              w = { "<cmd>ObsidianWorkspace ", "workspace" },
-              j = {
-                name = "+journal",
-                m = { "<cmd>ObsidianTomorrow<cr>", "tomorrow" },
-                t = { "<cmd>ObsidianToday<cr>", "today" },
-                y = { "<cmd>ObsidianYesterday<cr>", "yesterday" },
-              },
+            w = {
+              name = "+workspace",
+              m = { "<cmd>ObsidianWorkspace main<cr>", "main" },
+              o = { "<cmd>ObsidianWorkspace onedrive<cr>", "onedrive" },
             },
           },
           o = {
