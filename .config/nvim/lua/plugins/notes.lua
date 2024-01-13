@@ -11,7 +11,7 @@ return {
             workspaces = {
               main = "~/org/neorg",
               icloud = "~/Library/Mobile Documents/com~apple~CloudDocs/neorg",
-              onedrive = os.getenv("NEORG_ONEDRIVE") or "~/Library/CloudStorage/OneDrive/neorg",
+              onedrive = os.getenv("ONEDRIVE") .. "/neorg" or ".",
             },
             default_workspace = os.getenv("NEORG_DEFAULT_WORKSPACE") or "main",
           },
@@ -106,7 +106,7 @@ return {
         },
         {
           name = "onedrive",
-          path = os.getenv("FOAM_ONEDRIVE") or "~/Library/CloudStorage/OneDrive/foam",
+          path = os.getenv("ONEDRIVE") .. "/foam-onedrive" or ".",
         },
       },
     },
