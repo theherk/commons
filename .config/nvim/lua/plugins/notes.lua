@@ -99,6 +99,11 @@ return {
       "nvim-lua/plenary.nvim",
     },
     opts = {
+      daily_notes = {
+        folder = "journal",
+        alias_format = "%Y-%m-%d",
+      },
+      detect_cwd = true,
       workspaces = {
         {
           name = "main",
@@ -110,6 +115,5 @@ return {
         },
       },
     },
-    detect_cwd = true,
   },
 }
