@@ -4717,7 +4717,7 @@
     "editor.selectionHighlightBackground": "#3d375ecf"
   },
   "workbench.colorTheme": "Aura Dark (Soft Text)",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
