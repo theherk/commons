@@ -4731,5 +4731,10 @@
   "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
   "codeium.enableCodeLens": false,
   "workbench.activityBar.location": "hidden",
+  "aws.suppressPrompts": {
+    "codeWhispererConnectionExpired": true
+  },
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
   "editor.titleBar.enabled": false
 }
