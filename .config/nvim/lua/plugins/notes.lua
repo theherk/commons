@@ -100,10 +100,8 @@ return {
     },
     opts = {
       daily_notes = {
-        folder = "journal",
         alias_format = "%Y-%m-%d",
       },
-      detect_cwd = true,
       workspaces = {
         {
           name = "main",
