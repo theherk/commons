@@ -4712,7 +4712,6 @@
   ],
   "window.openFoldersInNewWindow": "off",
   "window.zoomLevel": 2,
-  "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
     "editor.selectionBackground": "#3d375ecf",
     "editor.selectionHighlightBackground": "#3d375ecf"
@@ -4730,5 +4729,7 @@
     "*": false
   },
   "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
-  "codeium.enableCodeLens": false
+  "codeium.enableCodeLens": false,
+  "workbench.activityBar.location": "hidden",
+  "editor.titleBar.enabled": false
 }
