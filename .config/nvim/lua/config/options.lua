@@ -6,7 +6,7 @@ vim.o.guicursor = vim.o.guicursor .. ",a:blinkon1"
 vim.opt.autowrite = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = "menu,menuone,noselect"
-vim.opt.conceallevel = 0
+vim.opt.conceallevel = 1
 vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.formatoptions = "jcroqlnt"
@@ -53,17 +53,13 @@ vim.g.vim_markdown_folding_level = 2
 
 -- Neovide
 vim.o.guifont = "VictorMono NF:h18"
-local alpha = function()
-  return string.format("%x", math.floor(255 * vim.g.transparency))
-end
+local alpha = function() return string.format("%x", math.floor(255 * vim.g.transparency)) end
 -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
 vim.g.neovide_transparency = 0.0
 vim.g.transparency = 0.94247
 vim.g.neovide_background_color = "#16161e" .. alpha()
 
-if vim.g.neovide then
-  vim.cmd("cd ~/Downloads/")
-end
+if vim.g.neovide then vim.cmd("cd ~/Downloads/") end
 -- vim.g.neovide_cursor_vfx_mode = "pixiedust"
 -- vim.g.neovide_cursor_vfx_particle_density = 23.0
 -- vim.g.neovide_cursor_vfx_particle_lifetime = 0.8
