@@ -9,9 +9,7 @@ return {
       "williamboman/mason-lspconfig.nvim",
       {
         "hrsh7th/cmp-nvim-lsp",
-        cond = function()
-          return require("config.util").has("nvim-cmp")
-        end,
+        cond = function() return require("config.util").has("nvim-cmp") end,
       },
     },
     ---@class PluginLspOpts
@@ -96,9 +94,7 @@ return {
       -- setup autoformat
       require("plugins.lsp.format").setup(opts)
       -- setup formatting and keymaps
-      Util.on_attach(function(client, buffer)
-        require("plugins.lsp.keymaps").on_attach(client, buffer)
-      end)
+      Util.on_attach(function(client, buffer) require("plugins.lsp.keymaps").on_attach(client, buffer) end)
 
       local register_capability = vim.lsp.handlers["client/registerCapability"]
 
@@ -120,22 +116,16 @@ return {
 
       local inlay_hint = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
 
-      if opts.inlay_hints.enabled and inlay_hint then
-        Util.on_attach(function(client, buffer)
-          if client.supports_method("textDocument/inlayHint") then
-            inlay_hint(buffer, true)
-          end
-        end)
-      end
+      if opts.inlay_hints.enabled and inlay_hint then Util.on_attach(function(client, buffer)
+        if client.supports_method("textDocument/inlayHint") then inlay_hint(buffer, true) end
+      end) end
 
       if type(opts.diagnostics.virtual_text) == "table" and opts.diagnostics.virtual_text.prefix == "icons" then
         opts.diagnostics.virtual_text.prefix = vim.fn.has("nvim-0.10.0") == 0 and "●"
           or function(diagnostic)
             local icons = require("config.icons").icons.diagnostics
             for d, icon in pairs(icons) do
-              if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
-                return icon
-              end
+              if diagnostic.severity == vim.diagnostic.severity[d:upper()] then return icon end
             end
           end
       end
@@ -152,13 +142,9 @@ return {
         }, servers[server] or {})
 
         if opts.setup[server] then
-          if opts.setup[server](server, server_opts) then
-            return
-          end
+          if opts.setup[server](server, server_opts) then return end
         elseif opts.setup["*"] then
-          if opts.setup["*"](server, server_opts) then
-            return
-          end
+          if opts.setup["*"](server, server_opts) then return end
         end
         require("lspconfig")[server].setup(server_opts)
       end
@@ -166,9 +152,7 @@ return {
       -- get all the servers that are available through mason-lspconfig
       local have_mason, mlsp = pcall(require, "mason-lspconfig")
       local all_mslp_servers = {}
-      if have_mason then
-        all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
-      end
+      if have_mason then all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package) end
 
       local ensure_installed = {} ---@type string[]
       for server, server_opts in pairs(servers) do
@@ -183,16 +167,12 @@ return {
         end
       end
 
-      if have_mason then
-        mlsp.setup({ ensure_installed = ensure_installed, handlers = { setup } })
-      end
+      if have_mason then mlsp.setup({ ensure_installed = ensure_installed, handlers = { setup } }) end
 
       if Util.lsp_get_config("denols") and Util.lsp_get_config("tsserver") then
         local is_deno = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")
         Util.lsp_disable("tsserver", is_deno)
-        Util.lsp_disable("denols", function(root_dir)
-          return not is_deno(root_dir)
-        end)
+        Util.lsp_disable("denols", function(root_dir) return not is_deno(root_dir) end)
       end
     end,
   },
