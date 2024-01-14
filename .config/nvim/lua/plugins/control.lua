@@ -54,14 +54,23 @@ return {
           L = "which_key_ignore",
           n = {
             name = "+notes",
+            b = { "<cmd>ObsidianBacklinks<cr>", "backlinks" },
             f = { "<cmd>ObsidianQuickSwitch<cr>", "find" },
+            i = { "<cmd>ObsidianPasteImg<cr>", "img" },
             j = {
               name = "+journal",
               m = { "<cmd>ObsidianTomorrow<cr>", "tomorrow" },
               t = { "<cmd>ObsidianToday<cr>", "today" },
               y = { "<cmd>ObsidianYesterday<cr>", "yesterday" },
             },
+            l = {
+              name = "+link",
+              l = { "<cmd>ObsidianLink<cr>", "link" },
+              n = { "<cmd>ObsidianLinkNew<cr>", "new" },
             },
+            n = { "<cmd>ObsidianNew<cr>", "new" },
+            r = { "<cmd>ObsidianRename<cr>", "rename" },
+            s = { "<cmd>ObsidianSearch<cr>", "search" },
             w = {
               name = "+workspace",
               m = { "<cmd>ObsidianWorkspace main<cr>", "main" },
