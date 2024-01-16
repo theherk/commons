@@ -104,6 +104,7 @@ return {
       daily_notes = {
         alias_format = "%Y-%m-%d",
       },
+      follow_url_func = function(url) vim.fn.jobstart({ "open", url }) end,
       note_id_func = function(title)
         -- Given "Note Name" will make ID `<timestamp>-note-name`.
         -- Filename is the same with `.md` suffix.
