@@ -12,4 +12,4 @@ select = "underline"
 hidden = false
 
 [keys.normal]
-"space" = { "space" = "file_picker", f = { f = "file_picker", s = ":w"}, x = ":x", q = ":q" }
+# "space" = { "space" = "file_picker", f = { f = "file_picker", s = ":w"}, x = ":x", q = ":q" }
