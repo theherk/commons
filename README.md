@@ -35,7 +35,7 @@ A partial list of installed tools:
 - [dropbox](https://formulae.brew.sh/cask/dropbox): Only for syncing org directory.
 - [dua](https://github.com/Byron/dua-cli): Disk usage analyzer cli with interactive option.
 - [editorconfig](https://editorconfig.org/): Enforce some text styles.
-- [exa](https://the.exa.website/): A modern replacement for ls.
+- [eza](https://eza.rocks/): A modern, maintained replacement for ls.
 - [fd](https://github.com/sharkdp/fd): Fast, user-friendly find.
 - [fzf](https://github.com/junegunn/fzf): Command-line fuzzy finder.
 - [firefox](https://www.mozilla.org/en-US/firefox/new/): Best web browser.

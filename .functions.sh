@@ -108,7 +108,7 @@ ssmpd() { # get ssm parameter value with decryption
 }
 
 t() { # tree with depth
-    exa -T -L $1
+    eza -T -L $1
 }
 
 util-connect() {

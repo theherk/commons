@@ -28,7 +28,7 @@ set -g -x VOLTA_HOME "$HOME/.volta"
 set -g -x XDG_CONFIG_HOME "$HOME/.config"
 
 set fzf_fd_opts --hidden --exclude=.git
-set fzf_preview_dir_cmd exa --all --color=always
+set fzf_preview_dir_cmd eza --all --color=always
 
 fish_add_path -pP /usr/local/bin
 fish_add_path -pP /usr/local/go/bin
@@ -99,10 +99,10 @@ if status is-interactive
     abbr -a gl --position command gproxy-auto.sh
     abbr -a gr --position command 'cd (git root)'
     abbr -a ipy --position command python -c '"import IPython; IPython.terminal.ipapp.launch_new_instance()"'
-    abbr -a l --position command exa -l --icons
-    abbr -a ll --position command exa -alF --icons --git --time-style long-iso
-    abbr -a ls --position command exa
-    abbr -a lt --position command exa -T --icons
+    abbr -a l --position command eza -l --icons
+    abbr -a ll --position command eza -alF --icons --git --time-style long-iso
+    abbr -a ls --position command eza
+    abbr -a lt --position command eza -T --icons
     abbr -a lzd --position command lazydocker
     abbr -a lzg --position command lazygit
     abbr -a norcal --position command ncal -s NO -w
@@ -149,10 +149,10 @@ if status is-interactive
         set CLI ~/.aws/cli/cache
         set SSO ~/.aws/sso/cache
         aws sts get-caller-identity
-        aws configure set aws_access_key_id (bat $CLI/(exa -U $CLI | tail -1) | jq -r .Credentials.AccessKeyId) &&
-            aws configure set aws_secret_access_key (bat $CLI/(exa -U $CLI | tail -1) | jq -r .Credentials.SecretAccessKey) &&
-            aws configure set aws_session_token (bat $CLI/(exa -U $CLI | tail -1) | jq -r .Credentials.SessionToken) &&
-            aws configure set region (bat $SSO/(exa -U $SSO | tail -2 | head -1) | jq -r .region)
+        aws configure set aws_access_key_id (bat $CLI/(eza -U $CLI | tail -1) | jq -r .Credentials.AccessKeyId) &&
+            aws configure set aws_secret_access_key (bat $CLI/(eza -U $CLI | tail -1) | jq -r .Credentials.SecretAccessKey) &&
+            aws configure set aws_session_token (bat $CLI/(eza -U $CLI | tail -1) | jq -r .Credentials.SessionToken) &&
+            aws configure set region (bat $SSO/(eza -U $SSO | tail -2 | head -1) | jq -r .region)
     end
 
     function fester-deployments # List fester deployments in configuration.
@@ -210,9 +210,9 @@ if status is-interactive
     function t # tree with depth
         argparse --name tree --min-args 0 --max-args 1 -- $argv
         if test (count $argv) -lt 1
-            exa -T
+            eza -T
         else
-            exa -T -L $argv
+            eza -T -L $argv
         end
     end
 

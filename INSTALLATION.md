@@ -63,7 +63,7 @@ brew install \
     dua-cli \
     dust \
     editorconfig \
-    exa \
+    eza \
     fd \
     fish \
     fzf \
