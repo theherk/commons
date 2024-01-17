@@ -9,7 +9,7 @@
 obfuscate() {
 	echo "obfuscating"
 	sed -i '' 's/\(doom\/set-frame-opacity \).*)/\1100)/' .config/doom/config.org
-	sed -i '' 's/\(theme = "base16\)_transparent"/\1_terminal"/' .config/helix/config.toml
+	sed -i '' 's/\(theme = "\).*"/\1tokyonight"/' .config/helix/config.toml # Defaults to dark.
 	# sed -i '' 's/\(transparent = \)true/\1false/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(sidebars = \)"transparent"/\1"normal"/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(floats = \)"transparent"/\1"normal"/' .config/nvim/lua/plugins/display.lua
@@ -19,7 +19,7 @@ obfuscate() {
 clarify() {
 	echo "clarifying"
 	sed -i '' 's/\(doom\/set-frame-opacity \).*)/\194)/' .config/doom/config.org
-	sed -i '' 's/\(theme = "base16\)_terminal"/\1_transparent"/' .config/helix/config.toml
+	sed -i '' 's/\(theme = "\).*"/\1base16_transparent"/' .config/helix/config.toml
 	# sed -i '' 's/\(transparent = \)false/\1true/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(sidebars = \)"normal"/\1"transparent"/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(floats = \)"normal"/\1"transparent"/' .config/nvim/lua/plugins/display.lua
