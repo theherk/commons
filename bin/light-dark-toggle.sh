@@ -6,6 +6,7 @@
 # - doom
 # - git (just light bool)
 # - gitui
+# - helix
 # - lazygit (maybe)
 # - nvim
 # - obsidian (changes with system)
@@ -23,11 +24,14 @@ CODIUM_ICON_LIGHT=catppuccin-latte
 DOOM_DARK=h4s-tokyo-night
 DOOM_LIGHT=doom-one-light
 
+HELIX_DARK=tokyonight
+HELIX_LIGHT=catppuccin_latte
+
 NVIM_DARK=night
 NVIM_LIGHT=day
 
 WEZTERM_DARK=tokyonight_night
-WEZTERM_LIGHT=tokyonight_day
+WEZTERM_LIGHT="Catppuccin Latte"
 
 darken() {
 	echo "darkening"
@@ -40,6 +44,7 @@ darken() {
 	sed -i '' 's/\(selection_bg: \).*,/\1Some(Rgb(11, 41, 66)),/' .config/gitui/theme.ron
 	sed -i '' 's/\(cmdbar_bg: \).*,/\1Some(Rgb(11, 41, 66)),/' .config/gitui/theme.ron
 	sed -i '' 's/\(cmdbar_extra_lines_bg: \).*,/\1Some(Rgb(11, 41, 66)),/' .config/gitui/theme.ron
+	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_DARK'"/' .config/helix/config.toml
 	sed -i '' 's/\(style = \)".*"/\1"'$NVIM_DARK'"/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'$WEZTERM_DARK'"/' .config/wezterm/theme.lua
 }
@@ -55,8 +60,9 @@ lighten() {
 	sed -i '' 's/\(selection_bg: \).*,/\1Some(LightBlue),/' .config/gitui/theme.ron
 	sed -i '' 's/\(cmdbar_bg: \).*,/\1Some(LightBlue),/' .config/gitui/theme.ron
 	sed -i '' 's/\(cmdbar_extra_lines_bg: \).*,/\1Some(LightBlue),/' .config/gitui/theme.ron
+	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_LIGHT'"/' .config/helix/config.toml
 	sed -i '' 's/\(style = \)".*"/\1"'$NVIM_LIGHT'"/' .config/nvim/lua/plugins/display.lua
-	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'$WEZTERM_LIGHT'"/' .config/wezterm/theme.lua
+	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_LIGHT"'"/' .config/wezterm/theme.lua
 }
 
 cd ~/commons || return
