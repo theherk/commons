@@ -4,6 +4,7 @@ vim.g.maplocalleader = ","
 vim.o.guicursor = vim.o.guicursor .. ",a:blinkon1"
 
 vim.opt.autowrite = true
+vim.opt.background = "dark"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.conceallevel = 1
