@@ -6,7 +6,6 @@ local colors = {}
 local selected_scheme = "tokyonight_night"
 local scheme = wezterm.get_builtin_color_schemes()[selected_scheme]
 
-colors.active_bg = scheme.selection_bg
 colors.active_fg = scheme.ansi[6]
 colors.bg = scheme.background
 colors.hl_1 = scheme.ansi[5]
@@ -20,13 +19,12 @@ else
   colors.inactive_fg = bg:complement_ryb():lighten(0.3)
   colors.panel_bg = bg:lighten(0.069)
 end
+colors.active_bg = scheme.selection_bg or colors.panel_bg
 
 scheme.tab_bar = {
-  -- background = colors.bg,
-  background = "none",
+  background = "none", -- tab_bar
   new_tab = {
-    -- bg_color = colors.bg,
-    bg_color = "none",
+    bg_color = "none", -- new_tab
     fg_color = colors.hl_2,
   },
   active_tab = {
