@@ -11,10 +11,8 @@ gui:
   nerdFontsVersion: "3"
   showBottomLine: true
   theme:
-    selectedLineBgColor:
-      - '#24283b'
-    selectedRangeBgColor:
-      - '#24283b'
+    selectedLineBgColor: ["#24283b"]
+    selectedRangeBgColor: ["#24283b"]
 git:
   paging:
     colorArg: always
