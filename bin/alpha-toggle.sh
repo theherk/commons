@@ -14,6 +14,8 @@ obfuscate() {
 	# sed -i '' 's/\(sidebars = \)"transparent"/\1"normal"/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(floats = \)"transparent"/\1"normal"/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(config.window_background_opacity = \).*/\11.0/' .config/wezterm/theme.lua
+	sed -i '' 's/\(background = \).*\(, -- tab_bar\)/\1colors.bg\2/' .config/wezterm/theme.lua
+	sed -i '' 's/\(bg_color = \).*\(, -- new_tab\)/\1colors.bg\2/' .config/wezterm/theme.lua
 }
 
 clarify() {
@@ -24,6 +26,8 @@ clarify() {
 	# sed -i '' 's/\(sidebars = \)"normal"/\1"transparent"/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(floats = \)"normal"/\1"transparent"/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(config.window_background_opacity = \).*/\10.94247/' .config/wezterm/theme.lua
+	sed -i '' 's/\(background = \).*\(, -- tab_bar\)/\1"none"\2/' .config/wezterm/theme.lua
+	sed -i '' 's/\(bg_color = \).*\(, -- new_tab\)/\1"none"\2/' .config/wezterm/theme.lua
 }
 
 cd ~/commons || return
