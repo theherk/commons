@@ -30,13 +30,13 @@ HELIX_LIGHT=catppuccin_latte
 LAZYGIT_BG_DARK=#24283b
 LAZYGIT_BG_LIGHT=#acb0be
 
-NVIM_COLORSCHEME_DARK="oxocarbon"
-NVIM_COLORSCHEME_LIGHT="oxocarbon"
+NVIM_COLORSCHEME_DARK="tokyonight"
+NVIM_COLORSCHEME_LIGHT="tokyonight"
 
 NVIM_VARIANT_DARK=night
 NVIM_VARIANT_LIGHT=day
 
-WEZTERM_DARK="Oxocarbon Dark (Gogh)"
+WEZTERM_DARK="Tokyo Night"
 WEZTERM_LIGHT="Catppuccin Latte (Gogh)"
 
 darken() {
