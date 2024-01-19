@@ -152,10 +152,7 @@ return {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
-    config = function(_, opts)
-      require("tokyonight").setup(opts)
-      vim.cmd([[colorscheme tokyonight]])
-    end,
+    config = function(_, opts) require("tokyonight").setup(opts) end,
     opts = {
       transparent = true,
       style = "night",
@@ -270,11 +267,11 @@ return {
           "notify",
           "toggleterm",
           "lazyterm",
-        }
+        },
       },
       indent = {
         char = "│",
-      }
+      },
     },
   },
   { "MunifTanjim/nui.nvim", lazy = true },
@@ -299,7 +296,7 @@ return {
               "mode",
               separator = { left = "" },
               right_padding = 2,
-            }
+            },
           },
           lualine_b = { "branch" },
           lualine_c = {

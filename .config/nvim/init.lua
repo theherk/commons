@@ -22,3 +22,5 @@ require("lazy").setup({
 
 require("config.autocmds")
 require("config.control")
+
+vim.cmd.colorscheme("tokyonight")
