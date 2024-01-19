@@ -149,6 +149,11 @@ return {
     config = true,
   },
   {
+    "nyoom-engineering/oxocarbon.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
