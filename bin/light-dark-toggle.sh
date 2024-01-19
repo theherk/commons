@@ -34,7 +34,7 @@ NVIM_DARK=night
 NVIM_LIGHT=day
 
 WEZTERM_DARK=tokyonight_night
-WEZTERM_LIGHT="Catppuccin Latte"
+WEZTERM_LIGHT="Catppuccin Latte (Gogh)"
 
 darken() {
 	echo "darkening"
