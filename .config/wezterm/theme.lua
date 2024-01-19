@@ -22,9 +22,9 @@ end
 colors.active_bg = scheme.selection_bg or colors.panel_bg
 
 scheme.tab_bar = {
-  background = "none", -- tab_bar
+  background = colors.bg, -- tab_bar
   new_tab = {
-    bg_color = "none", -- new_tab
+    bg_color = colors.bg, -- new_tab
     fg_color = colors.hl_2,
   },
   active_tab = {
