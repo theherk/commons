@@ -33,7 +33,7 @@ LAZYGIT_BG_LIGHT=#acb0be
 NVIM_DARK=night
 NVIM_LIGHT=day
 
-WEZTERM_DARK=tokyonight_night
+WEZTERM_DARK="Oxocarbon Dark (Gogh)"
 WEZTERM_LIGHT="Catppuccin Latte (Gogh)"
 
 darken() {
@@ -50,7 +50,7 @@ darken() {
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_DARK'"/' .config/helix/config.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_DARK'"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(style = \)".*"/\1"'$NVIM_DARK'"/' .config/nvim/lua/plugins/display.lua
-	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'$WEZTERM_DARK'"/' .config/wezterm/theme.lua
+	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_DARK"'"/' .config/wezterm/theme.lua
 }
 
 lighten() {
