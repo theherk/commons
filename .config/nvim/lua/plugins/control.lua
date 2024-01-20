@@ -7,6 +7,15 @@ return {
     config = function(_, opts)
       local wk = require("which-key")
       wk.register({
+        c = {
+          name = "+code",
+          t = { ":!pandoc -t markdown-simple_tables<cr>", "fmt table" },
+        },
+      }, {
+        mode = "v",
+        prefix = "<leader>",
+      })
+      wk.register({
         ["<leader>"] = {
           ["<leader>"] = { "<cmd>Telescope git_files<cr>", "files (git)" },
           ["<tab>"] = {
