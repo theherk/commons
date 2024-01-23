@@ -8,9 +8,7 @@ return {
     event = "VeryLazy",
     opts = {
       options = {
-        custom_commentstring = function()
-          return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring
-        end,
+        custom_commentstring = function() return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring end,
       },
     },
   },
@@ -34,19 +32,17 @@ return {
         { opts.mappings.replace, desc = "Replace surrounding" },
         { opts.mappings.update_n_lines, desc = "Update `MiniSurround.config.n_lines`" },
       }
-      mappings = vim.tbl_filter(function(m)
-        return m[1] and #m[1] > 0
-      end, mappings)
+      mappings = vim.tbl_filter(function(m) return m[1] and #m[1] > 0 end, mappings)
       return vim.list_extend(mappings, keys)
     end,
     opts = {
       mappings = {
-        add = "gza",            -- Add surrounding in Normal and Visual modes
-        delete = "gzd",         -- Delete surrounding
-        find = "gzf",           -- Find surrounding (to the right)
-        find_left = "gzF",      -- Find surrounding (to the left)
-        highlight = "gzh",      -- Highlight surrounding
-        replace = "gzr",        -- Replace surrounding
+        add = "gza", -- Add surrounding in Normal and Visual modes
+        delete = "gzd", -- Delete surrounding
+        find = "gzf", -- Find surrounding (to the right)
+        find_left = "gzF", -- Find surrounding (to the left)
+        highlight = "gzh", -- Highlight surrounding
+        replace = "gzr", -- Replace surrounding
         update_n_lines = "gzn", -- Update `n_lines`
       },
     },
@@ -125,9 +121,7 @@ return {
           completeopt = "menu,menuone,noinsert",
         },
         snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
+          expand = function(args) require("luasnip").lsp_expand(args.body) end,
         },
         mapping = cmp.mapping.preset.insert({
           ["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -151,9 +145,7 @@ return {
         formatting = {
           format = function(_, item)
             local icons = require("config.icons").icons.kinds
-            if icons[item.kind] then
-              item.kind = icons[item.kind] .. item.kind
-            end
+            if icons[item.kind] then item.kind = icons[item.kind] .. item.kind end
             return item
           end,
         },
@@ -211,9 +203,7 @@ return {
       },
       pickers = {
         live_grep = {
-          additional_args = function(_)
-            return { "--hidden", "--glob=!.git/" }
-          end,
+          additional_args = function(_) return { "--hidden", "--glob=!.git/" } end,
         },
       },
     },
@@ -269,9 +259,7 @@ return {
         ---@type table<string, boolean>
         local added = {}
         opts.ensure_installed = vim.tbl_filter(function(lang)
-          if added[lang] then
-            return false
-          end
+          if added[lang] then return false end
           added[lang] = true
           return true
         end, opts.ensure_installed)
