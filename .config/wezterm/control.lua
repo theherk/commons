@@ -5,16 +5,12 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local module = {}
 
-if wezterm.GLOBAL.prev_workspace == nil then
-  wezterm.GLOBAL.prev_workspace = "default"
-end
+if wezterm.GLOBAL.prev_workspace == nil then wezterm.GLOBAL.prev_workspace = "default" end
 
 wezterm.on("switch-workspace-default", function(window, pane)
   local cur = wezterm.mux.get_active_workspace()
   window:perform_action(act.SwitchToWorkspace({ name = "default" }), pane)
-  if cur ~= "default" then
-    wezterm.GLOBAL.prev_workspace = cur
-  end
+  if cur ~= "default" then wezterm.GLOBAL.prev_workspace = cur end
   wezterm.log_info("prev_workspace: " .. wezterm.GLOBAL.prev_workspace)
 end)
 
@@ -65,10 +61,10 @@ end)
 local copy_mode = nil
 if wezterm.gui then
   copy_mode = wezterm.gui.default_key_tables().copy_mode
-  table.insert(copy_mode, { key = "j", mods = "SUPER", action = act.CopyMode { MoveByPage = 0.5 } })
-  table.insert(copy_mode, { key = "k", mods = "SUPER", action = act.CopyMode { MoveByPage = -0.5 } })
-  table.insert(copy_mode, { key = "J", mods = "SUPER", action = act.CopyMode { MoveByPage = 1 } })
-  table.insert(copy_mode, { key = "K", mods = "SUPER", action = act.CopyMode { MoveByPage = -1 } })
+  table.insert(copy_mode, { key = "j", mods = "SUPER", action = act.CopyMode({ MoveByPage = 0.5 }) })
+  table.insert(copy_mode, { key = "k", mods = "SUPER", action = act.CopyMode({ MoveByPage = -0.5 }) })
+  table.insert(copy_mode, { key = "J", mods = "SUPER", action = act.CopyMode({ MoveByPage = 1 }) })
+  table.insert(copy_mode, { key = "K", mods = "SUPER", action = act.CopyMode({ MoveByPage = -1 }) })
 end
 
 local key_tables = {
@@ -102,14 +98,12 @@ local keys = {
         { Text = "New workspace name:" },
       }),
       action = wezterm.action_callback(function(window, pane, line)
-        if line then
-          window:perform_action(
-            act.SwitchToWorkspace({
-              name = line,
-            }),
-            pane
-          )
-        end
+        if line then window:perform_action(
+          act.SwitchToWorkspace({
+            name = line,
+          }),
+          pane
+        ) end
       end),
     }),
   },
