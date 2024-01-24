@@ -1,5 +1,5 @@
-local wezterm = require "wezterm"
-local theme = require "theme"
+local wezterm = require("wezterm")
+local theme = require("theme")
 
 local module = {}
 
@@ -70,12 +70,10 @@ function module.update_right_status(window, pane)
   local tab = pane:tab()
   if tab == nil then return end
   for _, p in ipairs(tab:panes_with_info()) do
-    wezterm.log_info("zoomed: " .. tostring(p.is_zoomed))
-    if p.is_zoomed then
-      module.tconcat(text, {
-        { Text = " 🔍" },
-      })
-    end
+    -- wezterm.log_info("zoomed: " .. tostring(p.is_zoomed))
+    if p.is_zoomed then module.tconcat(text, {
+      { Text = " 🔍" },
+    }) end
   end
   module.tconcat(text, {
     { Text = " " },
@@ -89,7 +87,7 @@ function module.user_var_changed(window, pane, name, value)
     local incremental = value:find("+")
     local number_value = tonumber(value)
     if incremental ~= nil then
-      while (number_value > 0) do
+      while number_value > 0 do
         window:perform_action(wezterm.action.IncreaseFontSize, pane)
         number_value = number_value - 1
       end
