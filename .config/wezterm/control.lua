@@ -156,7 +156,8 @@ local keys = {
 
   -- Launch
   { key = "e", mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab({ args = { "nvim" }, label = "nvim" }) },
-  { key = "g", mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab({ args = { "lazygit" }, label = "lazygit" }) },
+  { key = "f", mods = "LEADER", action = util.launch({ "xplr" }) },
+  { key = "g", mods = "LEADER", action = util.launch({ "lazygit" }) },
   { key = "n", mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab({ args = { "nvim" }, label = "nvim" }) },
 }
 
