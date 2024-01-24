@@ -51,6 +51,13 @@ function module.format_tab_title(tab, tabs, panes, config, hover, max_width)
   return label
 end
 
+function module.launch(args)
+  return wezterm.action_callback(function(window, _)
+    local tab, pane, _ = window:mux_window():spawn_tab({
+      args = { os.getenv("SHELL"), "-c", table.unpack(args) },
+    })
+    tab:set_title(args[1])
+  end)
 end
 
 function module.tconcat(t1, t2)
