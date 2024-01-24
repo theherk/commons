@@ -19,36 +19,38 @@ function module.file_lines(file)
 end
 
 function module.format_tab_title(tab, tabs, panes, config, hover, max_width)
-  local title = {
+  local label = {
     { Foreground = { Color = theme.colors.hl_1 } },
     { Text = " " .. tab.tab_index + 1 },
     { Foreground = { Color = theme.colors.hl_2 } },
     { Text = ": " },
   }
   local pane = tab.active_pane
-  if pane.is_zoomed then
-    module.tconcat(title, {
-      { Text = "🔍 " },
-    })
-  end
+  if pane.is_zoomed then module.tconcat(label, {
+    { Text = "🔍 " },
+  }) end
+  local title = tab.active_pane.title
+  if tab.tab_title ~= "" then title = tab.tab_title end
   if tab.is_active then
-    module.tconcat(title, {
+    module.tconcat(label, {
       { Foreground = { Color = theme.colors.active_fg } },
-      { Text = tab.active_pane.title .. " " },
+      { Text = title .. " " },
     })
   else
-    module.tconcat(title, {
+    module.tconcat(label, {
       { Foreground = { Color = theme.colors.inactive_fg } },
-      { Text = tab.active_pane.title .. " " },
+      { Text = title .. " " },
     })
   end
-  module.tconcat(title, {
+  module.tconcat(label, {
     -- { Background = { Color=C_BG } },
     { Background = { Color = "none" } },
     { Foreground = { Color = theme.colors.hl_1 } },
     { Text = "|" },
   })
-  return title
+  return label
+end
+
 end
 
 function module.tconcat(t1, t2)
