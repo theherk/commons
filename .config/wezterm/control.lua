@@ -153,6 +153,11 @@ local keys = {
   { key = "k", mods = "SUPER", action = act.ScrollByPage(-0.5) },
   { key = "J", mods = "SUPER", action = act.ScrollByPage(1) },
   { key = "K", mods = "SUPER", action = act.ScrollByPage(-1) },
+
+  -- Launch
+  { key = "e", mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab({ args = { "nvim" }, label = "nvim" }) },
+  { key = "g", mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab({ args = { "lazygit" }, label = "lazygit" }) },
+  { key = "n", mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab({ args = { "nvim" }, label = "nvim" }) },
 }
 
 function module.apply_to_config(config)

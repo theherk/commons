@@ -11,8 +11,17 @@ wezterm.on("update-right-status", util.update_right_status)
 
 wezterm.on("user-var-changed", util.user_var_changed)
 
+local paths = {
+  "/opt/homebrew/bin",
+  os.getenv("PATH"),
+}
+
 config = {
   check_for_updates = false,
+  set_environment_variables = {
+    LG_CONFIG_FILE = wezterm.home_dir .. "/.config/lazygit/config.yml",
+    PATH = table.concat(paths, ":"),
+  },
 }
 
 control.apply_to_config(config)
