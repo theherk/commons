@@ -155,10 +155,9 @@ local keys = {
   { key = "K", mods = "SUPER", action = act.ScrollByPage(-1) },
 
   -- Launch
-  { key = "e", mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab({ args = { "nvim" }, label = "nvim" }) },
+  { key = "e", mods = "LEADER", action = util.launch({ "editor" }) },
   { key = "f", mods = "LEADER", action = util.launch({ "xplr" }) },
   { key = "g", mods = "LEADER", action = util.launch({ "lazygit" }) },
-  { key = "n", mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab({ args = { "nvim" }, label = "nvim" }) },
 }
 
 function module.apply_to_config(config)

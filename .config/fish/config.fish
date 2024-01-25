@@ -17,7 +17,11 @@ else if test -e /usr/local/Homebrew/bin/brew
     eval (/usr/local/Homebrew/bin/brew shellenv)
 end
 
-set -U -x EDITOR nvim
+set -U -x EDITOR editor
+if test (git root 2> /dev/null)
+    set -U -x EDITOR "nvim --server "(git root)"/_neovim --remote"
+else
+end
 set -U -x CARGO_HOME $HOME/.cargo
 set -U -x VENVS $HOME/.venvs
 set -U -x P $HOME/projects
@@ -87,7 +91,7 @@ if status is-interactive
     abbr -a clock --position command rsclock -c
     abbr -a dumplynx --position anywhere --set-cursor "%| lynx -dump -stdin"
     abbr -a dumpw3m --position anywhere --set-cursor "%| w3m -dump -T text/html"
-    abbr -a e --position command nvim
+    abbr -a e --position command editor
     abbr -a e10 --position command ~/nvim-macos/bin/nvim
     abbr -a ef --position command emacsclient -c -n -e "(make-frame)"
     abbr -a es --position command brew services restart emacs-plus

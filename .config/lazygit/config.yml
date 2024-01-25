@@ -19,7 +19,7 @@ git:
     pager: delta --paging=never
   parseEmoji: true
 os:
-  edit: 'nvim {{filename}}'
+  edit: '$EDITOR {{filename}}'
   editAtLine: 'nvim +{{line}} {{filename}}'
   editAtLineAndWait: 'nvim --remote-wait +{{line}} {{filename}}'
   editInTerminal: true
