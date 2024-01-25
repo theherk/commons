@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+if [ $(git root 2>/dev/null) ]; then
+	if [ -e "$(git root)/_neovim" ]; then
+		nvim --server "$(git root)/_neovim" --remote "$@"
+	else
+		nvim --listen "$(git root)/_neovim" "$@"
+	fi
+else
+	nvim $@
+fi
