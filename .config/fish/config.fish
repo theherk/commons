@@ -29,6 +29,7 @@ set -g -x XDG_CONFIG_HOME "$HOME/.config"
 
 set fzf_fd_opts --hidden --exclude=.git
 set fzf_preview_dir_cmd eza --all --color=always
+set --export fzf_dir_opts --bind "ctrl-e:execute(editor {} &> /dev/tty)"
 
 fish_add_path -pP /usr/local/bin
 fish_add_path -pP /usr/local/go/bin
