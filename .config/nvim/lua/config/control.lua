@@ -46,9 +46,7 @@ vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and 
 local diagnostic_goto = function(next, severity)
   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
   severity = severity and vim.diagnostic.severity[severity] or nil
-  return function()
-    go({ severity = severity })
-  end
+  return function() go({ severity = severity }) end
 end
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 vim.keymap.set("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
@@ -57,14 +55,6 @@ vim.keymap.set("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" 
 vim.keymap.set("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 vim.keymap.set("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 vim.keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
-
--- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
-vim.keymap.set("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-vim.keymap.set("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-vim.keymap.set("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-vim.keymap.set("n", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
-vim.keymap.set("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
-vim.keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
 -- Save the weird way.
 vim.keymap.set({ "i", "x", "n", "s" }, "<c-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
@@ -75,34 +65,3 @@ vim.keymap.set("v", ">", ">gv")
 
 -- EasyAlign
 vim.keymap.set("v", "ga", "<Plug>(EasyAlign)")
-
--- Harpoon
-vim.keymap.set({ "i", "n" }, "]f", require("harpoon.ui").nav_next, { desc = "harpoon next file" })
-vim.keymap.set({ "i", "n" }, "[f", require("harpoon.ui").nav_prev, { desc = "harpoon prev file" })
-vim.keymap.set({ "i", "n" }, "<c-,>", require("harpoon.ui").toggle_quick_menu, { desc = "harpoon marks" })
-vim.keymap.set({ "i", "n" }, "<c-1>", function() require("harpoon.ui").nav_file(1) end, { desc = "harpoon file 1" })
-vim.keymap.set({ "i", "n" }, "<c-2>", function() require("harpoon.ui").nav_file(2) end, { desc = "harpoon file 2" })
-vim.keymap.set({ "i", "n" }, "<c-3>", function() require("harpoon.ui").nav_file(3) end, { desc = "harpoon file 3" })
-vim.keymap.set({ "i", "n" }, "<c-4>", function() require("harpoon.ui").nav_file(4) end, { desc = "harpoon file 4" })
-vim.keymap.set({ "i", "n" }, "<c-5>", function() require("harpoon.ui").nav_file(5) end, { desc = "harpoon file 5" })
-vim.keymap.set({ "i", "n" }, "<c-6>", function() require("harpoon.ui").nav_file(6) end, { desc = "harpoon file 6" })
-vim.keymap.set({ "i", "n" }, "<c-7>", function() require("harpoon.ui").nav_file(7) end, { desc = "harpoon file 7" })
-vim.keymap.set({ "i", "n" }, "<c-8>", function() require("harpoon.ui").nav_file(8) end, { desc = "harpoon file 8" })
-vim.keymap.set({ "i", "n" }, "<c-9>", function() require("harpoon.ui").nav_file(9) end, { desc = "harpoon file 9" })
-
--- Trouble jumps.
-if not Util.has("trouble.nvim") then
-  vim.keymap.set("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })
-  vim.keymap.set("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
-end
-
--- Terminal Mappings
-vim.keymap.set("n", "<c-\\>", Util.lazyterm, { desc = "Terminal (root dir)" })
-vim.keymap.set("n", "<c-/>", Util.lazyterm, { desc = "Terminal (root dir)" })
-vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
-vim.keymap.set("t", "<c-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
-vim.keymap.set("t", "<c-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
-vim.keymap.set("t", "<c-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
-vim.keymap.set("t", "<c-l>", "<cmd>wincmd l<cr>", { desc = "Go to right window" })
-vim.keymap.set("t", "<c-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
-vim.keymap.set("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
