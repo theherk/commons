@@ -22,6 +22,9 @@ return {
       { "<leader>e", function() require("mini.files").open() end, desc = "toggle files" },
     },
     opts = {
+      mappings = {
+        go_in_plus = "<cr>",
+      },
       windows = {
         width_focus = 28,
         width_nofocus = 16,
