@@ -62,7 +62,6 @@ return {
   -- Set up nvim-jdtls to attach to java files.
   {
     "mfussenegger/nvim-jdtls",
-    dependencies = { "folke/which-key.nvim" },
     ft = java_filetypes,
     opts = function()
       return {
@@ -71,17 +70,11 @@ return {
         root_dir = require("lspconfig.server_configurations.jdtls").default_config.root_dir,
 
         -- How to find the project name for a given root dir.
-        project_name = function(root_dir)
-          return root_dir and vim.fs.basename(root_dir)
-        end,
+        project_name = function(root_dir) return root_dir and vim.fs.basename(root_dir) end,
 
         -- Where are the config and workspace dirs for a project?
-        jdtls_config_dir = function(project_name)
-          return vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/config"
-        end,
-        jdtls_workspace_dir = function(project_name)
-          return vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/workspace"
-        end,
+        jdtls_config_dir = function(project_name) return vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/config" end,
+        jdtls_workspace_dir = function(project_name) return vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/workspace" end,
 
         -- How to run jdtls. This can be overridden to a full java command-line
         -- if the Python wrapper script doesn't suffice.
@@ -91,14 +84,12 @@ return {
           local root_dir = opts.root_dir(fname)
           local project_name = opts.project_name(root_dir)
           local cmd = vim.deepcopy(opts.cmd)
-          if project_name then
-            vim.list_extend(cmd, {
-              "-configuration",
-              opts.jdtls_config_dir(project_name),
-              "-data",
-              opts.jdtls_workspace_dir(project_name),
-            })
-          end
+          if project_name then vim.list_extend(cmd, {
+            "-configuration",
+            opts.jdtls_config_dir(project_name),
+            "-data",
+            opts.jdtls_workspace_dir(project_name),
+          }) end
           return cmd
         end,
 
@@ -169,53 +160,14 @@ return {
         callback = function(args)
           local client = vim.lsp.get_client_by_id(args.data.client_id)
           if client and client.name == "jdtls" then
-            local wk = require("which-key")
-            wk.register({
-              ["<leader>cx"] = { name = "+extract" },
-              ["<leader>cxv"] = { require("jdtls").extract_variable_all, "Extract Variable" },
-              ["<leader>cxc"] = { require("jdtls").extract_constant, "Extract Constant" },
-              ["gs"] = { require("jdtls").super_implementation, "Goto Super" },
-              ["gS"] = { require("jdtls.tests").goto_subjects, "Goto Subjects" },
-              ["<leader>co"] = { require("jdtls").organize_imports, "Organize Imports" },
-            }, { mode = "n", buffer = args.buf })
-            wk.register({
-              ["<leader>c"] = { name = "+code" },
-              ["<leader>cx"] = { name = "+extract" },
-              ["<leader>cxm"] = {
-                [[<esc><cmd>lua require('jdtls').extract_method(true)<cr>]],
-                "Extract Method",
-              },
-              ["<leader>cxv"] = {
-                [[<esc><cmd>lua require('jdtls').extract_variable_all(true)<cr>]],
-                "Extract Variable",
-              },
-              ["<leader>cxc"] = {
-                [[<esc><cmd>lua require('jdtls').extract_constant(true)<cr>]],
-                "Extract Constant",
-              },
-            }, { mode = "v", buffer = args.buf })
-
             if opts.dap and Util.has("nvim-dap") and mason_registry.is_installed("java-debug-adapter") then
               -- custom init for Java debugger
               require("jdtls").setup_dap(opts.dap)
               require("jdtls.dap").setup_dap_main_class_configs()
-
-              -- Java Test require Java debugger to work
-              if opts.test and mason_registry.is_installed("java-test") then
-                -- custom keymaps for Java test runner (not yet compatible with neotest)
-                wk.register({
-                  ["<leader>t"] = { name = "+test" },
-                  ["<leader>ta"] = { require("jdtls.dap").test_class, "all" },
-                  ["<leader>tn"] = { require("jdtls.dap").test_nearest_method, "nearest" },
-                  ["<leader>tT"] = { require("jdtls.dap").pick_test, "one" },
-                }, { mode = "n", buffer = args.buf })
-              end
             end
 
             -- User can set additional keymaps in opts.on_attach
-            if opts.on_attach then
-              opts.on_attach(args)
-            end
+            if opts.on_attach then opts.on_attach(args) end
           end
         end,
       })
