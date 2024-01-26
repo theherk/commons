@@ -16,8 +16,7 @@ return {
         always_show_bufferline = false,
         diagnostics_indicator = function(_, _, diag)
           local icons = require("config.icons").icons.diagnostics
-          local ret = (diag.error and icons.Error .. diag.error .. " " or "")
-              .. (diag.warning and icons.Warn .. diag.warning or "")
+          local ret = (diag.error and icons.Error .. diag.error .. " " or "") .. (diag.warning and icons.Warn .. diag.warning or "")
           return vim.trim(ret)
         end,
         offsets = {
@@ -55,9 +54,7 @@ return {
           "toggleterm",
           "lazyterm",
         },
-        callback = function()
-          vim.b.miniindentscope_disable = true
-        end,
+        callback = function() vim.b.miniindentscope_disable = true end,
       })
     end,
   },
@@ -231,9 +228,7 @@ return {
         vim.cmd.close()
         vim.api.nvim_create_autocmd("User", {
           pattern = "AlphaReady",
-          callback = function()
-            require("lazy").show()
-          end,
+          callback = function() require("lazy").show() end,
         })
       end
       require("alpha").setup(dashboard.opts)
@@ -243,9 +238,7 @@ return {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
     ft = "markdown",
-    config = function()
-      vim.g.mkdp_refresh_slow = 1
-    end,
+    config = function() vim.g.mkdp_refresh_slow = 1 end,
   },
   {
     "junegunn/vim-easy-align",
@@ -312,12 +305,8 @@ return {
             { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
             { "filename", path = 4, symbols = { modified = "  ", readonly = "", unnamed = "" } },
             {
-              function()
-                return require("nvim-navic").get_location()
-              end,
-              cond = function()
-                return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
-              end,
+              function() return require("nvim-navic").get_location() end,
+              cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
               padding = { left = 1, right = 0 },
             },
           },
@@ -356,9 +345,7 @@ return {
           },
           lualine_z = {
             {
-              function()
-                return " " .. os.date("%R")
-              end,
+              function() return " " .. os.date("%R") end,
               separator = { right = "" },
               left_padding = 2,
             },
@@ -373,20 +360,14 @@ return {
     keys = {
       {
         "<leader>um",
-        function()
-          require("notify").dismiss({ silent = true, pending = true })
-        end,
+        function() require("notify").dismiss({ silent = true, pending = true }) end,
         desc = "dismiss messages",
       },
     },
     opts = {
       timeout = 3000,
-      max_height = function()
-        return math.floor(vim.o.lines * 0.75)
-      end,
-      max_width = function()
-        return math.floor(vim.o.columns * 0.75)
-      end,
+      max_height = function() return math.floor(vim.o.lines * 0.75) end,
+      max_width = function() return math.floor(vim.o.columns * 0.75) end,
     },
   },
   {
@@ -395,9 +376,7 @@ return {
     init = function()
       vim.g.navic_silence = true
       require("config.util").on_attach(function(client, buffer)
-        if client.server_capabilities.documentSymbolProvider then
-          require("nvim-navic").attach(client, buffer)
-        end
+        if client.server_capabilities.documentSymbolProvider then require("nvim-navic").attach(client, buffer) end
       end)
     end,
     opts = function()
