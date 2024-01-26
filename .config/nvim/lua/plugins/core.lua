@@ -203,6 +203,7 @@ return {
     keys = {
       { "<leader><leader>", "<cmd>Telescope git_files<cr>", desc = "find files (git)" },
       { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "grep" },
+      { "<leader>bb", "<cmd>Telescope buffers<cr>", desc = "find buffers" },
       { "<leader>bf", "<cmd>Telescope buffers<cr>", desc = "find buffers" },
       { "<leader>ff", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", desc = "find files" },
     },
