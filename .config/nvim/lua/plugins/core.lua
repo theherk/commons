@@ -148,14 +148,8 @@ return {
       }
     end,
   },
-  { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
-  {
-    "kevinhwang91/nvim-bqf",
-  },
-  {
-    "L3MON4D3/LuaSnip",
-    config = true,
-  },
+  { "kevinhwang91/nvim-bqf" },
+  { "L3MON4D3/LuaSnip" },
   { "nvim-lua/plenary.nvim", lazy = true },
   {
     "nvim-neo-tree/neo-tree.nvim",
