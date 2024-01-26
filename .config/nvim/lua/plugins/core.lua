@@ -68,6 +68,7 @@ return {
     cmd = "TroubleToggle",
     opts = { use_diagnostic_signs = true },
     keys = {
+      { "<leader>ut", "<cmd>TroubleToggle<cr>", desc = "toggle trouble" },
       { "[q", "vim.cmd.cprev", desc = "previous quickfix" },
       { "]q", "vim.cmd.cnext", desc = "next quickfix" },
     },
