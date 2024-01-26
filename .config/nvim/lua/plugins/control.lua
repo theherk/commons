@@ -3,10 +3,36 @@ return {
     "echasnovski/mini.clue",
     version = false,
     lazy = false,
-    opts = {
-      triggers = { { mode = "n", keys = "<Leader>" } },
-      window = { delay = 0 },
-    },
+    opts = function()
+      local miniclue = require("mini.clue")
+      return {
+        clues = {
+          miniclue.gen_clues.builtin_completion(),
+          miniclue.gen_clues.g(),
+          miniclue.gen_clues.marks(),
+          miniclue.gen_clues.registers(),
+          miniclue.gen_clues.windows(),
+          miniclue.gen_clues.z(),
+          { mode = "n", keys = "<leader>b", desc = "+buffers" },
+          { mode = "n", keys = "<leader>c", desc = "+code" },
+          { mode = "n", keys = "<leader>d", desc = "+debug" },
+          { mode = "n", keys = "<leader>f", desc = "+file" },
+          { mode = "n", keys = "<leader>g", desc = "+git" },
+          { mode = "n", keys = "<leader>s", desc = "+search" },
+          { mode = "n", keys = "<leader>sn", desc = "+noice" },
+        },
+        triggers = {
+          { mode = "n", keys = "<c-w>" },
+          { mode = "i", keys = "<c-w>" },
+          { mode = "n", keys = "<leader>" },
+          { mode = "n", keys = "<localleader>" },
+          { mode = "n", keys = "[" },
+          { mode = "n", keys = "]" },
+          { mode = "n", keys = "g" },
+        },
+        window = { delay = 0 },
+      }
+    end,
   },
   {
     "ThePrimeagen/harpoon",
@@ -26,7 +52,7 @@ return {
       { "<c-7>", function() require("harpoon.ui").nav_file(7) end, mode = { "i", "n" }, desc = "harpoon file 7" },
       { "<c-8>", function() require("harpoon.ui").nav_file(8) end, mode = { "i", "n" }, desc = "harpoon file 8" },
       { "<c-9>", function() require("harpoon.ui").nav_file(9) end, mode = { "i", "n" }, desc = "harpoon file 9" },
-    }
+    },
   },
   {
     "voldikss/vim-browser-search",
