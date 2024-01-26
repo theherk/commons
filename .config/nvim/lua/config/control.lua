@@ -25,6 +25,14 @@ vim.keymap.set("n", "<c-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window 
 vim.keymap.set("n", "<c-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 vim.keymap.set("n", "<c-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
+-- Utility toggles.
+local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
+vim.keymap.set("n", "<leader>uc", function() Util.toggle("conceallevel", false, { 0, conceallevel }) end, { desc = "conceal" })
+vim.keymap.set("n", "<leader>ud", function() Util.toggle_diagnostics() end, { desc = "diagnostics" })
+vim.keymap.set("n", "<leader>ul", function() Util.toggle_number() end, { desc = "line numbers" })
+vim.keymap.set("n", "<leader>us", function() Util.toggle("spell") end, { desc = "spelling" })
+vim.keymap.set("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "wrap" })
+
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 vim.keymap.set("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
 vim.keymap.set("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
