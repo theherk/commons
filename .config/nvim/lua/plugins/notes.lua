@@ -64,6 +64,20 @@ return {
         ["external.templates"] = {},
       },
     },
+    keys = {
+      { "<leader>Ne", "<cmd>Neorg export to-file <cr>", desc = "export" },
+      { "<leader>Nf", "<cmd>Telescope neorg find_norg_files<cr>", desc = "find" },
+      { "<leader>Nh", "<cmd>Telescope neorg search_headings<cr>", desc = "headings" },
+      { "<leader>Ni", "<cmd>Neorg index<cr>", desc = "index" },
+      { "<leader>Nl", "<cmd>Telescope neorg insert_link<cr>", desc = "link" },
+      { "<leader>NL", "<cmd>Telescope neorg insert_file_link<cr>", desc = "file link" },
+      { "<leader>Nm", "<cmd>Neorg inject-metadata<cr>", desc = "meta" },
+      { "<leader>Nr", "<cmd>Neorg return<cr>", desc = "return" },
+      { "<leader>Nw", "<cmd>Telescope neorg switch_workspace<cr>", desc = "workspace" },
+      { "<leader>Njm", "<cmd>Neorg journal tomorrow<cr>", desc = "tomorrow" },
+      { "<leader>Njm", "<cmd>Neorg journal today<cr>", desc = "today" },
+      { "<leader>Njm", "<cmd>Neorg journal yesterday<cr>", desc = "yesterday" },
+    },
     dependencies = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-neorg/neorg-telescope" },
@@ -75,6 +89,21 @@ return {
     version = "*",
     dependencies = {
       "nvim-lua/plenary.nvim",
+    },
+    keys = {
+      { "<leader>nb", "<cmd>ObsidianBacklinks<cr>", desc = "backlinks" },
+      { "<leader>nf", "<cmd>ObsidianQuickSwitch<cr>", desc = "find" },
+      { "<leader>ni", "<cmd>ObsidianPasteImg<cr>", desc = "img" },
+      { "<leader>njm", "<cmd>ObsidianTomorrow<cr>", desc = "tomorrow" },
+      { "<leader>njt", "<cmd>ObsidianToday<cr>", desc = "today" },
+      { "<leader>njy", "<cmd>ObsidianYesterday<cr>", desc = "yesterday" },
+      { "<leader>nll", "<cmd>ObsidianLink<cr>", desc = "link" },
+      { "<leader>nln", "<cmd>ObsidianLinkNew<cr>", desc = "new" },
+      { "<leader>nn", "<cmd>ObsidianNew<cr>", desc = "new" },
+      { "<leader>nr", "<cmd>ObsidianRename<cr>", desc = "rename" },
+      { "<leader>ns", "<cmd>ObsidianSearch<cr>", desc = "search" },
+      { "<leader>nwm", "<cmd>ObsidianWorkspace main<cr>", desc = "main" },
+      { "<leader>nwo", "<cmd>ObsidianWorkspace onedrive<cr>", desc = "onedrive" },
     },
     opts = {
       daily_notes = {
