@@ -2,11 +2,8 @@ return {
   "mfussenegger/nvim-dap",
 
   dependencies = {
-
-    -- fancy UI for the debugger
     {
       "rcarriga/nvim-dap-ui",
-      -- stylua: ignore
       keys = {
         { "<leader>dd", function() require("dapui").toggle({}) end, desc = "dap ui" },
         { "<leader>du", function() require("dapui").toggle({}) end, desc = "dap ui" },
@@ -27,18 +24,6 @@ return {
     {
       "theHamsta/nvim-dap-virtual-text",
       opts = {},
-    },
-
-    -- which key integration
-    {
-      "folke/which-key.nvim",
-      optional = true,
-      opts = {
-        defaults = {
-          ["<leader>d"] = { name = "+debug" },
-          ["<leader>da"] = { name = "+adapters" },
-        },
-      },
     },
 
     -- mason.nvim integration
@@ -66,22 +51,22 @@ return {
 
   -- stylua: ignore
   keys = {
-    { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
-    { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
-    { "<leader>dc", function() require("dap").continue() end, desc = "Continue" },
-    { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
-    { "<leader>dg", function() require("dap").goto_() end, desc = "Go to line (no execute)" },
-    { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
-    { "<leader>dj", function() require("dap").down() end, desc = "Down" },
-    { "<leader>dk", function() require("dap").up() end, desc = "Up" },
-    { "<leader>dl", function() require("dap").run_last() end, desc = "Run Last" },
-    { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
-    { "<leader>dO", function() require("dap").step_over() end, desc = "Step Over" },
-    { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
-    { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
-    { "<leader>ds", function() require("dap").session() end, desc = "Session" },
-    { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
-    { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+    { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "breakpoint condition" },
+    { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "toggle breakpoint" },
+    { "<leader>dc", function() require("dap").continue() end, desc = "continue" },
+    { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "run to cursor" },
+    { "<leader>dg", function() require("dap").goto_() end, desc = "go to line (no execute)" },
+    { "<leader>di", function() require("dap").step_into() end, desc = "step into" },
+    { "<leader>dj", function() require("dap").down() end, desc = "down" },
+    { "<leader>dk", function() require("dap").up() end, desc = "up" },
+    { "<leader>dl", function() require("dap").run_last() end, desc = "run last" },
+    { "<leader>do", function() require("dap").step_out() end, desc = "step out" },
+    { "<leader>dO", function() require("dap").step_over() end, desc = "step over" },
+    { "<leader>dp", function() require("dap").pause() end, desc = "pause" },
+    { "<leader>dr", function() require("dap").repl.toggle() end, desc = "toggle REPL" },
+    { "<leader>ds", function() require("dap").session() end, desc = "session" },
+    { "<leader>dt", function() require("dap").terminate() end, desc = "terminate" },
+    { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "widgets" },
   },
 
   config = function()

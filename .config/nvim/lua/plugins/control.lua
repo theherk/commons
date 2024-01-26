@@ -16,6 +16,7 @@ return {
           { mode = "n", keys = "<leader>b", desc = "+buffers" },
           { mode = "n", keys = "<leader>c", desc = "+code" },
           { mode = "n", keys = "<leader>d", desc = "+debug" },
+          { mode = "n", keys = "<leader>da", desc = "+adapters" },
           { mode = "n", keys = "<leader>f", desc = "+file" },
           { mode = "n", keys = "<leader>g", desc = "+git" },
           { mode = "n", keys = "<leader>s", desc = "+search" },
