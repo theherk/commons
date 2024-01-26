@@ -35,44 +35,20 @@ return {
         ["core.keybinds"] = {
           config = {
             hook = function(keys)
-              local wk = require("which-key")
-              wk.register({
-                ["<localleader>"] = {
-                  i = {
-                    name = "+insert",
-                    d = { "<cmd>Neorg keybind norg core.tempus.insert-date<cr>", "date" },
-                  },
-                  l = {
-                    name = "+list",
-                    i = { "<cmd>Neorg keybind norg core.pivot.invert-list-type<cr>", "invert" },
-                    t = { "<cmd>Neorg keybind norg core.pivot.toggle-list-type<cr>", "toggle" },
-                  },
-                  m = {
-                    name = "+mode",
-                    h = { "<cmd>Neorg mode traverse-heading<cr>", "traverse" },
-                    n = { "<cmd>Neorg mode norg<cr>", "norg" },
-                  },
-                  n = {
-                    name = "+note",
-                    n = { "<cmd>Neorg keybind norg core.dirman.new.note<cr>", "new" },
-                  },
-                  t = {
-                    name = "+mark",
-                    a = { "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_ambiguous<cr>", "ambiguous" },
-                    c = { "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_cancelled<cr>", "cancelled" },
-                    d = { "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_done<cr>", "done" },
-                    h = { "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_on_hold<cr>", "hold" },
-                    i = { "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_important<cr>", "important" },
-                    p = { "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_pending<cr>", "pending" },
-                    r = { "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_recurring<cr>", "recurring" },
-                    u = { "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_undone<cr>", "undone" },
-                  },
-                  u = {
-                    name = "+toggle",
-                    c = { "<cmd>Neorg toggle-concealer<cr>", "concealer" },
-                  },
-                },
-              })
+              vim.keymap.set("n", "<localleader>id", "<cmd>Neorg keybind norg core.tempus.insert-date<cr>", { desc = "insert date"})
+              vim.keymap.set("n", "<localleader>lt", "<cmd>Neorg keybind norg core.pivot.toggle-list-type<cr>", { desc = "toggle list"})
+              vim.keymap.set("n", "<localleader>mh", "<cmd>Neorg mode traverse-heading<cr>", { desc = "traverse headings"})
+              vim.keymap.set("n", "<localleader>mn", "<cmd>Neorg mode norg<cr>", { desc = "norg mode"})
+              vim.keymap.set("n", "<localleader>nn", "<cmd>Neorg keybind norg core.dirman.new.note<cr>", { desc = "new note"})
+              vim.keymap.set("n", "<localleader>ta", "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_ambiguous<cr>", { desc = "ambiguous"})
+              vim.keymap.set("n", "<localleader>tc", "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_cancelled<cr>", { desc = "cancelled"})
+              vim.keymap.set("n", "<localleader>td", "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_done<cr>", { desc = "done"})
+              vim.keymap.set("n", "<localleader>th", "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_hold<cr>", { desc = "hold"})
+              vim.keymap.set("n", "<localleader>ti", "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_important<cr>", { desc = "important"})
+              vim.keymap.set("n", "<localleader>tp", "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_pending<cr>", { desc = "pending"})
+              vim.keymap.set("n", "<localleader>tr", "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_recurring<cr>", { desc = "recurring"})
+              vim.keymap.set("n", "<localleader>tu", "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_undone<cr>", { desc = "undone"})
+              vim.keymap.set("n", "<localleader>uc", "<cmd>Neorg toggle-concealer<cr>", { desc = "toggle concealer"})
               keys.remap_event("norg", "i", "<c-cr>", "core.itero.next-iteration")
               keys.remap_event("norg", "n", "<c-cr>", "core.itero.next-iteration")
             end,
