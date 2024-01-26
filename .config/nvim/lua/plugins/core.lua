@@ -279,7 +279,12 @@ return {
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
-  { "Wansmer/treesj" },
+  {
+    "Wansmer/treesj",
+    keys = {
+      { "<leader>J", "<cmd>TSJToggle<cr>", desc = "spoin" },
+    },
+  },
   {
     "williamboman/mason.nvim",
     opts = {
