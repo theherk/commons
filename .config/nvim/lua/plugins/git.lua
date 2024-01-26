@@ -49,8 +49,8 @@ return {
         map("n", "<leader>gR", gs.reset_buffer, "reset buffer")
         map("n", "<leader>gp", gs.preview_hunk, "preview hunk")
         map("n", "<leader>gb", function() gs.blame_line({ full = true }) end, "blame line")
-        map("n", "<leader>gd", gs.diffthis, "diff this")
-        map("n", "<leader>gD", function() gs.diffthis("~") end, "diff this ~")
+        map("n", "<leader>gf", gs.diffthis, "diff this file")
+        map("n", "<leader>gF", function() gs.diffthis("~") end, "diff this ~")
         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "select hunk")
       end,
     },
@@ -58,5 +58,12 @@ return {
   {
     "sindrets/diffview.nvim",
     event = "BufRead",
+    keys = {
+      { "<leader>gdd", "<cmd>DiffviewOpen<cr>", desc = "open" },
+      { "<leader>gdc", "<cmd>DiffviewClose<cr>", desc = "close" },
+      { "<leader>gdh", "<cmd>DiffviewFileHistory<cr>", desc = "history" },
+      { "<leader>gdl", "<cmd>DiffviewLog<cr>", desc = "log" },
+      { "<leader>gdr", "<cmd>DiffviewRefresh<cr>", desc = "refresh" },
+    },
   },
 }
