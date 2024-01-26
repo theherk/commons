@@ -17,6 +17,18 @@ return {
     },
   },
   {
+    "echasnovski/mini.files",
+    keys = {
+      { "<leader>e", function() require("mini.files").open() end, desc = "toggle files" },
+    },
+    opts = {
+      windows = {
+        width_focus = 28,
+        width_nofocus = 16,
+      },
+    },
+  },
+  {
     "echasnovski/mini.pairs",
     event = "VeryLazy",
     opts = {},
@@ -185,7 +197,6 @@ return {
     },
     keys = {
       { "<c-p>", "<cmd>Neotree toggle<cr>", desc = "toggle tree" },
-      { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "toggle tree" },
     },
   },
   {
