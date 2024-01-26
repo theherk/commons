@@ -245,6 +245,7 @@ return {
   },
   {
     "junegunn/vim-easy-align",
+    -- TODO: Switch to mini.align.
   },
   {
     "lukas-reineke/indent-blankline.nvim",
