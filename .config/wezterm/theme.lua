@@ -55,7 +55,7 @@ function module.apply_to_config(config)
     brightness = 0.54,
   }
   config.font = wezterm.font("VictorMono NF")
-  config.font_size = 19
+  config.font_size = 17
   config.tab_bar_at_bottom = true
   config.tab_max_width = 96
   config.use_fancy_tab_bar = false
