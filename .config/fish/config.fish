@@ -78,8 +78,8 @@ if status is-interactive
 
     starship init fish | source
     direnv hook fish | source
-    status --is-interactive; and pyenv init - | source
-    status --is-interactive; and pyenv virtualenv-init - | source
+    pyenv init - | source
+    pyenv virtualenv-init - | source
     abbr -a !! --position anywhere --function last_history_item
     abbr -a awsl --position command aws sso login --profile \$AWS_PROFILE
     abbr -a awsr --position command aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'
