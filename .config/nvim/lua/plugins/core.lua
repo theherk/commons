@@ -67,6 +67,10 @@ return {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
     opts = { use_diagnostic_signs = true },
+    keys = {
+      { "[q", "vim.cmd.cprev", desc = "previous quickfix" },
+      { "]q", "vim.cmd.cnext", desc = "next quickfix" },
+    },
   },
   {
     "ggandor/flit.nvim",
