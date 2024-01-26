@@ -172,6 +172,7 @@ return {
       }
     end,
   },
+  { "JoosepAlviste/nvim-ts-context-commentstring" },
   { "kevinhwang91/nvim-bqf" },
   { "L3MON4D3/LuaSnip" },
   { "nvim-lua/plenary.nvim", lazy = true },
