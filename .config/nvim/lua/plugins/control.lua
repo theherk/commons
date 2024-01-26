@@ -41,7 +41,12 @@ return {
           { mode = "n", keys = "]" },
           { mode = "n", keys = "g" },
         },
-        window = { delay = 0 },
+        window = {
+          delay = 0,
+          config = {
+            width = "auto",
+          },
+        },
       }
     end,
   },
