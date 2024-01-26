@@ -49,6 +49,17 @@ fish_add_path -pP $HOME/.emacs.d/bin
 fish_add_path -pP $HOME/.local/bin
 fish_add_path -pP $HOME/bin
 
+# Load directory shortcuts.
+if test -e ~/.dirs
+    source ~/.dirs
+end
+
+# Load local machine exports.
+# This is probably where you will find work related exports.
+if test -e ~/.local-exports
+    source ~/.local-exports
+end
+
 if status is-interactive
     set -gx fish_vi_force_cursor 1
     set -gx fish_cursor_default block blink
@@ -63,17 +74,6 @@ if status is-interactive
         eval (ssh-agent -c)
         set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
         set -Ux SSH_AGENT_PID $SSH_AGENT_PID
-    end
-
-    # Load directory shortcuts.
-    if test -e ~/.dirs
-        source ~/.dirs
-    end
-
-    # Load local machine exports.
-    # This is probably where you will find work related exports.
-    if test -e ~/.local-exports
-        source ~/.local-exports
     end
 
     starship init fish | source
