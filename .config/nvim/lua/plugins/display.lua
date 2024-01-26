@@ -174,6 +174,9 @@ return {
         },
       })
     end,
+    keys = {
+      { "<leader>Z", "<cmd>ZenMode<cr>", desc = "zen" },
+    },
   },
   {
     "goolord/alpha-nvim",
