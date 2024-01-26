@@ -1,8 +1,8 @@
 local Util = require("config.util")
 
 -- Basics
-vim.keymap.set("n", "<leader>fs", "<cmd>w<cr>", { desc = "write"})
-vim.keymap.set("n", "<leader>q", "<cmd>qa<cr>", { desc = "quit all"})
+vim.keymap.set("n", "<leader>fs", "<cmd>w<cr>", { desc = "write" })
+vim.keymap.set("n", "<leader>q", "<cmd>qa<cr>", { desc = "quit all" })
 
 -- Better up/down.
 vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -24,6 +24,14 @@ vim.keymap.set("n", "<c-Up>", "<cmd>resize +2<cr>", { desc = "Increase window he
 vim.keymap.set("n", "<c-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 vim.keymap.set("n", "<c-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 vim.keymap.set("n", "<c-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+
+-- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+vim.keymap.set("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+vim.keymap.set("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+vim.keymap.set("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+vim.keymap.set("n", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+vim.keymap.set("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+vim.keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
 -- buffers
 if Util.has("bufferline.nvim") then
