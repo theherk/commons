@@ -1,15 +1,14 @@
 local Util = require("config.util")
 
+-- Basics
+vim.keymap.set("n", "<leader>fs", "<cmd>w<cr>", { desc = "write"})
+vim.keymap.set("n", "<leader>q", "<cmd>qa<cr>", { desc = "quit all"})
+
 -- Better up/down.
 vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
-vim.keymap.set("n", "<leader><leader>", "<cmd>Telescope git_files<cr>", { desc = "files (git)"})
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", { desc = "find files"})
-
 -- Navigation of windows, tabs, and buffers.
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "toggle tree"})
-vim.keymap.set("n", "<c-p>", "<cmd>Neotree toggle<cr>", { desc = "toggle tree"})
 vim.keymap.set("n", "<c-h>", "<c-w>h", { desc = "left window" })
 vim.keymap.set("n", "<c-j>", "<c-w>j", { desc = "lower window" })
 vim.keymap.set("n", "<c-k>", "<c-w>k", { desc = "upper window" })

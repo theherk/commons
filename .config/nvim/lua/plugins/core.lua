@@ -2,6 +2,10 @@ return {
   {
     "echasnovski/mini.bufremove",
     config = true,
+    keys = {
+      { "<leader>bd", function() require("mini.bufremove").delete(0, false) end, desc = "delete" },
+      { "<leader>bD", function() require("mini.bufremove").delete(0, true) end, desc = "DELETE" },
+    },
   },
   {
     "echasnovski/mini.comment",
@@ -174,6 +178,10 @@ return {
         follow_current_file = { enabled = true },
       },
     },
+    keys = {
+      { "<c-p>", "<cmd>Neotree toggle<cr>", desc = "toggle tree" },
+      { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "toggle tree" },
+    },
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -187,6 +195,12 @@ return {
           additional_args = function(_) return { "--hidden", "--glob=!.git/" } end,
         },
       },
+    },
+    keys = {
+      { "<leader><leader>", "<cmd>Telescope git_files<cr>", desc = "find files (git)" },
+      { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "grep" },
+      { "<leader>bf", "<cmd>Telescope buffers<cr>", desc = "find buffers" },
+      { "<leader>ff", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", desc = "find files" },
     },
   },
   {
