@@ -19,6 +19,9 @@ return {
     opts = {
       disable_insert_on_commit = false,
     },
+    keys = {
+      { "<leader>gg", "<cmd>Neogit<cr>", desc = "neogit" },
+    },
   },
   {
     "lewis6991/gitsigns.nvim",
