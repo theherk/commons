@@ -207,6 +207,8 @@ return {
       { "<leader>bb", "<cmd>Telescope buffers<cr>", desc = "find buffers" },
       { "<leader>bf", "<cmd>Telescope buffers<cr>", desc = "find buffers" },
       { "<leader>ff", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", desc = "find files" },
+      { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "keymaps" },
+      { "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "buffer / swiper" },
     },
   },
   {
