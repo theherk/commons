@@ -258,4 +258,4 @@ if status is-interactive
     # end
 end
 
-alias ls=exa
+alias ls=eza
