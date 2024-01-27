@@ -174,7 +174,11 @@ return {
   },
   { "JoosepAlviste/nvim-ts-context-commentstring" },
   { "kevinhwang91/nvim-bqf" },
-  { "L3MON4D3/LuaSnip" },
+  {
+    "L3MON4D3/LuaSnip",
+    version = "v2.*",
+    build = "make install_jsregexp",
+  },
   { "nvim-lua/plenary.nvim", lazy = true },
   {
     "nvim-neo-tree/neo-tree.nvim",
