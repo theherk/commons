@@ -1,5 +1,11 @@
 return {
   {
+    "benfowler/telescope-luasnip.nvim",
+    keys = {
+      { "<leader>sS", "<cmd>Telescope luasnip<cr>", desc = "snippets" },
+    },
+  },
+  {
     "echasnovski/mini.bufremove",
     config = true,
     keys = {
