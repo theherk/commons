@@ -5,6 +5,8 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local module = {}
 
+local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
+
 if wezterm.GLOBAL.prev_workspace == nil then wezterm.GLOBAL.prev_workspace = "default" end
 
 wezterm.on("switch-workspace-default", function(window, pane)
@@ -84,7 +86,7 @@ local keys = {
   -- Workpace and Pallette
   { key = "d", mods = "LEADER", action = act.EmitEvent("switch-workspace-default") },
   { key = "m", mods = "LEADER", action = act.ShowLauncher },
-  { key = "p", mods = "SUPER", action = action_project_switcher },
+  { key = "p", mods = "SUPER", action = workspace_switcher.switch_workspace() },
   { key = "P", mods = "LEADER", action = action_project_switcher },
   { key = "P", mods = "SUPER|SHIFT", action = act.ActivateCommandPalette },
   { key = "\t", mods = "LEADER", action = act.EmitEvent("switch-workspace-prev") },

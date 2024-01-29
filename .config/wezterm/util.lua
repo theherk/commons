@@ -3,6 +3,8 @@ local theme = require("theme")
 
 local module = {}
 
+local function base_path_name(str) return string.gsub(str, "(.*[/\\])(.*)", "%2") end
+
 function module.file_exists(file)
   local f = io.open(file, "rb")
   if f then f:close() end
@@ -67,11 +69,17 @@ function module.tconcat(t1, t2)
 end
 
 function module.update_right_status(window, pane)
-  local text = {}
+  local text = {
+    { Attribute = { Italic = true } },
+    { Foreground = { Color = theme.colors.hl_1 } },
+    { Text = "󱂬  " },
+    { Foreground = { Color = theme.colors.hl_2 } },
+    { Text = base_path_name(window:active_workspace()) },
+  }
   if window:active_key_table() then
     module.tconcat(text, {
       { Foreground = { Color = theme.colors.hl_1 } },
-      { Text = " TABLE: " },
+      { Text = " | ⌨ " },
       { Foreground = { Color = theme.colors.hl_2 } },
       { Text = window:active_key_table() },
     })
