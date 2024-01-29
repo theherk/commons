@@ -116,7 +116,6 @@ if status is-interactive
     abbr -a pc --position anywhere --set-cursor "%| pbcopy"
     abbr -a r --position command rsync -rltvz -e ssh --progress
     abbr -a rcal --position command rusti-cal -c --starting-day 1
-    abbr -a repocache --position command 'cat $HOME/commons/.projects-extra | envsubst > $HOME/.projects && fd -HI -d 6 "^\.git\$" $P | xargs dirname 2>/dev/null >> $HOME/.projects'
     abbr -a slackdev --position command "export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app"
     abbr -a tf --position command terraform
     abbr -a tfa --position command terraform apply
