@@ -111,7 +111,8 @@ brew install \
     wget \
     xh \
     zellij \
-    zenith
+    zenith \
+    zoxide
 ```
 
 ## Change Shell to Fish.

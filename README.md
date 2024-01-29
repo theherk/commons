@@ -58,6 +58,7 @@ A partial list of installed tools:
 - [tokei](https://github.com/XAMPPRocky/tokei): Great tool for counting code.
 - [xh](https://github.com/ducaale/xh): Friendly tool for sending http requests.
 - [zellij](https://zellij.dev/): A terminal workspace with batteries included; multiplexer.
+- [zoxide](https://github.com/ajeetdsouza/zoxide): A smarter cd command. Supports all major shells.
 
 ### Font ✏️
 

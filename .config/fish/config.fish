@@ -80,6 +80,7 @@ if status is-interactive
     direnv hook fish | source
     pyenv init - | source
     pyenv virtualenv-init - | source
+    zoxide init fish | source
     abbr -a !! --position anywhere --function last_history_item
     abbr -a awsl --position command aws sso login --profile \$AWS_PROFILE
     abbr -a awsr --position command aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'
@@ -137,7 +138,6 @@ if status is-interactive
     abbr -a wezi --position command wezterm imgcat
     abbr -a wow --position command git status
     abbr -a xc --position anywhere --set-cursor "%| xclip -sel clip"
-    abbr -a z --position command zellij
 
     function last_history_item
         echo $history[1]

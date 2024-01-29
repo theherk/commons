@@ -43,4 +43,3 @@ alias wezy='wezterm imgcat'
 alias wow="git status"
 alias xc='xclip -sel clip'
 alias xp='cat p|xc'
-alias z='zellij'
