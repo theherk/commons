@@ -18,10 +18,6 @@ else if test -e /usr/local/Homebrew/bin/brew
 end
 
 set -U -x EDITOR editor
-if test (git root 2> /dev/null)
-    set -U -x EDITOR "nvim --server "(git root)"/_neovim --remote"
-else
-end
 set -U -x CARGO_HOME $HOME/.cargo
 set -U -x VENVS $HOME/.venvs
 set -U -x P $HOME/projects
