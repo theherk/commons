@@ -8,7 +8,7 @@
 [checkout]
 	defaultRemote = origin
 [core]
-	editor = nvim
+	editor = editor
 	pager = delta
 [delta]
 	light = false
