@@ -108,6 +108,7 @@ brew install \
     terraform-ls \
     tokei \
     translate-shell \
+    ugit \
     wget \
     xh \
     zellij \
