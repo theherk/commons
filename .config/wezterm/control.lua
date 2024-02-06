@@ -23,6 +23,13 @@ wezterm.on("switch-workspace-prev", function(window, pane)
   wezterm.log_info("prev_workspace: " .. wezterm.GLOBAL.prev_workspace)
 end)
 
+workspace_switcher.set_workspace_formatter(function(label)
+  return wezterm.format({
+    { Foreground = { Color = theme.colors.hl_1 } },
+    { Text = "󱂬 " .. label },
+  })
+end)
+
 local action_project_switcher = wezterm.action_callback(function(window, pane)
   local choices = {}
   for _, v in pairs(util.file_lines(os.getenv("HOME") .. "/.projects")) do
