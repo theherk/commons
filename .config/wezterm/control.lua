@@ -9,19 +9,27 @@ local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/s
 
 if wezterm.GLOBAL.prev_workspace == nil then wezterm.GLOBAL.prev_workspace = "default" end
 
-wezterm.on("switch-workspace-default", function(window, pane)
-  local cur = wezterm.mux.get_active_workspace()
-  window:perform_action(act.SwitchToWorkspace({ name = "default" }), pane)
-  if cur ~= "default" then wezterm.GLOBAL.prev_workspace = cur end
+local action_with_cache = function(action)
+  return wezterm.action_callback(function(window, pane)
+    window:perform_action(
+      act.Multiple({
+        act.EmitEvent("cache-prev-workspace"),
+        action,
+      }),
+      pane
+    )
+  end)
+end
+
+wezterm.on("cache-prev-workspace", function()
+  wezterm.GLOBAL.cur_target = wezterm.GLOBAL.prev_workspace
+  wezterm.GLOBAL.prev_workspace = wezterm.mux.get_active_workspace()
   wezterm.log_info("prev_workspace: " .. wezterm.GLOBAL.prev_workspace)
 end)
 
-wezterm.on("switch-workspace-prev", function(window, pane)
-  local cur = wezterm.mux.get_active_workspace()
-  window:perform_action(act.SwitchToWorkspace({ name = wezterm.GLOBAL.prev_workspace }), pane)
-  wezterm.GLOBAL.prev_workspace = cur
-  wezterm.log_info("prev_workspace: " .. wezterm.GLOBAL.prev_workspace)
-end)
+wezterm.on("switch-workspace-default", function(window, pane) window:perform_action(act.SwitchToWorkspace({ name = "default" }), pane) end)
+
+wezterm.on("switch-workspace-prev", function(window, pane) window:perform_action(act.SwitchToWorkspace({ name = wezterm.GLOBAL.cur_target }), pane) end)
 
 workspace_switcher.set_workspace_formatter(function(label)
   return wezterm.format({
@@ -29,12 +37,6 @@ workspace_switcher.set_workspace_formatter(function(label)
     { Text = "󱂬 " .. label },
   })
 end)
-
-local switch_workspace_with_cache = function(extra_args)
-  wezterm.GLOBAL.prev_workspace = wezterm.mux.get_active_workspace()
-  wezterm.log_info("prev_workspace: " .. wezterm.GLOBAL.prev_workspace)
-  return workspace_switcher.switch_workspace(extra_args)
-end
 
 local action_project_switcher = wezterm.action_callback(function(window, pane)
   local choices = {}
@@ -52,18 +54,13 @@ local action_project_switcher = wezterm.action_callback(function(window, pane)
         if not id and not label then
           wezterm.log_info("cancelled")
         else
-          local cur = wezterm.mux.get_active_workspace()
           window:perform_action(
             act.SwitchToWorkspace({
               name = id,
-              spawn = {
-                cwd = id,
-              },
+              spawn = { cwd = id },
             }),
             pane
           )
-          wezterm.GLOBAL.prev_workspace = cur
-          wezterm.log_info("prev_workspace: " .. wezterm.GLOBAL.prev_workspace)
         end
       end),
       choices = choices,
@@ -97,12 +94,12 @@ local keys = {
   { key = "a", mods = "LEADER|CTRL", action = act.SendString("\x01") },
 
   -- Workpace and Pallette
-  { key = "d", mods = "LEADER", action = act.EmitEvent("switch-workspace-default") },
+  { key = "d", mods = "LEADER", action = action_with_cache(act.EmitEvent("switch-workspace-default")) },
   { key = "m", mods = "LEADER", action = act.ShowLauncher },
-  { key = "p", mods = "SUPER", action = switch_workspace_with_cache(" | rg -Fxf ~/.projects") },
-  { key = "P", mods = "LEADER", action = action_project_switcher },
+  { key = "p", mods = "SUPER", action = action_with_cache(workspace_switcher.switch_workspace(" | rg -Fxf ~/.projects")) },
+  { key = "P", mods = "LEADER", action = action_with_cache(action_project_switcher) },
   { key = "P", mods = "SUPER|SHIFT", action = act.ActivateCommandPalette },
-  { key = "\t", mods = "LEADER", action = act.EmitEvent("switch-workspace-prev") },
+  { key = "\t", mods = "LEADER", action = action_with_cache(act.EmitEvent("switch-workspace-prev")) },
 
   {
     key = "W",
