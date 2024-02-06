@@ -93,7 +93,7 @@ local keys = {
   -- Workpace and Pallette
   { key = "d", mods = "LEADER", action = act.EmitEvent("switch-workspace-default") },
   { key = "m", mods = "LEADER", action = act.ShowLauncher },
-  { key = "p", mods = "SUPER", action = workspace_switcher.switch_workspace() },
+  { key = "p", mods = "SUPER", action = workspace_switcher.switch_workspace(" | rg -Fxf ~/.projects") },
   { key = "P", mods = "LEADER", action = action_project_switcher },
   { key = "P", mods = "SUPER|SHIFT", action = act.ActivateCommandPalette },
   { key = "\t", mods = "LEADER", action = act.EmitEvent("switch-workspace-prev") },
