@@ -88,6 +88,7 @@ brew install \
     nvim \
     onefetch \
     pandoc \
+    pastepng \
     pinentry-mac \
     pipes-sh \
     plantuml \

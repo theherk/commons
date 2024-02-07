@@ -89,6 +89,7 @@ return {
     version = "*",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      -- Required pastepng on MacOS. `brew install pastepng`
     },
     keys = {
       { "<leader>nb", "<cmd>ObsidianBacklinks<cr>", desc = "backlinks" },
