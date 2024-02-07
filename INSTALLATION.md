@@ -40,12 +40,6 @@ brew tap cjbassi/ytop
 brew tap homebrew/cask-fonts
 brew tap helix-editor/helix
 brew tap wez/wezterm
-brew install --cask \
-    dozer \
-    homebrew/cask-fonts/font-victor-mono-nerd-font \
-    keycastr \
-    neovide \
-    wez/wezterm/wezterm
 brew install \
     asciinema \
     bash-language-server \
@@ -59,6 +53,7 @@ brew install \
     direnv \
     diskonaut \
     doll \
+    dozer \
     dropbox \
     dua-cli \
     dust \
@@ -75,7 +70,9 @@ brew install \
     gnupg \
     grip \
     helix \
+    homebrew/cask-fonts/font-victor-mono-nerd-font \
     jq \
+    keycastr \
     kubectl \
     lazygit \
     lazydocker \
@@ -83,12 +80,13 @@ brew install \
     mactex \
     markdown \
     navi \
+    homebrew/cask/neovide \
     newman \
     npm \
     nvim \
     onefetch \
     pandoc \
-    pastepng \
+    pngpaste \
     pinentry-mac \
     pipes-sh \
     plantuml \
@@ -105,11 +103,12 @@ brew install \
     sk \
     starship \
     temurin \
-    terraform \
     terraform-ls \
+    tfenv \
     tokei \
     translate-shell \
     ugit \
+    wez/wezterm/wezterm \
     wget \
     xh \
     zellij \

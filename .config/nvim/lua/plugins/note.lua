@@ -89,7 +89,7 @@ return {
     version = "*",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      -- Required pastepng on MacOS. `brew install pastepng`
+      -- Required pngpaste on MacOS. `brew install pngpaste`
     },
     keys = {
       { "<leader>nb", "<cmd>ObsidianBacklinks<cr>", desc = "backlinks" },
