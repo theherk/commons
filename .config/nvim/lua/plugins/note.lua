@@ -137,4 +137,18 @@ return {
       },
     },
   },
+  {
+    "tadmccorkle/markdown.nvim",
+    ft = "markdown",
+    opts = {
+      mappings = {
+        go_curr_heading = "[c",
+        go_parent_heading = "[p",
+      },
+      on_attach = function(bufnr)
+        vim.keymap.set({ "n", "i" }, "<m-o>", "<cmd>MDListItemBelow<cr>", { buffer = bufnr, desc = "item below" })
+        vim.keymap.set({ "n", "i" }, "<m-O>", "<cmd>MDListItemAbove<cr>", { buffer = bufnr, desc = "item above" })
+      end,
+    },
+  },
 }
