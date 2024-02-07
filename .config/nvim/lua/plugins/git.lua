@@ -42,8 +42,8 @@ return {
 
         map("n", "]h", gs.next_hunk, "next hunk")
         map("n", "[h", gs.prev_hunk, "prev hunk")
-        map({ "n", "v" }, "<leader>gs", ":Gitsigns stage_hunk<CR>", "stage hunk")
-        map({ "n", "v" }, "<leader>gr", ":Gitsigns reset_hunk<CR>", "reset hunk")
+        map({ "n", "v" }, "<leader>gs", ":Gitsigns stage_hunk<cr>", "stage hunk")
+        map({ "n", "v" }, "<leader>gr", ":Gitsigns reset_hunk<cr>", "reset hunk")
         map("n", "<leader>gS", gs.stage_buffer, "stage buffer")
         map("n", "<leader>gu", gs.undo_stage_hunk, "undo stage hunk")
         map("n", "<leader>gR", gs.reset_buffer, "reset buffer")
@@ -51,7 +51,7 @@ return {
         map("n", "<leader>gb", function() gs.blame_line({ full = true }) end, "blame line")
         map("n", "<leader>gf", gs.diffthis, "diff this file")
         map("n", "<leader>gF", function() gs.diffthis("~") end, "diff this ~")
-        map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "select hunk")
+        map({ "o", "x" }, "ih", ":<c-u>Gitsigns select_hunk<cr>", "select hunk")
       end,
     },
   },

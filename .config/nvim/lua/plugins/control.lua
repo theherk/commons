@@ -29,6 +29,7 @@ return {
           { mode = "n", keys = "<leader>s", desc = "+search" },
           { mode = "n", keys = "<leader>sn", desc = "+noice" },
           { mode = "n", keys = "<leader>u", desc = "+toggle" },
+          { mode = "n", keys = "<localleader>m", desc = "+mark" },
           { mode = "n", keys = "<tab>", desc = "+tab" },
         },
         triggers = {

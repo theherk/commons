@@ -105,6 +105,7 @@ return {
       { "<leader>ns", "<cmd>ObsidianSearch<cr>", desc = "search" },
       { "<leader>nwm", "<cmd>ObsidianWorkspace main<cr>", desc = "main" },
       { "<leader>nwo", "<cmd>ObsidianWorkspace onedrive<cr>", desc = "onedrive" },
+      { "<localleader>mx", function() require("obsidian.util").toggle_checkbox() end, desc = "complete" },
     },
     opts = {
       daily_notes = {
