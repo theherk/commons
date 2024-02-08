@@ -211,9 +211,12 @@ return {
       ]]
       dashboard.section.header.val = vim.split(logo, "\n")
       dashboard.section.buttons.val = {
-        dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
-        dashboard.button("r", " " .. " Restore Session", [[:lua require("persistence").load() <cr>]]),
-        dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+        dashboard.button("/", "  " .. "Grep", "<cmd>Telescope live_grep<cr>"),
+        dashboard.button("f", "  " .. "Files", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>"),
+        dashboard.button("g", "  " .. "Git Files", "<cmd>Telescope git_files<cr>"),
+        -- dashboard.button("h", "  " .. "Neovim Help", "<cmd>help<cr>"),
+        dashboard.button("l", "  " .. "Lazy", "<cmd>Lazy<cr>"),
+        dashboard.button("q", "  " .. "Quit", ":qa<cr>"),
       }
       for _, button in ipairs(dashboard.section.buttons.val) do
         button.opts.hl = "AlphaButtons"
@@ -222,7 +225,8 @@ return {
       dashboard.section.header.opts.hl = "AlphaHeader"
       dashboard.section.buttons.opts.hl = "AlphaButtons"
       dashboard.section.footer.opts.hl = "AlphaFooter"
-      dashboard.opts.layout[1].val = 8
+      dashboard.opts.layout[1].val = 2
+      dashboard.section.footer.val = "Use <spc>sk for shortcuts."
       return dashboard
     end,
     config = function(_, dashboard)
