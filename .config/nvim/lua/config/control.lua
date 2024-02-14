@@ -31,6 +31,7 @@ vim.keymap.set("n", "<leader>uc", function() Util.toggle("conceallevel", false, 
 vim.keymap.set("n", "<leader>ud", function() Util.toggle_diagnostics() end, { desc = "diagnostics" })
 vim.keymap.set("n", "<leader>ul", function() Util.toggle_number() end, { desc = "line numbers" })
 vim.keymap.set("n", "<leader>us", function() Util.toggle("spell") end, { desc = "spelling" })
+vim.keymap.set("n", "<leader>uS", function() Util.toggle("scrolloff", false, { 0 }) end, { desc = "scrolloff" })
 vim.keymap.set("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "wrap" })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
