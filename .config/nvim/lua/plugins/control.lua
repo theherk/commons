@@ -41,6 +41,7 @@ return {
           { mode = "n", keys = "[" },
           { mode = "n", keys = "]" },
           { mode = "n", keys = "g" },
+          { mode = "n", keys = "z" },
         },
         window = {
           delay = 0,
