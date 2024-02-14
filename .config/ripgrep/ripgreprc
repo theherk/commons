@@ -1,0 +1,8 @@
+--hidden
+--glob=!.git/*
+--color=always
+--line-number
+--smart-case
+
+--type-add
+web:*.{html,css,js,ts}*
