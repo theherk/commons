@@ -318,6 +318,16 @@ echo 'h4s ALL = NOPASSWD: /usr/bin/ssh' >> /etc/sudoers
 
 Unimportant, completely optional or historical configurations follow.
 
+## Install bitwarden-cli.
+
+I prefer to install bitwarden-cli directly from a download at the source rather that via homebrew, because I get squeamish about it installing via NPM. I sure the controls in place are fine, but... I just have trust issues.
+
+```sh
+xh -dF 'https://vault.bitwarden.com/download/?app=cli&platform=macos'
+unzip bw*
+mv bw ~/bin/
+```
+
 ## Install Emacs.
 
 There are slight differences in amd64 and arm64 paths.
