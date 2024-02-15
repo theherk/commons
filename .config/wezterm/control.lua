@@ -5,7 +5,7 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local module = {}
 
-local rg_pipe = " | rg --colors=match:style:nobold --colors=match:fg:magenta -FxNf ~/.projects"
+local rg_pipe = " | rg --color=never -FxNf ~/.projects"
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 
 if wezterm.GLOBAL.prev_workspace == nil then wezterm.GLOBAL.prev_workspace = "default" end
