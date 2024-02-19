@@ -50,6 +50,24 @@ ls.add_snippets(nil, {
       t({ "]", "---", "" }),
       i(0),
     }),
+    s({
+      trig = "task",
+      name = "task",
+      dscr = "task with tag",
+    }, {
+      t({ "- [ ] #task " }),
+      i(1, "task text"),
+    }),
+    s({
+      trig = "taskd",
+      name = "task-and-date",
+      dscr = "task with tag and date",
+    }, {
+      t({ "- [ ] #task " }),
+      i(1, "task text"),
+      t({ " 📅 " }),
+      f(date, {}),
+    }),
   },
 })
 
