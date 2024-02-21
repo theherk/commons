@@ -79,6 +79,10 @@ pwa () { # add password to keyring
     security add-generic-password -s $1 -a $2 -w
 }
 
+pwd () { # delete password in keyring
+    security delete-generic-password -s $1 -a $2
+}
+
 pwf () { # find password in keyring
     security find-generic-password -w -s $1 -a $2
 }
