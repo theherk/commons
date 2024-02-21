@@ -1,7 +1,8 @@
 local Util = require("config.util")
 
 -- Basics
-vim.keymap.set("n", "<leader>fs", "<cmd>w<cr>", { desc = "write" })
+vim.keymap.set("n", "<leader>fs", "<cmd>up<cr>", { desc = "update" })
+vim.keymap.set("n", "<leader>fS", "<cmd>w<cr>", { desc = "write" })
 vim.keymap.set("n", "<leader>q", "<cmd>qa<cr>", { desc = "quit all" })
 
 -- Better up/down.
@@ -112,7 +113,8 @@ vim.keymap.set("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning"
 vim.keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 -- Save the weird way.
-vim.keymap.set({ "i", "x", "n", "s" }, "<c-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+vim.keymap.set({ "i", "x", "n", "s" }, "<c-s>", "<cmd>up<cr><esc>", { desc = "Save (update) file" })
+vim.keymap.set({ "i", "x", "n", "s" }, "<cs-S>", "<cmd>w<cr><esc>", { desc = "Save (write) file" })
 
 -- Better indenting.
 vim.keymap.set("v", "<", "<gv")
