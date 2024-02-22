@@ -48,6 +48,9 @@ end
 vim.keymap.set("n", "zb", scroll_very_bottom, { desc = "redraw very bottom" })
 vim.keymap.set("n", "zt", scroll_very_top, { desc = "redraw very top" })
 
+-- Filepath yank to clipboard.
+vim.keymap.set("n", "<leader>fy", ":let @+=expand('%:p')<cr>", { desc = "yank path" })
+
 -- Navigation of windows, tabs, and buffers.
 vim.keymap.set("n", "<c-h>", "<c-w>h", { desc = "left window" })
 vim.keymap.set("n", "<c-j>", "<c-w>j", { desc = "lower window" })
