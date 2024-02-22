@@ -186,6 +186,16 @@ return {
     build = "make install_jsregexp",
     dependencies = { "rafamadriz/friendly-snippets" },
   },
+  {
+    "LunarVim/bigfile.nvim",
+    -- Dasable somethings if a huge file is opened...
+    -- but be sane and just open with bat or nvim --clean.
+    event = { "FileReadPre", "BufReadPre" },
+    lazy = false,
+    opts = {
+      filesize = 2,
+    },
+  },
   { "nvim-lua/plenary.nvim", lazy = true },
   {
     "nvim-neo-tree/neo-tree.nvim",
