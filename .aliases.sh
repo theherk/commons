@@ -23,7 +23,7 @@ alias lt='eza -T --icons'
 alias lzd='lazydocker'
 alias lzg='lazygit'
 alias norcal='ncal -s NO -w'
-alias not='rg -iv'
+alias not='rg -v'
 alias r="rsync -rltvz -e ssh --progress"
 alias rcal='rusti-cal -c --starting-day 1'
 alias tfn='gawk '"'"'match($0, /# (\S+\.(\[.+\]|\S+)+)/, g) { m=g[1]; l=$0 } match($0, /^(.* )resource .*{$/, g) { if (l!~/has changed/ && l!~/will be read/) print g[1] m }'"'"' | sort'
