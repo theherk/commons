@@ -109,6 +109,7 @@ if status is-interactive
     abbr -a lzd --position command lazydocker
     abbr -a lzg --position command lazygit
     abbr -a norcal --position command ncal -s NO -w
+    abbr -a not --position command rg -iv
     abbr -a of --position command onefetch
     abbr -a pc --position anywhere --set-cursor "%| pbcopy"
     abbr -a r --position command rsync -rltvz -e ssh --progress
