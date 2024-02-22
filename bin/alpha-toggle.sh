@@ -25,13 +25,13 @@ clarify() {
 	# sed -i '' 's/\(transparent = \)false/\1true/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(sidebars = \)"normal"/\1"transparent"/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(floats = \)"normal"/\1"transparent"/' .config/nvim/lua/plugins/display.lua
-	sed -i '' 's/\(config.window_background_opacity = \).*/\10.94247/' .config/wezterm/theme.lua
+	sed -i '' 's/\(config.window_background_opacity = \).*/\10.74247/' .config/wezterm/theme.lua
 	sed -i '' 's/\(background = \).*\(, -- tab_bar\)/\1"none"\2/' .config/wezterm/theme.lua
 	sed -i '' 's/\(bg_color = \).*\(, -- new_tab\)/\1"none"\2/' .config/wezterm/theme.lua
 }
 
 cd ~/commons || return
-if grep -q "config.window_background_opacity = 0.94247" ~/.config/wezterm/theme.lua; then
+if grep -q "config.window_background_opacity = 0.74247" ~/.config/wezterm/theme.lua; then
 	echo "currently: transparent\nswitch to: opaque"
 	obfuscate
 else
