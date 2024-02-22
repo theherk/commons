@@ -34,7 +34,6 @@ return {
   },
   {
     "echasnovski/mini.indentscope",
-    version = false, -- wait till new 0.7.0 release to put it back on semver
     event = { "BufReadPre", "BufNewFile" },
     opts = {
       symbol = "│",
@@ -250,30 +249,6 @@ return {
   {
     "junegunn/vim-easy-align",
     -- TODO: Switch to mini.align.
-  },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    event = { "BufReadPost", "BufNewFile" },
-    main = "ibl",
-    opts = {
-      exclude = {
-        filetypes = {
-          "help",
-          "alpha",
-          "dashboard",
-          "neo-tree",
-          "Trouble",
-          "lazy",
-          "mason",
-          "notify",
-          "toggleterm",
-          "lazyterm",
-        },
-      },
-      indent = {
-        char = "│",
-      },
-    },
   },
   { "MunifTanjim/nui.nvim", lazy = true },
   {
