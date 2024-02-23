@@ -58,8 +58,8 @@ return {
     config = function() require("telescope").load_extension("harpoon") end,
     keys = {
       { "<leader>fm", function() require("harpoon.mark").add_file() end, desc = "harpoon mark" },
-      { "]f", function() require("harpoon.ui").nav_next() end, mode = { "i", "n" }, desc = "harpoon next" },
-      { "[f", function() require("harpoon.ui").nav_prev() end, mode = { "i", "n" }, desc = "harpoon prev" },
+      { "]f", function() require("harpoon.ui").nav_next() end, desc = "harpoon next" },
+      { "[f", function() require("harpoon.ui").nav_prev() end, desc = "harpoon prev" },
       { "<c-,>", function() require("harpoon.ui").toggle_quick_menu() end, mode = { "i", "n" }, desc = "harpoon marks" },
       { "<c-1>", function() require("harpoon.ui").nav_file(1) end, mode = { "i", "n" }, desc = "harpoon file 1" },
       { "<c-2>", function() require("harpoon.ui").nav_file(2) end, mode = { "i", "n" }, desc = "harpoon file 2" },
