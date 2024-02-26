@@ -33,6 +33,41 @@ return {
     },
   },
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    lazy = false,
+    opts = {
+      dim_inactive = {
+        enabled = true,
+        shade = "dark",
+        percentage = 0.15,
+      },
+      flavour = "latte",
+      transparent_background = true,
+      integrations = {
+        cmp = true,
+        dap = true,
+        dap_ui = true,
+        gitsigns = true,
+        harpoon = true,
+        mini = {
+          enabled = true,
+          indentscope_color = "peach",
+        },
+        neogit = true,
+        noice = false,
+        notify = true,
+        nvimtree = true,
+        telescope = {
+          enabled = true,
+        },
+        treesitter = true,
+        treesitter_context = true,
+      },
+    },
+  },
+  {
     "echasnovski/mini.indentscope",
     event = { "BufReadPre", "BufNewFile" },
     opts = {
