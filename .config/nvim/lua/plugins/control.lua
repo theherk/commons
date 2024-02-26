@@ -37,6 +37,7 @@ return {
           { mode = "n", keys = "<c-w>" },
           { mode = "i", keys = "<c-w>" },
           { mode = "n", keys = "<leader>" },
+          { mode = "v", keys = "<leader>" },
           { mode = "n", keys = "<localleader>" },
           { mode = "n", keys = "<tab>" },
           { mode = "n", keys = "[" },
