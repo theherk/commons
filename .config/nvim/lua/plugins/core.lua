@@ -80,8 +80,10 @@ return {
     keys = {
       { "]t", function() require("todo-comments").jump_next() end, desc = "next todo" },
       { "[t", function() require("todo-comments").jump_prev() end, desc = "prev todo" },
-      { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "todo" },
-      { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "todo/fix/fixme" },
+      { "<leader>stf", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "todo/fix/fixme" },
+      { "<leader>stq", "<cmd>TodoQuickFix<cr>", desc = "quickfix" },
+      { "<leader>stt", "<cmd>TodoTelescope<cr>", desc = "telescope" },
+      { "<leader>stT", "<cmd>TodoTrouble<cr>", desc = "trouble" },
     },
   },
   {
