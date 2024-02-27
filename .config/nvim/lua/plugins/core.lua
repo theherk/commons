@@ -235,9 +235,9 @@ return {
         sorting_strategy = "ascending",
       },
       pickers = {
-        live_grep = {
-          additional_args = function(_) return { "--hidden", "--glob=!.git/" } end,
-        },
+        live_grep = { additional_args = function(_) return { "--hidden", "--glob=!.git/" } end },
+        keymaps = { theme = "dropdown" },
+        spell_suggest = { theme = "cursor" },
       },
     },
     keys = {
