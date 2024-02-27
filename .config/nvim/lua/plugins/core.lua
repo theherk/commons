@@ -252,6 +252,7 @@ return {
       { "<leader>hs", "<cmd>Telescope spell_suggest<cr>", desc = "spell" },
       { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "keymaps" },
       { "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "buffer / swiper" },
+      { "z=", "<cmd>Telescope spell_suggest<cr>", desc = "spell" },
     },
   },
   {
