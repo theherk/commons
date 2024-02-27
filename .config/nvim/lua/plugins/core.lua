@@ -249,7 +249,7 @@ return {
       { "<leader>cS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "workspace symbols" },
       { "<leader>ff", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", desc = "find files" },
       { "<leader>hh", "<cmd>Telescope help_tags<cr>", desc = "help" },
-      { "<leader>hh", "<cmd>Telescope spell_suggest<cr>", desc = "spell" },
+      { "<leader>hs", "<cmd>Telescope spell_suggest<cr>", desc = "spell" },
       { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "keymaps" },
       { "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "buffer / swiper" },
     },
