@@ -20,6 +20,7 @@ return {
           { mode = "n", keys = "<leader>f", desc = "+file" },
           { mode = "n", keys = "<leader>g", desc = "+git" },
           { mode = "n", keys = "<leader>gd", desc = "+diffview" },
+          { mode = "n", keys = "<leader>h", desc = "+help" },
           { mode = "n", keys = "<leader>n", desc = "+notes" },
           { mode = "n", keys = "<leader>nj", desc = "+journal" },
           { mode = "n", keys = "<leader>nl", desc = "+link" },
