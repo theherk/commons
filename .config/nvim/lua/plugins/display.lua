@@ -291,6 +291,25 @@ return {
     "junegunn/vim-easy-align",
     -- TODO: Switch to mini.align.
   },
+  -- Follow:
+  -- https://github.com/krivahtoo/silicon.nvim/issues/39
+  -- https://github.com/krivahtoo/silicon.nvim/issues/40
+  -- {
+  --   "krivahtoo/silicon.nvim",
+  --   build = "./install.sh build",
+  --   opts = {
+  --     font = "VictorMono NF=26",
+  --     background = "#fff",
+  --     theme = "tokyonight_night",
+  --     line_number = true,
+  --     pad_vert = 40,
+  --     pad_horiz = 20,
+  --     watermark = {
+  --       text = " @theherk",
+  --     },
+  --     window_title = function() return vim.fn.fnamemodify(vim.fn.bufname(vim.fn.bufnr()), ":~:.") end,
+  --   },
+  -- },
   { "MunifTanjim/nui.nvim", lazy = true },
   {
     "nvim-lualine/lualine.nvim",
