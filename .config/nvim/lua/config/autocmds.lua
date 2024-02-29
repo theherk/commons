@@ -71,6 +71,16 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Colorize some filetypes on load.
 vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("colorize"),
+  pattern = {
+    "css",
+    "markdown",
+  },
+  callback = function(_) require("nvim-highlight-colors").turnOn() end,
+})
+
+-- Conceal more for certain filetypes.
+vim.api.nvim_create_autocmd("FileType", {
   group = augroup("conceal_norg"),
   pattern = {
     "norg",
