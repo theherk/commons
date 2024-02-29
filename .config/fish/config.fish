@@ -174,19 +174,6 @@ if status is-interactive
         end
     end
 
-    function mkdir -d "Create a directory and set CWD"
-        command mkdir $argv
-        if test $status = 0
-            switch $argv[(count $argv)]
-                case '-*'
-
-                case '*'
-                    cd $argv[(count $argv)]
-                    return
-            end
-        end
-    end
-
     function pwa # add password to keyring
         argparse --min-args 2 --max-args 2 -- $argv
         security add-generic-password -s $argv[1] -a $argv[2] -w
