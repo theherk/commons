@@ -211,6 +211,14 @@ end run
 
 May already exist in iCloud. Copy this to `/Applications/`, and now it can be set as the default filetype opener.
 
+## Make sure theme caches are built.
+
+Directory `syntaxes` has to exist for silicon to build cache.
+
+```sh
+cd ~/.config/bat && mkdir -p syntaxes && bat cache --build && silicon --build-cache
+```
+
 ## Install more programming tools.
 
 ### Install Go from https://golang.org/doc/install.
