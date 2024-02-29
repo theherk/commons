@@ -33,6 +33,13 @@ return {
     },
   },
   {
+    "brenoprata10/nvim-highlight-colors",
+    config = true,
+    keys = {
+      { "<leader>uC", "<cmd>HighlightColorsToggle<cr>", desc = "colorizer" },
+    },
+  },
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
