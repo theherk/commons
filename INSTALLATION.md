@@ -100,6 +100,7 @@ brew install \
     rust-analyzer \
     shadowenv \
     shellcheck \
+    silicon \
     sk \
     starship \
     temurin \

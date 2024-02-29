@@ -52,6 +52,7 @@ A partial list of installed tools:
 - [pyenv](https://github.com/pyenv/pyenv): Simple python version management.
 - [ripgrep](https://github.com/BurntSushi/ripgrep): Amazing search tool.
 - [shadowenv](https://github.com/Shopify/shadowenv): Slightly better, but less integrated environment manipulation.
+- [silicon](https://github.com/Aloxaf/silicon): Create beautiful image of your source code.
 - [skim](https://github.com/lotabout/skim): Awesome fuzzy finder.
 - [starship](https://starship.rs/): Customizable prompt.
 - [terraform](https://www.terraform.io/): Infrastructure management tool.
