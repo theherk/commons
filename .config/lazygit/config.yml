@@ -10,6 +10,7 @@ customCommands:
 gui:
   nerdFontsVersion: "3"
   showBottomLine: true
+  showFileTree: false
   theme:
     selectedLineBgColor: ["#24283b"]
     selectedRangeBgColor: ["#24283b"]
