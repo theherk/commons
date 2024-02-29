@@ -36,7 +36,7 @@ return {
     "brenoprata10/nvim-highlight-colors",
     config = true,
     keys = {
-      { "<leader>uC", "<cmd>HighlightColorsToggle<cr>", desc = "colorizer" },
+      { "<leader>uC", function() require("nvim-highlight-colors").toggle() end, desc = "colorizer" },
     },
   },
   {
