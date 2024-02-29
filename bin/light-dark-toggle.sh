@@ -12,8 +12,8 @@
 # - obsidian (changes with system)
 # - wezterm
 
-BAT_DARK=ansi
-BAT_LIGHT=OneHalfLight
+BAT_DARK=tokyonight_night
+BAT_LIGHT=Catppuccin-latte
 
 CODIUM_DARK="Aura Dark (Soft Text)"
 CODIUM_LIGHT="Catppuccin Latte"
