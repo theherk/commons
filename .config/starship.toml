@@ -1,4 +1,4 @@
-format = "$shell$directory$env_var\n$character"
+format = "$username$shell$directory$env_var\n$character"
 
 [aws]
 disabled = true
@@ -14,24 +14,24 @@ min_time = 5_000
 style = "italic purple"
 
 [env_var.AWS_PROFILE]
-format = "[$env_value]($style)"
-style = "bold cyan"
+format = "[󰸏 ](bold yellow)[$env_value]($style)"
+style = "cyan"
 
 [python]
 disabled = true
+symbol = " "
 
 [shell]
 disabled = false
 bash_indicator = "𝔹"
-# fish_indicator = "ƒ"
-fish_indicator = "🐠"
+fish_indicator = "󰈺"
 nu_indicator = "ℕ"
 zsh_indicator = "ℤ"
 
 [terraform]
 disabled = true
-# symbol = "ﭨ " # looks great outside vterm
-symbol = " "
+format = "[$symbol$version]($style) "
+symbol = "󱁢 "
 
 [username]
-format = "[$user]($style)[](purple)"
+format = "[$user]($style)[ ](purple)"
