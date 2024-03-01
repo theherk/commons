@@ -10,3 +10,19 @@ package.path = home
     .. package.path
 require "icons".setup()
 require "zentable".setup()
+
+xplr.config.general.global_key_bindings = {
+  on_key = {
+    ["ctrl-e"] = {
+      help = "edit",
+      messages = {
+        {
+          BashExec0 = [===[
+            ${EDITOR:-vi} "${XPLR_FOCUS_PATH:?}"
+          ]===],
+        },
+        "PopMode",
+      },
+    },
+  },
+}
