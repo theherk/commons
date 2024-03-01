@@ -19,7 +19,12 @@ else
   colors.inactive_fg = bg:complement_ryb():lighten(0.3)
   colors.panel_bg = bg:lighten(0.069)
 end
-colors.active_bg = scheme.selection_bg or colors.panel_bg
+if selected_scheme == "Catppuccin Latte" then
+  -- This is a special case; I don't like the selection_bg.
+  colors.active_bg = colors.panel_bg
+else
+  colors.active_bg = scheme.selection_bg or colors.panel_bg
+end
 
 scheme.tab_bar = {
   background = colors.bg, -- tab_bar
