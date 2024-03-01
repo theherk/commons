@@ -7,6 +7,8 @@
 	tree="log --pretty=oneline --decorate --graph"
 [checkout]
 	defaultRemote = origin
+[commit]
+	template = ~/.config/git/message
 [core]
 	editor = editor
 	pager = delta
