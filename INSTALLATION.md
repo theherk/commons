@@ -448,38 +448,53 @@ map J nextTab
 ```css
 /* #ui */
 
+.LH {
+  background: #e6e9ef;
+  color: #04a5e5;
+  border-color: #dd7878;
+  font-weight: 555;
+  scale: 1.23;
+}
+
 .D > .LH {
   background: #1a1b26;
   color: #2ac3de;
   border-color: #bb9af7;
-  scale: 1.33;
 }
 
 /* #omni */
 
 #bar {
+  background: #ccd0da;
+}
+
+.has-dark #bar {
   background: #1a1b26;
-  border-color: #bb9af7;
 }
 
 #input {
+  background: #e6e9ef;
+  border-color: #dd7878;
+}
+
+.has-dark #input {
   background: #24283b;
   border-color: #bb9af7;
 }
 
-.item {
-  background: #1a1b26;
-}
-
-.top {
-  color: #9aa5ce;
-}
-
-.bottom {
-  color: #a9b1d6;
-}
-
 .history {
+  fill: #fe640b;
+}
+
+.has-dark .history {
+  fill: #e0af68;
+}
+
+.icon {
+  fill: #04a5e5;
+}
+
+.has-dark .icon {
   fill: #e0af68;
 }
 ```
