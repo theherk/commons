@@ -45,11 +45,6 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-      dim_inactive = {
-        enabled = true,
-        shade = "dark",
-        percentage = 0.15,
-      },
       flavour = "latte",
       transparent_background = true,
       integrations = {
