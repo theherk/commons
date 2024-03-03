@@ -131,26 +131,26 @@ return {
         "<S-Enter>",
         function() require("noice").redirect(vim.fn.getcmdline()) end,
         mode = "c",
-        "Redirect Cmdline"
+        "redirect cmdline"
       },
       {
         "<leader>snl",
         function() require("noice").cmd("last") end,
         desc =
-        "Noice Last Message"
+        "last message"
       },
       {
         "<leader>snh",
         function() require("noice").cmd("history") end,
         desc =
-        "Noice History"
+        "history"
       },
       { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
       {
         "<leader>snd",
         function() require("noice").cmd("dismiss") end,
         desc =
-        "Dismiss All"
+        "dismiss"
       },
       {
         "<c-f>",
@@ -158,7 +158,7 @@ return {
         silent = true,
         expr = true,
         desc =
-        "Scroll forward",
+        "scroll forward",
         mode = {
           "i", "n", "s"
         }
@@ -169,7 +169,7 @@ return {
         silent = true,
         expr = true,
         desc =
-        "Scroll backward",
+        "scroll backward",
         mode = {
           "i", "n", "s"
         }
