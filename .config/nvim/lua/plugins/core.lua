@@ -10,7 +10,7 @@ return {
     config = true,
     keys = {
       { "<leader>bd", function() require("mini.bufremove").delete(0, false) end, desc = "delete" },
-      { "<leader>bD", function() require("mini.bufremove").delete(0, true) end, desc = "DELETE" },
+      { "<leader>bD", function() require("mini.bufremove").delete(0, true) end, desc = "delete (force)" },
     },
   },
   {
