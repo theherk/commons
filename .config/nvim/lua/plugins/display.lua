@@ -246,12 +246,11 @@ return {
       ]]
       dashboard.section.header.val = vim.split(logo, "\n")
       dashboard.section.buttons.val = {
-        dashboard.button("/", "  " .. "Grep", "<cmd>Telescope live_grep<cr>"),
-        dashboard.button("f", "  " .. "Files", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>"),
-        dashboard.button("g", "  " .. "Git Files", "<cmd>Telescope git_files<cr>"),
-        -- dashboard.button("h", "  " .. "Neovim Help", "<cmd>help<cr>"),
-        dashboard.button("l", "  " .. "Lazy", "<cmd>Lazy<cr>"),
-        dashboard.button("q", "  " .. "Quit", ":qa<cr>"),
+        dashboard.button("/", "  " .. "grep", "<cmd>Telescope live_grep<cr>"),
+        dashboard.button("f", "  " .. "files", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>"),
+        dashboard.button("g", "󰊢  " .. "git files", "<cmd>Telescope git_files<cr>"),
+        dashboard.button("l", "  " .. "lazy", "<cmd>Lazy<cr>"),
+        dashboard.button("q", "  " .. "quit", ":qa<cr>"),
       }
       for _, button in ipairs(dashboard.section.buttons.val) do
         button.opts.hl = "AlphaButtons"
