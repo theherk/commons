@@ -103,6 +103,7 @@ return {
       { "<leader>nn", "<cmd>ObsidianNew<cr>", desc = "new" },
       { "<leader>nr", "<cmd>ObsidianRename<cr>", desc = "rename" },
       { "<leader>ns", "<cmd>ObsidianSearch<cr>", desc = "search" },
+      { "<leader>nt", "<cmd>ObsidianTags<cr>", desc = "tags" },
       { "<leader>nwm", "<cmd>ObsidianWorkspace main<cr>", desc = "main" },
       { "<leader>nwo", "<cmd>ObsidianWorkspace onedrive<cr>", desc = "onedrive" },
       { "<localleader>mx", function() require("obsidian.util").toggle_checkbox() end, desc = "complete" },
