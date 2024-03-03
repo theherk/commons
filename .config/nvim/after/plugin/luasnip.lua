@@ -90,4 +90,4 @@ end)
 vim.keymap.set("i", "<c-u>", require("luasnip.extras.select_choice"))
 
 -- Reload luasnip.
-vim.keymap.set("n", "<leader>L", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<cr>", { desc = "󰩫 luasnip" })
+vim.keymap.set("n", "<leader>L", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<cr>", { desc = "luasnip" })

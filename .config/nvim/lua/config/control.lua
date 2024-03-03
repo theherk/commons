@@ -3,7 +3,7 @@ local Util = require("config.util")
 -- Basics
 vim.keymap.set("n", "<leader>fs", "<cmd>up<cr>", { desc = "update" })
 vim.keymap.set("n", "<leader>fS", "<cmd>w<cr>", { desc = "write" })
-vim.keymap.set("n", "<leader>q", "<cmd>qa<cr>", { desc = " quit all" })
+vim.keymap.set("n", "<leader>q", "<cmd>qa<cr>", { desc = "quit all" })
 
 -- Better up/down.
 vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -130,4 +130,4 @@ vim.keymap.set("v", "ga", "<Plug>(EasyAlign)")
 vim.keymap.set("v", "<leader>ct", ":!pandoc -t markdown-simple_tables<cr>", { desc = "fmt table" })
 
 -- Open Lazy interface.
-vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = " lazy" })
+vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "lazy" })

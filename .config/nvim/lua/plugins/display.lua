@@ -210,7 +210,7 @@ return {
       })
     end,
     keys = {
-      { "<leader>Z", "<cmd>ZenMode<cr>", desc = " zen" },
+      { "<leader>Z", "<cmd>ZenMode<cr>", desc = "zen" },
     },
   },
   {

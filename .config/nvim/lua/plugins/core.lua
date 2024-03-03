@@ -25,8 +25,8 @@ return {
   {
     "echasnovski/mini.files",
     keys = {
-      { "<leader>e", function() require("mini.files").open(vim.api.nvim_buf_get_name(0)) end, desc = "󰱽 explore" },
-      { "<leader>fe", function() require("mini.files").open(vim.api.nvim_buf_get_name(0)) end, desc = "󰱽 explore" },
+      { "<leader>e", function() require("mini.files").open(vim.api.nvim_buf_get_name(0)) end, desc = "explore" },
+      { "<leader>fe", function() require("mini.files").open(vim.api.nvim_buf_get_name(0)) end, desc = "explore" },
     },
     opts = {
       mappings = {
@@ -241,8 +241,8 @@ return {
       },
     },
     keys = {
-      { "<leader><leader>", "<cmd>Telescope git_files<cr>", desc = " git files" },
-      { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "󰮗 grep" },
+      { "<leader><leader>", "<cmd>Telescope git_files<cr>", desc = "git files" },
+      { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "grep" },
       { "<leader>bb", "<cmd>Telescope buffers<cr>", desc = "find buffers" },
       { "<leader>bf", "<cmd>Telescope buffers<cr>", desc = "find buffers" },
       { "<leader>cs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "document symbols" },
@@ -327,7 +327,7 @@ return {
     "Wansmer/treesj",
     config = true,
     keys = {
-      { "<leader>J", "<cmd>TSJToggle<cr>", desc = "󱘖 spoin" },
+      { "<leader>J", "<cmd>TSJToggle<cr>", desc = "spoin" },
     },
   },
   {
