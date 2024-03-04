@@ -73,7 +73,7 @@ ls.add_snippets(nil, {
       name = "task-dated",
       dscr = "task (dated)",
     }, {
-      t({ "- [ ] #task " }),
+      t({ "- [ ] " }),
       i(1, "task text"),
       t({ " 📅 " }),
       f(date, {}),
