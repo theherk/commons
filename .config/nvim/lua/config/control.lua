@@ -126,8 +126,5 @@ vim.keymap.set("v", ">", ">gv")
 -- EasyAlign
 vim.keymap.set("v", "ga", "<Plug>(EasyAlign)")
 
--- Format markdown tables.
-vim.keymap.set("v", "<leader>ct", ":!pandoc -t markdown-simple_tables<cr>", { desc = "fmt table" })
-
 -- Open Lazy interface.
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "lazy" })

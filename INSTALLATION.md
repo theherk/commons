@@ -244,6 +244,12 @@ rustup default nightly
 rustup component add rust-src rustc-dev llvm-tools-preview
 ```
 
+Also install [markdown-toc](https://github.com/pbzweihander/markdown-toc).
+
+```sh
+cargo install markdown-toc
+```
+
 ### Some npm tools.
 
 ```sh
