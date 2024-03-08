@@ -1,4 +1,15 @@
 local onedrive = os.getenv("ONEDRIVE") or "/Users/h4s/Library/CloudStorage/OneDrive"
+local function workspaces()
+  local _workspaces = { {
+    name = "main",
+    path = "~/org/foam",
+  } }
+  if vim.fn.isdirectory(onedrive) ~= 0 then table.insert(_workspaces, {
+    name = "onedrive",
+    path = onedrive .. "/foam-onedrive",
+  }) end
+  return _workspaces
+end
 
 return {
   {
@@ -86,7 +97,7 @@ return {
   },
   {
     "epwalsh/obsidian.nvim",
-    version = "*",
+    version = "497d605",
     dependencies = {
       "nvim-lua/plenary.nvim",
       -- Required pngpaste on MacOS. `brew install pngpaste`
@@ -126,16 +137,7 @@ return {
         end
         return tostring(os.time()) .. "-" .. suffix
       end,
-      workspaces = {
-        {
-          name = "main",
-          path = "~/org/foam",
-        },
-        {
-          name = "onedrive",
-          path = onedrive .. "/foam-onedrive",
-        },
-      },
+      workspaces = workspaces(),
     },
   },
   {
