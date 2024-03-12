@@ -9,6 +9,6 @@
   "theme": "Atelier Sulphurpool Dark",
   "vim_mode": true,
   "ui_font_size": 15,
-  "buffer_font_family": "VictorMono NF",
+  "buffer_font_family": "VictorMono Nerd Font",
   "buffer_font_size": 17
 }
