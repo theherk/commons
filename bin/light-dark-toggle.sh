@@ -28,8 +28,8 @@ NVIM_COLORSCHEME_LIGHT="catppuccin"
 WEZTERM_DARK="Tokyo Night"
 WEZTERM_LIGHT="Catppuccin Latte"
 
-ZED_DARK="Andromeda"
-ZED_LIGHT="Catppuccin Latte"
+ZED_DARK="Atelier Sulphurpool Dark"
+ZED_LIGHT="Atelier Sulphurpool Light"
 
 darken() {
 	echo "darkening"
