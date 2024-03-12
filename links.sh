@@ -23,6 +23,8 @@ ln -sf ~/commons/.config/ripgrep/ ~/.config/
 ln -sf ~/commons/.config/starship.toml ~/.config/starship.toml
 ln -sf ~/commons/.config/tidy/ ~/.config/
 ln -sf ~/commons/.config/wezterm/ ~/.config/
+ln -sf ~/commons/.config/zed/keymap.json ~/.config/zed/
+ln -sf ~/commons/.config/zed/settings.json ~/.config/zed/settings.json
 ln -sf ~/commons/.config/zellij/ ~/.config/
 ln -sf ~/commons/.editorconfig ~/
 ln -sf ~/commons/.eslintrc ~/

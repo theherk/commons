@@ -1,17 +1,5 @@
 #!/usr/bin/env sh
 
-# items to control:
-# - bat
-# - codium
-# - doom
-# - git (just light bool)
-# - gitui
-# - helix
-# - lazygit (maybe)
-# - nvim
-# - obsidian (changes with system)
-# - wezterm
-
 BAT_DARK=tokyonight_night
 BAT_LIGHT=Catppuccin-latte
 
@@ -40,6 +28,9 @@ NVIM_COLORSCHEME_LIGHT="catppuccin"
 WEZTERM_DARK="Tokyo Night"
 WEZTERM_LIGHT="Catppuccin Latte"
 
+ZED_DARK="Andromeda"
+ZED_LIGHT="Catppuccin Latte"
+
 darken() {
 	echo "darkening"
 	sed -i '' 's/\(--theme=\)".*"/\1"'$BAT_DARK'"/' .config/bat/config
@@ -58,6 +49,7 @@ darken() {
 	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1'$NVIM_COLORSCHEME_DARK'")/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(vim.opt.background = \)".*"/\1"dark"/' .config/nvim/lua/config/options.lua
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_DARK"'"/' .config/wezterm/theme.lua
+	sed -i '' 's/\("theme": \)".*"/\1"'"$ZED_DARK"'"/' .config/zed/settings.json
 }
 
 lighten() {
@@ -78,6 +70,7 @@ lighten() {
 	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1'$NVIM_COLORSCHEME_LIGHT'")/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(vim.opt.background = \)".*"/\1"light"/' .config/nvim/lua/config/options.lua
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_LIGHT"'"/' .config/wezterm/theme.lua
+	sed -i '' 's/\("theme": \)".*"/\1"'"$ZED_LIGHT"'"/' .config/zed/settings.json
 }
 
 cd ~/commons || return

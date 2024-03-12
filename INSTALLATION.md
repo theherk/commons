@@ -112,6 +112,7 @@ brew install \
     wez/wezterm/wezterm \
     wget \
     xh \
+    zed \
     zellij \
     zenith \
     zoxide
@@ -219,6 +220,12 @@ Directory `syntaxes` has to exist for silicon to build cache.
 cd ~/.config/bat && mkdir -p syntaxes && bat cache --build && silicon --build-cache
 ```
 
+## May want to disable press and hold keys globally.
+
+```sh
+defaults write -g ApplePressAndHoldEnabled -bool false
+```
+
 ## Install more programming tools.
 
 ### Install Go from https://golang.org/doc/install.
@@ -264,8 +271,9 @@ npm audit fix # seems to work after package lock
 > **Note**
 >
 > With M1 see:
->    - https://github.com/pyenv/pyenv/issues/1768#issuecomment-871602950
->    - https://stackoverflow.com/questions/71577626/issues-installing-python-3-8-10-on-macos-12-3-monterey
+>
+> - https://github.com/pyenv/pyenv/issues/1768#issuecomment-871602950
+> - https://stackoverflow.com/questions/71577626/issues-installing-python-3-8-10-on-macos-12-3-monterey
 
 ```sh
 pyenv install 3.9.11
@@ -319,7 +327,7 @@ Since the dock is usually hidden, use [Doll](https://github.com/xiaogdgenuine/Do
 
 > **Warning**
 >
-> Sometimes you use `sudo` a lot. A responsible nerd will tell you not to do this, but `¯\_(ツ)_/¯`... Well, I set up an ssh tunnel to proxy for git several times daily so... Look, what I'm trying to say is, "We don't get into this business to input *extra* keystrokes."
+> Sometimes you use `sudo` a lot. A responsible nerd will tell you not to do this, but `¯\_(ツ)_/¯`... Well, I set up an ssh tunnel to proxy for git several times daily so... Look, what I'm trying to say is, "We don't get into this business to input _extra_ keystrokes."
 
 ```sh
 echo 'h4s ALL = NOPASSWD: /usr/bin/ssh' >> /etc/sudoers
