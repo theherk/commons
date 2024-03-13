@@ -4,5 +4,18 @@
     "bindings": {
       "ctrl-p": "projects::OpenRecent"
     }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !menu",
+    "bindings": {
+      "v": "editor::SelectLargerSyntaxNode"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !menu",
+    "bindings": {
+      "v": "editor::SelectLargerSyntaxNode",
+      "V": "editor::SelectSmallerSyntaxNode"
+    }
   }
 ]
