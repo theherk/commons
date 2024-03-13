@@ -10,5 +10,12 @@
   "vim_mode": true,
   "ui_font_size": 15,
   "buffer_font_family": "VictorMono Nerd Font",
-  "buffer_font_size": 17
+  "buffer_font_size": 17,
+  "project_panel": {
+    "default_width": 222,
+    "indent_size": 18
+  },
+  "terminal": {
+    "default_height": 420
+  }
 }
