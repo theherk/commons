@@ -69,6 +69,7 @@ return {
       },
     },
   },
+  { "RRethy/base16-nvim" },
   {
     "echasnovski/mini.indentscope",
     event = { "BufReadPre", "BufNewFile" },
