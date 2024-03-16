@@ -42,5 +42,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(shadowenv init zsh)"
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 # [ -s "/Users/h4s/.jabba/jabba.sh" ] && source "/Users/h4s/.jabba/jabba.sh"

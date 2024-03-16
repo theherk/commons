@@ -1,6 +1,7 @@
 alias awsl='aws sso login --profile $AWS_PROFILE'
 alias awsr="aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'"
 alias awsu='unset AWS_PROFILE'
+alias cd=z
 alias clock='rsclock -c'
 alias dumplynx='lynx -dump -stdin'
 alias dumpw3m='w3m -dump -T text/html'

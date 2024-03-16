@@ -11,3 +11,4 @@ if [ -f ~/.functions.sh ]; then
 fi
 
 eval "$(starship init bash)"
+eval "$(zoxide init bash)"

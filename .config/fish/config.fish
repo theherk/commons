@@ -85,8 +85,9 @@ if status is-interactive
     abbr -a awswhoami --position command aws sts get-caller-identity
     abbr -a bubu --position command "brew update && brew outdated && brew upgrade && brew cleanup"
     abbr -a c --position command codium
-    abbr -a d --position command 'fd -H -t d | sk'
+    abbr -a cd --position command z
     abbr -a clock --position command rsclock -c
+    abbr -a d --position command 'fd -H -t d | sk'
     abbr -a dumplynx --position anywhere --set-cursor "%| lynx -dump -stdin"
     abbr -a dumpw3m --position anywhere --set-cursor "%| w3m -dump -T text/html"
     abbr -a e --position command editor
