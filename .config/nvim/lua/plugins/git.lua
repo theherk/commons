@@ -18,6 +18,7 @@ return {
     config = true,
     opts = {
       disable_insert_on_commit = false,
+      graph_style = "unicode",
     },
     keys = {
       { "<leader>gg", "<cmd>Neogit<cr>", desc = "neogit" },
