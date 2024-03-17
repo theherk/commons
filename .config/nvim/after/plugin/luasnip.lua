@@ -51,6 +51,20 @@ ls.add_snippets(nil, {
       i(0),
     }),
     s({
+      trig = "nmeta",
+      name = "nmeta",
+      dscr = "yaml frontmatter for obsidian notes",
+    }, {
+      t({ "---", "id: " }),
+      i(1, "id"),
+      t({ "", "aliases:", "  - " }),
+      i(2, "alias"),
+      t({ "", "tags:", "  - " }),
+      i(3, "tag"),
+      t({ "", "---", "" }),
+      i(0),
+    }),
+    s({
       trig = "t",
       name = "task",
       dscr = "task (basic)",
