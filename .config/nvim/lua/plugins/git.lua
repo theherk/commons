@@ -18,6 +18,11 @@ return {
     config = true,
     opts = {
       disable_insert_on_commit = false,
+      git_services = {
+        ["github.com"] = "https://github.com/${owner}/${repository}/compare/${branch_name}?expand=1",
+        ["gitlab.com"] = "https://gitlab.com/${owner}/${repository}/merge_requests/new?merge_request[source_branch]=${branch_name}",
+        ["gitlab.tech.dnb.no"] = "https://gitlab.tech.dnb.no/${path}/${repository}/-/merge_requests/new?merge_request[source_branch]=${branch_name}&merge_request[target_branch]=main",
+      },
       graph_style = "unicode",
     },
     keys = {
