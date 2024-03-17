@@ -122,6 +122,7 @@ return {
     opts = {
       daily_notes = {
         alias_format = "%Y-%m-%d",
+        folder = "journal",
       },
       follow_url_func = function(url) vim.fn.jobstart({ "open", url }) end,
       note_id_func = function(title)
