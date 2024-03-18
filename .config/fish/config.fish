@@ -180,7 +180,7 @@ if status is-interactive
         security add-generic-password -s $argv[1] -a $argv[2] -w
     end
 
-    function pwd # delete password in keyring
+    function pwdel # delete password in keyring
         argparse --min-args 2 --max-args 2 -- $argv
         security delete-generic-password -s $argv[1] -a $argv[2]
     end
