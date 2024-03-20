@@ -66,10 +66,23 @@ return {
     event = "BufRead",
     keys = {
       { "<leader>gdd", "<cmd>DiffviewOpen<cr>", desc = "open" },
-      { "<leader>gdc", "<cmd>DiffviewClose<cr>", desc = "close" },
       { "<leader>gdh", "<cmd>DiffviewFileHistory<cr>", desc = "history" },
       { "<leader>gdl", "<cmd>DiffviewLog<cr>", desc = "log" },
       { "<leader>gdr", "<cmd>DiffviewRefresh<cr>", desc = "refresh" },
+    },
+    opts = {
+      enhanced_diff_hl = true,
+      keymaps = {
+        view = {
+          { "n", "q", "<cmd>set hidden<cr><cmd>DiffviewClose<cr><cmd>set nohidden<cr>", { desc = "close" } },
+        },
+        file_panel = {
+          { "n", "q", "<cmd>set hidden<cr><cmd>DiffviewClose<cr><cmd>set nohidden<cr>", { desc = "close" } },
+        },
+        file_history_panel = {
+          { "n", "q", "<cmd>set hidden<cr><cmd>DiffviewClose<cr><cmd>set nohidden<cr>", { desc = "close" } },
+        },
+      },
     },
   },
 }
