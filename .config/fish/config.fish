@@ -28,6 +28,7 @@ set -g -x VOLTA_HOME "$HOME/.volta"
 set -g -x XDG_CONFIG_HOME "$HOME/.config"
 set -g -x RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
+set fzf_diff_highlighter delta --paging=never --width=20
 set fzf_fd_opts --hidden --exclude=.git
 set fzf_preview_dir_cmd eza --all --color=always
 set --export fzf_dir_opts --bind "ctrl-e:execute(editor {} &> /dev/tty)"
