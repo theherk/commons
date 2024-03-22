@@ -74,11 +74,20 @@ if status is-interactive
         set -Ux SSH_AGENT_PID $SSH_AGENT_PID
     end
 
+    atuin init fish --disable-up-arrow | source
     starship init fish | source
     direnv hook fish | source
     pyenv init - | source
     pyenv virtualenv-init - | source
     zoxide init fish | source
+
+    # fzf.fish history
+    fzf_configure_bindings --history=\e\ch
+
+    # atuin history
+    bind \cr _atuin_search
+    bind -M insert \cr _atuin_search
+
     abbr -a !! --position anywhere --function last_history_item
     abbr -a awsl --position command aws sso login --profile \$AWS_PROFILE
     abbr -a awsr --position command aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'

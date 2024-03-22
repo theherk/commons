@@ -37,6 +37,7 @@ if [ -f $HOME/.local-exports ]; then
   source $HOME/.local-exports
 fi
 
+eval "$(atuin init zsh --disable-up-arrow)"
 eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"

@@ -42,6 +42,7 @@ brew tap helix-editor/helix
 brew tap wez/wezterm
 brew install \
     asciinema \
+    atuin \
     bash-language-server \
     bat \
     bottom \
@@ -128,6 +129,12 @@ chsh -s $(which fish)
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install \
     jorgebucaran/fisher \
     PatrickF1/fzf.fish
+```
+
+### Disabling default fzf search history in favor of PatrickF1/fzf.fish
+
+```fish
+/opt/homebrew/opt/fzf/uninstall
 ```
 
 ## Configure Neovim
