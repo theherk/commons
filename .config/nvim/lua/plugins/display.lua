@@ -305,6 +305,10 @@ return {
   --     window_title = function() return vim.fn.fnamemodify(vim.fn.bufname(vim.fn.bufnr()), ":~:.") end,
   --   },
   -- },
+  {
+    "mawkler/modicator.nvim",
+    config = true,
+  },
   { "MunifTanjim/nui.nvim", lazy = true },
   {
     "nvim-lualine/lualine.nvim",
