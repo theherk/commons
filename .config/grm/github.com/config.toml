@@ -1,3 +1,4 @@
+force_ssh = true
 provider = "github"
 token_command = "security find-generic-password -w -s github.com -a theherk@gmail.com"
 root = "."

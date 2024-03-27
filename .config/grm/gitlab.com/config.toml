@@ -1,3 +1,4 @@
+force_ssh = true
 provider = "gitlab"
 token_command = "security find-generic-password -w -s gitlab.com -a theherk@gmail.com"
 root = "."
