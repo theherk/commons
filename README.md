@@ -35,6 +35,7 @@ A partial list of installed tools:
 - [dozer](https://github.com/Mortennn/Dozer): Hide menu bar icons on macOS.
 - [dropbox](https://formulae.brew.sh/cask/dropbox): Only for syncing org directory.
 - [dua](https://github.com/Byron/dua-cli): Disk usage analyzer cli with interactive option.
+- [dust](https://github.com/bootandy/dust): A more intuitive version of du in rust.
 - [editorconfig](https://editorconfig.org/): Enforce some text styles.
 - [eza](https://eza.rocks/): A modern, maintained replacement for ls.
 - [fd](https://github.com/sharkdp/fd): Fast, user-friendly find.
