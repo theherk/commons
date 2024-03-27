@@ -25,3 +25,5 @@ os:
   editAtLineAndWait: "nvim --remote-wait +{{line}} {{filename}}"
   editInTerminal: true
 promptToReturnFromSubprocess: false
+services:
+  "gitlab.tech.dnb.no:2222": "gitlab:gitlab.tech.dnb.no"
