@@ -325,9 +325,11 @@ return {
   },
   {
     "Wansmer/treesj",
-    config = true,
     keys = {
       { "<leader>J", "<cmd>TSJToggle<cr>", desc = "spoin" },
+    },
+    opts = {
+      use_default_keymaps = false,
     },
   },
   {
