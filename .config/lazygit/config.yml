@@ -39,6 +39,7 @@ git:
     colorArg: always
     pager: delta --paging=never --dark
   parseEmoji: true
+notARepository: quit
 os:
   edit: "$EDITOR {{filename}}"
   editAtLine: "nvim +{{line}} {{filename}}"
