@@ -28,6 +28,7 @@ gui:
   enlargedSideViewLocation: top
   nerdFontsVersion: "3"
   showBottomLine: false
+  showCommandLog: false
   showFileTree: false
   theme:
     selectedLineBgColor: ["#24283b"]
