@@ -25,6 +25,7 @@ customCommands:
     description: "(C)lean / prune deleted remote branches."
     loadingText: "Pruning remote..."
 gui:
+  enlargedSideViewLocation: top
   nerdFontsVersion: "3"
   showBottomLine: false
   showFileTree: false
