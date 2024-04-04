@@ -72,6 +72,7 @@ brew install \
     grip \
     helix \
     homebrew/cask-fonts/font-victor-mono-nerd-font \
+    homebrew/cask-fonts/font-zed-mono-nerd-font \
     jq \
     keycastr \
     kubectl \

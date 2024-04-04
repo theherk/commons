@@ -65,7 +65,8 @@ A partial list of installed tools:
 
 ### Font ✏️
 
-I use [Victor Mono](https://rubjo.github.io/victor-mono/), and it is superb.
+- [Victor Mono](https://rubjo.github.io/victor-mono/)
+- [Zed Mono](https://github.com/zed-industries/zed-fonts)
 
 ## Languages 📙
 

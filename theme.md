@@ -96,6 +96,7 @@ It is nice to improve the bar with this custom css when in light mode. It can be
 
 - [victor mono](https://rubjo.github.io/victor-mono/)
 - [ubuntu](https://design.ubuntu.com/font/)
+- [zed mono](https://github.com/zed-industries/zed-fonts)
 
 ## Switching
 
