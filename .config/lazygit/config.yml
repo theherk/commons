@@ -33,6 +33,7 @@ gui:
   theme:
     selectedLineBgColor: ["#24283b"]
     selectedRangeBgColor: ["#24283b"]
+  timeFormat: "2006-01-02"
 git:
   paging:
     colorArg: always
