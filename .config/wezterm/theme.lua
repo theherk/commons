@@ -59,7 +59,7 @@ function module.apply_to_config(config)
     saturation = 0.66,
     brightness = 0.54,
   }
-  config.font = wezterm.font("ZedMono NF Light Obl")
+  config.font = wezterm.font("ZedMono NF Light")
   config.font_size = 17
   config.tab_bar_at_bottom = true
   config.tab_max_width = 96

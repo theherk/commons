@@ -1,7 +1,7 @@
 {
   "codeium.enableSearch": true,
-  "editor.codeLensFontFamily": "ZedMono NF Light Obl",
-  "editor.fontFamily": "ZedMono NF Light Obl, Menlo, Monaco, 'Courier New', monospace",
+  "editor.codeLensFontFamily": "ZedMono NF Light",
+  "editor.fontFamily": "ZedMono NF Light, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
@@ -29,7 +29,6 @@
   "magit.display-buffer-function": "same-column",
   "magit.forge-enabled": true,
   "magit.code-path": "codium",
-  "projectManager.git.baseFolders": ["~/projects"],
   "python.formatting.provider": "black",
   "rust-analyzer.lens.location": "above_whole_item",
   "search.showLineNumbers": true,

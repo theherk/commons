@@ -53,7 +53,7 @@ vim.opt.foldlevelstart = 6
 vim.g.vim_markdown_folding_level = 2
 
 -- Neovide
-vim.o.guifont = "ZedMono NF Light Obl:h18"
+vim.o.guifont = "ZedMono NF Light:h18"
 local alpha = function() return string.format("%x", math.floor(255 * vim.g.transparency)) end
 -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
 vim.g.neovide_transparency = 0.0

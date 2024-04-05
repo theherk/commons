@@ -13,10 +13,10 @@ shape = "Block"
 size = 20.0
 
 [font.bold]
-family = "ZedMono NF Light Obl"
+family = "ZedMono NF Light"
 
 [font.normal]
-family = "ZedMono NF Light Obl"
+family = "ZedMono NF Light"
 
 [scrolling]
 history = 10000
