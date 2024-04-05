@@ -29,22 +29,37 @@
   "magit.display-buffer-function": "same-column",
   "magit.forge-enabled": true,
   "magit.code-path": "codium",
+  "projectManager.git.baseFolders": [
+    "~/projects"
+  ],
   "python.formatting.provider": "black",
   "rust-analyzer.lens.location": "above_whole_item",
   "search.showLineNumbers": true,
   "spellright.languageContext": {},
-  "spellright.language": ["en"],
-  "spellright.documentTypes": ["latex", "plaintext", "markdown"],
+  "spellright.language": [
+    "en"
+  ],
+  "spellright.documentTypes": [
+    "latex",
+    "plaintext",
+    "markdown"
+  ],
   "terminal.integrated.fontSize": 14,
   "vim.easymotion": true,
   "vim.foldfix": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<space>"],
-      "commands": ["vspacecode.space"]
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "vspacecode.space"
+      ]
     },
     {
-      "before": [","],
+      "before": [
+        ","
+      ],
       "commands": [
         "vspacecode.space",
         {
@@ -57,11 +72,17 @@
   "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["<space>"],
-      "commands": ["vspacecode.space"]
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "vspacecode.space"
+      ]
     },
     {
-      "before": [","],
+      "before": [
+        ","
+      ],
       "commands": [
         "vspacecode.space",
         {
@@ -706,7 +727,10 @@
           "name": "Rename file",
           "icon": "edit",
           "type": "commands",
-          "commands": ["revealInExplorer", "renameFile"]
+          "commands": [
+            "revealInExplorer",
+            "renameFile"
+          ]
         },
         {
           "key": "S",
@@ -1115,7 +1139,11 @@
           "type": "command",
           "command": "vim.remap",
           "args": {
-            "after": ["leader", "leader", "s"]
+            "after": [
+              "leader",
+              "leader",
+              "s"
+            ]
           }
         },
         {
@@ -1125,7 +1153,15 @@
           "type": "command",
           "command": "vim.remap",
           "args": {
-            "after": ["leader", "leader", "leader", "b", "d", "j", "k"]
+            "after": [
+              "leader",
+              "leader",
+              "leader",
+              "b",
+              "d",
+              "j",
+              "k"
+            ]
           }
         },
         {
@@ -1149,7 +1185,14 @@
           "type": "command",
           "command": "vim.remap",
           "args": {
-            "after": ["leader", "leader", "leader", "b", "d", "w"]
+            "after": [
+              "leader",
+              "leader",
+              "leader",
+              "b",
+              "d",
+              "w"
+            ]
           }
         },
         {
@@ -4705,7 +4748,10 @@
       "type": "command",
       "command": "vim.remap",
       "args": {
-        "after": ["y", "y"]
+        "after": [
+          "y",
+          "y"
+        ]
       }
     }
   ],
