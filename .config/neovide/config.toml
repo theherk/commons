@@ -1,0 +1,4 @@
+maximized = true
+neovim-bin = "/Users/h4s/nvim-macos/bin/nvim"
+# frame = "none" currently busted
+title-hidden = true

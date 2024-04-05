@@ -17,6 +17,7 @@ ln -sf ~/commons/.config/helix/ ~/.config/
 ln -sf ~/commons/.config/lazydocker/ ~/.config/
 ln -sf ~/commons/.config/lazygit/ ~/.config/
 ln -sf ~/commons/.config/lvim/ ~/.config/
+ln -sf ~/commons/.config/neovide/ ~/.config/
 ln -sf ~/commons/.config/nvim/ ~/.config/
 ln -sf ~/commons/.config/nix/ ~/.config/
 ln -sf ~/commons/.config/nushell/ ~/.config/

@@ -28,3 +28,5 @@ require("lazy").setup({
 require("config.autocmds")
 require("config.control")
 vim.cmd.colorscheme("tokyonight")
+
+if vim.g.neovide then require("config.neovide") end
