@@ -18,9 +18,9 @@ User identification. You can find more information in the [[https://www.gnu.org/
 
 #+begin_src elisp
 (setq
-  doom-font (font-spec :family "ZedMono NF Light" :size 20)
-  doom-big-font (font-spec :family "ZedMono NF Light" :size 24)
-  doom-variable-pitch-font (font-spec :family "ZedMono NF Light" :size 20))
+  doom-font (font-spec :family "VictorMono NF" :size 20)
+  doom-big-font (font-spec :family "VictorMono NF" :size 24)
+  doom-variable-pitch-font (font-spec :family "VictorMono NF" :size 20))
 
 #+end_src
 
