@@ -9,10 +9,10 @@ M.icons = {
     LogPoint = ".>",
   },
   diagnostics = {
-    Error = " ",
-    Warn = " ",
+    Error = " ",
+    Warn = " ",
     Hint = " ",
-    Info = " ",
+    Info = " ",
   },
   git = {
     added = " ",
@@ -55,6 +55,9 @@ M.icons = {
     Unit = " ",
     Value = " ",
     Variable = " ",
+  },
+  misc = {
+    Save = " ",
   },
 }
 
