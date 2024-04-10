@@ -71,7 +71,7 @@ return {
               elseif buffer.diagnostics.errors ~= 0 then
                 return hlg.get_hl_attr("DiagnosticError", "fg")
               elseif buffer.diagnostics.warnings ~= 0 then
-                return hlg.get_hl_attr("DiagnosticWarning", "fg")
+                return hlg.get_hl_attr("DiagnosticWarn", "fg")
               else
                 return nil
               end
