@@ -28,5 +28,6 @@ require("lazy").setup({
 require("config.autocmds")
 require("config.control")
 vim.cmd.colorscheme("tokyonight")
+vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE", ctermbg = "NONE" })
 
 if vim.g.neovide then require("config.neovide") end
