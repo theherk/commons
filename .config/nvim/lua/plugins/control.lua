@@ -32,6 +32,7 @@ return {
           { mode = "n", keys = "<leader>sn", desc = "noice" },
           { mode = "n", keys = "<leader>st", desc = "todo" },
           { mode = "n", keys = "<leader>u", desc = "toggle" },
+          { mode = "n", keys = "<leader>w", desc = "window" },
           { mode = "n", keys = "<localleader>m", desc = "mark" },
         },
         triggers = {
