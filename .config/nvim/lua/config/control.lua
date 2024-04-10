@@ -98,6 +98,13 @@ if Util.has("bufferline.nvim") then
   vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "next buffer" })
   vim.keymap.set("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "prev buffer" })
   vim.keymap.set("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "next buffer" })
+elseif Util.has("nvim-cokeline") then
+  vim.keymap.set("n", "<S-h>", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
+  vim.keymap.set("n", "<S-l>", "<plug>(cokeline-focus-next)", { desc = "next buffer" })
+  vim.keymap.set("n", "[b", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
+  vim.keymap.set("n", "]b", "<plug>(cokeline-focus-next)", { desc = "next buffer" })
+  vim.keymap.set("n", "<leader>bp", "<plug>(cokeline-pick-focus)", { desc = "pick focus" })
+  vim.keymap.set("n", "<leader>bc", "<plug>(cokeline-pick-close)", { desc = "pick close" })
 else
   vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "prev buffer" })
   vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "next buffer" })
