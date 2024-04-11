@@ -4,6 +4,7 @@ return {
   dependencies = {
     {
       "rcarriga/nvim-dap-ui",
+      dependencies = { "nvim-neotest/nvim-nio" },
       keys = {
         { "<leader>dd", function() require("dapui").toggle({}) end, desc = "dap ui" },
         { "<leader>du", function() require("dapui").toggle({}) end, desc = "dap ui" },
