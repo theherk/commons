@@ -7,6 +7,11 @@ return {
       "nvim-telescope/telescope.nvim",
       "sindrets/diffview.nvim",
     },
+    keys = {
+      { "<leader>gB", function() require("agitator").git_blame_toggle() end, desc = "blame (full)" },
+      { "<leader>gt", function() require("agitator").git_time_machine({ use_current_win = true }) end, desc = "time machine" },
+    },
+  },
   {
     "fredeeb/tardis.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
