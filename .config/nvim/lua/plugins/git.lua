@@ -7,6 +7,15 @@ return {
       "nvim-telescope/telescope.nvim",
       "sindrets/diffview.nvim",
     },
+  {
+    "fredeeb/tardis.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    dir = "~/projects/github.com/theherk/tardis.nvim",
+    lazy = false,
+    config = true,
+    keys = {
+      { "<leader>gT", "<cmd>Tardis<cr>", desc = "tardis" },
+    },
   },
   {
     "NeogitOrg/neogit",
