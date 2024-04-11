@@ -111,6 +111,7 @@ else
   vim.keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "prev buffer" })
   vim.keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "next buffer" })
 end
+vim.keymap.set("n", "<leader>bO", "<cmd>%bd|e#|bd#<cr>", { desc = "others (native)" })
 
 -- Clear search with <esc>.
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "clear hlsearch" })

@@ -1,5 +1,11 @@
 return {
   {
+    "Asheq/close-buffers.vim",
+    keys = {
+      { "<leader>bo", "<cmd>Bdelete other<cr>", desc = "others" },
+    },
+  },
+  {
     "benfowler/telescope-luasnip.nvim",
     keys = {
       { "<leader>sS", "<cmd>Telescope luasnip<cr>", desc = "snippets" },
