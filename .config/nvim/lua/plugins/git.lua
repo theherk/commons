@@ -15,7 +15,6 @@ return {
   {
     "fredeeb/tardis.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    dir = "~/projects/github.com/theherk/tardis.nvim",
     lazy = false,
     config = true,
     keys = {
