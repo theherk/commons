@@ -55,7 +55,7 @@ end
 
 function module.launch(args)
   return wezterm.action_callback(function(window, _)
-    local tab, pane, _ = window:mux_window():spawn_tab({
+    local tab, _, _ = window:mux_window():spawn_tab({
       args = { os.getenv("SHELL"), "-c", table.unpack(args) },
     })
     tab:set_title(args[1])
