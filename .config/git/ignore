@@ -2,6 +2,7 @@
 *\#*
 *.egg-info
 *.py[cod]
+.codeium-enabled
 .coverage
 .direnv
 .DS_Store

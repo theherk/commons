@@ -22,6 +22,7 @@ M.icons = {
   kinds = {
     Array = " ",
     Boolean = " ",
+    Codeium = " ",
     Class = " ",
     Color = " ",
     Constant = " ",

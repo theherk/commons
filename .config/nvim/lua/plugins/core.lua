@@ -136,6 +136,7 @@ return {
     version = false,
     event = "InsertEnter",
     dependencies = {
+      "Exafunction/codeium.nvim",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -166,6 +167,7 @@ return {
           }),
         }),
         sources = cmp.config.sources({
+          { name = "codeium" },
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "buffer" },
