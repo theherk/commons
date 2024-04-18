@@ -1,5 +1,14 @@
 return {
   {
+    "2kabhishek/co-author.nvim",
+    dependencies = {
+      "stevearc/dressing.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    cmd = { "CoAuthor" },
+    keys = { { "<leader>gC", "<cmd>CoAuthor<cr>", desc = "co-author" } },
+  },
+  {
     "emmanueltouzery/agitator.nvim",
     dependencies = {
       "NeogitOrg/neogit",
