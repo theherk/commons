@@ -6,15 +6,14 @@ M.root_patterns = { ".git", "lua" }
 
 function M.fg(name)
   ---@type {foreground?:number}?
+  ---@diagnostic disable-next-line: deprecated
   local hl = vim.api.nvim_get_hl and vim.api.nvim_get_hl(0, { name = name }) or vim.api.nvim_get_hl_by_name(name, true)
   local fg = hl and hl.fg or hl.foreground
   return fg and { fg = string.format("#%06x", fg) }
 end
 
 ---@param plugin string
-function M.has(plugin)
-  return require("lazy.core.config").spec.plugins[plugin] ~= nil
-end
+function M.has(plugin) return require("lazy.core.config").spec.plugins[plugin] ~= nil end
 
 ---@type table<string,LazyFloat>
 local terminals = {}
@@ -37,35 +36,25 @@ function M.float_term(cmd, opts)
     terminals[termkey] = require("lazy.util").float_term(cmd, opts)
     local buf = terminals[termkey].buf
     vim.b[buf].lazyterm_cmd = cmd
-    if opts.esc_esc == false then
-      vim.keymap.set("t", "<esc>", "<esc>", { buffer = buf, nowait = true })
-    end
+    if opts.esc_esc == false then vim.keymap.set("t", "<esc>", "<esc>", { buffer = buf, nowait = true }) end
 
     vim.api.nvim_create_autocmd("BufEnter", {
       buffer = buf,
-      callback = function()
-        vim.cmd.startinsert()
-      end,
+      callback = function() vim.cmd.startinsert() end,
     })
   end
 
   return terminals[termkey]
 end
 
----@param opts? lsp.Client.filter
 function M.get_clients(opts)
-  local ret = {} ---@type lsp.Client[]
+  local ret = {}
   if vim.lsp.get_clients then
     ret = vim.lsp.get_clients(opts)
   else
     ---@diagnostic disable-next-line: deprecated
     ret = vim.lsp.get_active_clients(opts)
-    if opts and opts.method then
-      ---@param client lsp.Client
-      ret = vim.tbl_filter(function(client)
-        return client.supports_method(opts.method, { bufnr = opts.bufnr })
-      end, ret)
-    end
+    if opts and opts.method then ret = vim.tbl_filter(function(client) return client.supports_method(opts.method, { bufnr = opts.bufnr }) end, ret) end
   end
   return opts and opts.filter and vim.tbl_filter(opts.filter, ret) or ret
 end
@@ -85,20 +74,14 @@ function M.get_root()
   if path then
     for _, client in pairs(M.get_clients({ bufnr = 0 })) do
       local workspace = client.config.workspace_folders
-      local paths = workspace and vim.tbl_map(function(ws)
-        return vim.uri_to_fname(ws.uri)
-      end, workspace) or client.config.root_dir and { client.config.root_dir } or {}
+      local paths = workspace and vim.tbl_map(function(ws) return vim.uri_to_fname(ws.uri) end, workspace) or client.config.root_dir and { client.config.root_dir } or {}
       for _, p in ipairs(paths) do
         local r = vim.loop.fs_realpath(p)
-        if path:find(r, 1, true) then
-          roots[#roots + 1] = r
-        end
+        if path:find(r, 1, true) then roots[#roots + 1] = r end
       end
     end
   end
-  table.sort(roots, function(a, b)
-    return #a > #b
-  end)
+  table.sort(roots, function(a, b) return #a > #b end)
   ---@type string?
   local root = roots[1]
   if not root then
@@ -130,9 +113,7 @@ end
 ---@param name string
 function M.opts(name)
   local plugin = require("lazy.core.config").plugins[name]
-  if not plugin then
-    return {}
-  end
+  if not plugin then return {} end
   local Plugin = require("lazy.core.plugin")
   return Plugin.values(plugin, "opts", false)
 end
@@ -185,15 +166,8 @@ function M.toggle_number()
 end
 
 -- Terminal key commands with borders.
-function M.lazygit()
-  M.float_term(
-    { "lazygit" },
-    { border = "single", cwd = M.get_root(), esc_esc = false, ctrl_hjkl = false }
-  )
-end
+function M.lazygit() M.float_term({ "lazygit" }, { border = "single", cwd = M.get_root(), esc_esc = false, ctrl_hjkl = false }) end
 
-function M.lazyterm()
-  M.float_term(nil, { border = "single", cwd = M.get_root() })
-end
+function M.lazyterm() M.float_term(nil, { border = "single", cwd = M.get_root() }) end
 
 return M
