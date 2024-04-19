@@ -145,6 +145,14 @@ return {
     "tadmccorkle/markdown.nvim",
     ft = "markdown",
     opts = {
+      hooks = {
+        -- This is an absolute hack.
+        -- For some reason, `gx` stopped opening links for me, but fortunately this hook exists.
+        follow_link = function(d)
+          vim.notify(d.dest .. "\nopen in browser", vim.log.levels.INFO)
+          os.execute("open " .. d.dest)
+        end,
+      },
       mappings = {
         go_curr_heading = "[c",
         go_parent_heading = "[p",
