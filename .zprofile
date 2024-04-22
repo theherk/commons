@@ -5,7 +5,6 @@ export VENVS=$HOME/.venvs
 export P=$HOME/projects
 export GOPATH=$P/go
 export HTML_TIDY=$HOME/.config/tidy/config.txt
-export JAVA_HOME=$(/usr/libexec/java_home)
 export VOLTA_HOME=$HOME/.volta
 export XDG_CONFIG_HOME=$HOME/.config
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
@@ -34,4 +33,9 @@ export PATH=$HOME/bin:$PATH
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
+fi
+
+if command -v jenv 1>/dev/null 2>&1; then
+  eval "$(jenv init -)"
+  jenv enable-plugin export
 fi

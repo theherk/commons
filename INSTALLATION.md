@@ -73,6 +73,7 @@ brew install \
     helix \
     homebrew/cask-fonts/font-victor-mono-nerd-font \
     homebrew/cask-fonts/font-zed-mono-nerd-font \
+    jenv \
     jq \
     keycastr \
     kubectl \

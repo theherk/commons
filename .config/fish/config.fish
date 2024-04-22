@@ -12,7 +12,6 @@ set -U -x VENVS $HOME/.venvs
 set -U -x P $HOME/projects
 set -U -x GOPATH $P/go
 set -U -x HTML_TIDY $HOME/.config/tidy/config.txt
-set -U -x JAVA_HOME (/usr/libexec/java_home)
 set -g -x VOLTA_HOME "$HOME/.volta"
 set -g -x XDG_CONFIG_HOME "$HOME/.config"
 set -g -x RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
@@ -70,6 +69,9 @@ if status is-interactive
     pyenv init - | source
     pyenv virtualenv-init - | source
     zoxide init fish | source
+
+    jenv init - | source
+    jenv enable-plugin export
 
     # fzf.fish history
     fzf_configure_bindings --history=\e\ch
