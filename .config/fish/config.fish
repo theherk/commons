@@ -1,16 +1,5 @@
 set -U fish_greeting
 
-# On ARM MacOS homebrew uses some different paths,
-# Generally this is found in:
-# /usr/local/opt/coreutils/libexec/gnubin
-# But on M1, it is exported from:
-# /opt/homebrew/opt/coreutils/libexec/gnubin
-if test -d /opt/homebrew/opt/coreutils/libexec/gnubin
-    fish_add_path -pP /opt/homebrew/opt/coreutils/libexec/gnubin
-else if test -d /usr/local/Homebrew/opt/coreutils/libexec/gnubin
-    fish_add_path -pP /usr/local/Homebrew/opt/coreutils/libexec/gnubin
-end
-
 if test -e /opt/homebrew/bin/brew
     eval (/opt/homebrew/bin/brew shellenv)
 else if test -e /usr/local/Homebrew/bin/brew
@@ -43,6 +32,7 @@ fish_add_path -pP $HOME/.nimble/bin
 fish_add_path -pP $GOPATH/bin
 fish_add_path -pP $VOLTA_HOME/bin
 
+fish_add_path -pP (brew --prefix)/opt/coreutils/libexec/gnubin
 fish_add_path -pP $HOME/.emacs.d/bin
 fish_add_path -pP $HOME/.local/bin
 fish_add_path -pP $HOME/bin

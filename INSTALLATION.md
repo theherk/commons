@@ -135,7 +135,7 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 ### Disabling default fzf search history in favor of PatrickF1/fzf.fish
 
 ```fish
-/opt/homebrew/opt/fzf/uninstall
+(brew --prefix)/opt/fzf/uninstall
 ```
 
 ## Configure Neovim
@@ -146,7 +146,7 @@ My configuration is largely built by cribbing from the legend folke, but it is b
 
 After plugins are installed, you can install this grammar which requires up-to-date compiler which should have been installed via `brew install llvm`.
 
-    CC=/opt/homebrew/opt/llvm/bin/clang++ lvim -c "TSInstallSync norg"
+    CC=(brew --prefix)/opt/llvm/bin/clang++ lvim -c "TSInstallSync norg"
 
 ### Configure Neovide for opening from Finder
 
@@ -366,7 +366,7 @@ There are slight differences in amd64 and arm64 paths.
 ```sh
 brew tap d12frosted/emacs-plus
 brew install emacs-plus@29 --with-memeplex-slim-icon --with-native-comp --with-xwidgets --with-imagemagick
-cp -r /opt/homebrew/opt/emacs-plus@29/Emacs.app /Applications/
+cp -r (brew --prefix)/opt/emacs-plus@29/Emacs.app /Applications/
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d # install doom
 doom install
 brew services start emacs-plus
