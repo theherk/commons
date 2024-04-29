@@ -96,7 +96,6 @@ return {
   },
   {
     "epwalsh/obsidian.nvim",
-    version = "497d605",
     dependencies = {
       "nvim-lua/plenary.nvim",
       -- Required pngpaste on MacOS. `brew install pngpaste`
