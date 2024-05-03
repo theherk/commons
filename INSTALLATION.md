@@ -245,6 +245,7 @@ Followed by:
 go install \
     github.com/cweill/gotests/...@latest \
     github.com/fatih/gomodifytags@latest \
+    github.com/hashicorp/hcl/v2/cmd/hclfmt@latest \
     github.com/x-motemen/gore/...@latest \
     github.com/nsf/gocode@latest \
     golang.org/x/tools/...@latest
