@@ -1,5 +1,10 @@
 [
   {
+    "bindings": {
+      "cmd-enter": "workspace::ToggleZoom"
+    }
+  },
+  {
     "context": "Editor",
     "bindings": {
       "ctrl-p": "projects::OpenRecent"
