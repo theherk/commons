@@ -4,7 +4,8 @@ themes {
         bg 26 27 38
         black 56 62 90
         red 249 51 87
-        green 158 206 106
+        // green 158 206 106
+        green 187 154 247
         yellow 224 175 104
         blue 122 162 247
         magenta 187 154 247
