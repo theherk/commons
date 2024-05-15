@@ -138,6 +138,7 @@ if status is-interactive
     abbr -a wezi --position command wezterm imgcat
     abbr -a wow --position command git status
     abbr -a xc --position anywhere --set-cursor "%| xclip -sel clip"
+    abbr -a zp --position command zellij-project.fish
 
     function last_history_item
         echo $history[1]
