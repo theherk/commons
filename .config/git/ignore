@@ -21,6 +21,7 @@
 _plan*
 _update.md
 _update.sh
+bin/bfg*
 GPATH
 GRTAGS
 GTAGS
