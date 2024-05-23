@@ -1,5 +1,6 @@
 [
   {
+    "context": "Terminal",
     "bindings": {
       "cmd-enter": "workspace::ToggleZoom"
     }
