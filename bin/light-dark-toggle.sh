@@ -33,6 +33,7 @@ ZED_LIGHT="Catppuccin Latte"
 
 darken() {
 	echo "darkening"
+	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
 	sed -i '' 's/\(--theme=\)".*"/\1"'$BAT_DARK'"/' .config/bat/config
 	sed -i '' 's/\("workbench.colorTheme": \)".*"/\1"'"$CODIUM_DARK"'"/' .config/codium/settings.json
 	sed -i '' 's/\("workbench.iconTheme": \)".*"/\1"'$CODIUM_ICON_DARK'"/' .config/codium/settings.json
@@ -55,6 +56,7 @@ darken() {
 
 lighten() {
 	echo "lightening"
+	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
 	sed -i '' 's/\(--theme=\)".*"/\1"'$BAT_LIGHT'"/' .config/bat/config
 	sed -i '' 's/\("workbench.colorTheme": \)".*"/\1"'"$CODIUM_LIGHT"'"/' .config/codium/settings.json
 	sed -i '' 's/\("workbench.iconTheme": \)".*"/\1"'$CODIUM_ICON_LIGHT'"/' .config/codium/settings.json
