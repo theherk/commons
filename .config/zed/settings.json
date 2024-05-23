@@ -9,7 +9,6 @@
   "features": {
     "copilot": false
   },
-
   "git": {
     "git_gutter": "tracked_files",
     "inline_blame": {
@@ -31,10 +30,11 @@
   },
   "terminal": {
     "default_height": 420,
-    // "shell": "system",
-    "shell": {
-      "program": "zellij-project.fish"
-    },
+    "font_size": 16,
+    "shell": "system",
+    // "shell": {
+    //   "program": "zellij-project.fish"
+    // },
     "toolbar": {
       "title": false
     },
