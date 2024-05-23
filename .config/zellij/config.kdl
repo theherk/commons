@@ -1,2 +1,9 @@
 simplified_ui true
 theme "tokyo-night"
+
+keybinds {
+    tab {
+        bind "f" { NewTab { layout "xplr"; }; SwitchToMode "Normal"; }
+        bind "g" { NewTab { layout "lazygit"; }; SwitchToMode "Normal"; }
+    }
+}
