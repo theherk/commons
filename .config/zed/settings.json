@@ -1,4 +1,11 @@
 {
+  "assistant": {
+    "version": "1",
+    "default_width": 640
+  },
+  "chat_panel": {
+    "default_width": 380
+  },
   "features": {
     "copilot": false
   },
