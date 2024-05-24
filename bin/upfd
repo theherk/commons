@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+prev=.
+while [[ $PWD != "$prev" ]] ; do
+    result=$(fd -d 1 -HI "$@" "$PWD")
+    if [[ -n "$result" ]]; then
+        echo "$result"
+        break
+    fi
+    prev=$PWD
+    cd ..
+done
+if [[ -z "$result" ]]; then
+    exit 1
+fi
