@@ -28,6 +28,7 @@ ln -sf ~/commons/.config/tidy/ ~/.config/
 ln -sf ~/commons/.config/wezterm/ ~/.config/
 ln -sf ~/commons/.config/zed/keymap.json ~/.config/zed/
 ln -sf ~/commons/.config/zed/settings.json ~/.config/zed/settings.json
+ln -sf ~/commons/.config/zed/tasks.json ~/.config/zed/tasks.json
 ln -sf ~/commons/.config/zellij/ ~/.config/
 ln -sf ~/commons/.editorconfig ~/
 ln -sf ~/commons/.eslintrc ~/
