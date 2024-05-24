@@ -31,10 +31,6 @@
   "terminal": {
     "default_height": 420,
     "font_size": 16,
-    "shell": "system",
-    // "shell": {
-    //   "program": "zellij-project.fish"
-    // },
     "toolbar": {
       "title": false
     },
