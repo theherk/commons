@@ -5,4 +5,11 @@ return {
     config = true,
     enabled = vim.fn.getcwd():find("dnb.no") == nil and vim.fn.filereadable(".codeium-enabled") == 1,
   },
+  {
+    "David-Kunz/gen.nvim",
+    -- Requires:
+    --   ollama serve
+    --   ollama run llama3
+    opts = { model = "llama3" },
+  },
 }
