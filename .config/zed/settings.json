@@ -19,7 +19,11 @@
     "diagnostics": false,
     "metrics": false
   },
-  "theme": "Catppuccin Macchiato",
+  "theme": {
+    "mode": "system",
+    "dark": "Catppuccin Macchiato",
+    "light": "Catppuccin Latte"
+  },
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_family": "VictorMono NF",
