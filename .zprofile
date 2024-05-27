@@ -37,5 +37,5 @@ fi
 
 if command -v jenv 1>/dev/null 2>&1; then
   eval "$(jenv init -)"
-  jenv enable-plugin export
+  jenv enable-plugin export >/dev/null
 fi

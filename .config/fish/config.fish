@@ -71,7 +71,7 @@ if status is-interactive
     zoxide init fish | source
 
     jenv init - | source
-    jenv enable-plugin export
+    jenv enable-plugin export >/dev/null
 
     # fzf.fish history
     fzf_configure_bindings --history=\e\ch
