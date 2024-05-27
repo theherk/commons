@@ -6,6 +6,12 @@
     "allow_concurrent_runs": false
   },
   {
+    "label": "tfiu",
+    "command": "cd (dirname $ZED_FILE); set D (upfd -t d '.terraform$'); or exit 1; cd $D..; direnv allow . && eval (direnv export fish); terraform init -upgrade",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false
+  },
+  {
     "label": "tfpp",
     "command": "cd (dirname $ZED_FILE); set D (upfd -t d '.terraform$'); or exit 1; cd $D..; direnv allow . && eval (direnv export fish); terraform plan -lock=false | tee _plan",
     "use_new_terminal": true,
