@@ -28,9 +28,6 @@ NVIM_COLORSCHEME_LIGHT="catppuccin"
 WEZTERM_DARK="Tokyo Night"
 WEZTERM_LIGHT="Catppuccin Latte"
 
-ZED_DARK="Catppuccin Macchiato"
-ZED_LIGHT="Catppuccin Latte"
-
 darken() {
 	echo "darkening"
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
@@ -51,7 +48,6 @@ darken() {
 	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1'$NVIM_COLORSCHEME_DARK'")/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(vim.opt.background = \)".*"/\1"dark"/' .config/nvim/lua/config/options.lua
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_DARK"'"/' .config/wezterm/theme.lua
-	sed -i '' 's/\("theme": \)".*"/\1"'"$ZED_DARK"'"/' .config/zed/settings.json
 }
 
 lighten() {
@@ -74,7 +70,6 @@ lighten() {
 	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1'$NVIM_COLORSCHEME_LIGHT'")/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(vim.opt.background = \)".*"/\1"light"/' .config/nvim/lua/config/options.lua
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_LIGHT"'"/' .config/wezterm/theme.lua
-	sed -i '' 's/\("theme": \)".*"/\1"'"$ZED_LIGHT"'"/' .config/zed/settings.json
 }
 
 cd ~/commons || return
