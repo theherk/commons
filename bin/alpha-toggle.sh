@@ -6,7 +6,7 @@
 # - nvim
 # - wezterm
 
-X=0.81247
+X=0.85247
 
 obfuscate() {
 	echo "obfuscating"
