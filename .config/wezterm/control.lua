@@ -169,7 +169,8 @@ local keys = {
 
   -- Launch
   { key = "e", mods = "LEADER", action = util.launch({ "editor" }) },
-  { key = "f", mods = "LEADER", action = util.launch({ "xplr" }) },
+  { key = "f", mods = "LEADER", action = util.launch({ "yazi" }) },
+  { key = "F", mods = "LEADER", action = util.launch({ "xplr" }) },
   { key = "g", mods = "LEADER", action = util.launch({ "lazygit" }) },
 }
 

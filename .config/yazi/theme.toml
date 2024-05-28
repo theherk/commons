@@ -1,0 +1,6 @@
+[flavor]
+use = "tokyo-night"
+
+[status]
+separator_open = ""
+separator_close = ""

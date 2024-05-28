@@ -114,6 +114,7 @@ brew install \
     ugit \
     wez/wezterm/wezterm \
     wget \
+    yazi \
     xh \
     zed \
     zellij \
