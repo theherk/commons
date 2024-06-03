@@ -19,6 +19,8 @@ module.with_cache = function(dest)
     return wezterm.action_callback(function(window, pane) window:perform_action(act.EmitEvent("stack-in"), pane) end)
   elseif dest == "out" then
     return wezterm.action_callback(function(window, pane) window:perform_action(act.EmitEvent("stack-out"), pane) end)
+  elseif dest == "prev" then
+    return wezterm.action_callback(function(window, pane) window:perform_action(act.EmitEvent("stack-prev"), pane) end)
   elseif dest == "switcher" then
     return wezterm.action_callback(function(window, pane) window:perform_action(act.EmitEvent("stack-switcher"), pane) end)
   else
@@ -76,11 +78,10 @@ wezterm.on("stack-out", function(window, pane)
 end)
 
 wezterm.on("stack-prev", function(window, pane)
-  if stack_pos < #stack then
-    prev_pos = stack_pos
-    stack_pos = stack_pos + 1
-    window:perform_action(act.SwitchToWorkspace({ name = stack[prev_pos] }), pane)
-  end
+  local target_pos = prev_pos
+  prev_pos = stack_pos
+  stack_pos = target_pos
+  window:perform_action(act.SwitchToWorkspace({ name = stack[target_pos] }), pane)
 end)
 
 wezterm.on("stack-switcher", function(window, pane) window:perform_action(workspace_switcher.switch_workspace(rg_pipe), pane) end)
