@@ -1,75 +1,10 @@
 local theme = require("theme")
 local util = require("util")
+local ws = require("workspace")
 local wezterm = require("wezterm")
 
 local act = wezterm.action
 local module = {}
-
-local rg_pipe = " | rg --color=never -FxNf ~/.projects"
-local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
-
-if wezterm.GLOBAL.prev_workspace == nil then wezterm.GLOBAL.prev_workspace = "default" end
-
-local action_with_cache = function(action)
-  return wezterm.action_callback(function(window, pane)
-    window:perform_action(
-      act.Multiple({
-        act.EmitEvent("cache-prev-workspace"),
-        action,
-      }),
-      pane
-    )
-  end)
-end
-
-wezterm.on("cache-prev-workspace", function()
-  wezterm.GLOBAL.cur_target = wezterm.GLOBAL.prev_workspace
-  wezterm.GLOBAL.prev_workspace = wezterm.mux.get_active_workspace()
-  wezterm.log_info("prev_workspace: " .. wezterm.GLOBAL.prev_workspace)
-end)
-
-wezterm.on("switch-workspace-default", function(window, pane) window:perform_action(act.SwitchToWorkspace({ name = "default" }), pane) end)
-
-wezterm.on("switch-workspace-prev", function(window, pane) window:perform_action(act.SwitchToWorkspace({ name = wezterm.GLOBAL.cur_target }), pane) end)
-
-workspace_switcher.set_workspace_formatter(function(label)
-  return wezterm.format({
-    { Foreground = { Color = theme.colors.hl_1 } },
-    { Text = "󱂬 " .. label },
-  })
-end)
-
-local action_project_switcher = wezterm.action_callback(function(window, pane)
-  local choices = {}
-  for _, v in pairs(util.file_lines(os.getenv("HOME") .. "/.projects")) do
-    local fmt_label = wezterm.format({
-      { Foreground = { Color = theme.colors.hl_1 } },
-      { Text = v },
-    })
-    table.insert(choices, { id = v, label = fmt_label })
-  end
-
-  window:perform_action(
-    act.InputSelector({
-      action = wezterm.action_callback(function(window, pane, id, label)
-        if not id and not label then
-          wezterm.log_info("cancelled")
-        else
-          window:perform_action(
-            act.SwitchToWorkspace({
-              name = id,
-              spawn = { cwd = id },
-            }),
-            pane
-          )
-        end
-      end),
-      choices = choices,
-      fuzzy = true,
-    }),
-    pane
-  )
-end)
 
 local copy_mode = nil
 if wezterm.gui then
@@ -95,12 +30,13 @@ local keys = {
   { key = "a", mods = "LEADER|CTRL", action = act.SendString("\x01") },
 
   -- Workpace and Pallette
-  { key = "d", mods = "LEADER", action = action_with_cache(act.EmitEvent("switch-workspace-default")) },
+  { key = "d", mods = "LEADER", action = ws.with_cache("default") },
+  { key = "i", mods = "LEADER", action = ws.with_cache("in") },
   { key = "m", mods = "LEADER", action = act.ShowLauncher },
-  { key = "p", mods = "SUPER", action = action_with_cache(workspace_switcher.switch_workspace(rg_pipe)) },
-  { key = "P", mods = "LEADER", action = action_with_cache(action_project_switcher) },
+  { key = "o", mods = "LEADER", action = ws.with_cache("out") },
+  { key = "p", mods = "SUPER", action = ws.with_cache("switcher") },
   { key = "P", mods = "SUPER|SHIFT", action = act.ActivateCommandPalette },
-  { key = "\t", mods = "LEADER", action = action_with_cache(act.EmitEvent("switch-workspace-prev")) },
+  { key = "\t", mods = "LEADER", action = ws.with_cache("prev") },
 
   {
     key = "W",
@@ -139,6 +75,7 @@ local keys = {
   { key = "r", mods = "LEADER", action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
   { key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
   { key = "Z", mods = "LEADER", action = act.TogglePaneZoomState },
+  { key = "S", mods = "LEADER", action = act.PaneSelect },
 
   -- Navigation
   { key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
