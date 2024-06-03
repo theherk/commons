@@ -1,5 +1,4 @@
 local theme = require("theme")
-local util = require("util")
 local wezterm = require("wezterm")
 
 local act = wezterm.action
