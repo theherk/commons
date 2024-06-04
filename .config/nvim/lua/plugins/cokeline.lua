@@ -6,12 +6,13 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     config = function(_, _)
+      local harpoon = require("harpoon.mark")
       local hlg = require("cokeline.hlgroups")
       local icons = require("config.icons").icons
       local is_picking_focus = require("cokeline.mappings").is_picking_focus
       local is_picking_close = require("cokeline.mappings").is_picking_close
+      local function harpoon_icon(buffer) return harpoon.get_index_of(buffer.path) ~= nil and " 󰛢 " or "" end
       local function harpoon_sorter()
-        local harpoon = require("harpoon.mark")
         local cache = {}
 
         local function marknum(buf, force)
@@ -62,6 +63,10 @@ return {
             fg = function(buffer) return (is_picking_focus() and vim.g.terminal_color_4) or (is_picking_close() and vim.g.terminal_color_1) or buffer.devicon.color end,
             italic = function() return (is_picking_focus() or is_picking_close()) end,
             bold = function() return (is_picking_focus() or is_picking_close()) end,
+          },
+          {
+            text = harpoon_icon,
+            fg = function(_) return hlg.get_hl_attr("DiagnosticWarn", "fg") end,
           },
           {
             text = function(buffer) return (buffer.is_modified and icons.misc.Save) or (buffer.diagnostics.errors ~= 0 and icons.diagnostics.Error) or (buffer.diagnostics.warnings ~= 0 and icons.diagnostics.Warn) or "  " end,
