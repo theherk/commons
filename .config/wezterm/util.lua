@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 local theme = require("theme")
 
+local act = wezterm.action
 local module = {}
 
 local function base_path_name(str) return string.gsub(str, "(.*[/\\])(.*)", "%2") end
@@ -60,6 +61,26 @@ function module.launch(args)
     })
     tab:set_title(args[1])
   end)
+end
+
+--- Launches new split pane but with spawn command.
+--- Yes, this seems backward, but Wezterm refers to the direction splitting
+--- rather than the layout of the newly launched pane.
+function module.launch_split(args)
+  return act.SplitVertical({
+    args = { os.getenv("SHELL"), "-c", table.unpack(args) },
+    domain = "CurrentPaneDomain",
+  })
+end
+
+--- Launches new vertical but with spawn command.
+--- Yes, this seems backward, but Wezterm refers to the direction splitting
+--- rather than the layout of the newly launched pane.
+function module.launch_vertical(args)
+  return act.SplitHorizontal({
+    args = { os.getenv("SHELL"), "-c", table.unpack(args) },
+    domain = "CurrentPaneDomain",
+  })
 end
 
 function module.tconcat(t1, t2)
