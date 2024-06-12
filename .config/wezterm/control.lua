@@ -18,13 +18,6 @@ end
 local key_tables = {
   copy_mode = copy_mode,
 
-  launch = {
-    { key = "s", action = act.ActivateKeyTable({ name = "launch_split", one_shot = true, until_unknown = true }) },
-    { key = "t", action = act.ActivateKeyTable({ name = "launch_tab", one_shot = true, until_unknown = true }) },
-    { key = "v", action = act.ActivateKeyTable({ name = "launch_vertical", one_shot = true, until_unknown = true }) },
-    { key = "Escape", action = "PopKeyTable" },
-  },
-
   launch_split = {
     { key = "f", action = util.launch_split({ "yazi" }) },
     { key = "F", action = util.launch_split({ "xplr" }) },
@@ -134,11 +127,13 @@ local keys = {
   { key = "K", mods = "SUPER", action = act.ScrollByPage(-1) },
 
   -- Launch
-  { key = "l", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch", one_shot = true, until_unknown = true }) },
   { key = "e", mods = "LEADER", action = util.launch({ "editor" }) },
   { key = "f", mods = "LEADER", action = util.launch({ "yazi" }) },
   { key = "F", mods = "LEADER", action = util.launch({ "xplr" }) },
   { key = "g", mods = "LEADER", action = util.launch({ "lazygit" }) },
+  { key = "S", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch_split", one_shot = true, until_unknown = true }) },
+  { key = "T", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch_tab", one_shot = true, until_unknown = true }) },
+  { key = "V", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch_vertical", one_shot = true, until_unknown = true }) },
 }
 
 function module.apply_to_config(config)
