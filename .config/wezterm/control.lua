@@ -104,7 +104,7 @@ local keys = {
   { key = "r", mods = "LEADER", action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
   { key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
   { key = "Z", mods = "LEADER", action = act.TogglePaneZoomState },
-  { key = "S", mods = "LEADER", action = act.PaneSelect },
+  { key = "s", mods = "SUPER", action = act.PaneSelect },
 
   -- Navigation
   { key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
