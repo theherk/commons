@@ -1,0 +1,8 @@
+[global]
+hide_env_diff = true
+
+[whitelist]
+prefix = [
+  "~/projects/gitlab.tech.dnb.no/",
+  "/Users/h4s/projects/gitlab.tech.dnb.no/",
+]
