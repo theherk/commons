@@ -1,0 +1,8 @@
+color_mode = "rgb"
+delay_ms = 20
+kinds = ["curved", "light"]
+num_pipes = 3
+palette = "pastel"
+rainbow = 7
+reset_threshold = 0.66
+turn_chance = 0.222

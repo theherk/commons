@@ -23,6 +23,7 @@ ln -sf ~/commons/.config/neovide/ ~/.config/
 ln -sf ~/commons/.config/nvim/ ~/.config/
 ln -sf ~/commons/.config/nix/ ~/.config/
 ln -sf ~/commons/.config/nushell/ ~/.config/
+ln -sf ~/commons/.config/pipes-rs/ ~/.config/
 ln -sf ~/commons/.config/ripgrep/ ~/.config/
 ln -sf ~/commons/.config/starship.toml ~/.config/starship.toml
 ln -sf ~/commons/.config/tidy/ ~/.config/

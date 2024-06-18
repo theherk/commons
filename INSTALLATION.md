@@ -91,7 +91,7 @@ brew install \
     pandoc \
     pngpaste \
     pinentry-mac \
-    pipes-sh \
+    lhvy/tap/pipes-rs \
     plantuml \
     podman \
     postman \
