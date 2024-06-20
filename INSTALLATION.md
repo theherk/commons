@@ -83,6 +83,7 @@ brew install \
     mactex \
     markdown \
     navi \
+    nikitabobko/tap/aerospace \
     homebrew/cask/neovide \
     newman \
     npm \

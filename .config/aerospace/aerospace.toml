@@ -1,0 +1,128 @@
+start-at-login = true
+after-login-command = []
+after-startup-command = []
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+[gaps]
+inner.horizontal = 8
+inner.vertical = 8
+outer.left = 0
+outer.bottom = 0
+outer.top = 0
+outer.right = 0
+
+[mode.main.binding]
+alt-a = 'mode alternate'
+cmd-h = []
+
+[mode.alternate.binding]
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+alt-shift-1 = 'workspace browse'
+alt-shift-2 = 'workspace term'
+alt-shift-4 = 'workspace notes'
+alt-shift-8 = 'workspace mail'
+alt-shift-9 = 'workspace comms-alt'
+alt-shift-0 = 'workspace comms'
+alt-ctrl-1 = 'move-node-to-workspace browse'
+alt-ctrl-2 = 'move-node-to-workspace term'
+alt-ctrl-4 = 'move-node-to-workspace notes'
+alt-ctrl-8 = 'move-node-to-workspace mail'
+alt-ctrl-9 = 'move-node-to-workspace comms-alt'
+alt-ctrl-0 = 'move-node-to-workspace comms'
+cmd-h = []
+
+[key-mapping.key-notation-to-key-code]
+q = 'q'
+w = 'w'
+f = 'e'
+p = 'r'
+g = 't'
+j = 'y'
+l = 'u'
+u = 'i'
+y = 'o'
+semicolon = 'p'
+leftSquareBracket = 'leftSquareBracket'
+rightSquareBracket = 'rightSquareBracket'
+backslash = 'backslash'
+
+a = 'a'
+r = 's'
+s = 'd'
+t = 'f'
+d = 'g'
+h = 'h'
+n = 'j'
+e = 'k'
+i = 'l'
+o = 'semicolon'
+quote = 'quote'
+
+z = 'z'
+x = 'x'
+c = 'c'
+v = 'v'
+b = 'b'
+k = 'n'
+m = 'm'
+comma = 'comma'
+period = 'period'
+slash = 'slash'
+
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+if.workspace = 'term'
+check-further-callbacks = false
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = ['move-node-to-workspace browse']
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = ['move-node-to-workspace browse']
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = ['move-node-to-workspace term']
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = ['move-node-to-workspace notes']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = ['move-node-to-workspace mail']
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = ['move-node-to-workspace comms-alt']
+
+[[on-window-detected]]
+if.app-id = 'im.riot.app'
+run = ['move-node-to-workspace comms-alt']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = ['move-node-to-workspace comms']
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['move-node-to-workspace comms']
+
+[[on-window-detected]]
+if.app-id = 'com.bitwarden.desktop'
+run = ['layout floating']
