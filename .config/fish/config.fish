@@ -35,6 +35,7 @@ fish_add_path -pP (brew --prefix)/opt/coreutils/libexec/gnubin
 fish_add_path -pP $HOME/.emacs.d/bin
 fish_add_path -pP $HOME/.local/bin
 fish_add_path -pP $HOME/bin
+fish_add_path -m (brew --prefix)/bin
 
 # Load directory shortcuts.
 if test -e ~/.dirs
