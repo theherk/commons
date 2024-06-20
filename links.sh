@@ -1,6 +1,7 @@
 #!/bin/sh
 
 mkdir -p ~/.config/fish
+mkdir -p ~/.config/zed
 
 ln -sf ~/commons/.aliases.sh ~/
 ln -sf ~/commons/.bashrc ~/
