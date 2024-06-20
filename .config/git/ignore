@@ -25,5 +25,6 @@ bin/bfg*
 GPATH
 GRTAGS
 GTAGS
+init-all.sh
 nosetests.xml
 pip-log.txt
