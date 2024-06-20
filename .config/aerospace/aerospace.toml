@@ -2,8 +2,7 @@ start-at-login = true
 after-login-command = []
 after-startup-command = []
 
-enable-normalization-flatten-containers = true
-enable-normalization-opposite-orientation-for-nested-containers = true
+enable-normalization-flatten-containers = false
 
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
@@ -17,31 +16,110 @@ outer.top = 0
 outer.right = 0
 
 [mode.main.binding]
-alt-a = 'mode alternate'
 cmd-h = []
+alt-slash = []
+alt-comma = []
 
-[mode.alternate.binding]
 alt-h = 'focus left'
 alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#resize
+alt-shift-minus = 'resize smart -50'
+alt-shift-equal = 'resize smart +50'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+alt-1 = []
+alt-2 = []
+alt-3 = []
+alt-4 = []
+alt-5 = []
+alt-6 = []
+alt-7 = []
+alt-8 = []
+alt-9 = []
+alt-a = []
+alt-b = []
+alt-c = []
+alt-d = []
+alt-e = []
+alt-f = []
+alt-g = []
+alt-i = []
+alt-m = []
+alt-n = []
+alt-o = []
+alt-p = 'mode pane'
+alt-q = []
+alt-r = []
+alt-s = []
+alt-t = []
+alt-u = []
+alt-v = []
+alt-w = []
+alt-x = []
+alt-y = []
+alt-z = []
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'workspace browse'
 alt-shift-2 = 'workspace term'
+alt-shift-3 = []
 alt-shift-4 = 'workspace notes'
+alt-shift-5 = []
+alt-shift-6 = []
+alt-shift-7 = []
 alt-shift-8 = 'workspace mail'
 alt-shift-9 = 'workspace comms-alt'
 alt-shift-0 = 'workspace comms'
+alt-shift-a = []
+alt-shift-b = []
+alt-shift-c = []
+alt-shift-d = []
+alt-shift-e = []
+alt-shift-f = []
+alt-shift-g = []
+alt-shift-i = []
+alt-shift-m = []
+alt-shift-n = []
+alt-shift-o = []
+alt-shift-p = []
+alt-shift-q = []
+alt-shift-r = []
+alt-shift-s = []
+alt-shift-t = []
+alt-shift-u = []
+alt-shift-v = []
+alt-shift-w = []
+alt-shift-x = []
+alt-shift-y = []
+alt-shift-z = []
+
 alt-ctrl-1 = 'move-node-to-workspace browse'
 alt-ctrl-2 = 'move-node-to-workspace term'
 alt-ctrl-4 = 'move-node-to-workspace notes'
 alt-ctrl-8 = 'move-node-to-workspace mail'
 alt-ctrl-9 = 'move-node-to-workspace comms-alt'
 alt-ctrl-0 = 'move-node-to-workspace comms'
+
+alt-tab = []
+alt-shift-tab = []
+alt-shift-semicolon = 'mode service'
+
+[mode.pane.binding]
+esc = 'mode main'
 cmd-h = []
+s = ['split vertical', 'mode main']
+v = ['split horizontal', 'mode main']
+shift-s = ['layout vertical', 'mode main']
+shift-v = ['layout horizontal', 'mode main']
 
 [key-mapping.key-notation-to-key-code]
 q = 'q'
