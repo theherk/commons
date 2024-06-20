@@ -37,9 +37,9 @@ That will link all the configurations where they need to be. Then we just need t
 
 ```sh
 brew tap cjbassi/ytop
-brew tap homebrew/cask-fonts
 brew tap helix-editor/helix
 brew tap wez/wezterm
+
 brew install \
     asciinema \
     atuin \
@@ -71,8 +71,8 @@ brew install \
     gnupg \
     grip \
     helix \
-    homebrew/cask-fonts/font-victor-mono-nerd-font \
-    homebrew/cask-fonts/font-zed-mono-nerd-font \
+    font-victor-mono-nerd-font \
+    font-zed-mono-nerd-font \
     jenv \
     jq \
     keycastr \
