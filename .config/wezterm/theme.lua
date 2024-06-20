@@ -26,6 +26,8 @@ else
   colors.active_bg = scheme.selection_bg or colors.panel_bg
 end
 
+scheme.cursor_bg = colors.active_fg
+
 scheme.tab_bar = {
   background = colors.bg, -- tab_bar
   new_tab = {
