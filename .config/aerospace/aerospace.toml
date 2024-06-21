@@ -69,16 +69,16 @@ alt-y = []
 alt-z = []
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'workspace browse'
-alt-shift-2 = 'workspace term'
+alt-shift-1 = 'workspace 🌎'  # browse
+alt-shift-2 = 'workspace 💻'  # term
 alt-shift-3 = []
-alt-shift-4 = 'workspace notes'
+alt-shift-4 = 'workspace 📓'  # notes
 alt-shift-5 = []
 alt-shift-6 = []
 alt-shift-7 = []
-alt-shift-8 = 'workspace mail'
-alt-shift-9 = 'workspace comms-alt'
-alt-shift-0 = 'workspace comms'
+alt-shift-8 = 'workspace 📬'  # mail
+alt-shift-9 = 'workspace 🗨️' # comms-alt
+alt-shift-0 = 'workspace 📡'  # comms
 alt-shift-a = []
 alt-shift-b = []
 alt-shift-c = []
@@ -102,12 +102,12 @@ alt-shift-x = []
 alt-shift-y = []
 alt-shift-z = []
 
-alt-ctrl-1 = 'move-node-to-workspace browse'
-alt-ctrl-2 = 'move-node-to-workspace term'
-alt-ctrl-4 = 'move-node-to-workspace notes'
-alt-ctrl-8 = 'move-node-to-workspace mail'
-alt-ctrl-9 = 'move-node-to-workspace comms-alt'
-alt-ctrl-0 = 'move-node-to-workspace comms'
+alt-ctrl-1 = 'move-node-to-workspace 🌎'
+alt-ctrl-2 = 'move-node-to-workspace 💻'
+alt-ctrl-4 = 'move-node-to-workspace 📓'
+alt-ctrl-8 = 'move-node-to-workspace 📬'
+alt-ctrl-9 = 'move-node-to-workspace 🗨️'
+alt-ctrl-0 = 'move-node-to-workspace 📡'
 
 alt-tab = []
 alt-shift-tab = []
@@ -168,45 +168,45 @@ slash = 'slash'
 
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
-if.workspace = 'term'
+if.workspace = '💻'
 check-further-callbacks = false
 run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
-run = ['move-node-to-workspace browse']
+run = ['move-node-to-workspace 🌎']
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = ['move-node-to-workspace browse']
+run = ['move-node-to-workspace 🌎']
 
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
-run = ['move-node-to-workspace term']
+run = ['move-node-to-workspace 💻']
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = ['move-node-to-workspace notes']
+run = ['move-node-to-workspace 📓']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Outlook'
-run = ['move-node-to-workspace mail']
+run = ['move-node-to-workspace 📬']
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
-run = ['move-node-to-workspace comms-alt']
+run = ['move-node-to-workspace 🗨️']
 
 [[on-window-detected]]
 if.app-id = 'im.riot.app'
-run = ['move-node-to-workspace comms-alt']
+run = ['move-node-to-workspace 🗨️']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
-run = ['move-node-to-workspace comms']
+run = ['move-node-to-workspace 📡']
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = ['move-node-to-workspace comms']
+run = ['move-node-to-workspace 📡']
 
 [[on-window-detected]]
 if.app-id = 'com.bitwarden.desktop'
