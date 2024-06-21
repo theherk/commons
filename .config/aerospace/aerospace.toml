@@ -40,12 +40,14 @@ alt-p = 'mode pane'
 alt-x = 'mode empty'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'workspace 🌎'  # browse
-alt-shift-2 = 'workspace 💻'  # term
-alt-shift-4 = 'workspace 📓'  # notes
-alt-shift-8 = 'workspace 📬'  # mail
-alt-shift-9 = 'workspace 🗨️' # comms-alt
-alt-shift-0 = 'workspace 📡'  # comms
+alt-shift-1 = 'workspace 🌎'
+alt-shift-2 = 'workspace 💻'
+alt-shift-4 = 'workspace 📓'
+alt-shift-8 = 'workspace 📬'
+alt-shift-9 = 'workspace 🗨️'
+alt-shift-0 = 'workspace 📡'
+alt-leftSquareBracket = 'workspace --wrap-around prev'
+alt-rightSquareBracket = 'workspace --wrap-around next'
 
 alt-ctrl-1 = 'move-node-to-workspace 🌎'
 alt-ctrl-2 = 'move-node-to-workspace 💻'
@@ -53,6 +55,8 @@ alt-ctrl-4 = 'move-node-to-workspace 📓'
 alt-ctrl-8 = 'move-node-to-workspace 📬'
 alt-ctrl-9 = 'move-node-to-workspace 🗨️'
 alt-ctrl-0 = 'move-node-to-workspace 📡'
+alt-ctrl-leftSquareBracket = 'move-node-to-workspace --wrap-around prev'
+alt-ctrl-rightSquareBracket = 'move-node-to-workspace --wrap-around next'
 
 alt-tab = []
 alt-shift-tab = []
