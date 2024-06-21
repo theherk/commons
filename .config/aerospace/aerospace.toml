@@ -116,10 +116,13 @@ alt-shift-semicolon = 'mode service'
 [mode.pane.binding]
 esc = 'mode main'
 cmd-h = []
+f = ['flatten-workspace-tree', 'mode main']
 s = ['split vertical', 'mode main']
 v = ['split horizontal', 'mode main']
-shift-s = ['layout vertical', 'mode main']
-shift-v = ['layout horizontal', 'mode main']
+shift-a = ['layout accordion', 'mode main']
+shift-s = ['layout horizontal', 'mode main']
+shift-t = ['layout tiles', 'mode main']
+shift-v = ['layout vertical', 'mode main']
 
 [key-mapping.key-notation-to-key-code]
 q = 'q'
