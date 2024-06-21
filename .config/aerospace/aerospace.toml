@@ -64,7 +64,7 @@ alt-t = []
 alt-u = []
 alt-v = []
 alt-w = []
-alt-x = []
+alt-x = 'mode empty'
 alt-y = []
 alt-z = []
 
@@ -112,6 +112,10 @@ alt-ctrl-0 = 'move-node-to-workspace comms'
 alt-tab = []
 alt-shift-tab = []
 alt-shift-semicolon = 'mode service'
+
+[mode.empty.binding]
+esc = 'mode main'
+cmd-h = []
 
 [mode.pane.binding]
 esc = 'mode main'
