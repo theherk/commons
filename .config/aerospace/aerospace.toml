@@ -173,6 +173,10 @@ check-further-callbacks = false
 run = ['layout floating']
 
 [[on-window-detected]]
+if.app-id = 'ch.protonvpn.mac'
+run = ['layout floating']
+
+[[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = ['move-node-to-workspace 🌎']
 
