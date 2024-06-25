@@ -101,6 +101,7 @@ if status is-interactive
     abbr -a ez --position command 7z e
     abbr -a fr --position command find . -iname "*.rar"
     abbr -a fz --position command find . -iname "*.7z"
+    abbr -a hn --position command hackernews_tui
     abbr -a hxr --position command 'hx (sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2)'
     abbr -a g --position command gitui
     abbr -a gl --position command gproxy-auto.sh
