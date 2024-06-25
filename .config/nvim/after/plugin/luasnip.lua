@@ -1,6 +1,7 @@
 if not pcall(require, "luasnip") then return end
 
 local ls = require("luasnip")
+local fmt = require("luasnip.extras.fmt").fmt
 local types = require("luasnip.util.types")
 require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -34,6 +35,46 @@ ls.add_snippets(nil, {
     }),
   },
   markdown = {
+    s(
+      {
+        trig = "callout",
+        name = "callout",
+        dscr = "Obsidian supported callouts. https://help.obsidian.md/Editing+and+formatting/Callouts",
+      },
+      fmt("> [!{}] {}\n> {}", {
+        c(1, {
+          -- t("abstract"),
+          -- t("attention"),
+          t("bug"),
+          t("caution"),
+          -- t("check"),
+          t("cite"),
+          -- t("danger"),
+          -- t("done"),
+          t("error"),
+          t("example"),
+          -- t("fail"),
+          -- t("failure"),
+          -- t("faq"),
+          t("help"),
+          -- t("hint"),
+          -- t("important"),
+          -- t("info"),
+          -- t("missing"),
+          t("note"),
+          t("question"),
+          t("quote"),
+          -- t("success"),
+          -- t("summary"),
+          t("tip"),
+          -- t("tldr"),
+          t("todo"),
+          t("warning"),
+        }),
+        i(2, "title"),
+        i(0, "text"),
+      })
+    ),
     s({
       trig = "meta",
       name = "meta",
