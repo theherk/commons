@@ -110,6 +110,7 @@ return {
       { "<leader>nll", "<cmd>ObsidianLink<cr>", desc = "link" },
       { "<leader>nln", "<cmd>ObsidianLinkNew<cr>", desc = "new" },
       { "<leader>nn", "<cmd>ObsidianNew<cr>", desc = "new" },
+      { "<leader>no", "<cmd>ObsidianOpen<cr>", desc = "open" },
       { "<leader>nr", "<cmd>ObsidianRename<cr>", desc = "rename" },
       { "<leader>ns", "<cmd>ObsidianSearch<cr>", desc = "search" },
       { "<leader>nt", "<cmd>ObsidianTags<cr>", desc = "tags" },
