@@ -300,6 +300,7 @@ return {
       ensure_installed = {
         "bash",
         "comment",
+        "gleam",
         "hcl",
         "html",
         "javascript",
