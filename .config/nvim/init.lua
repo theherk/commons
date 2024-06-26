@@ -1,4 +1,7 @@
 require("config.options")
+
+if vim.g.neovide then require("config.neovide") end
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then vim.fn.system({
   "git",
@@ -29,5 +32,3 @@ require("config.autocmds")
 require("config.control")
 vim.cmd.colorscheme("tokyonight")
 vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE", ctermbg = "NONE" })
-
-if vim.g.neovide then require("config.neovide") end
