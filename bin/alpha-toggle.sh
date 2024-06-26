@@ -15,6 +15,7 @@ obfuscate() {
 	# sed -i '' 's/\(transparent = \)true/\1false/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(sidebars = \)"transparent"/\1"normal"/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(floats = \)"transparent"/\1"normal"/' .config/nvim/lua/plugins/display.lua
+	sed -i '' 's/\(vim.g.neovide_transparency = \).*/\11/' .config/nvim/lua/config/neovide.lua
 	sed -i '' 's/\(config.window_background_opacity = \).*/\11.0/' .config/wezterm/theme.lua
 	sed -i '' 's/\(background = \).*\(, -- tab_bar\)/\1colors.bg\2/' .config/wezterm/theme.lua
 	sed -i '' 's/\(bg_color = \).*\(, -- new_tab\)/\1colors.bg\2/' .config/wezterm/theme.lua
@@ -27,6 +28,7 @@ clarify() {
 	# sed -i '' 's/\(transparent = \)false/\1true/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(sidebars = \)"normal"/\1"transparent"/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(floats = \)"normal"/\1"transparent"/' .config/nvim/lua/plugins/display.lua
+	sed -i '' 's/\(vim.g.neovide_transparency = \).*/\1'"$X"'/' .config/nvim/lua/config/neovide.lua
 	sed -i '' 's/\(config.window_background_opacity = \).*/\1'"$X"'/' .config/wezterm/theme.lua
 	sed -i '' 's/\(background = \).*\(, -- tab_bar\)/\1"none"\2/' .config/wezterm/theme.lua
 	sed -i '' 's/\(bg_color = \).*\(, -- new_tab\)/\1"none"\2/' .config/wezterm/theme.lua
