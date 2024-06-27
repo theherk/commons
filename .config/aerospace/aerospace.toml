@@ -68,6 +68,7 @@ esc = 'mode main'
 cmd-h = []
 
 [mode.pane.binding]
+alt-c = ['reload-config', 'mode main']
 esc = 'mode main'
 cmd-h = []
 f = ['flatten-workspace-tree', 'mode main']
