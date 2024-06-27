@@ -62,7 +62,6 @@ alt-ctrl-rightSquareBracket = 'move-node-to-workspace --wrap-around next'
 
 alt-tab = []
 alt-shift-tab = []
-alt-shift-semicolon = 'mode service'
 
 [mode.empty.binding]
 esc = 'mode main'
