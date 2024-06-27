@@ -1,0 +1,2 @@
+[manager]
+prepend_keymap = [{ on = ["e"], run = "open", desc = "edit" }]
