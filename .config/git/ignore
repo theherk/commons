@@ -18,6 +18,7 @@
 .shadowenv.d
 .tox
 .vim/
+_cover.*
 _plan*
 _update.md
 _update.sh

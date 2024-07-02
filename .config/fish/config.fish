@@ -105,6 +105,7 @@ if status is-interactive
     abbr -a hxr --position command 'hx (sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2)'
     abbr -a g --position command gitui
     abbr -a gl --position command gproxy-auto.sh
+    abbr -a gtc --position command 'go test -covermode=count -coverpkg=./... -coverprofile _cover.out -v ./... && go tool cover -html _cover.out -o _cover.html'
     abbr -a gr --position command 'cd (git root)'
     abbr -a ipy --position command python -c '"import IPython; IPython.terminal.ipapp.launch_new_instance()"'
     abbr -a l --position command eza -l --icons
