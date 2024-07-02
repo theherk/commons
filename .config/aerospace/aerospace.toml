@@ -39,6 +39,7 @@ alt-x = 'mode empty'
 
 alt-shift-1 = 'workspace 🌎'
 alt-shift-2 = 'workspace 💻'
+alt-shift-3 = 'workspace ✏️'
 alt-shift-4 = 'workspace 📓'
 alt-shift-5 = 'workspace 🌀'
 alt-shift-8 = 'workspace 📬'
@@ -49,6 +50,7 @@ alt-rightSquareBracket = 'workspace --wrap-around next'
 
 alt-ctrl-1 = 'move-node-to-workspace 🌎'
 alt-ctrl-2 = 'move-node-to-workspace 💻'
+alt-ctrl-3 = 'move-node-to-workspace ✏️'
 alt-ctrl-4 = 'move-node-to-workspace 📓'
 alt-ctrl-5 = 'move-node-to-workspace 🌀'
 alt-ctrl-8 = 'move-node-to-workspace 📬'
@@ -82,6 +84,8 @@ a = [
   'layout h_accordion',
   'workspace 💻',
   'layout h_accordion',
+  'workspace ✏️',
+  'layout h_accordion',
   'workspace 📓',
   'layout h_accordion',
   'workspace 🌀',
@@ -99,6 +103,8 @@ t = [
   'workspace 🌎',
   'layout h_tiles',
   'workspace 💻',
+  'layout h_tiles',
+  'workspace ✏️',
   'layout h_tiles',
   'workspace 📓',
   'layout h_tiles',
@@ -152,6 +158,9 @@ comma = 'comma'
 period = 'period'
 slash = 'slash'
 
+# Use this to get the app.id.
+# codesign -dr - /Applications/app.app
+
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 if.workspace = '💻'
@@ -173,6 +182,10 @@ run = ['move-node-to-workspace 🌎']
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
 run = ['move-node-to-workspace 💻']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Neovide'
+run = ['move-node-to-workspace ✏️']
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
