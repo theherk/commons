@@ -17,5 +17,14 @@ $env.config = {
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
     edit_mode: vi
+    hooks: {
+      pre_prompt: [{ ||
+        if (which direnv | is-empty) {
+          return
+        }
+
+        direnv export json | from json | default {} | load-env
+      }]
+    }
 }
 use ~/.cache/starship/init.nu
