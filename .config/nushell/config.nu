@@ -6,10 +6,6 @@ $env.config = {
         clickable_links: true
     }
 
-    cd: {
-        abbreviations: true
-    }
-
     error_style: "fancy"
 
     cursor_shape: {
