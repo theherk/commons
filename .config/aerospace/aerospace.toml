@@ -26,21 +26,17 @@ alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-p = 'mode pane'
 alt-x = 'mode empty'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'workspace 🌎'
 alt-shift-2 = 'workspace 💻'
 alt-shift-4 = 'workspace 📓'
@@ -79,6 +75,8 @@ shift-a = ['layout accordion', 'mode main']
 shift-s = ['layout horizontal', 'mode main']
 shift-t = ['layout tiles', 'mode main']
 shift-v = ['layout vertical', 'mode main']
+
+# Change all workspaces between accordion and tiles.
 a = [
   'workspace 🌎',
   'layout h_accordion',
