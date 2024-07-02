@@ -79,6 +79,42 @@ shift-a = ['layout accordion', 'mode main']
 shift-s = ['layout horizontal', 'mode main']
 shift-t = ['layout tiles', 'mode main']
 shift-v = ['layout vertical', 'mode main']
+a = [
+  'workspace 🌎',
+  'layout h_accordion',
+  'workspace 💻',
+  'layout h_accordion',
+  'workspace 📓',
+  'layout h_accordion',
+  'workspace 🌀',
+  'layout h_accordion',
+  'workspace 📬',
+  'layout h_accordion',
+  'workspace 🗨️',
+  'layout h_accordion',
+  'workspace 📡',
+  'layout h_accordion',
+  'workspace 💻',
+  'mode main',
+]
+t = [
+  'workspace 🌎',
+  'layout h_tiles',
+  'workspace 💻',
+  'layout h_tiles',
+  'workspace 📓',
+  'layout h_tiles',
+  'workspace 🌀',
+  'layout h_tiles',
+  'workspace 📬',
+  'layout h_tiles',
+  'workspace 🗨️',
+  'layout h_tiles',
+  'workspace 📡',
+  'layout h_tiles',
+  'workspace 💻',
+  'mode main',
+]
 
 [key-mapping.key-notation-to-key-code]
 q = 'q'
