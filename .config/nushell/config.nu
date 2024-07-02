@@ -28,3 +28,4 @@ $env.config = {
     }
 }
 use ~/.cache/starship/init.nu
+source ~/.cache/zoxide/init.nu
