@@ -9,12 +9,12 @@ default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 
 [gaps]
-inner.horizontal = 11
-inner.vertical = 11
-outer.left = 11
-outer.bottom = 11
-outer.top = 11
-outer.right = 11
+inner.horizontal = [{ monitor."built-in" = 11 }, 15]
+inner.vertical = [{ monitor."built-in" = 11 }, 15]
+outer.left = [{ monitor."built-in" = 0 }, 183]
+outer.bottom = 0
+outer.top = 0
+outer.right = [{ monitor."built-in" = 0 }, 183]
 
 [mode.main.binding]
 cmd-h = []
