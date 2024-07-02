@@ -25,7 +25,7 @@ symbol = " "
 disabled = false
 style = "cyan"
 bash_indicator = "𝔹"
-fish_indicator = "󰈺"
+fish_indicator = " "
 nu_indicator = "ℕ"
 zsh_indicator = "ℤ"
 
