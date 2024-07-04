@@ -42,6 +42,7 @@ return {
           { mode = "n", keys = "<leader>" },
           { mode = "v", keys = "<leader>" },
           { mode = "n", keys = "<localleader>" },
+          { mode = "v", keys = "<localleader>" },
           { mode = "n", keys = "[" },
           { mode = "n", keys = "]" },
           { mode = "n", keys = "g" },
