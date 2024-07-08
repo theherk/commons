@@ -201,7 +201,7 @@ return {
         plugins = {
           wezterm = {
             enabled = true,
-            font = "+2",
+            font = "+3",
           },
         },
         window = {
