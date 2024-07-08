@@ -209,7 +209,7 @@ return {
             number = false,
             cursorline = false,
           },
-          width = 0.77,
+          width = 0.43,
         },
       })
     end,
