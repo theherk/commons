@@ -38,6 +38,17 @@ return {
   },
   { "RRethy/base16-nvim" },
   {
+    "echasnovski/mini.icons",
+    lazy = true,
+    opts = {},
+    init = function()
+      package.preload["nvim-web-devicons"] = function()
+        require("mini.icons").mock_nvim_web_devicons()
+        return package.loaded["nvim-web-devicons"]
+      end
+    end,
+  },
+  {
     "echasnovski/mini.indentscope",
     event = { "BufReadPre", "BufNewFile" },
     opts = {
@@ -399,7 +410,6 @@ return {
       }
     end,
   },
-  { "nvim-tree/nvim-web-devicons", lazy = true },
   {
     "rcarriga/nvim-notify",
     keys = {

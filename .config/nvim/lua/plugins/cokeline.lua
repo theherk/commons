@@ -2,8 +2,8 @@ return {
   {
     "willothy/nvim-cokeline",
     dependencies = {
+      "echasnovski/mini.icons",
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
     },
     config = function(_, _)
       local harpoon = require("harpoon.mark")
