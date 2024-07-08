@@ -205,6 +205,10 @@ return {
           },
         },
         window = {
+          options = {
+            number = false,
+            cursorline = false,
+          },
           width = 0.77,
         },
       })
