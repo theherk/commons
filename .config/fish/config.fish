@@ -84,7 +84,7 @@ if status is-interactive
     abbr -a !! --position anywhere --function last_history_item
     abbr -a awsl --position command aws sso login --profile \$AWS_PROFILE
     abbr -a awsr --position command aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'
-    abbr -a awsu --position command unset AWS_PROFILE
+    abbr -a awsu --position command set -u AWS_PROFILE
     abbr -a awswhoami --position command aws sts get-caller-identity
     abbr -a bubu --position command "brew update && brew outdated && brew upgrade && brew cleanup"
     abbr -a c --position command codium
@@ -148,10 +148,14 @@ if status is-interactive
     end
 
     function awsp # Set AWS_PROFILE
-        argparse --min-args 1 --max-args 1 -- $argv
+        argparse --max-args 1 -- $argv
         or return
-        echo $argv
-        export AWS_PROFILE=$argv
+        switch (count $argv)
+            case 1
+                set -g -x AWS_PROFILE $argv[1]
+            case '*'
+                echo $AWS_PROFILE
+        end
     end
 
     function awspd # Set latest cached creds as default
