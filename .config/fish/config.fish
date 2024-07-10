@@ -24,6 +24,8 @@ set --export fzf_dir_opts --bind "ctrl-e:execute(editor {} &> /dev/tty)"
 fish_add_path -pP /usr/local/bin
 fish_add_path -pP /usr/local/go/bin
 
+fish_add_path -m (brew --prefix)/bin
+
 fish_add_path -pP $HOME/.amplify/bin
 fish_add_path -pP $HOME/.cabal/bin
 fish_add_path -pP $HOME/.cargo/bin
@@ -35,7 +37,6 @@ fish_add_path -pP (brew --prefix)/opt/coreutils/libexec/gnubin
 fish_add_path -pP $HOME/.emacs.d/bin
 fish_add_path -pP $HOME/.local/bin
 fish_add_path -pP $HOME/bin
-fish_add_path -m (brew --prefix)/bin
 
 # Load directory shortcuts.
 if test -e ~/.dirs
