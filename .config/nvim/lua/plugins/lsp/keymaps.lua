@@ -7,25 +7,23 @@ M._keys = nil
 
 ---@return (LazyKeys|{has?:string})[]
 function M.get()
-  local format = function()
-    require("plugins.lsp.format").format({ force = true })
-  end
+  local format = function() require("plugins.lsp.format").format({ force = true }) end
   if not M._keys then
     ---@class PluginLspKeys
     -- stylua: ignore
     M._keys = {
       { "<leader>cl", "<cmd>LspInfo<cr>", desc = "lsp info" },
-      { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "def", has = "definition" },
-      { "gr", "<cmd>Telescope lsp_references<cr>", desc = "refs" },
-      { "gD", vim.lsp.buf.declaration, desc = "declaration" },
-      { "gI", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, desc = "impl" },
+      { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "goto def", has = "definition" },
+      { "gr", "<cmd>Telescope lsp_references<cr>", desc = "telescope refs" },
+      { "gD", vim.lsp.buf.declaration, desc = "goto declaration" },
+      { "gI", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, desc = "show impl" },
       { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "type def" },
-      { "K", vim.lsp.buf.hover, desc = "Hover" },
-      { "gK", vim.lsp.buf.signature_help, desc = "sig help", has = "signatureHelp" },
-      { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "sig help", has = "signatureHelp" },
+      { "K", vim.lsp.buf.hover, desc = "hover" },
+      { "gK", vim.lsp.buf.signature_help, desc = "sig help", has = "signature help" },
+      { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "sig help", has = "signature help" },
       { "<leader>cf", format, desc = "fmt doc", has = "formatting" },
-      { "<leader>cf", format, desc = "fmt range", mode = "v", has = "rangeFormatting" },
-      { "<leader>ca", vim.lsp.buf.code_action, desc = "action", mode = { "n", "v" }, has = "codeAction" },
+      { "<leader>cf", format, desc = "fmt range", mode = "v", has = "range formatting" },
+      { "<leader>ca", vim.lsp.buf.code_action, desc = "action", mode = { "n", "v" }, has = "code action" },
       {
         "<leader>cA",
         function()
@@ -65,9 +63,7 @@ function M.has(buffer, method)
   method = method:find("/") and method or "textDocument/" .. method
   local clients = Util.get_clients({ bufnr = buffer })
   for _, client in ipairs(clients) do
-    if client.supports_method(method) then
-      return true
-    end
+    if client.supports_method(method) then return true end
   end
   return false
 end
@@ -117,9 +113,7 @@ end
 function M.diagnostic_goto(next, severity)
   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
   severity = severity and vim.diagnostic.severity[severity] or nil
-  return function()
-    go({ severity = severity })
-  end
+  return function() go({ severity = severity }) end
 end
 
 return M

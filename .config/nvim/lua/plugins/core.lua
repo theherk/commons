@@ -2,21 +2,21 @@ return {
   {
     "Asheq/close-buffers.vim",
     keys = {
-      { "<leader>bo", "<cmd>Bdelete other<cr>", desc = "others" },
+      { "<leader>bo", "<cmd>Bdelete other<cr>", desc = "close other buffers" },
     },
   },
   {
     "benfowler/telescope-luasnip.nvim",
     keys = {
-      { "<leader>sS", "<cmd>Telescope luasnip<cr>", desc = "snippets" },
+      { "<leader>sS", "<cmd>Telescope luasnip<cr>", desc = "telescope snippets" },
     },
   },
   {
     "echasnovski/mini.bufremove",
     config = true,
     keys = {
-      { "<leader>bd", function() require("mini.bufremove").delete(0, false) end, desc = "delete" },
-      { "<leader>bD", function() require("mini.bufremove").delete(0, true) end, desc = "delete (force)" },
+      { "<leader>bd", function() require("mini.bufremove").delete(0, false) end, desc = "delete buffer" },
+      { "<leader>bD", function() require("mini.bufremove").delete(0, true) end, desc = "delete buffer (force)" },
     },
   },
   {
@@ -56,13 +56,13 @@ return {
       local plugin = require("lazy.core.config").spec.plugins["mini.surround"]
       local opts = require("lazy.core.plugin").values(plugin, "opts", false)
       local mappings = {
-        { opts.mappings.add, desc = "Add surrounding", mode = { "n", "v" } },
-        { opts.mappings.delete, desc = "Delete surrounding" },
-        { opts.mappings.find, desc = "Find right surrounding" },
-        { opts.mappings.find_left, desc = "Find left surrounding" },
-        { opts.mappings.highlight, desc = "Highlight surrounding" },
-        { opts.mappings.replace, desc = "Replace surrounding" },
-        { opts.mappings.update_n_lines, desc = "Update `MiniSurround.config.n_lines`" },
+        { opts.mappings.add, desc = "add surrounding", mode = { "n", "v" } },
+        { opts.mappings.delete, desc = "delete surrounding" },
+        { opts.mappings.find, desc = "find right surrounding" },
+        { opts.mappings.find_left, desc = "find left surrounding" },
+        { opts.mappings.highlight, desc = "highlight surrounding" },
+        { opts.mappings.replace, desc = "replace surrounding" },
+        { opts.mappings.update_n_lines, desc = "update `MiniSurround.config.n_lines`" },
       }
       mappings = vim.tbl_filter(function(m) return m[1] and #m[1] > 0 end, mappings)
       return vim.list_extend(mappings, keys)
@@ -88,9 +88,9 @@ return {
       { "]t", function() require("todo-comments").jump_next() end, desc = "next todo" },
       { "[t", function() require("todo-comments").jump_prev() end, desc = "prev todo" },
       { "<leader>stf", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "todo/fix/fixme" },
-      { "<leader>stq", "<cmd>TodoQuickFix<cr>", desc = "quickfix" },
-      { "<leader>stt", "<cmd>TodoTelescope<cr>", desc = "telescope" },
-      { "<leader>stT", "<cmd>TodoTrouble<cr>", desc = "trouble" },
+      { "<leader>stq", "<cmd>TodoQuickFix<cr>", desc = "todo quickfix" },
+      { "<leader>stt", "<cmd>TodoTelescope<cr>", desc = "todo telescope" },
+      { "<leader>stT", "<cmd>TodoTrouble<cr>", desc = "todo trouble" },
     },
   },
   {
@@ -117,9 +117,9 @@ return {
   {
     "ggandor/leap.nvim",
     keys = {
-      { "s", mode = { "n", "x", "o" }, desc = "Leap forward to" },
-      { "S", mode = { "n", "x", "o" }, desc = "Leap backward to" },
-      { "gs", mode = { "n", "x", "o" }, desc = "Leap from windows" },
+      { "s", mode = { "n", "x", "o" }, desc = "leap forward to" },
+      { "S", mode = { "n", "x", "o" }, desc = "leap backward to" },
+      { "gs", mode = { "n", "x", "o" }, desc = "leap from windows" },
     },
     config = function(_, opts)
       local leap = require("leap")
@@ -232,7 +232,7 @@ return {
       },
     },
     keys = {
-      { "<c-p>", "<cmd>Neotree toggle<cr>", desc = "toggle tree" },
+      { "<c-p>", "<cmd>Neotree toggle<cr>", desc = "toggle neotree" },
     },
   },
   {
@@ -256,7 +256,7 @@ return {
       { "<leader>cs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "document symbols" },
       { "<leader>cS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "workspace symbols" },
       { "<leader>ff", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", desc = "find files" },
-      { "<leader>hh", "<cmd>Telescope help_tags<cr>", desc = "help" },
+      { "<leader>hh", "<cmd>Telescope help_tags<cr>", desc = "telescope help" },
       { "<leader>hs", "<cmd>Telescope spell_suggest<cr>", desc = "spell" },
       { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "keymaps" },
       { "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "buffer / swiper" },

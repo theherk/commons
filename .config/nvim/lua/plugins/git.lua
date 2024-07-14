@@ -109,10 +109,10 @@ return {
     "sindrets/diffview.nvim",
     event = "BufRead",
     keys = {
-      { "<leader>gdd", "<cmd>DiffviewOpen<cr>", desc = "open" },
-      { "<leader>gdh", "<cmd>DiffviewFileHistory<cr>", desc = "history" },
-      { "<leader>gdl", "<cmd>DiffviewLog<cr>", desc = "log" },
-      { "<leader>gdr", "<cmd>DiffviewRefresh<cr>", desc = "refresh" },
+      { "<leader>gdd", "<cmd>DiffviewOpen<cr>", desc = "open diffview" },
+      { "<leader>gdh", "<cmd>DiffviewFileHistory<cr>", desc = "diffview history" },
+      { "<leader>gdl", "<cmd>DiffviewLog<cr>", desc = "diffview log" },
+      { "<leader>gdr", "<cmd>DiffviewRefresh<cr>", desc = "diffview refresh" },
     },
     opts = {
       enhanced_diff_hl = true,

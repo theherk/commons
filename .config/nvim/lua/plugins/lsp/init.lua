@@ -13,7 +13,7 @@ return {
       },
     },
     keys = {
-      { "<leader>cf", function() require("plugins.lsp.format").format({ force = true }) end, desc = "fmt" },
+      { "<leader>cf", function() require("plugins.lsp.format").format({ force = true }) end, desc = "format" },
       { "<leader>uf", function() require("plugins.lsp.format").toggle() end, desc = "fmt on save" },
     },
     opts = {

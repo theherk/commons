@@ -23,9 +23,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        vim.list_extend(opts.ensure_installed, { "ron", "rust", "toml" })
-      end
+      if type(opts.ensure_installed) == "table" then vim.list_extend(opts.ensure_installed, { "ron", "rust", "toml" }) end
     end,
   },
 
@@ -34,9 +32,7 @@ return {
     "williamboman/mason.nvim",
     optional = true,
     opts = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        vim.list_extend(opts.ensure_installed, { "codelldb" })
-      end
+      if type(opts.ensure_installed) == "table" then vim.list_extend(opts.ensure_installed, { "codelldb" }) end
     end,
   },
 
@@ -89,9 +85,9 @@ return {
         -- Ensure mason installs the server
         rust_analyzer = {
           keys = {
-            { "K",          "<cmd>RustHoverActions<cr>", desc = "Hover Actions (Rust)" },
-            { "<leader>cR", "<cmd>RustCodeAction<cr>",   desc = "Code Action (Rust)" },
-            { "<leader>dr", "<cmd>RustDebuggables<cr>",  desc = "Run Debuggables (Rust)" },
+            { "K", "<cmd>RustHoverActions<cr>", desc = "hover actions (Rust)" },
+            { "<leader>cR", "<cmd>RustCodeAction<cr>", desc = "code action (Rust)" },
+            { "<leader>dr", "<cmd>RustDebuggables<cr>", desc = "run debuggables (Rust)" },
           },
           settings = {
             ["rust-analyzer"] = {
@@ -128,7 +124,7 @@ return {
                   vim.lsp.buf.hover()
                 end
               end,
-              desc = "Show Crate Documentation",
+              desc = "show crate documentation",
             },
           },
         },

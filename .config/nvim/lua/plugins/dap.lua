@@ -8,7 +8,7 @@ return {
       keys = {
         { "<leader>dd", function() require("dapui").toggle({}) end, desc = "dap ui" },
         { "<leader>du", function() require("dapui").toggle({}) end, desc = "dap ui" },
-        { "<leader>de", function() require("dapui").eval() end, desc = "eval", mode = { "n", "v" } },
+        { "<leader>de", function() require("dapui").eval() end, desc = "dap eval", mode = { "n", "v" } },
       },
       opts = {},
       config = function(_, opts)

@@ -142,26 +142,26 @@ return {
         "<S-Enter>",
         function() require("noice").redirect(vim.fn.getcmdline()) end,
         mode = "c",
-        "redirect cmdline"
+        "noice redirect cmdline"
       },
       {
         "<leader>snl",
         function() require("noice").cmd("last") end,
         desc =
-        "last message"
+        "noice last message"
       },
       {
         "<leader>snh",
         function() require("noice").cmd("history") end,
         desc =
-        "history"
+        "noice history"
       },
       { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
       {
         "<leader>snd",
         function() require("noice").cmd("dismiss") end,
         desc =
-        "dismiss"
+        "noice dismiss"
       },
       {
         "<c-f>",
