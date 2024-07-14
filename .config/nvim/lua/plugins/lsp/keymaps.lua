@@ -21,8 +21,8 @@ function M.get()
       { "K", vim.lsp.buf.hover, desc = "hover" },
       { "gK", vim.lsp.buf.signature_help, desc = "sig help", has = "signature help" },
       { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "sig help", has = "signature help" },
-      { "<leader>cf", format, desc = "fmt doc", has = "formatting" },
-      { "<leader>cf", format, desc = "fmt range", mode = "v", has = "range formatting" },
+      { "<leader>cf", format, desc = "format doc", has = "formatting" },
+      { "<leader>cf", format, desc = "format range", mode = "v", has = "range formatting" },
       { "<leader>ca", vim.lsp.buf.code_action, desc = "action", mode = { "n", "v" }, has = "code action" },
       {
         "<leader>cA",

@@ -14,7 +14,7 @@ return {
     },
     keys = {
       { "<leader>cf", function() require("plugins.lsp.format").format({ force = true }) end, desc = "format" },
-      { "<leader>uf", function() require("plugins.lsp.format").toggle() end, desc = "fmt on save" },
+      { "<leader>uf", function() require("plugins.lsp.format").toggle() end, desc = "format on save" },
     },
     opts = {
       -- options for vim.diagnostic.config()
