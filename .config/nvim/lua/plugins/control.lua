@@ -5,7 +5,20 @@ return {
     opts = function()
       local mi = require("mini.icons")
       return {
+        icons = {
+          rules = {
+            { pattern = "close", icon = "󱄊 ", color = "red" },
+            { pattern = "diff", cat = "filetype", name = "git" },
+            { pattern = "explore", icon = "󰮗 ", color = "cyan" },
+            { pattern = "grep", icon = " " },
+            { pattern = "harpoon", icon = "󰛢 ", color = "yellow" },
+            { pattern = "key", icon = " ", color = "orange" },
+            { pattern = "lua", cat = "filetype", name = "lua" },
+            { pattern = "obsidian", cat = "filetype", name = "markdown", color = "purple" },
+            { pattern = "split", icon = " " },
+          },
           separator = "│",
+        },
         layout = {
           align = "center",
           spacing = 4,
