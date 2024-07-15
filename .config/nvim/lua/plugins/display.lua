@@ -156,7 +156,7 @@ return {
         desc =
         "noice history"
       },
-      { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
+      { "<leader>sna", function() require("noice").cmd("all") end, desc = "noice all" },
       {
         "<leader>snd",
         function() require("noice").cmd("dismiss") end,
