@@ -5,6 +5,7 @@ return {
     opts = function()
       local mi = require("mini.icons")
       return {
+          separator = "│",
         layout = {
           align = "center",
           spacing = 4,
