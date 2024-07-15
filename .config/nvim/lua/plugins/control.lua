@@ -5,6 +5,10 @@ return {
     opts = function()
       local mi = require("mini.icons")
       return {
+        layout = {
+          align = "center",
+          spacing = 4,
+        },
         preset = "helix",
         show_help = false,
         spec = {
@@ -36,10 +40,6 @@ return {
           height = { max = 44 },
           padding = { 1, 1 },
           title_pos = "center",
-        },
-        layout = {
-          spacing = 4,
-          align = "center",
         },
       }
     end,
