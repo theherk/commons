@@ -16,6 +16,7 @@ return {
             { pattern = "lua", cat = "filetype", name = "lua" },
             { pattern = "obsidian", cat = "filetype", name = "markdown", color = "purple" },
             { pattern = "split", icon = " " },
+            { pattern = "spoin", icon = " " },
           },
           separator = "│",
         },
@@ -52,8 +53,9 @@ return {
         },
         win = {
           height = { max = 44 },
-          padding = { 1, 1 },
+          padding = { 1, 3 },
           title_pos = "center",
+          width = { min = 26 },
         },
       }
     end,
