@@ -78,6 +78,10 @@ vim.keymap.set("n", "<c-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window 
 vim.keymap.set("n", "<c-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 vim.keymap.set("n", "<c-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
+-- Quickfix
+vim.keymap.set("n", "[q", vim.cmd.cprev, { desc = "previous quickfix" })
+vim.keymap.set("n", "]q", vim.cmd.cnext, { desc = "next quickfix" })
+
 -- Utility toggles.
 local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
 vim.keymap.set("n", "<leader>uc", function() Util.toggle("conceallevel", false, { 0, conceallevel }) end, { desc = "conceal" })
