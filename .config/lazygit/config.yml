@@ -26,6 +26,8 @@ customCommands:
     loadingText: "Pruning remote..."
 gui:
   enlargedSideViewLocation: top
+  expandFocusedSidePanel: true
+  expandedSidePanelWeight: 3
   nerdFontsVersion: "3"
   showBottomLine: false
   showCommandLog: false
