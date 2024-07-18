@@ -205,6 +205,15 @@ return {
       filesize = 2,
     },
   },
+  {
+    "MagicDuck/grug-far.nvim",
+    opts = {
+      windowCreationCommand = "",
+    },
+    keys = {
+      { "<leader>sf", "<cmd>GrugFar<cr>", desc = "grug find and replace" },
+    },
+  },
   { "nvim-lua/plenary.nvim", lazy = true },
   {
     "nvim-neo-tree/neo-tree.nvim",
