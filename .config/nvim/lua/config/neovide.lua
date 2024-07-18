@@ -4,7 +4,8 @@ vim.g.neovide_theme = "auto"
 -- Background is none and comes from the terminal.
 -- When running Neovide, it must be set.
 -- These are bespoke to specific colorschemes.
-if vim.g.colors_name == "tokyonight" then vim.api.nvim_set_hl(0, "Normal", { bg = require("tokyonight.colors").setup().bg }) end
+vim.notify(vim.g.colors_name, "info")
+if vim.g.colors_name == "tokyonight-night" then vim.api.nvim_set_hl(0, "Normal", { bg = require("tokyonight.colors").setup().bg }) end
 if vim.g.colors_name == "catppuccin-latte" then vim.api.nvim_set_hl(0, "Normal", { bg = require("catppuccin.palettes").get_palette("latte").base }) end
 
 -- Cursor
