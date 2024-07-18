@@ -95,7 +95,6 @@ if status is-interactive
     abbr -a dumplynx --position anywhere --set-cursor "%| lynx -dump -stdin"
     abbr -a dumpw3m --position anywhere --set-cursor "%| w3m -dump -T text/html"
     abbr -a e --position command editor
-    abbr -a e10 --position command ~/nvim-macos/bin/nvim
     abbr -a ef --position command emacsclient -c -n -e "(make-frame)"
     abbr -a es --position command brew services restart emacs-plus
     abbr -a er --position command unrar e
@@ -117,6 +116,7 @@ if status is-interactive
     abbr -a lzg --position command lazygit
     abbr -a norcal --position command ncal -s NO -w
     abbr -a not --position command rg -v
+    abbr -a nv --position command neovide --fork
     abbr -a of --position command onefetch
     abbr -a pc --position anywhere --set-cursor "%| pbcopy"
     abbr -a r --position command rsync -rltvz -e ssh --progress
