@@ -1,3 +1,4 @@
+vim.g.neovide_detach_on_quit = "always_detach"
 vim.g.neovide_transparency = 0.85247
 vim.g.neovide_theme = "auto"
 
