@@ -12,7 +12,7 @@ CODIUM_ICON_LIGHT=catppuccin-latte
 DOOM_DARK=h4s-tokyo-night
 DOOM_LIGHT=doom-one-light
 
-HELIX_DARK=tokyonight
+HELIX_DARK=base16_transparent
 HELIX_LIGHT=catppuccin_latte
 
 LAZYGIT_BG_DARK=#24283b
@@ -39,10 +39,10 @@ darken() {
 	sed -i '' 's/\("workbench.iconTheme": \)".*"/\1"'$CODIUM_ICON_DARK'"/' .config/codium/settings.json
 	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_DARK')/' .config/doom/config.org
 	sed -i '' 's/\(.*light =\).*/\1 false/' .config/git/config
-	sed -i '' 's/\(command_fg: \).*,/\1Some(Gray),/' .config/gitui/theme.ron
-	sed -i '' 's/\(selection_bg: \).*,/\1Some(Rgb(11, 41, 66)),/' .config/gitui/theme.ron
-	sed -i '' 's/\(cmdbar_bg: \).*,/\1Some(Rgb(11, 41, 66)),/' .config/gitui/theme.ron
-	sed -i '' 's/\(cmdbar_extra_lines_bg: \).*,/\1Some(Rgb(11, 41, 66)),/' .config/gitui/theme.ron
+	sed -i '' 's/\(command_fg: \).*,/\1Some("Gray"),/' .config/gitui/theme.ron
+	sed -i '' 's/\(selection_bg: \).*,/\1Some("#0B2942"),/' .config/gitui/theme.ron
+	sed -i '' 's/\(cmdbar_bg: \).*,/\1Some("#0B2942"),/' .config/gitui/theme.ron
+	sed -i '' 's/\(cmdbar_extra_lines_bg: \).*,/\1Some("#0B2942"),/' .config/gitui/theme.ron
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_DARK'"/' .config/helix/config.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_DARK'"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(pager: .*\) --light/\1 --dark/' .config/lazygit/config.yml
@@ -62,10 +62,10 @@ lighten() {
 	sed -i '' 's/\("workbench.iconTheme": \)".*"/\1"'$CODIUM_ICON_LIGHT'"/' .config/codium/settings.json
 	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_LIGHT')/' .config/doom/config.org
 	sed -i '' 's/\(.*light =\).*/\1 true/' .config/git/config
-	sed -i '' 's/\(command_fg: \).*,/\1Some(White),/' .config/gitui/theme.ron
-	sed -i '' 's/\(selection_bg: \).*,/\1Some(LightBlue),/' .config/gitui/theme.ron
-	sed -i '' 's/\(cmdbar_bg: \).*,/\1Some(LightBlue),/' .config/gitui/theme.ron
-	sed -i '' 's/\(cmdbar_extra_lines_bg: \).*,/\1Some(LightBlue),/' .config/gitui/theme.ron
+	sed -i '' 's/\(command_fg: \).*,/\1Some("White"),/' .config/gitui/theme.ron
+	sed -i '' 's/\(selection_bg: \).*,/\1Some("LightBlue"),/' .config/gitui/theme.ron
+	sed -i '' 's/\(cmdbar_bg: \).*,/\1Some("LightBlue"),/' .config/gitui/theme.ron
+	sed -i '' 's/\(cmdbar_extra_lines_bg: \).*,/\1Some("LightBlue"),/' .config/gitui/theme.ron
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_LIGHT'"/' .config/helix/config.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_LIGHT'"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(pager: .*\) --dark/\1 --light/' .config/lazygit/config.yml
