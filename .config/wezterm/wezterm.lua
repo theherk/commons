@@ -22,9 +22,12 @@ config = {
     LG_CONFIG_FILE = wezterm.home_dir .. "/.config/lazygit/config.yml",
     PATH = table.concat(paths, ":"),
   },
+  unix_domains = { { name = "unix" } },
 }
 
 control.apply_to_config(config)
 theme.apply_to_config(config)
+
+config.default_gui_startup_args = { "connect", "unix" }
 
 return config
