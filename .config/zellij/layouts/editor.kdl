@@ -1,11 +1,8 @@
 layout {
     tab name="editor" focus=true {
+        pane command="editor" borderless=true close_on_exit=true focus=true
         pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-        }
-        pane command="editor" close_on_exit=true focus=true
-        pane size=2 borderless=true {
-            plugin location="zellij:status-bar"
+            plugin location="zellij:compact-bar"
         }
     }
 }
