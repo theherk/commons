@@ -9,4 +9,5 @@ else
     else
         zellij -s $p
     end
+    zellij delete-session $p
 end
