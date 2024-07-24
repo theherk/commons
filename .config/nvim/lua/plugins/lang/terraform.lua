@@ -14,6 +14,8 @@ vim.api.nvim_create_autocmd("FileType", {
 
 local terraform_validate = null_ls.builtins.diagnostics.terraform_validate.with({
   -- This is an updated function, to allow me to filter some unwanted messages.
+  -- based on:
+  -- https://github.com/nvimtools/none-ls.nvim/blob/main/lua/null-ls/builtins/diagnostics/terraform_validate.lua
   on_output = function(params)
     local combined_diagnostics = {}
 
