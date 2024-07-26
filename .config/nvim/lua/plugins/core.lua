@@ -81,7 +81,7 @@ return {
   },
   {
     "folke/todo-comments.nvim",
-    cmd = { "TodoTrouble", "TodoTelescope" },
+    cmd = { "Trouble todo", "TodoTelescope" },
     event = { "BufReadPost", "BufNewFile" },
     config = true,
     keys = {
@@ -90,12 +90,12 @@ return {
       { "<leader>stf", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "todo/fix/fixme" },
       { "<leader>stq", "<cmd>TodoQuickFix<cr>", desc = "todo quickfix" },
       { "<leader>stt", "<cmd>TodoTelescope<cr>", desc = "todo telescope" },
-      { "<leader>stT", "<cmd>TodoTrouble<cr>", desc = "todo trouble" },
+      { "<leader>stT", "<cmd>Trouble todo toggle focus=true<cr>", desc = "todo trouble" },
     },
   },
   {
     "folke/trouble.nvim",
-    cmd = "TroubleToggle",
+    cmd = "Trouble toggle",
     opts = { use_diagnostic_signs = true },
     keys = {
       { "<leader>ut", "<cmd>Trouble diagnostics toggle focus=true<cr>", desc = "toggle trouble" },
