@@ -18,6 +18,7 @@ local paths = {
 
 config = {
   check_for_updates = false,
+  default_gui_startup_args = { "connect", "unix" },
   set_environment_variables = {
     LG_CONFIG_FILE = wezterm.home_dir .. "/.config/lazygit/config.yml",
     PATH = table.concat(paths, ":"),
@@ -27,7 +28,5 @@ config = {
 
 control.apply_to_config(config)
 theme.apply_to_config(config)
-
-config.default_gui_startup_args = { "connect", "unix" }
 
 return config

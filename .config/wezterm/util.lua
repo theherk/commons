@@ -56,10 +56,9 @@ end
 
 function module.launch(args)
   return wezterm.action_callback(function(window, _)
-    local tab, _, _ = window:mux_window():spawn_tab({
-      args = { os.getenv("SHELL"), "-c", table.unpack(args) },
+    local _, _, _ = window:mux_window():spawn_tab({
+      args = { os.getenv("SHELL"), "-c", module.titled_cmd(args) },
     })
-    tab:set_title(args[1])
   end)
 end
 
@@ -87,6 +86,11 @@ function module.tconcat(t1, t2)
   for _, v in ipairs(t2) do
     table.insert(t1, v)
   end
+end
+
+function module.titled_cmd(args)
+  local title = args[1]
+  return string.format("wezterm cli set-tab-title %s && %s", title, table.concat(args, " "))
 end
 
 function module.update_right_status(window, pane)
