@@ -27,6 +27,7 @@ else
 end
 
 scheme.cursor_bg = colors.active_fg
+scheme.split = colors.inactive_fg
 
 scheme.tab_bar = {
   background = "none", -- tab_bar
