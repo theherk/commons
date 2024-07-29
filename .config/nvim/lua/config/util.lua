@@ -94,6 +94,14 @@ function M.get_root()
   return root
 end
 
+function M.lines(fname)
+  local lines = {}
+  for line in io.lines(fname) do
+    table.insert(lines, line)
+  end
+  return lines
+end
+
 function M.lsp_get_config(server)
   local configs = require("lspconfig.configs")
   return rawget(configs, server)

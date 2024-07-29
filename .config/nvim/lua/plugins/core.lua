@@ -1,3 +1,5 @@
+local Util = require("config.util")
+
 return {
   {
     "Asheq/close-buffers.vim",
@@ -249,6 +251,12 @@ return {
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
       },
+      extensions = {
+        project = {
+          base_dirs = { Util.lines(os.getenv("HOME") .. "/.projects") },
+          -- on_project_selected = function(prompt_bufnr) require("harpoon.ui").nav_file(1) end,
+        },
+      },
       pickers = {
         live_grep = { additional_args = function(_) return { "--hidden", "--glob=!.git/" } end },
         keymaps = { theme = "dropdown" },
@@ -268,6 +276,12 @@ return {
       { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "keymaps" },
       { "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "buffer / swiper" },
       { "z=", "<cmd>Telescope spell_suggest<cr>", desc = "spell" },
+    },
+  },
+  {
+    "nvim-telescope/telescope-project.nvim",
+    keys = {
+      { "<leader>p", "<cmd>Telescope project<cr>", desc = "projects" },
     },
   },
   {

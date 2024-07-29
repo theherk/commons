@@ -44,6 +44,7 @@ return {
           { "<leader>nw", group = "workspace", icon = { color = "purple", cat = "filetype", name = "markdown" } },
           { "<leader>N", group = "neorg", icon = { color = "orange", cat = "filetype", icon = " " } },
           { "<leader>Nj", group = "journal", icon = { color = "orange", cat = "filetype", icon = " " } },
+          { "<leader>p", group = "project", icon = { icon = " " } },
           { "<leader>s", group = "search" },
           { "<leader>sn", group = "noice" },
           { "<leader>st", group = "todo", icon = { icon = " " } },
