@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+abbr -a zellij --position command ~/projects/github.com/zellij-org/zellij/target/debug/zellij
+
 if set -q ZELLIJ_SESSION_NAME
     echo "Already in zellij session."
 else
