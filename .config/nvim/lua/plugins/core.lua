@@ -97,7 +97,7 @@ return {
   },
   {
     "folke/trouble.nvim",
-    cmd = "Trouble toggle",
+    cmd = "Trouble",
     opts = { use_diagnostic_signs = true },
     keys = {
       { "<leader>ut", "<cmd>Trouble diagnostics toggle focus=true<cr>", desc = "toggle trouble" },
