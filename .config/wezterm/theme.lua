@@ -64,7 +64,7 @@ function module.apply_to_config(config)
   }
   config.font = wezterm.font("VictorMono NF")
   config.font_size = 17
-  config.macos_window_background_blur = 12
+  config.macos_window_background_blur = 23
   config.tab_bar_at_bottom = true
   config.tab_max_width = 96
   config.use_fancy_tab_bar = false
