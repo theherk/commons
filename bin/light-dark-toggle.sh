@@ -45,7 +45,7 @@ darken() {
 	sed -i '' 's/\(cmdbar_extra_lines_bg: \).*,/\1Some("#0B2942"),/' .config/gitui/theme.ron
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_DARK'"/' .config/helix/config.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_DARK'"]/' .config/lazygit/config.yml
-	sed -i '' 's/\(pager: .*\) --light/\1 --dark/' .config/lazygit/config.yml
+	sed -i '' 's/\(pager: .*\) --light/\1 --diff-so-fancy/' .config/lazygit/config.yml
 	sed -i '' 's/\(vim.cmd.colorscheme\)(".*")/\1("'"$NVIM_COLORSCHEME_DARK"'")/' .config/nvim/init.lua
 	# sed -i '' 's/\(style = \)".*"/\1"'$NVIM_VARIANT_DARK'"/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1'$NVIM_COLORSCHEME_DARK'")/' .config/nvim/lua/plugins/display.lua
@@ -68,7 +68,7 @@ lighten() {
 	sed -i '' 's/\(cmdbar_extra_lines_bg: \).*,/\1Some("LightBlue"),/' .config/gitui/theme.ron
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_LIGHT'"/' .config/helix/config.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_LIGHT'"]/' .config/lazygit/config.yml
-	sed -i '' 's/\(pager: .*\) --dark/\1 --light/' .config/lazygit/config.yml
+	sed -i '' 's/\(pager: .*\) --diff-so-fancy/\1 --light/' .config/lazygit/config.yml
 	sed -i '' 's/\(vim.cmd.colorscheme\)(".*")/\1("'"$NVIM_COLORSCHEME_LIGHT"'")/' .config/nvim/init.lua
 	# sed -i '' 's/\(style = \)".*"/\1"'$NVIM_VARIANT_LIGHT'"/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1'$NVIM_COLORSCHEME_LIGHT'")/' .config/nvim/lua/plugins/display.lua

@@ -39,7 +39,7 @@ gui:
 git:
   paging:
     colorArg: always
-    pager: delta --paging=never --dark
+    pager: delta --paging=never --diff-so-fancy
   parseEmoji: true
 notARepository: quit
 os:
