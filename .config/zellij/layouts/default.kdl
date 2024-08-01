@@ -4,7 +4,7 @@ layout {
         pane size=1 borderless=true {
             plugin location="file:~/bin/zjstatus.wasm" {
                 format_left   "{mode} {tabs}"
-                format_right  "#[fg=blue]󱂬  #[fg=yellow]{session}"
+                format_right  "#[fg=blue]󱂬  #[fg=yellow,italic]{session}"
                 format_space  ""
 
                 border_enabled  "false"
