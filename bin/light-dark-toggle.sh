@@ -12,6 +12,9 @@ CODIUM_ICON_LIGHT=catppuccin-latte
 DOOM_DARK=h4s-tokyo-night
 DOOM_LIGHT=doom-one-light
 
+GHOSTTY_DARK=tokyonight
+GHOSTTY_LIGHT=catppuccin-latte
+
 HELIX_DARK=base16_transparent
 HELIX_LIGHT=catppuccin_latte
 
@@ -31,6 +34,9 @@ WEZTERM_LIGHT="Catppuccin Latte"
 YAZI_DARK="tokyo-night"
 YAZI_LIGHT="catppuccin-latte"
 
+ZELLIJ_DARK="tokyo-night"
+ZELLIJ_LIGHT="gruvbox-light"
+
 darken() {
 	echo "darkening"
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
@@ -43,6 +49,7 @@ darken() {
 	sed -i '' 's/\(selection_bg: \).*,/\1Some("#0B2942"),/' .config/gitui/theme.ron
 	sed -i '' 's/\(cmdbar_bg: \).*,/\1Some("#0B2942"),/' .config/gitui/theme.ron
 	sed -i '' 's/\(cmdbar_extra_lines_bg: \).*,/\1Some("#0B2942"),/' .config/gitui/theme.ron
+	sed -i '' 's/\(theme = \).*/\1'$GHOSTTY_DARK'/' .config/ghostty/config
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_DARK'"/' .config/helix/config.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_DARK'"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(pager: .*\) --light/\1 --diff-so-fancy/' .config/lazygit/config.yml
@@ -52,6 +59,7 @@ darken() {
 	sed -i '' 's/\(vim.opt.background = \)".*"/\1"dark"/' .config/nvim/lua/config/options.lua
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_DARK"'"/' .config/wezterm/theme.lua
 	sed -i '' 's/\(use = \)".*"/\1"'"$YAZI_DARK"'"/' .config/yazi/theme.toml
+	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_DARK"'"/' .config/zellij/config.kdl
 }
 
 lighten() {
@@ -66,6 +74,7 @@ lighten() {
 	sed -i '' 's/\(selection_bg: \).*,/\1Some("LightBlue"),/' .config/gitui/theme.ron
 	sed -i '' 's/\(cmdbar_bg: \).*,/\1Some("LightBlue"),/' .config/gitui/theme.ron
 	sed -i '' 's/\(cmdbar_extra_lines_bg: \).*,/\1Some("LightBlue"),/' .config/gitui/theme.ron
+	sed -i '' 's/\(theme = \).*/\1'$GHOSTTY_LIGHT'/' .config/ghostty/config
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_LIGHT'"/' .config/helix/config.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_LIGHT'"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(pager: .*\) --diff-so-fancy/\1 --light/' .config/lazygit/config.yml
@@ -75,6 +84,7 @@ lighten() {
 	sed -i '' 's/\(vim.opt.background = \)".*"/\1"light"/' .config/nvim/lua/config/options.lua
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_LIGHT"'"/' .config/wezterm/theme.lua
 	sed -i '' 's/\(use = \)".*"/\1"'"$YAZI_LIGHT"'"/' .config/yazi/theme.toml
+	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_LIGHT"'"/' .config/zellij/config.kdl
 }
 
 cd ~/commons || return

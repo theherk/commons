@@ -2,6 +2,7 @@
 
 # items to control:
 # - doom
+# - ghostty
 # - helix
 # - nvim
 # - wezterm
@@ -11,6 +12,7 @@ X=0.85247
 obfuscate() {
 	echo "obfuscating"
 	sed -i '' 's/\(doom\/set-frame-opacity \).*)/\1100)/' .config/doom/config.org
+	sed -i '' 's/\(background-opacity = \).*/\11/' .config/ghostty/config
 	sed -i '' 's/\(theme = "\).*"/\1tokyonight"/' .config/helix/config.toml # Defaults to dark.
 	# sed -i '' 's/\(transparent = \)true/\1false/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(sidebars = \)"transparent"/\1"normal"/' .config/nvim/lua/plugins/display.lua
@@ -24,6 +26,7 @@ obfuscate() {
 clarify() {
 	echo "clarifying"
 	sed -i '' 's/\(doom\/set-frame-opacity \).*)/\194)/' .config/doom/config.org
+	sed -i '' 's/\(background-opacity = \).*/\1'"$X"'/' .config/ghostty/config
 	sed -i '' 's/\(theme = "\).*"/\1base16_transparent"/' .config/helix/config.toml
 	# sed -i '' 's/\(transparent = \)false/\1true/' .config/nvim/lua/plugins/display.lua
 	# sed -i '' 's/\(sidebars = \)"normal"/\1"transparent"/' .config/nvim/lua/plugins/display.lua
