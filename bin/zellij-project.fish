@@ -7,9 +7,13 @@ if set -q ZELLIJ_SESSION_NAME
 else
     set -l p (basename (git root))
     if contains $p (zellij list-sessions -ns)
-        zellij attach $p
+        if contains $p (zellij list-sessions -n | rg EXITED | cut -d' ' -f1 | cut -d':' -f2)
+            zellij delete-session $p
+            zellij -s $p
+        else
+            zellij attach $p
+        end
     else
         zellij -s $p
     end
-    zellij delete-session $p
 end
