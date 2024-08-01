@@ -1,9 +1,39 @@
 layout {
-    tab name="main" focus=true {
-        pane command="editor" borderless=true focus=true
+    default_tab_template {
+        children
         pane size=1 borderless=true {
-            plugin location="zellij:compact-bar"
+            plugin location="file:~/bin/zjstatus.wasm" {
+                format_left   "{mode} {tabs}"
+                format_right  "#[fg=blue]󱂬  #[fg=yellow]{session}"
+                format_space  ""
+
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=magenta]{char}"
+                border_position "top"
+
+                hide_frame_for_single_pane "true"
+
+                mode_normal       "#[bg=blue] #[fg=blue, bold] NORM"
+                mode_locked       "#[bg=red] #[fg=red, bold]    "
+                mode_resize       "#[bg=yellow] #[fg=yellow, bold] {name}"
+                mode_pane         "#[bg=blue] #[fg=blue, bold] PANE"
+                mode_tab          "#[bg=cyan] #[fg=cyan, bold] TAB "
+                mode_scroll       "#[bg=yellow] #[fg=yellow, bold] {name}"
+                mode_enter_search "#[bg=cyan] #[fg=cyan, bold] {name}"
+                mode_search       "#[bg=cyan] #[fg=cyan, bold] {name}"
+                mode_rename_tab   "#[bg=yellow] #[fg=yellow, bold] {name}"
+                mode_rename_pane  "#[bg=yellow] #[fg=yellow, bold] {name}"
+                mode_session      "#[bg=yellow] #[fg=yellow, bold] {name}"
+                mode_move         "#[bg=yellow] #[fg=yellow, bold] {name}"
+                mode_prompt       "#[bg=blue] #[fg=blue, bold] {name}"
+                mode_tmux         "#[bg=green] #[fg=green, bold] {name}"
+
+                tab_normal            "#[fg=blue]|#[fg=yellow] {name} "
+                tab_normal_fullscreen "#[fg=blue]|#[fg=yellow] 🔍 {name} "
+                tab_active            "#[fg=blue]|#[bg=#32344a,fg=magenta,bold,italic] {name} "
+                tab_active_fullscreen "#[fg=blue]|#[bg=#32344a,fg=magenta,bold,italic] 🔍 {name} "
+              }
         }
     }
 }
-
