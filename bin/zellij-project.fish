@@ -9,11 +9,11 @@ else
     if contains $p (zellij list-sessions -ns)
         if contains $p (zellij list-sessions -n | rg EXITED | cut -d' ' -f1 | cut -d':' -f2)
             zellij delete-session $p
-            zellij -s $p
+            zellij -l editor -s $p
         else
             zellij attach $p
         end
     else
-        zellij -s $p
+        zellij -l editor -s $p
     end
 end
