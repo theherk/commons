@@ -88,6 +88,7 @@ wezterm.on("stack-switcher", function(window, pane) window:perform_action(worksp
 
 workspace_switcher.set_workspace_formatter(function(label)
   return wezterm.format({
+    { Attribute = { Italic = true } },
     { Foreground = { Color = theme.colors.hl_1 } },
     { Text = "󱂬 " .. label },
   })
