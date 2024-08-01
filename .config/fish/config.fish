@@ -180,9 +180,9 @@ if status is-interactive
     end
 
     function gitp # Switch to git project directory from .projects. See alias repocache.
-        set REPO "$(cat "$HOME"/.projects | sed s:"$HOME":~: | fzf --reverse)"
+        set REPO "$(zoxide query -l | rg --color=never -FxNf ~/.projects | sed s:"$HOME":~: | fzf --reverse)"
         if test -n "$REPO"
-            cd (string replace '~' $HOME $REPO)
+            z (string replace '~' $HOME $REPO)
         end
     end
 
