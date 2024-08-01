@@ -1,7 +1,7 @@
 themes {
     tokyo-night {
         fg 169 177 214
-        bg 26 27 38
+        bg "#32344a"
         black 56 62 90
         red 249 51 87
         // green 158 206 106
