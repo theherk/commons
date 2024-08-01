@@ -1,3 +1,4 @@
+copy_on_select false
 simplified_ui true
 theme "tokyo-night"
 
