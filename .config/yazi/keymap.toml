@@ -1,2 +1,2 @@
 [manager]
-prepend_keymap = [{ on = ["e"], run = "open", desc = "edit" }]
+prepend_keymap = [{ on = ["e"], run = ["open", "quit"], desc = "edit" }]
