@@ -14,6 +14,17 @@ require("zoxide").setup({
 
 xplr.config.general.global_key_bindings = {
   on_key = {
+    ["e"] = {
+      help = "edit",
+      messages = {
+        {
+          BashExec0 = [===[
+            ${EDITOR:-vi} "${XPLR_FOCUS_PATH:?}"
+          ]===],
+        },
+        "Quit",
+      },
+    },
     ["ctrl-e"] = {
       help = "edit",
       messages = {
