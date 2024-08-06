@@ -12,7 +12,6 @@ local stack = { "default" }
 local stack_pos = 1
 
 module.with_cache = function(dest)
-  wezterm.log_info(dest)
   if dest == "default" then
     return wezterm.action_callback(function(window, pane) window:perform_action(act.EmitEvent("stack-default"), pane) end)
   elseif dest == "in" then
