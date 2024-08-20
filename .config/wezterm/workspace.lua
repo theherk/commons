@@ -44,7 +44,8 @@ local stack_log = function()
   wezterm.log_info("workspace: " .. wezterm.mux.get_active_workspace())
 end
 
-wezterm.on("smart_workspace_switcher.workspace_chosen", stack_insert)
+wezterm.on("smart_workspace_switcher.workspace_switcher.chosen", stack_insert)
+wezterm.on("smart_workspace_switcher.workspace_switcher.created", stack_insert)
 
 wezterm.on("stack-default", function(window, pane)
   if wezterm.mux.get_active_workspace() ~= "default" then window:perform_action(
