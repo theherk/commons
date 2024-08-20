@@ -27,6 +27,7 @@ return {
         preset = "helix",
         show_help = false,
         spec = {
+          { "<leader>a", group = "ai", icon = { icon = "󰚩 " } },
           { "<leader>f", group = "file", icon = mi.get("default", "file") },
           { "<leader><tab>", group = "tab" },
           { "<leader>b", group = "buffer" },
