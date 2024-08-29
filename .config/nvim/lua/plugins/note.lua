@@ -137,6 +137,7 @@ return {
         end
         return tostring(os.time()) .. "-" .. suffix
       end,
+      open_app_foreground = true,
       preferred_link_style = "markdown",
       workspaces = workspaces(),
     },
