@@ -97,9 +97,13 @@ return {
   {
     "epwalsh/obsidian.nvim",
     dependencies = {
+      "hrsh7th/nvim-cmp",
       "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-treesitter/nvim-treesitter",
       -- Required pngpaste on MacOS. `brew install pngpaste`
     },
+    ft = { "markdown" },
     keys = {
       { "<leader>nb", "<cmd>ObsidianBacklinks<cr>", desc = "obsidian backlinks" },
       { "<leader>nf", "<cmd>ObsidianQuickSwitch<cr>", desc = "obsidian find" },
@@ -139,7 +143,15 @@ return {
       end,
       open_app_foreground = true,
       preferred_link_style = "markdown",
+      ui = { enable = false },
       workspaces = workspaces(),
+    },
+  },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown", "Avante" },
+    opts = {
+      file_types = { "markdown", "Avante" },
     },
   },
   {
