@@ -33,6 +33,7 @@ alt-shift-l = 'move right'
 
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
+alt-shift-b = 'resize smart +333'
 
 alt-p = 'mode pane'
 alt-x = 'mode empty'
