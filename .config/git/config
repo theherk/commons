@@ -18,6 +18,7 @@
 	navigate = true
 	paging = auto
 [diff]
+	algorithm = patience
 	colorMoved = zebra
 [fetch]
 	prune = true
