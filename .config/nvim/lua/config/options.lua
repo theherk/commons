@@ -46,9 +46,6 @@ vim.opt.wildmode = "longest:full,full"
 vim.opt.winminwidth = 5
 vim.opt.wrap = false
 
--- Fix markdown indentation settings
-vim.g.markdown_recommended_style = 0
-
 -- Default folding is dubious.
 -- https://github.com/preservim/vim-markdown/issues/622
 vim.opt.foldlevelstart = 6
