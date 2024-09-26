@@ -163,6 +163,11 @@ slash = 'slash'
 # codesign -dr - /Applications/app.app
 
 [[on-window-detected]]
+if.app-id = 'io.github.keycastr'
+check-further-callbacks = false
+run = ['layout floating']
+
+[[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 if.workspace = '💻'
 check-further-callbacks = false
