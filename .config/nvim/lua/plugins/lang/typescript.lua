@@ -15,10 +15,8 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { "jose-elias-alvarez/typescript.nvim" },
     opts = {
-      -- make sure mason installs the server
       servers = {
-        ---@type lspconfig.options.tsserver
-        tsserver = {
+        ts_ls = {
           keys = {
             { "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", desc = "organize imports" },
             { "<leader>cR", "<cmd>TypescriptRenameFile<CR>", desc = "rename file" },
@@ -45,7 +43,7 @@ return {
         },
       },
       setup = {
-        tsserver = function(_, opts)
+        ts_ls = function(_, opts)
           require("typescript").setup({ server = opts })
           return true
         end,

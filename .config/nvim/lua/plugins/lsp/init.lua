@@ -51,17 +51,10 @@ return {
         formatting_options = nil,
         timeout_ms = nil,
       },
-      -- LSP Server Settings
-      ---@type lspconfig.options
       servers = {
         gleam = {},
         jsonls = {},
         lua_ls = {
-          -- mason = false, -- set to false if you don't want this server to be installed with mason
-          -- Use this to add any additional keymaps
-          -- for specific lsp servers
-          ---@type LazyKeys[]
-          -- keys = {},
           settings = {
             Lua = {
               workspace = {
@@ -74,20 +67,8 @@ return {
           },
         },
       },
-      -- you can do any additional lsp server setup here
-      -- return true if you don't want this server to be setup with lspconfig
-      ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-      setup = {
-        -- example to setup with typescript.nvim
-        -- tsserver = function(_, opts)
-        --   require("typescript").setup({ server = opts })
-        --   return true
-        -- end,
-        -- Specify * to use this function as a fallback for any server
-        -- ["*"] = function(server, opts) end,
-      },
+      setup = { },
     },
-    ---@param opts PluginLspOpts
     config = function(_, opts)
       local Util = require("config.util")
 
@@ -173,9 +154,9 @@ return {
 
       if have_mason then mlsp.setup({ ensure_installed = ensure_installed, handlers = { setup } }) end
 
-      if Util.lsp_get_config("denols") and Util.lsp_get_config("tsserver") then
+      if Util.lsp_get_config("denols") and Util.lsp_get_config("ts_ls") then
         local is_deno = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")
-        Util.lsp_disable("tsserver", is_deno)
+        Util.lsp_disable("ts_ls", is_deno)
         Util.lsp_disable("denols", function(root_dir) return not is_deno(root_dir) end)
       end
     end,
