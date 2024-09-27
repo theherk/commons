@@ -37,4 +37,18 @@ return {
       },
     },
   },
+  {
+    "zbirenbaum/copilot-cmp",
+    enabled = vim.fn.getcwd():find("dnb.no") ~= nil,
+    config = true,
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    enabled = vim.fn.getcwd():find("dnb.no") ~= nil,
+    opts = {
+      auth_provider_url = "https://dnb.ghe.com",
+      panel = { enabled = false },
+      suggestion = { enabled = false },
+    },
+  },
 }
