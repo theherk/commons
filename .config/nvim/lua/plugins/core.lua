@@ -250,7 +250,12 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = {
       defaults = {
-        layout_config = { prompt_position = "top" },
+        layout_config = {
+          anchor = "S",
+          preview_width = 0.6,
+          prompt_position = "top",
+          width = { padding = 4 },
+        },
         sorting_strategy = "ascending",
       },
       extensions = {
@@ -260,8 +265,9 @@ return {
         },
       },
       pickers = {
-        live_grep = { additional_args = function(_) return { "--hidden", "--glob=!.git/" } end },
-        keymaps = { theme = "dropdown" },
+        live_grep = {
+          additional_args = function(_) return { "--hidden", "--glob=!.git/" } end,
+        },
         spell_suggest = { theme = "cursor" },
       },
     },
