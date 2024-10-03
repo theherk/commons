@@ -1,6 +1,11 @@
 {
   "assistant": {
-    "version": "1",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
+    },
+    "default_height": 640.0,
+    "version": "2",
     "default_width": 640
   },
   "chat_panel": {
