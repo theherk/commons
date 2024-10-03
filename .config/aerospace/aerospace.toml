@@ -202,6 +202,10 @@ if.app-name-regex-substring = 'Neovide'
 run = ['move-node-to-workspace ✏️']
 
 [[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = ['move-node-to-workspace ✏️']
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = ['move-node-to-workspace 📓']
 
