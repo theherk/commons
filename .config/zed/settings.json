@@ -26,7 +26,7 @@
   },
   "theme": {
     "mode": "system",
-    "dark": "Catppuccin Macchiato",
+    "dark": "Catppuccin Mocha",
     "light": "Catppuccin Latte"
   },
   "vim_mode": true,
