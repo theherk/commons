@@ -80,6 +80,7 @@ shift-s = ['layout horizontal', 'mode main']
 shift-t = ['layout tiles', 'mode main']
 shift-v = ['layout vertical', 'mode main']
 
+
 # Change all workspaces between accordion and tiles.
 a = [
   'workspace 🌎',
@@ -171,6 +172,12 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 if.workspace = '💻'
+check-further-callbacks = false
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+if.workspace = '✏️'
 check-further-callbacks = false
 run = ['layout floating']
 
