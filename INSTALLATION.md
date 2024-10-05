@@ -36,8 +36,6 @@ That will link all the configurations where they need to be. Then we just need t
 ## Install many tools with brew.
 
 ```sh
-brew tap cjbassi/ytop
-brew tap helix-editor/helix
 brew tap wez/wezterm
 
 brew install \
@@ -47,7 +45,6 @@ brew install \
     bat \
     bottom \
     caddy \
-    cbonsai \
     clang-format \
     cmatrix \
     coreutils \
@@ -70,9 +67,7 @@ brew install \
     gnu-units \
     gnupg \
     grip \
-    helix \
     font-victor-mono-nerd-font \
-    font-zed-mono-nerd-font \
     jenv \
     jq \
     keycastr \
@@ -85,7 +80,6 @@ brew install \
     navi \
     nikitabobko/tap/aerospace \
     homebrew/cask/neovide \
-    newman \
     npm \
     nvim \
     onefetch \
@@ -102,12 +96,10 @@ brew install \
     pygments \
     ripgrep \
     rust-analyzer \
-    shadowenv \
     shellcheck \
     silicon \
     sk \
     starship \
-    temurin \
     terraform-ls \
     tfenv \
     tokei \
@@ -119,7 +111,6 @@ brew install \
     xh \
     zed \
     zellij \
-    zenith \
     zoxide
 ```
 
