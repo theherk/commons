@@ -79,27 +79,13 @@ I use these mostly, though others are supported.
 
 ## Screenshots 🖼️
 
-### Vim
-
-<p align="center"><img src="./img/vim-dash.png" alt="Vim Dashboard" /></p>
-<p align="center"><img src="./img/vim-rust.png" alt="Vim Rust" /></p>
-
-### Emacs
-
-<p align="center"><img src="./img/emacs-doom.png" alt="Emacs Doom Welcome" /></p>
-
-### Codium
-
-<p align="center"><img src="./img/codium.png" alt="Codium terraform" /></p>
-
-### Slack
-
-<p align="center"><img src="./img/slack.png" alt="slack" /></p>
-
-### Wezterm
-
+<p align="center"><img src="./img/neovim-dash.png" alt="Neovim Dashboard" /></p>
+<p align="center"><img src="./img/neovim-markdown.png" alt="Neovim Markdown" /></p>
+<p align="center"><img src="./img/neovim-rust.png" alt="Neovim Rust" /></p>
 <p align="center"><img src="./img/wezterm-cal-and-clock.png" alt="WezTerm rcal and clock" /></p>
 <p align="center"><img src="./img/wezterm-onefetch.png" alt="Wezterm onefetch" /></p>
+<p align="center"><img src="./img/yazi.png" alt="Yazi" /></p>
+<p align="center"><img src="./img/xplr.png" alt="Xplr" /></p>
 
 ## Credits
 
