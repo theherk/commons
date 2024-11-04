@@ -5,3 +5,4 @@ fish_variables
 gproxy
 gpt-commit.py
 lazy-lock.json
+tmp.*
