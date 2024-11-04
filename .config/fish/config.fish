@@ -114,6 +114,7 @@ if status is-interactive
     abbr -a lt --position command eza -T --icons
     abbr -a lzd --position command lazydocker
     abbr -a lzg --position command lazygit
+    abbr -a lzp --position command 'DOCKER_HOST=unix:///var/folders/ld/ktvj7qn96mj_s3pb81m50h1w0000gn/T/podman/podman-machine-default-api.sock lazydocker' # value from podman desktop
     abbr -a norcal --position command ncal -s NO -w
     abbr -a not --position command rg -v
     abbr -a nv --position command neovide --fork
