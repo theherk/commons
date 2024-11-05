@@ -9,11 +9,6 @@ vim.keymap.set("n", "<leader>q", "<cmd>qa<cr>", { desc = "quit all" })
 vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
--- Better word movement with spider.
-vim.keymap.set({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<cr>", { desc = "Spider-w" })
-vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<cr>", { desc = "Spider-e" })
-vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<cr>", { desc = "Spider-b" })
-
 local function scrolloff_should_reenable()
   if vim.w.orig_scrolloff == nil then return false end -- Nothing to do.
   if vim.fn.winheight(0) <= vim.w.orig_scrolloff then return true end -- Too small for override.

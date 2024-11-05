@@ -1,5 +1,4 @@
 return {
-  { "chrisgrieser/nvim-spider", lazy = true },
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
