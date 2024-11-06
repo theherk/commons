@@ -443,5 +443,4 @@ return {
       }
     end,
   },
-  { "TaDaa/vimade" },
 }
