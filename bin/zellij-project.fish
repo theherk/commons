@@ -1,19 +1,53 @@
 #!/usr/bin/env fish
 
-abbr -a zellij --position command ~/projects/github.com/zellij-org/zellij/target/debug/zellij
+# Parse arguments
+set -l attach_mode 0
+if contains -- -a $argv
+    set attach_mode 1
+end
+
+if test $attach_mode -eq 1
+    # Try to get the most recent active session
+    set -l sessions (zellij list-sessions -n | string match -rv 'EXITED')
+    if test -z "$sessions"
+        echo "No active zellij sessions found."
+        exit 1
+    end
+
+    # Get the first (most recent) session
+    set -l session_name (echo $sessions[1] | cut -d':' -f2 | cut -d' ' -f1)
+    zellij attach $session_name
+    exit 0
+end
+
+function p # Get git project directory from .projects. See alias repocache.
+    set REPO (zoxide query -l | rg --color=never -FxNf ~/.projects | sed s:"$HOME":~: | fzf --reverse)
+    if test -n "$REPO"
+        string replace '~' $HOME $REPO
+    end
+end
+
+set -l pdir (p)
+if test -z "$pdir"
+    exit 1
+end
+
+set -l pname (basename $pdir)
 
 if set -q ZELLIJ_SESSION_NAME
-    echo "Already in zellij session."
+    if not string match -q "$pname" "$ZELLIJ_SESSION_NAME"
+        zellij pipe --plugin file:~/bin/zellij-switch.wasm -- "$pname::$pdir::editor"
+    end
 else
-    set -l p (basename (git root))
-    if contains $p (zellij list-sessions -ns)
-        if contains $p (zellij list-sessions -n | rg EXITED | cut -d' ' -f1 | cut -d':' -f2)
-            zellij delete-session $p
-            zellij -l editor -s $p
+    cd $pdir
+    if contains $pname (zellij list-sessions -ns)
+        if contains $pname (zellij list-sessions -n | rg EXITED | cut -d' ' -f1 | cut -d':' -f2)
+            zellij delete-session $pname
+            zellij -n editor -s $pname
         else
-            zellij attach $p
+            zellij attach $pname
         end
     else
-        zellij -l editor -s $p
+        zellij -n editor -s $pname
     end
 end

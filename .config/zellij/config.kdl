@@ -5,14 +5,23 @@ theme "tokyo-night"
 keybinds {
     unbind "Ctrl n"
     normal {
-        bind "Alt r" { SwitchToMode "Resize"; }
+      bind "Alt r" { SwitchToMode "Resize"; }
+    }
+    session {
+      bind "p" {
+        SwitchToMode "Normal";
+        Run "zellij-project.fish" {
+          floating true;
+          close_on_exit true;
+        };
       }
+    }
     tab {
-        bind "b" { NewTab { layout "help"; }; SwitchToMode "Normal"; }
-        bind "e" { NewTab { layout "editor"; }; SwitchToMode "Normal"; }
-        bind "f" { NewTab { layout "yazi"; }; SwitchToMode "Normal"; }
-        bind "F" { NewTab { layout "xplr"; }; SwitchToMode "Normal"; }
-        bind "g" { NewTab { layout "lazygit"; }; SwitchToMode "Normal"; }
-        bind "n" { NewTab { layout "default"; }; SwitchToMode "Normal"; }
+      bind "b" { NewTab { layout "help"; }; SwitchToMode "Normal"; }
+      bind "e" { NewTab { layout "editor"; }; SwitchToMode "Normal"; }
+      bind "f" { NewTab { layout "yazi"; }; SwitchToMode "Normal"; }
+      bind "F" { NewTab { layout "xplr"; }; SwitchToMode "Normal"; }
+      bind "g" { NewTab { layout "lazygit"; }; SwitchToMode "Normal"; }
+      bind "n" { NewTab { layout "default"; }; SwitchToMode "Normal"; }
     }
 }
