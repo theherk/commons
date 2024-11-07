@@ -144,6 +144,7 @@ if status is-interactive
     abbr -a wow --position command git status
     abbr -a xc --position anywhere --set-cursor "%| xclip -sel clip"
     abbr -a zp --position command zellij-project.fish
+    abbr -a zclean --position command 'begin; zellij kill-all-sessions; zellij delete-all-sessions; end'
 
     function last_history_item
         echo $history[1]
