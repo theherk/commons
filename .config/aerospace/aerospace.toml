@@ -2,7 +2,7 @@ start-at-login = true
 after-login-command = []
 after-startup-command = []
 
-accordion-padding = 53
+accordion-padding = 0
 enable-normalization-flatten-containers = false
 
 default-root-container-layout = 'tiles'
