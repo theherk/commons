@@ -3,7 +3,9 @@ if not pcall(require, "luasnip") then return end
 local ls = require("luasnip")
 local fmt = require("luasnip.extras.fmt").fmt
 local types = require("luasnip.util.types")
-require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").load({
+  exclude = { "markdown" },
+})
 
 ls.config.set_config({
   enable_autosnippets = true,
