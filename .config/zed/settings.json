@@ -37,6 +37,12 @@
     "default_width": 246,
     "indent_size": 16
   },
+  "search": {
+    "whole_word": false,
+    "case_sensitive": false,
+    "include_ignored": false,
+    "regex": true
+  },
   "terminal": {
     "default_height": 420,
     "font_size": 16,
