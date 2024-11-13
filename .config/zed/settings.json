@@ -46,6 +46,9 @@
   "terminal": {
     "default_height": 420,
     "font_size": 16,
+    "shell": {
+      "program": "fish"
+    },
     "toolbar": {
       "title": false
     },
