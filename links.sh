@@ -14,6 +14,8 @@ ln -sf ~/commons/.config/codium/settings.json ~/Library/Application\ Support/VSC
 ln -sf ~/commons/.config/doom/ ~/.config/
 ln -sf ~/commons/.config/direnv/ ~/.config/
 ln -sf ~/commons/.config/fish/config.fish ~/.config/fish/config.fish
+ln -sf ~/commons/.config/fish/conf.d/abbreviations.fish ~/.config/fish/conf.d/abbreviations.fish
+ln -sf ~/commons/.config/fish/conf.d/functions.fish ~/.config/fish/conf.d/functions.fish
 ln -sf ~/commons/.config/ghostty/ ~/.config/
 ln -sf ~/commons/.config/git/ ~/.config/
 ln -sf ~/commons/.config/gitui/ ~/.config/
