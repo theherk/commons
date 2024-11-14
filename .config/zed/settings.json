@@ -82,6 +82,9 @@
     "regex": true
   },
   "soft_wrap": "editor_width",
+  "tab_bar": {
+    "show_nav_history_buttons": false
+  },
   "terminal": {
     "default_height": 420,
     "font_size": 16,
