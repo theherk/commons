@@ -36,7 +36,6 @@ gui:
   showFileTree: false
   theme:
     selectedLineBgColor: ["#24283b"]
-    selectedRangeBgColor: ["#24283b"]
   timeFormat: "2006-01-02"
 git:
   paging:
@@ -45,10 +44,8 @@ git:
   parseEmoji: true
 notARepository: quit
 os:
-  edit: "$EDITOR {{filename}}"
-  editAtLine: "nvim +{{line}} {{filename}}"
-  editAtLineAndWait: "nvim --remote-wait +{{line}} {{filename}}"
-  editInTerminal: true
+  edit: "zed {{filename}}"
+  editAtLine: "zed {{filename}}:{{line}}"
 promptToReturnFromSubprocess: false
 services:
   "gitlab.tech.dnb.no:2222": "gitlab:gitlab.tech.dnb.no"
