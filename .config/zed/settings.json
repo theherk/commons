@@ -39,6 +39,7 @@
       ]
     }
   },
+  "load_direnv": "shell_hook",
   "lsp": {
     "ruff": {
       "initialization_options": {
