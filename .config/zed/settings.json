@@ -81,6 +81,7 @@
     "include_ignored": false,
     "regex": true
   },
+  "soft_wrap": "editor_width",
   "terminal": {
     "default_height": 420,
     "font_size": 16,
