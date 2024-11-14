@@ -46,3 +46,4 @@ ln -sf ~/commons/.tmux.conf ~/
 ln -sf ~/commons/.zprofile ~/
 ln -sf ~/commons/.zshrc ~/
 ln -sf ~/commons/bin/ ~/
+ln -sf ~/commons/rayscripts/ ~/
