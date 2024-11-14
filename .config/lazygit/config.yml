@@ -28,7 +28,9 @@ gui:
   enlargedSideViewLocation: top
   expandFocusedSidePanel: true
   expandedSidePanelWeight: 3
+  filterMode: fuzzy
   nerdFontsVersion: "3"
+  scrollHeight: 1
   showBottomLine: false
   showCommandLog: false
   showFileTree: false
