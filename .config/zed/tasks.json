@@ -1,5 +1,15 @@
 [
   {
+    "label": "lazygit",
+    "command": "lazygit",
+    "working_directory": "${workspace_root}",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "shell": {
+      "program": "bash"
+    }
+  },
+  {
     "label": "tfi",
     "command": "cd (dirname $ZED_FILE); set D (upfd -t d '.terraform$'); or exit 1; cd $D..; direnv allow . && eval (direnv export fish); terraform init",
     "use_new_terminal": true,
