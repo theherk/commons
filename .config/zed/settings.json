@@ -85,6 +85,10 @@
   "tab_bar": {
     "show_nav_history_buttons": false
   },
+  "tabs": {
+    "git_status": true,
+    "file_icons": true
+  },
   "terminal": {
     "default_height": 420,
     "font_size": 16,
