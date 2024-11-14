@@ -8,6 +8,8 @@
     "version": "2",
     "default_width": 640
   },
+  "buffer_font_family": "VictorMono Nerd Font",
+  "buffer_font_size": 18,
   "chat_panel": {
     "default_width": 380
   },
@@ -58,19 +60,6 @@
       }
     }
   },
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-  "theme": {
-    "mode": "system",
-    "dark": "Catppuccin Mocha",
-    "light": "Catppuccin Latte"
-  },
-  "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_family": "VictorMono NF",
-  "buffer_font_size": 18,
   "project_panel": {
     "default_width": 246,
     "indent_size": 16
@@ -89,6 +78,10 @@
     "git_status": true,
     "file_icons": true
   },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
   "terminal": {
     "alternate_scroll": "on",
     "default_height": 420,
@@ -96,9 +89,13 @@
     "shell": {
       "program": "fish"
     },
-    "toolbar": {
-      "title": false
-    },
     "max_scroll_history_lines": 100000
-  }
+  },
+  "theme": {
+    "mode": "system",
+    "dark": "Catppuccin Mocha",
+    "light": "Catppuccin Latte"
+  },
+  "ui_font_size": 16,
+  "vim_mode": true
 }
