@@ -90,6 +90,7 @@
     "file_icons": true
   },
   "terminal": {
+    "alternate_scroll": "on",
     "default_height": 420,
     "font_size": 16,
     "shell": {
