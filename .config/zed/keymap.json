@@ -13,16 +13,16 @@
     }
   },
   {
-    "context": "Editor && vim_mode != insert && !menu",
-    "bindings": {
-      "space /": "workspace::NewSearch"
-    }
-  },
-  {
     "context": "Editor && vim_mode == visual && !menu",
     "bindings": {
       "v": "editor::SelectLargerSyntaxNode",
       "V": "editor::SelectSmallerSyntaxNode"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "space /": "workspace::NewSearch",
     }
   }
 ]
