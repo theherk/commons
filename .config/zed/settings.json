@@ -43,7 +43,6 @@
     "ruff": {
       "initialization_options": {
         "settings": {
-          "lineLength": 80,
           "lint": {
             "extendSelect": ["I"]
           }
