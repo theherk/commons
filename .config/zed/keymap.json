@@ -23,6 +23,7 @@
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
       "space /": "workspace::NewSearch",
+      "space f s": "workspace::Save",
       "space g g": ["task::Spawn", { "task_name": "lazygit" }]
     }
   }
