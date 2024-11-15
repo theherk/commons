@@ -24,6 +24,24 @@ customCommands:
     context: "remotes"
     description: "(C)lean / prune deleted remote branches."
     loadingText: "Pruning remote..."
+  - key: "<c-r>"
+    description: "Push to a specific remote repository"
+    context: "global"
+    loadingText: "Pushing ..."
+    prompts:
+      - type: "menuFromCommand"
+        title: "Which remote repository to push to?"
+        command: bash -c "git remote --verbose | grep '/.* (push)'"
+        filter: '(?P<remote>.*)\s+(?P<url>.*) \(push\)'
+        valueFormat: "{{ .remote }}"
+        labelFormat: "{{ .remote | bold | cyan }} {{ .url }}"
+      - type: "menu"
+        title: "How to push?"
+        options:
+          - value: "push"
+          - value: "push --force-with-lease"
+          - value: "push --force"
+    command: "git {{index .PromptResponses 1}} {{index .PromptResponses 0}}"
 gui:
   enlargedSideViewLocation: top
   expandFocusedSidePanel: true
