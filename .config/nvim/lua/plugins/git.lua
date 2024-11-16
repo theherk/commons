@@ -99,10 +99,10 @@ return {
     keys = {
       { "<leader>glb", function() require("gitlinker").get_repo_url() end, mode = { "n", "v" }, desc = "base yank" },
       { "<leader>glB", function() require("gitlinker").get_repo_url({ action_callback = require("gitlinker.actions").open_in_browser }) end, mode = { "n", "v" }, desc = "base open" },
-      { "<leader>glr", function() require("gitlinker").get_buf_range_url("n") end, desc = "range yank" },
-      { "<leader>glR", function() require("gitlinker").get_buf_range_url("n", { action_callback = require("gitlinker.actions").open_in_browser }) end, desc = "range open" },
-      { "<leader>glr", function() require("gitlinker").get_buf_range_url("v") end, mode = { "v" }, desc = "range yank" },
-      { "<leader>glR", function() require("gitlinker").get_buf_range_url("v", { action_callback = require("gitlinker.actions").open_in_browser }) end, mode = { "v" }, desc = "range open" },
+      { "<leader>gly", function() require("gitlinker").get_buf_range_url("n") end, desc = "line yank" },
+      { "<leader>glY", function() require("gitlinker").get_buf_range_url("n", { action_callback = require("gitlinker.actions").open_in_browser }) end, desc = "line open" },
+      { "<leader>gly", function() require("gitlinker").get_buf_range_url("v") end, mode = { "v" }, desc = "range yank" },
+      { "<leader>glY", function() require("gitlinker").get_buf_range_url("v", { action_callback = require("gitlinker.actions").open_in_browser }) end, mode = { "v" }, desc = "range open" },
     },
   },
   {
