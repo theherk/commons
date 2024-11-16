@@ -70,6 +70,10 @@
     "include_ignored": false,
     "regex": true
   },
+  "slash_commands": {
+    "docs": { "enabled": true },
+    "project": { "enabled": true }
+  },
   "soft_wrap": "editor_width",
   "tab_bar": {
     "show_nav_history_buttons": false
