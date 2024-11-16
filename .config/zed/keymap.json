@@ -26,5 +26,11 @@
       "space f s": "workspace::Save",
       "space g g": ["task::Spawn", { "task_name": "lazygit" }]
     }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      "space g l y": "editor::CopyPermalinkToLine"
+    }
   }
 ]
