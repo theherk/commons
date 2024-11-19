@@ -38,7 +38,7 @@ That will link all the configurations where they need to be. Then we just need t
 ```sh
 brew tap wez/wezterm
 
-brew install asciinema atuin bash-language-server bat bottom caddy clang-format cmatrix coreutils direnv diskonaut doll dozer dropbox dua-cli dust editorconfig eza fd fish fzf ghc git git-delta gitui gnu-units gnupg grip font-victor-mono-nerd-font jenv jq keycastr kubectl lazygit lazydocker llvm mactex markdown navi nikitabobko/tap/aerospace homebrew/cask/neovide npm nvim onefetch pandoc pngpaste pinentry-mac lhvy/tap/pipes-rs plantuml podman postman procs pyenv pyenv-virtualenv pygments ripgrep rust-analyzer shellcheck silicon sk starship terraform-ls tfenv tokei translate-shell ugit wez/wezterm/wezterm wget yazi xh zed zellij zen-browser zoxide
+brew install asciinema atuin bash-language-server bat bottom caddy clang-format cmatrix coreutils direnv diskonaut doll dropbox dua-cli dust editorconfig eza fd fish font-victor-mono-nerd-font fzf ghc git git-delta gitui gnu-units gnupg grip jenv jordanbaird-ice jq keycastr kubectl lazygit lazydocker llvm mactex markdown navi nikitabobko/tap/aerospace homebrew/cask/neovide npm nvim onefetch pandoc pngpaste pinentry-mac lhvy/tap/pipes-rs plantuml podman postman procs pyenv pyenv-virtualenv pygments ripgrep rust-analyzer shellcheck silicon sk starship terraform-ls tfenv tokei translate-shell ugit wez/wezterm/wezterm wget yazi xh zed zellij zen-browser zoxide
 ```
 
 ## Change Shell to Fish.
