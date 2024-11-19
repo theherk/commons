@@ -19,6 +19,7 @@
 .shadowenv.d
 .tox
 .vim/
+.zed/settings.json
 _cover.*
 _plan*
 _update.md
