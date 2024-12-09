@@ -280,3 +280,412 @@ map O Vomnibar.activateInNewTab engines="tab=1,bookmark=2"
   fill: #e0af68;
 }
 ```
+
+catppuccin version from: https://github.com/catppuccin/vimium/issues/2#issuecomment-1453367965
+
+```css
+/*
+vimium cattpuccin-frappe theme
+
+Adaped from css code by:
+(c) 2020 Saïd Dermoumi
+https://github.com/dermoumi/vimium-snow
+*/
+
+/* #ui */
+/* ^ do not touch this line ^ */
+
+
+/* .R,.DHM,.HM,.IHS,.IH,.BH,.MH {
+    color: #c6d0f5;
+    background: #292c3c;
+} */
+
+/* link hints */
+.LH {
+  border: 2px #eebebe solid;
+  background: #292c3c;
+  margin-top: -2px;
+  margin-left: -2px;
+  color: #c6d0f5;
+  z-index: 0;
+  box-shadow: 0px 2px 11px rgb(0, 0, 0, 0.12);
+  font-weight: 555;
+  scale: 1.23;
+}
+
+.LH:before {
+  position: absolute;
+  background: #292c3c;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  z-index: -1;
+}
+
+.D .LH {
+  border-color: #eebebe;
+  color: #c6d0f5;
+}
+
+/* hints matching chars */
+.MC {
+  color: #e78284;
+}
+
+.D .MC {
+  color: #e78284;
+}
+
+/* bottom hud */
+.HUD {
+  bottom: 1rem;
+  left: unset;
+  right: 1rem;
+  border: 1px #eebebe solid;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px #232634;
+  padding: 0.5rem 1rem;
+  height: 1.5rem !important;
+  line-height: 21px;
+  text-transform: lowercase;
+  background: #292c3c
+  color: #c6d0f5;
+  max-width: 420px;
+  min-width: unset;
+  display: flex;
+  align-items: center;
+}
+
+
+.has-dark .HUD {
+  background: #292c3c;
+}
+
+.HUD.UI {
+  min-width: 180px;
+  align-items: unset;
+}
+
+.Omnibar {
+  padding-bottom: 20px;
+}
+
+.HUD:after {
+  border: none;
+  background: #292c3c;
+}
+
+.HUD.D:after {
+  background: #292c3c;
+}
+
+
+/* #omni */
+/* ^ do not touch this line ^ */
+
+* {
+  font-family: "VictorMono Nerd Font" !important;
+}
+
+.transparent {
+  opacity: 0.96;
+}
+
+body {
+  border-radius: 16px;
+  border: 3px #eebebe solid;
+  box-shadow: 2 9px 15px #232634;
+}
+
+body.has-dark {
+  border-color: #eebebe;
+}
+
+body:after {
+  border: unset;
+
+}
+
+#bar {
+  background: #232634;
+  border-radius: unset;
+  border-bottom: unset;
+  height: 36px;
+  padding: 9px 10px;
+  padding-bottom: 5px;
+}
+
+.has-dark #bar {
+  background: #232634;
+}
+
+#bar::before {
+  content: "❯";
+  display: inline-block;
+  width: 1rem;
+  height: 16px;
+  position: absolute;
+  left: 1rem;
+  z-index: 300;
+  font-size: 9;
+  padding: 6px 0;
+  line-height: 1.6em;
+  text-align: right;
+  color: #c6d0f5;
+  font-weight: bold;
+}
+
+.has-dark #bar::before {
+  color: #232634;
+}
+
+#input {
+  border: none;
+  background: none;
+  box-shadow: unset;
+  font-size: ;
+  color: #f2d5cf;
+  padding-left: 2rem;
+}
+
+.has-dark #input {
+  color: #f2d5cf;
+}
+
+#toolbar {
+  top: 7px;
+  right: 14px;
+}
+
+#toolbar .button {
+  height: 23px;
+  width: 24px;
+  padding: 3px;
+  cursor: pointer;
+  border: 3px transparent solid;
+  position: relative;
+  opacity: 0.5;
+  transition: 100ms ease-in-out opacity;
+}
+
+#toolbar .button:hover {
+  background: unset;
+  opacity: 1;
+}
+
+#toolbar .button > svg {
+  opacity: 0.5;
+}
+
+#toolbar .button#toggle-dark > svg {
+  transform: translateY(1px) rotate(45deg);
+}
+
+#toolbar .button#close > svg {
+  transform: scale(1.4);
+}
+
+#toolbar .button#toggle-dark .i-moon {
+  fill: unset;
+  stroke-width: 1.4;
+}
+
+#toolbar .button#toggle-dark .i-sun {
+  stroke-width: 2.1;
+}
+
+.has-dark #toolbar .button#toggle-dark .i-moon {
+  fill: #ddd8cd;
+  stroke: #ddd8cd;
+}
+
+.has-dark #toolbar .button#toggle-dark .i-sun {
+  fill: #ddd8cd;
+  stroke: #ddd8cd;
+}
+
+.has-dark #toolbar .button#close > svg {
+  fill: #ddd8cd;
+  stroke: #ddd8cd;
+}
+
+#list {
+  background: #292c3c;
+  border-radius: unset;
+  padding: 5px;
+  padding-bottom: 6px;
+}
+
+.has-dark #list {
+  background: #292c3c;
+}
+
+.item {
+  padding: 6px 10px;
+  padding-top: 3px;
+  margin: 0 5px;
+  margin-top: -2px;
+  border-radius: 6px;
+  border: unset;
+  border: 3px transparent solid;
+  height: 44px;
+}
+
+.item::before {
+  position: absolute;
+  background: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  z-index: -1;
+}
+
+.item.s,
+.item:hover {
+  background-color: unset;
+  border: 3px #f2d5cf solid;
+}
+
+.has-dark .item.s,
+.has-dark .item:hover {
+  border: 3px #f2d5cf solid;;
+}
+
+.item.s::before {
+  background-color: rgba(255, 255, 255, 0.836);
+}
+
+.item:hover::before {
+  background-color: #fff;
+}
+
+.has-dark .item.s::before {
+  background-color: rgba(80, 83, 84, 0.411);
+}
+
+.has-dark .item:hover::before {
+  background-color: rgba(80, 83, 84, 0.555);
+}
+
+.item .icon {
+  width: 24px;
+  height: 24px;
+  padding-right: unset;
+  margin-right: 10px;
+  margin-top: 5px;
+  background-position: bottom right;
+}
+
+.has-dark .item .icon {
+  fill: #a5adce;
+  stroke: #a5adce;
+}
+
+.item .icon path {
+  opacity: 0.45;
+  position: absolute;
+  z-index: -1;
+  transform-origin: 0px 0px;
+  transform: scale(0.75);
+}
+
+.item .top {
+  color: #f2d5cf;
+  position: relative;
+  height: 30px;
+}
+
+.has-dark .item .top {
+  color: #f2d5cf;
+}
+
+.item .top .title {
+  font-size: 16;
+  line-height: 0.8em;
+  margin-top: 2px;
+}
+
+.item .top .title match {
+  color: #e78284;
+}
+
+.has-dark .item .top .title match {
+  color: #e78284;
+}
+
+.item .top .title:empty::after {
+  content: "<blank>";
+}
+
+.item .bottom {
+  margin-top: -12px;
+  padding-left: 14px;
+}
+
+.item .bottom a {
+  color: #a5adce;
+  opacity: 0.9
+  font-size: 16;
+}
+
+.has-dark .item .bottom a {
+  color: #a5adce;
+  opacity: 0.9
+}
+
+.item .bottom a match {
+  color: #ea999c;
+}
+
+.has-dark .item .bottom a match {
+  color: #ea999c;
+}
+
+/* #find */
+/* ^ do not touch this line ^ */
+
+* {
+  font-family: "VictorMono Nerd Font" !important;
+  background: unset;
+}
+
+:host,
+body {
+  background-color: #292c3c !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+:host(.D),
+body.D {
+  background-color: #292c3c !important;
+  color: #c6d0f5 !important;
+}
+
+.r {
+  color: #c6d0f5;
+  border: none;
+  border-radius: unset;
+  box-shadow: unset;
+  background: #292c3c;
+  height: 10px;
+}
+
+.r.D {
+  background: #292c3c;
+  color: #c6d0f5;
+}
+
+#i {
+  color: #c6d0f5;
+}
+
+.D #i {
+  color: #c6d0f5;
+}
+```
