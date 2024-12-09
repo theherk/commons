@@ -12,7 +12,7 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-      flavour = "latte",
+      flavour = "frappe",
       transparent_background = true,
       integrations = {
         cmp = true,
@@ -330,7 +330,7 @@ return {
     opts = function()
       local icons = require("config.icons").icons
       local Util = require("config.util")
-      local custom = require("lualine.themes.tokyonight")
+      local custom = require("lualine.themes.catppuccin")
       custom.normal.c.bg = "none"
       return {
         options = {

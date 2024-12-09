@@ -23,14 +23,14 @@ HELIX_LIGHT=catppuccin_latte
 LAZYGIT_BG_DARK=#24283b
 LAZYGIT_BG_LIGHT=#e1e2e7
 
-NVIM_COLORSCHEME_DARK="tokyonight"
+NVIM_COLORSCHEME_DARK="catppuccin"
 NVIM_COLORSCHEME_LIGHT="catppuccin"
 
 # Not needed while using separate plugins.
-# NVIM_VARIANT_DARK=night
-# NVIM_VARIANT_LIGHT=latte
+NVIM_VARIANT_DARK=frappe
+NVIM_VARIANT_LIGHT=latte
 
-WEZTERM_DARK="Tokyo Night"
+WEZTERM_DARK="Catppuccin Frappe"
 WEZTERM_LIGHT="Catppuccin Latte"
 
 YAZI_DARK="tokyo-night"
@@ -56,7 +56,7 @@ darken() {
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_DARK'"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(pager: .*\) --light/\1 --diff-so-fancy/' .config/lazygit/config.yml
 	sed -i '' 's/\(vim.cmd.colorscheme\)(".*")/\1("'"$NVIM_COLORSCHEME_DARK"'")/' .config/nvim/init.lua
-	# sed -i '' 's/\(style = \)".*"/\1"'$NVIM_VARIANT_DARK'"/' .config/nvim/lua/plugins/display.lua
+	sed -i '' 's/\(flavour = \)".*"/\1"'$NVIM_VARIANT_DARK'"/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1'$NVIM_COLORSCHEME_DARK'")/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(vim.opt.background = \)".*"/\1"dark"/' .config/nvim/lua/config/options.lua
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_DARK"'"/' .config/wezterm/theme.lua
@@ -83,7 +83,7 @@ lighten() {
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_LIGHT'"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(pager: .*\) --diff-so-fancy/\1 --light/' .config/lazygit/config.yml
 	sed -i '' 's/\(vim.cmd.colorscheme\)(".*")/\1("'"$NVIM_COLORSCHEME_LIGHT"'")/' .config/nvim/init.lua
-	# sed -i '' 's/\(style = \)".*"/\1"'$NVIM_VARIANT_LIGHT'"/' .config/nvim/lua/plugins/display.lua
+	sed -i '' 's/\(flavour = \)".*"/\1"'$NVIM_VARIANT_LIGHT'"/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1'$NVIM_COLORSCHEME_LIGHT'")/' .config/nvim/lua/plugins/display.lua
 	sed -i '' 's/\(vim.opt.background = \)".*"/\1"light"/' .config/nvim/lua/config/options.lua
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_LIGHT"'"/' .config/wezterm/theme.lua

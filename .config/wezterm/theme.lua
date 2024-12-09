@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 local module = {}
 local colors = {}
 
-local selected_scheme = "Tokyo Night"
+local selected_scheme = "Catppuccin Frappe"
 local scheme = wezterm.get_builtin_color_schemes()[selected_scheme]
 
 colors.active_fg = scheme.ansi[6]
