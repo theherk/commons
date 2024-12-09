@@ -1,12 +1,12 @@
 local onedrive = os.getenv("ONEDRIVE") or "/Users/h4s/Library/CloudStorage/OneDrive"
 local function workspaces()
   local _workspaces = { {
-    name = "main",
-    path = "~/org/foam",
+    name = "brain",
+    path = "~/vaults/brain",
   } }
   if vim.fn.isdirectory(onedrive) ~= 0 then table.insert(_workspaces, {
-    name = "onedrive",
-    path = onedrive .. "/foam-onedrive",
+    name = "dnbrain",
+    path = onedrive .. "/dnbrain",
   }) end
   return _workspaces
 end
