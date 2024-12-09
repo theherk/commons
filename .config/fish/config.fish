@@ -51,6 +51,10 @@ if test -e ~/.local-exports
 end
 
 if status is-interactive
+    function fish_title
+        echo (string replace $HOME '~' $PWD)
+    end
+
     set fzf_diff_highlighter delta --paging=never --width=20
     set fzf_fd_opts --hidden --exclude=.git
     set fzf_preview_dir_cmd eza --all --color=always
