@@ -220,6 +220,9 @@ mv bw ~/bin/
 ```
 map K previousTab
 map J nextTab
+
+map o Vomnibar.activate engines="tab=1,bookmark=2"
+map O Vomnibar.activateInNewTab engines="tab=1,bookmark=2"
 ```
 
 #### Custom CSS
