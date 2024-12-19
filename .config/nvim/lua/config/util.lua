@@ -73,6 +73,14 @@ function M.ai_update_services()
           temperature = 0,
           max_tokens = 4096,
         },
+        file_selector = { provider = "fzf" },
+        windows = {
+          input = {
+            prefix = "ᐅ ",
+            height = 4,
+          },
+          width = 37,
+        },
       })
     end
   end)

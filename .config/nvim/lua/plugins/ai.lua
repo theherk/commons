@@ -1,3 +1,5 @@
+-- Much of the actual configuration is happening on the fly, so you'll
+-- find it in the pcalls in config/util.lua.
 return {
   {
     "Exafunction/codeium.nvim",
@@ -24,14 +26,7 @@ return {
     },
     event = "VeryLazy",
     build = "make",
-    opts = {
-      claude = {
-        endpoint = "https://api.anthropic.com",
-        model = "claude-3-5-sonnet-20240620",
-        temperature = 0,
-        max_tokens = 4096,
-      },
-    },
+    config = true,
   },
   {
     "zbirenbaum/copilot-cmp",
@@ -39,10 +34,6 @@ return {
   },
   {
     "zbirenbaum/copilot.lua",
-    opts = {
-      auth_provider_url = "https://dnb.ghe.com",
-      panel = { enabled = false },
-      suggestion = { enabled = false },
-    },
+    config = true,
   },
 }
