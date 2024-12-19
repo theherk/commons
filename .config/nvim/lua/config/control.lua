@@ -140,6 +140,7 @@ vim.keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "prev warning
 -- Save the weird way.
 vim.keymap.set({ "i", "x", "n", "s" }, "<c-s>", "<cmd>up<cr><esc>", { desc = "save (update) file" })
 vim.keymap.set({ "i", "x", "n", "s" }, "<cs-S>", "<cmd>w<cr><esc>", { desc = "save (write) file" })
+vim.keymap.set({ "i", "x", "n", "s" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "save (write) file" })
 
 -- Better indenting.
 vim.keymap.set("v", "<", "<gv")
