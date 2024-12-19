@@ -118,8 +118,8 @@ return {
       { "<leader>nr", "<cmd>ObsidianRename<cr>", desc = "obsidian rename" },
       { "<leader>ns", "<cmd>ObsidianSearch<cr>", desc = "obsidian search" },
       { "<leader>nt", "<cmd>ObsidianTags<cr>", desc = "obsidian tags" },
-      { "<leader>nwm", "<cmd>ObsidianWorkspace brain<cr>", desc = "select workspace brain" },
-      { "<leader>nwo", "<cmd>ObsidianWorkspace dnbrain<cr>", desc = "select workspace dnbrain" },
+      { "<leader>nwb", "<cmd>ObsidianWorkspace brain<cr>", desc = "select workspace brain" },
+      { "<leader>nwd", "<cmd>ObsidianWorkspace dnbrain<cr>", desc = "select workspace dnbrain" },
       { "<localleader>mx", function() require("obsidian.util").toggle_checkbox() end, desc = "mark complete" },
     },
     opts = {
