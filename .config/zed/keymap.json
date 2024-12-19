@@ -24,7 +24,10 @@
     "bindings": {
       "space /": "workspace::NewSearch",
       "space f s": "workspace::Save",
-      "space g g": ["task::Spawn", { "task_name": "lazygit" }]
+      "space g g": [
+        "task::Spawn",
+        { "task_name": "lazygit", "reveal_target": "center" }
+      ]
     }
   },
   {
