@@ -221,7 +221,7 @@ return {
             number = false,
             cursorline = false,
           },
-          width = 0.43,
+          width = 0.77,
         },
       })
     end,
