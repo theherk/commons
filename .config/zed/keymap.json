@@ -22,6 +22,7 @@
   {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
+      "space space": "file_finder::Toggle",
       "space /": "workspace::NewSearch",
       "space f s": "workspace::Save",
       "space g g": [
