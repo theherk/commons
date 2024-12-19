@@ -99,9 +99,25 @@ return {
           new_buffers_position = harpoon_sorter(),
         },
         tabs = {
-          -- TODO: Add tab ID's to top right.
           placement = "right",
-          -- components = {},
+          components = {
+            {
+              text = function(tabpage)
+                if vim.fn.tabpagenr("$") == 1 then return "" end
+                return not tabpage.is_first and "|" or ""
+              end,
+              fg = function(_) return vim.g.terminal_color_4 end,
+              bg = "NONE",
+            },
+            {
+              text = function(tabpage)
+                if vim.fn.tabpagenr("$") == 1 then return "" end
+                return " " .. tabpage.number .. " "
+              end,
+              fg = function(tabpage) return tabpage.is_active and vim.g.terminal_color_5 or hlg.get_hl_attr("Comment", "fg") end,
+              bg = function(tabpage) return tabpage.is_active and vim.g.terminal_color_8 or "NONE" end,
+            },
+          },
         },
         sidebar = {
           filetype = { "NvimTree", "neo-tree" },
