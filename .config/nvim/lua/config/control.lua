@@ -101,15 +101,19 @@ vim.keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "prev se
 
 -- buffers
 if Util.has("bufferline.nvim") then
-  vim.keymap.set("n", "<d-[>", "<cmd>BufferLineCyclePrev<cr>", { desc = "prev buffer" })
-  vim.keymap.set("n", "<d-]>", "<cmd>BufferLineCycleNext<cr>", { desc = "next buffer" })
+  vim.keymap.set("i", "<d-[>", "<esc><cmd>BufferLineCyclePrev<cr>", { desc = "prev buffer" })
+  vim.keymap.set("i", "<d-]>", "<esc><cmd>BufferLineCycleNext<cr>", { desc = "next buffer" })
+  vim.keymap.set({ "n", "t" }, "<d-[>", "<cmd>BufferLineCyclePrev<cr>", { desc = "prev buffer" })
+  vim.keymap.set({ "n", "t" }, "<d-]>", "<cmd>BufferLineCycleNext<cr>", { desc = "next buffer" })
   vim.keymap.set("n", "<s-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "prev buffer" })
   vim.keymap.set("n", "<s-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "next buffer" })
   vim.keymap.set("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "prev buffer" })
   vim.keymap.set("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "next buffer" })
 elseif Util.has("nvim-cokeline") then
-  vim.keymap.set("n", "<d-[>", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
-  vim.keymap.set("n", "<d-]>", "<plug>(cokeline-focus-next)", { desc = "next buffer" })
+  vim.keymap.set("i", "<d-[>", "<esc><plug>(cokeline-focus-prev)", { desc = "prev buffer" })
+  vim.keymap.set("i", "<d-]>", "<esc><plug>(cokeline-focus-next)", { desc = "next buffer" })
+  vim.keymap.set({ "n", "t" }, "<d-[>", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
+  vim.keymap.set({ "n", "t" }, "<d-]>", "<plug>(cokeline-focus-next)", { desc = "next buffer" })
   vim.keymap.set("n", "<s-h>", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
   vim.keymap.set("n", "<s-l>", "<plug>(cokeline-focus-next)", { desc = "next buffer" })
   vim.keymap.set("n", "[b", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
@@ -117,8 +121,10 @@ elseif Util.has("nvim-cokeline") then
   vim.keymap.set("n", "<leader>bp", "<plug>(cokeline-pick-focus)", { desc = "pick focus" })
   vim.keymap.set("n", "<leader>bc", "<plug>(cokeline-pick-close)", { desc = "pick close" })
 else
-  vim.keymap.set("n", "<d-[>", "<cmd>bprevious<cr>", { desc = "prev buffer" })
-  vim.keymap.set("n", "<d-]>", "<cmd>bnext<cr>", { desc = "next buffer" })
+  vim.keymap.set("i", "<d-[>", "<esc><cmd>bprevious<cr>", { desc = "prev buffer" })
+  vim.keymap.set("i", "<d-]>", "<esc><cmd>bnext<cr>", { desc = "next buffer" })
+  vim.keymap.set({ "n", "t" }, "<d-[>", "<cmd>bprevious<cr>", { desc = "prev buffer" })
+  vim.keymap.set({ "n", "t" }, "<d-]>", "<cmd>bnext<cr>", { desc = "next buffer" })
   vim.keymap.set("n", "<s-h>", "<cmd>bprevious<cr>", { desc = "prev buffer" })
   vim.keymap.set("n", "<s-l>", "<cmd>bnext<cr>", { desc = "next buffer" })
   vim.keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "prev buffer" })
