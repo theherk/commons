@@ -3,13 +3,9 @@ return {
     "Exafunction/codeium.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = true,
-    enabled = vim.fn.getcwd():find("dnb.no") == nil and vim.fn.filereadable(".codeium-enabled") == 1,
   },
   {
     "David-Kunz/gen.nvim",
-    -- Requires:
-    --   ollama serve
-    --   ollama run llama3
     opts = { model = "llama3" },
   },
   {
@@ -39,12 +35,10 @@ return {
   },
   {
     "zbirenbaum/copilot-cmp",
-    enabled = vim.fn.getcwd():find("dnb.no") ~= nil,
     config = true,
   },
   {
     "zbirenbaum/copilot.lua",
-    enabled = vim.fn.getcwd():find("dnb.no") ~= nil,
     opts = {
       auth_provider_url = "https://dnb.ghe.com",
       panel = { enabled = false },
