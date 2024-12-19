@@ -142,11 +142,45 @@ return {
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
       "zbirenbaum/copilot.lua",
+      "zbirenbaum/copilot-cmp",
     },
+    config = function(_, opts)
+      vim.api.nvim_create_autocmd("DirChanged", {
+        pattern = "*",
+        callback = function()
+          vim.schedule(function()
+            local ok, cmp = pcall(require, "cmp")
+            if not ok then
+              vim.notify("cmp not available", vim.log.levels.WARN)
+              return
+            end
+
+            Util.ai_update_services()
+            local sources = Util.get_active_sources()
+
+            ok = pcall(function() cmp.setup.buffer({ sources = sources }) end)
+
+            if ok then
+              local source_names = vim.tbl_map(function(source) return source.name end, cmp.get_config().sources)
+              local msg = table.concat(source_names, ", ")
+              vim.notify(msg, vim.log.levels.INFO, {
+                title = "cmp sources",
+              })
+            else
+              vim.notify("Failed to setup buffer sources", vim.log.levels.ERROR)
+            end
+          end)
+        end,
+      })
+
+      require("cmp").setup(opts)
+      Util.ai_update_services()
+    end,
     opts = function()
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
       local defaults = require("cmp.config.default")()
+
       return {
         completion = {
           completeopt = "menu,menuone,noinsert",
@@ -167,14 +201,8 @@ return {
             select = true,
           }),
         }),
-        sources = cmp.config.sources({
-          { name = "codeium" },
-          { name = "copilot" },
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-          { name = "buffer" },
-          { name = "path" },
-        }),
+
+        sources = cmp.config.sources(Util.get_active_sources()),
         formatting = {
           format = function(_, item)
             local icons = require("config.icons").icons.kinds
@@ -370,7 +398,16 @@ return {
       newProjectPath = "~/github.com/theherk/",
       file_explorer = function() require("mini.files").open(vim.api.nvim_buf_get_name(0)) end,
     },
-    config = function(_, opts) require("project_explorer").setup(opts) end,
+    config = function(_, opts)
+      require("project_explorer").setup(opts)
+      vim.api.nvim_create_autocmd("DirChanged", {
+        pattern = "*",
+        callback = function()
+          Util.ai_update_services()
+          require("cmp").setup.buffer({ sources = Util.get_active_sources() })
+        end,
+      })
+    end,
     keys = {
       { "<leader>p", "<cmd>ProjectExplorer<cr>", desc = "Projects" },
     },
