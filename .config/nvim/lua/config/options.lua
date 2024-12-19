@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
-vim.o.guicursor = vim.o.guicursor .. ",a:blinkon1"
+vim.o.guicursor = "n-v-c-sm:block-blinkon1,i-ci-ve:ver25-blinkon1,r-cr-o:hor20,a:blinkon1"
 vim.o.guifont = "VictorMono NF:h18"
 
 vim.opt.autowrite = true
