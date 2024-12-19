@@ -52,7 +52,6 @@ function M.ai_update_services()
   end)
 
   -- Update Copilot
-
   pcall(function()
     local copilot = require("copilot")
     if copilot.setup then copilot.setup({
@@ -60,6 +59,11 @@ function M.ai_update_services()
       panel = { enabled = false },
       suggestion = { enabled = false },
     }) end
+    if has_copilot then
+      vim.cmd("Copilot enable")
+    else
+      vim.cmd("Copilot disable")
+    end
   end)
 
   -- Update Avante (Claude)

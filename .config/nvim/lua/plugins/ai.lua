@@ -34,6 +34,10 @@ return {
   },
   {
     "zbirenbaum/copilot.lua",
-    config = true,
+    opts = {
+      auth_provider_url = "https://dnb.ghe.com",
+      panel = { enabled = false },
+      suggestion = { enabled = false },
+    },
   },
 }
