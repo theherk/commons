@@ -112,7 +112,12 @@ return {
             {
               text = function(tabpage)
                 if vim.fn.tabpagenr("$") == 1 then return "" end
-                return " " .. tabpage.number .. " "
+                local tabs = vim.api.nvim_list_tabpages()
+                -- Find position of current tab in the list
+                for i, tab_handle in ipairs(tabs) do
+                  if tab_handle == tabpage.number then return " " .. i .. " " end
+                end
+                return " " .. tabpage.number .. " " -- fallback
               end,
               fg = function(tabpage) return tabpage.is_active and vim.g.terminal_color_5 or hlg.get_hl_attr("Comment", "fg") end,
               bg = function(tabpage) return tabpage.is_active and vim.g.terminal_color_8 or "NONE" end,
