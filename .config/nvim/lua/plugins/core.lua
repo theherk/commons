@@ -258,12 +258,6 @@ return {
         },
         sorting_strategy = "ascending",
       },
-      extensions = {
-        project = {
-          base_dirs = { Util.lines(os.getenv("HOME") .. "/.projects") },
-          -- on_project_selected = function(prompt_bufnr) require("harpoon.ui").nav_file(1) end,
-        },
-      },
       pickers = {
         live_grep = {
           additional_args = function(_) return { "--hidden", "--glob=!.git/" } end,
@@ -287,10 +281,9 @@ return {
     },
   },
   {
-    "nvim-telescope/telescope-project.nvim",
-    keys = {
-      { "<leader>p", "<cmd>Telescope project<cr>", desc = "projects" },
-    },
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
+    dependencies = { "nvim-telescope/telescope.nvim" },
   },
   {
     "nvim-treesitter/nvim-treesitter",
