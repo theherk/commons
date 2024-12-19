@@ -75,6 +75,7 @@ return {
   },
   {
     "folke/noice.nvim",
+    enabled = not vim.g.started_by_firenvim,
     event = "VeryLazy",
     opts = {
       lsp = {
@@ -326,6 +327,7 @@ return {
   { "MunifTanjim/nui.nvim", lazy = true },
   {
     "nvim-lualine/lualine.nvim",
+    enabled = not vim.g.started_by_firenvim,
     event = "VeryLazy",
     opts = function()
       local icons = require("config.icons").icons

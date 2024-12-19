@@ -5,6 +5,7 @@ return {
       "echasnovski/mini.icons",
       "nvim-lua/plenary.nvim",
     },
+    enabled = not vim.g.started_by_firenvim,
     config = function(_, _)
       local harpoon = require("harpoon.mark")
       local hlg = require("cokeline.hlgroups")
