@@ -150,3 +150,7 @@ vim.keymap.set("v", "ga", "<Plug>(EasyAlign)")
 
 -- Open Lazy interface.
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "lazy" })
+
+-- Paste
+vim.keymap.set("n", "<d-p>", '"+p', { noremap = true, silent = true })
+vim.keymap.set("i", "<d-p>", "<c-r>+", { noremap = true, silent = true })
