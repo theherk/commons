@@ -145,36 +145,26 @@ return {
       "zbirenbaum/copilot-cmp",
     },
     config = function(_, opts)
+      local cmp = require("cmp")
+
       vim.api.nvim_create_autocmd("DirChanged", {
         pattern = "*",
         callback = function()
           vim.schedule(function()
-            local ok, cmp = pcall(require, "cmp")
-            if not ok then
-              vim.notify("cmp not available", vim.log.levels.WARN)
-              return
-            end
-
             Util.ai_update_services()
             local sources = Util.get_active_sources()
 
-            ok = pcall(function() cmp.setup.buffer({ sources = sources }) end)
+            cmp.setup({ sources = cmp.config.sources(sources) })
 
-            if ok then
-              local source_names = vim.tbl_map(function(source) return source.name end, cmp.get_config().sources)
-              local msg = table.concat(source_names, ", ")
-              vim.notify(msg, vim.log.levels.INFO, {
-                title = "cmp sources",
-              })
-            else
-              vim.notify("Failed to setup buffer sources", vim.log.levels.ERROR)
-            end
+            local source_names = vim.tbl_map(function(source) return source.name end, sources)
+            local msg = table.concat(source_names, ", ")
+            vim.notify(msg, vim.log.levels.INFO, {
+              title = "cmp sources",
+            })
           end)
         end,
       })
-
-      require("cmp").setup(opts)
-      Util.ai_update_services()
+      cmp.setup(opts)
     end,
     opts = function()
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
