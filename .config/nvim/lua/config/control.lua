@@ -101,20 +101,26 @@ vim.keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "prev se
 
 -- buffers
 if Util.has("bufferline.nvim") then
-  vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "prev buffer" })
-  vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "next buffer" })
+  vim.keymap.set("n", "<d-[>", "<cmd>BufferLineCyclePrev<cr>", { desc = "prev buffer" })
+  vim.keymap.set("n", "<d-]>", "<cmd>BufferLineCycleNext<cr>", { desc = "next buffer" })
+  vim.keymap.set("n", "<s-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "prev buffer" })
+  vim.keymap.set("n", "<s-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "next buffer" })
   vim.keymap.set("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "prev buffer" })
   vim.keymap.set("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "next buffer" })
 elseif Util.has("nvim-cokeline") then
-  vim.keymap.set("n", "<S-h>", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
-  vim.keymap.set("n", "<S-l>", "<plug>(cokeline-focus-next)", { desc = "next buffer" })
+  vim.keymap.set("n", "<d-[>", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
+  vim.keymap.set("n", "<d-]>", "<plug>(cokeline-focus-next)", { desc = "next buffer" })
+  vim.keymap.set("n", "<s-h>", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
+  vim.keymap.set("n", "<s-l>", "<plug>(cokeline-focus-next)", { desc = "next buffer" })
   vim.keymap.set("n", "[b", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
   vim.keymap.set("n", "]b", "<plug>(cokeline-focus-next)", { desc = "next buffer" })
   vim.keymap.set("n", "<leader>bp", "<plug>(cokeline-pick-focus)", { desc = "pick focus" })
   vim.keymap.set("n", "<leader>bc", "<plug>(cokeline-pick-close)", { desc = "pick close" })
 else
-  vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "prev buffer" })
-  vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "next buffer" })
+  vim.keymap.set("n", "<d-[>", "<cmd>bprevious<cr>", { desc = "prev buffer" })
+  vim.keymap.set("n", "<d-]>", "<cmd>bnext<cr>", { desc = "next buffer" })
+  vim.keymap.set("n", "<s-h>", "<cmd>bprevious<cr>", { desc = "prev buffer" })
+  vim.keymap.set("n", "<s-l>", "<cmd>bnext<cr>", { desc = "next buffer" })
   vim.keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "prev buffer" })
   vim.keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "next buffer" })
 end
@@ -140,7 +146,7 @@ vim.keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "prev warning
 -- Save the weird way.
 vim.keymap.set({ "i", "x", "n", "s" }, "<c-s>", "<cmd>up<cr><esc>", { desc = "save (update) file" })
 vim.keymap.set({ "i", "x", "n", "s" }, "<cs-S>", "<cmd>w<cr><esc>", { desc = "save (write) file" })
-vim.keymap.set({ "i", "x", "n", "s" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "save (write) file" })
+vim.keymap.set({ "i", "x", "n", "s" }, "<d-s>", "<cmd>w<cr><esc>", { desc = "save (write) file" })
 
 -- Better indenting.
 vim.keymap.set("v", "<", "<gv")
