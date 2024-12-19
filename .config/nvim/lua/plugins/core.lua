@@ -359,6 +359,23 @@ return {
     end,
   },
   {
+    "Rics-Dev/project-explorer.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+    lazy = false,
+    opts = {
+      paths = { "~/projects" },
+      command_pattern = 'sed "s|/Users/h4s|~|g" ~/.projects',
+      newProjectPath = "~/github.com/theherk/",
+      file_explorer = function() require("mini.files").open(vim.api.nvim_buf_get_name(0)) end,
+    },
+    config = function(_, opts) require("project_explorer").setup(opts) end,
+    keys = {
+      { "<leader>p", "<cmd>ProjectExplorer<cr>", desc = "Projects" },
+    },
+  },
+  {
     "Wansmer/treesj",
     keys = {
       { "<leader>J", "<cmd>TSJToggle<cr>", desc = "spoin" },
