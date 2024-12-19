@@ -75,10 +75,7 @@ function M.ai_update_services()
         },
         file_selector = { provider = "fzf" },
         windows = {
-          input = {
-            prefix = "ᐅ ",
-            height = 4,
-          },
+          input = { height = 4 },
           width = 37,
         },
       })
