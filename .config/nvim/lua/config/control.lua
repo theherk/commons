@@ -153,5 +153,5 @@ vim.keymap.set("v", "ga", "<Plug>(EasyAlign)")
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "lazy" })
 
 -- Paste
-vim.keymap.set("n", "<d-p>", '"+p', { noremap = true, silent = true })
-vim.keymap.set("i", "<d-p>", "<c-r>+", { noremap = true, silent = true })
+vim.keymap.set("n", "<d-v>", '"+p', { noremap = true, silent = true })
+vim.keymap.set("i", "<d-v>", "<c-r>+", { noremap = true, silent = true })
