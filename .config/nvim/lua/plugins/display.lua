@@ -312,8 +312,8 @@ return {
   --   build = "./install.sh build",
   --   opts = {
   --     font = "VictorMono NF=26",
-  --     background = "#fff",
-  --     theme = "tokyonight_night",
+  --     background = "#414559",
+  --     theme = "Catppuccin-frappe",
   --     line_number = true,
   --     pad_vert = 40,
   --     pad_horiz = 20,
