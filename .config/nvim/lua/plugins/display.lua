@@ -307,6 +307,7 @@ return {
   -- Follow:
   -- https://github.com/krivahtoo/silicon.nvim/issues/39
   -- https://github.com/krivahtoo/silicon.nvim/issues/40
+  -- https://github.com/krivahtoo/silicon.nvim/issues/54
   -- {
   --   "krivahtoo/silicon.nvim",
   --   build = "./install.sh build",
@@ -323,6 +324,21 @@ return {
   --     window_title = function() return vim.fn.fnamemodify(vim.fn.bufname(vim.fn.bufnr()), ":~:.") end,
   --   },
   -- },
+  {
+    "michaelrommel/nvim-silicon",
+    lazy = true,
+    cmd = "Silicon",
+    main = "nvim-silicon",
+    opts = {
+      background = "#414559",
+      font = "VictorMono NF=26",
+      pad_horiz = 20,
+      pad_vert = 40,
+      theme = "Catppuccin-frappe",
+      to_clipboard = true,
+      window_title = function() return vim.fn.fnamemodify(vim.fn.bufname(vim.fn.bufnr()), ":~:.") end,
+    },
+  },
   {
     "mawkler/modicator.nvim",
     config = true,
