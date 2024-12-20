@@ -71,6 +71,7 @@ vim.keymap.set("n", "<leader><tab>f", "<cmd>tabfirst<cr>", { desc = "first tab" 
 vim.keymap.set("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "last tab" })
 vim.keymap.set("n", "<leader><tab>n", "<cmd>tabnext<cr>", { desc = "next tab" })
 vim.keymap.set("n", "<leader><tab>p", "<cmd>tabprevious<cr>", { desc = "previous tab" })
+vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnext<cr>", { desc = "next tab" })
 
 -- Resize window using <ctrl> arrow keys.
 vim.keymap.set("n", "<c-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
