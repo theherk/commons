@@ -198,6 +198,19 @@ function M.get_root()
   return root
 end
 
+-- Update guifont, by getting current font and size, adding x, then setting
+-- the font to the same font but the updated size.
+function M.increment_font(x)
+  local font = vim.o.guifont
+  -- Match font name and size (assumes format "FontName:h{size}")
+  local font_name, size = font:match("(.+):h(%d+)")
+  if font_name and size then
+    size = tonumber(size) + x
+    size = math.max(6, size) -- Ensure minimum size of 6
+    vim.o.guifont = string.format("%s:h%d", font_name, size)
+  end
+end
+
 function M.lines(fname)
   local lines = {}
   for line in io.lines(fname) do
