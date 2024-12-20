@@ -260,14 +260,17 @@ return {
                            ⠀⠀⠀⠀⠀⢀⠢⡱⡨⢢⢑⢌⢪⢨⢢⢣⢫⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                            ⠀⠀⠀⠀⢀⢆⡇⡎⡸⣐⠡⢐⠜⡌⡎⡪⡪⡣⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀
       ]]
-      dashboard.section.header.val = vim.split(logo, "\n")
-      dashboard.section.buttons.val = {
-        dashboard.button("/", "  " .. "grep", "<cmd>Telescope live_grep<cr>"),
+      local buttons = {
         dashboard.button("f", "  " .. "files", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>"),
         dashboard.button("g", "󰊢  " .. "git files", "<cmd>Telescope git_files<cr>"),
-        dashboard.button("l", "  " .. "lazy", "<cmd>Lazy<cr>"),
-        dashboard.button("q", "  " .. "quit", ":qa<cr>"),
       }
+      if vim.g.neovide then
+        table.insert(buttons, 1, dashboard.button("p", "  " .. "projects", "<cmd>ProjectExplorer<cr>"))
+      else
+        table.insert(buttons, 1, dashboard.button("/", "  " .. "grep", "<cmd>Telescope live_grep<cr>"))
+      end
+      dashboard.section.header.val = vim.split(logo, "\n")
+      dashboard.section.buttons.val = buttons
       for _, button in ipairs(dashboard.section.buttons.val) do
         button.opts.hl = "AlphaButtons"
         button.opts.hl_shortcut = "AlphaShortcut"
