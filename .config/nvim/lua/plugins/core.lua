@@ -289,7 +289,7 @@ return {
       },
     },
     keys = {
-      { "g/", "<cmd>Telescope live_grep<cr>", desc = "grep" },
+      { "<d-p>", "<cmd>Telescope git_files<cr>", desc = "git files" },
       { "<leader><leader>", "<cmd>Telescope git_files<cr>", desc = "git files" },
       { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "grep" },
       { "<leader>bb", "<cmd>Telescope buffers<cr>", desc = "find buffers" },
@@ -301,6 +301,7 @@ return {
       { "<leader>hs", "<cmd>Telescope spell_suggest<cr>", desc = "spell" },
       { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "keymaps" },
       { "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "buffer / swiper" },
+      { "g/", "<cmd>Telescope live_grep<cr>", desc = "grep" },
       { "z=", "<cmd>Telescope spell_suggest<cr>", desc = "spell" },
     },
   },
