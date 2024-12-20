@@ -5,7 +5,6 @@ local Util = require("config.util")
 ---@type PluginLspKeys
 M._keys = nil
 
----@return (LazyKeys|{has?:string})[]
 function M.get()
   local format = function() require("plugins.lsp.format").format({ force = true }) end
   if not M._keys then
@@ -70,7 +69,7 @@ end
 
 function M.resolve(buffer)
   local Keys = require("lazy.core.handler.keys")
-  local keymaps = {} ---@type table<string,LazyKeys|{has?:string}>
+  local keymaps = {}
 
   local function add(keymap)
     local keys = Keys.parse(keymap)

@@ -332,10 +332,7 @@ return {
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
-        init = function()
-          require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
-          load_textobjects = true
-        end,
+        init = function() require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects") end,
       },
     },
     cmd = { "TSUpdateSync" },

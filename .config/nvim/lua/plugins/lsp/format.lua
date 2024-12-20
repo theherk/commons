@@ -2,18 +2,17 @@ local Util = require("lazy.core.util")
 
 local M = {}
 
----@type PluginLspOpts
 M.opts = nil
 
-function M.enabled()
-  return M.opts.autoformat
-end
+function M.enabled() return M.opts.autoformat end
 
 function M.toggle()
   if vim.b.autoformat == false then
     vim.b.autoformat = nil
+    ---@diagnostic disable-next-line: inject-field
     M.opts.autoformat = true
   else
+    ---@diagnostic disable-next-line: inject-field
     M.opts.autoformat = not M.opts.autoformat
   end
   if M.opts.autoformat then
@@ -26,28 +25,19 @@ end
 ---@param opts? {force?:boolean}
 function M.format(opts)
   local buf = vim.api.nvim_get_current_buf()
-  if vim.b.autoformat == false and not (opts and opts.force) then
-    return
-  end
+  if vim.b.autoformat == false and not (opts and opts.force) then return end
 
   local formatters = M.get_formatters(buf)
-  local client_ids = vim.tbl_map(function(client)
-    return client.id
-  end, formatters.active)
+  local client_ids = vim.tbl_map(function(client) return client.id end, formatters.active)
 
-  if #client_ids == 0 then
-    return
-  end
+  if #client_ids == 0 then return end
 
-  if M.opts.format_notify then
-    M.notify(formatters)
-  end
+  ---@diagnostic disable-next-line: undefined-field
+  if M.opts.format_notify then M.notify(formatters) end
 
   vim.lsp.buf.format(vim.tbl_deep_extend("force", {
     bufnr = buf,
-    filter = function(client)
-      return vim.tbl_contains(client_ids, client.id)
-    end,
+    filter = function(client) return vim.tbl_contains(client_ids, client.id) end,
   }, require("config.util").opts("nvim-lspconfig").format or {}))
 end
 
@@ -56,17 +46,7 @@ function M.notify(formatters)
 
   for _, client in ipairs(formatters.active) do
     local line = "- **" .. client.name .. "**"
-    if client.name == "null-ls" then
-      line = line
-          .. " ("
-          .. table.concat(
-            vim.tbl_map(function(f)
-              return "`" .. f.name .. "`"
-            end, formatters.null_ls),
-            ", "
-          )
-          .. ")"
-    end
+    if client.name == "null-ls" then line = line .. " (" .. table.concat(vim.tbl_map(function(f) return "`" .. f.name .. "`" end, formatters.null_ls), ", ") .. ")" end
     table.insert(lines, line)
   end
 
@@ -99,17 +79,21 @@ function M.get_formatters(bufnr)
 
   ---@class Formatters
   local ret = {
+    ---@diagnostic disable-next-line: undefined-doc-name
     ---@type lsp.Client[]
     active = {},
+    ---@diagnostic disable-next-line: undefined-doc-name
     ---@type lsp.Client[]
     available = {},
     null_ls = null_ls,
   }
 
+  ---@diagnostic disable-next-line: undefined-doc-name
   ---@type lsp.Client[]
   local clients = require("config.util").get_clients({ bufnr = bufnr })
   for _, client in ipairs(clients) do
     if M.supports_format(client) then
+      ---@diagnostic disable-next-line: undefined-field
       if (#null_ls > 0 and client.name == "null-ls") or #null_ls == 0 then
         table.insert(ret.active, client)
       else
@@ -123,27 +107,23 @@ end
 
 -- Gets all lsp clients that support formatting
 -- and have not disabled it in their client config
+---@diagnostic disable-next-line: undefined-doc-name
 ---@param client lsp.Client
 function M.supports_format(client)
-  if
-      client.config
-      and client.config.capabilities
-      and client.config.capabilities.documentFormattingProvider == false
-  then
-    return false
-  end
+  ---@diagnostic disable-next-line: undefined-field
+  if client.config and client.config.capabilities and client.config.capabilities.documentFormattingProvider == false then return false end
+  ---@diagnostic disable-next-line: undefined-field
   return client.supports_method("textDocument/formatting") or client.supports_method("textDocument/rangeFormatting")
 end
 
+---@diagnostic disable-next-line: undefined-doc-name
 ---@param opts PluginLspOpts
 function M.setup(opts)
   M.opts = opts
   vim.api.nvim_create_autocmd("BufWritePre", {
     group = vim.api.nvim_create_augroup("Format", {}),
     callback = function()
-      if M.opts.autoformat then
-        M.format()
-      end
+      if M.opts.autoformat then M.format() end
     end,
   })
 end
