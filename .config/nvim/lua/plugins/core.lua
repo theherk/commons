@@ -164,6 +164,11 @@ return {
           end)
         end,
       })
+
+      cmp.setup.filetype("vim", {
+        sources = vim.tbl_filter(function(source) return source.name ~= "codeium" end, opts.sources),
+      })
+
       cmp.setup(opts)
     end,
     opts = function()
