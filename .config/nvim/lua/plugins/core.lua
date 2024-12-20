@@ -261,7 +261,8 @@ return {
       },
     },
     keys = {
-      { "<c-p>", "<cmd>Neotree toggle<cr>", desc = "toggle neotree" },
+      { "<ds-e>", "<cmd>Neotree toggle<cr>", desc = "toggle neotree" },
+      { "<leader>E", "<cmd>Neotree toggle<cr>", desc = "toggle neotree" },
     },
   },
   {
@@ -288,6 +289,7 @@ return {
       },
     },
     keys = {
+      { "g/", "<cmd>Telescope live_grep<cr>", desc = "grep" },
       { "<leader><leader>", "<cmd>Telescope git_files<cr>", desc = "git files" },
       { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "grep" },
       { "<leader>bb", "<cmd>Telescope buffers<cr>", desc = "find buffers" },
@@ -399,7 +401,8 @@ return {
       })
     end,
     keys = {
-      { "<leader>p", "<cmd>ProjectExplorer<cr>", desc = "Projects" },
+      { "<c-p>", "<cmd>ProjectExplorer<cr>", desc = "projects" },
+      { "<leader>p", "<cmd>ProjectExplorer<cr>", desc = "projects" },
     },
   },
   {
