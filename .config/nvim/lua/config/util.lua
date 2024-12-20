@@ -230,6 +230,8 @@ function M.opts(name)
   return Plugin.values(plugin, "opts", false)
 end
 
+function M.set_cursor_colors(colors) vim.api.nvim_set_hl(0, "Cursor", { bg = colors.blue, fg = "black" }) end
+
 function M.set_term_colors(colors)
   vim.g.terminal_color_0 = colors.surface1
   vim.g.terminal_color_1 = colors.red

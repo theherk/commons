@@ -11,16 +11,19 @@ vim.g.neovide_theme = "auto"
 if vim.g.colors_name == "catppuccin-frappe" then
   local colors = require("catppuccin.palettes").get_palette("frappe")
   vim.api.nvim_set_hl(0, "Normal", { bg = colors.base })
+  Util.set_cursor_colors(colors)
   Util.set_term_colors(colors)
 end
 if vim.g.colors_name == "catppuccin-latte" then
   local colors = require("catppuccin.palettes").get_palette("latte")
   vim.api.nvim_set_hl(0, "Normal", { bg = colors.base })
+  Util.set_cursor_colors(colors)
   Util.set_term_colors(colors)
 end
 if vim.g.colors_name == "tokyonight-night" then
   local colors = require("tokyonight.colors").setup()
   vim.api.nvim_set_hl(0, "Normal", { bg = colors.bg })
+  Util.set_cursor_colors(colors)
   Util.set_term_colors(colors)
 end
 
