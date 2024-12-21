@@ -150,54 +150,31 @@ return {
         },
       },
     },
-    -- stylua: ignore
     keys = {
-      {
-        "<S-Enter>",
-        function() require("noice").redirect(vim.fn.getcmdline()) end,
-        mode = "c",
-        "noice redirect cmdline"
-      },
-      {
-        "<leader>snl",
-        function() require("noice").cmd("last") end,
-        desc =
-        "noice last message"
-      },
-      {
-        "<leader>snh",
-        function() require("noice").cmd("history") end,
-        desc =
-        "noice history"
-      },
+      { "<s-enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", "noice redirect cmdline" },
+      { "<leader>snl", function() require("noice").cmd("last") end, desc = "noice last message" },
+      { "<leader>snh", function() require("noice").cmd("history") end, desc = "noice history" },
       { "<leader>sna", function() require("noice").cmd("all") end, desc = "noice all" },
-      {
-        "<leader>snd",
-        function() require("noice").cmd("dismiss") end,
-        desc =
-        "noice dismiss"
-      },
+      { "<leader>snd", function() require("noice").cmd("dismiss") end, desc = "noice dismiss" },
       {
         "<c-f>",
-        function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end,
+        function()
+          if not require("noice.lsp").scroll(4) then return "<c-f>" end
+        end,
         silent = true,
         expr = true,
-        desc =
-        "scroll forward",
-        mode = {
-          "i", "n", "s"
-        }
+        desc = "scroll forward",
+        mode = { "i", "n", "s" },
       },
       {
         "<c-b>",
-        function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end,
+        function()
+          if not require("noice.lsp").scroll(-4) then return "<c-b>" end
+        end,
         silent = true,
         expr = true,
-        desc =
-        "scroll backward",
-        mode = {
-          "i", "n", "s"
-        }
+        desc = "scroll backward",
+        mode = { "i", "n", "s" },
       },
     },
   },
