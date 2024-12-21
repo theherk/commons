@@ -406,14 +406,10 @@ return {
             {
               function()
                 if not vim.g.neovide then return "" end
-                local handle = io.popen("git rev-parse --show-toplevel 2> /dev/null")
-                if handle then
-                  local result = handle:read("*a")
-                  handle:close()
-                  if result and result ~= "" then
-                    local repo_name = result:match("[^/]+$"):gsub("\n", "")
-                    return "󱂬 " .. repo_name
-                  end
+                local root = Util.get_root()
+                if root then
+                  local repo_name = root:match("[^/]+$")
+                  return "󱂬 " .. repo_name
                 end
                 return ""
               end,
