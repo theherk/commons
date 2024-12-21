@@ -1,5 +1,3 @@
-local Util = require("lazy.core.util")
-
 local M = {}
 
 M.root_patterns = { ".git", "lua" }
@@ -240,14 +238,14 @@ function M.toggle(option, silent, values)
     else
       vim.opt_local[option] = values[1]
     end
-    return Util.info("Set " .. option .. " to " .. vim.opt_local[option]:get(), { title = "Option" })
+    return vim.notify("Set " .. option .. " to " .. vim.opt_local[option]:get(), vim.log.levels.INFO, { title = "Option" })
   end
   vim.opt_local[option] = not vim.opt_local[option]:get()
   if not silent then
     if vim.opt_local[option]:get() then
-      Util.info("Enabled " .. option, { title = "Option" })
+      vim.notify("Enabled " .. option, vim.log.levels.INFO, { title = "Option" })
     else
-      Util.warn("Disabled " .. option, { title = "Option" })
+      vim.notify("Disabled " .. option, vim.log.levels.WARN, { title = "Option" })
     end
   end
 end
@@ -257,10 +255,10 @@ function M.toggle_diagnostics()
   enabled = not enabled
   if enabled then
     vim.diagnostic.enable()
-    Util.info("Enabled diagnostics", { title = "Diagnostics" })
+    vim.notify("Enabled diagnostics", vim.log.levels.INFO, { title = "Diagnostics" })
   else
     vim.diagnostic.disable()
-    Util.warn("Disabled diagnostics", { title = "Diagnostics" })
+    vim.notify("Disabled diagnostics", vim.log.levels.WARN, { title = "Diagnostics" })
   end
 end
 
@@ -272,11 +270,11 @@ function M.toggle_number()
     nu = { number = vim.opt_local.number:get(), relativenumber = vim.opt_local.relativenumber:get() }
     vim.opt_local.number = false
     vim.opt_local.relativenumber = false
-    Util.warn("Disabled line numbers", { title = "Option" })
+    vim.notify("Disabled line numbers", vim.log.levels.WARN, { title = "Option" })
   else
     vim.opt_local.number = nu.number
     vim.opt_local.relativenumber = nu.relativenumber
-    Util.info("Enabled line numbers", { title = "Option" })
+    vim.notify("Enabled line numbers", vim.log.levels.INFO, { title = "Option" })
   end
 end
 

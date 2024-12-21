@@ -1,5 +1,3 @@
-local Util = require("lazy.core.util")
-
 local M = {}
 
 M.opts = nil
@@ -16,9 +14,9 @@ function M.toggle()
     M.opts.autoformat = not M.opts.autoformat
   end
   if M.opts.autoformat then
-    Util.info("Enabled format on save", { title = "Format" })
+    vim.notify("Enabled format on save", vim.log.levels.INFO, { title = "Format" })
   else
-    Util.warn("Disabled format on save", { title = "Format" })
+    vim.notify("Disabled format on save", vim.log.levels.WARN, { title = "Format" })
   end
 end
 
