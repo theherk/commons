@@ -12,18 +12,7 @@ if not vim.loop.fs_stat(lazypath) then vim.fn.system({
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   defaults = { version = false },
-  spec = {
-    { import = "plugins" },
-    { import = "plugins.lang.docker" },
-    { import = "plugins.lang.go" },
-    { import = "plugins.lang.java" },
-    { import = "plugins.lang.json" },
-    { import = "plugins.lang.python" },
-    { import = "plugins.lang.rust" },
-    { import = "plugins.lang.terraform" },
-    { import = "plugins.lang.typescript" },
-    { import = "plugins.lang.yaml" },
-  },
+  spec = { { import = "plugins" } },
 })
 require("config.autocmds")
 require("config.control")
