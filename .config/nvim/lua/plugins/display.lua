@@ -184,19 +184,6 @@ return {
     config = true,
   },
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = true,
-      style = "night",
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-    },
-  },
-  {
     "folke/zen-mode.nvim",
     config = function()
       require("zen-mode").setup({
