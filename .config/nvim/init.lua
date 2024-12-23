@@ -24,7 +24,6 @@ require("lazy").setup({
     { import = "plugins.lang.typescript" },
     { import = "plugins.lang.yaml" },
   },
-  install = { colorscheme = { "tokyonight" } },
 })
 require("config.autocmds")
 require("config.control")
