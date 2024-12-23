@@ -10,13 +10,9 @@ if not vim.loop.fs_stat(lazypath) then vim.fn.system({
   lazypath,
 }) end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({
-  defaults = { version = false },
-  spec = { { import = "plugins" } },
-})
+require("lazy").setup({ defaults = { version = false }, spec = { { import = "plugins" } } })
+
 require("config.autocmds")
 require("config.control")
-vim.cmd.colorscheme("catppuccin")
-vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE", ctermbg = "NONE" })
-
+require("config.display")
 if vim.g.neovide then require("config.neovide") end
