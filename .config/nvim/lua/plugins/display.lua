@@ -320,7 +320,6 @@ return {
     "mawkler/modicator.nvim",
     config = true,
   },
-  { "MunifTanjim/nui.nvim", lazy = true },
   {
     "nvim-lualine/lualine.nvim",
     enabled = not vim.g.started_by_firenvim,
