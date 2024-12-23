@@ -399,11 +399,7 @@ return {
   {
     "rcarriga/nvim-notify",
     keys = {
-      {
-        "<leader>um",
-        function() require("notify").dismiss({ silent = true, pending = true }) end,
-        desc = "dismiss messages",
-      },
+      { "<leader>um", function() require("notify").dismiss({ silent = true, pending = true }) end, desc = "dismiss messages" },
     },
     opts = {
       timeout = 3000,
