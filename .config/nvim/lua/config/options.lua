@@ -1,7 +1,22 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
-vim.o.guicursor = "n-v-c-sm:block-blinkon100-Cursor,i-ci-ve:ver25-blinkon100-Cursor,r-cr-o:hor20,a:blinkon100-Cursor"
+local blink = "blinkwait777-blinkon1111-blinkoff666-Cursor"
+local normal_cursor = "c-n-v-ve:block-" .. blink
+local insert_cursor = "i-ci:ver25-" .. blink
+local replace_cursor = "r-cr:hor20-" .. blink
+local operator_cursor = "o:hor50-" .. blink
+local showmatch_cursor = "sm:block-" .. blink
+
+-- Follow: https://github.com/neovim/neovim/pull/31562
+vim.o.guicursor = table.concat({
+  normal_cursor,
+  insert_cursor,
+  replace_cursor,
+  operator_cursor,
+  showmatch_cursor,
+}, ",")
+
 vim.o.guifont = "VictorMono NF:h18"
 
 vim.opt.autowrite = true

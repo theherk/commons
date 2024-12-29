@@ -207,7 +207,10 @@ function M.opts(name)
   return Plugin.values(plugin, "opts", false)
 end
 
-function M.set_cursor_colors(colors) vim.api.nvim_set_hl(0, "Cursor", { bg = colors.blue, fg = "black" }) end
+function M.set_cursor_colors(colors)
+  vim.api.nvim_set_hl(0, "Cursor", { bg = colors.blue, fg = "black" })
+  vim.api.nvim_set_hl(0, "TermCursor", { bg = colors.blue, fg = "black" })
+end
 
 -- This is bespoke to catppuccin at the moment, but should be expanded.
 function M.set_term_colors(colors)
