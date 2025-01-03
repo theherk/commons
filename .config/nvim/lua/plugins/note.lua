@@ -126,6 +126,8 @@ return {
       daily_notes = {
         alias_format = "%Y-%m-%d",
         folder = "journal",
+        default_tags = { "daily-notes" },
+        template = "journal",
       },
       disable_frontmatter = true,
       follow_url_func = function(url) vim.fn.jobstart({ "open", url }) end,
@@ -152,6 +154,7 @@ return {
       end,
       open_app_foreground = true,
       preferred_link_style = "markdown",
+      templates = { folder = "templates" },
       ui = { enable = false },
       workspaces = workspaces(),
     },
