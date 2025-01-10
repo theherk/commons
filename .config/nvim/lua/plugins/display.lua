@@ -240,12 +240,9 @@ return {
       local buttons = {
         dashboard.button("f", "  " .. "files", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>"),
         dashboard.button("g", "󰊢  " .. "git files", "<cmd>Telescope git_files<cr>"),
+        dashboard.button("/", "  " .. "grep", "<cmd>Telescope live_grep<cr>"),
       }
-      if vim.g.neovide then
-        table.insert(buttons, 1, dashboard.button("p", "  " .. "projects", "<cmd>ProjectExplorer<cr>"))
-      else
-        table.insert(buttons, 1, dashboard.button("/", "  " .. "grep", "<cmd>Telescope live_grep<cr>"))
-      end
+      -- if vim.g.neovide then table.insert(buttons, 1, dashboard.button("p", "  " .. "projects", "<cmd>ProjectExplorer<cr>")) end
       dashboard.section.header.val = vim.split(logo, "\n")
       dashboard.section.buttons.val = buttons
       for _, button in ipairs(dashboard.section.buttons.val) do
