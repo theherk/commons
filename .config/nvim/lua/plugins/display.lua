@@ -376,9 +376,11 @@ return {
           lualine_y = {
             { "progress" },
             { "location" },
+          },
+          lualine_z = {
             {
               function()
-                if not vim.g.neovide then return "" end
+                if not vim.g.neovide then return " " .. os.date("%R") end
                 local root = Util.get_root()
                 if root then
                   local repo_name = root:match("[^/]+$")
@@ -388,7 +390,6 @@ return {
               end,
             },
           },
-          lualine_z = { { function() return " " .. os.date("%R") end } },
         },
       }
     end,
