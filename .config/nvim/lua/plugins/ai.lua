@@ -26,7 +26,11 @@ return {
     },
     event = "VeryLazy",
     build = "make",
-    config = true,
+    opts = {
+      file_selector = {
+        provider = "telescope",
+      },
+    },
   },
   {
     "zbirenbaum/copilot-cmp",
