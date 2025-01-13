@@ -2,13 +2,11 @@ local M = {}
 
 local Util = require("config.util")
 
----@type PluginLspKeys
 M._keys = nil
 
 function M.get()
   local format = function() require("plugins.lsp.format").format({ force = true }) end
   if not M._keys then
-    ---@class PluginLspKeys
     -- stylua: ignore
     M._keys = {
       { "<leader>cl", "<cmd>LspInfo<cr>", desc = "lsp info" },
@@ -19,7 +17,7 @@ function M.get()
       { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "type def" },
       { "K", vim.lsp.buf.hover, desc = "hover" },
       { "gK", vim.lsp.buf.signature_help, desc = "sig help", has = "signature help" },
-      { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "sig help", has = "signature help" },
+      { "<c-k>", vim.lsp.buf.signature_help, desc = "sig help", mode = "i", has = "signature help" },
       { "<leader>cf", format, desc = "format doc", has = "formatting" },
       { "<leader>cf", format, desc = "format range", mode = "v", has = "range formatting" },
       { "<leader>ca", vim.lsp.buf.code_action, desc = "action", mode = { "n", "v" }, has = "code action" },
@@ -72,11 +70,16 @@ function M.resolve(buffer)
   local keymaps = {}
 
   local function add(keymap)
-    local keys = Keys.parse(keymap)
-    if keys[2] == false then
-      keymaps[keys.id] = nil
-    else
-      keymaps[keys.id] = keys
+    local mode = keymap.mode
+    local modes = type(mode) == "table" and mode or { mode }
+
+    for _, m in ipairs(modes) do
+      local keys = Keys.parse(keymap, m)
+      if keys[2] == false then
+        keymaps[keys.id] = nil
+      else
+        keymaps[keys.id] = keys
+      end
     end
   end
   for _, keymap in ipairs(M.get()) do
