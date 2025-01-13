@@ -55,10 +55,6 @@ vim.keymap.set("n", "<leader>fy", ":let @+=expand('%:p')<cr>", { desc = "yank pa
 vim.keymap.set("n", "<leader>br", function() vim.cmd("normal! ggVGp") end, { noremap = true, silent = true, desc = "replace contents" })
 
 -- Navigation of windows, tabs, and buffers.
-vim.keymap.set("n", "<c-h>", "<c-w>h", { desc = "left window" })
-vim.keymap.set("n", "<c-j>", "<c-w>j", { desc = "lower window" })
-vim.keymap.set("n", "<c-k>", "<c-w>k", { desc = "upper window" })
-vim.keymap.set("n", "<c-l>", "<c-w>l", { desc = "right window" })
 vim.keymap.set("n", "<leader>wh", "<c-w>h", { desc = "left window" })
 vim.keymap.set("n", "<leader>wj", "<c-w>j", { desc = "lower window" })
 vim.keymap.set("n", "<leader>wk", "<c-w>k", { desc = "upper window" })
