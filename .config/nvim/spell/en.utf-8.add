@@ -172,3 +172,7 @@ EKS
 CCPLAT
 KMS
 sqs
+Cloudwatch
+FireLens
+fluentd
+lifecycle
