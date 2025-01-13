@@ -17,6 +17,7 @@ return {
     "echasnovski/mini.bufremove",
     config = true,
     keys = {
+      { "<d-w>", function() require("mini.bufremove").delete(0, false) end, desc = "delete buffer" },
       { "<leader>bd", function() require("mini.bufremove").delete(0, false) end, desc = "delete buffer" },
       { "<leader>bD", function() require("mini.bufremove").delete(0, true) end, desc = "delete buffer (force)" },
     },
@@ -266,6 +267,7 @@ return {
       },
     },
     keys = {
+      { "<d-b>", "<cmd>Neotree toggle<cr>", desc = "toggle neotree" },
       { "<ds-e>", "<cmd>Neotree toggle<cr>", desc = "toggle neotree" },
       { "<leader>E", "<cmd>Neotree toggle<cr>", desc = "toggle neotree" },
     },
