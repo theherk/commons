@@ -1,7 +1,7 @@
 local Util = require("config.util")
 
 vim.g.neovide_detach_on_quit = "always_detach"
-vim.g.neovide_transparency = 0.85247
+vim.g.neovide_transparency = 0.91247
 vim.g.neovide_theme = "auto"
 
 -- Background is none and comes from the terminal.

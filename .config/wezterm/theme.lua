@@ -68,7 +68,7 @@ function module.apply_to_config(config)
   config.tab_bar_at_bottom = true
   config.tab_max_width = 96
   config.use_fancy_tab_bar = false
-  config.window_background_opacity = 0.85247
+  config.window_background_opacity = 0.91247
   config.window_decorations = "RESIZE"
 end
 
