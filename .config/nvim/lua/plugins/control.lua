@@ -117,8 +117,8 @@ return {
     keys = {
       -- Command BrowserSearch always searches one less than index given.
       { "<leader>sb", ":BrowserSearch<space>", desc = "browser" },
-      { "<c-k>", "<Plug>SearchNormal", desc = "browser search" },
-      { "<c-k>", "<Plug>SearchVisual", desc = "browser search", mode = "v" },
+      { "<cs-b>", "<Plug>SearchNormal", desc = "browser search" },
+      { "<cs-b>", "<Plug>SearchVisual", desc = "browser search", mode = "v" },
     },
   },
 }
