@@ -1,5 +1,9 @@
 return {
   {
+    "aaronik/treewalker.nvim",
+    config = true,
+  },
+  {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = function()

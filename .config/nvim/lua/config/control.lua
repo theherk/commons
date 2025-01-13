@@ -166,6 +166,16 @@ vim.keymap.set("n", "<d-v>", '"+p', { noremap = true, silent = true })
 vim.keymap.set("i", "<d-v>", "<c-r>+", { noremap = true, silent = true })
 vim.keymap.set("c", "<d-v>", "<c-r>+", { noremap = true })
 
+-- Treewalker
+vim.keymap.set("n", "<C-k>", "<cmd>Treewalker Up<cr>", { silent = true })
+vim.keymap.set("n", "<C-j>", "<cmd>Treewalker Down<cr>", { silent = true })
+vim.keymap.set("n", "<C-l>", "<cmd>Treewalker Right<cr>", { silent = true })
+vim.keymap.set("n", "<C-h>", "<cmd>Treewalker Left<cr>", { silent = true })
+vim.keymap.set("n", "<C-S-j>", "<cmd>Treewalker SwapDown<cr>", { silent = true })
+vim.keymap.set("n", "<C-S-k>", "<cmd>Treewalker SwapUp<cr>", { silent = true })
+vim.keymap.set("n", "<C-S-l>", "<cmd>Treewalker SwapRight<CR>", { silent = true })
+vim.keymap.set("n", "<C-S-h>", "<cmd>Treewalker SwapLeft<CR>", { silent = true })
+
 -- Adjust fontsize in gui contexts.
 vim.keymap.set({ "n", "i" }, "<c-+>", function() Util.increment_font(1) end, { desc = "increase font size" })
 vim.keymap.set({ "n", "i" }, "<c-=>", function() Util.increment_font(-1) end, { desc = "decrease font size" })
