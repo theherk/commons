@@ -11,53 +11,57 @@ return {
     name = "catppuccin",
     priority = 1000,
     lazy = false,
-    opts = {
-      custom_highlights = function(colors)
-        return {
-          CmpBorder = { fg = colors.surface1 },
-          FloatBorder = { fg = colors.surface1 },
-          HarpoonBorder = { fg = colors.surface1 },
-          NoiceCmdlinePopupBorder = { fg = colors.overlay0 },
-          TelescopeBorder = { fg = colors.surface1 },
-          TelescopePromptBorder = { fg = colors.surface1 },
-        }
-      end,
-      flavour = "frappe",
-      transparent_background = true,
-      integrations = {
-        alpha = true,
-        cmp = true,
-        dap = true,
-        dap_ui = true,
-        gitsigns = true,
-        grug_far = true,
-        harpoon = true,
-        lsp_trouble = true,
-        markdown = true,
-        mason = true,
-        mini = {
-          enabled = true,
-          indentscope_color = "peach",
+    opts = function()
+      local cur_colors = require("catppuccin.palettes").get_palette()
+      return {
+        color_overrides = { all = { green = cur_colors.teal } },
+        custom_highlights = function(colors)
+          return {
+            CmpBorder = { fg = colors.surface1 },
+            FloatBorder = { fg = colors.surface1 },
+            HarpoonBorder = { fg = colors.surface1 },
+            NoiceCmdlinePopupBorder = { fg = colors.overlay0 },
+            TelescopeBorder = { fg = colors.surface1 },
+            TelescopePromptBorder = { fg = colors.surface1 },
+          }
+        end,
+        flavour = "frappe",
+        transparent_background = true,
+        integrations = {
+          alpha = true,
+          cmp = true,
+          dap = true,
+          dap_ui = true,
+          gitsigns = true,
+          grug_far = true,
+          harpoon = true,
+          lsp_trouble = true,
+          markdown = true,
+          mason = true,
+          mini = {
+            enabled = true,
+            indentscope_color = "peach",
+          },
+          navic = {
+            enabled = false,
+            custom_bg = "NONE",
+          },
+          neogit = true,
+          neotree = true,
+          noice = true,
+          notify = true,
+          nvimtree = true,
+          render_markdown = true,
+          telescope = {
+            enabled = true,
+            style = "nvchad",
+          },
+          treesitter = true,
+          treesitter_context = true,
+          which_key = true,
         },
-        navic = {
-          enabled = false,
-          custom_bg = "NONE",
-        },
-        neogit = true,
-        neotree = true,
-        noice = true,
-        notify = true,
-        nvimtree = true,
-        render_markdown = true,
-        telescope = {
-          enabled = true,
-          style = "nvchad",
-        },
-        treesitter = true,
-        treesitter_context = true,
-        which_key = true,
-      },
-    },
+      }
+    end,
   },
   { "RRethy/base16-nvim" },
   {
