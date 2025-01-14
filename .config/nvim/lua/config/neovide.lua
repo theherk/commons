@@ -1,6 +1,7 @@
 local Util = require("config.util")
 
 vim.g.neovide_detach_on_quit = "always_detach"
+vim.g.neovide_floating_corner_radius = 0.333
 vim.g.neovide_transparency = 0.91247
 vim.g.neovide_theme = "auto"
 
