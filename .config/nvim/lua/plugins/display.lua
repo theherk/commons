@@ -12,6 +12,16 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
+      custom_highlights = function(colors)
+        return {
+          CmpBorder = { fg = colors.surface1 },
+          FloatBorder = { fg = colors.surface1 },
+          HarpoonBorder = { fg = colors.surface1 },
+          NoiceCmdlinePopupBorder = { fg = colors.overlay0 },
+          TelescopeBorder = { fg = colors.surface1 },
+          TelescopePromptBorder = { fg = colors.surface1 },
+        }
+      end,
       flavour = "frappe",
       transparent_background = true,
       integrations = {
