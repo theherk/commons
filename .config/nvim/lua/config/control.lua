@@ -165,6 +165,7 @@ vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "lazy" })
 vim.keymap.set("n", "<d-v>", '"+p', { noremap = true, silent = true })
 vim.keymap.set("i", "<d-v>", "<c-r>+", { noremap = true, silent = true })
 vim.keymap.set("c", "<d-v>", "<c-r>+", { noremap = true })
+vim.keymap.set("t", "<d-v>", '<C-\\><C-N>"+pi', { noremap = true })
 
 -- Treewalker
 vim.keymap.set("n", "<C-k>", "<cmd>Treewalker Up<cr>", { silent = true })
