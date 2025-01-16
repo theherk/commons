@@ -2,6 +2,9 @@ start-at-login = true
 after-login-command = []
 after-startup-command = []
 
+new-window-detection-timeout = 50
+new-window-detection-debounce = 100
+
 accordion-padding = 0
 enable-normalization-flatten-containers = false
 
