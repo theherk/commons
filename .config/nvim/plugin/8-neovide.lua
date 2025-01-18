@@ -40,28 +40,4 @@ if vim.g.neovide then
     vim.g.neovide_cursor_vfx_particle_density = 23.0
     vim.g.neovide_cursor_vfx_particle_lifetime = 1.33
     vim.g.neovide_cursor_vfx_particle_phase = 11.1
-
-    vim.keymap.set("n", "<c-p>", function()
-      local cmd = [[zoxide query -l | rg --color=never -FxNf ~/.projects | sed "s:$HOME:~:" ]]
-      local dirs = vim.fn.systemlist(cmd)
-
-      local pick = require("mini.pick")
-      pick.start({
-        source = {
-          items = dirs,
-          name = "Projects",
-        },
-        mappings = {
-          choose = {
-            char = "<CR>",
-            func = function(_, item)
-              local dir = vim.fn.expand(item)
-              vim.fn.system({ "open", "-a", "NeovideProject", dir })
-              pick.stop()
-            end,
-          },
-        },
-      })
-    end)
-  end)
 end
