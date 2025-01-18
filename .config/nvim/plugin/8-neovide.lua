@@ -40,4 +40,5 @@ if vim.g.neovide then
     vim.g.neovide_cursor_vfx_particle_density = 23.0
     vim.g.neovide_cursor_vfx_particle_lifetime = 1.33
     vim.g.neovide_cursor_vfx_particle_phase = 11.1
+  end)
 end
