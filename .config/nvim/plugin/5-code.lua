@@ -209,7 +209,7 @@ later(function()
     depends = { "nvim-lua/plenary.nvim" },
   })
   require("tardis-nvim").setup()
-  vim.keymap.set("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "tardis" })
+  vim.keymap.set("n", "<leader>gt", "<cmd>Tardis<cr>", { desc = "tardis" })
 end)
 
 later(function()
