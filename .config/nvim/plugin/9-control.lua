@@ -38,6 +38,23 @@ vim.keymap.set("n", "<c-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increa
 vim.keymap.set("n", "[q", vim.cmd.cprev, { desc = "previous quickfix" })
 vim.keymap.set("n", "]q", vim.cmd.cnext, { desc = "next quickfix" })
 
+-- Better spelling suggestion selection.
+vim.keymap.set('n', 'z=', function()
+    local word = vim.fn.expand('<cword>')
+    local suggestions = vim.fn.spellsuggest(word)
+
+    vim.ui.select(suggestions, {
+        prompt = 'Spelling Suggestions',
+        format_item = function(item)
+            return item
+        end,
+    }, function(chosen)
+        if chosen then
+            vim.cmd('normal! ciw' .. chosen)
+        end
+    end)
+end)
+
 -- Toggles.
 local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
 vim.keymap.set("n", "<leader>tc", function() Util.toggle("conceallevel", false, { 0, conceallevel }) end, { desc = "conceal" })
