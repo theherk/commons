@@ -16,7 +16,10 @@ later(function() require("mini.comment").setup() end)
 
 later(function()
   require("mini.files").setup({
-    mappings = { go_in_plus = "<cr>" },
+    mappings = {
+      close = "<esc>",
+      go_in_plus = "<cr>",
+    },
     windows = { width_focus = 28, width_nofocus = 16 },
   })
   vim.keymap.set("n", "<leader>e", function() require("mini.files").open(vim.api.nvim_buf_get_name(0)) end, { desc = "explore" })
