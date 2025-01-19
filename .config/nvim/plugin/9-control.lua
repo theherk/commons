@@ -130,3 +130,31 @@ vim.keymap.set("n", "<C-S-h>", "<cmd>Treewalker SwapLeft<cr>", { silent = true }
 -- Adjust fontsize in gui contexts.
 vim.keymap.set({ "n", "i" }, "<c-+>", function() Util.increment_font(1) end, { desc = "increase font size" })
 vim.keymap.set({ "n", "i" }, "<c-=>", function() Util.increment_font(-1) end, { desc = "decrease font size" })
+
+-- Handy dandy test selector.
+function test_select()
+  local items = {
+    'apple',
+    'banana',
+    'cherry',
+    'date',
+    'elderberry'
+  }
+  vim.ui.select(
+    items,
+    {
+      prompt = 'Select a fruit:',
+      format_item = function(item)
+        return item
+      end
+    },
+    function(choice)
+      if choice then
+        print("You chose: " .. choice)
+      else
+        print("No selection made")
+      end
+    end
+  )
+end
+vim.api.nvim_create_user_command('TestSelect', test_select, {})
