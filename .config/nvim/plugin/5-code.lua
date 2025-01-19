@@ -239,6 +239,11 @@ later(function()
 end)
 
 later(function()
+  add("echasnovski/mini.diff")
+  require("mini.diff").setup()
+end)
+
+later(function()
   add({
     source = "linrongbin16/gitlinker.nvim",
     depends = { "nvim-lua/plenary.nvim" },
