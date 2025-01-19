@@ -291,5 +291,10 @@ later(function()
   vim.keymap.set("n", "<leader>gdl", "<cmd>DiffviewLog<cr>", { desc = "diffview log" })
   vim.keymap.set("n", "<leader>gdr", "<cmd>DiffviewRefresh<cr>", { desc = "diffview refresh" })
   local close_cmd = "<cmd>set hidden<cr><cmd>DiffviewClose<cr><cmd>set nohidden<cr>"
-  vim.keymap.set("n", "q", close_cmd, { desc = "close", buffer = true })
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "DiffviewFiles",
+    callback = function(event)
+      vim.keymap.set("n", "q", close_cmd, { desc = "close", buffer = event.buf })
+    end,
+  })
 end)
