@@ -38,6 +38,7 @@ later(function()
   local minipick = require("mini.pick")
   minipick.setup()
 
+  vim.ui.select = minipick.ui_select
   vim.keymap.set("n", "<d-p>", "<cmd>Pick files<cr>", { desc = "files" })
   vim.keymap.set("n", "<leader><leader>", "<cmd>Pick files<cr>", { desc = "files" })
   vim.keymap.set("n", "<leader>/", "<cmd>Pick grep_live<cr>", { desc = "grep" })
