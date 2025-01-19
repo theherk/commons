@@ -58,7 +58,10 @@ local M = {
   misc = {
     Bug = " ",
     Clock = " ",
+    Files = " ",
+    Find = " ",
     Save = " ",
+    Quit = "󰈆 ",
   },
 }
 
