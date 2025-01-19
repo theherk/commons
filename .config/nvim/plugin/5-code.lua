@@ -298,3 +298,10 @@ later(function()
     end,
   })
 end)
+
+later(function()
+  add({ source = "stevearc/dressing.nvim" })
+  require("dressing").setup({
+    select = { enabled = false }
+  })
+end)
