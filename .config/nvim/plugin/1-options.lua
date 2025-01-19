@@ -8,7 +8,6 @@ vim.opt.conceallevel = 3
 vim.opt.cursorline = false
 vim.opt.expandtab = true
 vim.opt.formatoptions = "jcroqlnt"
-vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.grepprg = "rg --vimgrep"
 vim.opt.guifont = "VictorMono NF:h18"
 vim.opt.ignorecase = true
