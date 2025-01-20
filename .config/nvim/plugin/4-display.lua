@@ -113,7 +113,6 @@ later(function()
         ["cmp.entry.get_documentation"] = true,
       },
     },
-    messages = { enabled = false },
     notify = { enabled = false },
     routes = {
       {
