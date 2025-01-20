@@ -60,6 +60,7 @@ local M = {
     Clock = " ",
     Files = " ",
     Find = " ",
+    Git = "󰊢 ",
     Save = " ",
     Quit = "󰈆 ",
   },
