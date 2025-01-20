@@ -142,10 +142,6 @@ later(function()
     },
   })
   vim.keymap.set("n", "<s-enter>", function() noice.redirect(vim.fn.getcmdline()) end, { desc = "noice redirect cmdline" })
-  vim.keymap.set("n", "<leader>snl", function() noice.cmd("last") end, { desc = "noice last message" })
-  vim.keymap.set("n", "<leader>snh", function() noice.cmd("history") end, { desc = "noice history" })
-  vim.keymap.set("n", "<leader>sna", function() noice.cmd("all") end, { desc = "noice all" })
-  vim.keymap.set("n", "<leader>snd", function() noice.cmd("dismiss") end, { desc = "noice dismiss" })
   vim.keymap.set({ "n", "i", "s" }, "<c-f>", function()
     if not require("noice.lsp").scroll(4) then return "<c-f>" end
   end, { silent = true, expr = true })
@@ -266,10 +262,8 @@ later(function()
       { mode = "n", keys = "<leader>nl", desc = "link" },
       { mode = "v", keys = "<leader>nl", desc = "link" },
       { mode = "n", keys = "<leader>nw", desc = "workspace" },
-      { mode = "n", keys = "<leader>N", desc = "neorg" },
-      { mode = "n", keys = "<leader>Nj", desc = "journal" },
       { mode = "n", keys = "<leader>s", desc = "search" },
-      { mode = "n", keys = "<leader>sn", desc = "noice" },
+      { mode = "n", keys = "<leader>sn", desc = "nofifications" },
       { mode = "n", keys = "<leader>st", desc = "todo" },
       { mode = "n", keys = "<leader>t", desc = "toggle" },
       { mode = "n", keys = "<leader>w", desc = "window" },

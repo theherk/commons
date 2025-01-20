@@ -50,7 +50,7 @@ later(function()
   -- vim.keymap.set("n", "<leader>cs", "<cmd>Pick lsp_document_symbols<cr>", { desc = "document symbols" })
   -- vim.keymap.set("n", "<leader>cS", "<cmd>Pick lsp_dynamic_workspace_symbols<cr>", { desc = "workspace symbols" })
   vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "files" })
-  vim.keymap.set("n", "<leader>hh", "<cmd>Pick help<cr>", { desc = "help" })
+  vim.keymap.set("n", "<leader>sh", "<cmd>Pick help<cr>", { desc = "help" })
   vim.keymap.set("n", "<leader>sk", function()
     local keymaps = {}
     for _, keymap in ipairs(vim.api.nvim_get_keymap("")) do
@@ -124,7 +124,6 @@ later(function()
   })
   vim.keymap.set("n", "<d-b>", "<cmd>Neotree toggle<cr>", { desc = "toggle neotree" })
   vim.keymap.set("n", "<ds-e>", "<cmd>Neotree toggle<cr>", { desc = "toggle neotree" })
-  vim.keymap.set("n", "<leader>E", "<cmd>Neotree toggle<cr>", { desc = "toggle neotree" })
 end)
 
 now(function()
