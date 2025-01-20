@@ -143,7 +143,12 @@ now(function()
 end)
 
 now(function()
-  add({ source = "williamboman/mason.nvim" })
+  add({
+    source = "williamboman/mason.nvim",
+    depends = {
+      "williamboman/mason-lspconfig.nvim",
+    },
+  })
   require("mason").setup({
     ensure_installed = {
       "bash-language-server",
