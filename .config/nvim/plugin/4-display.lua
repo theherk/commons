@@ -113,6 +113,8 @@ later(function()
         ["cmp.entry.get_documentation"] = true,
       },
     },
+    messages = { enabled = false },
+    notify = { enabled = false },
     routes = {
       {
         filter = { event = "msg_show", any = { { find = "%d+L, %d+B" }, { find = "; after #%d+" }, { find = "; before #%d+" } } },

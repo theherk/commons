@@ -29,8 +29,11 @@ later(function()
 end)
 
 now(function()
-  require("mini.notify").setup()
-  vim.notify = require("mini.notify").make_notify()
+  local mininotify = require("mini.notify")
+  mininotify.setup()
+  vim.notify = mininotify.make_notify()
+  vim.keymap.set("n", "<leader>sna", function() mininotify.show_history() end, { desc = "notifications" })
+  vim.keymap.set("n", "<leader>snc", function() mininotify.clear() end, { desc = "clear notifications" })
 end)
 
 later(function() require("mini.pairs").setup() end)
