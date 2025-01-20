@@ -256,8 +256,8 @@ later(function()
   local gitlinker = require("gitlinker")
   local actions = require("gitlinker.actions")
   local routers = require("gitlinker.routers")
-  local base_path = "{_A.PROTOCOL}://{_A.HOST}/"
-  local repo_path = "{_A.ORG}/{_A.REPO}/"
+  local base_path = "https://{_A.HOST}/"
+  local repo_path = base_path .. "{_A.ORG}/{_A.REPO}/"
   local file_path = repo_path .. "blob/{_A.REV}/{_A.FILE}"
   gitlinker.setup({
     router = {
@@ -266,16 +266,16 @@ later(function()
         ["gitlab%.tech%.dnb%.no"] = routers.gitlab_browse,
       },
       file = {
-        ["gitlab%.com"] = base_path .. file_path,
-        ["gitlab%.tech%.dnb%.no"] = base_path .. file_path,
-        ["dnb%.ghe%.no"] = base_path .. file_path,
-        ["^github%.com"] = base_path .. file_path,
+        ["gitlab%.com"] = file_path,
+        ["gitlab%.tech%.dnb%.no"] = file_path,
+        ["dnb%.ghe%.no"] = file_path,
+        ["^github%.com"] = file_path,
       },
       repo = {
-        ["gitlab%.com"] = repo_path .. file_path,
-        ["gitlab%.tech%.dnb%.no"] = repo_path .. file_path,
-        ["dnb%.ghe%.no"] = repo_path .. file_path,
-        ["^github%.com"] = repo_path .. file_path,
+        ["gitlab%.com"] = repo_path,
+        ["gitlab%.tech%.dnb%.no"] = repo_path,
+        ["dnb%.ghe%.no"] = repo_path,
+        ["^github%.com"] = repo_path,
       },
     },
     mappings = nil,
