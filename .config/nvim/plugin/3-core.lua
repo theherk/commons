@@ -133,7 +133,12 @@ now(function()
     depends = { "nvim-lua/plenary.nvim" },
   })
   local harpoon = require("harpoon")
-  harpoon:setup()
+  harpoon:setup({
+    settings = {
+      save_on_toggle = true,
+      sync_on_ui_close = true,
+    },
+  })
   vim.keymap.set("n", "<leader>f1", function() harpoon:list():select(1) end, { desc = "harpoon file 1" })
   vim.keymap.set("n", "<leader>f2", function() harpoon:list():select(2) end, { desc = "harpoon file 2" })
   vim.keymap.set("n", "<leader>f3", function() harpoon:list():select(3) end, { desc = "harpoon file 3" })
