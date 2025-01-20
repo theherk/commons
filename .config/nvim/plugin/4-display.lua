@@ -338,7 +338,7 @@ now(function()
           color = Util.fg("Constant"),
         },
         {
-          function() return Icons.Bug .. require("dap").status() end,
+          function() return Icons.misc.Bug .. require("dap").status() end,
           cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
           color = Util.fg("Debug"),
         },
@@ -351,7 +351,7 @@ now(function()
       lualine_z = {
         {
           function()
-            if not vim.g.neovide then return Icons.Clock .. os.date("%R") end
+            if not vim.g.neovide then return Icons.misc.Clock .. os.date("%R") end
             local root = Util.get_root()
             if root then
               local repo_name = root:match("[^/]+$")
