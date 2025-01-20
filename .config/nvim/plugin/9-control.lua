@@ -39,15 +39,15 @@ vim.keymap.set("n", "[q", vim.cmd.cprev, { desc = "previous quickfix" })
 vim.keymap.set("n", "]q", vim.cmd.cnext, { desc = "next quickfix" })
 
 -- Better spelling suggestion selection.
-vim.keymap.set('n', 'z=', function()
-  local word = vim.fn.expand('<cword>')
+vim.keymap.set("n", "z=", function()
+  local word = vim.fn.expand("<cword>")
   local suggestions = vim.fn.spellsuggest(word)
   vim.ui.select(suggestions, {
-    prompt = 'Spelling Suggestions',
+    prompt = "Spelling Suggestions",
     format_item = function(item) return item end,
   }, function(chosen)
-      if chosen then vim.cmd('normal! ciw' .. chosen) end
-    end)
+    if chosen then vim.cmd("normal! ciw" .. chosen) end
+  end)
 end)
 
 -- Toggles.
@@ -129,27 +129,21 @@ vim.keymap.set({ "n", "i" }, "<c-=>", function() Util.increment_font(-1) end, { 
 -- Handy dandy test selector.
 function test_select()
   local items = {
-    'apple',
-    'banana',
-    'cherry',
-    'date',
-    'elderberry'
+    "apple",
+    "banana",
+    "cherry",
+    "date",
+    "elderberry",
   }
-  vim.ui.select(
-    items,
-    {
-      prompt = 'Select a fruit:',
-      format_item = function(item)
-        return item
-      end
-    },
-    function(choice)
-      if choice then
-        print("You chose: " .. choice)
-      else
-        print("No selection made")
-      end
+  vim.ui.select(items, {
+    prompt = "Select a fruit:",
+    format_item = function(item) return item end,
+  }, function(choice)
+    if choice then
+      print("You chose: " .. choice)
+    else
+      print("No selection made")
     end
-  )
+  end)
 end
-vim.api.nvim_create_user_command('TestSelect', test_select, {})
+vim.api.nvim_create_user_command("TestSelect", test_select, {})

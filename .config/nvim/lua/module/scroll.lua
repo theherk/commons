@@ -7,9 +7,9 @@ local function scrolloff_should_reenable()
 end
 
 local function scrolloff_add_autocmd()
-  vim.api.nvim_create_augroup("h4s_scrolloff_enhanced", { clear = true })
+  vim.api.nvim_create_augroup("lee_scrolloff_enhanced", { clear = true })
   vim.api.nvim_create_autocmd("CursorMoved", {
-    group = "h4s_scrolloff_enhanced",
+    group = "lee_scrolloff_enhanced",
     callback = function()
       if scrolloff_should_reenable() then
         vim.opt.scrolloff = vim.w.orig_scrolloff

@@ -157,8 +157,8 @@ later(function()
   require("todo-comments").setup()
 end)
 
-now(function ()
-  add({source = "goolord/alpha-nvim"})
+now(function()
+  add({ source = "goolord/alpha-nvim" })
   -- ascii-image-converter bruce-matlocktheartist_200w.png -b --dither -H 22
   -- Text generated with figlet.
   -- Joined with custom python.

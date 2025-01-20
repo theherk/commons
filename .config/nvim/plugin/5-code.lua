@@ -293,15 +293,184 @@ later(function()
   local close_cmd = "<cmd>set hidden<cr><cmd>DiffviewClose<cr><cmd>set nohidden<cr>"
   vim.api.nvim_create_autocmd("FileType", {
     pattern = "DiffviewFiles",
-    callback = function(event)
-      vim.keymap.set("n", "q", close_cmd, { desc = "close", buffer = event.buf })
-    end,
+    callback = function(event) vim.keymap.set("n", "q", close_cmd, { desc = "close", buffer = event.buf }) end,
   })
 end)
 
 later(function()
   add({ source = "stevearc/dressing.nvim" })
   require("dressing").setup({
-    select = { enabled = false }
+    select = { enabled = false },
+  })
+end)
+
+later(function()
+  add({
+    source = "nvimtools/none-ls.nvim",
+    depends = {
+      "nvim-lua/plenary.nvim",
+    },
+  })
+
+  local lsp = require("module.lsp")
+
+  -- LSP Configuration
+  local servers = {
+    lua_ls = {
+      settings = {
+        Lua = {
+          workspace = { checkThirdParty = false },
+          completion = { callSnippet = "Replace" },
+        },
+      },
+    },
+    rust_analyzer = {
+      settings = {
+        ["rust-analyzer"] = {
+          cargo = {
+            allFeatures = true,
+            loadOutDirsFromCheck = true,
+            runBuildScripts = true,
+          },
+          checkOnSave = {
+            allFeatures = true,
+            command = "clippy",
+            extraArgs = { "--no-deps" },
+          },
+          procMacro = {
+            enable = true,
+            ignored = {
+              ["async-trait"] = { "async_trait" },
+              ["napi-derive"] = { "napi" },
+              ["async-recursion"] = { "async_recursion" },
+            },
+          },
+        },
+      },
+    },
+    gopls = {
+      settings = {
+        gopls = {
+          gofumpt = true,
+          codelenses = {
+            gc_details = false,
+            generate = true,
+            regenerate_cgo = true,
+            run_govulncheck = true,
+            test = true,
+            tidy = true,
+            upgrade_dependency = true,
+            vendor = true,
+          },
+          hints = {
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            compositeLiteralTypes = true,
+            constantValues = true,
+            functionTypeParameters = true,
+            parameterNames = true,
+            rangeVariableTypes = true,
+          },
+          analyses = {
+            fieldalignment = true,
+            nilness = true,
+            unusedparams = true,
+            unusedwrite = true,
+            useany = true,
+          },
+          usePlaceholders = true,
+          completeUnimported = true,
+          staticcheck = true,
+          directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+          semanticTokens = true,
+        },
+      },
+    },
+    pyright = {},
+    jsonls = {},
+    yamlls = {
+      settings = {
+        yaml = {
+          keyOrdering = false,
+          format = { enable = true },
+          validate = true,
+          schemaStore = {
+            enable = false,
+            url = "",
+          },
+        },
+      },
+    },
+  }
+
+  -- LSP keymaps
+  local function on_attach(client, bufnr)
+    local function map(mode, l, r, desc) vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc }) end
+
+    map("n", "gd", vim.lsp.buf.definition, "goto def")
+    map("n", "gr", vim.lsp.buf.references, "goto refs")
+    map("n", "gD", vim.lsp.buf.declaration, "goto decl")
+    map("n", "gI", vim.lsp.buf.implementation, "goto impl")
+    map("n", "K", vim.lsp.buf.hover, "hover")
+    map("n", "<leader>cf", function() lsp.format({ force = true }) end, "format")
+    map("n", "<leader>ca", vim.lsp.buf.code_action, "code action")
+    map("n", "<leader>cr", vim.lsp.buf.rename, "rename")
+  end
+
+  -- Setup Mason
+  require("mason").setup()
+  require("mason-lspconfig").setup({
+    ensure_installed = vim.tbl_keys(servers),
+  })
+
+  -- Setup LSP with shared configs
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+  for server, opts in pairs(servers) do
+    opts.capabilities = capabilities
+    opts.on_attach = on_attach
+    require("lspconfig")[server].setup(opts)
+  end
+
+  -- Setup null-ls
+  local null_ls = require("null-ls")
+  null_ls.setup({
+    sources = {
+      -- Formatters
+      null_ls.builtins.formatting.stylua,
+      null_ls.builtins.formatting.gofumpt,
+      null_ls.builtins.formatting.goimports,
+      null_ls.builtins.formatting.terraform_fmt,
+
+      -- Diagnostics
+      null_ls.builtins.diagnostics.fish,
+      null_ls.builtins.diagnostics.hadolint,
+    },
+  })
+
+  -- Format on save
+  lsp.opts = {
+    autoformat = true,
+    format_notify = false,
+  }
+
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    group = vim.api.nvim_create_augroup("Format", {}),
+    callback = function()
+      if lsp.opts.autoformat then lsp.format() end
+    end,
+  })
+
+  -- Diagnostic config
+  vim.diagnostic.config({
+    underline = true,
+    update_in_insert = false,
+    virtual_text = {
+      spacing = 4,
+      source = "if_many",
+      prefix = "●",
+    },
+    severity_sort = true,
   })
 end)
