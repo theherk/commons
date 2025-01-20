@@ -62,8 +62,9 @@ git:
   parseEmoji: true
 notARepository: quit
 os:
-  edit: "zed {{filename}}"
-  editAtLine: "zed {{filename}}:{{line}}"
+  edit: "open -a NeovideProject {{filename}}"
+  editAtLine: "nvim +{{line}} {{filename}}"
+  editAtLineAndWait: "nvim --remote-wait +{{line}} {{filename}}"
 promptToReturnFromSubprocess: false
 services:
   "gitlab.tech.dnb.no:2222": "gitlab:gitlab.tech.dnb.no"
