@@ -158,6 +158,7 @@ now(function()
       "ruff",
       "shfmt",
       "stylua",
+      "terraform-ls",
     },
   })
 end)
@@ -184,6 +185,7 @@ later(function()
       "python",
       "query",
       "regex",
+      "terraform",
       "tsx",
       "typescript",
       "vim",
@@ -415,6 +417,12 @@ later(function()
       },
     },
     jsonls = {},
+    bashls = {
+      filetypes = { "sh", "bash" },
+    },
+    terraformls = {
+      filetypes = { "terraform", "tf", "terraform-vars" },
+    },
     yamlls = {
       settings = {
         yaml = {
@@ -471,6 +479,7 @@ later(function()
       null_ls.builtins.formatting.gofumpt,
       null_ls.builtins.formatting.goimports,
       null_ls.builtins.formatting.terraform_fmt,
+      null_ls.builtins.formatting.shfmt,
 
       -- Diagnostics
       null_ls.builtins.diagnostics.fish,
