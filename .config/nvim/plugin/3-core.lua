@@ -14,6 +14,8 @@ end)
 
 later(function() require("mini.comment").setup() end)
 
+later(function() require("mini.extra").setup() end)
+
 later(function()
   local minifiles = require("mini.files")
   minifiles.setup({
@@ -68,6 +70,7 @@ end)
 later(function() require("mini.pairs").setup() end)
 
 later(function()
+  local miniextra = require("mini.extra")
   local minipick = require("mini.pick")
   minipick.setup()
 
@@ -76,8 +79,8 @@ later(function()
   vim.keymap.set("n", "<leader><leader>", "<cmd>Pick files<cr>", { desc = "files" })
   vim.keymap.set("n", "<leader>/", "<cmd>Pick grep_live<cr>", { desc = "grep" })
   vim.keymap.set("n", "<leader>bb", "<cmd>Pick buffers<cr>", { desc = "buffers" })
-  -- vim.keymap.set("n", "<leader>cs", "<cmd>Pick lsp_document_symbols<cr>", { desc = "document symbols" })
-  -- vim.keymap.set("n", "<leader>cS", "<cmd>Pick lsp_dynamic_workspace_symbols<cr>", { desc = "workspace symbols" })
+  vim.keymap.set("n", "<leader>cs", function() miniextra.pickers.lsp({ scope = "document_symbol" }) end, { desc = "document symbols" })
+  vim.keymap.set("n", "<leader>cS", function() miniextra.pickers.lsp({ scope = "workspace_symbol" }) end, { desc = "workspace symbols" })
   vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "files" })
   vim.keymap.set("n", "<leader>sh", "<cmd>Pick help<cr>", { desc = "help" })
   vim.keymap.set("n", "<leader>sk", function()
