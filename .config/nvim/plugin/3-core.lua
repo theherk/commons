@@ -28,7 +28,19 @@ later(function()
   })
 end)
 
-later(function() require("mini.jump").setup() end)
+later(function()
+  local mini_jump = require("mini.jump")
+  mini_jump.setup()
+  vim.api.nvim_set_hl(0, "MiniJump", { link = "IncSearch" })
+  vim.keymap.set({ "i", "n" }, "<esc>", function()
+    if mini_jump.state.jumping then vim.cmd("doautocmd CursorMoved") end
+    vim.cmd("noh")
+    if vim.fn.mode() == "i" then
+      local key = vim.api.nvim_replace_termcodes("<esc>", true, false, true)
+      vim.api.nvim_feedkeys(key, "n", false)
+    end
+  end, { desc = "clear" })
+end)
 
 now(function()
   local mininotify = require("mini.notify")

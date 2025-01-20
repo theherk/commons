@@ -80,9 +80,6 @@ vim.keymap.set("n", "<leader>bp", "<plug>(cokeline-pick-focus)", { desc = "pick 
 vim.keymap.set("n", "<leader>bc", "<plug>(cokeline-pick-close)", { desc = "pick close" })
 vim.keymap.set("n", "<leader>bo", "<cmd>%bd|e#|bd#<cr>", { desc = "others (native)" })
 
--- Clear search with <esc>.
-vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "clear hlsearch" })
-
 -- Diagnostic
 local diagnostic_goto = function(next, severity)
   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
