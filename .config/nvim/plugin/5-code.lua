@@ -155,6 +155,7 @@ now(function()
       "bash-language-server",
       "flake8",
       "prettierd",
+      "ruff",
       "shfmt",
       "stylua",
     },
@@ -392,7 +393,27 @@ later(function()
         },
       },
     },
-    pyright = {},
+    ruff = {
+      settings = {
+        format = {
+          args = {},
+        },
+      },
+    },
+    pyright = {
+      settings = {
+        pyright = {
+          -- Disable pyright's import organizer in favor of ruff
+          disableOrganizeImports = true,
+        },
+        python = {
+          analysis = {
+            -- Disable pyright's linting in favor of ruff
+            ignore = { "*" },
+          },
+        },
+      },
+    },
     jsonls = {},
     yamlls = {
       settings = {
