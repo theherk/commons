@@ -29,17 +29,31 @@ later(function()
 end)
 
 later(function()
-  local mini_jump = require("mini.jump")
-  mini_jump.setup()
+  local minijump = require("mini.jump")
+  minijump.setup()
   vim.api.nvim_set_hl(0, "MiniJump", { link = "IncSearch" })
   vim.keymap.set({ "i", "n" }, "<esc>", function()
-    if mini_jump.state.jumping then vim.cmd("doautocmd CursorMoved") end
+    if minijump.state.jumping then vim.cmd("doautocmd CursorMoved") end
     vim.cmd("noh")
     if vim.fn.mode() == "i" then
       local key = vim.api.nvim_replace_termcodes("<esc>", true, false, true)
       vim.api.nvim_feedkeys(key, "n", false)
     end
   end, { desc = "clear" })
+end)
+
+later(function()
+  local minijump2d = require("mini.jump2d")
+  minijump2d.setup({
+    view = {
+      dim = true,
+      n_steps_ahead = 1,
+    },
+  })
+  vim.keymap.set("n", "<leader>sj", minijump2d.start, { desc = "jump anywhere" })
+  vim.keymap.set("n", "<leader>sl", function() minijump2d.start(minijump2d.builtin_opts.line_start) end, { desc = "jump to word" })
+  vim.keymap.set("n", "<leader>sq", function() minijump2d.start(minijump2d.builtin_opts.query) end, { desc = "jump to line" })
+  vim.keymap.set("n", "<leader>sw", function() minijump2d.start(minijump2d.builtin_opts.word_start) end, { desc = "jump by query" })
 end)
 
 now(function()
