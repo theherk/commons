@@ -185,6 +185,7 @@ now(function()
   local dashboard = require("alpha.themes.dashboard")
   local buttons = {
     dashboard.button("f", Icons.misc.Files .. " files", "<cmd>Pick files<cr>"),
+    dashboard.button("g", Icons.misc.Git .. " git files", function() require("mini.extra").pickers.git_files() end),
     dashboard.button("/", Icons.misc.Find .. " grep", "<cmd>Pick grep_live<cr>"),
     dashboard.button("q", Icons.misc.Quit .. " quit", "<cmd>qall<cr>"),
   }

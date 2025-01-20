@@ -76,12 +76,13 @@ later(function()
 
   vim.ui.select = minipick.ui_select
   vim.keymap.set("n", "<d-p>", "<cmd>Pick files<cr>", { desc = "files" })
-  vim.keymap.set("n", "<leader><leader>", "<cmd>Pick files<cr>", { desc = "files" })
+  vim.keymap.set("n", "<leader><leader>", function() miniextra.pickers.git_files() end, { desc = "git files" })
   vim.keymap.set("n", "<leader>/", "<cmd>Pick grep_live<cr>", { desc = "grep" })
   vim.keymap.set("n", "<leader>bb", "<cmd>Pick buffers<cr>", { desc = "buffers" })
   vim.keymap.set("n", "<leader>cs", function() miniextra.pickers.lsp({ scope = "document_symbol" }) end, { desc = "document symbols" })
   vim.keymap.set("n", "<leader>cS", function() miniextra.pickers.lsp({ scope = "workspace_symbol" }) end, { desc = "workspace symbols" })
   vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "files" })
+  vim.keymap.set("n", "<leader>fg", function() miniextra.pickers.git_files() end, { desc = "git files" })
   vim.keymap.set("n", "<leader>sh", "<cmd>Pick help<cr>", { desc = "help" })
   vim.keymap.set("n", "<leader>sk", function()
     local keymaps = {}
