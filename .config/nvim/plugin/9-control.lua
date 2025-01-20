@@ -40,18 +40,13 @@ vim.keymap.set("n", "]q", vim.cmd.cnext, { desc = "next quickfix" })
 
 -- Better spelling suggestion selection.
 vim.keymap.set('n', 'z=', function()
-    local word = vim.fn.expand('<cword>')
-    local suggestions = vim.fn.spellsuggest(word)
-
-    vim.ui.select(suggestions, {
-        prompt = 'Spelling Suggestions',
-        format_item = function(item)
-            return item
-        end,
-    }, function(chosen)
-        if chosen then
-            vim.cmd('normal! ciw' .. chosen)
-        end
+  local word = vim.fn.expand('<cword>')
+  local suggestions = vim.fn.spellsuggest(word)
+  vim.ui.select(suggestions, {
+    prompt = 'Spelling Suggestions',
+    format_item = function(item) return item end,
+  }, function(chosen)
+      if chosen then vim.cmd('normal! ciw' .. chosen) end
     end)
 end)
 
