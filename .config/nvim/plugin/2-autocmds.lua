@@ -53,6 +53,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "help",
     "lspinfo",
     "man",
+    "mininotify-history",
     "neotest-output",
     "neotest-output-panel",
     "neotest-summary",
@@ -65,7 +66,14 @@ vim.api.nvim_create_autocmd("FileType", {
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
-    vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+    if vim.bo[event.buf].filetype == "mininotify-history" then
+      vim.keymap.set("n", "q", function()
+        vim.api.nvim_buf_set_lines(event.buf, 0, -1, false, {})
+        vim.cmd("b#")
+      end, { buffer = event.buf, silent = true })
+    else
+      vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+    end
   end,
 })
 

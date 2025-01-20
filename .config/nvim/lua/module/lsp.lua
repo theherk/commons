@@ -2,7 +2,6 @@ local M = {}
 
 M.opts = nil
 
--- Format helpers
 function M.enabled() return M.opts.autoformat end
 
 function M.toggle()
@@ -23,14 +22,10 @@ end
 function M.format(opts)
   local buf = vim.api.nvim_get_current_buf()
   if vim.b.autoformat == false and not (opts and opts.force) then return end
-
   local formatters = M.get_formatters(buf)
   local client_ids = vim.tbl_map(function(client) return client.id end, formatters.active)
-
   if #client_ids == 0 then return end
-
   if M.opts.format_notify then M.notify(formatters) end
-
   vim.lsp.buf.format({
     bufnr = buf,
     filter = function(client) return vim.tbl_contains(client_ids, client.id) end,
@@ -42,13 +37,11 @@ function M.get_formatters(bufnr)
   local ft = vim.bo[bufnr].filetype
   -- check if we have any null-ls formatters for the current filetype
   local null_ls = package.loaded["null-ls"] and require("null-ls.sources").get_available(ft, "NULL_LS_FORMATTING") or {}
-
   local ret = {
     active = {},
     available = {},
     null_ls = null_ls,
   }
-
   local clients = vim.lsp.get_clients({ bufnr = bufnr })
   for _, client in ipairs(clients) do
     if M.supports_format(client) then
@@ -59,7 +52,6 @@ function M.get_formatters(bufnr)
       end
     end
   end
-
   return ret
 end
 
@@ -70,13 +62,11 @@ end
 
 function M.notify(formatters)
   local lines = { "# Active:" }
-
   for _, client in ipairs(formatters.active) do
     local line = "- **" .. client.name .. "**"
     if client.name == "null-ls" then line = line .. " (" .. table.concat(vim.tbl_map(function(f) return "`" .. f.name .. "`" end, formatters.null_ls), ", ") .. ")" end
     table.insert(lines, line)
   end
-
   if #formatters.available > 0 then
     table.insert(lines, "")
     table.insert(lines, "# Disabled:")
@@ -84,7 +74,6 @@ function M.notify(formatters)
       table.insert(lines, "- **" .. client.name .. "**")
     end
   end
-
   vim.notify(table.concat(lines, "\n"), vim.log.levels.INFO, {
     title = "Formatting",
     on_open = function(win)
