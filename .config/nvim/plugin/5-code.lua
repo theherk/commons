@@ -1,6 +1,7 @@
 local MiniDeps = require("mini.deps")
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 local Icons = require("module.icons")
+local Lsp = require("module.lsp")
 local Util = require("module.util")
 
 -- Much of the ai configuration is happening on the fly, so you'll find
@@ -409,7 +410,9 @@ later(function()
   }
 
   -- LSP keymaps
-  local function on_attach(client, bufnr)
+  vim.keymap.set("n", "<leader>cf", function() Lsp.format({ force = true }) end, { desc = "format" })
+  vim.keymap.set("n", "<leader>tf", function() Lsp.toggle() end, { desc = "format on save" })
+  local function on_attach(_, bufnr)
     local function map(mode, l, r, desc) vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc }) end
 
     map("n", "gd", vim.lsp.buf.definition, "goto def")
@@ -417,7 +420,7 @@ later(function()
     map("n", "gD", vim.lsp.buf.declaration, "goto decl")
     map("n", "gI", vim.lsp.buf.implementation, "goto impl")
     map("n", "K", vim.lsp.buf.hover, "hover")
-    map("n", "<leader>cf", function() lsp.format({ force = true }) end, "format")
+    map("n", "<leader>cF", function() lsp.format({ force = true }) end, "format (direct)")
     map("n", "<leader>ca", vim.lsp.buf.code_action, "code action")
     map("n", "<leader>cr", vim.lsp.buf.rename, "rename")
   end
