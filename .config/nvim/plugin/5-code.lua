@@ -89,6 +89,7 @@ later(function()
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
       "echasnovski/mini.icons",
+      "echasnovski/mini.pick",
     },
     hooks = { post_checkout = function() vim.cmd("make") end },
   })
@@ -133,7 +134,10 @@ end)
 
 later(function()
   require("avante_lib").load()
-  require("avante").setup()
+  require("avante").setup({
+    file_selector = { provider = "mini.pick" },
+    windows = { sidebar_header = { enabled = false } },
+  })
 end)
 
 now(function()
