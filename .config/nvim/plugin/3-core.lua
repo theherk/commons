@@ -50,10 +50,11 @@ later(function()
       n_steps_ahead = 1,
     },
   })
+  vim.keymap.set("n", "<cr>", function() minijump2d.start(minijump2d.builtin_opts.word_start) end, { desc = "jump to word" })
   vim.keymap.set("n", "<leader>sj", minijump2d.start, { desc = "jump anywhere" })
-  vim.keymap.set("n", "<leader>sl", function() minijump2d.start(minijump2d.builtin_opts.line_start) end, { desc = "jump to word" })
-  vim.keymap.set("n", "<leader>sq", function() minijump2d.start(minijump2d.builtin_opts.query) end, { desc = "jump to line" })
-  vim.keymap.set("n", "<leader>sw", function() minijump2d.start(minijump2d.builtin_opts.word_start) end, { desc = "jump by query" })
+  vim.keymap.set("n", "<leader>sl", function() minijump2d.start(minijump2d.builtin_opts.line_start) end, { desc = "jump to line" })
+  vim.keymap.set("n", "<leader>sq", function() minijump2d.start(minijump2d.builtin_opts.query) end, { desc = "jump by query" })
+  vim.keymap.set("n", "<leader>sw", function() minijump2d.start(minijump2d.builtin_opts.word_start) end, { desc = "jump to word" })
 end)
 
 now(function()
