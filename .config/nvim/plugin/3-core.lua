@@ -28,6 +28,8 @@ later(function()
   })
 end)
 
+later(function() require("mini.jump").setup() end)
+
 now(function()
   local mininotify = require("mini.notify")
   mininotify.setup()
