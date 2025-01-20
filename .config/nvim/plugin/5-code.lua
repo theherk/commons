@@ -14,7 +14,7 @@ end)
 later(function()
   add({
     source = "hrsh7th/nvim-cmp",
-    depend = {
+    depends = {
       "Exafunction/codeium.nvim",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
