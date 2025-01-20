@@ -10,10 +10,14 @@ These are the configuration details and files I use to configure my environment.
 
 ## Tools 🛠️
 
-- terminal: [wezterm](https://wezfurlong.org/wezterm/) 💻: [configuration](.config/wezterm/)
-- shell: [fish](https://fishshell.com/) 🐠: [configuration](.config/fish/config.fish)
-- editor: [neovim](https://neovim.io/) ✏️: [configuration](.config/nvim/)
-- font: [Victor Mono](https://rubjo.github.io/victor-mono/) 🔠: Best font ever. 🌟
+While this configuration does prepare a great many tools, it revolves primarily around the following:
+
+- 📝 [Neovide](https://neovide.dev/): Primary interface; smooth scrolling goodness. [config.toml](./.config/neovide/config.toml) / [neovide.lua](./.config/nvim/plugin/8-neovide.lua)
+- 📑 [NeovideProject](https://github.com/theherk/NeovideProject): Project switching with [Zoxide Git Projects](https://www.raycast.com/theherk/zoxide-git-projects).
+- ✏️ [Neovim](https://neovim.io/): [configuration](.config/nvim/)
+- 🐠 [Fish](https://fishshell.com/): [configuration](.config/fish/config.fish)
+- 💻 [Wezterm](https://wezfurlong.org/wezterm/): [configuration](.config/wezterm/)
+- 🔠 [Victor Mono](https://rubjo.github.io/victor-mono/): Best font ever. 🌟
 
 ### Miscellaneous Other Tools 🎒
 
@@ -52,13 +56,16 @@ These are the configuration details and files I use to configure my environment.
 
 ## Screenshots 🖼️
 
-<p align="center"><img src="./img/neovim-dash.png" alt="Neovim Dashboard" /></p>
-<p align="center"><img src="./img/neovim-markdown.png" alt="Neovim Markdown" /></p>
-<p align="center"><img src="./img/neovim-rust.png" alt="Neovim Rust" /></p>
-<p align="center"><img src="./img/wezterm-cal-and-clock.png" alt="WezTerm rcal and clock" /></p>
+<p align="center"><img src="./img/neovide-neovim-dash.png" alt="Neovide / Neovim Dashboard" /></p>
+<p align="center"><img src="./img/neovide-neovim-markdown.png" alt="Neovide / Neovim Markdown" /></p>
+<p align="center"><img src="./img/neovide-neovim-python-and-clue.png" alt="Neovide / Neovim Python and Mini.clue" /></p>
+<p align="center"><img src="./img/neovide-neovim-rust-doc.png" alt="Neovide / Neovim Rust with Documentation" /></p>
+<p align="center"><img src="./img/neovide-neovim-rust-comp.png" alt="Neovide / Neovim Rust with Completion" /></p>
+<p align="center"><img src="./img/neovideproject-zoxide-git-projects.png" alt="NeovideProject Switching with Zoxide Git Projects" /></p>
+<p align="center"><img src="./img/wezterm-cal-and-clock.png" alt="Wezterm rcal and clock" /></p>
 <p align="center"><img src="./img/wezterm-onefetch.png" alt="Wezterm onefetch" /></p>
-<p align="center"><img src="./img/yazi.png" alt="Yazi" /></p>
-<p align="center"><img src="./img/xplr.png" alt="Xplr" /></p>
+<p align="center"><img src="./img/wezterm-yazi.png" alt="Yazi" /></p>
+<p align="center"><img src="./img/wezterm-xplr.png" alt="Xplr" /></p>
 
 ## Credits
 
