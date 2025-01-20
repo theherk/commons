@@ -96,29 +96,7 @@ later(function()
       },
     })
   end, { desc = "keymaps" })
-  vim.keymap.set("n", "<leader>ss", function()
-    local items = {}
-    local line_map = {}
-    local line_count = vim.api.nvim_buf_line_count(0)
-    for i = 1, line_count do
-      local line = vim.api.nvim_buf_get_lines(0, i - 1, i, false)[1]
-      if line and line ~= "" then
-        local display = string.format("%4d: %s", i, line)
-        table.insert(items, display)
-        line_map[display] = i
-      end
-    end
-    minipick.start({
-      source = {
-        items = items,
-        name = "Buffer Lines",
-      },
-      act = function(selected)
-        local line_nr = line_map[selected]
-        if line_nr then vim.api.nvim_win_set_cursor(0, { line_nr, 0 }) end
-      end,
-    })
-  end, { desc = "buffer / swiper" })
+  vim.keymap.set("n", "<leader>ss", function() require("mini.extra").pickers.buf_lines() end, { desc = "buffer / swiper" })
   vim.keymap.set("n", "g/", "<cmd>Pick grep_live<cr>", { desc = "grep" })
 end)
 
