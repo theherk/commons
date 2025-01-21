@@ -204,6 +204,10 @@ later(function()
       },
     },
     indent = { enable = true },
+    modules = {},
+    sync_install = false,
+    ignore_install = {},
+    auto_install = true,
   })
 end)
 
@@ -475,6 +479,7 @@ later(function()
   require("mason").setup()
   require("mason-lspconfig").setup({
     ensure_installed = vim.tbl_keys(servers),
+    automatic_installation = true,
   })
 
   -- Setup LSP with shared configs
