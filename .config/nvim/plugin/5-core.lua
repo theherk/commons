@@ -75,7 +75,6 @@ end)
 later(function() require("mini.pairs").setup() end)
 
 later(function()
-  local miniextra = require("mini.extra")
   local minipick = require("mini.pick")
   local choose_all = function()
     local mappings = minipick.get_picker_opts().mappings
@@ -94,18 +93,7 @@ later(function()
   vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "files" })
   vim.keymap.set("n", "<leader>fg", "<cmd>Pick git_files<cr>", { desc = "git files" })
   vim.keymap.set("n", "<leader>sh", "<cmd>Pick help<cr>", { desc = "help" })
-  vim.keymap.set("n", "<leader>sk", function()
-    local keymaps = {}
-    for _, keymap in ipairs(vim.api.nvim_get_keymap("")) do
-      if keymap.desc then table.insert(keymaps, string.format("%-15s %-30s %s", keymap.mode, keymap.lhs:gsub("%s", "<Space>"), keymap.desc)) end
-    end
-    minipick.start({
-      source = {
-        items = keymaps,
-        name = "Keymaps",
-      },
-    })
-  end, { desc = "keymaps" })
+  vim.keymap.set("n", "<leader>sk", "<cmd>Pick keymaps<cr>", { desc = "keymaps" })
   vim.keymap.set("n", "<leader>ss", "<cmd>Pick buf_lines<cr>", { desc = "buffer / swiper" })
   vim.keymap.set("n", "g/", "<cmd>Pick grep_live<cr>", { desc = "grep" })
 end)
