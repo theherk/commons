@@ -72,8 +72,13 @@ later(function() require("mini.pairs").setup() end)
 later(function()
   local miniextra = require("mini.extra")
   local minipick = require("mini.pick")
-  minipick.setup()
-
+  local choose_all = function()
+    local mappings = minipick.get_picker_opts().mappings
+    vim.api.nvim_input(mappings.mark_all .. mappings.choose_marked)
+  end
+  minipick.setup({
+    mappings = { choose_all = { char = "<C-q>", func = choose_all } },
+  })
   vim.ui.select = minipick.ui_select
   vim.keymap.set("n", "<d-p>", "<cmd>Pick files<cr>", { desc = "files" })
   vim.keymap.set("n", "<leader><leader>", function() miniextra.pickers.git_files() end, { desc = "git files" })
