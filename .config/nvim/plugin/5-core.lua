@@ -147,23 +147,24 @@ later(function()
   vim.keymap.set("n", "<ds-e>", "<cmd>Neotree toggle<cr>", { desc = "toggle neotree" })
 end)
 
-later(function()
-  add({ source = "stevearc/aerial.nvim" })
-  require("aerial").setup({
-    layout = {
-      default_direction = "right",
-      placement = "edge",
-      width = 44,
-    },
-    on_attach = function(bufnr)
-      vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
-      vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
-    end,
-  })
-  vim.keymap.set("n", "<leader>co", "<cmd>AerialToggle right<cr>", { desc = "outline (aerial)" })
-  vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { desc = "prev symbol" })
-  vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { desc = "next symbol" })
-end)
+-- Disable aerial until stevearc/aerial.nvim#441 is resolved.
+-- later(function()
+--   add({ source = "stevearc/aerial.nvim" })
+--   require("aerial").setup({
+--     layout = {
+--       default_direction = "right",
+--       placement = "edge",
+--       width = 44,
+--     },
+--     on_attach = function(bufnr)
+--       vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+--       vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+--     end,
+--   })
+--   vim.keymap.set("n", "<leader>co", "<cmd>AerialToggle right<cr>", { desc = "outline (aerial)" })
+--   vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { desc = "prev symbol" })
+--   vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { desc = "next symbol" })
+-- end)
 
 now(function()
   add({
