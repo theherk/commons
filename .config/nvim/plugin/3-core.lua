@@ -1,6 +1,11 @@
 local MiniDeps = require("mini.deps")
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
+later(function()
+  add({ source = "kevinhwang91/nvim-bqf" })
+  require("bqf").setup()
+end)
+
 later(function() require("mini.ai").setup() end)
 
 later(function() require("mini.align").setup() end)
