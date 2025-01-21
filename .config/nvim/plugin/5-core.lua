@@ -110,8 +110,8 @@ later(function()
   vim.keymap.set("n", "g/", "<cmd>Pick grep_live<cr>", { desc = "grep" })
 end)
 
-TODO: snippets
-later(function() require("mini.snippets").setup() end)
+-- TODO: snippets
+-- later(function() require("mini.snippets").setup() end)
 
 later(function() require("mini.surround").setup() end)
 
