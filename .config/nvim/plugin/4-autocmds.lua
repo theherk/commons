@@ -1,9 +1,15 @@
 local function augroup(name) return vim.api.nvim_create_augroup("lee_" .. name, { clear = true }) end
 
 -- Check if we need to reload the file when it changed.
-vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
+vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave", "BufEnter" }, {
   group = augroup("checktime"),
-  command = "checktime",
+  callback = function()
+    if vim.fn.getcmdwintype() == "" then
+      vim.cmd("checktime")
+      -- If the file has changed and buffer is not modified, auto reload
+      if vim.fn.filereadable(vim.fn.expand("%")) == 1 and not vim.bo.modified then vim.cmd("silent! e!") end
+    end
+  end,
 })
 
 -- Commit like magit.
