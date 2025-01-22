@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd("FileType", {
   group = augroup("tf_commentstring"),
   pattern = { "hcl", "terraform", "tf", "terraform-vars", "tofu" },
   desc = "terraform/hcl commentstring configuration",
-  callback = function() vim.bo.commentstring = "#\\ %s" end,
+  callback = function() vim.bo.commentstring = "# %s" end,
 })
 
 -- Go to last loc when opening a buffer.
