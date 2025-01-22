@@ -38,6 +38,14 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
   end,
 })
 
+-- Set commentstring for Terraform-like files
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("tf_commentstring"),
+  pattern = { "hcl", "terraform", "tf", "terraform-vars", "tofu" },
+  desc = "terraform/hcl commentstring configuration",
+  callback = function() vim.bo.commentstring = "#\\ %s" end,
+})
+
 -- Go to last loc when opening a buffer.
 vim.api.nvim_create_autocmd("BufReadPost", {
   group = augroup("last_loc"),
