@@ -62,10 +62,6 @@ now(function()
       notify = true,
       nvimtree = true,
       render_markdown = true,
-      telescope = {
-        enabled = true,
-        style = "nvchad",
-      },
       treesitter = true,
       treesitter_context = true,
       which_key = true,
