@@ -73,7 +73,7 @@ end)
 
 now(function()
   add({ source = "brenoprata10/nvim-highlight-colors" })
-  require("nvim-highlight-colors").setup()
+  require("nvim-highlight-colors").setup({})
   vim.keymap.set("n", "<leader>tC", require("nvim-highlight-colors").toggle, { desc = "colorizer" })
 end)
 
