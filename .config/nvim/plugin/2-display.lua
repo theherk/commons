@@ -326,7 +326,49 @@ now(function()
   })
 end)
 
-later(function()
+now(function() add({ source = "nvim-lua/plenary.nvim" }) end)
+
+now(function()
+  add({
+    source = "ThePrimeagen/harpoon",
+    checkout = "harpoon2",
+    depends = { "nvim-lua/plenary.nvim" },
+  })
+  local harpoon = require("harpoon")
+  harpoon:setup({
+    settings = {
+      save_on_toggle = true,
+      sync_on_ui_close = true,
+    },
+  })
+  vim.keymap.set("n", "<leader>f1", function() harpoon:list():select(1) end, { desc = "harpoon file 1" })
+  vim.keymap.set("n", "<leader>f2", function() harpoon:list():select(2) end, { desc = "harpoon file 2" })
+  vim.keymap.set("n", "<leader>f3", function() harpoon:list():select(3) end, { desc = "harpoon file 3" })
+  vim.keymap.set("n", "<leader>f4", function() harpoon:list():select(4) end, { desc = "harpoon file 4" })
+  vim.keymap.set("n", "<leader>f5", function() harpoon:list():select(5) end, { desc = "harpoon file 5" })
+  vim.keymap.set("n", "<leader>f6", function() harpoon:list():select(6) end, { desc = "harpoon file 6" })
+  vim.keymap.set("n", "<leader>f7", function() harpoon:list():select(7) end, { desc = "harpoon file 7" })
+  vim.keymap.set("n", "<leader>f8", function() harpoon:list():select(8) end, { desc = "harpoon file 8" })
+  vim.keymap.set("n", "<leader>f9", function() harpoon:list():select(9) end, { desc = "harpoon file 9" })
+  vim.keymap.set("n", "<leader>fl", function() harpoon:toggle_quick_menu() end, { desc = "harpoon list" })
+  vim.keymap.set("n", "<leader>fm", function() harpoon:list():add() end, { desc = "harpoon mark" })
+  vim.keymap.set("n", "<leader>fn", function() harpoon:list():next() end, { desc = "harpoon next" })
+  vim.keymap.set("n", "<leader>fp", function() harpoon:list():prev() end, { desc = "harpoon prev" })
+  vim.keymap.set({ "i", "n" }, "<c-1>", function() harpoon:list():select(1) end, { desc = "harpoon file 1" })
+  vim.keymap.set({ "i", "n" }, "<c-2>", function() harpoon:list():select(2) end, { desc = "harpoon file 2" })
+  vim.keymap.set({ "i", "n" }, "<c-3>", function() harpoon:list():select(3) end, { desc = "harpoon file 3" })
+  vim.keymap.set({ "i", "n" }, "<c-4>", function() harpoon:list():select(4) end, { desc = "harpoon file 4" })
+  vim.keymap.set({ "i", "n" }, "<c-5>", function() harpoon:list():select(5) end, { desc = "harpoon file 5" })
+  vim.keymap.set({ "i", "n" }, "<c-6>", function() harpoon:list():select(6) end, { desc = "harpoon file 6" })
+  vim.keymap.set({ "i", "n" }, "<c-7>", function() harpoon:list():select(7) end, { desc = "harpoon file 7" })
+  vim.keymap.set({ "i", "n" }, "<c-8>", function() harpoon:list():select(8) end, { desc = "harpoon file 8" })
+  vim.keymap.set({ "i", "n" }, "<c-9>", function() harpoon:list():select(9) end, { desc = "harpoon file 9" })
+  vim.keymap.set({ "i", "n" }, "<c-,>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "harpoon list" })
+  vim.keymap.set("n", "]f", function() harpoon:list():next() end, { desc = "harpoon next" })
+  vim.keymap.set("n", "[f", function() harpoon:list():prev() end, { desc = "harpoon prev" })
+end)
+
+now(function()
   add({
     source = "willothy/nvim-cokeline",
     depends = {
