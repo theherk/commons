@@ -71,7 +71,7 @@ now(function()
   vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE", ctermbg = "NONE" })
 end)
 
-now(function()
+later(function()
   add({ source = "brenoprata10/nvim-highlight-colors" })
   require("nvim-highlight-colors").setup({})
   vim.keymap.set("n", "<leader>tC", require("nvim-highlight-colors").toggle, { desc = "colorizer" })
@@ -95,7 +95,7 @@ now(function()
   })
 end)
 
-later(function()
+now(function()
   add({
     source = "folke/noice.nvim",
     depends = { "MunifTanjim/nui.nvim" },
@@ -199,7 +199,7 @@ later(function()
   require("modicator").setup()
 end)
 
-later(function()
+now(function()
   local miniclue = require("mini.clue")
   miniclue.setup({
     clues = {

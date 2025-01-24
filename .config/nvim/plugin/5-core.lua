@@ -19,9 +19,9 @@ end)
 
 later(function() require("mini.comment").setup() end)
 
-later(function() require("mini.extra").setup() end)
+now(function() require("mini.extra").setup() end)
 
-later(function()
+now(function()
   local minifiles = require("mini.files")
   minifiles.setup({
     mappings = { go_in_plus = "<cr>" },
@@ -74,7 +74,7 @@ end)
 
 later(function() require("mini.pairs").setup() end)
 
-later(function()
+now(function()
   local minipick = require("mini.pick")
   local choose_all = function()
     local mappings = minipick.get_picker_opts().mappings

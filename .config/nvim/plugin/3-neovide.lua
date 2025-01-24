@@ -1,9 +1,9 @@
 local MiniDeps = require("mini.deps")
-local later = MiniDeps.later
+local now = MiniDeps.now
 local Util = require("module.util")
 
 if vim.g.neovide then
-  later(function()
+  now(function()
     vim.g.neovide_detach_on_quit = "always_detach"
     vim.g.neovide_floating_corner_radius = 0.333
     vim.g.neovide_transparency = 0.91247
