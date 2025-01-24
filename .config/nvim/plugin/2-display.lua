@@ -282,10 +282,6 @@ now(function()
         },
         { "filetype", icon_only = true },
         { "filename", path = 4, separator = { right = "▷" }, symbols = { modified = "  ", readonly = "", unnamed = "" } },
-        {
-          function() return require("nvim-navic").get_location() end,
-          cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
-        },
       },
       lualine_x = {
         {
