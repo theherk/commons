@@ -374,68 +374,8 @@ now(function()
       "nvim-lua/plenary.nvim",
     },
   })
-  local harpoon = require("harpoon")
+  local coke = require("module.coke")
   local hlg = require("cokeline.hlgroups")
-  local is_picking_focus = require("cokeline.mappings").is_picking_focus
-  local is_picking_close = require("cokeline.mappings").is_picking_close
-  local function get_harpoon_index(path)
-    local list = harpoon:list()
-    for idx, item in ipairs(list.items) do
-      if item.value == path then return idx end
-    end
-    return nil
-  end
-  local function harpoon_icon(buffer)
-    ---@diagnostic disable-next-line: undefined-field
-    local path = require("plenary.path"):new(buffer.path):make_relative(vim.uv.cwd())
-    return get_harpoon_index(path) ~= nil and " 󰛢 " or ""
-  end
-  local function harpoon_sorter()
-    local cache = {}
-    local setup = false
-    local function marknum(buf, force)
-      local b = cache[buf.number]
-      if b == nil or force then
-        ---@diagnostic disable-next-line: undefined-field
-        local path = require("plenary.path"):new(buf.path):make_relative(vim.uv.cwd())
-        for i, mark in ipairs(harpoon:list():display()) do
-          if mark == path then
-            b = i
-            cache[buf.number] = b
-            break
-          end
-        end
-      end
-      return b
-    end
-    return function(a, b)
-      local has_harpoon = package.loaded["harpoon"] ~= nil
-      if not has_harpoon then
-        ---@diagnostic disable-next-line: undefined-field
-        return a._valid_index < b._valid_index
-      elseif not setup then
-        local refresh = function() cache = {} end
-        require("harpoon"):extend({
-          ADD = refresh,
-          REMOVE = refresh,
-          REORDER = refresh,
-          LIST_CHANGE = refresh,
-        })
-        setup = true
-      end
-      local ma = marknum(a)
-      local mb = marknum(b)
-      if ma and not mb then
-        return true
-      elseif mb and not ma then
-        return false
-      elseif ma == nil and mb == nil then
-        ma = a._valid_index
-        mb = b._valid_index
-      end
-      return ma < mb
-    end
-  end
   require("cokeline").setup({
     default_hl = {
       fg = function(buffer) return buffer.is_focused and vim.g.terminal_color_6 or hlg.get_hl_attr("Comment", "fg") end,
@@ -447,47 +387,15 @@ now(function()
         fg = function(_) return vim.g.terminal_color_4 end,
         bg = "NONE",
       },
-      {
-        text = " ",
-      },
-      {
-        text = function(buffer) return (is_picking_focus() or is_picking_close()) and buffer.pick_letter .. " " or buffer.devicon.icon end,
-        fg = function(buffer) return (is_picking_focus() and vim.g.terminal_color_4) or (is_picking_close() and vim.g.terminal_color_1) or buffer.devicon.color end,
-        italic = function() return (is_picking_focus() or is_picking_close()) end,
-        bold = function() return (is_picking_focus() or is_picking_close()) end,
-      },
-      {
-        text = harpoon_icon,
-        fg = function(_) return hlg.get_hl_attr("DiagnosticWarn", "fg") end,
-      },
-      {
-        text = function(buffer) return (buffer.is_modified and Icons.misc.Save) or (buffer.diagnostics.errors ~= 0 and Icons.diagnostics.Error) or (buffer.diagnostics.warnings ~= 0 and Icons.diagnostics.Warn) or "  " end,
-        fg = function(buffer)
-          if buffer.is_modified then
-            return hlg.get_hl_attr("DiagnosticHint", "fg")
-          elseif buffer.diagnostics.errors ~= 0 then
-            return hlg.get_hl_attr("DiagnosticError", "fg")
-          elseif buffer.diagnostics.warnings ~= 0 then
-            return hlg.get_hl_attr("DiagnosticWarn", "fg")
-          else
-            return nil
-          end
-        end,
-      },
-      {
-        text = function(buffer) return buffer.unique_prefix end,
-        fg = function(_) return hlg.get_hl_attr("property", "fg") end,
-        italic = true,
-      },
-      {
-        text = function(buffer) return buffer.filename .. "  " end,
-        bold = function(buffer) return buffer.is_focused end,
-        italic = function(buffer) return not buffer.is_focused end,
-        truncation = { priority = 99 },
-      },
+      coke.component_gap(),
+      coke.component_icon(),
+      coke.component_status(),
+      coke.component_name(),
+      coke.component_gap(),
     },
     buffers = {
-      new_buffers_position = harpoon_sorter(),
+      filter_valid = function(buffer) return buffer.type ~= "terminal" and buffer.type ~= "prompt" end,
+      new_buffers_position = coke.harpoon_sorter(),
     },
     tabs = {
       placement = "right",
