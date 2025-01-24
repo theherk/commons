@@ -1,5 +1,5 @@
 local MiniDeps = require("mini.deps")
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+local add, later = MiniDeps.add, MiniDeps.later
 
 later(function()
   add({ source = "akinsho/toggleterm.nvim" })

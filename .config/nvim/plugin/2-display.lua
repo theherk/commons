@@ -259,6 +259,7 @@ now(function()
   add({ source = "nvim-lualine/lualine.nvim" })
   local custom = require("lualine.themes.catppuccin")
   custom.normal.c.bg = "none"
+  ---@diagnostic disable-next-line: undefined-field
   require("lualine").setup({
     options = {
       theme = custom,
@@ -384,6 +385,7 @@ now(function()
     return nil
   end
   local function harpoon_icon(buffer)
+    ---@diagnostic disable-next-line: undefined-field
     local path = require("plenary.path"):new(buffer.path):make_relative(vim.uv.cwd())
     return get_harpoon_index(path) ~= nil and " 󰛢 " or ""
   end
@@ -393,6 +395,7 @@ now(function()
     local function marknum(buf, force)
       local b = cache[buf.number]
       if b == nil or force then
+        ---@diagnostic disable-next-line: undefined-field
         local path = require("plenary.path"):new(buf.path):make_relative(vim.uv.cwd())
         for i, mark in ipairs(harpoon:list():display()) do
           if mark == path then
