@@ -1,13 +1,18 @@
 local function augroup(name) return vim.api.nvim_create_augroup("lee_" .. name, { clear = true }) end
 
--- Check if we need to reload the file when it changed.
-vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave", "BufEnter" }, {
+-- Check if we need to reload the file when it changed
+vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
   group = augroup("checktime"),
   callback = function()
-    if vim.fn.getcmdwintype() == "" then
-      vim.cmd("checktime")
-      -- If the file has changed and buffer is not modified, auto reload
-      if vim.fn.filereadable(vim.fn.expand("%")) == 1 and not vim.bo.modified then vim.cmd("silent! e!") end
+    if vim.fn.getcmdwintype() ~= "" or vim.fn.mode() ~= "n" then return end
+    local bufnr = vim.api.nvim_get_current_buf()
+    local filename = vim.fn.expand("%")
+    if vim.bo[bufnr].buftype ~= "" or not vim.fn.filereadable(filename) == 1 then return end
+    local cursor_pos = vim.fn.getcurpos()
+    vim.cmd("checktime")
+    if not vim.bo[bufnr].modified and vim.fn.getftime(filename) > vim.b[bufnr].changedtick then
+      vim.cmd("edit")
+      vim.fn.setpos(".", cursor_pos)
     end
   end,
 })
