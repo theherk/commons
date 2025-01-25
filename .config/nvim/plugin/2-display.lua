@@ -376,7 +376,7 @@ now(function()
             return " " .. tabpage.number .. " " -- fallback
           end,
           fg = function(tabpage) return tabpage.is_active and vim.g.terminal_color_5 or hlg.get_hl_attr("Comment", "fg") end,
-          bg = function(tabpage) return tabpage.is_active and vim.g.terminal_color_8 or "NONE" end,
+          bg = function(tabpage) return tabpage.is_active and hlg.get_hl_attr("lualine_b_normal", "bg") or "NONE" end,
         },
       },
     },
