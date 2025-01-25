@@ -103,6 +103,15 @@ end)
 
 later(function() require("mini.surround").setup() end)
 
+later(function()
+  local visits = require("mini.visits")
+  visits.setup()
+  vim.keymap.set("n", "<leader>fll", "<cmd>Pick visit_labels<cr>", { desc = "labels" })
+  vim.keymap.set("n", "<leader>fla", function() visits.add_label() end, { desc = "add label" })
+  vim.keymap.set("n", "<leader>flr", function() visits.remove_label() end, { desc = "remove lable" })
+  vim.keymap.set("n", "<leader>fv", "<cmd>Pick visit_paths<cr>", { desc = "visits" })
+end)
+
 now(function() add({ source = "MunifTanjim/nui.nvim" }) end)
 
 later(function()

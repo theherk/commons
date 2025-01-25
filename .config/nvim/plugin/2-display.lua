@@ -214,6 +214,7 @@ now(function()
       { mode = "n", keys = "<leader>d", desc = "debug" },
       { mode = "n", keys = "<leader>dP", desc = "python" },
       { mode = "n", keys = "<leader>f", desc = "file" },
+      { mode = "n", keys = "<leader>fl", desc = "label" },
       { mode = "n", keys = "<leader>g", desc = "git" },
       { mode = "v", keys = "<leader>g", desc = "git" },
       { mode = "n", keys = "<leader>gd", desc = "diffview" },
