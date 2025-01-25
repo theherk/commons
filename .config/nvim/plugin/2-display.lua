@@ -337,7 +337,7 @@ now(function()
   require("cokeline").setup({
     default_hl = {
       fg = function(buffer) return buffer.is_focused and vim.g.terminal_color_6 or hlg.get_hl_attr("Comment", "fg") end,
-      bg = function(buffer) return buffer.is_focused and vim.g.terminal_color_8 or "NONE" end,
+      bg = function(buffer) return buffer.is_focused and hlg.get_hl_attr("lualine_b_normal", "bg") or "NONE" end,
     },
     components = {
       {
