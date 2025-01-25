@@ -61,7 +61,6 @@ local M = {
     Files = " ",
     Find = " ",
     Git = "󰊢 ",
-    Harpoon = "󰛢 ",
     Save = " ",
     Quit = "󰈆 ",
   },
