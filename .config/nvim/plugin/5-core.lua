@@ -81,7 +81,10 @@ now(function()
     vim.api.nvim_input(mappings.mark_all .. mappings.choose_marked)
   end
   minipick.setup({
-    mappings = { choose_all = { char = "<C-q>", func = choose_all } },
+    mappings = {
+      choose_all = { char = "<c-q>", func = choose_all },
+      sys_paste = { char = "<d-v>", func = function() minipick.set_picker_query({ vim.fn.getreg("+") }) end },
+    },
   })
   vim.ui.select = minipick.ui_select
   vim.keymap.set("n", "<d-p>", "<cmd>Pick files<cr>", { desc = "files" })
