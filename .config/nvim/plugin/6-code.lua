@@ -113,7 +113,13 @@ end)
 
 later(function()
   add({ source = "MeanderingProgrammer/render-markdown.nvim" })
-  require("render-markdown").setup()
+  require("render-markdown").setup({
+    heading = {
+      icons = { "█ ", "▉ ", "▊ ", "▋ ", "▌ ", "▍ " },
+      backgrounds = {},
+      position = "inline",
+    },
+  })
 end)
 
 later(function()
