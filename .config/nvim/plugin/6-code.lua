@@ -155,6 +155,15 @@ later(function()
   require("avante").setup({
     file_selector = { provider = "mini.pick" },
     windows = { sidebar_header = { enabled = false } },
+    provider = "ollama",
+    vendors = {
+      ollama = {
+        __inherited_from = "openai",
+        api_key_name = "",
+        endpoint = "http://127.0.0.1:11434/v1",
+        model = "deepseek-r1:8b",
+      },
+    },
   })
 end)
 
