@@ -13,6 +13,7 @@ vim.opt.guifont = "VictorMono NF:h18"
 vim.opt.ignorecase = true
 vim.opt.inccommand = "nosplit"
 vim.opt.laststatus = 0
+vim.opt.linebreak = true
 vim.opt.list = true
 vim.opt.mouse = "a"
 vim.opt.number = true
