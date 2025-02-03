@@ -6,6 +6,31 @@ later(function()
   require("bqf").setup()
 end)
 
+later(function()
+  add({
+    source = "L3MON4D3/LuaSnip",
+    depends = { "rafamadriz/friendly-snippets" },
+    hooks = {
+      post_checkout = function()
+        local Job = require("plenary.job")
+        ---@diagnostic disable-next-line: missing-fields
+        Job:new({
+          command = "make",
+          args = { "install_jsregexp" },
+          cwd = vim.fn.stdpath("data") .. "/site/pack/deps/opt/LuaSnip",
+          on_exit = function(j, return_val)
+            if return_val ~= 0 then vim.notify("LuaSnip make install failed", vim.log.levels.ERROR) end
+          end,
+          on_stderr = function(_, data)
+            if data then vim.notify("LuaSnip make error: " .. data, vim.log.levels.ERROR) end
+          end,
+        }):sync()
+      end,
+    },
+  })
+  require("luasnip").setup()
+end)
+
 later(function() require("mini.ai").setup() end)
 
 later(function() require("mini.align").setup() end)
