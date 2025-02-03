@@ -92,7 +92,23 @@ later(function()
       "echasnovski/mini.icons",
       "echasnovski/mini.pick",
     },
-    hooks = { post_checkout = function() vim.cmd("make") end },
+    hooks = {
+      post_checkout = function()
+        local Job = require("plenary.job")
+        ---@diagnostic disable-next-line: missing-fields
+        Job:new({
+          command = "make",
+          args = {},
+          cwd = vim.fn.stdpath("data") .. "/site/pack/deps/opt/avante.nvim",
+          on_exit = function(j, return_val)
+            if return_val ~= 0 then vim.notify("avante.nvim make install failed", vim.log.levels.ERROR) end
+          end,
+          on_stderr = function(_, data)
+            if data then vim.notify("avante.nvim make error: " .. data, vim.log.levels.ERROR) end
+          end,
+        }):sync()
+      end,
+    },
   })
 end)
 
