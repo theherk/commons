@@ -33,6 +33,7 @@ While this configuration does prepare a great many tools, it revolves primarily 
 - [editorconfig](https://editorconfig.org/): Enforce some text styles.
 - [eza](https://eza.rocks/): A modern, maintained replacement for ls.
 - [fd](https://github.com/sharkdp/fd): Fast, user-friendly find.
+- [flashspace](https://github.com/wojciech-kulik/FlashSpace): virtual workspace manager
 - [fzf](https://github.com/junegunn/fzf): Command-line fuzzy finder.
 - [delta](https://github.com/dandavison/delta): Syntax highlighting pager.
 - [grip](https://github.com/joeyespo/grip): Preview markdown.
