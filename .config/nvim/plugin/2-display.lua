@@ -115,6 +115,7 @@ end)
 later(function()
   add({ source = "folke/todo-comments.nvim" })
   require("todo-comments").setup()
+  vim.keymap.set("n", "<leader>st", "<cmd>TodoQuickFix<cr>", { desc = "todos" })
 end)
 
 now(function()
