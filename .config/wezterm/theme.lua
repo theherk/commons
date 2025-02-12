@@ -30,9 +30,9 @@ scheme.cursor_bg = colors.active_fg
 scheme.split = colors.inactive_fg
 
 scheme.tab_bar = {
-  background = "none", -- tab_bar
+  background = colors.bg, -- tab_bar
   new_tab = {
-    bg_color = "none", -- new_tab
+    bg_color = colors.bg, -- new_tab
     fg_color = colors.hl_2,
   },
   active_tab = {
@@ -68,7 +68,7 @@ function module.apply_to_config(config)
   config.tab_bar_at_bottom = true
   config.tab_max_width = 96
   config.use_fancy_tab_bar = false
-  config.window_background_opacity = 0.91247
+  config.window_background_opacity = 1.0
   config.window_decorations = "RESIZE"
 end
 
