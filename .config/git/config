@@ -35,6 +35,8 @@
 	name = Adam Sherwood
 	signingkey = theherk@gmail.com
 
+[includeIf "gitdir:~/projects/github.com/dnb-asa/"]
+	path = ~/.config/git/dnb.no
 [includeIf "gitdir:~/projects/dnb.ghe.com/"]
 	path = ~/.config/git/dnb.no
 [includeIf "gitdir:~/projects/gitlab.tech.dnb.no/"]
