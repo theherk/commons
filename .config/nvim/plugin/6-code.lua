@@ -521,11 +521,12 @@ later(function()
   null_ls.setup({
     sources = {
       -- Formatters
-      null_ls.builtins.formatting.stylua,
       null_ls.builtins.formatting.gofumpt,
       null_ls.builtins.formatting.goimports,
-      null_ls.builtins.formatting.terraform_fmt,
+      null_ls.builtins.formatting.prettierd,
       null_ls.builtins.formatting.shfmt,
+      null_ls.builtins.formatting.stylua,
+      null_ls.builtins.formatting.terraform_fmt,
 
       -- Diagnostics
       null_ls.builtins.diagnostics.fish,
