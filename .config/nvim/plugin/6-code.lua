@@ -114,10 +114,6 @@ end)
 
 later(function()
   add({ source = "zbirenbaum/copilot.lua" })
-  require("copilot").setup()
-  vim.g.copilot_auth_provider_url = "https://dnb.ghe.com"
-  vim.g.copilot_panel_enabled = false
-  vim.g.copilot_suggestion_enabled = false
   add({ source = "zbirenbaum/copilot-cmp" })
   require("copilot_cmp").setup()
 end)
@@ -559,3 +555,5 @@ later(function()
     severity_sort = true,
   })
 end)
+
+later(function() Util.ai_update_services() end)
