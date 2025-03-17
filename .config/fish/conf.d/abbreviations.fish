@@ -53,8 +53,9 @@ abbr -a tn --position command trans en:no -b
 abbr -a te --position command trans no:en -b
 abbr -a tmpd --position command cd (mktemp -d)
 abbr -a up --position anywhere --set-cursor "%| underscore pretty"
-abbr -a util-list --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' --output text --query 'Reservations[*].Instances[*].InstanceId'"
-abbr -a util-list-buildhost --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' --output text --query 'Reservations[*].Instances[*].InstanceId'"
+abbr -a util-list --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' 'Name=instance-state-name,Values=pending,running,stopping,stopped' --output text --query 'Reservations[*].Instances[*].InstanceId'"
+abbr -a util-list-buildhost --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' 'Name=instance-state-name,Values=pending,running,stopping,stopped' --output text --query 'Reservations[*].Instances[*].InstanceId'"
+abbr -a util-list-cdc --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*cdc*' 'Name=instance-state-name,Values=pending,running,stopping,stopped' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 abbr -a vr --position command 'sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2 | sed "s/\(.*\):\(.*\)/\+\2 \1/" | xargs nvim'
 abbr -a wezi --position command wezterm imgcat
 abbr -a wow --position command git status
