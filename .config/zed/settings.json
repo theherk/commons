@@ -40,6 +40,15 @@
           }
         }
       ]
+    },
+    "Shell Script": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "shfmt",
+          "arguments": []
+        }
+      }
     }
   },
   "load_direnv": "shell_hook",
