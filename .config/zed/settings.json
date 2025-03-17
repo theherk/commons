@@ -99,7 +99,7 @@
   "terminal": {
     "alternate_scroll": "on",
     "default_height": 420,
-    "font_size": 16,
+    "font_size": 17,
     "shell": {
       "program": "fish"
     },
@@ -110,6 +110,6 @@
     "dark": "Catppuccin Frappé",
     "light": "Catppuccin Latte"
   },
-  "ui_font_size": 16,
+  "ui_font_size": 17,
   "vim_mode": true
 }
