@@ -460,6 +460,13 @@ later(function()
     jsonls = {},
     bashls = {
       filetypes = { "sh", "bash" },
+      -- Disable formatting in bash-language-server
+      on_attach = function(client, bufnr)
+        -- This is to allow shfmt to take precedence.
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+        on_attach(client, bufnr)
+      end,
     },
     terraformls = {
       filetypes = { "terraform", "tf", "terraform-vars" },
