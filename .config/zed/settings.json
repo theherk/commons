@@ -22,7 +22,11 @@
       "enabled": false
     }
   },
-  "icon_theme": "Catppuccin Frappé",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Frappé"
+  },
   "languages": {
     "Python": {
       "language_servers": ["ruff"],
