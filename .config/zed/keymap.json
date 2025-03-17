@@ -28,7 +28,8 @@
       "space g g": [
         "task::Spawn",
         { "task_name": "lazygit", "reveal_target": "center" }
-      ]
+      ],
+      "space s s": "outline::Toggle"
     }
   },
   {
