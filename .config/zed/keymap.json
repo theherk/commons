@@ -29,6 +29,7 @@
         "task::Spawn",
         { "task_name": "lazygit", "reveal_target": "center" }
       ],
+      "space g G": "git_panel::ToggleFocus",
       "space s s": "outline::Toggle"
     }
   },
@@ -36,6 +37,26 @@
     "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
       "space g l y": "editor::CopyPermalinkToLine"
+    }
+  },
+  {
+    "context": "GitPanel && ChangesList",
+    "bindings": {
+      "cmd-enter": "git::Commit",
+      "escape": "git_panel::ToggleFocus",
+      "c": "git::Commit",
+      "d": "git::RestoreFile",
+      "q": "git_panel::Close",
+      "s": "git::StageFile",
+      "u": "git::UnstageFile"
+    }
+  },
+  {
+    "context": "GitDiff > Editor",
+    "use_key_equivalents": true,
+    "bindings": {
+      "s": "git::StageAndNext",
+      "u": "git::UnstageAndNext"
     }
   }
 ]
