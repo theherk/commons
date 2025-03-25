@@ -52,7 +52,7 @@
     }
   },
   {
-    "context": "GitDiff > Editor",
+    "context": "GitDiff > Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "use_key_equivalents": true,
     "bindings": {
       "s": "git::StageAndNext",
