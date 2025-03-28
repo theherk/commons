@@ -26,10 +26,7 @@
     "copilot": false
   },
   "git": {
-    "git_gutter": "tracked_files",
-    "inline_blame": {
-      "enabled": false
-    }
+    "git_gutter": "tracked_files"
   },
   "git_hosting_providers": [
     {
