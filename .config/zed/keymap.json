@@ -30,7 +30,8 @@
         { "task_name": "lazygit", "reveal_target": "center" }
       ],
       "space g G": "git_panel::ToggleFocus",
-      "space s s": "outline::Toggle"
+      "space s s": "outline::Toggle",
+      "space Z": "workspace::ToggleCenteredLayout"
     }
   },
   {
