@@ -31,6 +31,18 @@
       "enabled": false
     }
   },
+  "git_hosting_providers": [
+    {
+      "provider": "github",
+      "name": "DNB Github",
+      "base_url": "https://dnb.ghe.com"
+    },
+    {
+      "provider": "gitlab",
+      "name": "DNB Gitlab",
+      "base_url": "https://gitlab.tech.dnb.no"
+    }
+  ],
   "icon_theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
