@@ -48,6 +48,10 @@
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Frappé"
   },
+  "inlay_hints": {
+    "enabled": true,
+    "toggle_on_modifiers_press": { "control": true }
+  },
   "languages": {
     "Python": {
       "language_servers": ["ruff"],
