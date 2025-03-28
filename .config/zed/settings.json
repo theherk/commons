@@ -1,4 +1,8 @@
 {
+  "edit_predictions": {
+    "disabled_globs": ["**/dnb.ghe.com/**", "**/gitlab.tech.dnb.no/**"],
+    "mode": "eager"
+  },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
