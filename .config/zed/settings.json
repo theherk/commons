@@ -3,6 +3,11 @@
     "disabled_globs": ["**/dnb.ghe.com/**", "**/gitlab.tech.dnb.no/**"],
     "mode": "eager"
   },
+  "active_pane_modifiers": {
+    "magnification": 1.4,
+    "border_size": 1,
+    "inactive_opacity": 0.81247
+  },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
