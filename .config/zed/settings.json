@@ -99,6 +99,8 @@
       }
     }
   },
+  "pane_split_direction_horizontal": "down",
+  "pane_split_direction_vertical": "right",
   "project_panel": {
     "default_width": 246,
     "indent_size": 16
