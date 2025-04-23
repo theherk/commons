@@ -19,6 +19,13 @@
     }
   },
   {
+    "context": "vim_mode == helix_normal",
+    "bindings": {
+      "ctrl-[": "editor::Cancel",
+      "escape": "editor::Cancel"
+    }
+  },
+  {
     "context": "Editor && vim_mode == visual && !menu",
     "bindings": {
       "v": "editor::SelectLargerSyntaxNode",
