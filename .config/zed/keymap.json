@@ -13,6 +13,12 @@
     }
   },
   {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "escape": "vim::SwitchToHelixNormalMode"
+    }
+  },
+  {
     "context": "Editor && vim_mode == visual && !menu",
     "bindings": {
       "v": "editor::SelectLargerSyntaxNode",
@@ -20,7 +26,7 @@
     }
   },
   {
-    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "context": "Editor && (vim_mode == normal || vim_mode == helix_normal) && !VimWaiting && !menu",
     "bindings": {
       "space space": "file_finder::Toggle",
       "space /": "workspace::NewSearch",
@@ -35,7 +41,7 @@
     }
   },
   {
-    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "context": "Editor && (vim_mode == normal || vim_mode == helix_normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
       "space g l y": "editor::CopyPermalinkToLine"
     }
@@ -53,7 +59,7 @@
     }
   },
   {
-    "context": "GitDiff > Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "context": "GitDiff > Editor && (vim_mode == normal || vim_mode == helix_normal || vim_mode == visual) && !VimWaiting && !menu",
     "use_key_equivalents": true,
     "bindings": {
       "s": "git::StageAndNext",
