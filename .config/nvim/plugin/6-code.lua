@@ -465,6 +465,7 @@ later(function()
         -- This is to allow shfmt to take precedence.
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
+        ---@diagnostic disable-next-line: undefined-global
         on_attach(client, bufnr)
       end,
     },
