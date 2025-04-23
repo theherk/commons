@@ -6,7 +6,7 @@ if vim.g.neovide then
   now(function()
     vim.g.neovide_detach_on_quit = "always_detach"
     vim.g.neovide_floating_corner_radius = 0.333
-    vim.g.neovide_transparency = 1
+    vim.g.neovide_opacity = 1
     vim.g.neovide_theme = "auto"
 
     -- Background is none and comes from the terminal.
@@ -36,9 +36,9 @@ if vim.g.neovide then
     vim.g.neovide_cursor_animate_command_line = true
     vim.g.neovide_cursor_smooth_blink = true
     vim.g.neovide_cursor_vfx_mode = "railgun"
-    vim.g.neovide_cursor_vfx_particle_curl = 0.66
-    vim.g.neovide_cursor_vfx_particle_density = 23.0
+    vim.g.neovide_cursor_vfx_particle_curl = 0.77
+    vim.g.neovide_cursor_vfx_particle_density = 3.25
     vim.g.neovide_cursor_vfx_particle_lifetime = 1.33
-    vim.g.neovide_cursor_vfx_particle_phase = 11.1
+    vim.g.neovide_cursor_vfx_particle_phase = 12.1
   end)
 end
