@@ -1,41 +1,43 @@
 [theme.palette]
-background = "#1a1b26"
-foreground = "#a9b1d6"
-selection_background = "#414868"
-selection_foreground = "#a9b1d6"
-black = "#32344a"
-blue = "#7aa2f7"
-cyan = "#449dab"
-green = "#9ece6a"
-magenta = "#ad8ee6"
-red = "#f7768e"
-white = "#787c99"
-yellow = "#e0af68"
-light_black = "#444b6a"
-light_white = "#acb0d0"
-light_red = "#ff7a93"
-light_magenta = "#bb9af7"
-light_green = "#b9f27c"
-light_cyan = "#0db9d7"
-light_blue = "#7da6ff"
-light_yellow = "#ff9e64"
+background = "#303446"
+foreground = "#c6d0f5"
+selection_background = "#414559"
+selection_foreground = "#c6d0f5"
+black = "#414559"
+blue = "#8caaee"
+cyan = "#81c8be"
+green = "#a6d189"
+magenta = "#ca9ee6"
+red = "#e78284"
+white = "#949cbb"
+yellow = "#e5c890"
+light_black = "#51576d"
+light_white = "#b5bfe2"
+light_red = "#ea999c"
+light_magenta = "#f4b8e4"
+light_green = "#a6d189"
+light_cyan = "#99d1db"
+light_blue = "#85c1dc"
+light_yellow = "#ef9f76"
 
 [theme.component_style]
-title_bar = { front = "#32344a", back = "#ff6600", effect = "bold" }
-matched_highlight = { front = "#32344a", back = "#9ece6a" }
-metadata = { front = "#787c99" }
+
+title_bar = { front = "#949cbb", back = "#414559", effect = "bold" }
+
+current_story_tag = { front = "#c6d0f5", back = "#51576d", effect = "bold" }
+matched_highlight = { front = "#414559", back = "#a6d189" }
+metadata = { front = "#949cbb" }
 username = { effect = "bold" }
-loading_bar = { front = "#ff6600", back = "#1a1b26" }
-header = { front = "#32344a", effect = "bold" }
-quote = { front = "#a9b1d6" }
+loading_bar = { front = "#ef9f76", back = "#303446" }
+header = { front = "#414559", effect = "bold" }
+quote = { front = "#c6d0f5" }
 italic = { effect = "italic" }
 bold = { effect = "bold" }
-single_code_block = { back = "#444b6a", front = "#a9b1d6" }
-multiline_code_block = { front = "#444b6a", effect = "bold" }
-link = { front = "#449dab" }
-link_id = { front = "#32344a", back = "#e0af68" }
-current_story_tag = { front = "#acb0d0" }
-ask_hn = { front = "#f7768e", effect = "bold" }
-tell_hn = { front = "#e0af68", effect = "bold" }
-show_hn = { front = "#7aa2f7", effect = "bold" }
-launch_hn = { front = "#9ece6a", effect = "bold" }
+single_code_block = { back = "#51576d", front = "#c6d0f5" }
+multiline_code_block = { front = "#51576d", effect = "bold" }
+link = { front = "#81c8be" }
+link_id = { front = "#414559", back = "#e5c890" }
+ask_hn = { front = "#e78284", effect = "bold" }
+tell_hn = { front = "#e5c890", effect = "bold" }
+show_hn = { front = "#8caaee", effect = "bold" }
+launch_hn = { front = "#a6d189", effect = "bold" }
