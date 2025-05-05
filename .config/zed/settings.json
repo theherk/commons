@@ -46,7 +46,7 @@
     "dark": "Catppuccin Frappé"
   },
   "inlay_hints": {
-    "enabled": true,
+    "enabled": false,
     "toggle_on_modifiers_press": { "control": true }
   },
   "languages": {
