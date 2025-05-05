@@ -12,12 +12,13 @@
       "ctrl-p": "projects::OpenRecent"
     }
   },
-  {
-    "context": "VimControl && !menu",
-    "bindings": {
-      "escape": "vim::SwitchToHelixNormalMode"
-    }
-  },
+  // To use helix mode on escape.
+  // {
+  //   "context": "VimControl && !menu",
+  //   "bindings": {
+  //     "escape": "vim::SwitchToHelixNormalMode"
+  //   }
+  // },
   {
     "context": "vim_mode == helix_normal",
     "bindings": {
