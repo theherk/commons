@@ -137,8 +137,8 @@
   },
   "theme": {
     "mode": "system",
-    "dark": "Catppuccin Frappé",
-    "light": "Catppuccin Latte"
+    "dark": "Catppuccin Frappé (teal)",
+    "light": "Catppuccin Latte (teal)"
   },
   "ui_font_size": 17,
   "vim_mode": true
