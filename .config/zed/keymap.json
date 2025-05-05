@@ -38,6 +38,7 @@
     "bindings": {
       "space space": "file_finder::Toggle",
       "space /": "workspace::NewSearch",
+      "space b b": "tab_switcher::ToggleAll",
       "space f s": "workspace::Save",
       "space g g": [
         "task::Spawn",
