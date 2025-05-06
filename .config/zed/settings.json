@@ -9,6 +9,7 @@
     "inactive_opacity": 0.81247
   },
   "assistant": {
+    "default_profile": "manual",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-7-sonnet-latest"
