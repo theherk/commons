@@ -19,7 +19,7 @@ else
   colors.inactive_fg = bg:complement_ryb():lighten(0.3)
   colors.panel_bg = bg:lighten(0.069)
 end
-if selected_scheme == "Catppuccin Latte" then
+if selected_scheme == "Catppuccin Latte (Gogh)" then
   -- This is a special case; I don't like the selection_bg.
   colors.active_bg = colors.panel_bg
 else

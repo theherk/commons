@@ -31,7 +31,7 @@ NVIM_VARIANT_DARK=frappe
 NVIM_VARIANT_LIGHT=latte
 
 WEZTERM_DARK="Catppuccin Frappe"
-WEZTERM_LIGHT="Catppuccin Latte"
+WEZTERM_LIGHT="Catppuccin Latte (Gogh)"
 
 YAZI_DARK="tokyo-night"
 YAZI_LIGHT="catppuccin-latte"
