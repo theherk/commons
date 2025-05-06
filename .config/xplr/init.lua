@@ -1,5 +1,5 @@
 ---@diagnostic disable-next-line: lowercase-global
-version = "0.21.0"
+version = "1.0.0"
 local xplr = xplr
 -- xplr.config.general.show_hidden = true
 
