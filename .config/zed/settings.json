@@ -141,6 +141,6 @@
     "dark": "Catppuccin Frappé (teal)",
     "light": "Catppuccin Latte (teal)"
   },
-  "ui_font_size": 17,
+  "ui_font_size": 18,
   "vim_mode": true
 }
