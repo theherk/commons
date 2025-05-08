@@ -14,6 +14,9 @@ CODIUM_ICON_LIGHT=catppuccin-latte
 DOOM_DARK=h4s-tokyo-night
 DOOM_LIGHT=doom-one-light
 
+FISH_DARK="Catppuccin Frappe"
+FISH_LIGHT="Catppuccin Latte"
+
 GHOSTTY_DARK=tokyonight
 GHOSTTY_LIGHT=catppuccin-latte
 
@@ -41,6 +44,7 @@ ZELLIJ_LIGHT="gruvbox-light"
 
 darken() {
 	echo "darkening"
+	yes | fish -c 'fish_config theme save "'"$FISH_DARK"'"'
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
 	sed -i '' 's/\(--theme=\)".*"/\1"'$BAT_DARK'"/' .config/bat/config
 	sed -i '' 's/\("workbench.colorTheme": \)".*"/\1"'"$CODIUM_DARK"'"/' .config/codium/settings.json
@@ -68,6 +72,7 @@ darken() {
 
 lighten() {
 	echo "lightening"
+	yes | fish -c 'fish_config theme save "'"$FISH_LIGHT"'"'
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
 	sed -i '' 's/\(--theme=\)".*"/\1"'$BAT_LIGHT'"/' .config/bat/config
 	sed -i '' 's/\("workbench.colorTheme": \)".*"/\1"'"$CODIUM_LIGHT"'"/' .config/codium/settings.json

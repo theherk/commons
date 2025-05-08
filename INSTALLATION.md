@@ -59,6 +59,14 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 (brew --prefix)/opt/fzf/uninstall
 ```
 
+### Set fish colors without storing themes
+
+```fish
+fisher install catppuccin/fish
+```
+
+Light dark toggle scripts will set the correct theme.
+
 ## Configure Neovim
 
 My configuration is largely built by cribbing from the legend folke, but it is bespoke to me, and doesn't require other installation. After linking, just fire it up.
