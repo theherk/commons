@@ -32,13 +32,14 @@ if vim.g.neovide then
       Util.set_term_colors(colors)
     end
 
-    vim.g.neovide_cursor_animate_in_insert_mode = true
+    vim.g.neovide_cursor_animate_in_insert_mode = false
     vim.g.neovide_cursor_animate_command_line = true
     vim.g.neovide_cursor_smooth_blink = true
-    vim.g.neovide_cursor_vfx_mode = "railgun"
-    vim.g.neovide_cursor_vfx_particle_curl = 0.77
-    vim.g.neovide_cursor_vfx_particle_density = 3.25
-    vim.g.neovide_cursor_vfx_particle_lifetime = 1.33
-    vim.g.neovide_cursor_vfx_particle_phase = 12.1
+    vim.g.neovide_cursor_vfx_mode = "railrun"
+    vim.g.neovide_cursor_trail_size = 0.436
+    vim.g.neovide_cursor_vfx_particle_curl = 0.555
+    vim.g.neovide_cursor_vfx_particle_density = 0.777
+    vim.g.neovide_cursor_vfx_particle_lifetime = 0.666
+    vim.g.neovide_cursor_vfx_particle_phase = 1.21
   end)
 end
