@@ -8,11 +8,12 @@
     "border_size": 1,
     "inactive_opacity": 0.81247
   },
-  "assistant": {
-    "default_profile": "manual",
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "provider": "ollama",
+      "model": "llama3.2"
     },
     "default_height": 640.0,
     "version": "2",
@@ -49,6 +50,21 @@
   "inlay_hints": {
     "enabled": false,
     "toggle_on_modifiers_press": { "control": true }
+  },
+  "language_models": {
+    "ollama": {
+      "available_models": [
+        {
+          "name": "gemma3:4b",
+          "max_tokens": 0
+        },
+        {
+          "name": "llama3.2",
+          "max_tokens": 32768,
+          "supports_tools": true
+        }
+      ]
+    }
   },
   "languages": {
     "Python": {
