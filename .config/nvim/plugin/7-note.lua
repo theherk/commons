@@ -16,7 +16,7 @@ end
 
 later(function()
   add({
-    source = "epwalsh/obsidian.nvim",
+    source = "obsidian-nvim/obsidian.nvim",
     depend = {
       "echasnovski/mini.pick",
       "hrsh7th/nvim-cmp",
