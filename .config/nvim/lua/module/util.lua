@@ -6,7 +6,7 @@ function M.ai_has_anthropic_enabled() return vim.fn.getcwd():find("dnb.no") == n
 
 function M.ai_has_codeium_enabled() return vim.fn.filereadable(".codeium-enabled") == 1 end
 
-function M.ai_has_copilot_enabled() return vim.fn.getcwd():find("dnb.no") ~= nil end
+function M.ai_has_copilot_enabled() return vim.fn.getcwd():find("dnb.no") ~= nil or vim.fn.getcwd():find("dnb.ghe.com") ~= nil end
 
 function M.ai_has_ollama_enabled() return true end
 
