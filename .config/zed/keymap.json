@@ -37,7 +37,7 @@
     "context": "Editor && (vim_mode == normal || vim_mode == helix_normal) && !VimWaiting && !menu",
     "bindings": {
       "space space": "file_finder::Toggle",
-      "space /": "workspace::NewSearch",
+      "space /": ["pane::DeploySearch", { "excluded_files": "**/_*.tf" }],
       "space b b": "tab_switcher::ToggleAll",
       "space f s": "workspace::Save",
       "space g g": [
