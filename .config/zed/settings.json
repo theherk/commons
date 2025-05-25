@@ -144,7 +144,6 @@
     "metrics": false
   },
   "terminal": {
-    "alternate_scroll": "on",
     "default_height": 666,
     "font_size": 17,
     "shell": {
