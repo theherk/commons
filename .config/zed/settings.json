@@ -120,6 +120,7 @@
     "indent_size": 16
   },
   "search": {
+    "button": false,
     "whole_word": false,
     "case_sensitive": false,
     "include_ignored": false,
