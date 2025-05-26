@@ -27,6 +27,9 @@
   "features": {
     "copilot": false
   },
+  "file_types": {
+    "TCL": ["*.exp"]
+  },
   "git": {
     "git_gutter": "tracked_files"
   },
