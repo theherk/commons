@@ -35,8 +35,6 @@ if status is-login
 
     pyenv init - | source
     pyenv virtualenv-init - | source
-    jenv init - | source
-    jenv enable-plugin export >/dev/null
 end
 
 # Load directory shortcuts.
