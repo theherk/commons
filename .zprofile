@@ -14,9 +14,9 @@ export PATH=/usr/local/go/bin:$PATH
 export PATH=/usr/local/opt/mysql-client/bin:$PATH
 
 if [ -e /opt/homebrew/bin/brew ]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+	eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [ -e /usr/local/Homebrew/bin/brew ]; then
-  eval "$(/usr/local/Homebrew/bin/brew shellenv)"
+	eval "$(/usr/local/Homebrew/bin/brew shellenv)"
 fi
 
 export PATH=$HOME/.amplify/bin:$PATH
@@ -32,10 +32,5 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-fi
-
-if command -v jenv 1>/dev/null 2>&1; then
-  eval "$(jenv init -)"
-  jenv enable-plugin export >/dev/null
+	eval "$(pyenv init --path)"
 fi
