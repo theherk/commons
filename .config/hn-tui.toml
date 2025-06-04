@@ -1,4 +1,5 @@
 [theme.palette]
+# Catppuccin Frappe colors
 background = "#303446"
 foreground = "#c6d0f5"
 selection_background = "#414559"

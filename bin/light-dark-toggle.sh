@@ -42,10 +42,101 @@ YAZI_LIGHT="catppuccin-latte"
 ZELLIJ_DARK="tokyo-night"
 ZELLIJ_LIGHT="gruvbox-light"
 
+HN_DARK='[theme.palette]
+# Catppuccin Frappe colors
+background = "#303446"
+foreground = "#c6d0f5"
+selection_background = "#414559"
+selection_foreground = "#c6d0f5"
+black = "#414559"
+blue = "#8caaee"
+cyan = "#81c8be"
+green = "#a6d189"
+magenta = "#ca9ee6"
+red = "#e78284"
+white = "#949cbb"
+yellow = "#e5c890"
+light_black = "#51576d"
+light_white = "#b5bfe2"
+light_red = "#ea999c"
+light_magenta = "#f4b8e4"
+light_green = "#a6d189"
+light_cyan = "#99d1db"
+light_blue = "#85c1dc"
+light_yellow = "#ef9f76"
+
+[theme.component_style]
+
+title_bar = { front = "#949cbb", back = "#414559", effect = "bold" }
+
+current_story_tag = { front = "#c6d0f5", back = "#51576d", effect = "bold" }
+matched_highlight = { front = "#414559", back = "#a6d189" }
+metadata = { front = "#949cbb" }
+username = { effect = "bold" }
+loading_bar = { front = "#ef9f76", back = "#303446" }
+header = { front = "#414559", effect = "bold" }
+quote = { front = "#c6d0f5" }
+italic = { effect = "italic" }
+bold = { effect = "bold" }
+single_code_block = { back = "#51576d", front = "#c6d0f5" }
+multiline_code_block = { front = "#51576d", effect = "bold" }
+link = { front = "#81c8be" }
+link_id = { front = "#414559", back = "#e5c890" }
+ask_hn = { front = "#e78284", effect = "bold" }
+tell_hn = { front = "#e5c890", effect = "bold" }
+show_hn = { front = "#8caaee", effect = "bold" }
+launch_hn = { front = "#a6d189", effect = "bold" }'
+HN_LIGHT='
+[theme.palette]
+# Catppuccin Latte colors
+background = "#eff1f5"
+foreground = "#4c4f69"
+selection_background = "#ccd0da"
+selection_foreground = "#4c4f69"
+black = "#5c5f77"
+blue = "#1e66f5"
+cyan = "#179299"
+green = "#40a02b"
+magenta = "#ea76cb"
+red = "#d20f39"
+white = "#acb0be"
+yellow = "#df8e1d"
+light_black = "#6c6f85"
+light_white = "#bcc0cc"
+light_red = "#e64553"
+light_magenta = "#8839ef"
+light_green = "#40a02b"
+light_cyan = "#04a5e5"
+light_blue = "#209fb5"
+light_yellow = "#fe640b"
+
+[theme.component_style]
+
+title_bar = { front = "#acb0be", back = "#ccd0da", effect = "bold" }
+
+current_story_tag = { front = "#4c4f69", back = "#ccd0da", effect = "bold" }
+matched_highlight = { front = "#eff1f5", back = "#40a02b" }
+metadata = { front = "#8c8fa1" }
+username = { effect = "bold" }
+loading_bar = { front = "#fe640b", back = "#eff1f5" }
+header = { front = "#5c5f77", effect = "bold" }
+quote = { front = "#4c4f69" }
+italic = { effect = "italic" }
+bold = { effect = "bold" }
+single_code_block = { back = "#ccd0da", front = "#4c4f69" }
+multiline_code_block = { front = "#6c6f85", effect = "bold" }
+link = { front = "#179299" }
+link_id = { front = "#5c5f77", back = "#df8e1d" }
+ask_hn = { front = "#d20f39", effect = "bold" }
+tell_hn = { front = "#df8e1d", effect = "bold" }
+show_hn = { front = "#1e66f5", effect = "bold" }
+launch_hn = { front = "#40a02b", effect = "bold" }'
+
 darken() {
 	echo "darkening"
 	yes | fish -c 'fish_config theme save "'"$FISH_DARK"'"'
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
+	echo "$HN_DARK" >~/.config/hn-tui.toml
 	sed -i '' 's/\(--theme=\)".*"/\1"'$BAT_DARK'"/' .config/bat/config
 	sed -i '' 's/\("workbench.colorTheme": \)".*"/\1"'"$CODIUM_DARK"'"/' .config/codium/settings.json
 	sed -i '' 's/\("workbench.iconTheme": \)".*"/\1"'$CODIUM_ICON_DARK'"/' .config/codium/settings.json
@@ -74,6 +165,7 @@ lighten() {
 	echo "lightening"
 	yes | fish -c 'fish_config theme save "'"$FISH_LIGHT"'"'
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
+	echo "$HN_LIGHT" >~/.config/hn-tui.toml
 	sed -i '' 's/\(--theme=\)".*"/\1"'$BAT_LIGHT'"/' .config/bat/config
 	sed -i '' 's/\("workbench.colorTheme": \)".*"/\1"'"$CODIUM_LIGHT"'"/' .config/codium/settings.json
 	sed -i '' 's/\("workbench.iconTheme": \)".*"/\1"'$CODIUM_ICON_LIGHT'"/' .config/codium/settings.json
