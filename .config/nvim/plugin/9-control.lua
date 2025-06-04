@@ -70,8 +70,12 @@ vim.keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "prev se
 -- buffers
 vim.keymap.set("i", "<d-[>", "<esc><plug>(cokeline-focus-prev)", { desc = "prev buffer" })
 vim.keymap.set("i", "<d-]>", "<esc><plug>(cokeline-focus-next)", { desc = "next buffer" })
+vim.keymap.set("i", "<D-S-[>", "<esc><plug>(cokeline-focus-prev)", { desc = "prev buffer" })
+vim.keymap.set("i", "<D-S-]>", "<esc><plug>(cokeline-focus-next)", { desc = "next buffer" })
 vim.keymap.set({ "n", "t" }, "<d-[>", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
 vim.keymap.set({ "n", "t" }, "<d-]>", "<plug>(cokeline-focus-next)", { desc = "next buffer" })
+vim.keymap.set({ "n", "t" }, "<D-S-[>", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
+vim.keymap.set({ "n", "t" }, "<D-S-]>", "<plug>(cokeline-focus-next)", { desc = "next buffer" })
 vim.keymap.set("i", "<d-{>", "<esc><plug>(cokeline-focus-prev)", { desc = "prev buffer" })
 vim.keymap.set("i", "<d-}>", "<esc><plug>(cokeline-focus-next)", { desc = "next buffer" })
 vim.keymap.set({ "n", "t" }, "<d-{>", "<plug>(cokeline-focus-prev)", { desc = "prev buffer" })
