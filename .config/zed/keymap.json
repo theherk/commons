@@ -40,11 +40,13 @@
       "space /": ["pane::DeploySearch", { "excluded_files": "**/_*.tf" }],
       "space b b": "tab_switcher::ToggleAll",
       "space f s": "workspace::Save",
+      "space g c": "git::Branch",
       "space g g": [
         "task::Spawn",
         { "task_name": "lazygit", "reveal_target": "center" }
       ],
       "space g G": "git_panel::ToggleFocus",
+      "space g L": "editor::OpenGitBlameCommit",
       "space s s": "outline::Toggle",
       "space Z": "workspace::ToggleCenteredLayout"
     }
@@ -52,7 +54,8 @@
   {
     "context": "Editor && (vim_mode == normal || vim_mode == helix_normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
-      "space g l y": "editor::CopyPermalinkToLine"
+      "space g l y": "editor::CopyPermalinkToLine",
+      "space g l Y": "editor::OpenPermalinkToLine"
     }
   },
   {
