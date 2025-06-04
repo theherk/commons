@@ -28,6 +28,7 @@
     "copilot": false
   },
   "file_types": {
+    "Shell Script": ["*.applescript"],
     "TCL": ["*.exp"]
   },
   "git": {
