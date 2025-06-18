@@ -1,7 +1,11 @@
 {
   "edit_predictions": {
-    "disabled_globs": ["**/dnb.ghe.com/**", "**/gitlab.tech.dnb.no/**"],
-    "mode": "eager"
+    "copilot": {
+      "enterprise_uri": "https://dnb.ghe.com"
+    }
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
   },
   "active_pane_modifiers": {
     "magnification": 1.4,
@@ -23,9 +27,6 @@
   "buffer_font_size": 18,
   "chat_panel": {
     "default_width": 380
-  },
-  "features": {
-    "copilot": false
   },
   "file_types": {
     "Shell Script": ["*.applescript"],
