@@ -6,7 +6,7 @@ customCommands:
         initialValue: ""
     command: git commit -m "{{index .PromptResponses 0}}" --no-verify
     context: "global"
-    subprocess: true
+    output: terminal
   - key: "C"
     command: git prune-merged
     context: "localBranches"
