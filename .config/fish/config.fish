@@ -12,6 +12,7 @@ if status is-login
     set -gx VENVS $HOME/.venvs
     set -gx P $HOME/projects
     set -gx GOPATH $P/go
+    set -gx GROOVY_HOME (brew --prefix)"/opt/groovy/libexec"
     set -gx HTML_TIDY $HOME/.config/tidy/config.txt
     set -gx VOLTA_HOME "$HOME/.volta"
     set -gx XDG_CONFIG_HOME "$HOME/.config"
