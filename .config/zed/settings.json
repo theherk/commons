@@ -1,11 +1,9 @@
 {
   "edit_predictions": {
-    "copilot": {
-      "enterprise_uri": "https://dnb.ghe.com"
-    }
+    "mode": "eager"
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "zed"
   },
   "active_pane_modifiers": {
     "magnification": 1.4,
