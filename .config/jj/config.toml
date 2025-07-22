@@ -31,7 +31,7 @@ abandon-unreachable-commits = true
 
 [revset-aliases]
 trunk = "main@origin"
-mine = "author(theherk@gmail.com)"
+mine = "author('theherk@gmail.com')"
 
 [template-aliases]
 commit_summary = '''

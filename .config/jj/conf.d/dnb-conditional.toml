@@ -12,4 +12,4 @@ email = "adam.lawrence.sherwood@dnb.no"
 key = "adam.lawrence.sherwood@dnb.no"
 
 [revset-aliases]
-mine = "author(adam.lawrence.sherwood@dnb.no)"
+mine = "author('adam.lawrence.sherwood@dnb.no')"
