@@ -48,6 +48,10 @@
       ],
       "space g G": "git_panel::ToggleFocus",
       "space g L": "editor::OpenGitBlameCommit",
+      "space j j": [
+        "task::Spawn",
+        { "task_name": "jjui", "reveal_target": "center" }
+      ],
       "space s s": "outline::Toggle",
       "space Z": "workspace::ToggleCenteredLayout"
     }

@@ -1,0 +1,15 @@
+--when.repositories = [
+    "~/projects/github.com/dnb-asa/",
+    "~/projects/dnb.ghe.com/",
+    "~/projects/gitlab.tech.dnb.no/",
+]
+
+[user]
+name = "Adam Lawrence Sherwood"
+email = "adam.lawrence.sherwood@dnb.no"
+
+[signing]
+key = "adam.lawrence.sherwood@dnb.no"
+
+[revset-aliases]
+mine = "author(adam.lawrence.sherwood@dnb.no)"

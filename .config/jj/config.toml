@@ -1,0 +1,57 @@
+[aliases]
+bm = ["bookmark", "set", "main"]
+
+[user]
+name = "Adam Sherwood"
+email = "theherk@gmail.com"
+
+[signing]
+behavior = "own"
+backend = "gpg"
+key = "theherk@gmail.com"
+
+[ui]
+default-command = "log"
+editor = "editor"
+commit-template = "~/.config/jj/commit-template.txt"
+pager = "delta"
+diff-editor = ":builtin"
+
+[colors]
+"diff removed" = "red"
+"diff added" = "green"
+
+[merge-tools.delta]
+program = "delta"
+edit-args = ["--color-only"]
+
+[git]
+auto-local-bookmark = true
+abandon-unreachable-commits = true
+
+[revset-aliases]
+trunk = "main@origin"
+mine = "author(theherk@gmail.com)"
+
+[template-aliases]
+commit_summary = '''
+if(description,
+  description.first_line(),
+  "(no description set)"
+)
+'''
+
+[snapshot]
+max-new-file-size = "1MB"
+
+[fix]
+tools.go = { command = ["go", "fmt"], patterns = ["*.go"] }
+tools.python = { command = ["ruff", "format", "-"], patterns = ["*.py"] }
+tools.terraform = { command = [
+    "terraform",
+    "fmt",
+    "-",
+], patterns = [
+    "*.tf",
+    "*.tfvars",
+] }
