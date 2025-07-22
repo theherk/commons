@@ -21,7 +21,6 @@
       "model": "claude-sonnet-4"
     },
     "default_height": 640.0,
-    "version": "2",
     "default_width": 640
   },
   "buffer_font_family": "VictorMono Nerd Font",

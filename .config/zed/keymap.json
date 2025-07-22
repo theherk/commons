@@ -29,6 +29,7 @@
   {
     "context": "Editor && vim_mode == visual && !menu",
     "bindings": {
+      "%": "editor::SwapSelectionEnds",
       "v": "editor::SelectLargerSyntaxNode",
       "V": "editor::SelectSmallerSyntaxNode"
     }
