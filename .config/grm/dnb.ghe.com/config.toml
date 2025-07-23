@@ -1,0 +1,8 @@
+force_ssh = true
+provider = "github"
+api_url = "https://api.dnb.ghe.com"
+token_command = "security find-generic-password -w -s dnb.ghe.com -a adam.lawrence.sherwood@dnb.no"
+root = "."
+
+[filters]
+access = true

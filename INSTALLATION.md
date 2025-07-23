@@ -157,8 +157,9 @@ This is an optional step, and will merge all owner repositories to their correct
 First, ensure the requisite directories exist, install [git-repo-manager](https://github.com/hakoerber/git-repo-manager), and link the configuration files into the correct locations.
 
 ```sh
-mkdir -p $P/github.com $P/gitlab.com
+mkdir -p $P/dnb.ghe.com $P/github.com $P/gitlab.com $P/gitlab.tech.dnb.no
 cargo +nightly install git-repo-manager
+ln -sf ~/commons/.config/grm/dnb.ghe.com/config.toml $P/dnb.ghe.com/config.toml
 ln -sf ~/commons/.config/grm/github.com/config.toml $P/github.com/config.toml
 ln -sf ~/commons/.config/grm/gitlab.com/config.toml $P/gitlab.com/config.toml
 ln -sf ~/commons/.config/grm/gitlab.tech.dnb.no/config.toml $P/gitlab.tech.dnb.no/config.toml
@@ -166,12 +167,14 @@ ln -sf ~/commons/.config/grm/gitlab.tech.dnb.no/config.toml $P/gitlab.tech.dnb.n
 
 Then, you must store personal access tokens in the keyring.
 
+    pwa dnb.ghe.com adam.lawrence.sherwood@dnb.no
     pwa github.com theherk@gmail.com
     pwa gitlab.com theherk@gmail.com
     pwa gitlab.tech.dnb.no adam.lawrence.sherwood@dnb.no
 
 Lastly, sync the repositories. These could be shared manifests, but for now this granular approach is chosen.
 
+    cd $P/dnb.ghe.com && grm repos sync config
     cd $P/github.com && grm repos sync config
     cd $P/gitlab.com && grm repos sync config
     cd $P/gitlab.tech.dnb.no && grm repos sync config
