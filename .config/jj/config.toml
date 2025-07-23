@@ -1,5 +1,13 @@
 [aliases]
-bm = ["bookmark", "set", "main"]
+bm = ["bookmark", "set", "main", "--revision=@"]
+sync = [
+    "util",
+    "exec",
+    "--",
+    "bash",
+    "-c",
+    'jj git fetch && jj rebase -d "trunk()"',
+]
 
 [user]
 name = "Adam Sherwood"
