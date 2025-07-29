@@ -14,7 +14,7 @@
     "inactive_opacity": 0.81247
   },
   "agent": {
-    "always_allow_tool_actions": true,
+    "always_allow_tool_actions": false,
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
