@@ -9,7 +9,6 @@
     "edit_prediction_provider": "copilot"
   },
   "active_pane_modifiers": {
-    "magnification": 1.4,
     "border_size": 1,
     "inactive_opacity": 0.81247
   },
@@ -132,8 +131,7 @@
     "regex": true
   },
   "slash_commands": {
-    "docs": { "enabled": true },
-    "project": { "enabled": true }
+    "docs": { "enabled": true }
   },
   "soft_wrap": "editor_width",
   "tab_bar": {
