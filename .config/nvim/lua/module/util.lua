@@ -53,17 +53,17 @@ function M.ai_update_services()
     local avante = require("avante")
     if avante.setup then
       avante.setup({
-        claude = {
-          endpoint = has_anthropic and "https://api.anthropic.com" or "http://localhost:1",
-          model = "claude-3-5-sonnet-20240620",
-          temperature = 0,
-          max_tokens = 4096,
-        },
         file_selector = { provider = "fzf" },
-        windows = {
-          input = { height = 4 },
-          width = 37,
-        },
+        providers = {
+          claude = {
+            endpoint = has_anthropic and "https://api.anthropic.com" or "http://localhost:1",
+            extra_request_body = {
+              max_tokens = 4096,
+              temperature = 0,
+            },
+            model = "claude-3-5-sonnet-20240620",
+          },
+        }
       })
     end
   end)
