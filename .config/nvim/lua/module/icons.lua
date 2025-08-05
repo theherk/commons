@@ -20,7 +20,6 @@ local M = {
   kinds = {
     Array = " ",
     Boolean = " ",
-    Codeium = " ",
     Class = " ",
     Color = " ",
     Constant = " ",

@@ -4,8 +4,6 @@ M.root_patterns = { ".git", "lua" }
 
 function M.ai_has_anthropic_enabled() return vim.fn.getcwd():find("dnb.no") == nil end
 
-function M.ai_has_codeium_enabled() return vim.fn.filereadable(".codeium-enabled") == 1 end
-
 function M.ai_has_copilot_enabled() return vim.fn.getcwd():find("dnb.no") ~= nil or vim.fn.getcwd():find("dnb.ghe.com") ~= nil end
 
 function M.ai_has_ollama_enabled() return true end
@@ -13,7 +11,6 @@ function M.ai_has_ollama_enabled() return true end
 function M.ai_status()
   local status = {
     anthropic = M.ai_has_anthropic_enabled(),
-    codeium = M.ai_has_codeium_enabled(),
     copilot = M.ai_has_copilot_enabled(),
     ollama = M.ai_has_ollama_enabled(),
   }
@@ -31,32 +28,19 @@ end
 
 function M.ai_update_services()
   local has_anthropic = M.ai_has_anthropic_enabled()
-  local has_codeium = M.ai_has_codeium_enabled()
   local has_copilot = M.ai_has_copilot_enabled()
   local has_ollama = M.ai_has_ollama_enabled()
-
-  -- Update Codeium
-  pcall(function()
-    local codeium = require("codeium")
-    if codeium.setup then
-      codeium.setup({
-        api = {
-          -- When disabled, point to localhost to prevent connections
-          host = has_codeium and "codeium.com" or "127.0.0.1",
-          port = has_codeium and 443 or 1,
-        },
-      })
-    end
-  end)
 
   -- Update Copilot
   pcall(function()
     local copilot = require("copilot")
-    if copilot.setup then copilot.setup({
-      auth_provider_url = has_copilot and "https://dnb.ghe.com" or "http://localhost:1",
-      panel = { enabled = false },
-      suggestion = { enabled = false },
-    }) end
+    if copilot.setup then
+      copilot.setup({
+        auth_provider_url = has_copilot and "https://dnb.ghe.com" or "http://localhost:1",
+        panel = { enabled = false },
+        suggestion = { enabled = false },
+      })
+    end
     if has_copilot then
       vim.cmd("Copilot enable")
     else
@@ -98,8 +82,6 @@ function M.get_active_sources()
     { name = "buffer" },
     { name = "path" },
   }
-
-  if M.ai_has_codeium_enabled() then table.insert(sources, 1, { name = "codeium" }) end
 
   if M.ai_has_copilot_enabled() then table.insert(sources, 1, { name = "copilot" }) end
 

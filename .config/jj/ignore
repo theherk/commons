@@ -1,7 +1,6 @@
 *.egg-info
 *.py[cod]
 .avante_chat_history
-.codeium-enabled
 .coverage
 .direnv
 .DS_Store

@@ -16,7 +16,6 @@ later(function()
   add({
     source = "hrsh7th/nvim-cmp",
     depends = {
-      "Exafunction/codeium.nvim",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -69,17 +68,6 @@ later(function()
     },
     sorting = defaults.sorting,
   })
-  cmp.setup.filetype("vim", {
-    sources = vim.tbl_filter(function(source) return source.name ~= "codeium" end, sources),
-  })
-end)
-
-later(function()
-  add({
-    source = "Exafunction/codeium.nvim",
-    depend = { "nvim-lua/plenary.nvim" },
-  })
-  require("codeium").setup()
 end)
 
 later(function()
