@@ -6,11 +6,8 @@ mkdir -p ~/.config/zed
 ln -sf ~/commons/.aliases.sh ~/
 ln -sf ~/commons/.bashrc ~/
 ln -sf ~/commons/.config/aerospace/ ~/.config/
-ln -sf ~/commons/.config/alacritty/ ~/.config/
 ln -sf ~/commons/.config/atuin/config.toml ~/.config/atuin/
 ln -sf ~/commons/.config/bat/ ~/.config/
-ln -sf ~/commons/.config/codium/keybindings.json ~/Library/Application\ Support/VSCodium/User/
-ln -sf ~/commons/.config/codium/settings.json ~/Library/Application\ Support/VSCodium/User/
 ln -sf ~/commons/.config/doom/ ~/.config/
 ln -sf ~/commons/.config/direnv/ ~/.config/
 ln -sf ~/commons/.config/fish/config.fish ~/.config/fish/config.fish
@@ -18,20 +15,16 @@ ln -sf ~/commons/.config/fish/conf.d/abbreviations.fish ~/.config/fish/conf.d/ab
 ln -sf ~/commons/.config/fish/conf.d/functions.fish ~/.config/fish/conf.d/functions.fish
 ln -sf ~/commons/.config/ghostty/ ~/.config/
 ln -sf ~/commons/.config/git/ ~/.config/
-ln -sf ~/commons/.config/gitui/ ~/.config/
 ln -sf ~/commons/.config/helix/ ~/.config/
 ln -sf ~/commons/.config/hn-tui.toml ~/.config/hn-tui.toml
 ln -sf ~/commons/.config/jj/ ~/.config/
-ln -sf ~/commons/.config/lazydocker/ ~/.config/
 ln -sf ~/commons/.config/lazygit/ ~/.config/
 ln -sf ~/commons/.config/neovide/ ~/.config/
 ln -sf ~/commons/.config/nvim/ ~/.config/
-ln -sf ~/commons/.config/nix/ ~/.config/
 ln -sf ~/commons/.config/nushell/ ~/.config/
 ln -sf ~/commons/.config/pipes-rs/ ~/.config/
 ln -sf ~/commons/.config/ripgrep/ ~/.config/
 ln -sf ~/commons/.config/starship.toml ~/.config/starship.toml
-ln -sf ~/commons/.config/tidy/ ~/.config/
 ln -sf ~/commons/.config/wezterm/ ~/.config/
 ln -sf ~/commons/.config/yazi/ ~/.config/
 ln -sf ~/commons/.config/zed/keymap.json ~/.config/zed/
