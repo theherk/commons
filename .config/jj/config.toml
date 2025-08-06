@@ -23,16 +23,11 @@ key = "theherk@gmail.com"
 default-command = "log"
 editor = "editor"
 commit-template = "~/.config/jj/commit-template.txt"
-pager = "delta"
 diff-editor = ":builtin"
 
 [colors]
 "diff removed" = "red"
 "diff added" = "green"
-
-[merge-tools.delta]
-program = "delta"
-edit-args = ["--color-only"]
 
 [git]
 auto-local-bookmark = true
