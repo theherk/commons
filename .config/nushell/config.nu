@@ -13,7 +13,6 @@ $env.config = {
         vi_normal: block
     }
 
-    use_grid_icons: true
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
     edit_mode: vi
