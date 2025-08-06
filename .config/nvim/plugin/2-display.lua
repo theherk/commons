@@ -157,22 +157,6 @@ later(function()
 end)
 
 later(function()
-  add({
-    source = "michaelrommel/nvim-silicon",
-    name = "silicon",
-  })
-  require("silicon").setup({
-    background = "#414559",
-    font = "VictorMono NF=26",
-    pad_horiz = 20,
-    pad_vert = 40,
-    theme = "Catppuccin-frappe",
-    to_clipboard = true,
-    window_title = function() return vim.fn.fnamemodify(vim.fn.bufname(vim.fn.bufnr()), ":~:.") end,
-  })
-end)
-
-later(function()
   add({ source = "mawkler/modicator.nvim" })
   require("modicator").setup()
 end)
