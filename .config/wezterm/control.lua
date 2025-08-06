@@ -127,7 +127,7 @@ local keys = {
   { key = "K", mods = "SUPER", action = act.ScrollByPage(-1) },
 
   -- Launch
-  { key = "e", mods = "LEADER", action = util.launch({ "editor" }) },
+  { key = "e", mods = "LEADER", action = util.launch({ "hx" }) },
   { key = "f", mods = "LEADER", action = util.launch({ "yazi" }) },
   { key = "F", mods = "LEADER", action = util.launch({ "xplr" }) },
   { key = "g", mods = "LEADER", action = util.launch({ "lazygit" }) },
