@@ -31,7 +31,6 @@ now(function()
       return {
         CmpBorder = { fg = colors.surface1 },
         FloatBorder = { fg = colors.surface1 },
-        NoiceCmdlinePopupBorder = { fg = colors.overlay0 },
       }
     end,
     flavour = flavour,
@@ -56,7 +55,6 @@ now(function()
       },
       neogit = true,
       neotree = true,
-      noice = true,
       notify = true,
       nvimtree = true,
       render_markdown = true,
@@ -90,25 +88,6 @@ now(function()
   vim.api.nvim_create_autocmd("FileType", {
     pattern = { "alpha", "help", "neo-tree", "Trouble", "mason", "notify", "toggleterm" },
     callback = function() vim.b.miniindentscope_disable = true end,
-  })
-end)
-
-now(function()
-  add({
-    source = "folke/noice.nvim",
-    depends = { "MunifTanjim/nui.nvim" },
-  })
-  local noice = require("noice")
-  noice.setup({
-    lsp = { progress = { enabled = false } },
-    messages = { enabled = true },
-    notify = { enabled = false },
-    presets = {
-      bottom_search = true,
-      long_message_to_split = true,
-      inc_rename = true,
-      lsp_doc_border = true,
-    },
   })
 end)
 
@@ -285,16 +264,6 @@ now(function()
         { "filename", path = 4, separator = { right = "▷" }, symbols = { modified = "  ", readonly = "", unnamed = "" } },
       },
       lualine_x = {
-        {
-          function() return require("noice").api.status.command.get() end,
-          cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-          color = Util.fg("Statement"),
-        },
-        {
-          function() return require("noice").api.status.mode.get() end,
-          cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-          color = Util.fg("Constant"),
-        },
         {
           function() return Icons.misc.Bug .. require("dap").status() end,
           cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
