@@ -60,9 +60,8 @@ git:
   parseEmoji: true
 notARepository: quit
 os:
-  edit: "open -a NeovideProject {{filename}}"
-  editAtLine: "nvim +{{line}} {{filename}}"
-  editAtLineAndWait: "nvim --remote-wait +{{line}} {{filename}}"
+  edit: "hx {{filename}}"
+  editAtLine: "hx {{filename}}:{{line}}"
 promptToReturnFromSubprocess: false
 services:
   "dnb.ghe.com": "github:dnb.ghe.com"

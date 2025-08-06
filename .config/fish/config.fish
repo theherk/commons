@@ -7,7 +7,8 @@ if status is-login
         eval (/usr/local/Homebrew/bin/brew shellenv)
     end
 
-    set -gx EDITOR editor
+    set -gx EDITOR hx
+    set -gx VISUAL hx
     set -gx CARGO_HOME $HOME/.cargo
     set -gx VENVS $HOME/.venvs
     set -gx P $HOME/projects
