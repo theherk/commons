@@ -5,12 +5,6 @@ PROFILE_DIR="$HOME/Library/Application Support/zen/Profiles/y10w10po.Default (al
 BAT_DARK=tokyonight_night
 BAT_LIGHT=Catppuccin-latte
 
-CODIUM_DARK="Aura Dark (Soft Text)"
-CODIUM_LIGHT="Catppuccin Latte"
-
-CODIUM_ICON_DARK=catppuccin-mocha
-CODIUM_ICON_LIGHT=catppuccin-latte
-
 DOOM_DARK=h4s-tokyo-night
 DOOM_LIGHT=doom-one-light
 
@@ -138,14 +132,8 @@ darken() {
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
 	echo "$HN_DARK" >~/.config/hn-tui.toml
 	sed -i '' 's/\(--theme=\)".*"/\1"'$BAT_DARK'"/' .config/bat/config
-	sed -i '' 's/\("workbench.colorTheme": \)".*"/\1"'"$CODIUM_DARK"'"/' .config/codium/settings.json
-	sed -i '' 's/\("workbench.iconTheme": \)".*"/\1"'$CODIUM_ICON_DARK'"/' .config/codium/settings.json
 	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_DARK')/' .config/doom/config.org
 	sed -i '' 's/\(.*light =\).*/\1 false/' .config/git/config
-	sed -i '' 's/\(command_fg: \).*,/\1Some("Gray"),/' .config/gitui/theme.ron
-	sed -i '' 's/\(selection_bg: \).*,/\1Some("#0B2942"),/' .config/gitui/theme.ron
-	sed -i '' 's/\(cmdbar_bg: \).*,/\1Some("#0B2942"),/' .config/gitui/theme.ron
-	sed -i '' 's/\(cmdbar_extra_lines_bg: \).*,/\1Some("#0B2942"),/' .config/gitui/theme.ron
 	sed -i '' 's/\(theme = \).*/\1'$GHOSTTY_DARK'/' .config/ghostty/config
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_DARK'"/' .config/helix/config.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_DARK'"]/' .config/lazygit/config.yml
@@ -167,14 +155,8 @@ lighten() {
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
 	echo "$HN_LIGHT" >~/.config/hn-tui.toml
 	sed -i '' 's/\(--theme=\)".*"/\1"'$BAT_LIGHT'"/' .config/bat/config
-	sed -i '' 's/\("workbench.colorTheme": \)".*"/\1"'"$CODIUM_LIGHT"'"/' .config/codium/settings.json
-	sed -i '' 's/\("workbench.iconTheme": \)".*"/\1"'$CODIUM_ICON_LIGHT'"/' .config/codium/settings.json
 	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_LIGHT')/' .config/doom/config.org
 	sed -i '' 's/\(.*light =\).*/\1 true/' .config/git/config
-	sed -i '' 's/\(command_fg: \).*,/\1Some("White"),/' .config/gitui/theme.ron
-	sed -i '' 's/\(selection_bg: \).*,/\1Some("LightBlue"),/' .config/gitui/theme.ron
-	sed -i '' 's/\(cmdbar_bg: \).*,/\1Some("LightBlue"),/' .config/gitui/theme.ron
-	sed -i '' 's/\(cmdbar_extra_lines_bg: \).*,/\1Some("LightBlue"),/' .config/gitui/theme.ron
 	sed -i '' 's/\(theme = \).*/\1'$GHOSTTY_LIGHT'/' .config/ghostty/config
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_LIGHT'"/' .config/helix/config.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_LIGHT'"]/' .config/lazygit/config.yml
