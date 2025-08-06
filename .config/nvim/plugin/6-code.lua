@@ -4,7 +4,6 @@ local Icons = require("module.icons")
 local Lsp = require("module.lsp")
 local Util = require("module.util")
 
-
 later(function()
   add({ source = "aaronik/treewalker.nvim" })
   require("treewalker").setup()
@@ -166,8 +165,6 @@ end)
 
 later(function()
   add({
-later(function()
-  add({
     source = "fredeeb/tardis.nvim",
     depends = { "nvim-lua/plenary.nvim" },
   })
@@ -180,7 +177,6 @@ later(function()
     source = "NeogitOrg/neogit",
     depends = {
       "nvim-lua/plenary.nvim",
-      "sindrets/diffview.nvim",
     },
   })
   require("neogit").setup({
@@ -245,20 +241,6 @@ later(function()
   vim.keymap.set({ "n", "v" }, "<leader>glF", function() gitlinker.link({ router_type = "file", action = actions.system }) end, { desc = "file open" })
   vim.keymap.set({ "n", "v" }, "<leader>gll", function() gitlinker.link({ router_type = "browse" }) end, { desc = "lines yank" })
   vim.keymap.set({ "n", "v" }, "<leader>glL", function() gitlinker.link({ router_type = "browse", action = actions.system }) end, { desc = "lines open" })
-end)
-
-later(function()
-  add("sindrets/diffview.nvim")
-  require("diffview").setup({ enhanced_diff_hl = true })
-  vim.keymap.set("n", "<leader>gdd", "<cmd>DiffviewOpen<cr>", { desc = "open diffview" })
-  vim.keymap.set("n", "<leader>gdh", "<cmd>DiffviewFileHistory<cr>", { desc = "diffview history" })
-  vim.keymap.set("n", "<leader>gdl", "<cmd>DiffviewLog<cr>", { desc = "diffview log" })
-  vim.keymap.set("n", "<leader>gdr", "<cmd>DiffviewRefresh<cr>", { desc = "diffview refresh" })
-  local close_cmd = "<cmd>set hidden<cr><cmd>DiffviewClose<cr><cmd>set nohidden<cr>"
-  vim.api.nvim_create_autocmd("FileType", {
-    pattern = "DiffviewFiles",
-    callback = function(event) vim.keymap.set("n", "q", close_cmd, { desc = "close", buffer = event.buf }) end,
-  })
 end)
 
 later(function()
