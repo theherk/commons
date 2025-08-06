@@ -268,13 +268,6 @@ later(function()
 end)
 
 later(function()
-  add({ source = "stevearc/dressing.nvim" })
-  require("dressing").setup({
-    select = { enabled = false },
-  })
-end)
-
-later(function()
   add({
     source = "nvimtools/none-ls.nvim",
     depends = {
