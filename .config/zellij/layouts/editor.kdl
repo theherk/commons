@@ -1,6 +1,6 @@
 layout {
     tab name="editor" focus=true {
-        pane command="editor" borderless=true close_on_exit=true focus=true
+        pane command="hx" borderless=true close_on_exit=true focus=true
         pane size=1 borderless=true {
             plugin location="file:~/bin/zjstatus.wasm" {
                 format_left   "{mode} {tabs}"
