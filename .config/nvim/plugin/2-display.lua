@@ -156,11 +156,6 @@ later(function()
   vim.g.mkdp_refresh_slow = 1
 end)
 
-later(function()
-  add({ source = "mawkler/modicator.nvim" })
-  require("modicator").setup()
-end)
-
 now(function()
   local miniclue = require("mini.clue")
   miniclue.setup({
