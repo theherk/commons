@@ -166,12 +166,6 @@ end)
 
 later(function()
   add({
-    source = "2kabhishek/co-author.nvim",
-    depends = { "stevearc/dressing.nvim" },
-  })
-  vim.keymap.set("n", "<leader>gC", "<cmd>CoAuthor<cr>", { desc = "co-author" })
-end)
-
 later(function()
   add({
     source = "fredeeb/tardis.nvim",
