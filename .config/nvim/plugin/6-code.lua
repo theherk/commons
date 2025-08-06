@@ -4,8 +4,6 @@ local Icons = require("module.icons")
 local Lsp = require("module.lsp")
 local Util = require("module.util")
 
--- Much of the ai configuration is happening on the fly, so you'll find
--- it in the pcalls in module/util.lua.
 
 later(function()
   add({ source = "aaronik/treewalker.nvim" })
@@ -20,8 +18,6 @@ later(function()
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
-      "zbirenbaum/copilot.lua",
-      "zbirenbaum/copilot-cmp",
     },
   })
   local cmp = require("cmp")
@@ -31,7 +27,6 @@ later(function()
     pattern = "*",
     callback = function()
       vim.schedule(function()
-        Util.ai_update_services()
         local sources = Util.get_active_sources()
         cmp.setup({ sources = cmp.config.sources(sources) })
         local source_names = vim.tbl_map(function(source) return source.name end, sources)
@@ -71,47 +66,6 @@ later(function()
 end)
 
 later(function()
-  add({
-    source = "yetone/avante.nvim",
-    depends = {
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "echasnovski/mini.icons",
-      "echasnovski/mini.pick",
-    },
-    hooks = {
-      post_checkout = function()
-        local Job = require("plenary.job")
-        ---@diagnostic disable-next-line: missing-fields
-        Job:new({
-          command = "make",
-          args = {},
-          cwd = vim.fn.stdpath("data") .. "/site/pack/deps/opt/avante.nvim",
-          on_exit = function(j, return_val)
-            if return_val ~= 0 then vim.notify("avante.nvim make install failed", vim.log.levels.ERROR) end
-          end,
-          on_stderr = function(_, data)
-            if data then vim.notify("avante.nvim make error: " .. data, vim.log.levels.ERROR) end
-          end,
-        }):sync()
-      end,
-    },
-  })
-end)
-
-later(function()
-  add({ source = "zbirenbaum/copilot.lua" })
-  add({ source = "zbirenbaum/copilot-cmp" })
-  require("copilot_cmp").setup()
-end)
-
-later(function()
-  add({ source = "HakonHarnes/img-clip.nvim" })
-  require("img-clip").setup()
-end)
-
-later(function()
   add({ source = "MeanderingProgrammer/render-markdown.nvim" })
   require("render-markdown").setup({
     heading = {
@@ -135,14 +89,6 @@ later(function()
       vim.keymap.set({ "n", "i" }, "<m-o>", "<cmd>MDListItemBelow<cr>", { buffer = bufnr, desc = "item below" })
       vim.keymap.set({ "n", "i" }, "<m-O>", "<cmd>MDListItemAbove<cr>", { buffer = bufnr, desc = "item above" })
     end,
-  })
-end)
-
-later(function()
-  require("avante_lib").load()
-  require("avante").setup({
-    file_selector = { provider = "mini.pick" },
-    windows = { sidebar_header = { enabled = false } },
   })
 end)
 
@@ -551,5 +497,3 @@ later(function()
     severity_sort = true,
   })
 end)
-
-later(function() Util.ai_update_services() end)

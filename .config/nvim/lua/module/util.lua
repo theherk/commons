@@ -2,79 +2,6 @@ local M = {}
 
 M.root_patterns = { ".git", "lua" }
 
-function M.ai_has_anthropic_enabled() return vim.fn.getcwd():find("dnb.no") == nil end
-
-function M.ai_has_copilot_enabled() return vim.fn.getcwd():find("dnb.no") ~= nil or vim.fn.getcwd():find("dnb.ghe.com") ~= nil end
-
-function M.ai_has_ollama_enabled() return true end
-
-function M.ai_status()
-  local status = {
-    anthropic = M.ai_has_anthropic_enabled(),
-    copilot = M.ai_has_copilot_enabled(),
-    ollama = M.ai_has_ollama_enabled(),
-  }
-
-  local msg = "AI Services Status:\n------------------\n"
-  for service, enabled in pairs(status) do
-    msg = msg .. string.format("%s: %s\n", service, enabled)
-  end
-  msg = msg .. "Current directory: " .. vim.fn.getcwd()
-
-  vim.notify(msg, vim.log.levels.INFO, {
-    title = "AI Services Status",
-  })
-end
-
-function M.ai_update_services()
-  local has_anthropic = M.ai_has_anthropic_enabled()
-  local has_copilot = M.ai_has_copilot_enabled()
-  local has_ollama = M.ai_has_ollama_enabled()
-
-  -- Update Copilot
-  pcall(function()
-    local copilot = require("copilot")
-    if copilot.setup then
-      copilot.setup({
-        auth_provider_url = has_copilot and "https://dnb.ghe.com" or "http://localhost:1",
-        panel = { enabled = false },
-        suggestion = { enabled = false },
-      })
-    end
-    if has_copilot then
-      vim.cmd("Copilot enable")
-    else
-      vim.cmd("Copilot disable")
-    end
-  end)
-
-  -- Update Avante (Claude)
-  pcall(function()
-    local avante = require("avante")
-    if avante.setup then
-      avante.setup({
-        file_selector = { provider = "fzf" },
-        providers = {
-          claude = {
-            endpoint = has_anthropic and "https://api.anthropic.com" or "http://localhost:1",
-            extra_request_body = {
-              max_tokens = 4096,
-              temperature = 0,
-            },
-            model = "claude-3-5-sonnet-20240620",
-          },
-        }
-      })
-    end
-  end)
-
-  -- Update Gen (Ollama)
-  pcall(function()
-    local gen = require("gen")
-    if gen.setup then gen.setup({ port = has_ollama and 11434 or 1 }) end
-  end)
-end
-
 function M.get_active_sources()
   local sources = {
     { name = "nvim_lsp" },
@@ -82,9 +9,6 @@ function M.get_active_sources()
     { name = "buffer" },
     { name = "path" },
   }
-
-  if M.ai_has_copilot_enabled() then table.insert(sources, 1, { name = "copilot" }) end
-
   return sources
 end
 
