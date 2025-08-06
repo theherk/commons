@@ -36,18 +36,18 @@ set -l pname (basename $pdir)
 
 if set -q ZELLIJ_SESSION_NAME
     if not string match -q "$pname" "$ZELLIJ_SESSION_NAME"
-        zellij pipe --plugin file:~/bin/zellij-switch.wasm -- "$pname::$pdir::editor"
+        zellij pipe --plugin file:~/bin/zellij-switch.wasm -- "$pname::$pdir"
     end
 else
     cd $pdir
     if contains $pname (zellij list-sessions -ns)
         if contains $pname (zellij list-sessions -n | rg EXITED | cut -d' ' -f1 | cut -d':' -f2)
             zellij delete-session $pname
-            zellij -n editor -s $pname
+            zellij -s $pname
         else
             zellij attach $pname
         end
     else
-        zellij -n editor -s $pname
+        zellij -s $pname
     end
 end
