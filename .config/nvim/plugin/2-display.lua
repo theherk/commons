@@ -167,6 +167,8 @@ now(function()
       miniclue.gen_clues.windows(),
       miniclue.gen_clues.z(),
       { mode = "n", keys = "<leader><tab>", desc = "tab" },
+      { mode = "n", keys = "<leader>a", desc = "ai" },
+      { mode = "v", keys = "<leader>a", desc = "ai" },
       { mode = "n", keys = "<leader>b", desc = "buffer" },
       { mode = "n", keys = "<leader>c", desc = "code" },
       { mode = "n", keys = "<leader>d", desc = "debug" },
