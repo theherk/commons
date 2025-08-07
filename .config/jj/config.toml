@@ -1,6 +1,6 @@
 [aliases]
 bm = ["bookmark", "set", "main", "--revision=@-"]
-gr = ["util", "exec", "--", "gr"]
+gr = ["util", "exec", "--", "gr.sh"]
 sync = [
     "util",
     "exec",
