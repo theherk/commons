@@ -1,5 +1,6 @@
 [aliases]
 bm = ["bookmark", "set", "main", "--revision=@-"]
+ghcc = ["util", "exec", "--", "ghcc.sh"]
 gr = ["util", "exec", "--", "gr.sh"]
 sync = [
     "util",
