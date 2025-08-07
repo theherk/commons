@@ -7,12 +7,10 @@ local function workspaces()
     name = "brain",
     path = "~/vaults/brain",
   } }
-  if vim.fn.isdirectory(onedrive) ~= 0 then
-    table.insert(_workspaces, {
-      name = "dnbrain",
-      path = onedrive .. "/dnbrain",
-    })
-  end
+  if vim.fn.isdirectory(onedrive) ~= 0 then table.insert(_workspaces, {
+    name = "dnbrain",
+    path = onedrive .. "/dnbrain",
+  }) end
   return _workspaces
 end
 
@@ -34,18 +32,20 @@ later(function()
       default_tags = { "daily-notes" },
       template = "journal",
     },
-    disable_frontmatter = true,
     follow_url_func = function(url) vim.fn.jobstart({ "open", url }) end,
-    legacy_commands = false,
-    note_frontmatter_func = function(note)
-      local out = { tags = note.tags }
-      if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-        for k, v in pairs(note.metadata) do
-          out[k] = v
+    frontmatter = {
+      enabled = false,
+      func = function(note)
+        local out = { tags = note.tags }
+        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+          for k, v in pairs(note.metadata) do
+            out[k] = v
+          end
         end
-      end
-      return out
-    end,
+        return out
+      end,
+    },
+    legacy_commands = false,
     note_id_func = function(title)
       if title ~= nil then
         return title
@@ -58,9 +58,7 @@ later(function()
       end
     end,
     open = {
-      func = function(uri)
-        vim.ui.open(uri, { cmd = { "open", "-a", "/Applications/Obsidian.app" } })
-      end
+      func = function(uri) vim.ui.open(uri, { cmd = { "open", "-a", "/Applications/Obsidian.app" } }) end,
     },
     preferred_link_style = "markdown",
     templates = { folder = "templates" },
