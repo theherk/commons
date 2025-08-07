@@ -216,7 +216,10 @@ end)
 
 later(function()
   add("echasnovski/mini.diff")
-  require("mini.diff").setup()
+  local diff = require("mini.diff")
+  diff.setup({
+    source = diff.gen_source.none(),
+  })
 end)
 
 later(function()

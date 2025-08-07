@@ -1,6 +1,9 @@
 local MiniDeps = require("mini.deps")
 local add, later = MiniDeps.add, MiniDeps.later
 
+local ai_enabled = vim.env.AI_ENABLED == "1"
+local ai_copilot = vim.env.AI_COPILOT == "1"
+
 later(function()
   add({ source = "akinsho/toggleterm.nvim" })
   require("toggleterm").setup({
@@ -17,3 +20,59 @@ later(function()
   vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-j>", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "terminal (horizontal)" })
   vim.keymap.set({ "i", "x", "n", "s", "t" }, "<ds-j>", "<cmd>ToggleTerm direction=tab<cr>", { desc = "terminal (tab)" })
 end)
+
+if ai_enabled then
+  if ai_copilot then
+    later(function()
+      add({ source = "zbirenbaum/copilot.lua" })
+      local copilot = require("copilot")
+      if copilot.setup then
+        copilot.setup({
+          auth_provider_url = ai_copilot and "https://dnb.ghe.com" or "http://localhost:1",
+          panel = { enabled = false },
+          suggestion = { enabled = false },
+        })
+      end
+      if ai_copilot then
+        vim.cmd("Copilot enable")
+      else
+        vim.cmd("Copilot disable")
+      end
+    end)
+  end
+
+  later(function()
+    add({
+      source = "olimorris/codecompanion.nvim",
+      depends = {
+        "nvim-lua/plenary.nvim",
+        "dyamon/codecompanion-copilot-enterprise.nvim",
+      },
+    })
+    local config = {}
+    if ai_copilot then
+      config = {
+        adapters = {
+          http = {
+            copilot_enterprise = function()
+              local adapter = require("codecompanion.adapters.http.copilot_enterprise")
+              adapter.opts.provider_url = "https://dnb.ghe.com"
+              return adapter
+            end,
+          },
+        },
+        strategies = {
+          chat = {
+            adapter = {
+              name = "copilot_enterprise",
+              model = "claude-sonnet-4",
+            },
+          },
+          inline = { adapter = "copilot_enterprise" },
+          cmd = { adapter = "copilot_enterprise" },
+        },
+      }
+    end
+    require("codecompanion").setup(config)
+  end)
+end
