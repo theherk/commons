@@ -20,6 +20,12 @@
   //   }
   // },
   {
+    "context": "Editor && vim_mode == insert && !menu && !AgentPanel",
+    "bindings": {
+      "q ;": "vim::NormalBefore"
+    }
+  },
+  {
     "context": "vim_mode == helix_normal",
     "bindings": {
       "ctrl-[": "editor::Cancel",

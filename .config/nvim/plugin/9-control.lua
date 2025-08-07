@@ -5,6 +5,7 @@ local Util = require("module.util")
 vim.keymap.set("n", "<leader>fs", "<cmd>up<cr>", { desc = "update" })
 vim.keymap.set("n", "<leader>fS", "<cmd>w<cr>", { desc = "write" })
 vim.keymap.set("n", "<leader>q", "<cmd>qa<cr>", { desc = "quit all" })
+vim.keymap.set("i", "q;", "<Esc>", { desc = "exit insert mode with q;" })
 
 -- Better up/down.
 vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -151,4 +152,5 @@ function test_select()
     end
   end)
 end
+
 vim.api.nvim_create_user_command("TestSelect", test_select, {})
