@@ -19,6 +19,31 @@ later(function()
   vim.keymap.set({ "i", "x", "n", "s", "t" }, "<c-`>", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "terminal (horizontal)" })
   vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-j>", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "terminal (horizontal)" })
   vim.keymap.set({ "i", "x", "n", "s", "t" }, "<ds-j>", "<cmd>ToggleTerm direction=tab<cr>", { desc = "terminal (tab)" })
+  local terminal = require("toggleterm.terminal").Terminal
+  local jjui = terminal:new({
+    cmd = "jjui",
+    dir = "git_dir",
+    direction = "tab",
+    on_open = function(term)
+      vim.cmd("startinsert!")
+      vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<cr>", { noremap = true, silent = true })
+    end,
+    on_close = function() vim.cmd("startinsert!") end,
+  })
+  local lazygit = terminal:new({
+    cmd = "lazygit",
+    dir = "git_dir",
+    direction = "tab",
+    on_open = function(term)
+      vim.cmd("startinsert!")
+      vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<cr>", { noremap = true, silent = true })
+    end,
+    on_close = function() vim.cmd("startinsert!") end,
+  })
+  function _Jjui_toggle() jjui:toggle() end
+  function _Lazygit_toggle() lazygit:toggle() end
+  vim.keymap.set({ "n" }, "<leader>u", "<cmd>lua _Jjui_toggle()<cr>", { desc = "jjui" })
+  vim.keymap.set({ "n" }, "<leader>gG", "<cmd>lua _Lazygit_toggle()<cr>", { desc = "lazygit" })
 end)
 
 if ai_enabled then
