@@ -436,7 +436,7 @@ later(function()
   for server, opts in pairs(servers) do
     opts.capabilities = capabilities
     opts.on_attach = on_attach
-    require("lspconfig")[server].setup(opts)
+    vim.lsp.config(server, opts)
   end
 
   -- Setup null-ls
