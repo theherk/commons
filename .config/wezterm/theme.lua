@@ -63,7 +63,7 @@ function module.apply_to_config(config)
     brightness = 0.54,
   }
   config.font = wezterm.font("VictorMono NF")
-  config.font_size = 17
+  config.font_size = 18
   config.macos_window_background_blur = 23
   config.tab_bar_at_bottom = true
   config.tab_max_width = 96
