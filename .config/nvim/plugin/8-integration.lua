@@ -90,7 +90,7 @@ if ai_enabled then
           chat = {
             adapter = {
               name = "copilot_enterprise",
-              model = "claude-sonnet-4",
+              model = "claude-sonnet-4.5", -- gpt-4.1
             },
           },
           inline = { adapter = "copilot_enterprise" },
