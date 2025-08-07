@@ -260,12 +260,43 @@ later(function()
     },
     mappings = nil,
   })
-  vim.keymap.set({ "n", "v" }, "<leader>glr", function() gitlinker.link({ router_type = "repo" }) end, { desc = "repo yank" })
-  vim.keymap.set({ "n", "v" }, "<leader>glR", function() gitlinker.link({ router_type = "repo", action = actions.system }) end, { desc = "repo open" })
-  vim.keymap.set({ "n", "v" }, "<leader>glf", function() gitlinker.link({ router_type = "file" }) end, { desc = "file yank" })
-  vim.keymap.set({ "n", "v" }, "<leader>glF", function() gitlinker.link({ router_type = "file", action = actions.system }) end, { desc = "file open" })
-  vim.keymap.set({ "n", "v" }, "<leader>gll", function() gitlinker.link({ router_type = "browse" }) end, { desc = "lines yank" })
-  vim.keymap.set({ "n", "v" }, "<leader>glL", function() gitlinker.link({ router_type = "browse", action = actions.system }) end, { desc = "lines open" })
+  local function gitlink_with_tardis(opts)
+    opts = opts or {}
+    local bufname = vim.api.nvim_buf_get_name(0)
+    local filename, revision = bufname:match("^(.+)%s+%((.+)%)$")
+    if filename and revision then
+      -- Get the full commit hash from the short revision
+      local Job = require("plenary.job")
+      local job = Job:new({
+        command = "git",
+        args = { "rev-parse", revision },
+        cwd = vim.fn.fnamemodify(filename, ":h"),
+      })
+      local result = job:sync()
+      if result and result[1] then
+        local full_hash = result[1]
+        local root_job = Job:new({
+          command = "git",
+          args = { "rev-parse", "--show-toplevel" },
+          cwd = vim.fn.fnamemodify(filename, ":h"),
+        })
+        local root_result = root_job:sync()
+        if root_result and root_result[1] then
+          local git_root = root_result[1]
+          local rel_path = filename:sub(#git_root + 2)
+          opts.file = rel_path
+          opts.rev = full_hash
+        end
+      end
+    end
+    gitlinker.link(opts)
+  end
+  vim.keymap.set({ "n", "v" }, "<leader>glr", function() gitlink_with_tardis({ router_type = "repo" }) end, { desc = "repo yank" })
+  vim.keymap.set({ "n", "v" }, "<leader>glR", function() gitlink_with_tardis({ router_type = "repo", action = actions.system }) end, { desc = "repo open" })
+  vim.keymap.set({ "n", "v" }, "<leader>glf", function() gitlink_with_tardis({ router_type = "file" }) end, { desc = "file yank" })
+  vim.keymap.set({ "n", "v" }, "<leader>glF", function() gitlink_with_tardis({ router_type = "file", action = actions.system }) end, { desc = "file open" })
+  vim.keymap.set({ "n", "v" }, "<leader>gll", function() gitlink_with_tardis({ router_type = "browse" }) end, { desc = "lines yank" })
+  vim.keymap.set({ "n", "v" }, "<leader>glL", function() gitlink_with_tardis({ router_type = "browse", action = actions.system }) end, { desc = "lines open" })
 end)
 
 later(function()
