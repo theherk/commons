@@ -178,6 +178,14 @@ if.app-id = 'app.zen-browser.zen'
 run = ['move-node-to-workspace 🌎']
 
 [[on-window-detected]]
+if.app-id = 'com.kagi.kagimacOS'
+run = ['move-node-to-workspace 🌎']
+
+[[on-window-detected]]
+if.window-title-regex-substring = "Orion Preview"
+run = ['move-node-to-workspace 🌎']
+
+[[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 run = ['move-node-to-workspace 🌎']
 
