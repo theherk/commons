@@ -18,6 +18,7 @@ ln -sf ~/commons/.config/git/ ~/.config/
 ln -sf ~/commons/.config/helix/ ~/.config/
 ln -sf ~/commons/.config/hn-tui.toml ~/.config/hn-tui.toml
 ln -sf ~/commons/.config/jj/ ~/.config/
+ln -sf ~/commons/.config/jjui/ ~/.config/
 ln -sf ~/commons/.config/lazygit/ ~/.config/
 ln -sf ~/commons/.config/neovide/ ~/.config/
 ln -sf ~/commons/.config/nvim/ ~/.config/
