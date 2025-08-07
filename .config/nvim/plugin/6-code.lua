@@ -67,7 +67,13 @@ end)
 later(function()
   add({ source = "MeanderingProgrammer/render-markdown.nvim" })
   require("render-markdown").setup({
+    code = {
+      border = "none",
+      conceal_delimiters = false,
+    },
+    completions = { lsp = { enabled = true } },
     heading = {
+      enabled = false,
       icons = { "█ ", "██ ", "▓▓▓ ", "▒▒▒▒ ", "░░░░░ ", "░░░░░░ " },
       backgrounds = {},
       position = "inline",
