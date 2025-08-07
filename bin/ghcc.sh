@@ -18,7 +18,7 @@ if [ "$REPO_TYPE" = "git" ]; then
 	DIFF=$(git diff --staged)
 elif [ "$REPO_TYPE" = "jj" ]; then
 	BRANCH=$(jj bookmark list -r "$JJ_REV" | head -n 1)
-	DIFF=$(jj diff -r "$JJ_REV")
+	DIFF=$(jj diff --git -r "$JJ_REV")
 fi
 
 read -r -d '' PROMPT <<'EOF'
