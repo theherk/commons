@@ -20,22 +20,22 @@ local key_tables = {
 
   launch_split = {
     { key = "f",      action = util.launch_split({ "yazi" }) },
-    { key = "F",      action = util.launch_split({ "xplr" }) },
     { key = "g",      action = util.launch_split({ "lazygit" }) },
+    { key = "u",      action = util.launch_split({ "jjui" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 
   launch_tab = {
     { key = "f",      action = util.launch({ "yazi" }) },
-    { key = "F",      action = util.launch({ "xplr" }) },
     { key = "g",      action = util.launch({ "lazygit" }) },
+    { key = "u",      action = util.launch({ "jjui" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 
   launch_vertical = {
     { key = "f",      action = util.launch_vertical({ "yazi" }) },
-    { key = "F",      action = util.launch_vertical({ "xplr" }) },
     { key = "g",      action = util.launch_vertical({ "lazygit" }) },
+    { key = "u",      action = util.launch_vertical({ "jjui" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 
@@ -135,6 +135,7 @@ local keys = {
   { key = "g", mods = "LEADER", action = util.launch({ "lazygit" }) },
   { key = "S", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch_split", one_shot = true, until_unknown = true }) },
   { key = "T", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch_tab", one_shot = true, until_unknown = true }) },
+  { key = "u", mods = "LEADER", action = util.launch({ "jjui" }) },
   { key = "V", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch_vertical", one_shot = true, until_unknown = true }) },
 }
 
