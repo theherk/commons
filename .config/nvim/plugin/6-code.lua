@@ -242,19 +242,19 @@ later(function()
   gitlinker.setup({
     router = {
       browse = {
-        ["dnb%.ghe%.no"] = routers.github_browse,
+        ["dnb%.ghe%.com"] = routers.github_browse,
         ["gitlab%.tech%.dnb%.no"] = routers.gitlab_browse,
       },
       file = {
         ["gitlab%.com"] = file_path,
         ["gitlab%.tech%.dnb%.no"] = file_path,
-        ["dnb%.ghe%.no"] = file_path,
+        ["dnb%.ghe%.com"] = file_path,
         ["^github%.com"] = file_path,
       },
       repo = {
         ["gitlab%.com"] = repo_path,
         ["gitlab%.tech%.dnb%.no"] = repo_path,
-        ["dnb%.ghe%.no"] = repo_path,
+        ["dnb%.ghe%.com"] = repo_path,
         ["^github%.com"] = repo_path,
       },
     },
