@@ -41,13 +41,17 @@
     }
   },
   {
-    "context": "Editor && (vim_mode == normal || vim_mode == helix_normal) && !VimWaiting && !menu",
+    "context": "Editor && (vim_mode == normal || vim_mode == helix_normal) && !VimWaiting && !menu || EmptyPane",
     "bindings": {
       "space space": "file_finder::Toggle",
       "space /": ["pane::DeploySearch", { "excluded_files": "**/_*.tf" }],
       "space b b": "tab_switcher::ToggleAll",
       "space f s": "workspace::Save",
       "space g c": "git::Branch",
+      "cmd-J": [
+        "task::Spawn",
+        { "task_name": "terminal", "reveal_target": "center" }
+      ],
       "space g g": [
         "task::Spawn",
         { "task_name": "lazygit", "reveal_target": "center" }
