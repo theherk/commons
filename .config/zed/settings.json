@@ -71,6 +71,9 @@
     }
   },
   "languages": {
+    "Java": {
+      "format_on_save": "off"
+    },
     "Python": {
       "language_servers": ["ruff"],
       "format_on_save": "on",
@@ -100,6 +103,44 @@
   },
   "load_direnv": "shell_hook",
   "lsp": {
+    "jdtls": {
+      "initialization_options": {
+        "settings": {
+          "java": {
+            "format": {
+              "enabled": false
+            },
+            "implementationsCodeLens": {
+              "enabled": true
+            },
+            "import": {
+              "gradle": {
+                "enabled": true
+              },
+              "maven": {
+                "enabled": true
+              }
+            },
+            "jdt": {
+              "ls": {
+                "lombokSupport": {
+                  "enabled": true
+                }
+              }
+            },
+            "referencesCodeLens": {
+              "enabled": true
+            },
+            "saveActions": {
+              "organizeImports": false
+            },
+            "signatureHelp": {
+              "enabled": true
+            }
+          }
+        }
+      }
+    },
     "ruff": {
       "initialization_options": {
         "settings": {
