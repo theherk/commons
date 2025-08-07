@@ -1,2 +1,2 @@
-[manager]
+[mgr]
 prepend_keymap = [{ on = ["e"], run = ["open", "quit"], desc = "edit" }]
