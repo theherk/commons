@@ -13,7 +13,7 @@
 [commit]
 	template = ~/.config/git/message
 [core]
-	editor = hx
+	editor = nvim
 	pager = delta
 [delta]
 	light = false

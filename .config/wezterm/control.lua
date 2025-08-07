@@ -19,46 +19,46 @@ local key_tables = {
   copy_mode = copy_mode,
 
   launch_split = {
-    { key = "f", action = util.launch_split({ "yazi" }) },
-    { key = "F", action = util.launch_split({ "xplr" }) },
-    { key = "g", action = util.launch_split({ "lazygit" }) },
+    { key = "f",      action = util.launch_split({ "yazi" }) },
+    { key = "F",      action = util.launch_split({ "xplr" }) },
+    { key = "g",      action = util.launch_split({ "lazygit" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 
   launch_tab = {
-    { key = "f", action = util.launch({ "yazi" }) },
-    { key = "F", action = util.launch({ "xplr" }) },
-    { key = "g", action = util.launch({ "lazygit" }) },
+    { key = "f",      action = util.launch({ "yazi" }) },
+    { key = "F",      action = util.launch({ "xplr" }) },
+    { key = "g",      action = util.launch({ "lazygit" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 
   launch_vertical = {
-    { key = "f", action = util.launch_vertical({ "yazi" }) },
-    { key = "F", action = util.launch_vertical({ "xplr" }) },
-    { key = "g", action = util.launch_vertical({ "lazygit" }) },
+    { key = "f",      action = util.launch_vertical({ "yazi" }) },
+    { key = "F",      action = util.launch_vertical({ "xplr" }) },
+    { key = "g",      action = util.launch_vertical({ "lazygit" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 
   resize_pane = {
-    { key = "h", action = act.AdjustPaneSize({ "Left", 1 }) },
-    { key = "l", action = act.AdjustPaneSize({ "Right", 1 }) },
-    { key = "k", action = act.AdjustPaneSize({ "Up", 1 }) },
-    { key = "j", action = act.AdjustPaneSize({ "Down", 1 }) },
+    { key = "h",      action = act.AdjustPaneSize({ "Left", 1 }) },
+    { key = "l",      action = act.AdjustPaneSize({ "Right", 1 }) },
+    { key = "k",      action = act.AdjustPaneSize({ "Up", 1 }) },
+    { key = "j",      action = act.AdjustPaneSize({ "Down", 1 }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 }
 
 local keys = {
-  { key = "a", mods = "LEADER|CTRL", action = act.SendString("\x01") },
+  { key = "a",  mods = "LEADER|CTRL", action = act.SendString("\x01") },
 
   -- Workpace and Pallette
-  { key = "d", mods = "LEADER", action = ws.with_cache("default") },
-  { key = "i", mods = "LEADER", action = ws.with_cache("in") },
-  { key = "m", mods = "LEADER", action = act.ShowLauncher },
-  { key = "o", mods = "LEADER", action = ws.with_cache("out") },
-  { key = "p", mods = "SUPER", action = ws.with_cache("switcher") },
-  { key = "P", mods = "SUPER|SHIFT", action = act.ActivateCommandPalette },
-  { key = "\t", mods = "LEADER", action = ws.with_cache("prev") },
+  { key = "d",  mods = "LEADER",      action = ws.with_cache("default") },
+  { key = "i",  mods = "LEADER",      action = ws.with_cache("in") },
+  { key = "m",  mods = "LEADER",      action = act.ShowLauncher },
+  { key = "o",  mods = "LEADER",      action = ws.with_cache("out") },
+  { key = "p",  mods = "SUPER",       action = ws.with_cache("switcher") },
+  { key = "P",  mods = "SUPER|SHIFT", action = act.ActivateCommandPalette },
+  { key = "\t", mods = "LEADER",      action = ws.with_cache("prev") },
 
   {
     key = "W",
@@ -69,12 +69,14 @@ local keys = {
         { Text = "New workspace name:" },
       }),
       action = wezterm.action_callback(function(window, pane, line)
-        if line then window:perform_action(
-          act.SwitchToWorkspace({
-            name = line,
-          }),
-          pane
-        ) end
+        if line then
+          window:perform_action(
+            act.SwitchToWorkspace({
+              name = line,
+            }),
+            pane
+          )
+        end
       end),
     }),
   },
@@ -97,7 +99,7 @@ local keys = {
   { key = "r", mods = "LEADER", action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
   { key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
   { key = "Z", mods = "LEADER", action = act.TogglePaneZoomState },
-  { key = "s", mods = "SUPER", action = act.PaneSelect },
+  { key = "s", mods = "SUPER",  action = act.PaneSelect },
 
   -- Navigation
   { key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
@@ -118,16 +120,16 @@ local keys = {
   { key = "8", mods = "LEADER", action = act.ActivateTab(7) },
   { key = "9", mods = "LEADER", action = act.ActivateTab(8) },
   { key = "0", mods = "LEADER", action = act.ActivateTab(-1) },
-  { key = "0", mods = "SUPER", action = act.ActivateTab(-1) },
+  { key = "0", mods = "SUPER",  action = act.ActivateTab(-1) },
 
   -- Scrolling
-  { key = "j", mods = "SUPER", action = act.ScrollByPage(0.5) },
-  { key = "k", mods = "SUPER", action = act.ScrollByPage(-0.5) },
-  { key = "J", mods = "SUPER", action = act.ScrollByPage(1) },
-  { key = "K", mods = "SUPER", action = act.ScrollByPage(-1) },
+  { key = "j", mods = "SUPER",  action = act.ScrollByPage(0.5) },
+  { key = "k", mods = "SUPER",  action = act.ScrollByPage(-0.5) },
+  { key = "J", mods = "SUPER",  action = act.ScrollByPage(1) },
+  { key = "K", mods = "SUPER",  action = act.ScrollByPage(-1) },
 
   -- Launch
-  { key = "e", mods = "LEADER", action = util.launch({ "hx" }) },
+  { key = "e", mods = "LEADER", action = util.launch({ "nvp" }) },
   { key = "f", mods = "LEADER", action = util.launch({ "yazi" }) },
   { key = "F", mods = "LEADER", action = util.launch({ "xplr" }) },
   { key = "g", mods = "LEADER", action = util.launch({ "lazygit" }) },

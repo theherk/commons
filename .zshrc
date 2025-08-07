@@ -20,8 +20,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source <(kubectl completion zsh)
 
-export EDITOR='hx'
-export VISUAL='hx'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export PAGER="less -FRSX"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
 
