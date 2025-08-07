@@ -43,7 +43,7 @@ later(function()
   function _Jjui_toggle() jjui:toggle() end
   function _Lazygit_toggle() lazygit:toggle() end
   vim.keymap.set({ "n" }, "<leader>u", "<cmd>lua _Jjui_toggle()<cr>", { desc = "jjui" })
-  vim.keymap.set({ "n" }, "<leader>gG", "<cmd>lua _Lazygit_toggle()<cr>", { desc = "lazygit" })
+  vim.keymap.set({ "n" }, "<leader>gg", "<cmd>lua _Lazygit_toggle()<cr>", { desc = "lazygit" })
 end)
 
 if ai_enabled then

@@ -212,7 +212,7 @@ later(function()
     graph_style = "unicode",
     use_per_project_settings = true,
   })
-  vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "neogit" })
+  vim.keymap.set("n", "<leader>gG", "<cmd>Neogit<cr>", { desc = "neogit" })
 end)
 
 later(function()
