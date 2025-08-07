@@ -182,10 +182,26 @@ later(function()
   require("neogit").setup({
     disable_insert_on_commit = false,
     git_services = {
-      ["dnb.ghe.com"] = "https://dnb.ghe.com/${owner}/${repository}/compare/${branch_name}?expand=1",
-      ["github.com"] = "https://github.com/${owner}/${repository}/compare/${branch_name}?expand=1",
-      ["gitlab.com"] = "https://gitlab.com/${owner}/${repository}/merge_requests/new?merge_request[source_branch]=${branch_name}",
-      ["gitlab.tech.dnb.no"] = "https://gitlab.tech.dnb.no/${path}/${repository}/-/merge_requests/new?merge_request[source_branch]=${branch_name}",
+      ["dnb.ghe.com"] = {
+        pull_request = "https://${host}/${owner}/${repository}/compare/${branch_name}?expand=1",
+        commit = "https://${host}/${owner}/${repository}/commit/${oid}",
+        tree = "https://${host}/${owner}/${repository}/tree/${branch_name}",
+      },
+      ["github.com"] = {
+        pull_request = "https://github.com/${owner}/${repository}/compare/${branch_name}?expand=1",
+        commit = "https://github.com/${owner}/${repository}/commit/${oid}",
+        tree = "https://${host}/${owner}/${repository}/tree/${branch_name}",
+      },
+      ["gitlab.com"] = {
+        pull_request = "https://gitlab.com/${owner}/${repository}/merge_requests/new?merge_request[source_branch]=${branch_name}",
+        commit = "https://gitlab.com/${owner}/${repository}/-/commit/${oid}",
+        tree = "https://gitlab.com/${owner}/${repository}/-/tree/${branch_name}?ref_type=heads",
+      },
+      ["gitlab.tech.dnb.no"] = {
+        pull_request = "https://gitlab.tech.dnb.no/${path}/${repository}/-/merge_requests/new?merge_request[source_branch]=${branch_name}",
+        commit = "https://gitlab.tech.dnb.no/${path}/${repository}/-/commit/${oid}",
+        tree = "https://gitlab.tech.dnb.no/${path}/${repository}/-/tree/${branch_name}?ref_type=heads",
+      },
     },
     graph_style = "unicode",
     use_per_project_settings = true,
