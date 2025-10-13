@@ -8,13 +8,13 @@ enable-normalization-flatten-containers = false
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 
-[gaps]
-inner.horizontal = [{ monitor."built-in" = 11 }, 15]
-inner.vertical = [{ monitor."built-in" = 11 }, 15]
-outer.left = [{ monitor."built-in" = 0 }, 183]
+[gaps] # system_profiler SPDisplaysDataType
+inner.horizontal = [{ monitor."built-in" = 11 }, { monitor."phl" = 15 }, 15]
+inner.vertical = [{ monitor."built-in" = 11 }, { monitor."phl" = 15 }, 15]
+outer.left = [{ monitor."built-in" = 0 }, { monitor."phl" = 183 }, 0]
+outer.right = [{ monitor."built-in" = 0 }, { monitor."phl" = 183 }, 0]
 outer.bottom = 0
 outer.top = 0
-outer.right = [{ monitor."built-in" = 0 }, 183]
 
 [mode.main.binding]
 cmd-h = []
