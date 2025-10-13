@@ -17,6 +17,7 @@ if status is-login
     set -gx HTML_TIDY $HOME/.config/tidy/config.txt
     set -gx VOLTA_HOME "$HOME/.volta"
     set -gx XDG_CONFIG_HOME "$HOME/.config"
+    set -gx HOMEBREW_BUNDLE_FILE "$XDG_CONFIG_HOME/brewfile/Brewfile"
     set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
     fish_add_path -p \
