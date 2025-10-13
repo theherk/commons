@@ -14,13 +14,38 @@
   },
   "agent": {
     "always_allow_tool_actions": false,
-    "default_profile": "write",
+    "default_profile": "most",
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4"
     },
-    "default_height": 640.0,
-    "default_width": 640
+    "default_width": 888,
+    "enable_feedback": false,
+    "notify_when_agent_waiting": "never",
+    "profiles": {
+      "most": {
+        "name": "Most",
+        "enable_all_context_servers": false,
+        "tools": {
+          "copy_path": true,
+          "create_directory": true,
+          "delete_path": true,
+          "diagnostics": true,
+          "edit_file": true,
+          "fetch": true,
+          "list_directory": true,
+          "project_notifications": false,
+          "move_path": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "grep": true,
+          "terminal": false,
+          "thinking": true,
+          "web_search": true
+        }
+      }
+    },
   },
   "buffer_font_family": "VictorMono Nerd Font",
   "buffer_font_size": 18,
