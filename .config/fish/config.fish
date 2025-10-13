@@ -20,18 +20,16 @@ if status is-login
     set -gx HOMEBREW_BUNDLE_FILE "$XDG_CONFIG_HOME/brewfile/Brewfile"
     set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
-    fish_add_path -p \
+    fish_add_path -m \
+        (brew --prefix)/opt/coreutils/libexec/gnubin \
         /usr/local/bin \
-        /usr/local/go/bin
-    fish_add_path -m (brew --prefix)/bin
-    fish_add_path -p \
+        /usr/local/go/bin \
+        $GOPATH/bin \
         $HOME/.amplify/bin \
         $HOME/.cabal/bin \
         $HOME/.cargo/bin \
         $HOME/.nimble/bin \
-        $GOPATH/bin \
         $VOLTA_HOME/bin \
-        (brew --prefix)/opt/coreutils/libexec/gnubin \
         $HOME/.emacs.d/bin \
         $HOME/.local/bin \
         $HOME/bin
