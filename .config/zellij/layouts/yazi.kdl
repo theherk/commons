@@ -1,6 +1,8 @@
 layout {
     tab name="files" focus=true {
-        pane command="yazi" borderless=true close_on_exit=true focus=true
+        pane command="fish" borderless=true close_on_exit=true focus=true {
+            args "-c" "yazi"
+        }
         pane size=1 borderless=true {
             plugin location="file:~/bin/zjstatus.wasm" {
                 format_left   "{mode} {tabs}"
