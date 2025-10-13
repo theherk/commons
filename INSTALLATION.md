@@ -111,6 +111,12 @@ Also install [markdown-toc](https://github.com/pbzweihander/markdown-toc).
 cargo install markdown-toc
 ```
 
+Gotta have HN.
+
+```sh
+cargo install hackernews_tui --locked
+```
+
 ### Install Java / Tools.
 
 ```sh
