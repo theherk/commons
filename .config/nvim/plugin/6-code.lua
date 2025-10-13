@@ -169,7 +169,7 @@ later(function()
   })
 end)
 
-later(function()
+now(function()
   add({
     source = "fredeeb/tardis.nvim",
     depends = { "nvim-lua/plenary.nvim" },
@@ -178,7 +178,7 @@ later(function()
   vim.keymap.set("n", "<leader>gt", "<cmd>Tardis<cr>", { desc = "tardis" })
 end)
 
-later(function()
+now(function()
   add({
     source = "NeogitOrg/neogit",
     depends = {
