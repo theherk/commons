@@ -24,9 +24,6 @@
   },
   "buffer_font_family": "VictorMono Nerd Font",
   "buffer_font_size": 18,
-  "chat_panel": {
-    "default_width": 380
-  },
   "file_types": {
     "Shell Script": ["*.applescript"],
     "TCL": ["*.exp"]
@@ -166,9 +163,6 @@
     "case_sensitive": false,
     "include_ignored": false,
     "regex": true
-  },
-  "slash_commands": {
-    "docs": { "enabled": true }
   },
   "soft_wrap": "editor_width",
   "tab_bar": {
