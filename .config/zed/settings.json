@@ -46,6 +46,7 @@
         }
       }
     },
+    "use_modifier_to_send": true
   },
   "buffer_font_family": "VictorMono Nerd Font",
   "buffer_font_size": 18,
