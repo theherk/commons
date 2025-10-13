@@ -51,7 +51,6 @@ if ai_enabled then
   later(function()
     add({
       source = "olimorris/codecompanion.nvim",
-      checkout = "v17.33.0",
       depends = {
         "nvim-lua/plenary.nvim",
       },
@@ -60,9 +59,6 @@ if ai_enabled then
       adapters = {
         copilot = false,
         acp = {
-          opts = {
-            show_presets = false,
-          },
           raicode = function()
             return require("codecompanion.adapters").extend("claude_code", {
               name = "raicode",
@@ -77,11 +73,11 @@ if ai_enabled then
       },
     }
     require("codecompanion").setup(config)
-    vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "codecompanion (toggle)" })
+    vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion (toggle)" })
     vim.keymap.set({ "n", "v" }, "<leader>ac", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
     vim.keymap.set({ "n", "v" }, "<leader>ao", "<cmd>CodeCompanionChat ollama<cr>", { desc = "codecompanion ollama" })
     vim.keymap.set({ "n", "v" }, "<leader>ar", "<cmd>CodeCompanionChat raicode<cr>", { desc = "codecompanion raicode" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-?>", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
-    vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-r>", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "codecompanion (toggle)" })
+    vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-r>", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion (toggle)" })
   end)
 end
