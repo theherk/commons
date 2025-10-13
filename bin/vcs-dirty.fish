@@ -5,6 +5,7 @@
 # - If there are uncommitted changes, print the path to the repository and continue.
 # - If the currently checked out branch is not `main`, checkout `main`.
 # - If checking out `main` fails, checkout `master` and print a warning.
+# - Pull the latest changes for the verified branch.
 
 function check_repo
     set repo_dir $argv[1]
@@ -15,6 +16,8 @@ function check_repo
         set jj_status (jj st)
         if string match -q "*The working copy has no changes.*" $jj_status
             echo "✅ CLEAN (jujutsu): $repo_dir"
+            jj git fetch
+            jj rebase -d "trunk()"
         else
             echo "❌ DIRTY (jujutsu): $repo_dir"
             set -g any_dirty 1
@@ -43,9 +46,12 @@ function check_repo
             git checkout master >/dev/null 2>&1
             if test $status -ne 0
                 echo "❌ ERROR: $repo_dir could not checkout main or master"
+                return
             end
         end
     end
+
+    git pull
 end
 
 set -g any_dirty 0
