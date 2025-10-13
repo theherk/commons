@@ -129,43 +129,55 @@ later(function()
     source = "nvim-treesitter/nvim-treesitter",
     hooks = { post_checkout = function() vim.cmd("TSUpdate") end },
   })
-  require("nvim-treesitter.configs").setup({
-    ensure_installed = {
-      "bash",
-      "comment",
-      "gleam",
-      "hcl",
-      "html",
-      "javascript",
-      "json",
-      "lua",
-      "markdown",
-      "markdown_inline",
-      "norg",
-      "org",
-      "python",
-      "query",
-      "regex",
-      "terraform",
-      "tsx",
-      "typescript",
-      "vim",
-      "vimdoc",
-      "yaml",
-    },
-    highlight = { enable = true },
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        node_incremental = "v",
-        node_decremental = "V",
-      },
-    },
-    indent = { enable = true },
-    modules = {},
-    sync_install = false,
-    ignore_install = {},
-    auto_install = true,
+
+  vim.api.nvim_create_autocmd("VimEnter", {
+    once = true,
+    callback = function()
+      local ok, configs = pcall(require, "nvim-treesitter.configs")
+      if not ok then
+        vim.notify("nvim-treesitter.configs not found, skipping setup", vim.log.levels.WARN)
+        return
+      end
+
+      configs.setup({
+        ensure_installed = {
+          "bash",
+          "comment",
+          "gleam",
+          "hcl",
+          "html",
+          "javascript",
+          "json",
+          "lua",
+          "markdown",
+          "markdown_inline",
+          "norg",
+          "org",
+          "python",
+          "query",
+          "regex",
+          "terraform",
+          "tsx",
+          "typescript",
+          "vim",
+          "vimdoc",
+          "yaml",
+        },
+        highlight = { enable = true },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            node_incremental = "v",
+            node_decremental = "V",
+          },
+        },
+        indent = { enable = true },
+        modules = {},
+        sync_install = false,
+        ignore_install = {},
+        auto_install = true,
+      })
+    end,
   })
 end)
 
