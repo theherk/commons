@@ -5,9 +5,9 @@ custom-shader = shaders/cursor-warp.glsl
 cursor-color = #bb9af7
 font-family = VictorMono NF
 font-size = 17
+macos-titlebar-style = hidden
 theme = Catppuccin Frappe
 unfocused-split-opacity = 0.54
-window-decoration = none
 
 # fun times
 # custom-shader = shaders/bettercrt.glsl
