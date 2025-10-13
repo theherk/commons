@@ -213,6 +213,22 @@ now(function()
     use_per_project_settings = true,
   })
   vim.keymap.set("n", "<leader>gG", "<cmd>Neogit<cr>", { desc = "neogit" })
+  -- Launch directly if "--neogit" is in the args.
+  if vim.env.NVIM_NEOGIT == "1" then
+    vim.api.nvim_create_autocmd("VimEnter", {
+      callback = function()
+        require("neogit").open()
+      end,
+    })
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "NeogitStatus",
+      callback = function()
+        vim.defer_fn(function()
+          vim.keymap.set("n", "q", "<cmd>qa<cr>", { buffer = true, desc = "quit neovim" })
+        end, 100) -- Delay to ensure Neogit sets its mapping first.
+      end,
+    })
+  end
 end)
 
 later(function()
