@@ -30,8 +30,10 @@ diff-editor = ":builtin"
 "diff added" = "green"
 
 [git]
-auto-local-bookmark = true
 abandon-unreachable-commits = true
+
+[remotes.origin]
+auto-track-bookmarks = "glob:*"
 
 [revset-aliases]
 trunk = "main@origin"
