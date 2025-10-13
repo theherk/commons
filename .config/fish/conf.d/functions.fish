@@ -68,7 +68,7 @@ function ssmpd # get ssm parameter value with decryption
 end
 
 function t # tree with depth
-    argparse --name tree --min-args 0 --max-args 1 -- $argv
+    argparse --name tree --min-args 0 --max-args 2 -- $argv
     if test (count $argv) -lt 1
         eza -T
     else
