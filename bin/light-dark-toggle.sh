@@ -11,9 +11,6 @@ DOOM_LIGHT=doom-one-light
 FISH_DARK="Catppuccin Frappe"
 FISH_LIGHT="Catppuccin Latte"
 
-GHOSTTY_DARK="Catppuccin Frappe"
-GHOSTTY_LIGHT="Catppuccin Latte"
-
 HELIX_DARK=base16_transparent
 HELIX_LIGHT=catppuccin_latte
 

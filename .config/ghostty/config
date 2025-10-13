@@ -6,7 +6,7 @@ cursor-color = #bb9af7
 font-family = VictorMono NF
 font-size = 17
 macos-titlebar-style = hidden
-theme = Catppuccin Frappe
+theme = dark:Catppuccin Frappe,light:Catppuccin Latte
 unfocused-split-opacity = 0.54
 
 # fun times
