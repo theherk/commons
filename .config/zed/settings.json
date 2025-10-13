@@ -1,4 +1,12 @@
 {
+  "agent_servers": {
+    "raicode": {
+      "type": "custom",
+      "command": "raicode-wrapper.sh",
+      "args": [],
+      "env": {}
+    }
+  },
   "edit_predictions": {
     "copilot": {
       "enterprise_uri": "https://dnb.ghe.com"
