@@ -36,7 +36,7 @@ set -l pname (basename $pdir)
 
 if set -q ZELLIJ_SESSION_NAME
     if not string match -q "$pname" "$ZELLIJ_SESSION_NAME"
-        zellij pipe --plugin file:~/bin/zellij-switch.wasm -- "$pname::$pdir"
+        zellij pipe --plugin file:~/bin/zellij-switch.wasm -- "--session $pname --cwd $pdir"
     end
 else
     cd $pdir
