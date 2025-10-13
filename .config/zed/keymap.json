@@ -2,22 +2,22 @@
   {
     "context": "AgentPanel",
     "bindings": {
-      "cmd-f": "workspace::ToggleZoom"
-    }
+      "cmd-f": "workspace::ToggleZoom",
+    },
   },
   {
     "context": "Terminal",
     "bindings": {
       "cmd-enter": "workspace::ToggleZoom",
       "cmd-f": "workspace::ToggleZoom",
-      "cmd-t": "workspace::NewTerminal"
-    }
+      "cmd-t": "workspace::NewTerminal",
+    },
   },
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-p": "projects::OpenRecent"
-    }
+      "ctrl-p": "projects::OpenRecent",
+    },
   },
   // To use helix mode on escape.
   // {
@@ -29,23 +29,23 @@
   {
     "context": "Editor && vim_mode == insert && !menu && !AgentPanel",
     "bindings": {
-      "q ;": "vim::NormalBefore"
-    }
+      "q ;": "vim::NormalBefore",
+    },
   },
   {
     "context": "vim_mode == helix_normal",
     "bindings": {
       "ctrl-[": "editor::Cancel",
-      "escape": "editor::Cancel"
-    }
+      "escape": "editor::Cancel",
+    },
   },
   {
     "context": "Editor && vim_mode == visual && !menu",
     "bindings": {
       "%": "editor::SwapSelectionEnds",
       "v": "editor::SelectLargerSyntaxNode",
-      "V": "editor::SelectSmallerSyntaxNode"
-    }
+      "V": "editor::SelectSmallerSyntaxNode",
+    },
   },
   {
     "context": "Editor && (vim_mode == normal || vim_mode == helix_normal) && !VimWaiting && !menu || EmptyPane",
@@ -53,48 +53,48 @@
       // "space space": "file_finder::Toggle",
       "space space": [
         "task::Spawn",
-        { "task_name": "find git files", "reveal_target": "center" }
+        { "task_name": "find git files", "reveal_target": "center" },
       ],
       "space /": ["pane::DeploySearch", { "excluded_files": "**/_*.tf" }],
       "space b b": "tab_switcher::ToggleAll",
       "space f f": [
         "task::Spawn",
-        { "task_name": "find files", "reveal_target": "center" }
+        { "task_name": "find files", "reveal_target": "center" },
       ],
       "space f g": [
         "task::Spawn",
-        { "task_name": "find git files", "reveal_target": "center" }
+        { "task_name": "find git files", "reveal_target": "center" },
       ],
       "space f s": "workspace::Save",
       "space g c": "git::Branch",
       "cmd-J": [
         "task::Spawn",
-        { "task_name": "terminal", "reveal_target": "center" }
+        { "task_name": "terminal", "reveal_target": "center" },
       ],
       "space g g": [
         "task::Spawn",
-        { "task_name": "lazygit", "reveal_target": "center" }
+        { "task_name": "lazygit", "reveal_target": "center" },
       ],
       "space g G": "git_panel::ToggleFocus",
       "space g L": "editor::OpenGitBlameCommit",
       "space g n": [
         "task::Spawn",
-        { "task_name": "neogit", "reveal_target": "center" }
+        { "task_name": "neogit", "reveal_target": "center" },
       ],
       "space s s": "outline::Toggle",
       "space u": [
         "task::Spawn",
-        { "task_name": "jjui", "reveal_target": "center" }
+        { "task_name": "jjui", "reveal_target": "center" },
       ],
-      "space Z": "workspace::ToggleCenteredLayout"
-    }
+      "space Z": "workspace::ToggleCenteredLayout",
+    },
   },
   {
     "context": "Editor && (vim_mode == normal || vim_mode == helix_normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
       "space g l y": "editor::CopyPermalinkToLine",
-      "space g l Y": "editor::OpenPermalinkToLine"
-    }
+      "space g l Y": "editor::OpenPermalinkToLine",
+    },
   },
   {
     "context": "GitPanel && ChangesList",
@@ -105,17 +105,17 @@
       "d": "git::RestoreFile",
       "q": "git_panel::Close",
       "s": "git::StageFile",
-      "u": "git::UnstageFile"
-    }
+      "u": "git::UnstageFile",
+    },
   },
   {
     "context": "GitDiff > Editor && (vim_mode == normal || vim_mode == helix_normal || vim_mode == visual) && !VimWaiting && !menu",
     "use_key_equivalents": true,
     "bindings": {
       "s": "git::StageAndNext",
-      "u": "git::UnstageAndNext"
-    }
-  }
+      "u": "git::UnstageAndNext",
+    },
+  },
   {
     "context": "Picker > Editor",
     "bindings": {
