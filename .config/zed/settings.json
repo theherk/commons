@@ -17,7 +17,7 @@
     "default_profile": "most",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "model": "claude-sonnet-4.5"
     },
     "default_width": 888,
     "enable_feedback": false,
