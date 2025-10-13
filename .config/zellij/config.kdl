@@ -6,7 +6,7 @@ theme "catppuccin-frappe"
 keybinds {
     unbind "Ctrl n"
     normal {
-      bind "Alt r" { SwitchToMode "resize"; }
+      bind "Ctrl Shift r" { SwitchToMode "resize"; }
       unbind "Ctrl q"
     }
     scroll {
