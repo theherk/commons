@@ -206,7 +206,7 @@
   },
   "terminal": {
     "default_height": 666,
-    "font_size": 17,
+    "font_size": 18,
     "shell": {
       "program": "fish"
     },
