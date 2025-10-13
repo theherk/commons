@@ -1,4 +1,5 @@
 copy_on_select false
+show_startup_tips false
 simplified_ui true
 theme "catppuccin-frappe"
 
