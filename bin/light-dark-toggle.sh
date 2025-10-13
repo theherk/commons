@@ -2,8 +2,8 @@
 
 PROFILE_DIR="$HOME/Library/Application Support/zen/Profiles/y10w10po.Default (alpha)"
 
-BAT_DARK=Catppuccin-frappe
-BAT_LIGHT=Catppuccin-latte
+BAT_DARK="Catppuccin Frappe"
+BAT_LIGHT="Catppuccin Latte"
 
 DOOM_DARK=h4s-tokyo-night
 DOOM_LIGHT=doom-one-light
@@ -131,7 +131,7 @@ darken() {
 	yes | fish -c 'fish_config theme save "'"$FISH_DARK"'"'
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
 	echo "$HN_DARK" >~/.config/hn-tui.toml
-	sed -i '' 's/\(--theme=\)".*"/\1"'$BAT_DARK'"/' .config/bat/config
+	sed -i '' 's/\(--theme=\)".*"/\1"'"$BAT_DARK"'"/' .config/bat/config
 	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_DARK')/' .config/doom/config.org
 	sed -i '' 's/\(.*light =\).*/\1 false/' .config/git/config
 	sed -i '' 's/\(theme = \).*/\1'"$GHOSTTY_DARK"'/' .config/ghostty/config
@@ -154,7 +154,7 @@ lighten() {
 	yes | fish -c 'fish_config theme save "'"$FISH_LIGHT"'"'
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
 	echo "$HN_LIGHT" >~/.config/hn-tui.toml
-	sed -i '' 's/\(--theme=\)".*"/\1"'$BAT_LIGHT'"/' .config/bat/config
+	sed -i '' 's/\(--theme=\)".*"/\1"'"$BAT_LIGHT"'"/' .config/bat/config
 	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_LIGHT')/' .config/doom/config.org
 	sed -i '' 's/\(.*light =\).*/\1 true/' .config/git/config
 	sed -i '' 's/\(theme = \).*/\1'"$GHOSTTY_LIGHT"'/' .config/ghostty/config
