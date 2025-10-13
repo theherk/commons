@@ -208,6 +208,9 @@
   },
   "terminal": {
     "default_height": 666,
+    "env": {
+      "VISUAL": "zed -w -a"
+    },
     "font_size": 18,
     "shell": {
       "program": "fish"
