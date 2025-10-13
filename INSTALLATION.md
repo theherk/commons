@@ -32,6 +32,7 @@ Then add this key to Github. Followed by:
 That will link all the configurations where they need to be. Then we just need to set about installing things. This is tailored to MacOS, since that is what I use nearly always, now.
 
     xcode-select --install
+    sudo xcodebuild -license accept
 
 ## Install many tools with brew.
 
