@@ -7,11 +7,11 @@
   @pkazmier modified this shader to work in Ghostty.
 */
 
-const int ITERATIONS = 40;   //use less value if you need more performance
+const int ITERATIONS = 20;   //use less value if you need more performance (reduced from 40 for better performance)
 const float SPEED = .5;
 
 const float STRIP_CHARS_MIN =  7.;
-const float STRIP_CHARS_MAX = 40.;
+const float STRIP_CHARS_MAX = 25.;
 const float STRIP_CHAR_HEIGHT = 0.15;
 const float STRIP_CHAR_WIDTH = 0.10;
 const float ZCELL_SIZE = 1. * (STRIP_CHAR_HEIGHT * STRIP_CHARS_MAX);  //the multiplier can't be less than 1.
