@@ -16,7 +16,7 @@
 set -euo pipefail
 
 # 1. Set up raicode environment variables
-eval "$(~/projects/go/bin/raicode env)"
+eval "$(raicode manage env export)"
 
 # 2. Find the latest claude-code-acp installation
 ACP_DIR=$(ls -d "$HOME/Library/Application Support/Zed/external_agents/claude-code-acp/"*/ 2>/dev/null | sort -V | tail -1)
