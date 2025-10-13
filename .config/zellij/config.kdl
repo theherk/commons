@@ -10,7 +10,11 @@ keybinds {
       unbind "Ctrl q"
     }
     pane {
+        bind "e" { Run "nvp" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
+        bind "f" { Run "fish" "-c" "yazi" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
+        bind "g" { Run "lazygit" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
         bind "s" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "u" { Run "jjui" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
         bind "v" { NewPane "Right"; SwitchToMode "Normal"; }
     }
     scroll {
