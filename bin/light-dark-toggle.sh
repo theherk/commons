@@ -131,7 +131,6 @@ darken() {
 	sed -i '' 's/\(--theme=\)".*"/\1"'"$BAT_DARK"'"/' .config/bat/config
 	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_DARK')/' .config/doom/config.org
 	sed -i '' 's/\(.*light =\).*/\1 false/' .config/git/config
-	sed -i '' 's/\(theme = \).*/\1'"$GHOSTTY_DARK"'/' .config/ghostty/config
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_DARK'"/' .config/helix/config.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_DARK'"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(pager: .*\) --light/\1 --diff-so-fancy/' .config/lazygit/config.yml
@@ -154,7 +153,6 @@ lighten() {
 	sed -i '' 's/\(--theme=\)".*"/\1"'"$BAT_LIGHT"'"/' .config/bat/config
 	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_LIGHT')/' .config/doom/config.org
 	sed -i '' 's/\(.*light =\).*/\1 true/' .config/git/config
-	sed -i '' 's/\(theme = \).*/\1'"$GHOSTTY_LIGHT"'/' .config/ghostty/config
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_LIGHT'"/' .config/helix/config.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_LIGHT'"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(pager: .*\) --diff-so-fancy/\1 --light/' .config/lazygit/config.yml
