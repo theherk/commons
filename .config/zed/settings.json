@@ -4,28 +4,28 @@
       "type": "custom",
       "command": "raicode-wrapper.sh",
       "args": [],
-      "env": {}
-    }
+      "env": {},
+    },
   },
   "edit_predictions": {
     "copilot": {
-      "enterprise_uri": "https://dnb.ghe.com"
+      "enterprise_uri": "https://dnb.ghe.com",
     },
-    "mode": "eager"
+    "mode": "eager",
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "copilot",
   },
   "active_pane_modifiers": {
     "border_size": 1,
-    "inactive_opacity": 0.81247
+    "inactive_opacity": 0.81247,
   },
   "agent": {
     "always_allow_tool_actions": false,
     "default_profile": "most",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
+      "model": "claude-sonnet-4.5",
     },
     "default_width": 888,
     "enable_feedback": false,
@@ -50,11 +50,11 @@
           "grep": true,
           "terminal": false,
           "thinking": true,
-          "web_search": true
-        }
-      }
+          "web_search": true,
+        },
+      },
     },
-    "use_modifier_to_send": true
+    "use_modifier_to_send": true,
   },
   "agent_ui_font_size": 18,
   "agent_buffer_font_size": 17,
@@ -63,50 +63,50 @@
   "colorize_brackets": true,
   "file_types": {
     "Shell Script": ["*.applescript"],
-    "TCL": ["*.exp"]
+    "TCL": ["*.exp"],
   },
   "git": {
-    "git_gutter": "tracked_files"
+    "git_gutter": "tracked_files",
   },
   "git_hosting_providers": [
     {
       "provider": "github",
       "name": "DNB Github",
-      "base_url": "https://dnb.ghe.com"
+      "base_url": "https://dnb.ghe.com",
     },
     {
       "provider": "gitlab",
       "name": "DNB Gitlab",
-      "base_url": "https://gitlab.tech.dnb.no"
-    }
+      "base_url": "https://gitlab.tech.dnb.no",
+    },
   ],
   "icon_theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
-    "dark": "Catppuccin Frappé"
+    "dark": "Catppuccin Frappé",
   },
   "inlay_hints": {
     "enabled": false,
-    "toggle_on_modifiers_press": { "control": true }
+    "toggle_on_modifiers_press": { "control": true },
   },
   "language_models": {
     "ollama": {
       "available_models": [
         {
           "name": "gemma3:4b",
-          "max_tokens": 0
+          "max_tokens": 0,
         },
         {
           "name": "llama3.2",
           "max_tokens": 32768,
-          "supports_tools": true
-        }
-      ]
-    }
+          "supports_tools": true,
+        },
+      ],
+    },
   },
   "languages": {
     "Java": {
-      "format_on_save": "off"
+      "format_on_save": "off",
     },
     "Python": {
       "language_servers": ["ruff"],
@@ -116,20 +116,20 @@
         { "code_action": "source.fixAll.ruff" },
         {
           "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
+            "name": "ruff",
+          },
+        },
+      ],
     },
     "Shell Script": {
       "format_on_save": "on",
       "formatter": {
         "external": {
           "command": "shfmt",
-          "arguments": []
-        }
-      }
-    }
+          "arguments": [],
+        },
+      },
+    },
   },
   "load_direnv": "shell_hook",
   "lsp": {
@@ -138,100 +138,100 @@
         "settings": {
           "java": {
             "format": {
-              "enabled": false
+              "enabled": false,
             },
             "implementationsCodeLens": {
-              "enabled": true
+              "enabled": true,
             },
             "import": {
               "gradle": {
-                "enabled": true
+                "enabled": true,
               },
               "maven": {
-                "enabled": true
-              }
+                "enabled": true,
+              },
             },
             "jdt": {
               "ls": {
                 "lombokSupport": {
-                  "enabled": true
-                }
-              }
+                  "enabled": true,
+                },
+              },
             },
             "referencesCodeLens": {
-              "enabled": true
+              "enabled": true,
             },
             "saveActions": {
-              "organizeImports": false
+              "organizeImports": false,
             },
             "signatureHelp": {
-              "enabled": true
-            }
-          }
-        }
-      }
+              "enabled": true,
+            },
+          },
+        },
+      },
     },
     "ruff": {
       "initialization_options": {
         "settings": {
           "lint": {
-            "extendSelect": ["I"]
-          }
-        }
-      }
+            "extendSelect": ["I"],
+          },
+        },
+      },
     },
     "terraform-ls": {
       "initialization_options": {
         "experimentalFeatures": {
-          "prefillRequiredFields": true
-        }
-      }
-    }
+          "prefillRequiredFields": true,
+        },
+      },
+    },
   },
   "pane_split_direction_horizontal": "down",
   "pane_split_direction_vertical": "right",
   "project_panel": {
     "default_width": 246,
-    "indent_size": 16
+    "indent_size": 16,
   },
   "search": {
     "button": false,
     "whole_word": false,
     "case_sensitive": false,
     "include_ignored": false,
-    "regex": true
+    "regex": true,
   },
   "soft_wrap": "editor_width",
   "tab_bar": {
     "show_nav_history_buttons": false,
-    "show_tab_bar_buttons": false
+    "show_tab_bar_buttons": false,
   },
   "tabs": {
     "git_status": true,
     "file_icons": true,
-    "show_close_button": "hidden"
+    "show_close_button": "hidden",
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "terminal": {
     "default_height": 666,
     "env": {
-      "VISUAL": "zed -w -a"
+      "VISUAL": "zed -w -a",
     },
     "font_size": 18,
     "shell": {
-      "program": "fish"
+      "program": "fish",
     },
     "max_scroll_history_lines": 100000,
-    "option_as_meta": true
+    "option_as_meta": true,
   },
   "theme": {
     "mode": "system",
     "dark": "Catppuccin Frappé (teal)",
-    "light": "Catppuccin Latte (teal)"
+    "light": "Catppuccin Latte (teal)",
   },
   "ui_font_size": 18,
-  "vim_mode": true
+  "vim_mode": true,
 }
