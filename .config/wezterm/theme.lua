@@ -62,11 +62,15 @@ function module.apply_to_config(config)
     saturation = 0.66,
     brightness = 0.54,
   }
-  config.font = wezterm.font("VictorMono NF")
+  config.font = wezterm.font_with_fallback {
+    "VictorMono Nerd Font",
+    "Apple Color Emoji",
+  }
   config.font_size = 18
   config.macos_window_background_blur = 23
   config.tab_bar_at_bottom = true
   config.tab_max_width = 96
+  config.unicode_version = 14
   config.use_fancy_tab_bar = false
   config.window_background_opacity = 1.0
   config.window_decorations = "RESIZE"
