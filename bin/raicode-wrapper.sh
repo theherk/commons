@@ -16,7 +16,7 @@
 set -euo pipefail
 
 # 1. Set up raicode environment variables
-eval "$(/usr/local/bin/raicode manage env export)"
+eval "$(/usr/local/bin/raicode manage token create --name "mbp-main" --export)"
 
 # 2. Find the latest claude-code-acp installation
 ACP_DIR=$(ls -d "$HOME/Library/Application Support/Zed/external_agents/claude-code-acp/"*/ 2>/dev/null | sort -V | tail -1)
