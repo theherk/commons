@@ -46,6 +46,14 @@
       "space space": "file_finder::Toggle",
       "space /": ["pane::DeploySearch", { "excluded_files": "**/_*.tf" }],
       "space b b": "tab_switcher::ToggleAll",
+      "space f f": [
+        "task::Spawn",
+        { "task_name": "find files", "reveal_target": "center" }
+      ],
+      "space f g": [
+        "task::Spawn",
+        { "task_name": "find git files", "reveal_target": "center" }
+      ],
       "space f s": "workspace::Save",
       "space g c": "git::Branch",
       "cmd-J": [

@@ -1,5 +1,23 @@
 [
   {
+    "label": "find files",
+    "command": "fzf --multi --preview 'bat --color=always --line-range=:100 {}' --reverse --input-border=rounded --info=inline-right | xargs -I{} zed {}",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "hide": "always",
+    "shell": { "program": "bash" }
+  },
+  {
+    "label": "find git files",
+    "command": "git ls-files | fzf --multi --preview 'bat --color=always --line-range=:100 {}' --reverse --input-border=rounded --info=inline-right | xargs -I{} zed {}",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "hide": "always",
+    "shell": { "program": "bash" }
+  },
+  {
     "label": "jjui",
     "command": "jjui",
     "env": { "VISUAL": "zed -w" },
