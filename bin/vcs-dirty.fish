@@ -37,9 +37,7 @@ function check_repo
         git checkout main >/dev/null 2>&1
         if test $status -ne 0
             git checkout master >/dev/null 2>&1
-            if test $status -eq 0
-                echo "⚠️ WARN: $repo_dir checked out to master (main not found)"
-            else
+            if test $status -ne 0
                 echo "❌ ERROR: $repo_dir could not checkout main or master"
             end
         end
