@@ -6,25 +6,39 @@ theme "catppuccin-frappe"
 keybinds {
     unbind "Ctrl n"
     normal {
-      bind "Alt r" { SwitchToMode "Resize"; }
+      bind "Alt r" { SwitchToMode "resize"; }
+    }
     scroll {
         bind "y" { Copy; SwitchToMode "normal"; }
     }
     session {
-      bind "p" {
-        SwitchToMode "Normal";
-        Run "zellij-project.fish" {
-          floating true;
-          close_on_exit true;
-        };
-      }
+        bind "p" { SwitchToMode "normal"; Run "zellij-project.fish" { floating true; close_on_exit true; }; }
     }
     tab {
-      bind "b" { NewTab { layout "help"; }; SwitchToMode "Normal"; }
-      bind "e" { NewTab { layout "editor"; }; SwitchToMode "Normal"; }
-      bind "f" { NewTab { layout "yazi"; }; SwitchToMode "Normal"; }
-      bind "g" { NewTab { layout "lazygit"; }; SwitchToMode "Normal"; }
-      bind "n" { NewTab { layout "default"; }; SwitchToMode "Normal"; }
-      bind "u" { NewTab { layout "jjui"; }; SwitchToMode "Normal"; }
+        bind "b" { NewTab { name "help"; layout "help"; }; SwitchToMode "normal"; }
+        bind "e" { NewTab { name "editor"; layout "editor"; }; SwitchToMode "normal"; }
+        bind "f" { NewTab { name "files"; layout "yazi"; }; SwitchToMode "normal"; }
+        bind "g" { NewTab { name "git"; layout "lazygit"; }; SwitchToMode "normal"; }
+        bind "n" { NewTab { layout "default"; }; SwitchToMode "normal"; }
+        bind "u" { NewTab { name "jj"; layout "jjui"; }; SwitchToMode "normal"; }
     }
 }
+
+plugins {
+    about location="zellij:about"
+    compact-bar location="zellij:compact-bar"
+    configuration location="zellij:configuration"
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+    plugin-manager location="zellij:plugin-manager"
+    session-manager location="zellij:session-manager"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    tab-bar location="zellij:tab-bar"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen true
+    }
+}
+
+load_plugins { }
