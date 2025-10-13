@@ -48,6 +48,8 @@
     },
     "use_modifier_to_send": true
   },
+  "agent_ui_font_size": 18,
+  "agent_buffer_font_size": 17,
   "buffer_font_family": "VictorMono Nerd Font",
   "buffer_font_size": 18,
   "file_types": {
@@ -210,7 +212,8 @@
     "shell": {
       "program": "fish"
     },
-    "max_scroll_history_lines": 100000
+    "max_scroll_history_lines": 100000,
+    "option_as_meta": true
   },
   "theme": {
     "mode": "system",
