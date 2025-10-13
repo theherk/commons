@@ -18,3 +18,4 @@ unfocused-split-opacity = 0.54
 # custom-shader = shaders/gears-and-belts.glsl
 
 # custom-shader = shaders/inside-the-matrix.glsl
+keybind = shift+enter=text:\x1b\r
