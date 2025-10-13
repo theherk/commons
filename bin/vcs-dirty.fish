@@ -24,7 +24,11 @@ function check_repo
 
     # Check for uncommitted changes in git
     set dirty (git status --porcelain)
-    set branch (git rev-parse --abbrev-ref HEAD)
+    set branch (git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if test $status -ne 0
+        echo "⚠️ WARN: $repo_dir (no HEAD yet; skipping)"
+        return
+    end
     if test -n "$dirty"
         echo "❌ DIRTY: $repo_dir [$branch]"
         set -g any_dirty 1
