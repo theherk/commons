@@ -23,7 +23,7 @@ function check_repo
     end
 
     # Check for uncommitted changes in git
-    set dirty (git status --porcelain)
+    set dirty (git status --porcelain --untracked-files=no)
     set branch (git rev-parse --abbrev-ref HEAD 2>/dev/null)
     if test $status -ne 0
         echo "⚠️ WARN: $repo_dir (no HEAD yet; skipping)"
