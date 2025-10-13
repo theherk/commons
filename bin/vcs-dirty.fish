@@ -49,8 +49,7 @@ function check_repo
 end
 
 set -g any_dirty 0
-for dir in (fd '^(.git|.jj)$' $argv[1] --type d --hidden --absolute-path)
-    set repo (dirname $dir)
+for repo in (fd '^(.git|.jj)$' $argv[1] --type d --hidden --absolute-path -x dirname {} | sort -u)
     check_repo $repo
 end
 
