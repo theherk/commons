@@ -2,6 +2,14 @@
 bm = ["bookmark", "set", "main", "--revision=@-"]
 ghcc = ["util", "exec", "--", "ghcc.sh"]
 gr = ["util", "exec", "--", "gr.sh"]
+pm = [
+    "util",
+    "exec",
+    "--",
+    "bash",
+    "-c",
+    "jj bookmark set main --revision=@- && jj git push",
+]
 sync = [
     "util",
     "exec",
