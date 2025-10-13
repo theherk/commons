@@ -9,6 +9,7 @@ ln -sf ~/commons/.config/aerospace/ ~/.config/
 ln -sf ~/commons/.config/atuin/config.toml ~/.config/atuin/
 ln -sf ~/commons/.config/bat/ ~/.config/
 ln -sf ~/commons/.config/brewfile/ ~/.config/
+ln -sf ~/commons/.config/carapace/ ~/.config/
 ln -sf ~/commons/.config/doom/ ~/.config/
 ln -sf ~/commons/.config/direnv/ ~/.config/
 ln -sf ~/commons/.config/fish/config.fish ~/.config/fish/config.fish
