@@ -25,7 +25,7 @@
     "profiles": {
       "most": {
         "name": "Most",
-        "enable_all_context_servers": false,
+        "enable_all_context_servers": true,
         "tools": {
           "copy_path": true,
           "create_directory": true,
