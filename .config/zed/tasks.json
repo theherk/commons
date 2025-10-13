@@ -20,6 +20,17 @@
     }
   },
   {
+    "label": "neogit",
+    "env": { "NVIM_NEOGIT": "1" },
+    "command": "nvim",
+    "hide": "on_success",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "shell": {
+      "program": "bash"
+    }
+  },
+  {
     "label": "terminal",
     "command": "terminal",
     "hide": "on_success",

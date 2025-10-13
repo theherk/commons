@@ -58,6 +58,10 @@
       ],
       "space g G": "git_panel::ToggleFocus",
       "space g L": "editor::OpenGitBlameCommit",
+      "space g n": [
+        "task::Spawn",
+        { "task_name": "neogit", "reveal_target": "center" }
+      ],
       "space s s": "outline::Toggle",
       "space u": [
         "task::Spawn",
