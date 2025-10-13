@@ -9,6 +9,10 @@ keybinds {
       bind "Ctrl Shift r" { SwitchToMode "resize"; }
       unbind "Ctrl q"
     }
+    pane {
+        bind "s" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "v" { NewPane "Right"; SwitchToMode "Normal"; }
+    }
     scroll {
         bind "y" { Copy; SwitchToMode "normal"; }
     }
