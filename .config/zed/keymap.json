@@ -50,7 +50,11 @@
   {
     "context": "Editor && (vim_mode == normal || vim_mode == helix_normal) && !VimWaiting && !menu || EmptyPane",
     "bindings": {
-      "space space": "file_finder::Toggle",
+      // "space space": "file_finder::Toggle",
+      "space space": [
+        "task::Spawn",
+        { "task_name": "find git files", "reveal_target": "center" }
+      ],
       "space /": ["pane::DeploySearch", { "excluded_files": "**/_*.tf" }],
       "space b b": "tab_switcher::ToggleAll",
       "space f f": [
