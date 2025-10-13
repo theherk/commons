@@ -2,7 +2,6 @@ local MiniDeps = require("mini.deps")
 local add, later = MiniDeps.add, MiniDeps.later
 
 local ai_enabled = vim.env.AI_ENABLED == "1"
-local ai_copilot = vim.env.AI_COPILOT == "1"
 
 later(function()
   add({ source = "akinsho/toggleterm.nvim" })
@@ -41,67 +40,47 @@ later(function()
     on_close = function() vim.cmd("startinsert!") end,
   })
   function _Jjui_toggle() jjui:toggle() end
+
   function _Lazygit_toggle() lazygit:toggle() end
+
   vim.keymap.set({ "n" }, "<leader>u", "<cmd>lua _Jjui_toggle()<cr>", { desc = "jjui" })
   vim.keymap.set({ "n" }, "<leader>gg", "<cmd>lua _Lazygit_toggle()<cr>", { desc = "lazygit" })
 end)
 
 if ai_enabled then
-  if ai_copilot then
-    later(function()
-      add({ source = "zbirenbaum/copilot.lua" })
-      local copilot = require("copilot")
-      if copilot.setup then
-        copilot.setup({
-          auth_provider_url = ai_copilot and "https://dnb.ghe.com" or "http://localhost:1",
-          panel = { enabled = false },
-          suggestion = { enabled = false },
-        })
-      end
-      if ai_copilot then
-        vim.cmd("Copilot enable")
-      else
-        vim.cmd("Copilot disable")
-      end
-    end)
-  end
-
   later(function()
     add({
       source = "olimorris/codecompanion.nvim",
+      checkout = "v17.33.0",
       depends = {
         "nvim-lua/plenary.nvim",
-        "dyamon/codecompanion-copilot-enterprise.nvim",
       },
     })
-    local config = {}
-    if ai_copilot then
-      config = {
-        adapters = {
-          http = {
-            copilot_enterprise = function()
-              local adapter = require("codecompanion.adapters.http.copilot_enterprise")
-              adapter.opts.provider_url = "https://dnb.ghe.com"
-              return adapter
-            end,
+    local config = {
+      adapters = {
+        copilot = false,
+        acp = {
+          opts = {
+            show_presets = false,
           },
+          raicode = function()
+            return require("codecompanion.adapters").extend("claude_code", {
+              name = "raicode",
+              commands = {
+                default = {
+                  "raicode-wrapper.sh",
+                },
+              },
+            })
+          end,
         },
-        strategies = {
-          chat = {
-            adapter = {
-              name = "copilot_enterprise",
-              model = "claude-sonnet-4.5", -- gpt-4.1
-            },
-          },
-          inline = { adapter = "copilot_enterprise" },
-          cmd = { adapter = "copilot_enterprise" },
-        },
-      }
-    end
+      },
+    }
     require("codecompanion").setup(config)
     vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "codecompanion (toggle)" })
     vim.keymap.set({ "n", "v" }, "<leader>ac", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
     vim.keymap.set({ "n", "v" }, "<leader>ao", "<cmd>CodeCompanionChat ollama<cr>", { desc = "codecompanion ollama" })
+    vim.keymap.set({ "n", "v" }, "<leader>ar", "<cmd>CodeCompanionChat raicode<cr>", { desc = "codecompanion raicode" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-?>", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-r>", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "codecompanion (toggle)" })
   end)
