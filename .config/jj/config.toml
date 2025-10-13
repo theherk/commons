@@ -22,7 +22,6 @@ key = "theherk@gmail.com"
 
 [ui]
 default-command = "log"
-editor = "nvim"
 commit-template = "~/.config/jj/commit-template.txt"
 diff-editor = ":builtin"
 

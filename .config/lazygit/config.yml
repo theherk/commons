@@ -59,9 +59,6 @@ git:
     pager: delta --paging=never --diff-so-fancy
   parseEmoji: true
 notARepository: quit
-os:
-  edit: "nvim {{filename}}"
-  editAtLine: "nvim {{filename}} +{{line}}"
 promptToReturnFromSubprocess: false
 services:
   "dnb.ghe.com": "github:dnb.ghe.com"
