@@ -1,8 +1,15 @@
 [
   {
+    "context": "AgentPanel",
+    "bindings": {
+      "cmd-f": "workspace::ToggleZoom"
+    }
+  },
+  {
     "context": "Terminal",
     "bindings": {
       "cmd-enter": "workspace::ToggleZoom",
+      "cmd-f": "workspace::ToggleZoom",
       "cmd-t": "workspace::NewTerminal"
     }
   },
