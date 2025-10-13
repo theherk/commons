@@ -26,5 +26,16 @@ $env.config = {
       }]
     }
 }
-use ~/.cache/starship/init.nu
-source ~/.cache/zoxide/init.nu
+
+source $"($nu.cache-dir)/atuin/init.nu"
+
+$env.CARAPACE_BRIDGES = 'nu,fish,zsh,bash'
+source $"($nu.cache-dir)/carapace/init.nu"
+
+use $"($nu.cache-dir)/starship/init.nu"
+
+source $"($nu.cache-dir)/zoxide/init.nu"
+alias cd = z
+
+source ~/.config/nushell/aliases.nu
+source ~/.config/nushell/functions.nu
