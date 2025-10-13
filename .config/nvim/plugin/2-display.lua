@@ -144,7 +144,9 @@ now(function()
   dashboard.section.footer.opts.hl = "AlphaFooter"
   dashboard.opts.layout[1].val = 2
   dashboard.section.footer.val = "Be like water..."
-  require("alpha").setup(dashboard.opts)
+  if vim.env.NVIM_NEOGIT ~= "1" then
+    require("alpha").setup(dashboard.opts)
+  end
 end)
 
 later(function()
