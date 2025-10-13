@@ -67,7 +67,7 @@ mkdir $"($nu.cache-dir)/carapace"
 mkdir $"($nu.cache-dir)/starship"
 mkdir $"($nu.cache-dir)/zoxide"
 
-atuin init nu | save -f $"($nu.cache-dir)/atuin/init.nu"
+atuin init nu --disable-up-arrow | save -f $"($nu.cache-dir)/atuin/init.nu"
 carapace _carapace nushell | save -f $"($nu.cache-dir)/carapace/init.nu"
 starship init nu | save -f $"($nu.cache-dir)/starship/init.nu"
 zoxide init nushell | save -f $"($nu.cache-dir)/zoxide/init.nu"
