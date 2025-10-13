@@ -1,7 +1,7 @@
 background-blur-radius = 23
 background-opacity = 1
 custom-shader = shaders/cursor-warp.glsl
-custom-shader = shaders/inside-the-matrix.glsl
+# custom-shader = shaders/inside-the-matrix.glsl
 cursor-color = #bb9af7
 font-family = VictorMono NF
 font-size = 17
