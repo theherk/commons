@@ -30,3 +30,5 @@ GTAGS
 init-all.sh
 nosetests.xml
 pip-log.txt
+
+**/.claude/settings.local.json
