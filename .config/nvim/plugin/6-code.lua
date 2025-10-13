@@ -213,7 +213,7 @@ now(function()
     use_per_project_settings = true,
   })
   vim.keymap.set("n", "<leader>gG", "<cmd>Neogit<cr>", { desc = "neogit" })
-  -- Launch directly if "--neogit" is in the args.
+  -- Launch directly if "NVIM_NEOGIT=1".
   if vim.env.NVIM_NEOGIT == "1" then
     vim.api.nvim_create_autocmd("VimEnter", {
       callback = function()
