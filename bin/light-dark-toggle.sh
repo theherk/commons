@@ -24,6 +24,9 @@ NVIM_COLORSCHEME_LIGHT="catppuccin"
 NVIM_VARIANT_DARK=frappe
 NVIM_VARIANT_LIGHT=latte
 
+VIVID_DARK="catppuccin-frappe"
+VIVID_LIGHT="catppuccin-latte"
+
 WEZTERM_DARK="Catppuccin Frappe"
 WEZTERM_LIGHT="Catppuccin Latte (Gogh)"
 
@@ -126,6 +129,7 @@ launch_hn = { front = "#40a02b", effect = "bold" }'
 darken() {
 	echo "darkening"
 	yes | fish -c 'fish_config theme save "'"$FISH_DARK"'"'
+	fish -c "set -Ux LS_COLORS (vivid generate $VIVID_DARK)"
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
 	echo "$HN_DARK" >~/.config/hn-tui.toml
 	sed -i '' 's/\(--theme=\)".*"/\1"'"$BAT_DARK"'"/' .config/bat/config
@@ -148,6 +152,7 @@ darken() {
 lighten() {
 	echo "lightening"
 	yes | fish -c 'fish_config theme save "'"$FISH_LIGHT"'"'
+	fish -c "set -Ux LS_COLORS (vivid generate $VIVID_LIGHT)"
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
 	echo "$HN_LIGHT" >~/.config/hn-tui.toml
 	sed -i '' 's/\(--theme=\)".*"/\1"'"$BAT_LIGHT"'"/' .config/bat/config

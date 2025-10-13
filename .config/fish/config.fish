@@ -36,6 +36,13 @@ if status is-login
 
     pyenv init - | source
     pyenv virtualenv-init - | source
+
+    # Set LS_COLORS for colorful eza/ls output.
+    # Fish completions use fish_pager_color_* instead (see conf.d/theme-enhancements.fish).
+    # Only set if not already set universally by light-dark-toggle.sh.
+    if not set -q LS_COLORS
+        set -gx LS_COLORS (vivid generate catppuccin-frappe)
+    end
 end
 
 # Load directory shortcuts.
