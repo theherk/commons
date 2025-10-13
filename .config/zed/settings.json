@@ -52,6 +52,7 @@
   "agent_buffer_font_size": 17,
   "buffer_font_family": "VictorMono Nerd Font",
   "buffer_font_size": 18,
+  "colorize_brackets": true,
   "file_types": {
     "Shell Script": ["*.applescript"],
     "TCL": ["*.exp"]
