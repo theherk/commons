@@ -7,6 +7,8 @@ keybinds {
     unbind "Ctrl n"
     normal {
       bind "Alt r" { SwitchToMode "Resize"; }
+    scroll {
+        bind "y" { Copy; SwitchToMode "normal"; }
     }
     session {
       bind "p" {
