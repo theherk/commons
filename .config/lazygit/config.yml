@@ -54,9 +54,9 @@ gui:
     selectedLineBgColor: ["#24283b"]
   timeFormat: "2006-01-02"
 git:
-  paging:
-    colorArg: always
-    pager: delta --paging=never --diff-so-fancy
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never --diff-so-fancy
   parseEmoji: true
 notARepository: quit
 promptToReturnFromSubprocess: false
