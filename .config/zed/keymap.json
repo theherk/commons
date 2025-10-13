@@ -116,4 +116,13 @@
       "u": "git::UnstageAndNext"
     }
   }
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "ctrl-j": "editor::MoveDown",
+      "ctrl-k": "editor::MoveUp",
+      "ctrl-n": "menu::SelectNext",
+      "ctrl-p": "menu::SelectPrevious",
+    },
+  },
 ]
