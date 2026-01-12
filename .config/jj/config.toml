@@ -32,6 +32,7 @@ key = "theherk@gmail.com"
 default-command = "log"
 commit-template = "~/.config/jj/commit-template.txt"
 diff-editor = ":builtin"
+merge-editor = "mergiraf"
 
 [colors]
 "diff removed" = "red"
