@@ -61,7 +61,6 @@ if ai_enabled then
         acp = {
           raicode = function()
             return require("codecompanion.adapters").extend("claude_code", {
-              name = "raicode",
               commands = {
                 default = {
                   "raicode-wrapper.sh",
@@ -76,7 +75,7 @@ if ai_enabled then
     vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion (toggle)" })
     vim.keymap.set({ "n", "v" }, "<leader>ac", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
     vim.keymap.set({ "n", "v" }, "<leader>ao", "<cmd>CodeCompanionChat ollama<cr>", { desc = "codecompanion ollama" })
-    vim.keymap.set({ "n", "v" }, "<leader>ar", "<cmd>CodeCompanionChat raicode<cr>", { desc = "codecompanion raicode" })
+    vim.keymap.set({ "n", "v" }, "<leader>ar", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion raicode" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-?>", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-r>", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion (toggle)" })
   end)
