@@ -279,4 +279,5 @@
   "ui_font_family": "VictorMono Nerd Font Propo",
   "ui_font_size": 17.0,
   "vim_mode": true,
+  "which_key": { "delay_ms": 300, "enabled": true },
 }
