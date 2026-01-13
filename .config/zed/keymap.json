@@ -14,7 +14,7 @@
     },
   },
   {
-    "context": "Editor",
+    "context": "Editor || Workspace",
     "bindings": {
       "ctrl-p": "projects::OpenRecent",
     },
