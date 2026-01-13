@@ -1,26 +1,10 @@
 {
-  "agent_servers": {
-    "raicode": {
-      "type": "custom",
-      "command": "raicode-wrapper.sh",
-      "args": [],
-      "env": {},
-    },
-  },
-  "edit_predictions": {
-    "copilot": {
-      "enterprise_uri": "https://dnb.ghe.com",
-    },
-    "mode": "eager",
-  },
-  "features": {
-    "edit_prediction_provider": "copilot",
-  },
   "active_pane_modifiers": {
     "border_size": 1,
     "inactive_opacity": 0.81247,
   },
   "agent": {
+    "button": false,
     "always_allow_tool_actions": false,
     "default_profile": "most",
     "default_model": {
@@ -56,11 +40,34 @@
     },
     "use_modifier_to_send": true,
   },
-  "agent_ui_font_size": 18,
   "agent_buffer_font_size": 17,
+  "agent_servers": {
+    "raicode": {
+      "type": "custom",
+      "command": "raicode-wrapper.sh",
+      "args": [],
+      "env": {},
+    },
+  },
+  "agent_ui_font_size": 18,
   "buffer_font_family": "VictorMono Nerd Font",
   "buffer_font_size": 18,
+  "collaboration_panel": {
+    "button": false,
+  },
   "colorize_brackets": true,
+  "debugger": {
+    "button": false,
+  },
+  "edit_predictions": {
+    "copilot": {
+      "enterprise_uri": "https://dnb.ghe.com",
+    },
+    "mode": "eager",
+  },
+  "features": {
+    "edit_prediction_provider": "copilot",
+  },
   "file_types": {
     "Shell Script": ["*.applescript"],
     "TCL": ["*.exp"],
@@ -80,6 +87,15 @@
       "base_url": "https://gitlab.tech.dnb.no",
     },
   ],
+  "git_panel": {
+    "button": false,
+  },
+  "gutter": {
+    "min_line_number_digits": 1,
+    "breakpoints": false,
+    "runnables": false,
+    "folds": false,
+  },
   "icon_theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
@@ -89,6 +105,7 @@
     "enabled": false,
     "toggle_on_modifiers_press": { "control": true },
   },
+  "inline_code_actions": true,
   "language_models": {
     "ollama": {
       "available_models": [
@@ -188,9 +205,20 @@
       },
     },
   },
+  "notification_panel": {
+    "button": false,
+  },
+  "outline_panel": {
+    "button": false,
+  },
   "pane_split_direction_horizontal": "down",
   "pane_split_direction_vertical": "right",
+  "preview_tabs": {
+    "enable_preview_from_project_panel": false,
+    "enabled": false,
+  },
   "project_panel": {
+    "button": false,
     "default_width": 246,
     "indent_size": 16,
   },
@@ -202,7 +230,11 @@
     "regex": true,
   },
   "soft_wrap": "editor_width",
+  "status_bar": {
+    "cursor_position_button": false,
+  },
   "tab_bar": {
+    "show": true,
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false,
   },
@@ -216,6 +248,7 @@
     "metrics": false,
   },
   "terminal": {
+    "button": false,
     "default_height": 666,
     "env": {
       "VISUAL": "zed -w -a",
@@ -231,6 +264,9 @@
     "mode": "system",
     "dark": "Catppuccin Frappé (teal)",
     "light": "Catppuccin Latte (teal)",
+  },
+  "title_bar": {
+    "show_branch_name": false,
   },
   "ui_font_family": "VictorMono Nerd Font Propo",
   "ui_font_size": 17.0,
