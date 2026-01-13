@@ -68,6 +68,9 @@
   "features": {
     "edit_prediction_provider": "copilot",
   },
+  "file_finder": {
+    "modal_max_width": "medium",
+  },
   "file_types": {
     "Shell Script": ["*.applescript"],
     "TCL": ["*.exp"],
