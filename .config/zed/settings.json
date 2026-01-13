@@ -271,6 +271,10 @@
   "title_bar": {
     "show_branch_name": false,
   },
+  "toolbar": {
+    "quick_actions": false,
+    "breadcrumbs": false,
+  },
   "ui_font_family": "VictorMono Nerd Font Propo",
   "ui_font_size": 17.0,
   "vim_mode": true,
