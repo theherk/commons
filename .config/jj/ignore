@@ -1,6 +1,7 @@
 *.egg-info
 *.py[cod]
 .avante_chat_history
+.config/carapace/bridge/zsh/
 .coverage
 .direnv
 .DS_Store

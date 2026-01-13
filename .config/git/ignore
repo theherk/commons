@@ -1,3 +1,4 @@
+**/.claude/settings.local.json
 *~
 *\#*
 *.egg-info
@@ -6,6 +7,7 @@
 .coverage
 .direnv
 .DS_Store
+.config/carapace/bridge/zsh/
 .config/doom/config.el
 .emacs.d/elpa
 .emacs.d/elpa/archives/**/*
@@ -31,5 +33,3 @@ GTAGS
 init-all.sh
 nosetests.xml
 pip-log.txt
-
-**/.claude/settings.local.json
