@@ -230,9 +230,6 @@
     "regex": true,
   },
   "soft_wrap": "editor_width",
-  "status_bar": {
-    "cursor_position_button": false,
-  },
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": false,
