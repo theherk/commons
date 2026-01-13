@@ -232,6 +232,9 @@
     "include_ignored": false,
     "regex": true,
   },
+  "session": {
+    "trust_all_worktrees": true,
+  },
   "soft_wrap": "editor_width",
   "tab_bar": {
     "show": true,
