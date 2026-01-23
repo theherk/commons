@@ -245,465 +245,161 @@ map O Vomnibar.activateInNewTab engines="tab=1,bookmark=2"
 
 #### Custom CSS
 
+This has automatic mode switching for both Catppuccin Frappe and Latte.
+
 ```css
 /* #ui */
 
 .LH {
-  background: #e6e9ef;
-  color: #04a5e5;
-  border-color: #dd7878;
+  background: #eff1f5;
+  color: #1e66f5;
+  border: 1px #e64553 solid;
   font-weight: 555;
   scale: 1.23;
 }
 
 .D > .LH {
-  background: #1a1b26;
-  color: #2ac3de;
-  border-color: #bb9af7;
+  background: #303446;
+  color: #8caaee;
+  border-color: #ca9ee6;
+}
+
+.HUD::after {
+  background: #f2f4f8;
+  border-style: none;
+}
+
+.HUD.D::after {
+  background: #292c3c;
 }
 
 /* #omni */
-
-#bar {
-  background: #ccd0da;
-}
-
-.has-dark #bar {
-  background: #1a1b26;
-}
-
-#input {
-  background: #e6e9ef;
-  border-color: #dd7878;
-}
-
-.has-dark #input {
-  background: #24283b;
-  border-color: #bb9af7;
-}
-
-.history {
-  fill: #fe640b;
-}
-
-.has-dark .history {
-  fill: #e0af68;
-}
-
-.icon {
-  fill: #04a5e5;
-}
-
-.has-dark .icon {
-  fill: #e0af68;
-}
-```
-
-catppuccin version from: https://github.com/catppuccin/vimium/issues/2#issuecomment-1453367965
-
-```css
-/*
-vimium cattpuccin-frappe theme
-
-Adaped from css code by:
-(c) 2020 Saïd Dermoumi
-https://github.com/dermoumi/vimium-snow
-*/
-
-/* #ui */
-/* ^ do not touch this line ^ */
-
-
-/* .R,.DHM,.HM,.IHS,.IH,.BH,.MH {
-    color: #c6d0f5;
-    background: #292c3c;
-} */
-
-/* link hints */
-.LH {
-  border: 2px #eebebe solid;
-  background: #292c3c;
-  margin-top: -2px;
-  margin-left: -2px;
-  color: #c6d0f5;
-  z-index: 0;
-  box-shadow: 0px 2px 11px rgb(0, 0, 0, 0.12);
-  font-weight: 555;
-  scale: 1.23;
-}
-
-.LH:before {
-  position: absolute;
-  background: #292c3c;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: "";
-  z-index: -1;
-}
-
-.D .LH {
-  border-color: #eebebe;
-  color: #c6d0f5;
-}
-
-/* hints matching chars */
-.MC {
-  color: #e78284;
-}
-
-.D .MC {
-  color: #e78284;
-}
-
-/* bottom hud */
-.HUD {
-  bottom: 1rem;
-  left: unset;
-  right: 1rem;
-  border: 1px #eebebe solid;
-  border-radius: 6px;
-  box-shadow: 0 3px 10px #232634;
-  padding: 0.5rem 1rem;
-  height: 1.5rem !important;
-  line-height: 21px;
-  text-transform: lowercase;
-  background: #292c3c
-  color: #c6d0f5;
-  max-width: 420px;
-  min-width: unset;
-  display: flex;
-  align-items: center;
-}
-
-
-.has-dark .HUD {
-  background: #292c3c;
-}
-
-.HUD.UI {
-  min-width: 180px;
-  align-items: unset;
-}
-
-.Omnibar {
-  padding-bottom: 20px;
-}
-
-.HUD:after {
-  border: none;
-  background: #292c3c;
-}
-
-.HUD.D:after {
-  background: #292c3c;
-}
-
-
-/* #omni */
-/* ^ do not touch this line ^ */
-
-* {
-  font-family: "VictorMono Nerd Font" !important;
-}
-
-.transparent {
-  opacity: 0.96;
-}
 
 body {
-  border-radius: 16px;
-  border: 3px #eebebe solid;
-  box-shadow: 2 9px 15px #232634;
+  border: 1px solid #d0d1d7;
+  border-radius: 8px;
 }
 
 body.has-dark {
-  border-color: #eebebe;
-}
-
-body:after {
-  border: unset;
-
+  border-color: #414559;
 }
 
 #bar {
-  background: #232634;
-  border-radius: unset;
-  border-bottom: unset;
-  height: 36px;
-  padding: 9px 10px;
-  padding-bottom: 5px;
+  background: #f2f4f8;
+  border-bottom: 1px solid #d0d1d7;
 }
 
 .has-dark #bar {
-  background: #232634;
-}
-
-#bar::before {
-  content: "❯";
-  display: inline-block;
-  width: 1rem;
-  height: 16px;
-  position: absolute;
-  left: 1rem;
-  z-index: 300;
-  font-size: 9;
-  padding: 6px 0;
-  line-height: 1.6em;
-  text-align: right;
-  color: #c6d0f5;
-  font-weight: bold;
-}
-
-.has-dark #bar::before {
-  color: #232634;
+  background: #292c3c;
+  border-bottom-color: #414559;
 }
 
 #input {
+  background: transparent;
+  color: #4c4f69;
   border: none;
-  background: none;
-  box-shadow: unset;
-  font-size: ;
-  color: #f2d5cf;
-  padding-left: 2rem;
+  box-shadow: none;
 }
 
 .has-dark #input {
-  color: #f2d5cf;
-}
-
-#toolbar {
-  top: 7px;
-  right: 14px;
-}
-
-#toolbar .button {
-  height: 23px;
-  width: 24px;
-  padding: 3px;
-  cursor: pointer;
-  border: 3px transparent solid;
-  position: relative;
-  opacity: 0.5;
-  transition: 100ms ease-in-out opacity;
-}
-
-#toolbar .button:hover {
-  background: unset;
-  opacity: 1;
-}
-
-#toolbar .button > svg {
-  opacity: 0.5;
-}
-
-#toolbar .button#toggle-dark > svg {
-  transform: translateY(1px) rotate(45deg);
-}
-
-#toolbar .button#close > svg {
-  transform: scale(1.4);
-}
-
-#toolbar .button#toggle-dark .i-moon {
-  fill: unset;
-  stroke-width: 1.4;
-}
-
-#toolbar .button#toggle-dark .i-sun {
-  stroke-width: 2.1;
-}
-
-.has-dark #toolbar .button#toggle-dark .i-moon {
-  fill: #ddd8cd;
-  stroke: #ddd8cd;
-}
-
-.has-dark #toolbar .button#toggle-dark .i-sun {
-  fill: #ddd8cd;
-  stroke: #ddd8cd;
-}
-
-.has-dark #toolbar .button#close > svg {
-  fill: #ddd8cd;
-  stroke: #ddd8cd;
+  color: #bac2de;
 }
 
 #list {
-  background: #292c3c;
-  border-radius: unset;
-  padding: 5px;
-  padding-bottom: 6px;
+  background: #eff1f5;
 }
 
 .has-dark #list {
-  background: #292c3c;
+  background: #303446;
 }
 
 .item {
-  padding: 6px 10px;
-  padding-top: 3px;
-  margin: 0 5px;
-  margin-top: -2px;
-  border-radius: 6px;
-  border: unset;
-  border: 3px transparent solid;
-  height: 44px;
-}
-
-.item::before {
-  position: absolute;
-  background: none;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: "";
-  z-index: -1;
+  border: 1px solid transparent;
 }
 
 .item.s,
 .item:hover {
-  background-color: unset;
-  border: 3px #f2d5cf solid;
+  border-color: #1e66f5;
+  background: rgba(30, 102, 245, 0.12);
 }
 
 .has-dark .item.s,
 .has-dark .item:hover {
-  border: 3px #f2d5cf solid;;
-}
-
-.item.s::before {
-  background-color: rgba(255, 255, 255, 0.836);
-}
-
-.item:hover::before {
-  background-color: #fff;
-}
-
-.has-dark .item.s::before {
-  background-color: rgba(80, 83, 84, 0.411);
-}
-
-.has-dark .item:hover::before {
-  background-color: rgba(80, 83, 84, 0.555);
-}
-
-.item .icon {
-  width: 24px;
-  height: 24px;
-  padding-right: unset;
-  margin-right: 10px;
-  margin-top: 5px;
-  background-position: bottom right;
-}
-
-.has-dark .item .icon {
-  fill: #a5adce;
-  stroke: #a5adce;
-}
-
-.item .icon path {
-  opacity: 0.45;
-  position: absolute;
-  z-index: -1;
-  transform-origin: 0px 0px;
-  transform: scale(0.75);
+  border-color: #8caaee;
+  background: rgba(140, 170, 238, 0.15);
 }
 
 .item .top {
-  color: #f2d5cf;
-  position: relative;
-  height: 30px;
+  color: #4c4f69;
 }
 
 .has-dark .item .top {
-  color: #f2d5cf;
-}
-
-.item .top .title {
-  font-size: 16;
-  line-height: 0.8em;
-  margin-top: 2px;
+  color: #c6d0f5;
 }
 
 .item .top .title match {
-  color: #e78284;
+  color: #e64553;
+  font-weight: 600;
 }
 
 .has-dark .item .top .title match {
-  color: #e78284;
-}
-
-.item .top .title:empty::after {
-  content: "<blank>";
-}
-
-.item .bottom {
-  margin-top: -12px;
-  padding-left: 14px;
+  color: #f4b8e4;
 }
 
 .item .bottom a {
-  color: #a5adce;
-  opacity: 0.9
-  font-size: 16;
+  color: #8839ef;
 }
 
 .has-dark .item .bottom a {
-  color: #a5adce;
-  opacity: 0.9
+  color: #ca9ee6;
 }
 
-.item .bottom a match {
-  color: #ea999c;
+#toolbar .button {
+  opacity: 0.6;
 }
 
-.has-dark .item .bottom a match {
-  color: #ea999c;
+#toolbar .button:hover {
+  opacity: 1;
+}
+
+.has-dark #toolbar .button#toggle-dark .i-moon,
+.has-dark #toolbar .button#toggle-dark .i-sun {
+  fill: #a6d189;
+  stroke: #a6d189;
+}
+
+.has-dark #toolbar .button#close > svg {
+  fill: #bac2de;
+  stroke: #bac2de;
 }
 
 /* #find */
-/* ^ do not touch this line ^ */
 
 * {
   font-family: "VictorMono Nerd Font" !important;
   background: unset;
 }
 
-:host,
-body {
-  background-color: #292c3c !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-:host(.D),
-body.D {
-  background-color: #292c3c !important;
-  color: #c6d0f5 !important;
-}
-
 .r {
-  color: #c6d0f5;
-  border: none;
-  border-radius: unset;
-  box-shadow: unset;
-  background: #292c3c;
-  height: 10px;
+  background: transparent;
+  box-shadow: none;
+  color: #4c4f69;
 }
 
 .r.D {
-  background: #292c3c;
+  background: transparent;
   color: #c6d0f5;
 }
 
-#i {
-  color: #c6d0f5;
+/* #find:selection */
+
+::selection {
+  background: #e64553 !important;
+  color: #eff1f5 !important;
 }
 
-.D #i {
-  color: #c6d0f5;
+.D::selection {
+  background: #f4b8e4 !important;
+  color: #303446 !important;
 }
 ```
