@@ -57,6 +57,7 @@
       ],
       "space /": ["pane::DeploySearch", { "excluded_files": "**/_*.tf" }],
       "space b b": "tab_switcher::ToggleAll",
+      "space b o": ["pane::CloseOtherItems", { "close_pinned": false }],
       "space f f": [
         "task::Spawn",
         { "task_name": "find files", "reveal_target": "center" },
