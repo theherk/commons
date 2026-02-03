@@ -90,33 +90,33 @@ parse_repo_info() {
 	local owner=""
 	local repo=""
 
-	# Handle SSH protocol URLs with port (ssh://git@host:port/owner/repo.git)
-	if [[ "$url" =~ ^ssh://git@([^:]+):([0-9]+)/(.+)/(.+)\.git$ ]]; then
+	# Handle SSH protocol URLs with port (ssh://user@host:port/owner/repo.git)
+	if [[ "$url" =~ ^ssh://[^@]+@([^:]+):([0-9]+)/(.+)/(.+)\.git$ ]]; then
 		host="${BASH_REMATCH[1]}:${BASH_REMATCH[2]}"
 		owner="${BASH_REMATCH[3]}"
 		repo="${BASH_REMATCH[4]}"
 	# Handle SSH protocol URLs with port without .git suffix
-	elif [[ "$url" =~ ^ssh://git@([^:]+):([0-9]+)/(.+)/(.+)$ ]]; then
+	elif [[ "$url" =~ ^ssh://[^@]+@([^:]+):([0-9]+)/(.+)/(.+)$ ]]; then
 		host="${BASH_REMATCH[1]}:${BASH_REMATCH[2]}"
 		owner="${BASH_REMATCH[3]}"
 		repo="${BASH_REMATCH[4]}"
-	# Handle SSH URLs with port (git@host:port/owner/repo.git)
-	elif [[ "$url" =~ ^git@([^:]+):([0-9]+)/(.+)/(.+)\.git$ ]]; then
+	# Handle SSH URLs with port (user@host:port/owner/repo.git)
+	elif [[ "$url" =~ ^[^@]+@([^:]+):([0-9]+)/(.+)/(.+)\.git$ ]]; then
 		host="${BASH_REMATCH[1]}:${BASH_REMATCH[2]}"
 		owner="${BASH_REMATCH[3]}"
 		repo="${BASH_REMATCH[4]}"
 	# Handle SSH URLs with port without .git suffix
-	elif [[ "$url" =~ ^git@([^:]+):([0-9]+)/(.+)/(.+)$ ]]; then
+	elif [[ "$url" =~ ^[^@]+@([^:]+):([0-9]+)/(.+)/(.+)$ ]]; then
 		host="${BASH_REMATCH[1]}:${BASH_REMATCH[2]}"
 		owner="${BASH_REMATCH[3]}"
 		repo="${BASH_REMATCH[4]}"
-	# Handle SSH URLs (git@host:owner/repo.git)
-	elif [[ "$url" =~ ^git@([^:]+):(.+)/(.+)\.git$ ]]; then
+	# Handle SSH URLs (user@host:owner/repo.git)
+	elif [[ "$url" =~ ^[^@]+@([^:]+):(.+)/(.+)\.git$ ]]; then
 		host="${BASH_REMATCH[1]}"
 		owner="${BASH_REMATCH[2]}"
 		repo="${BASH_REMATCH[3]}"
-	# Handle SSH URLs without .git suffix
-	elif [[ "$url" =~ ^git@([^:]+):(.+)/(.+)$ ]]; then
+	# Handle SSH URLs without .git suffix (user@host:owner/repo)
+	elif [[ "$url" =~ ^[^@]+@([^:]+):(.+)/(.+)$ ]]; then
 		host="${BASH_REMATCH[1]}"
 		owner="${BASH_REMATCH[2]}"
 		repo="${BASH_REMATCH[3]}"
