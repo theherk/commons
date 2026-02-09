@@ -34,7 +34,10 @@ YAZI_DARK="catppuccin-frappe"
 YAZI_LIGHT="catppuccin-latte"
 
 ZELLIJ_DARK="catppuccin-frappe"
-ZELLIJ_LIGHT="gruvbox-light"
+ZELLIJ_LIGHT="catppuccin-latte"
+
+ZELLIJ_TAB_ACTIVE_BG_DARK="#414559"
+ZELLIJ_TAB_ACTIVE_BG_LIGHT="#ccd0da"
 
 HN_DARK='[theme.palette]
 # Catppuccin Frappe colors
@@ -145,6 +148,7 @@ darken() {
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_DARK"'"/' .config/wezterm/theme.lua
 	sed -i '' 's/\(use = \)".*"/\1"'"$YAZI_DARK"'"/' .config/yazi/theme.toml
 	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_DARK"'"/' .config/zellij/config.kdl
+	sed -i '' 's/\(tab_active.*bg=\)[^,]*/\1'"$ZELLIJ_TAB_ACTIVE_BG_DARK"'/g' .config/zellij/layouts/*.kdl
 	# sed -i '' 's/user_pref("browser\.theme\.content-theme", .);/user_pref("browser.theme.content-theme", 0);/' "$PROFILE_DIR/prefs.js"
 	# sed -i '' 's/user_pref("browser\.theme\.toolbar-theme", .);/user_pref("browser.theme.toolbar-theme", 0);/' "$PROFILE_DIR/prefs.js"
 }
@@ -168,6 +172,7 @@ lighten() {
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_LIGHT"'"/' .config/wezterm/theme.lua
 	sed -i '' 's/\(use = \)".*"/\1"'"$YAZI_LIGHT"'"/' .config/yazi/theme.toml
 	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_LIGHT"'"/' .config/zellij/config.kdl
+	sed -i '' 's/\(tab_active.*bg=\)[^,]*/\1'"$ZELLIJ_TAB_ACTIVE_BG_LIGHT"'/g' .config/zellij/layouts/*.kdl
 	# sed -i '' 's/user_pref("browser\.theme\.content-theme", .);/user_pref("browser.theme.content-theme", 1);/' "$PROFILE_DIR/prefs.js"
 	# sed -i '' 's/user_pref("browser\.theme\.toolbar-theme", .);/user_pref("browser.theme.toolbar-theme", 1);/' "$PROFILE_DIR/prefs.js"
 }

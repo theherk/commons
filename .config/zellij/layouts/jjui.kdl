@@ -31,8 +31,8 @@ layout {
 
                 tab_normal            "#[fg=blue]|#[fg=yellow] {name} "
                 tab_normal_fullscreen "#[fg=blue]|#[fg=yellow] 🔍 {name} "
-                tab_active            "#[fg=blue]|#[bg=#32344a,fg=magenta,bold,italic] {name} "
-                tab_active_fullscreen "#[fg=blue]|#[bg=#32344a,fg=magenta,bold,italic] 🔍 {name} "
+                tab_active            "#[fg=blue]|#[bg=#414559,fg=magenta,bold,italic] {name} "
+                tab_active_fullscreen "#[fg=blue]|#[bg=#414559,fg=magenta,bold,italic] 🔍 {name} "
               }
         }
     }
