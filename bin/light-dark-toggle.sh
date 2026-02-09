@@ -27,6 +27,9 @@ NVIM_VARIANT_LIGHT=latte
 VIVID_DARK="catppuccin-frappe"
 VIVID_LIGHT="catppuccin-latte"
 
+WALLPAPER_DARK="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Pictures/background/catppuccin-frappe-themer-my-color-set-dark-3440x1440.png"
+WALLPAPER_LIGHT="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Pictures/background/catppuccin-latte-themer-my-color-set-light-3440x1440.png"
+
 WEZTERM_DARK="Catppuccin Frappe"
 WEZTERM_LIGHT="Catppuccin Latte (Gogh)"
 
@@ -149,6 +152,7 @@ darken() {
 	sed -i '' 's/\(use = \)".*"/\1"'"$YAZI_DARK"'"/' .config/yazi/theme.toml
 	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_DARK"'"/' .config/zellij/config.kdl
 	sed -i '' 's/\(tab_active.*bg=\)[^,]*/\1'"$ZELLIJ_TAB_ACTIVE_BG_DARK"'/g' .config/zellij/layouts/*.kdl
+	osascript -e "tell application \"System Events\" to tell every desktop to set picture to POSIX file \"$WALLPAPER_DARK\""
 	# sed -i '' 's/user_pref("browser\.theme\.content-theme", .);/user_pref("browser.theme.content-theme", 0);/' "$PROFILE_DIR/prefs.js"
 	# sed -i '' 's/user_pref("browser\.theme\.toolbar-theme", .);/user_pref("browser.theme.toolbar-theme", 0);/' "$PROFILE_DIR/prefs.js"
 }
@@ -173,6 +177,7 @@ lighten() {
 	sed -i '' 's/\(use = \)".*"/\1"'"$YAZI_LIGHT"'"/' .config/yazi/theme.toml
 	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_LIGHT"'"/' .config/zellij/config.kdl
 	sed -i '' 's/\(tab_active.*bg=\)[^,]*/\1'"$ZELLIJ_TAB_ACTIVE_BG_LIGHT"'/g' .config/zellij/layouts/*.kdl
+	osascript -e "tell application \"System Events\" to tell every desktop to set picture to POSIX file \"$WALLPAPER_LIGHT\""
 	# sed -i '' 's/user_pref("browser\.theme\.content-theme", .);/user_pref("browser.theme.content-theme", 1);/' "$PROFILE_DIR/prefs.js"
 	# sed -i '' 's/user_pref("browser\.theme\.toolbar-theme", .);/user_pref("browser.theme.toolbar-theme", 1);/' "$PROFILE_DIR/prefs.js"
 }
