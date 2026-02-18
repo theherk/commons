@@ -1,4 +1,6 @@
+*.class
 *.egg-info
+*.jar
 *.py[cod]
 .avante_chat_history
 .config/carapace/bridge/zsh/

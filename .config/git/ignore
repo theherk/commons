@@ -1,7 +1,9 @@
 **/.claude/settings.local.json
 *~
 *\#*
+*.class
 *.egg-info
+*.jar
 *.py[cod]
 .avante_chat_history
 .coverage
