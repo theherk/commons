@@ -1,6 +1,7 @@
 [alias]
 	c=commit
 	cm=commit -m
+	ccc=!ccc.sh
 	ghcc=!ghcc.sh
 	gr=!gr.sh
 	prune-merged = "!git fetch -p && TRUNK=$(git remote show origin | sed -n '/HEAD branch/s/.*: //p') && git branch --merged $TRUNK | grep -v '^[ *]*'$TRUNK'$' | xargs -r git branch -d"

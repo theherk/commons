@@ -1,5 +1,6 @@
 [aliases]
 bm = ["bookmark", "set", "main", "--revision=@-"]
+ccc = ["util", "exec", "--", "ccc.sh"]
 ghcc = ["util", "exec", "--", "ghcc.sh"]
 gr = ["util", "exec", "--", "gr.sh"]
 pm = [
