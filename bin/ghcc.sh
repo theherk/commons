@@ -48,4 +48,28 @@ Diff:
 ${DIFF}
 EOF
 
-copilot -p "$PROMPT" --silent --allow-all
+# Generate commit message
+COMMIT_MESSAGE=$(copilot -p "$PROMPT" --silent --allow-all)
+
+# Output the full commit message
+echo "$COMMIT_MESSAGE"
+
+# Copy to clipboard: first body (line 3 onward), then summary (line 1)
+if command -v pbcopy >/dev/null 2>&1; then
+	# Extract body (line 3 onward)
+	BODY=$(echo "$COMMIT_MESSAGE" | tail -n +3)
+
+	# Extract summary (line 1)
+	SUMMARY=$(echo "$COMMIT_MESSAGE" | head -n 1)
+
+	# Copy body first (if it exists and has non-whitespace content)
+	if [ -n "$(echo "$BODY" | tr -d '[:space:]')" ]; then
+		echo -n "$BODY" | pbcopy
+		echo "📋 Body copied to clipboard" >&2
+		sleep 1.1
+	fi
+
+	# Then copy summary
+	echo -n "$SUMMARY" | pbcopy
+	echo "📋 Summary copied to clipboard" >&2
+fi
