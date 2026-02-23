@@ -35,7 +35,7 @@ if vim.g.neovide then
     vim.g.neovide_cursor_animate_in_insert_mode = false
     vim.g.neovide_cursor_animate_command_line = true
     vim.g.neovide_cursor_smooth_blink = true
-    vim.g.neovide_cursor_vfx_mode = "railrun"
+    vim.g.neovide_cursor_vfx_mode = "railgun"
     vim.g.neovide_cursor_trail_size = 0.436
     vim.g.neovide_cursor_vfx_particle_curl = 0.555
     vim.g.neovide_cursor_vfx_particle_density = 0.777
