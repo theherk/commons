@@ -46,9 +46,22 @@ elif [ "$REPO_TYPE" = "jj" ]; then
 	BRANCH=$(jj bookmark list -r "$JJ_REV" | head -n 1)
 	DIFF=$(jj diff --git -r "$JJ_REV")
 
+	# If no changes in the specified revision, try the previous one
 	if [ -z "$DIFF" ]; then
-		echo "Error: No changes in revision $JJ_REV." >&2
-		exit 1
+		if [ "$JJ_REV" = "@" ]; then
+			echo "No changes in @, trying @-..." >&2
+			JJ_REV="@-"
+			BRANCH=$(jj bookmark list -r "$JJ_REV" | head -n 1)
+			DIFF=$(jj diff --git -r "$JJ_REV")
+
+			if [ -z "$DIFF" ]; then
+				echo "Error: No changes in revision $JJ_REV." >&2
+				exit 1
+			fi
+		else
+			echo "Error: No changes in revision $JJ_REV." >&2
+			exit 1
+		fi
 	fi
 fi
 
