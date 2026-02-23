@@ -83,7 +83,7 @@ shift-v = ['layout vertical', 'mode main']
 
 
 # Change some workspaces between accordion and tiles.
-a = [
+a = [ # mostly accordion
     'workspace 🌎',
     'layout h_accordion',
     'workspace 💻',
@@ -103,7 +103,27 @@ a = [
     'workspace 💻',
     'mode main',
 ]
-t = [
+d = [ # desk layout when multimonitor is in play
+    'workspace 🌎',
+    'layout h_tiles',
+    'workspace 💻',
+    'layout h_tiles',
+    'workspace ✏️',
+    'layout h_tiles',
+    'workspace 📓',
+    'layout h_tiles',
+    'workspace 🌀',
+    'layout h_tiles',
+    'workspace 📬',
+    'layout h_tiles',
+    'workspace 🗨️',
+    'layout h_accordion',
+    'workspace 📡',
+    'layout h_accordion',
+    'workspace 💻',
+    'mode main',
+]
+t = [ # mostly tiling
     'workspace 🌎',
     'layout h_tiles',
     'workspace 💻',
