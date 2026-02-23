@@ -125,6 +125,16 @@ t = [
     'mode main',
 ]
 
+[workspace-to-monitor-force-assignment]
+    "🌎" = 'main'
+    "💻" = 'main'
+    "✏️" = 'main'
+    "📓" = 'main'
+    "🌀" = 'main'
+    "📬" = ['secondary', 'main']
+    "🗨️" = ['secondary', 'main']
+    "📡" = ['secondary', 'main']
+
 [key-mapping.key-notation-to-key-code]
 q = 'q'
 w = 'w'
