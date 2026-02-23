@@ -1,5 +1,8 @@
 set -U fish_greeting
 
+set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+
 if status is-login
     if test -e /opt/homebrew/bin/brew
         eval (/opt/homebrew/bin/brew shellenv)
@@ -17,9 +20,7 @@ if status is-login
     set -gx GROOVY_HOME (brew --prefix)"/opt/groovy/libexec"
     set -gx HTML_TIDY $HOME/.config/tidy/config.txt
     set -gx VOLTA_HOME "$HOME/.volta"
-    set -gx XDG_CONFIG_HOME "$HOME/.config"
     set -gx HOMEBREW_BUNDLE_FILE "$XDG_CONFIG_HOME/brewfile/Brewfile"
-    set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
     fish_add_path -m \
         (brew --prefix)/opt/coreutils/libexec/gnubin \
