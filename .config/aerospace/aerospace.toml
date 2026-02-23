@@ -21,6 +21,8 @@ cmd-h = []
 alt-slash = []
 alt-comma = []
 
+alt-e = 'workspace ✏️'
+
 alt-h = 'focus left --boundaries-action stop'
 alt-j = 'focus down --boundaries-action stop'
 alt-k = 'focus up --boundaries-action stop'
