@@ -4,6 +4,7 @@
 *.py[cod]
 .avante_chat_history
 .config/carapace/bridge/zsh/
+.config/jj/repos
 .coverage
 .direnv
 .DS_Store

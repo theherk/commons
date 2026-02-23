@@ -11,6 +11,7 @@
 .DS_Store
 .config/carapace/bridge/zsh/
 .config/doom/config.el
+.config/jj/repos
 .emacs.d/elpa
 .emacs.d/elpa/archives/**/*
 .emacs.d/auto-save-list
