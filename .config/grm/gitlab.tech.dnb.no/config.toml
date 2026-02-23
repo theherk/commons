@@ -10,7 +10,6 @@ groups = [
   "dnb/cbcommon",
   "dnb/ccp",
   "dnb/ciam/authz",
-  "dnb/codd",
   "dnb/cppshasl",
   "dnb/cptf",
   "dnb/dcf",
