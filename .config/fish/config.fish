@@ -1,7 +1,7 @@
 set -U fish_greeting
 
-set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
 if status is-login
     if test -e /opt/homebrew/bin/brew
