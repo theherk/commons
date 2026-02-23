@@ -3,7 +3,7 @@
 *.jar
 *.py[cod]
 .avante_chat_history
-.config/carapace/bridge/zsh/
+.config/carapace/bridge
 .config/jj/repos
 .coverage
 .direnv
