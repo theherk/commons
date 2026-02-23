@@ -57,7 +57,7 @@ end
 function module.launch(args)
   return wezterm.action_callback(function(window, _)
     local _, _, _ = window:mux_window():spawn_tab({
-      args = { os.getenv("SHELL"), "-c", module.titled_cmd(args) },
+      args = { os.getenv("SHELL"), "-l", "-c", module.titled_cmd(args) },
     })
   end)
 end
