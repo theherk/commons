@@ -47,13 +47,6 @@ later(function()
   vim.keymap.set({ "n" }, "<leader>gg", "<cmd>lua _Lazygit_toggle()<cr>", { desc = "lazygit" })
 end)
 
-later(function()
-  local minidiff = require("mini.diff")
-  minidiff.setup()
-  vim.keymap.set("n", "<leader>go", minidiff.toggle_overlay, { desc = "diff overlay" })
-  vim.keymap.set("n", "<leader>tD", minidiff.toggle, { desc = "toggle diff signs" })
-end)
-
 if ai_enabled then
   later(function()
     add({

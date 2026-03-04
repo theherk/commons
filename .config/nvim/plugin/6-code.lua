@@ -228,16 +228,12 @@ now(function()
   -- Launch directly if "NVIM_NEOGIT=1".
   if vim.env.NVIM_NEOGIT == "1" then
     vim.api.nvim_create_autocmd("VimEnter", {
-      callback = function()
-        require("neogit").open()
-      end,
+      callback = function() require("neogit").open() end,
     })
     vim.api.nvim_create_autocmd("FileType", {
       pattern = "NeogitStatus",
       callback = function()
-        vim.defer_fn(function()
-          vim.keymap.set("n", "q", "<cmd>qa<cr>", { buffer = true, desc = "quit neovim" })
-        end, 100) -- Delay to ensure Neogit sets its mapping first.
+        vim.defer_fn(function() vim.keymap.set("n", "q", "<cmd>qa<cr>", { buffer = true, desc = "quit neovim" }) end, 100) -- Delay to ensure Neogit sets its mapping first.
       end,
     })
   end
@@ -251,9 +247,9 @@ end)
 later(function()
   add("echasnovski/mini.diff")
   local diff = require("mini.diff")
-  diff.setup({
-    source = diff.gen_source.none(),
-  })
+  diff.setup()
+  vim.keymap.set("n", "<leader>go", diff.toggle_overlay, { desc = "diff overlay" })
+  vim.keymap.set("n", "<leader>tD", diff.toggle, { desc = "toggle diff signs" })
 end)
 
 later(function()
