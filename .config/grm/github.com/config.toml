@@ -5,3 +5,6 @@ root = "."
 
 [filters]
 owner = true
+groups = [
+  "kaizen-do"
+]
