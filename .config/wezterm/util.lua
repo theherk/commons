@@ -135,16 +135,18 @@ function module.toggle_raicode()
 
     for _, p in ipairs(panes) do
       if p.is_zoomed then any_zoomed = true end
-      local name = p.pane:get_foreground_process_name()
-      if name and name:match("raicode") then
+      if p.pane:get_user_vars().RAICODE == "1" then
         raicode_pane = p
       end
     end
 
     if raicode_pane == nil then
-      -- No raicode pane, spawn one on the right
+      -- No raicode pane, spawn one on the right (set user var for detection)
       window:perform_action(act.SplitHorizontal({
-        args = { "raicode" },
+        args = {
+          "/opt/homebrew/bin/fish", "-l", "-c",
+          "printf '\\e]1337;SetUserVar=%s=%s\\a' RAICODE (echo -n 1 | base64); raicode",
+        },
         domain = "CurrentPaneDomain",
       }), pane)
     elseif any_zoomed then
