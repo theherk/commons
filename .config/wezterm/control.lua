@@ -21,6 +21,7 @@ local key_tables = {
   launch_split = {
     { key = "f",      action = util.launch_split({ "yazi" }) },
     { key = "g",      action = util.launch_split({ "lazygit" }) },
+    { key = "r",      action = util.launch_split({ "raicode" }) },
     { key = "u",      action = util.launch_split({ "jjui" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
@@ -28,6 +29,7 @@ local key_tables = {
   launch_tab = {
     { key = "f",      action = util.launch({ "yazi" }) },
     { key = "g",      action = util.launch({ "lazygit" }) },
+    { key = "r",      action = util.launch({ "raicode" }) },
     { key = "u",      action = util.launch({ "jjui" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
@@ -35,6 +37,7 @@ local key_tables = {
   launch_vertical = {
     { key = "f",      action = util.launch_vertical({ "yazi" }) },
     { key = "g",      action = util.launch_vertical({ "lazygit" }) },
+    { key = "r",      action = util.launch_vertical({ "raicode" }) },
     { key = "u",      action = util.launch_vertical({ "jjui" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
@@ -134,6 +137,7 @@ local keys = {
   { key = "f", mods = "LEADER", action = util.launch({ "yazi" }) },
   { key = "F", mods = "LEADER", action = util.launch({ "xplr" }) },
   { key = "g", mods = "LEADER", action = util.launch({ "lazygit" }) },
+  { key = "R", mods = "LEADER", action = util.launch({ "raicode" }) },
   { key = "S", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch_split", one_shot = true, until_unknown = true }) },
   { key = "T", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch_tab", one_shot = true, until_unknown = true }) },
   { key = "u", mods = "LEADER", action = util.launch({ "jjui" }) },

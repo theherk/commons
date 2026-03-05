@@ -13,6 +13,7 @@ keybinds {
         bind "e" { Run "nvp" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
         bind "f" { Run "fish" "-c" "yazi" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
         bind "g" { Run "lazygit" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
+        bind "r" { Run "raicode" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
         bind "s" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "u" { Run "jjui" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
         bind "v" { NewPane "Right"; SwitchToMode "Normal"; }
@@ -29,6 +30,7 @@ keybinds {
         bind "f" { NewTab { name "files"; layout "yazi"; }; SwitchToMode "normal"; }
         bind "g" { NewTab { name "git"; layout "lazygit"; }; SwitchToMode "normal"; }
         bind "n" { NewTab { layout "default"; }; SwitchToMode "normal"; }
+        bind "r" { NewTab { name "raicode"; layout "raicode"; }; SwitchToMode "normal"; }
         bind "u" { NewTab { name "jj"; layout "jjui"; }; SwitchToMode "normal"; }
     }
 }
