@@ -163,7 +163,18 @@ later(function()
           "vimdoc",
           "yaml",
         },
-        highlight = { enable = true },
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+          disable = function(lang, buf)
+            if vim.g.neovide then
+              local max_filesize = 100 * 1024 -- 100 KB
+              local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+              if ok and stats and stats.size > max_filesize then return true end
+            end
+            return false
+          end,
+        },
         incremental_selection = {
           enable = true,
           keymaps = {
@@ -414,7 +425,7 @@ later(function()
           completeUnimported = true,
           staticcheck = true,
           directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
-          semanticTokens = true,
+          semanticTokens = false,
         },
       },
     },
@@ -495,6 +506,9 @@ later(function()
   -- Setup LSP with shared configs
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+  -- Disable semantic tokens globally for performance in Neovide
+  if vim.g.neovide then capabilities.textDocument.semanticTokens = vim.NIL end
 
   for server, opts in pairs(servers) do
     opts.capabilities = capabilities
