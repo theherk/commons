@@ -17,14 +17,9 @@ if l > 0.5 then
   colors.panel_bg = bg:darken(0.069)
 else
   colors.inactive_fg = bg:complement_ryb():lighten(0.3)
-  colors.panel_bg = bg:lighten(0.069)
+  colors.panel_bg = bg:lighten(0.139)
 end
-if selected_scheme == "Catppuccin Latte (Gogh)" then
-  -- This is a special case; I don't like the selection_bg.
-  colors.active_bg = colors.panel_bg
-else
-  colors.active_bg = scheme.selection_bg or colors.panel_bg
-end
+colors.active_bg = colors.panel_bg
 
 scheme.cursor_bg = colors.active_fg
 scheme.split = colors.inactive_fg
@@ -62,10 +57,10 @@ function module.apply_to_config(config)
     saturation = 0.66,
     brightness = 0.54,
   }
-  config.font = wezterm.font_with_fallback {
+  config.font = wezterm.font_with_fallback({
     "VictorMono Nerd Font",
     "Apple Color Emoji",
-  }
+  })
   config.font_size = 18
   config.macos_window_background_blur = 23
   config.tab_bar_at_bottom = true
