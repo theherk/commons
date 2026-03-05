@@ -126,6 +126,9 @@ local keys = {
   { key = "0", mods = "LEADER", action = act.ActivateTab(-1) },
   { key = "0", mods = "SUPER",  action = act.ActivateTab(-1) },
 
+  -- Toggle raicode
+  { key = "r", mods = "SUPER", action = util.toggle_raicode() },
+
   -- Scrolling
   { key = "j", mods = "SUPER",  action = act.ScrollByPage(0.5) },
   { key = "k", mods = "SUPER",  action = act.ScrollByPage(-0.5) },

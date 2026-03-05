@@ -124,6 +124,50 @@ function module.update_right_status(window, pane)
   window:set_right_status(wezterm.format(text))
 end
 
+function module.toggle_raicode()
+  return wezterm.action_callback(function(window, pane)
+    local tab = pane:tab()
+    if tab == nil then return end
+
+    local panes = tab:panes_with_info()
+    local raicode_pane = nil
+    local any_zoomed = false
+
+    for _, p in ipairs(panes) do
+      if p.is_zoomed then any_zoomed = true end
+      local name = p.pane:get_foreground_process_name()
+      if name and name:match("raicode") then
+        raicode_pane = p
+      end
+    end
+
+    if raicode_pane == nil then
+      -- No raicode pane, spawn one on the right
+      window:perform_action(act.SplitHorizontal({
+        args = { "raicode" },
+        domain = "CurrentPaneDomain",
+      }), pane)
+    elseif any_zoomed then
+      -- A pane is zoomed, unzoom and focus raicode
+      window:perform_action(act.TogglePaneZoomState, pane)
+      window:perform_action(act.ActivatePaneByIndex(raicode_pane.index), pane)
+    else
+      -- Both visible, zoom the left (non-raicode) pane to hide raicode
+      if raicode_pane.is_active then
+        for _, p in ipairs(panes) do
+          if p.index ~= raicode_pane.index then
+            window:perform_action(act.ActivatePaneByIndex(p.index), pane)
+            window:perform_action(act.TogglePaneZoomState, p.pane)
+            break
+          end
+        end
+      else
+        window:perform_action(act.TogglePaneZoomState, pane)
+      end
+    end
+  end)
+end
+
 function module.user_var_changed(window, pane, name, value)
   local overrides = window:get_config_overrides() or {}
   if name == "ZEN_MODE" then
