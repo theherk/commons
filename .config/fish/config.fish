@@ -76,7 +76,7 @@ if status is-interactive
     fish_vi_key_bindings
     bind -M insert --sets-mode default 'q;' repaint
     bind -M insert \cf accept-autosuggestion # Default but for vim.
-    bind -M insert \ce accept-autosuggestion # Maybe better.
+    bind -M insert \cy accept-autosuggestion # Matches nvim native c-y = accept.
 
     if test -z (pgrep ssh-agent | string collect)
         eval (ssh-agent -c)
