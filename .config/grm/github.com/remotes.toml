@@ -1,0 +1,15 @@
+[[trees]]
+root = "."
+
+[[trees.repos]]
+name = "nikitabobko/AeroSpace"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "git@github.com:nikitabobko/AeroSpace.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "raisjn"
+url = "git@github.com:raisjn/AeroSpace.git"
+type = "ssh"
