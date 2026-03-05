@@ -49,7 +49,8 @@ local key_tables = {
 }
 
 local keys = {
-  { key = "a",  mods = "LEADER|CTRL", action = act.SendString("\x01") },
+  { key = "a",     mods = "LEADER|CTRL", action = act.SendString("\x01") },
+  { key = "Enter", mods = "SHIFT",       action = act.SendKey({ key = "Enter", mods = "ALT" }) },
 
   -- Workpace and Pallette
   { key = "d",  mods = "LEADER",      action = ws.with_cache("default") },
