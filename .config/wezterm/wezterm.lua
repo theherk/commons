@@ -17,6 +17,7 @@ local paths = {
 }
 
 config = {
+  alternate_buffer_wheel_scroll_speed = 1,
   check_for_updates = false,
   -- default_gui_startup_args = { "connect", "unix" },
   set_environment_variables = {
