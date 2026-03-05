@@ -32,7 +32,6 @@ later(function()
       default_tags = { "daily-notes" },
       template = "journal",
     },
-    follow_url_func = function(url) vim.fn.jobstart({ "open", url }) end,
     frontmatter = {
       enabled = false,
       func = function(note)
