@@ -5,7 +5,8 @@ local Util = require("module.util")
 if vim.g.neovide then
   now(function()
     vim.g.neovide_detach_on_quit = "always_detach"
-    vim.g.neovide_floating_corner_radius = 0.333
+    vim.g.neovide_hide_mouse_when_typing = true
+    vim.g.neovide_floating_corner_radius = 0
     vim.g.neovide_opacity = 1
     vim.g.neovide_scroll_animation_length = 0.0
     vim.g.neovide_scroll_animation_far_lines = 0
