@@ -19,7 +19,6 @@ later(function()
     source = "obsidian-nvim/obsidian.nvim",
     depend = {
       "echasnovski/mini.pick",
-      "hrsh7th/nvim-cmp",
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       -- Required pngpaste on MacOS. `brew install pngpaste`

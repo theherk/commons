@@ -1,67 +1,10 @@
 local MiniDeps = require("mini.deps")
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
-local Icons = require("module.icons")
 local Lsp = require("module.lsp")
-local Util = require("module.util")
 
 later(function()
   add({ source = "aaronik/treewalker.nvim" })
   require("treewalker").setup()
-end)
-
-later(function()
-  add({
-    source = "hrsh7th/nvim-cmp",
-    depends = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "saadparwaiz1/cmp_luasnip",
-    },
-  })
-  local cmp = require("cmp")
-  local defaults = require("cmp.config.default")()
-  vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
-  vim.api.nvim_create_autocmd("DirChanged", {
-    pattern = "*",
-    callback = function()
-      vim.schedule(function()
-        local sources = Util.get_active_sources()
-        cmp.setup({ sources = cmp.config.sources(sources) })
-        local source_names = vim.tbl_map(function(source) return source.name end, sources)
-        local msg = table.concat(source_names, ", ")
-        vim.notify(msg, vim.log.levels.INFO, { title = "cmp sources" })
-      end)
-    end,
-  })
-  local sources = cmp.config.sources(Util.get_active_sources())
-  cmp.setup({
-    completion = { completeopt = "menu,menuone,noinsert" },
-    snippet = { expand = function(args) require("luasnip").lsp_expand(args.body) end },
-    mapping = cmp.mapping.preset.insert({
-      ["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-      ["<c-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-      ["<c-b>"] = cmp.mapping.scroll_docs(-4),
-      ["<c-f>"] = cmp.mapping.scroll_docs(4),
-      ["<c-space>"] = cmp.mapping.complete(),
-      ["<c-backspace>"] = cmp.mapping.abort(),
-      ["<c-e>"] = cmp.mapping.confirm({ select = true }),
-      ["<cr>"] = cmp.mapping.confirm({ select = true }),
-    }),
-    sources = sources,
-    formatting = {
-      format = function(_, item)
-        if Icons.kinds[item.kind] then item.kind = Icons.kinds[item.kind] .. item.kind end
-        return item
-      end,
-    },
-    experimental = {
-      ghost_text = {
-        hl_group = "CmpGhostText",
-      },
-    },
-    sorting = defaults.sorting,
-  })
 end)
 
 later(function()
@@ -98,30 +41,7 @@ later(function()
 end)
 
 now(function()
-  add({
-    source = "neovim/nvim-lspconfig",
-    depends = { "williamboman/mason.nvim" },
-  })
-end)
-
-now(function()
-  add({
-    source = "williamboman/mason.nvim",
-    depends = {
-      "williamboman/mason-lspconfig.nvim",
-    },
-  })
-  require("mason").setup({
-    ensure_installed = {
-      "bash-language-server",
-      "flake8",
-      "prettierd",
-      "ruff",
-      "shfmt",
-      "stylua",
-      "terraform-ls",
-    },
-  })
+  add({ source = "neovim/nvim-lspconfig" })
 end)
 
 later(function()
@@ -324,13 +244,36 @@ later(function()
 end)
 
 later(function()
-  add({
-    source = "nvimtools/none-ls.nvim",
-    depends = {
-      "nvim-lua/plenary.nvim",
+  add({ source = "stevearc/conform.nvim" })
+  require("conform").setup({
+    formatters_by_ft = {
+      lua = { "stylua" },
+      sh = { "shfmt" },
+      bash = { "shfmt" },
+      javascript = { "prettierd" },
+      typescript = { "prettierd" },
+      html = { "prettierd" },
+      css = { "prettierd" },
+      json = { "prettierd" },
+      markdown = { "prettierd" },
+      -- These LSP servers handle their own formatting natively:
+      -- gopls (gofumpt=true + imports), ruff, terraformls, yamlls
     },
   })
+end)
 
+later(function()
+  add({ source = "mfussenegger/nvim-lint" })
+  require("lint").linters_by_ft = {
+    fish = { "fish" },
+    dockerfile = { "hadolint" },
+  }
+  vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {
+    callback = function() require("lint").try_lint() end,
+  })
+end)
+
+later(function()
   local lsp = require("module.lsp")
 
   -- LSP Configuration
@@ -428,28 +371,17 @@ later(function()
     pyright = {
       settings = {
         pyright = {
-          -- Disable pyright's import organizer in favor of ruff
           disableOrganizeImports = true,
         },
         python = {
           analysis = {
-            -- Disable pyright's linting in favor of ruff
             ignore = { "*" },
           },
         },
       },
     },
-    jsonls = {},
     bashls = {
       filetypes = { "sh", "bash" },
-      -- Disable formatting in bash-language-server
-      on_attach = function(client, bufnr)
-        -- This is to allow shfmt to take precedence.
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentRangeFormattingProvider = false
-        ---@diagnostic disable-next-line: undefined-global
-        on_attach(client, bufnr)
-      end,
     },
     terraformls = {
       filetypes = { "terraform", "tf", "terraform-vars" },
@@ -470,58 +402,51 @@ later(function()
   }
 
   -- LSP keymaps
-  vim.keymap.set("n", "<leader>cf", function() Lsp.format({ force = true }) end, { desc = "format" })
+  vim.keymap.set("n", "<leader>cf", function() require("conform").format({ lsp_fallback = true }) end, { desc = "format" })
   vim.keymap.set("n", "<leader>tf", function() Lsp.toggle() end, { desc = "format on save" })
-  local function on_attach(_, bufnr)
-    local function map(mode, l, r, desc) vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc }) end
 
-    map("n", "gd", vim.lsp.buf.definition, "goto def")
-    map("n", "gr", vim.lsp.buf.references, "goto refs")
-    map("n", "gD", vim.lsp.buf.declaration, "goto decl")
-    map("n", "gI", vim.lsp.buf.implementation, "goto impl")
-    map("n", "K", vim.lsp.buf.hover, "hover")
-    map("n", "<leader>cF", function() lsp.format({ force = true }) end, "format (direct)")
-    map("n", "<leader>ca", vim.lsp.buf.code_action, "code action")
-    map("n", "<leader>cr", vim.lsp.buf.rename, "rename")
-  end
+  -- LspAttach: keymaps and native completion
+  vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+      local client = vim.lsp.get_client_by_id(args.data.client_id)
+      local bufnr = args.buf
+      if not client then return end
 
-  -- Setup Mason
-  require("mason").setup()
-  require("mason-lspconfig").setup({
-    ensure_installed = vim.tbl_keys(servers),
-    automatic_installation = true,
+      -- Enable native completion
+      if client.supports_method("textDocument/completion") then
+        vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+      end
+
+      -- Disable bashls formatting (shfmt via conform takes precedence)
+      if client.name == "bashls" then
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+      end
+
+      vim.keymap.set("i", "<c-j>", "<c-n>", { buffer = bufnr, desc = "next completion" })
+      vim.keymap.set("i", "<c-k>", "<c-p>", { buffer = bufnr, desc = "prev completion" })
+
+      local function map(mode, l, r, desc) vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc }) end
+      map("n", "gd", vim.lsp.buf.definition, "goto def")
+      map("n", "gr", vim.lsp.buf.references, "goto refs")
+      map("n", "gD", vim.lsp.buf.declaration, "goto decl")
+      map("n", "gI", vim.lsp.buf.implementation, "goto impl")
+      map("n", "K", vim.lsp.buf.hover, "hover")
+      map("n", "<leader>cF", function() require("conform").format({ lsp_fallback = true }) end, "format (direct)")
+      map("n", "<leader>ca", vim.lsp.buf.code_action, "code action")
+      map("n", "<leader>cr", vim.lsp.buf.rename, "rename")
+    end,
   })
 
-  -- Setup LSP with shared configs
+  -- Setup LSP
   local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
-  -- Disable semantic tokens globally for performance in Neovide
   if vim.g.neovide then capabilities.textDocument.semanticTokens = vim.NIL end
 
   for server, opts in pairs(servers) do
     opts.capabilities = capabilities
-    opts.on_attach = on_attach
     vim.lsp.config(server, opts)
   end
-
-  -- Setup null-ls
-  local null_ls = require("null-ls")
-  null_ls.setup({
-    sources = {
-      -- Formatters
-      null_ls.builtins.formatting.gofumpt,
-      null_ls.builtins.formatting.goimports,
-      null_ls.builtins.formatting.prettierd,
-      null_ls.builtins.formatting.shfmt,
-      null_ls.builtins.formatting.stylua,
-      null_ls.builtins.formatting.terraform_fmt,
-
-      -- Diagnostics
-      null_ls.builtins.diagnostics.fish,
-      null_ls.builtins.diagnostics.hadolint,
-    },
-  })
+  vim.lsp.enable(vim.tbl_keys(servers))
 
   -- Format on save
   lsp.opts = {
@@ -531,8 +456,10 @@ later(function()
 
   vim.api.nvim_create_autocmd("BufWritePre", {
     group = vim.api.nvim_create_augroup("Format", {}),
-    callback = function()
-      if lsp.opts.autoformat then lsp.format() end
+    callback = function(args)
+      if lsp.opts.autoformat then
+        require("conform").format({ bufnr = args.buf, lsp_fallback = true })
+      end
     end,
   })
 
