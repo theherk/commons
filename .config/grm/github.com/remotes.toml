@@ -9,7 +9,28 @@ name = "origin"
 url = "git@github.com:nikitabobko/AeroSpace.git"
 type = "ssh"
 
+[[trees.repos]]
+name = "theherk/gh-dash"
+
 [[trees.repos.remotes]]
-name = "raisjn"
-url = "git@github.com:raisjn/AeroSpace.git"
+name = "origin"
+url = "git@github.com:theherk/gh-dash.git"
 type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "https://github.com/dlvhdr/gh-dash.git"
+type = "https"
+
+[[trees.repos]]
+name = "theherk/gh-enhance"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "git@github.com:theherk/gh-enhance.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "https://github.com/dlvhdr/gh-enhance.git"
+type = "https"
