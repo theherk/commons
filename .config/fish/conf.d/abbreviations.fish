@@ -8,6 +8,7 @@ abbr -a c --position command codium
 abbr -a cd --position command z
 abbr -a clock --position command rsclock -c
 abbr -a d --position command 'fd -H -t d | sk'
+abbr -a dl --position command "$DNB_LOGIN"
 abbr -a dumplynx --position anywhere --set-cursor "%| lynx -dump -stdin"
 abbr -a dumpw3m --position anywhere --set-cursor "%| w3m -dump -T text/html"
 abbr -a ef --position command emacsclient -c -n -e "(make-frame)"
@@ -35,6 +36,7 @@ abbr -a not --position command rg -v
 abbr -a nv --position command neovide --fork
 abbr -a of --position command onefetch
 abbr -a pc --position anywhere --set-cursor "%| pbcopy"
+abbr -a pim --position command "$PIM"
 abbr -a r --position command rsync -rltvz -e ssh --progress
 abbr -a rcal --position command rusti-cal -c --starting-day 1
 abbr -a slackdev --position command "export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app"
