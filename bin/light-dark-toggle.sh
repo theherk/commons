@@ -42,6 +42,42 @@ ZELLIJ_LIGHT="catppuccin-latte"
 ZELLIJ_TAB_ACTIVE_BG_DARK="#414559"
 ZELLIJ_TAB_ACTIVE_BG_LIGHT="#ccd0da"
 
+ENHANCE_THEME_DARK="catppuccin_frappe"
+ENHANCE_THEME_LIGHT="catppuccin_latte"
+
+GH_DASH_DARK='theme:
+  colors:
+    text:
+      primary: "#c6d0f5"
+      secondary: "#babbf1"
+      inverted: "#232634"
+      faint: "#b5bfe2"
+      warning: "#e5c890"
+      success: "#a6d189"
+      error: "#e78284"
+    background:
+      selected: "#414559"
+    border:
+      primary: "#babbf1"
+      secondary: "#51576d"
+      faint: "#414559"'
+GH_DASH_LIGHT='theme:
+  colors:
+    text:
+      primary: "#4c4f69"
+      secondary: "#7287fd"
+      inverted: "#dce0e8"
+      faint: "#5c5f77"
+      warning: "#df8e1d"
+      success: "#40a02b"
+      error: "#d20f39"
+    background:
+      selected: "#ccd0da"
+    border:
+      primary: "#7287fd"
+      secondary: "#bcc0cc"
+      faint: "#ccd0da"'
+
 HN_DARK='[theme.palette]
 # Catppuccin Frappe colors
 background = "#303446"
@@ -152,6 +188,10 @@ darken() {
 	sed -i '' 's/\(use = \)".*"/\1"'"$YAZI_DARK"'"/' .config/yazi/theme.toml
 	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_DARK"'"/' .config/zellij/config.kdl
 	sed -i '' 's/\(tab_active.*bg=\)[^,]*/\1'"$ZELLIJ_TAB_ACTIVE_BG_DARK"'/g' .config/zellij/layouts/*.kdl
+	fish -c "set -Ux ENHANCE_THEME $ENHANCE_THEME_DARK"
+	sed -i '' 's/\(diff: delta --paging always\) --light/\1 --diff-so-fancy/' .config/gh-dash/config.yml
+	sed -i '' '/^theme:/,$d' .config/gh-dash/config.yml
+	echo "$GH_DASH_DARK" >>.config/gh-dash/config.yml
 	osascript -e "tell application \"System Events\" to tell every desktop to set picture to POSIX file \"$WALLPAPER_DARK\""
 	# sed -i '' 's/user_pref("browser\.theme\.content-theme", .);/user_pref("browser.theme.content-theme", 0);/' "$PROFILE_DIR/prefs.js"
 	# sed -i '' 's/user_pref("browser\.theme\.toolbar-theme", .);/user_pref("browser.theme.toolbar-theme", 0);/' "$PROFILE_DIR/prefs.js"
@@ -177,6 +217,10 @@ lighten() {
 	sed -i '' 's/\(use = \)".*"/\1"'"$YAZI_LIGHT"'"/' .config/yazi/theme.toml
 	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_LIGHT"'"/' .config/zellij/config.kdl
 	sed -i '' 's/\(tab_active.*bg=\)[^,]*/\1'"$ZELLIJ_TAB_ACTIVE_BG_LIGHT"'/g' .config/zellij/layouts/*.kdl
+	fish -c "set -Ux ENHANCE_THEME $ENHANCE_THEME_LIGHT"
+	sed -i '' 's/\(diff: delta --paging always\) --diff-so-fancy/\1 --light/' .config/gh-dash/config.yml
+	sed -i '' '/^theme:/,$d' .config/gh-dash/config.yml
+	echo "$GH_DASH_LIGHT" >>.config/gh-dash/config.yml
 	osascript -e "tell application \"System Events\" to tell every desktop to set picture to POSIX file \"$WALLPAPER_LIGHT\""
 	# sed -i '' 's/user_pref("browser\.theme\.content-theme", .);/user_pref("browser.theme.content-theme", 1);/' "$PROFILE_DIR/prefs.js"
 	# sed -i '' 's/user_pref("browser\.theme\.toolbar-theme", .);/user_pref("browser.theme.toolbar-theme", 1);/' "$PROFILE_DIR/prefs.js"
