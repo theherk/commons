@@ -19,6 +19,7 @@ local key_tables = {
   copy_mode = copy_mode,
 
   launch_split = {
+    { key = "b",      action = util.launch_split({ "repo-browse.sh" }) },
     { key = "f",      action = util.launch_split({ "yazi" }) },
     { key = "g",      action = util.launch_split({ "lazygit" }) },
     { key = "r",      action = util.launch_split({ "raicode" }) },
@@ -27,6 +28,7 @@ local key_tables = {
   },
 
   launch_tab = {
+    { key = "b",      action = util.launch({ "repo-browse.sh" }) },
     { key = "f",      action = util.launch({ "yazi" }) },
     { key = "g",      action = util.launch({ "lazygit" }) },
     { key = "r",      action = util.launch({ "raicode" }) },
@@ -35,6 +37,7 @@ local key_tables = {
   },
 
   launch_vertical = {
+    { key = "b",      action = util.launch_vertical({ "repo-browse.sh" }) },
     { key = "f",      action = util.launch_vertical({ "yazi" }) },
     { key = "g",      action = util.launch_vertical({ "lazygit" }) },
     { key = "r",      action = util.launch_vertical({ "raicode" }) },

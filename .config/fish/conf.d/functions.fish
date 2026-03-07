@@ -55,7 +55,7 @@ function pwf # find password in keyring
     security find-generic-password -w -s $argv[1] -a $argv[2]
 end
 
-function rgh # search history
+function rghist # search history
     history | rg $argv
 end
 
