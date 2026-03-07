@@ -47,7 +47,7 @@ function module.format_tab_title(tab, tabs, panes, config, hover, max_width)
   end
   module.tconcat(label, {
     -- { Background = { Color=C_BG } },
-    { Background = { Color = "none" } },
+    { Background = { Color = theme.colors.bg } },
     { Foreground = { Color = theme.colors.hl_1 } },
     { Text = "|" },
   })
@@ -135,20 +135,23 @@ function module.toggle_raicode()
 
     for _, p in ipairs(panes) do
       if p.is_zoomed then any_zoomed = true end
-      if p.pane:get_user_vars().RAICODE == "1" then
-        raicode_pane = p
-      end
+      if p.pane:get_user_vars().RAICODE == "1" then raicode_pane = p end
     end
 
     if raicode_pane == nil then
       -- No raicode pane, spawn one on the right (set user var for detection)
-      window:perform_action(act.SplitHorizontal({
-        args = {
-          "/opt/homebrew/bin/fish", "-l", "-c",
-          "printf '\\e]1337;SetUserVar=%s=%s\\a' RAICODE (echo -n 1 | base64); raicode",
-        },
-        domain = "CurrentPaneDomain",
-      }), pane)
+      window:perform_action(
+        act.SplitHorizontal({
+          args = {
+            "/opt/homebrew/bin/fish",
+            "-l",
+            "-c",
+            "printf '\\e]1337;SetUserVar=%s=%s\\a' RAICODE (echo -n 1 | base64); raicode",
+          },
+          domain = "CurrentPaneDomain",
+        }),
+        pane
+      )
     elseif any_zoomed then
       -- A pane is zoomed, unzoom and focus raicode
       window:perform_action(act.TogglePaneZoomState, pane)

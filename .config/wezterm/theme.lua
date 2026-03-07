@@ -10,6 +10,7 @@ colors.active_fg = scheme.ansi[6]
 colors.bg = scheme.background
 colors.hl_1 = scheme.ansi[5]
 colors.hl_2 = scheme.ansi[4]
+colors.hl_3 = scheme.ansi[8]
 local bg = wezterm.color.parse(scheme.background)
 local _, _, l, _ = bg:hsla()
 if l > 0.5 then
@@ -22,7 +23,7 @@ end
 colors.active_bg = colors.panel_bg
 
 scheme.cursor_bg = colors.active_fg
-scheme.split = colors.inactive_fg
+scheme.split = colors.hl_3
 
 scheme.tab_bar = {
   background = colors.bg, -- tab_bar
@@ -35,11 +36,11 @@ scheme.tab_bar = {
     fg_color = colors.active_fg,
   },
   inactive_tab = {
-    bg_color = "none",
+    bg_color = colors.bg,
     fg_color = colors.inactive_fg,
   },
   inactive_tab_hover = {
-    bg_color = "none",
+    bg_color = colors.bg,
     fg_color = colors.inactive_fg,
   },
 }
@@ -55,7 +56,7 @@ function module.apply_to_config(config)
   config.command_palette_fg_color = colors.hl_1
   config.inactive_pane_hsb = {
     saturation = 0.66,
-    brightness = 0.54,
+    brightness = 0.43,
   }
   config.font = wezterm.font_with_fallback({
     "VictorMono Nerd Font",
