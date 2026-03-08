@@ -412,8 +412,10 @@ later(function()
       local bufnr = args.buf
       if not client then return end
 
-      -- Enable native completion
-      if client.supports_method("textDocument/completion") then
+      -- Enable native completion (skip in-process pseudo-servers that cause
+      -- nvim 0.11.x nil handle crash in InsertCharPre)
+      local skip = { ["render-markdown"] = true, ["obsidian-ls"] = true }
+      if not skip[client.name] and client.supports_method("textDocument/completion") then
         vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
       end
 
