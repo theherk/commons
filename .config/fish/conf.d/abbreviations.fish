@@ -50,8 +50,8 @@ abbr -a tfpn --position command "gawk -f ~/bin/tfn.awk _plan | sort"
 abbr -a tfp --position command terraform plan -lock=false
 abbr -a tfpp --position command "terraform plan -lock=false | tee _plan"
 abbr -a tft --position anywhere --set-cursor="@" "TF_LOG=trace TF_LOG_PATH=tf-trace-(date +%FT%T+01).log @"
-abbr -a tn --position command trans en:no -b
-abbr -a te --position command trans no:en -b
+abbr -a tn --position command 'trans.sh English en "Norwegian Bokmål" nb'
+abbr -a te --position command 'trans.sh "Norwegian Bokmål" nb English en'
 abbr -a tmpd --position command cd (mktemp -d)
 abbr -a up --position anywhere --set-cursor "%| underscore pretty"
 abbr -a util-list --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' 'Name=instance-state-name,Values=pending,running,stopping,stopped' --output text --query 'Reservations[*].Instances[*].InstanceId'"
