@@ -173,6 +173,60 @@ function module.toggle_raicode()
   end)
 end
 
+function module.open_daily_note()
+  local ws_name = "~/vaults/brain"
+  return wezterm.action_callback(function(window, pane)
+    -- Find or create the workspace
+    local ws_exists = false
+    for _, w in ipairs(wezterm.mux.all_windows()) do
+      if w:get_workspace() == ws_name then
+        ws_exists = true
+        break
+      end
+    end
+
+    if ws_exists then
+      window:perform_action(act.SwitchToWorkspace({ name = ws_name }), pane)
+    else
+      window:perform_action(
+        act.SwitchToWorkspace({ name = ws_name, spawn = { cwd = wezterm.home_dir .. "/vaults/brain" } }),
+        pane
+      )
+    end
+
+    -- Push workspace onto the stack
+    window:perform_action(act.EmitEvent("stack-insert"), pane)
+
+    -- After switch settles, find or create the nvp tab and run :Obsidian today
+    wezterm.time.call_after(0.1, function()
+      local mux_window = nil
+      for _, w in ipairs(wezterm.mux.all_windows()) do
+        if w:get_workspace() == ws_name then
+          mux_window = w
+          break
+        end
+      end
+      if mux_window == nil then return end
+
+      local nvp_tab = nil
+      for _, tab in ipairs(mux_window:tabs()) do
+        if tab:get_title() == "nvp" then
+          nvp_tab = tab
+          break
+        end
+      end
+
+      if nvp_tab then
+        nvp_tab:activate()
+        nvp_tab:active_pane():send_text(":Obsidian today\r")
+      else
+        local cmd = "wezterm cli set-tab-title nvp && nvp '+lua vim.defer_fn(function() vim.cmd(\"Obsidian today\") end, 500)'"
+        mux_window:spawn_tab({ args = { os.getenv("SHELL"), "-l", "-c", cmd } })
+      end
+    end)
+  end)
+end
+
 function module.user_var_changed(window, pane, name, value)
   local overrides = window:get_config_overrides() or {}
   if name == "ZEN_MODE" then
