@@ -129,6 +129,9 @@ local keys = {
   { key = "0", mods = "LEADER", action = act.ActivateTab(-1) },
   { key = "0", mods = "SUPER",  action = act.ActivateTab(-1) },
 
+  -- Browse repos
+  { key = "b", mods = "SUPER", action = util.launch({ "repo-browse.sh" }) },
+
   -- Daily note
   { key = "d", mods = "SUPER", action = util.open_daily_note() },
 
