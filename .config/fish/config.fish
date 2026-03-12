@@ -77,6 +77,7 @@ if status is-interactive
     bind -M insert --sets-mode default 'q;' repaint
     bind -M insert \cf accept-autosuggestion # Default but for vim.
     bind -M insert \cy accept-autosuggestion # Matches nvim native c-y = accept.
+    bind -M insert \cx\ce edit_command_buffer # Open command in $EDITOR.
 
     if test -z (pgrep ssh-agent | string collect)
         eval (ssh-agent -c)
