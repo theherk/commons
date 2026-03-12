@@ -189,6 +189,7 @@ darken() {
 	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_DARK"'"/' .config/zellij/config.kdl
 	sed -i '' 's/\(tab_active.*bg=\)[^,]*/\1'"$ZELLIJ_TAB_ACTIVE_BG_DARK"'/g' .config/zellij/layouts/*.kdl
 	fish -c "set -Ux ENHANCE_THEME $ENHANCE_THEME_DARK"
+	sed -i '' 's/"theme": "light"/"theme": "dark"/' ~/.claude.json
 	sed -i '' 's/\(diff: delta --paging always\) --light/\1 --diff-so-fancy/' .config/gh-dash/config.yml
 	sed -i '' '/^theme:/,$d' .config/gh-dash/config.yml
 	echo "$GH_DASH_DARK" >>.config/gh-dash/config.yml
@@ -218,6 +219,7 @@ lighten() {
 	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_LIGHT"'"/' .config/zellij/config.kdl
 	sed -i '' 's/\(tab_active.*bg=\)[^,]*/\1'"$ZELLIJ_TAB_ACTIVE_BG_LIGHT"'/g' .config/zellij/layouts/*.kdl
 	fish -c "set -Ux ENHANCE_THEME $ENHANCE_THEME_LIGHT"
+	sed -i '' 's/"theme": "dark"/"theme": "light"/' ~/.claude.json
 	sed -i '' 's/\(diff: delta --paging always\) --diff-so-fancy/\1 --light/' .config/gh-dash/config.yml
 	sed -i '' '/^theme:/,$d' .config/gh-dash/config.yml
 	echo "$GH_DASH_LIGHT" >>.config/gh-dash/config.yml

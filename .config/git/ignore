@@ -6,6 +6,7 @@
 *.jar
 *.py[cod]
 .avante_chat_history
+.claude/settings.json
 .coverage
 .direnv
 .DS_Store
