@@ -40,15 +40,15 @@ abbr -a pim --position command "$PIM"
 abbr -a r --position command rsync -rltvz -e ssh --progress
 abbr -a rcal --position command rusti-cal -c --starting-day 1
 abbr -a slackdev --position command "export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app"
-abbr -a tf --position command terraform
-abbr -a tfa --position command terraform apply
-abbr -a tfd --position command terraform destroy
-abbr -a tfi --position command terraform init
-abbr -a tfiu --position command terraform init --upgrade
+abbr -a tf --position command --function _tf_abbr
+abbr -a tfa --position command --function _tf_abbr
+abbr -a tfd --position command --function _tf_abbr
+abbr -a tfi --position command --function _tf_abbr
+abbr -a tfiu --position command --function _tf_abbr
 abbr -a tfn --position command "gawk -f ~/bin/tfn.awk | sort"
 abbr -a tfpn --position command "gawk -f ~/bin/tfn.awk _plan | sort"
-abbr -a tfp --position command terraform plan -lock=false
-abbr -a tfpp --position command "terraform plan -lock=false | tee _plan"
+abbr -a tfp --position command --function _tf_abbr
+abbr -a tfpp --position command --function _tf_abbr
 abbr -a tft --position anywhere --set-cursor="@" "TF_LOG=trace TF_LOG_PATH=tf-trace-(date +%FT%T+01).log @"
 abbr -a tn --position command 'trans.sh English en "Norwegian Bokmål" nb'
 abbr -a te --position command 'trans.sh "Norwegian Bokmål" nb English en'

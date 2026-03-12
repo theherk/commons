@@ -33,6 +33,26 @@ function last_history_item
     echo $history[1]
 end
 
+function _tf_abbr
+    set -l prog (set -q TF_PROG && echo $TF_PROG || echo terraform)
+    switch $argv[1]
+        case tf
+            echo $prog
+        case tfa
+            echo "$prog apply"
+        case tfd
+            echo "$prog destroy"
+        case tfi
+            echo "$prog init"
+        case tfiu
+            echo "$prog init --upgrade"
+        case tfp
+            echo "$prog plan -lock=false"
+        case tfpp
+            echo "$prog plan -lock=false | tee _plan"
+    end
+end
+
 function p # Switch to git project directory from .projects. See alias repocache.
     set REPO "$(zoxide query -l | rg --color=never -FxNf ~/.projects | sed s:"$HOME":~: | fzf --reverse)"
     if test -n "$REPO"
