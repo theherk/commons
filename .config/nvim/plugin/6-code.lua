@@ -401,6 +401,21 @@ later(function()
     },
   }
 
+  -- mpls: on-demand markdown preview (not auto-enabled)
+  vim.lsp.config("mpls", {
+    cmd = { "mpls", "--theme", "dark", "--code-style", "catppuccin-frappe", "--enable-emoji", "--enable-footnotes" },
+    filetypes = { "markdown" },
+    root_markers = { ".marksman.toml", ".git" },
+  })
+  vim.keymap.set("n", "<leader>tp", function()
+    local clients = vim.lsp.get_clients({ name = "mpls" })
+    if #clients > 0 then
+      vim.lsp.enable("mpls", false)
+    else
+      vim.lsp.enable("mpls")
+    end
+  end, { desc = "toggle preview" })
+
   -- LSP keymaps
   vim.keymap.set("n", "<leader>cf", function() require("conform").format({ lsp_fallback = true }) end, { desc = "format" })
   vim.keymap.set("n", "<leader>tf", function() Lsp.toggle() end, { desc = "format on save" })

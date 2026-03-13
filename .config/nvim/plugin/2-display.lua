@@ -218,7 +218,7 @@ end)
 
 now(function()
   add({ source = "nvim-lualine/lualine.nvim" })
-  local custom = require("lualine.themes.catppuccin")
+  local custom = require("lualine.themes.catppuccin-frappe")
   custom.normal.c.bg = "none"
   ---@diagnostic disable-next-line: undefined-field
   require("lualine").setup({
