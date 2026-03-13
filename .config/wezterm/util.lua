@@ -146,7 +146,7 @@ function module.toggle_raicode()
             "/opt/homebrew/bin/fish",
             "-l",
             "-c",
-            "printf '\\e]1337;SetUserVar=%s=%s\\a' RAICODE (echo -n 1 | base64); raicode",
+            "printf '\\e]1337;SetUserVar=%s=%s\\a' RAICODE (echo -n 1 | base64); raicode-select.sh",
           },
           domain = "CurrentPaneDomain",
         }),
