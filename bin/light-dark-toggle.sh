@@ -178,11 +178,15 @@ darken() {
 	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_DARK')/' .config/doom/config.org
 	sed -i '' 's/\(.*light =\).*/\1 false/' .config/git/config
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_DARK'"/' .config/helix/config.toml
+	sed -i '' 's/\(--code-style", "\)catppuccin-[a-z]*/\1catppuccin-'$NVIM_VARIANT_DARK'/' .config/helix/languages.toml
+	sed -i '' 's/\(--theme", "\)light/\1dark/' .config/helix/languages.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_DARK'"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(pager: .*\) --light/\1 --diff-so-fancy/' .config/lazygit/config.yml
 	sed -i '' 's/\(vim.cmd.colorscheme\)(".*")/\1("'"$NVIM_COLORSCHEME_DARK"'")/' .config/nvim/plugin/2-display.lua
 	sed -i '' 's/\(flavour = \)".*"/\1"'$NVIM_VARIANT_DARK'"/' .config/nvim/plugin/2-display.lua
-	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1'$NVIM_COLORSCHEME_DARK'")/' .config/nvim/plugin/2-display.lua
+	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1catppuccin-'$NVIM_VARIANT_DARK'")/' .config/nvim/plugin/2-display.lua
+	sed -i '' 's/\("--code-style", "catppuccin-\)[a-z]*/\1'$NVIM_VARIANT_DARK'/' .config/nvim/plugin/6-code.lua
+	sed -i '' 's/\("--theme", "\)light/\1dark/' .config/nvim/plugin/6-code.lua
 	sed -i '' 's/\(vim.opt.background = \)".*"/\1"dark"/' .config/nvim/plugin/1-options.lua
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_DARK"'"/' .config/wezterm/theme.lua
 	sed -i '' 's/\(use = \)".*"/\1"'"$YAZI_DARK"'"/' .config/yazi/theme.toml
@@ -208,11 +212,15 @@ lighten() {
 	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_LIGHT')/' .config/doom/config.org
 	sed -i '' 's/\(.*light =\).*/\1 true/' .config/git/config
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_LIGHT'"/' .config/helix/config.toml
+	sed -i '' 's/\(--code-style", "\)catppuccin-[a-z]*/\1catppuccin-'$NVIM_VARIANT_LIGHT'/' .config/helix/languages.toml
+	sed -i '' 's/\(--theme", "\)dark/\1light/' .config/helix/languages.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_LIGHT'"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(pager: .*\) --diff-so-fancy/\1 --light/' .config/lazygit/config.yml
 	sed -i '' 's/\(vim.cmd.colorscheme\)(".*")/\1("'"$NVIM_COLORSCHEME_LIGHT"'")/' .config/nvim/plugin/2-display.lua
 	sed -i '' 's/\(flavour = \)".*"/\1"'$NVIM_VARIANT_LIGHT'"/' .config/nvim/plugin/2-display.lua
-	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1'$NVIM_COLORSCHEME_LIGHT'")/' .config/nvim/plugin/2-display.lua
+	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1catppuccin-'$NVIM_VARIANT_LIGHT'")/' .config/nvim/plugin/2-display.lua
+	sed -i '' 's/\("--code-style", "catppuccin-\)[a-z]*/\1'$NVIM_VARIANT_LIGHT'/' .config/nvim/plugin/6-code.lua
+	sed -i '' 's/\("--theme", "\)dark/\1light/' .config/nvim/plugin/6-code.lua
 	sed -i '' 's/\(vim.opt.background = \)".*"/\1"light"/' .config/nvim/plugin/1-options.lua
 	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_LIGHT"'"/' .config/wezterm/theme.lua
 	sed -i '' 's/\(use = \)".*"/\1"'"$YAZI_LIGHT"'"/' .config/yazi/theme.toml
