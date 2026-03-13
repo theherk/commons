@@ -40,10 +40,6 @@ later(function()
   })
 end)
 
-now(function()
-  add({ source = "neovim/nvim-lspconfig" })
-end)
-
 later(function()
   add({
     source = "nvim-treesitter/nvim-treesitter",
@@ -279,6 +275,9 @@ later(function()
   -- LSP Configuration
   local servers = {
     lua_ls = {
+      cmd = { "lua-language-server" },
+      filetypes = { "lua" },
+      root_markers = { ".luarc.json", ".luarc.jsonc", ".git" },
       settings = {
         Lua = {
           runtime = {
@@ -301,6 +300,9 @@ later(function()
       },
     },
     rust_analyzer = {
+      cmd = { "rust-analyzer" },
+      filetypes = { "rust" },
+      root_markers = { "Cargo.toml", "rust-project.json", ".git" },
       settings = {
         ["rust-analyzer"] = {
           cargo = {
@@ -325,6 +327,9 @@ later(function()
       },
     },
     gopls = {
+      cmd = { "gopls" },
+      filetypes = { "go", "gomod", "gowork", "gotmpl" },
+      root_markers = { "go.mod", "go.work", ".git" },
       settings = {
         gopls = {
           gofumpt = true,
@@ -362,6 +367,9 @@ later(function()
       },
     },
     ruff = {
+      cmd = { "ruff", "server" },
+      filetypes = { "python" },
+      root_markers = { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git" },
       settings = {
         format = {
           args = {},
@@ -369,6 +377,9 @@ later(function()
       },
     },
     pyright = {
+      cmd = { "pyright-langserver", "--stdio" },
+      filetypes = { "python" },
+      root_markers = { "pyproject.toml", "pyrightconfig.json", ".git" },
       settings = {
         pyright = {
           disableOrganizeImports = true,
@@ -381,12 +392,19 @@ later(function()
       },
     },
     bashls = {
+      cmd = { "bash-language-server", "start" },
       filetypes = { "sh", "bash" },
+      root_markers = { ".git" },
     },
     terraformls = {
+      cmd = { "terraform-ls", "serve" },
       filetypes = { "terraform", "tf", "terraform-vars" },
+      root_markers = { ".terraform", ".git" },
     },
     yamlls = {
+      cmd = { "yaml-language-server", "--stdio" },
+      filetypes = { "yaml", "yml" },
+      root_markers = { ".git" },
       settings = {
         yaml = {
           keyOrdering = false,
@@ -419,6 +437,9 @@ later(function()
   -- LSP keymaps
   vim.keymap.set("n", "<leader>cf", function() require("conform").format({ lsp_fallback = true }) end, { desc = "format" })
   vim.keymap.set("n", "<leader>tf", function() Lsp.toggle() end, { desc = "format on save" })
+  vim.keymap.set("n", "<leader>th", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end, { desc = "inlay hints" })
 
   -- LspAttach: keymaps and native completion
   vim.api.nvim_create_autocmd("LspAttach", {
@@ -441,15 +462,7 @@ later(function()
       vim.keymap.set("i", "<c-j>", "<c-n>", { buffer = bufnr, desc = "next completion" })
       vim.keymap.set("i", "<c-k>", "<c-p>", { buffer = bufnr, desc = "prev completion" })
 
-      local function map(mode, l, r, desc) vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc }) end
-      map("n", "gd", vim.lsp.buf.definition, "goto def")
-      map("n", "gr", vim.lsp.buf.references, "goto refs")
-      map("n", "gD", vim.lsp.buf.declaration, "goto decl")
-      map("n", "gI", vim.lsp.buf.implementation, "goto impl")
-      map("n", "K", vim.lsp.buf.hover, "hover")
-      map("n", "<leader>cF", function() require("conform").format({ lsp_fallback = true }) end, "format (direct)")
-      map("n", "<leader>ca", vim.lsp.buf.code_action, "code action")
-      map("n", "<leader>cr", vim.lsp.buf.rename, "rename")
+      vim.keymap.set("n", "<leader>cF", function() require("conform").format({ lsp_fallback = true }) end, { buffer = bufnr, desc = "format (direct)" })
     end,
   })
 
