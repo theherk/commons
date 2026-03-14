@@ -100,7 +100,10 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("colorize"),
   pattern = { "css", "markdown" },
-  callback = function(_) require("nvim-highlight-colors").turnOn() end,
+  callback = function(_)
+    local ok, nhc = pcall(require, "nvim-highlight-colors")
+    if ok then nhc.turnOn() end
+  end,
 })
 
 -- Auto create dir when saving a file, in case some intermediate directory does not exist.
