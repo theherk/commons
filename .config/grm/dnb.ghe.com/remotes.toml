@@ -1,0 +1,15 @@
+[[trees]]
+root = "."
+
+[[trees.repos]]
+name = "Adam-Lawrence-Sherwood/github-enterprise-teams"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "dnb@dnb.ghe.com:Adam-Lawrence-Sherwood/github-enterprise-teams.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "https://dnb.ghe.com/github/github-enterprise-teams.git"
+type = "https"

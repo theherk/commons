@@ -159,6 +159,7 @@ First, ensure the requisite directories exist, install [git-repo-manager](https:
 mkdir -p $P/dnb.ghe.com $P/github.com $P/gitlab.com $P/gitlab.tech.dnb.no
 cargo +nightly install git-repo-manager
 ln -sf ~/commons/.config/grm/dnb.ghe.com/config.toml $P/dnb.ghe.com/config.toml
+ln -sf ~/commons/.config/grm/dnb.ghe.com/remotes.toml $P/dnb.ghe.com/remotes.toml
 ln -sf ~/commons/.config/grm/github.com/config.toml $P/github.com/config.toml
 ln -sf ~/commons/.config/grm/github.com/remotes.toml $P/github.com/remotes.toml
 ln -sf ~/commons/.config/grm/gitlab.com/config.toml $P/gitlab.com/config.toml
