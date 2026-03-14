@@ -139,7 +139,6 @@ function module.toggle_raicode()
     end
 
     if raicode_pane == nil then
-      -- No raicode pane, spawn one on the right (set user var for detection)
       window:perform_action(
         act.SplitHorizontal({
           args = {
@@ -152,6 +151,7 @@ function module.toggle_raicode()
         }),
         pane
       )
+      window:perform_action(act.AdjustPaneSize({ "Left", 21 }), pane)
     elseif any_zoomed then
       -- A pane is zoomed, unzoom and focus raicode
       window:perform_action(act.TogglePaneZoomState, pane)
@@ -206,10 +206,7 @@ function module.open_daily_note()
     if ws_exists then
       window:perform_action(act.SwitchToWorkspace({ name = ws_name }), pane)
     else
-      window:perform_action(
-        act.SwitchToWorkspace({ name = ws_name, spawn = { cwd = wezterm.home_dir .. "/vaults/brain" } }),
-        pane
-      )
+      window:perform_action(act.SwitchToWorkspace({ name = ws_name, spawn = { cwd = wezterm.home_dir .. "/vaults/brain" } }), pane)
     end
 
     -- Push workspace onto the stack

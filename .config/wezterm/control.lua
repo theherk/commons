@@ -19,53 +19,53 @@ local key_tables = {
   copy_mode = copy_mode,
 
   launch_split = {
-    { key = "b",      action = util.launch_split({ "repo-browse.sh" }) },
-    { key = "f",      action = util.launch_split({ "yazi" }) },
-    { key = "g",      action = util.launch_split({ "lazygit" }) },
-    { key = "r",      action = util.launch_split({ "raicode" }) },
-    { key = "u",      action = util.launch_split({ "jjui" }) },
+    { key = "b", action = util.launch_split({ "repo-browse.sh" }) },
+    { key = "f", action = util.launch_split({ "yazi" }) },
+    { key = "g", action = util.launch_split({ "lazygit" }) },
+    { key = "r", action = util.launch_split({ "raicode" }) },
+    { key = "u", action = util.launch_split({ "jjui" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 
   launch_tab = {
-    { key = "b",      action = util.launch({ "repo-browse.sh" }) },
-    { key = "f",      action = util.launch({ "yazi" }) },
-    { key = "g",      action = util.launch({ "lazygit" }) },
-    { key = "r",      action = util.launch({ "raicode" }) },
-    { key = "u",      action = util.launch({ "jjui" }) },
+    { key = "b", action = util.launch({ "repo-browse.sh" }) },
+    { key = "f", action = util.launch({ "yazi" }) },
+    { key = "g", action = util.launch({ "lazygit" }) },
+    { key = "r", action = util.launch({ "raicode" }) },
+    { key = "u", action = util.launch({ "jjui" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 
   launch_vertical = {
-    { key = "b",      action = util.launch_vertical({ "repo-browse.sh" }) },
-    { key = "f",      action = util.launch_vertical({ "yazi" }) },
-    { key = "g",      action = util.launch_vertical({ "lazygit" }) },
-    { key = "r",      action = util.launch_vertical({ "raicode" }) },
-    { key = "u",      action = util.launch_vertical({ "jjui" }) },
+    { key = "b", action = util.launch_vertical({ "repo-browse.sh" }) },
+    { key = "f", action = util.launch_vertical({ "yazi" }) },
+    { key = "g", action = util.launch_vertical({ "lazygit" }) },
+    { key = "r", action = util.launch_vertical({ "raicode" }) },
+    { key = "u", action = util.launch_vertical({ "jjui" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 
   resize_pane = {
-    { key = "h",      action = act.AdjustPaneSize({ "Left", 1 }) },
-    { key = "l",      action = act.AdjustPaneSize({ "Right", 1 }) },
-    { key = "k",      action = act.AdjustPaneSize({ "Up", 1 }) },
-    { key = "j",      action = act.AdjustPaneSize({ "Down", 1 }) },
+    { key = "h", action = act.AdjustPaneSize({ "Left", 1 }) },
+    { key = "l", action = act.AdjustPaneSize({ "Right", 1 }) },
+    { key = "k", action = act.AdjustPaneSize({ "Up", 1 }) },
+    { key = "j", action = act.AdjustPaneSize({ "Down", 1 }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 }
 
 local keys = {
-  { key = "a",     mods = "LEADER|CTRL", action = act.SendString("\x01") },
-  { key = "Enter", mods = "SHIFT",       action = act.SendKey({ key = "Enter", mods = "ALT" }) },
+  { key = "a", mods = "LEADER|CTRL", action = act.SendString("\x01") },
+  { key = "Enter", mods = "SHIFT", action = act.SendKey({ key = "Enter", mods = "ALT" }) },
 
   -- Workpace and Pallette
-  { key = "d",  mods = "LEADER",      action = ws.with_cache("default") },
-  { key = "i",  mods = "LEADER",      action = ws.with_cache("in") },
-  { key = "m",  mods = "LEADER",      action = act.ShowLauncher },
-  { key = "o",  mods = "LEADER",      action = ws.with_cache("out") },
-  { key = "p",  mods = "SUPER",       action = ws.with_cache("switcher") },
-  { key = "P",  mods = "SUPER|SHIFT", action = act.ActivateCommandPalette },
-  { key = "\t", mods = "LEADER",      action = ws.with_cache("prev") },
+  { key = "d", mods = "LEADER", action = ws.with_cache("default") },
+  { key = "i", mods = "LEADER", action = ws.with_cache("in") },
+  { key = "m", mods = "LEADER", action = act.ShowLauncher },
+  { key = "o", mods = "LEADER", action = ws.with_cache("out") },
+  { key = "p", mods = "SUPER", action = ws.with_cache("switcher") },
+  { key = "P", mods = "SUPER|SHIFT", action = act.ActivateCommandPalette },
+  { key = "\t", mods = "LEADER", action = ws.with_cache("prev") },
 
   {
     key = "W",
@@ -76,14 +76,12 @@ local keys = {
         { Text = "New workspace name:" },
       }),
       action = wezterm.action_callback(function(window, pane, line)
-        if line then
-          window:perform_action(
-            act.SwitchToWorkspace({
-              name = line,
-            }),
-            pane
-          )
-        end
+        if line then window:perform_action(
+          act.SwitchToWorkspace({
+            name = line,
+          }),
+          pane
+        ) end
       end),
     }),
   },
@@ -106,7 +104,7 @@ local keys = {
   { key = "r", mods = "LEADER", action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
   { key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
   { key = "Z", mods = "LEADER", action = act.TogglePaneZoomState },
-  { key = "s", mods = "SUPER",  action = act.PaneSelect },
+  { key = "s", mods = "SUPER", action = act.PaneSelect },
 
   -- Navigation
   { key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
@@ -127,7 +125,7 @@ local keys = {
   { key = "8", mods = "LEADER", action = act.ActivateTab(7) },
   { key = "9", mods = "LEADER", action = act.ActivateTab(8) },
   { key = "0", mods = "LEADER", action = act.ActivateTab(-1) },
-  { key = "0", mods = "SUPER",  action = act.ActivateTab(-1) },
+  { key = "0", mods = "SUPER", action = act.ActivateTab(-1) },
 
   -- Browse repos
   { key = "b", mods = "SUPER", action = util.launch({ "repo-browse.sh" }) },
@@ -136,19 +134,19 @@ local keys = {
   { key = "d", mods = "SUPER", action = util.open_daily_note() },
 
   -- Toggle raicode
-  { key = "R", mods = "SUPER|SHIFT", action = util.toggle_raicode() },
+  { key = "r", mods = "SUPER", action = util.toggle_raicode() },
 
   -- Switch to raicode tab
-  { key = "r", mods = "SUPER", action = util.switch_to_tab("raicode-select.sh") },
+  { key = "R", mods = "SUPER|SHIFT", action = util.switch_to_tab("raicode-select.sh") },
 
   -- Switch to nvp tab
   { key = "e", mods = "SUPER", action = util.switch_to_tab("nvp") },
 
   -- Scrolling
-  { key = "j", mods = "SUPER",  action = act.ScrollByPage(0.5) },
-  { key = "k", mods = "SUPER",  action = act.ScrollByPage(-0.5) },
-  { key = "J", mods = "SUPER",  action = act.ScrollByPage(1) },
-  { key = "K", mods = "SUPER",  action = act.ScrollByPage(-1) },
+  { key = "j", mods = "SUPER", action = act.ScrollByPage(0.5) },
+  { key = "k", mods = "SUPER", action = act.ScrollByPage(-0.5) },
+  { key = "J", mods = "SUPER", action = act.ScrollByPage(1) },
+  { key = "K", mods = "SUPER", action = act.ScrollByPage(-1) },
 
   -- Launch
   { key = "e", mods = "LEADER", action = util.launch({ "nvp" }) },
