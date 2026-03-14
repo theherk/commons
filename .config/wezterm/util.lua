@@ -173,6 +173,24 @@ function module.toggle_raicode()
   end)
 end
 
+function module.switch_to_tab(title, cmd)
+  return wezterm.action_callback(function(window, pane)
+    local mux_window = window:mux_window()
+    local active_tab = pane:tab()
+    for _, tab in ipairs(mux_window:tabs()) do
+      if tab:get_title() == title then
+        if active_tab and tab:tab_id() == active_tab:tab_id() then return end
+        tab:activate()
+        return
+      end
+    end
+    local spawn_cmd = cmd or title
+    mux_window:spawn_tab({
+      args = { os.getenv("SHELL"), "-l", "-c", module.titled_cmd({ spawn_cmd }) },
+    })
+  end)
+end
+
 function module.open_daily_note()
   local ws_name = "~/vaults/brain"
   return wezterm.action_callback(function(window, pane)

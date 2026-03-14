@@ -136,7 +136,13 @@ local keys = {
   { key = "d", mods = "SUPER", action = util.open_daily_note() },
 
   -- Toggle raicode
-  { key = "r", mods = "SUPER", action = util.toggle_raicode() },
+  { key = "R", mods = "SUPER|SHIFT", action = util.toggle_raicode() },
+
+  -- Switch to raicode tab
+  { key = "r", mods = "SUPER", action = util.switch_to_tab("raicode-select.sh") },
+
+  -- Switch to nvp tab
+  { key = "e", mods = "SUPER", action = util.switch_to_tab("nvp") },
 
   -- Scrolling
   { key = "j", mods = "SUPER",  action = act.ScrollByPage(0.5) },
