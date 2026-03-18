@@ -1,0 +1,162 @@
+schemaVersion = 1
+
+[hotkeys.app.activate]
+carbonKeyCode = 49
+carbonModifiers = 2048
+
+[hotkeys.app.leaderMode]
+carbonKeyCode = 3
+carbonModifiers = 4096
+
+[[hotkeys.custom]]
+id = '0906913A-5D5A-4D83-8CCB-0800C9BF55AB'
+presentation = 'auto'
+
+    [hotkeys.custom.command]
+    actionIdentifier = 'TunaCore.CommonActionsCatalog.Open'
+    subjectIdentifier = 'TunaCore.AllApplicationsCatalog.Slack'
+
+    [hotkeys.custom.shortcut]
+    carbonKeyCode = 29
+    carbonModifiers = 2048
+
+[[hotkeys.custom]]
+id = '1C965537-5EED-4C62-9CAA-D142E4B46FEF'
+presentation = 'auto'
+
+    [hotkeys.custom.command]
+    actionIdentifier = 'TunaCore.CommonActionsCatalog.Open'
+    subjectIdentifier = 'TunaCore.AllApplicationsCatalog.Zen'
+
+    [hotkeys.custom.shortcut]
+    carbonKeyCode = 18
+    carbonModifiers = 2048
+
+[[hotkeys.custom]]
+id = '82AEFD23-4B16-48F2-BDC9-377C837284B4'
+presentation = 'auto'
+
+    [hotkeys.custom.command]
+    actionIdentifier = 'TunaCore.CommonActionsCatalog.Open'
+    subjectIdentifier = 'TunaCore.AllApplicationsCatalog.Obsidian'
+
+    [hotkeys.custom.shortcut]
+    carbonKeyCode = 21
+    carbonModifiers = 2048
+
+[[hotkeys.custom]]
+id = 'E55E02F7-AF21-4657-97A9-391421B03AD9'
+presentation = 'auto'
+
+    [hotkeys.custom.command]
+    actionIdentifier = 'TunaCore.CommonActionsCatalog.Open'
+    subjectIdentifier = 'TunaCore.AllApplicationsCatalog.WezTerm'
+
+    [hotkeys.custom.shortcut]
+    carbonKeyCode = 19
+    carbonModifiers = 2048
+
+[[leaderMode.bindings]]
+key = '0'
+url = 'tuna://run/path.%252FApplications%252FSlack.app/Open'
+
+[[leaderMode.bindings]]
+key = 'b'
+url = 'tuna://run/path.%252FApplications%252FZen.app/Open'
+
+[[leaderMode.bindings]]
+iconPath = '/Applications/Zen.app'
+key = 'B'
+label = 'Browsers'
+
+    [[leaderMode.bindings.children]]
+    key = 'o'
+    url = 'tuna://run/path.%252FApplications%252FOrion.app/Open'
+
+    [[leaderMode.bindings.children]]
+    key = 's'
+    url = 'tuna://run/path.%252FSystem%252FVolumes%252FPreboot%252FCryptexes%252FApp%252FSystem%252FApplications%252FSafari.app/Open'
+
+    [[leaderMode.bindings.children]]
+    key = 'z'
+    url = 'tuna://run/path.%252FApplications%252FZen.app/Open'
+
+[[leaderMode.bindings]]
+iconPath = 'bubble'
+key = 'c'
+label = 'Comms'
+
+    [[leaderMode.bindings.children]]
+    key = 'd'
+    url = 'tuna://run/path.%252FApplications%252FDiscord.app/Open'
+
+    [[leaderMode.bindings.children]]
+    key = 'm'
+    url = 'tuna://run/path.%252FApplications%252FElement.app/Open'
+
+    [[leaderMode.bindings.children]]
+    key = 'o'
+    url = 'tuna://run/path.%252FApplications%252FMicrosoft%2520Outlook.app/Open'
+
+    [[leaderMode.bindings.children]]
+    key = 's'
+    url = 'tuna://run/path.%252FApplications%252FSlack.app/Open'
+
+    [[leaderMode.bindings.children]]
+    key = 't'
+    url = 'tuna://run/path.%252FApplications%252FMicrosoft%2520Teams.app/Open'
+
+[[leaderMode.bindings]]
+iconPath = '/Applications/Obsidian.app'
+key = 'n'
+label = 'Notes'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'brain'
+    key = 'b'
+    label = 'brain'
+    url = 'tuna://run/url.obsidian:%252F%252Fopen%253Fvault=brain/Open%20URL'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'danishkronesign.bank.building'
+    key = 'd'
+    label = 'dnbrain'
+    url = 'tuna://run/url.obsidian:%252F%252Fopen%253Fvault=dnbrain/Open%20URL'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'pencil.line'
+    key = 't'
+    label = 'Today'
+    url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fdaily-note.sh/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings]]
+key = 't'
+url = 'tuna://run/path.%252FApplications%252FWezTerm.app/Open'
+
+[[leaderMode.bindings]]
+iconPath = 'apple.terminal'
+key = 'T'
+label = 'Terminals'
+
+    [[leaderMode.bindings.children]]
+    key = 'w'
+    url = 'tuna://run/path.%252FApplications%252FWezTerm.app/Open'
+
+    [[leaderMode.bindings.children]]
+    key = 'g'
+    url = 'tuna://run/path.%252FApplications%252FGhostty.app/Open'
+
+[settings]
+leaderModeCheatsheetDelayMS = 666
+leaderModeCheatsheetShowDetails = false
+leaderModeModifierTrigger = 'rightCommand'
+leaderModeThemeStyle = 'cheatsheet'
+resultListNavigationBindings = 'vimStyle'
+screenPreference = 'activeWindow'
+themeIdentifier = 'com.brnbw.tuna.themes.default'
+
+[[catalogSettings]]
+catalogIdentifier = 'com.brnbw.tuna.themes.default'
+
+    [catalogSettings.values]
+    ThemeTint = 'graphite'

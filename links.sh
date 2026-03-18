@@ -30,6 +30,7 @@ ln -sf ~/commons/.config/nushell/ ~/.config/
 ln -sf ~/commons/.config/pipes-rs/ ~/.config/
 ln -sf ~/commons/.config/ripgrep/ ~/.config/
 ln -sf ~/commons/.config/starship.toml ~/.config/starship.toml
+ln -sf ~/commons/.config/tuna/ ~/.config/
 ln -sf ~/commons/.config/wezterm/ ~/.config/
 ln -sf ~/commons/.config/yazi/ ~/.config/
 ln -sf ~/commons/.config/zed/keymap.json ~/.config/zed/
