@@ -2,7 +2,7 @@ schemaVersion = 1
 
 [hotkeys.app.activate]
 carbonKeyCode = 49
-carbonModifiers = 2048
+carbonModifiers = 256
 
 [hotkeys.app.leaderMode]
 carbonKeyCode = 3
@@ -42,6 +42,18 @@ presentation = 'auto'
 
     [hotkeys.custom.shortcut]
     carbonKeyCode = 21
+    carbonModifiers = 2048
+
+[[hotkeys.custom]]
+id = 'DAFECB30-C04E-4ED8-B866-3183D73CB860'
+presentation = 'auto'
+
+    [hotkeys.custom.command]
+    actionIdentifier = 'Tuna.BasicActionsCatalog.Browse'
+    subjectIdentifier = 'Tuna.Internal.ClipboardProxyCatalog.Clipboard History'
+
+    [hotkeys.custom.shortcut]
+    carbonKeyCode = 9
     carbonModifiers = 2048
 
 [[hotkeys.custom]]
@@ -105,6 +117,45 @@ label = 'Comms'
     [[leaderMode.bindings.children]]
     key = 't'
     url = 'tuna://run/path.%252FApplications%252FMicrosoft%2520Teams.app/Open'
+
+[[leaderMode.bindings]]
+iconPath = 'lightswitch.off'
+key = 'm'
+label = 'Misc / Toggle'
+
+    [[leaderMode.bindings.children]]
+    iconPath = '/Applications/KeepingYouAwake.app'
+    key = 'c'
+    label = 'Caffeinate'
+    url = 'tuna://run/url.keepingyouawake:%252F%252F%252Ftoggle/Open%20URL'
+
+    [[leaderMode.bindings.children]]
+    iconPath = '/System/Applications/Utilities/Screenshot.app'
+    key = 's'
+    label = 'Screenshot'
+
+        [[leaderMode.bindings.children.children]]
+        iconPath = 'square.dashed'
+        key = 'a'
+        label = 'Screenshot Area'
+        url = 'tuna://run/text.screencapture%2520-ic/Run%20Text%20as%20Shell%20Command'
+
+        [[leaderMode.bindings.children.children]]
+        iconPath = 'desktopcomputer'
+        key = 's'
+        label = 'Screenshot Screen'
+        url = 'tuna://run/text.screencapture%2520-c/Run%20Text%20as%20Shell%20Command'
+
+        [[leaderMode.bindings.children.children]]
+        iconPath = 'macwindow'
+        key = 'w'
+        label = 'Screenshot Window'
+        url = 'tuna://run/text.screencapture%2520-wic/Run%20Text%20as%20Shell%20Command'
+
+        [[leaderMode.bindings.children.children]]
+        iconPath = '/System/Applications/Utilities/Screenshot.app'
+        key = 'S'
+        url = 'tuna://run/Tuna.Internal.RecentObjectsCatalog.Screenshot/Open'
 
 [[leaderMode.bindings]]
 iconPath = '/Applications/Obsidian.app'
