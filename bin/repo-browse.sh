@@ -40,31 +40,20 @@ fi
 
 CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/repo-browse"
 CACHE_FILE="$CACHE_DIR/$MODE.list"
-CACHE_MAX_AGE=300 # 5 minutes — background refresh threshold
 
 mkdir -p "$CACHE_DIR"
 
-cache_is_stale() {
-    [ ! -f "$CACHE_FILE" ] && return 0
-    local age=$(($(date +%s) - $(stat -c %Y "$CACHE_FILE")))
-    [ "$age" -ge "$CACHE_MAX_AGE" ]
-}
-
-# Cold cache: fetch with spinner, write cache
+# Cold cache: blocking fetch
 if [ ! -f "$CACHE_FILE" ] || [ ! -s "$CACHE_FILE" ]; then
     REPOS=$("$SELF" --fetch "$MODE" "$HOST") || exit 0
     [ -z "$REPOS" ] && exit 0
     echo "$REPOS" >"$CACHE_FILE"
-else
-    REPOS=$(cat "$CACHE_FILE")
 fi
 
-SELECTED=$(echo "$REPOS" | fzf --reverse --prompt "repo> ") || exit 0
+# Always refresh in background for next invocation
+(tmp=$(mktemp) && "$SELF" --fetch "$MODE" "$HOST" >"$tmp" 2>/dev/null && [ -s "$tmp" ] && mv "$tmp" "$CACHE_FILE" || rm -f "$tmp" &) || true
+
+SELECTED=$(cat "$CACHE_FILE" | fzf --reverse --prompt "repo> ") || exit 0
 [ -z "$SELECTED" ] && exit 0
-
-# Background refresh if stale (fire-and-forget)
-if cache_is_stale; then
-    ("$SELF" --fetch "$MODE" "$HOST" >"$CACHE_FILE" 2>/dev/null &)
-fi
 
 open "https://${HOST}/${SELECTED}"
