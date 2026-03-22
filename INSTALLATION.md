@@ -47,15 +47,16 @@ echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install \
     jorgebucaran/fisher \
-    PatrickF1/fzf.fish \
-    reitzig/sdkman-for-fish
+    PatrickF1/fzf.fish
 ```
 
-### Disabling default fzf search history in favor of PatrickF1/fzf.fish
+## Install language runtimes with mise.
 
-```fish
-(brew --prefix)/opt/fzf/uninstall
+```sh
+mise install
 ```
+
+This reads `.config/mise/config.toml` and installs the configured Python, Node.js, and Java versions.
 
 ### Set fish colors without storing themes
 
@@ -117,13 +118,6 @@ Gotta have HN.
 cargo install hackernews_tui --locked
 ```
 
-### Install Java / Tools.
-
-```sh
-curl -s https://get.sdkman.io | bash
-sdk install java
-```
-
 ### Some npm tools.
 
 ```sh
@@ -131,22 +125,6 @@ npm i -g js-beautify stylelint
 npm audit fix
 npm i --pack-lock-only
 npm audit fix # seems to work after package lock
-```
-
-### Prepare Python.
-
-> **Note**
->
-> With M1 see:
->
-> - https://github.com/pyenv/pyenv/issues/1768#issuecomment-871602950
-> - https://stackoverflow.com/questions/71577626/issues-installing-python-3-8-10-on-macos-12-3-monterey
-
-```sh
-pyenv install 3.9.11
-pyenv install 3.10.3
-pyenv global 3.10.3
-pip install black isort keyring nose pipenv pyflakes pyppeteer pytest
 ```
 
 ## Setup git forge.
