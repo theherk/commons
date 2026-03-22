@@ -12,17 +12,16 @@ These are the configuration details and files I use to configure my environment.
 
 While this configuration does prepare a great many tools, it revolves primarily around the following:
 
-- 📝 [Neovide](https://neovide.dev/): Primary interface; smooth scrolling goodness. [config.toml](./.config/neovide/config.toml) / [neovide.lua](./.config/nvim/plugin/8-neovide.lua)
-- 📑 [NeovideProject](https://github.com/theherk/NeovideProject): Project switching with [Zoxide Git Projects](https://www.raycast.com/theherk/zoxide-git-projects).
-- ✏️ [Neovim](https://neovim.io/): [configuration](.config/nvim/)
-- 🐠 [Fish](https://fishshell.com/): [configuration](.config/fish/config.fish)
-- 💻 [Wezterm](https://wezfurlong.org/wezterm/): [configuration](.config/wezterm/)
+- 🪟 [Aerospace](https://github.com/nikitabobko/AeroSpace): Tiling window manager. [configuration](.config/aerospace/)
+- ✏️ [Neovim](https://neovim.io/): King of modal editors. ❤️ [configuration](.config/nvim/)
+- 🐠 [Fish](https://fishshell.com/): User-friendly shell with vi mode. [configuration](.config/fish/config.fish)
+- 💻 [Wezterm](https://wezfurlong.org/wezterm/): Muxing, GPU-accelerated terminal. [configuration](.config/wezterm/)
+- 🔀 [Jujutsu](https://github.com/jj-vcs/jj): Simple, git-compatible VCS. [configuration](.config/jj/)
 - 🔠 [Victor Mono](https://rubjo.github.io/victor-mono/): Best font ever. 🌟
 
 ### Miscellaneous Other Tools 🎒
 
 - [asciinema](https://asciinema.org/): Record and share terminal sessions.
-- [aerospace](https://github.com/nikitabobko/AeroSpace): macOS tiling window manager.
 - [atuin](https://github.com/atuinsh/atuin): Shell history with sync and search.
 - [bat](https://github.com/sharkdp/bat): A cat clone.
 - [caddy](https://github.com/caddyserver/caddy): Simple file server.
@@ -41,13 +40,14 @@ While this configuration does prepare a great many tools, it revolves primarily 
 - [delta](https://github.com/dandavison/delta): Syntax highlighting pager.
 - [ghostty](https://ghostty.org/): GPU-accelerated terminal emulator.
 - [grip](https://github.com/joeyespo/grip): Preview markdown.
-- [jujutsu](https://github.com/jj-vcs/jj): Git-compatible VCS.
 - [keycastr](https://github.com/keycastr/keycastr): Keystroke visualizer.
 - [kindavim](https://github.com/godbout/kindavim): Vim-style navigation for macOS.
 - [lazydocker](https://github.com/jesseduffield/lazydocker): Container management TUI.
 - [lazygit](https://github.com/jesseduffield/lazygit): The best git interface outside emacs.
 - [mise](https://github.com/jdx/mise): Polyglot runtime version manager.
 - [navi](https://github.com/denisidoro/navi): Interactive cheatsheet tool for the command-line.
+- [Neovide](https://neovide.dev/): Smooth-scrolling Neovim GUI; occasional use.
+- [NeovideProject](https://github.com/theherk/NeovideProject): Project switching with [Zoxide Git Projects](https://www.raycast.com/theherk/zoxide-git-projects).
 - [pandoc](https://pandoc.org/): Universal document converter.
 - [podman](https://podman.io/): Daemonless container engine.
 - [ripgrep](https://github.com/BurntSushi/ripgrep): Amazing search tool.
