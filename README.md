@@ -6,20 +6,20 @@ These are the configuration details and files I use to configure my environment.
 
 <p align="center"><img src="./img/bruce-matlocktheartist_200w.png" alt="Bruce Lee by matlocktheartist" width="100" height="154"/></p>
 
-<p align="center"><a href="#screenshots-%EF%B8%8F"> 📷️ Screenshots</a> | <a href="./INSTALLATION.md"> 🚀 Installation</a></p>
+<p align="center"><a href="#screenshots-📷️"> 📷️ Screenshots</a> | <a href="./INSTALLATION.md"> 🚀 Installation</a></p>
 
 ## Tools 🛠️
 
 While this configuration does prepare a great many tools, it revolves primarily around the following:
 
-- 🪟 [Aerospace](https://github.com/nikitabobko/AeroSpace): Tiling window manager. [configuration](.config/aerospace/)
-- ✏️ [Neovim](https://neovim.io/): King of modal editors. ❤️ [configuration](.config/nvim/)
-- 🐠 [Fish](https://fishshell.com/): User-friendly shell with vi mode. [configuration](.config/fish/config.fish)
-- 💻 [Wezterm](https://wezfurlong.org/wezterm/): Muxing, GPU-accelerated terminal. [configuration](.config/wezterm/)
-- 🔀 [Jujutsu](https://github.com/jj-vcs/jj): Simple, git-compatible VCS. [configuration](.config/jj/)
-- 🔠 [Victor Mono](https://rubjo.github.io/victor-mono/): Best font ever. 🌟
+- [Aerospace](https://github.com/nikitabobko/AeroSpace): Tiling window manager. [configuration](.config/aerospace/)
+- [Neovim](https://neovim.io/): King of modal editors. [configuration](.config/nvim/)
+- [Fish](https://fishshell.com/): User-friendly shell with vi mode. [configuration](.config/fish/config.fish)
+- [Wezterm](https://wezfurlong.org/wezterm/): Muxing, GPU-accelerated terminal. [configuration](.config/wezterm/)
+- [Jujutsu](https://github.com/jj-vcs/jj): Simple, git-compatible VCS. [configuration](.config/jj/)
+- [Victor Mono](https://rubjo.github.io/victor-mono/): Best font ever.
 
-### Miscellaneous Other Tools 🎒
+### Miscellaneous Other Tools
 
 - [asciinema](https://asciinema.org/): Record and share terminal sessions.
 - [atuin](https://github.com/atuinsh/atuin): Shell history with sync and search.
@@ -61,7 +61,7 @@ While this configuration does prepare a great many tools, it revolves primarily 
 - [zellij](https://zellij.dev/): A terminal workspace with batteries included; multiplexer.
 - [zoxide](https://github.com/ajeetdsouza/zoxide): A smarter cd command. Supports all major shells.
 
-## Screenshots 🖼️
+## Screenshots 📷️
 
 <p align="center"><img src="./img/neovide-neovim-dash.png" alt="Neovide / Neovim Dashboard" /></p>
 <p align="center"><img src="./img/neovide-neovim-markdown.png" alt="Neovide / Neovim Markdown" /></p>
