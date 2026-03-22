@@ -111,12 +111,6 @@ function util-stop # stop util bastion
     aws ec2 stop-instances --instance-ids $argv
 end
 
-function venv2
-    virtualenv -p /usr/bin/python2 .venv
-    venvact .venv
-    pip install ipython
-end
-
 function venv3
     python3 -m venv .venv
     venvact .venv
