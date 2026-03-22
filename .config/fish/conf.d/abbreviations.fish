@@ -7,7 +7,7 @@ abbr -a bubu --position command "brew update && brew outdated && brew upgrade &&
 abbr -a c --position command codium
 abbr -a cd --position command z
 abbr -a clock --position command rsclock -c
-abbr -a d --position command 'fd -H -t d | sk'
+abbr -a d --position command 'fd -H -t d | fzf --reverse'
 abbr -a dl --position command "$DNB_LOGIN"
 abbr -a dumplynx --position anywhere --set-cursor "%| lynx -dump -stdin"
 abbr -a dumpw3m --position anywhere --set-cursor "%| w3m -dump -T text/html"
@@ -22,7 +22,7 @@ abbr -a gl --position command gproxy-auto.sh
 abbr -a gtc --position command 'go test -covermode=count -coverpkg=./... -coverprofile _cover.out -v ./... && go tool cover -html _cover.out -o _cover.html'
 abbr -a gr --position command 'cd (git root)'
 abbr -a hn --position command hackernews_tui
-abbr -a hxr --position command 'hx (sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2)'
+abbr -a hxr --position command 'hx (fzf --ansi --disabled --reverse --bind '\''change:reload(rg --color=always --hidden --line-number -g '\''!.git'\'' {q} || true)'\'' | cut -d: -f1-2)'
 abbr -a ipy --position command python -c '"import IPython; IPython.terminal.ipapp.launch_new_instance()"'
 abbr -a l --position command eza -l --icons
 abbr -a ll --position command eza -alF --icons --git --time-style long-iso
@@ -57,7 +57,7 @@ abbr -a up --position anywhere --set-cursor "%| underscore pretty"
 abbr -a util-list --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' 'Name=instance-state-name,Values=pending,running,stopping,stopped' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 abbr -a util-list-buildhost --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' 'Name=instance-state-name,Values=pending,running,stopping,stopped' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 abbr -a util-list-cdc --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*cdc*' 'Name=instance-state-name,Values=pending,running,stopping,stopped' --output text --query 'Reservations[*].Instances[*].InstanceId'"
-abbr -a vr --position command 'sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2 | sed "s/\(.*\):\(.*\)/\+\2 \1/" | xargs nvim'
+abbr -a vr --position command 'fzf --ansi --disabled --reverse --bind '\''change:reload(rg --color=always --hidden --line-number -g '\''!.git'\'' {q} || true)'\'' | cut -d: -f1-2 | sed "s/\(.*\):\(.*\)/\+\2 \1/" | xargs nvim'
 abbr -a wezi --position command wezterm imgcat
 abbr -a wow --position command git status
 abbr -a xc --position anywhere --set-cursor "%| xclip -sel clip"

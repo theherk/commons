@@ -14,7 +14,7 @@ alias fz='find . -iname "*.7z"'
 alias g='gitui'
 alias gl='gproxy-auto.sh'
 alias gr='cd $(git root)'
-alias hxr='hx $(sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2)'
+alias hxr='hx $(fzf --ansi --disabled --reverse --bind '\''change:reload(rg --color=always --hidden --line-number -g '\''!.git'\'' {q} || true)'\'' | cut -d: -f1-2)'
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias l='eza -l --icons'
 alias ll='eza -alF --icons --git --time-style long-iso'
@@ -38,7 +38,7 @@ alias tmpd='cd $(mktemp -d)'
 alias up="underscore pretty"
 alias util-list="aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 alias util-list-buildhost="aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' --output text --query 'Reservations[*].Instances[*].InstanceId'"
-alias vr='sk --ansi -i -c '\''rg --color=always --hidden --line-number -g '\''!.git'\'' "{}"'\'' | cut -d: -f1-2 | sed "s/\(.*\):\(.*\)/\+\2 \1/" | xargs nvim'
+alias vr='fzf --ansi --disabled --reverse --bind '\''change:reload(rg --color=always --hidden --line-number -g '\''!.git'\'' {q} || true)'\'' | cut -d: -f1-2 | sed "s/\(.*\):\(.*\)/\+\2 \1/" | xargs nvim'
 alias wezy='wezterm imgcat'
 alias wow="git status"
 alias xc='xclip -sel clip'
