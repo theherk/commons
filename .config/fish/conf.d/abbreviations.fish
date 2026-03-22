@@ -57,7 +57,7 @@ abbr -a up --position anywhere --set-cursor "%| underscore pretty"
 abbr -a util-list --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*util' 'Name=instance-state-name,Values=pending,running,stopping,stopped' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 abbr -a util-list-buildhost --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*buildhost' 'Name=instance-state-name,Values=pending,running,stopping,stopped' --output text --query 'Reservations[*].Instances[*].InstanceId'"
 abbr -a util-list-cdc --position command "aws ec2 describe-instances --filters 'Name=tag:Name,Values=*cdc*' 'Name=instance-state-name,Values=pending,running,stopping,stopped' --output text --query 'Reservations[*].Instances[*].InstanceId'"
-abbr -a vr --position command 'fzf --ansi --disabled --reverse --bind '\''change:reload(rg --color=always --hidden --line-number -g '\''!.git'\'' {q} || true)'\'' | cut -d: -f1-2 | sed "s/\(.*\):\(.*\)/\+\2 \1/" | xargs nvim'
+abbr -a vr --position command 'fzf --ansi --disabled --reverse --bind '\''change:reload(rg --color=always --hidden --line-number -g '\''!.git'\'' {q} || true)'\'' | cut -d: -f1-2 | sed "s/\(.*\):\(.*\)/\+\2 \1/" | xargs nvp'
 abbr -a wezi --position command wezterm imgcat
 abbr -a wow --position command git status
 abbr -a xc --position anywhere --set-cursor "%| xclip -sel clip"

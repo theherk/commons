@@ -2,7 +2,18 @@
 
 if [ $(git root 2>/dev/null) ]; then
 	if [ -e "$(git root)/_neovim" ]; then
-		nvim --server "$(git root)/_neovim" --remote "$@"
+		line=""
+		files=""
+		for arg in "$@"; do
+			case "$arg" in
+				+*) line="${arg#+}" ;;
+				*) files="$arg" ;;
+			esac
+		done
+		nvim --server "$(git root)/_neovim" --remote "$files"
+		if [ -n "$line" ]; then
+			nvim --server "$(git root)/_neovim" --remote-expr "nvim_win_set_cursor(0, [$line, 0])"
+		fi
 	else
 		nvim --listen "$(git root)/_neovim" "$@"
 	fi
