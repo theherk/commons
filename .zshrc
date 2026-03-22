@@ -40,13 +40,8 @@ fi
 
 eval "$(atuin init zsh --disable-up-arrow)"
 eval "$(direnv hook zsh)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(shadowenv init zsh)"
+eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # [ -s "/Users/h4s/.jabba/jabba.sh" ] && source "/Users/h4s/.jabba/jabba.sh"
-
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

@@ -19,7 +19,6 @@ if status is-login
     set -gx GOPATH $P/go
     set -gx GROOVY_HOME (brew --prefix)"/opt/groovy/libexec"
     set -gx HTML_TIDY $HOME/.config/tidy/config.txt
-    set -gx VOLTA_HOME "$HOME/.volta"
     set -gx HOMEBREW_BUNDLE_FILE "$XDG_CONFIG_HOME/brewfile/Brewfile"
 
     fish_add_path -m \
@@ -31,17 +30,10 @@ if status is-login
         $HOME/.cabal/bin \
         $HOME/.cargo/bin \
         $HOME/.nimble/bin \
-        $VOLTA_HOME/bin \
         $HOME/.emacs.d/bin \
         $HOME/.local/bin \
         $HOME/bin
 
-    pyenv init - | source
-    pyenv virtualenv-init - | source
-
-    # Set LS_COLORS for colorful eza/ls output.
-    # Fish completions use fish_pager_color_* instead (see conf.d/theme-enhancements.fish).
-    # Only set if not already set universally by light-dark-toggle.sh.
     if not set -q LS_COLORS
         set -gx LS_COLORS (vivid generate catppuccin-frappe)
     end
@@ -106,4 +98,5 @@ end
 alias ls=eza
 
 direnv hook fish | source
+mise activate fish | source
 zoxide init fish | source

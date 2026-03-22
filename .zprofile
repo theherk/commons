@@ -5,7 +5,6 @@ export VENVS=$HOME/.venvs
 export P=$HOME/projects
 export GOPATH=$P/go
 export HTML_TIDY=$HOME/.config/tidy/config.txt
-export VOLTA_HOME=$HOME/.volta
 export XDG_CONFIG_HOME=$HOME/.config
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
@@ -24,13 +23,10 @@ export PATH=$HOME/.cabal/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.nimble/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
-export PATH=$VOLTA_HOME/bin:$PATH
 
 export PATH=$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH
 export PATH=$HOME/.emacs.d/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
-if command -v pyenv 1>/dev/null 2>&1; then
-	eval "$(pyenv init --path)"
-fi
+eval "$(mise activate zsh --shims)"

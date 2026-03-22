@@ -23,7 +23,6 @@ $env.CARGO_HOME = $'($env.HOME)/.cargo'
 $env.VENVS = $'($env.HOME)/.venvs'
 $env.P = $'($env.HOME)/projects'
 $env.GOPATH = $'($env.P)/go'
-$env.VOLTA_HOME = $'($env.HOME)/.volta'
 $env.XDG_CONFIG_HOME = $'($env.HOME)/.config'
 
 # Tool-specific configs
@@ -36,7 +35,6 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend [
     $'($env.HOME)/bin'
     $'($env.HOME)/.local/bin'
     $'($env.HOME)/.emacs.d/bin'
-    $'($env.VOLTA_HOME)/bin'
     $'($env.HOME)/.nimble/bin'
     $'($env.HOME)/.cargo/bin'
     $'($env.HOME)/.cabal/bin'

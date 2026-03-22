@@ -1,0 +1,4 @@
+[tools]
+python = "latest"
+node = "lts"
+java = "latest"

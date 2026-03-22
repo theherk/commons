@@ -78,7 +78,7 @@
        lua
        (markdown +grip)
        (org +roam2 +pretty)
-       (python +lsp +pyright +pyenv +tree-sitter)
+       (python +lsp +pyright +tree-sitter)
        rst
        (rust +lsp)
        (sh +fish +lsp)
