@@ -151,7 +151,6 @@ local keys = {
   -- Launch
   { key = "e", mods = "LEADER", action = util.launch({ "nvp" }) },
   { key = "f", mods = "LEADER", action = util.launch({ "yazi" }) },
-  { key = "F", mods = "LEADER", action = util.launch({ "xplr" }) },
   { key = "g", mods = "LEADER", action = util.launch({ "lazygit" }) },
   { key = "R", mods = "LEADER", action = util.launch({ "raicode" }) },
   { key = "S", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch_split", one_shot = true, until_unknown = true }) },

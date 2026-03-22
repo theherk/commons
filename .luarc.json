@@ -1,6 +1,5 @@
 {
   "diagnostics.globals": [
-    "vim",
-    "xplr"
+    "vim"
   ]
 }
