@@ -12,6 +12,16 @@ User identification. You can find more information in the [[https://www.gnu.org/
       user-mail-address "theherk@gmail.com")
 #+end_src
 
+** Shell
+
+Use a POSIX shell internally to avoid issues with Fish/Nushell in child processes, but keep Fish for terminal emulators.
+
+#+begin_src elisp
+(setq shell-file-name (executable-find "bash"))
+(setq-default vterm-shell "/opt/homebrew/bin/fish")
+(setq-default explicit-shell-file-name "/opt/homebrew/bin/fish")
+#+end_src
+
 ** Display configuration
 
 *** Font
@@ -26,10 +36,24 @@ User identification. You can find more information in the [[https://www.gnu.org/
 
 *** Theme
 
-Load slightly customized version of tokyo night. This has green replaces with purple in places.
+#+begin_src elisp
+(setq catppuccin-flavor 'frappe)
+(setq doom-theme 'catppuccin)
+#+end_src
+
+Toggle between Catppuccin Frappe (dark) and Latte (light).
 
 #+begin_src elisp
-(setq doom-theme 'h4s-tokyo-night)
+(defun h4s/toggle-theme ()
+  "Toggle between Catppuccin Frappe and Latte."
+  (interactive)
+  (setq catppuccin-flavor
+        (if (eq catppuccin-flavor 'frappe) 'latte 'frappe))
+  (catppuccin-reload))
+
+(map! :leader
+  :desc "toggle light/dark"
+  "t d" #'h4s/toggle-theme)
 #+end_src
 
 Who doesn't want Bruce Lee to greet them at the beginning of a work session. He's there to remind you:
@@ -60,6 +84,12 @@ The line I am on is always in the modeline, so generally I don't need to see the
 
 #+begin_src elisp
 (setq display-line-numbers-type nil)
+#+end_src
+
+*** Smooth scrolling
+
+#+begin_src elisp
+(pixel-scroll-precision-mode 1)
 #+end_src
 
 Toggle line wrapping.
@@ -99,6 +129,23 @@ Load all files called =*jenkinsfile*= in groovy-mode.
 #+begin_src elisp
 (after! magit
   (setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     ")))
+#+end_src
+
+** jujutsu
+
+#+begin_src elisp
+(defun h4s/jjui ()
+  "Open jjui in a vterm buffer."
+  (interactive)
+  (let ((buf (generate-new-buffer "*jjui*")))
+    (with-current-buffer buf
+      (vterm-mode)
+      (vterm-send-string "jjui; exit\n"))
+    (switch-to-buffer buf)))
+
+(map! :leader
+  :desc "jjui"
+  "g j" #'h4s/jjui)
 #+end_src
 
 *** Get pytest from executable
@@ -155,28 +202,6 @@ Load animations by default.
 (add-hook 'org-mode-hook #'org-inline-anim-mode)
 #+end_src
 
-#+begin_src elisp
-(use-package! websocket
-    :after org-roam)
-
-(use-package! org-roam-ui
-    :after org
-    :config
-    (setq org-roam-ui-sync-theme t
-          org-roam-ui-follow t
-          org-roam-ui-update-on-save t
-          org-roam-ui-open-on-start t))
-#+end_src
-
-#+begin_src elisp
-(map! :leader
-  :desc "org roam ui"
-  "n r u")
-(map! :leader
-  :desc "org roam ui open"
-  "n r u o" #'org-roam-ui-open)
-#+end_src
-
 Load ox exporters (gfm, jira, and pandoc) as soon as org is loaded. No clue why running all these in one =progn= within the =eval-after-load=, but here we are.
 
 #+begin_src elisp
@@ -193,10 +218,12 @@ Load ox exporters (gfm, jira, and pandoc) as soon as org is loaded. No clue why 
 #+begin_src elisp
 (setq projectile-project-search-path
       '(("~/projects/bitbucket.org/" . 3)
+        ("~/projects/dnb.ghe.com/" . 3)
         ("~/projects/github.com/" . 3)
-        ("~/projects/gitlab.com" . 3)
+        ("~/projects/gitlab.com/" . 3)
         ("~/projects/gitlab.tech.dnb.no/" . 4)
-        ("~/projects/sr.ht/" . 3))
+        ("~/projects/sr.ht/" . 3)
+        ("~/projects/theherk.com/" . 3))
       projectile-sort-order 'recentf)
 #+end_src
 

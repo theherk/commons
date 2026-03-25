@@ -5,8 +5,8 @@ PROFILE_DIR="$HOME/Library/Application Support/zen/Profiles/y10w10po.Default (al
 BAT_DARK="Catppuccin Frappe"
 BAT_LIGHT="Catppuccin Latte"
 
-DOOM_DARK=h4s-tokyo-night
-DOOM_LIGHT=doom-one-light
+DOOM_DARK=catppuccin
+DOOM_LIGHT=catppuccin
 
 FISH_DARK="Catppuccin Frappe"
 FISH_LIGHT="Catppuccin Latte"
@@ -179,7 +179,9 @@ darken() {
 	echo "$HN_DARK" >~/.config/hn-tui.toml
 	sed -i '' 's/\(--theme=\)".*"/\1"'"$BAT_DARK"'"/' .config/bat/config
 	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_DARK')/' .config/doom/config.org
+	sed -i '' 's/(setq catppuccin-flavor '"'"''[a-z]*)/(setq catppuccin-flavor '"'"'frappe)/' .config/doom/config.org
 	sed -i '' 's/\(.*light =\).*/\1 false/' .config/git/config
+	emacsclient -e "(progn (setq catppuccin-flavor 'frappe) (catppuccin-reload))" 2>/dev/null || true
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_DARK'"/' .config/helix/config.toml
 	sed -i '' 's/\(--code-style", "\)catppuccin-[a-z]*/\1catppuccin-'$NVIM_VARIANT_DARK'/' .config/helix/languages.toml
 	sed -i '' 's/\(--theme", "\)light/\1dark/' .config/helix/languages.toml
@@ -214,7 +216,9 @@ lighten() {
 	echo "$HN_LIGHT" >~/.config/hn-tui.toml
 	sed -i '' 's/\(--theme=\)".*"/\1"'"$BAT_LIGHT"'"/' .config/bat/config
 	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_LIGHT')/' .config/doom/config.org
+	sed -i '' 's/(setq catppuccin-flavor '"'"''[a-z]*)/(setq catppuccin-flavor '"'"'latte)/' .config/doom/config.org
 	sed -i '' 's/\(.*light =\).*/\1 true/' .config/git/config
+	emacsclient -e "(progn (setq catppuccin-flavor 'latte) (catppuccin-reload))" 2>/dev/null || true
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_LIGHT'"/' .config/helix/config.toml
 	sed -i '' 's/\(--code-style", "\)catppuccin-[a-z]*/\1catppuccin-'$NVIM_VARIANT_LIGHT'/' .config/helix/languages.toml
 	sed -i '' 's/\(--theme", "\)dark/\1light/' .config/helix/languages.toml

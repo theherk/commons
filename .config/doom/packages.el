@@ -1,13 +1,10 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-;; org-roam needs unpinned to use latest.
-(unpin! org-roam)
-
+(package! catppuccin-theme)
 (package! exec-path-from-shell)
 (package! org-inline-anim)
 (package! org-modern)
-(package! org-roam-ui)
 (package! ox-clip)
 (package! ox-gfm)
 (package! ox-jira)

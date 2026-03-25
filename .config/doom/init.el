@@ -73,11 +73,11 @@
        :lang
        emacs-lisp
        json
-       javascript
+       (javascript +tree-sitter)
        latex
        lua
        (markdown +grip)
-       (org +roam2 +pretty)
+       (org +pretty)
        (python +lsp +pyright +tree-sitter)
        rst
        (rust +lsp)

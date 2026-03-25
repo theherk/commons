@@ -142,7 +142,7 @@ brew "zig"
 brew "zoxide"
 brew "catppuccin/tap/whiskers"
 brew "charmbracelet/tap/crush"
-brew "d12frosted/emacs-plus/emacs-plus@29", args: ["with-imagemagick", "with-memeplex-slim-icon", "with-native-comp", "with-xwidgets"]
+brew "d12frosted/emacs-plus/emacs-plus@30", args: ["with-xwidgets"]
 brew "idoavrah/homebrew/tftui"
 brew "lhvy/tap/pipes-rs"
 brew "minamijoyo/hcledit/hcledit"
