@@ -163,7 +163,7 @@ label = 'Misc / Toggle'
         [[leaderMode.bindings.children.children]]
         iconPath = '/System/Applications/Utilities/Screenshot.app'
         key = 'S'
-        url = 'tuna://run/Tuna.Internal.RecentObjectsCatalog.Screenshot/Open'
+        url = 'tuna://run/TunaCore.SystemApplicationsCatalog.Screenshot/Open'
 
 [[leaderMode.bindings]]
 iconPath = '/Applications/Obsidian.app'
@@ -218,6 +218,7 @@ label = 'Terminals'
     url = 'tuna://run/path.%252FApplications%252FGhostty.app/Open'
 
 [settings]
+backspaceBehavior = 'deleteCharacters'
 leaderModeCheatsheetDelayMS = 666
 leaderModeCheatsheetShowDetails = false
 leaderModeModifierTrigger = 'rightCommand'
