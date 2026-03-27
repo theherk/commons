@@ -27,116 +27,105 @@ window_equalize = "alt - e"
 window_nextdisplay = "alt + ctrl - n"
 quit = "ctrl + alt - q"
 
-# Browsers (index 1-4)
+# Browsers (index 10-19)
 [windows.zen]
 title = ".*"
 bundle_id = "app.zen-browser.zen"
-index = 1
-width = 1.0
-
-[windows.firefox]
-title = ".*"
-bundle_id = "org.mozilla.firefox"
-index = 2
+index = 10
 width = 1.0
 
 [windows.orion]
 title = "Orion.*"
-index = 3
-width = 1.0
-
-[windows.kagi]
-title = ".*"
 bundle_id = "com.kagi.kagimacOS"
-index = 4
+index = 11
 width = 1.0
 
-# Terminals (index 10-11)
+# Terminals (index 20-29)
 [windows.wezterm]
 title = ".*"
 bundle_id = "com.github.wez.wezterm"
-index = 10
+index = 20
 width = 1.0
 
 [windows.ghostty]
 title = ".*"
 bundle_id = "com.mitchellh.ghostty"
-index = 11
-width = 1.0
-
-# Editors (index 20-22)
-[windows.neovide]
-title = ".*Neovide.*"
-index = 20
-width = 1.0
-
-[windows.zed]
-title = ".*"
-bundle_id = "dev.zed.Zed"
 index = 21
 width = 1.0
 
-[windows.zed-preview]
-title = ".*"
-bundle_id = "dev.zed.Zed-Preview"
-index = 22
+# Editors (index 30-39)
+[windows.neovide]
+title = ".*Neovide.*"
+index = 30
 width = 1.0
 
 [windows.emacs]
 title = ".*"
 bundle_id = "org.gnu.Emacs"
-index = 23
+index = 32
 width = 1.0
 
-# Notes (index 30)
+[windows.zed]
+title = ".*"
+bundle_id = "dev.zed.Zed"
+index = 34
+width = 1.0
+
+[windows.zed-preview]
+title = ".*"
+bundle_id = "dev.zed.Zed-Preview"
+index = 35
+width = 1.0
+
+# Notes (index 40-49)
 [windows.obsidian]
 title = ".*"
 bundle_id = "md.obsidian"
-index = 30
-width = 0.63
-
-# Mail (index 40)
-[windows.outlook]
-title = ".*"
-bundle_id = "com.microsoft.Outlook"
 index = 40
 width = 0.63
 
-# Comms (index 50-55)
+# Mail (index 80-89)
+[windows.outlook]
+title = ".*"
+bundle_id = "com.microsoft.Outlook"
+index = 82
+width = 0.63
+
+# Comms (index 90-109)
 [windows.teams]
 title = ".*"
 bundle_id = "com.microsoft.teams2"
-index = 50
+index = 90
 width = 0.63
 
 [windows.slack]
 title = ".*"
 bundle_id = "com.tinyspeck.slackmacgap"
-index = 51
+index = 100
 width = 0.63
 
 [windows.element]
 title = ".*"
 bundle_id = "im.riot.app"
-index = 52
+index = 101
 width = 0.63
 
 [windows.discord]
 title = ".*"
 bundle_id = "com.hnc.Discord"
-index = 53
+index = 102
 width = 0.63
 
 [windows.signal]
 title = ".*"
 bundle_id = "org.whispersystems.signal-desktop"
-index = 54
+index = 103
 width = 0.63
 
 [windows.messages]
 title = ".*"
 bundle_id = "com.apple.MobileSMS"
-index = 55
+index = 104
 width = 0.63
 
 # Floating
@@ -148,9 +137,4 @@ floating = true
 [windows.protonvpn]
 title = ".*"
 bundle_id = "ch.protonvpn.mac"
-floating = true
-
-[windows.bitwarden]
-title = ".*"
-bundle_id = "com.bitwarden.desktop"
 floating = true
