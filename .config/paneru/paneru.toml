@@ -1,0 +1,156 @@
+[options]
+animation_speed = 6666
+auto_center = true
+focus_follows_mouse = true
+mouse_follows_focus = true
+preset_column_widths = [0.44, 0.66, 0.75, 1.0]
+
+[bindings]
+window_focus_west = "alt - h"
+window_focus_east = "alt - l"
+window_focus_first = "alt + shift - h"
+window_focus_last = "alt + shift - l"
+window_focus_north = "alt - k"
+window_focus_south = "alt - j"
+window_swap_west = "alt + ctrl - h"
+window_swap_east = "alt + ctrl - l"
+window_swap_first = "alt + ctrl + shift - h"
+window_swap_last = "alt + ctrl + shift - l"
+window_center = "alt - c"
+window_resize = "alt - r"
+window_shrink = "alt + shift - r"
+window_fullwidth = "alt - f"
+window_manage = "alt - t"
+window_stack = "alt - s"
+window_unstack = "alt + shift - s"
+window_equalize = "alt - e"
+window_nextdisplay = "alt + ctrl - n"
+quit = "ctrl + alt - q"
+
+# Browsers (index 1-4)
+[windows.zen]
+title = ".*"
+bundle_id = "app.zen-browser.zen"
+index = 1
+width = 1.0
+
+[windows.firefox]
+title = ".*"
+bundle_id = "org.mozilla.firefox"
+index = 2
+width = 1.0
+
+[windows.orion]
+title = "Orion.*"
+index = 3
+width = 1.0
+
+[windows.kagi]
+title = ".*"
+bundle_id = "com.kagi.kagimacOS"
+index = 4
+width = 1.0
+
+# Terminals (index 10-11)
+[windows.wezterm]
+title = ".*"
+bundle_id = "com.github.wez.wezterm"
+index = 10
+width = 1.0
+
+[windows.ghostty]
+title = ".*"
+bundle_id = "com.mitchellh.ghostty"
+index = 11
+width = 1.0
+
+# Editors (index 20-22)
+[windows.neovide]
+title = ".*Neovide.*"
+index = 20
+width = 1.0
+
+[windows.zed]
+title = ".*"
+bundle_id = "dev.zed.Zed"
+index = 21
+width = 1.0
+
+[windows.zed-preview]
+title = ".*"
+bundle_id = "dev.zed.Zed-Preview"
+index = 22
+width = 1.0
+
+[windows.emacs]
+title = ".*"
+bundle_id = "org.gnu.Emacs"
+index = 23
+width = 1.0
+
+# Notes (index 30)
+[windows.obsidian]
+title = ".*"
+bundle_id = "md.obsidian"
+index = 30
+width = 0.63
+
+# Mail (index 40)
+[windows.outlook]
+title = ".*"
+bundle_id = "com.microsoft.Outlook"
+index = 40
+width = 0.63
+
+# Comms (index 50-55)
+[windows.teams]
+title = ".*"
+bundle_id = "com.microsoft.teams2"
+index = 50
+width = 0.63
+
+[windows.slack]
+title = ".*"
+bundle_id = "com.tinyspeck.slackmacgap"
+index = 51
+width = 0.63
+
+[windows.element]
+title = ".*"
+bundle_id = "im.riot.app"
+index = 52
+width = 0.63
+
+[windows.discord]
+title = ".*"
+bundle_id = "com.hnc.Discord"
+index = 53
+width = 0.63
+
+[windows.signal]
+title = ".*"
+bundle_id = "org.whispersystems.signal-desktop"
+index = 54
+width = 0.63
+
+[windows.messages]
+title = ".*"
+bundle_id = "com.apple.MobileSMS"
+index = 55
+width = 0.63
+
+# Floating
+[windows.keycastr]
+title = ".*"
+bundle_id = "io.github.keycastr"
+floating = true
+
+[windows.protonvpn]
+title = ".*"
+bundle_id = "ch.protonvpn.mac"
+floating = true
+
+[windows.bitwarden]
+title = ".*"
+bundle_id = "com.bitwarden.desktop"
+floating = true
