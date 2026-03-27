@@ -34,3 +34,17 @@ type = "ssh"
 name = "upstream"
 url = "https://github.com/dlvhdr/gh-enhance.git"
 type = "https"
+
+[[trees.repos]]
+name = "theherk/paneru"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "git@github.com:theherk/paneru.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "https://github.com/karinushka/paneru"
+type = "https"
+
