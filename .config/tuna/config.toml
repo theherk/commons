@@ -33,6 +33,18 @@ presentation = 'auto'
     carbonModifiers = 2048
 
 [[hotkeys.custom]]
+id = '0B601CDA-56D4-4EFA-9BFC-EB69F910647B'
+presentation = 'auto'
+
+    [hotkeys.custom.command]
+    actionIdentifier = 'Tuna.BasicActionsCatalog.Browse'
+    subjectIdentifier = 'TunaEmoji.EmojiSearchCatalog.Emoji'
+
+    [hotkeys.custom.shortcut]
+    carbonKeyCode = 49
+    carbonModifiers = 4352
+
+[[hotkeys.custom]]
 id = '1C965537-5EED-4C62-9CAA-D142E4B46FEF'
 presentation = 'auto'
 
