@@ -8,6 +8,10 @@ folderDepthOverrides = []
     id = '04A2C72F-F8AB-4D39-BF10-3090C5405B5E'
     path = '~/commons/.config/tuna/scripts'
 
+[[catalogs.sortOrders]]
+catalogIdentifier = 'Tuna.FileSystemBrowseSort'
+sortOrder = 'capturedAt.desc'
+
 [hotkeys.app.activate]
 carbonKeyCode = 49
 carbonModifiers = 256
@@ -136,6 +140,12 @@ label = 'Misc / Toggle'
     key = 'c'
     label = 'Caffeinate'
     url = 'tuna://run/url.keepingyouawake:%252F%252F%252Ftoggle/Open%20URL'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'sun.max'
+    key = 'l'
+    label = 'Light/Dark Toggle'
+    url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Flight-dark-toggle.sh/Run%20Text%20as%20Shell%20Command'
 
     [[leaderMode.bindings.children]]
     iconPath = '/System/Applications/Utilities/Screenshot.app'
