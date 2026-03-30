@@ -160,6 +160,12 @@ label = 'Misc / Toggle'
     url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Flight-dark-toggle.sh/Run%20Text%20as%20Shell%20Command'
 
     [[leaderMode.bindings.children]]
+    iconPath = 'book'
+    key = 'd'
+    label = 'Define Word'
+    url = 'tuna://run/text.%252FUsers%252Fh4s%252F.config%252Ftuna%252Fscripts%252Fdefine-word.sh/Run%20Text%20as%20Shell%20Command'
+
+    [[leaderMode.bindings.children]]
     iconPath = '/System/Applications/Utilities/Screenshot.app'
     key = 's'
     label = 'Screenshot'
