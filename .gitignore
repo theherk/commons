@@ -4,5 +4,6 @@ bin/bw
 fish_variables
 gproxy
 gpt-commit.py
+.config/nvim/pack/
 lazy-lock.json
 tmp.*

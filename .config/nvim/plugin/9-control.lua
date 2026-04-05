@@ -91,18 +91,17 @@ vim.keymap.set("n", "<leader>bc", "<plug>(cokeline-pick-close)", { desc = "pick 
 vim.keymap.set("n", "<leader>bo", "<cmd>%bd|e#|bd#<cr>", { desc = "others (native)" })
 
 -- Diagnostic
-local diagnostic_goto = function(next, severity)
-  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+local diagnostic_jump = function(count, severity)
   severity = severity and vim.diagnostic.severity[severity] or nil
-  return function() go({ severity = severity }) end
+  return function() vim.diagnostic.jump({ count = count, severity = severity }) end
 end
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "line diagnostics" })
-vim.keymap.set("n", "]d", diagnostic_goto(true), { desc = "next diagnostic" })
-vim.keymap.set("n", "[d", diagnostic_goto(false), { desc = "prev diagnostic" })
-vim.keymap.set("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "next error" })
-vim.keymap.set("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "prev error" })
-vim.keymap.set("n", "]w", diagnostic_goto(true, "WARN"), { desc = "next warning" })
-vim.keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "prev warning" })
+vim.keymap.set("n", "]d", diagnostic_jump(1), { desc = "next diagnostic" })
+vim.keymap.set("n", "[d", diagnostic_jump(-1), { desc = "prev diagnostic" })
+vim.keymap.set("n", "]e", diagnostic_jump(1, "ERROR"), { desc = "next error" })
+vim.keymap.set("n", "[e", diagnostic_jump(-1, "ERROR"), { desc = "prev error" })
+vim.keymap.set("n", "]w", diagnostic_jump(1, "WARN"), { desc = "next warning" })
+vim.keymap.set("n", "[w", diagnostic_jump(-1, "WARN"), { desc = "prev warning" })
 
 -- Save the weird way.
 vim.keymap.set({ "i", "x", "n", "s" }, "<c-s>", "<cmd>up<cr><esc>", { desc = "save (update) file" })
