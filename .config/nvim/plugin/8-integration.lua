@@ -1,10 +1,10 @@
-local MiniDeps = require("mini.deps")
-local add, later = MiniDeps.add, MiniDeps.later
+local add = vim.pack.add
+local later = Config.later
 
 local ai_enabled = vim.env.AI_ENABLED == "1"
 
 later(function()
-  add({ source = "akinsho/toggleterm.nvim" })
+  add({ "https://github.com/akinsho/toggleterm.nvim" })
   require("toggleterm").setup({
     shade_terminals = false,
     size = function(term)
@@ -50,10 +50,8 @@ end)
 if ai_enabled then
   later(function()
     add({
-      source = "olimorris/codecompanion.nvim",
-      depends = {
-        "nvim-lua/plenary.nvim",
-      },
+      "https://github.com/nvim-lua/plenary.nvim",
+      "https://github.com/olimorris/codecompanion.nvim",
     })
     local config = {
       adapters = {

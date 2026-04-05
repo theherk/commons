@@ -1,12 +1,21 @@
-local MiniDeps = require("mini.deps")
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+local add = vim.pack.add
+local now, later = Config.now, Config.later
 
 later(function()
-  add({ source = "kevinhwang91/nvim-bqf" })
+  add({ "https://github.com/kevinhwang91/nvim-bqf" })
   require("bqf").setup()
 end)
 
-later(function() require("mini.ai").setup() end)
+later(function()
+  require("mini.ai").setup({
+    mappings = {
+      around_next = "",
+      inside_next = "",
+      around_last = "",
+      inside_last = "",
+    },
+  })
+end)
 
 later(function() require("mini.align").setup() end)
 
@@ -112,16 +121,14 @@ later(function()
   vim.keymap.set("n", "<leader>fv", "<cmd>Pick visit_paths<cr>", { desc = "visits" })
 end)
 
-now(function() add({ source = "MunifTanjim/nui.nvim" }) end)
+now(function() add({ "https://github.com/MunifTanjim/nui.nvim" }) end)
 
 later(function()
   add({
-    source = "nvim-neo-tree/neo-tree.nvim",
-    depends = {
-      "echasnovski/mini.icons",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-    },
+    "https://github.com/echasnovski/mini.nvim",
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/MunifTanjim/nui.nvim",
+    "https://github.com/nvim-neo-tree/neo-tree.nvim",
   })
   require("neo-tree").setup({
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
@@ -142,27 +149,8 @@ later(function()
   vim.keymap.set("n", "<ds-e>", "<cmd>Neotree toggle<cr>", { desc = "toggle neotree" })
 end)
 
--- Disable aerial until stevearc/aerial.nvim#441 is resolved.
--- later(function()
---   add({ source = "stevearc/aerial.nvim" })
---   require("aerial").setup({
---     layout = {
---       default_direction = "right",
---       placement = "edge",
---       width = 44,
---     },
---     on_attach = function(bufnr)
---       vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
---       vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
---     end,
---   })
---   vim.keymap.set("n", "<leader>co", "<cmd>AerialToggle right<cr>", { desc = "outline (aerial)" })
---   vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { desc = "prev symbol" })
---   vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { desc = "next symbol" })
--- end)
-
 later(function()
-  add({ source = "voldikss/vim-browser-search" })
+  add({ "https://github.com/voldikss/vim-browser-search" })
   vim.g.browser_search_builtin_engines = {
     duckduckgo = "https://duckduckgo.com/?q=%s",
     github = "https://github.com/search?q=%s",
@@ -179,4 +167,9 @@ later(function()
   vim.keymap.set("n", "<leader>sb", ":BrowserSearch<space>", { desc = "browser" })
   vim.keymap.set("n", "<cs-b>", "<Plug>SearchNormal", { desc = "browser search" })
   vim.keymap.set("v", "<cs-b>", "<Plug>SearchVisual", { desc = "browser search" })
+end)
+
+later(function()
+  vim.cmd.packadd("nvim.undotree")
+  vim.keymap.set("n", "<leader>tu", "<cmd>Undotree<cr>", { desc = "undotree" })
 end)

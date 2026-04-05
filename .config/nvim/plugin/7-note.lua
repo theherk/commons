@@ -1,5 +1,5 @@
-local MiniDeps = require("mini.deps")
-local add, later = MiniDeps.add, MiniDeps.later
+local add = vim.pack.add
+local later = Config.later
 
 local onedrive = os.getenv("ONEDRIVE") or "/Users/h4s/Library/CloudStorage/OneDrive"
 local function workspaces()
@@ -16,13 +16,10 @@ end
 
 later(function()
   add({
-    source = "obsidian-nvim/obsidian.nvim",
-    depend = {
-      "echasnovski/mini.pick",
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      -- Required pngpaste on MacOS. `brew install pngpaste`
-    },
+    "https://github.com/echasnovski/mini.nvim",
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/nvim-treesitter/nvim-treesitter",
+    "https://github.com/obsidian-nvim/obsidian.nvim",
   })
   require("obsidian").setup({
     daily_notes = {

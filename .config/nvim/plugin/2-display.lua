@@ -1,5 +1,5 @@
-local MiniDeps = require("mini.deps")
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+local add = vim.pack.add
+local now, later = Config.now, Config.later
 local Icons = require("module.icons")
 local Util = require("module.util")
 
@@ -20,10 +20,7 @@ vim.o.guicursor = table.concat({
 }, ",")
 
 now(function()
-  add({
-    source = "catppuccin/nvim",
-    name = "catppuccin",
-  })
+  add({ { src = "https://github.com/catppuccin/nvim", name = "catppuccin" } })
   local flavour = "frappe"
   require("catppuccin").setup({
     color_overrides = { all = { green = require("catppuccin.palettes").get_palette(flavour).teal } },
@@ -68,7 +65,7 @@ now(function()
 end)
 
 later(function()
-  add({ source = "brenoprata10/nvim-highlight-colors" })
+  add({ "https://github.com/brenoprata10/nvim-highlight-colors" })
   require("nvim-highlight-colors").setup({})
   vim.keymap.set("n", "<leader>tC", require("nvim-highlight-colors").toggle, { desc = "colorizer" })
 end)
@@ -92,13 +89,13 @@ now(function()
 end)
 
 later(function()
-  add({ source = "folke/todo-comments.nvim" })
+  add({ "https://github.com/folke/todo-comments.nvim" })
   require("todo-comments").setup()
   vim.keymap.set("n", "<leader>st", "<cmd>TodoQuickFix<cr>", { desc = "todos" })
 end)
 
 now(function()
-  add({ source = "goolord/alpha-nvim" })
+  add({ "https://github.com/goolord/alpha-nvim" })
   -- ascii-image-converter bruce-matlocktheartist_200w.png -b --dither -H 22
   -- Text generated with figlet.
   -- Joined with custom python.
@@ -150,11 +147,7 @@ now(function()
 end)
 
 later(function()
-  add({
-    source = "iamcco/markdown-preview.nvim",
-    name = "markdown-preview",
-    hooks = { post_checkout = function() vim.fn["mkdp#util#install"]() end },
-  })
+  add({ { src = "https://github.com/iamcco/markdown-preview.nvim", name = "markdown-preview" } })
   vim.g.mkdp_refresh_slow = 1
 end)
 
@@ -217,7 +210,7 @@ now(function()
 end)
 
 now(function()
-  add({ source = "nvim-lualine/lualine.nvim" })
+  add({ "https://github.com/nvim-lualine/lualine.nvim" })
   local custom = require("lualine.themes.catppuccin-frappe")
   custom.normal.c.bg = "none"
   ---@diagnostic disable-next-line: undefined-field
@@ -274,15 +267,13 @@ now(function()
   })
 end)
 
-now(function() add({ source = "nvim-lua/plenary.nvim" }) end)
+now(function() add({ "https://github.com/nvim-lua/plenary.nvim" }) end)
 
 now(function()
   add({
-    source = "willothy/nvim-cokeline",
-    depends = {
-      "echasnovski/mini.icons",
-      "nvim-lua/plenary.nvim",
-    },
+    "https://github.com/echasnovski/mini.nvim",
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/willothy/nvim-cokeline",
   })
   local coke = require("module.coke")
   local hlg = require("cokeline.hlgroups")

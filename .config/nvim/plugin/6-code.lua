@@ -1,14 +1,14 @@
-local MiniDeps = require("mini.deps")
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+local add = vim.pack.add
+local now, later = Config.now, Config.later
 local Lsp = require("module.lsp")
 
 later(function()
-  add({ source = "aaronik/treewalker.nvim" })
+  add({ "https://github.com/aaronik/treewalker.nvim" })
   require("treewalker").setup()
 end)
 
 later(function()
-  add({ source = "MeanderingProgrammer/render-markdown.nvim" })
+  add({ "https://github.com/MeanderingProgrammer/render-markdown.nvim" })
   require("render-markdown").setup({
     code = {
       border = "none",
@@ -25,7 +25,7 @@ later(function()
 end)
 
 later(function()
-  add({ source = "tadmccorkle/markdown.nvim" })
+  add({ "https://github.com/tadmccorkle/markdown.nvim" })
   require("markdown").setup({
     mappings = {
       go_curr_heading = "[c",
@@ -41,10 +41,7 @@ later(function()
 end)
 
 later(function()
-  add({
-    source = "nvim-treesitter/nvim-treesitter",
-    hooks = { post_checkout = function() vim.cmd("TSUpdate") end },
-  })
+  add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
 
   vim.api.nvim_create_autocmd("VimEnter", {
     once = true,
@@ -80,13 +77,6 @@ later(function()
           "yaml",
         },
         highlight = { enable = true },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            node_incremental = "v",
-            node_decremental = "V",
-          },
-        },
         indent = { enable = true },
         modules = {},
         sync_install = false,
@@ -99,8 +89,8 @@ end)
 
 now(function()
   add({
-    source = "fredeeb/tardis.nvim",
-    depends = { "nvim-lua/plenary.nvim" },
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/fredeeb/tardis.nvim",
   })
   require("tardis-nvim").setup()
   vim.keymap.set("n", "<leader>gt", "<cmd>Tardis<cr>", { desc = "tardis" })
@@ -108,10 +98,8 @@ end)
 
 now(function()
   add({
-    source = "NeogitOrg/neogit",
-    depends = {
-      "nvim-lua/plenary.nvim",
-    },
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/NeogitOrg/neogit",
   })
   require("neogit").setup({
     disable_insert_on_commit = false,
@@ -141,7 +129,6 @@ now(function()
     use_per_project_settings = true,
   })
   vim.keymap.set("n", "<leader>gG", "<cmd>Neogit<cr>", { desc = "neogit" })
-  -- Launch directly if "NVIM_NEOGIT=1".
   if vim.env.NVIM_NEOGIT == "1" then
     vim.api.nvim_create_autocmd("VimEnter", {
       callback = function() require("neogit").open() end,
@@ -149,19 +136,19 @@ now(function()
     vim.api.nvim_create_autocmd("FileType", {
       pattern = "NeogitStatus",
       callback = function()
-        vim.defer_fn(function() vim.keymap.set("n", "q", "<cmd>qa<cr>", { buffer = true, desc = "quit neovim" }) end, 100) -- Delay to ensure Neogit sets its mapping first.
+        vim.defer_fn(function() vim.keymap.set("n", "q", "<cmd>qa<cr>", { buffer = true, desc = "quit neovim" }) end, 100)
       end,
     })
   end
 end)
 
 later(function()
-  add("echasnovski/mini-git")
+  add({ "https://github.com/echasnovski/mini-git" })
   require("mini.git").setup()
 end)
 
 later(function()
-  add("echasnovski/mini.diff")
+  add({ "https://github.com/echasnovski/mini.diff" })
   local diff = require("mini.diff")
   diff.setup()
   vim.keymap.set("n", "<leader>go", diff.toggle_overlay, { desc = "diff overlay" })
@@ -170,8 +157,8 @@ end)
 
 later(function()
   add({
-    source = "linrongbin16/gitlinker.nvim",
-    depends = { "nvim-lua/plenary.nvim" },
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/linrongbin16/gitlinker.nvim",
   })
   local gitlinker = require("gitlinker")
   local actions = require("gitlinker.actions")
@@ -205,7 +192,6 @@ later(function()
     local bufname = vim.api.nvim_buf_get_name(0)
     local filename, revision = bufname:match("^(.+)%s+%((.+)%)$")
     if filename and revision then
-      -- Get the full commit hash from the short revision
       local Job = require("plenary.job")
       local job = Job:new({
         command = "git",
@@ -240,7 +226,7 @@ later(function()
 end)
 
 later(function()
-  add({ source = "stevearc/conform.nvim" })
+  add({ "https://github.com/stevearc/conform.nvim" })
   require("conform").setup({
     formatters_by_ft = {
       lua = { "stylua" },
@@ -252,14 +238,12 @@ later(function()
       css = { "prettierd" },
       json = { "prettierd" },
       markdown = { "prettierd" },
-      -- These LSP servers handle their own formatting natively:
-      -- gopls (gofumpt=true + imports), ruff, terraformls, yamlls
     },
   })
 end)
 
 later(function()
-  add({ source = "mfussenegger/nvim-lint" })
+  add({ "https://github.com/mfussenegger/nvim-lint" })
   require("lint").linters_by_ft = {
     fish = { "fish" },
     dockerfile = { "hadolint" },
@@ -272,7 +256,6 @@ end)
 later(function()
   local lsp = require("module.lsp")
 
-  -- LSP Configuration
   local servers = {
     lua_ls = {
       cmd = { "lua-language-server" },
@@ -419,7 +402,6 @@ later(function()
     },
   }
 
-  -- mpls: on-demand markdown preview (not auto-enabled)
   vim.lsp.config("mpls", {
     cmd = { "mpls", "--theme", "dark", "--code-style", "catppuccin-frappe", "--enable-emoji", "--enable-footnotes" },
     filetypes = { "markdown" },
@@ -434,26 +416,22 @@ later(function()
     end
   end, { desc = "toggle preview" })
 
-  -- LSP keymaps
   vim.keymap.set("n", "<leader>cf", function() require("conform").format({ lsp_fallback = true }) end, { desc = "format" })
   vim.keymap.set("n", "<leader>tf", function() Lsp.toggle() end, { desc = "format on save" })
   vim.keymap.set("n", "<leader>th", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
   end, { desc = "inlay hints" })
 
-  -- LspAttach: keymaps and native completion
   vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
       local client = vim.lsp.get_client_by_id(args.data.client_id)
       local bufnr = args.buf
       if not client then return end
 
-      -- Enable native completion
-      if client.supports_method("textDocument/completion") then
+      if client:supports_method("textDocument/completion") then
         vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
       end
 
-      -- Disable bashls formatting (shfmt via conform takes precedence)
       if client.name == "bashls" then
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
@@ -466,7 +444,6 @@ later(function()
     end,
   })
 
-  -- Setup LSP
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   if vim.g.neovide then capabilities.textDocument.semanticTokens = vim.NIL end
 
@@ -476,7 +453,6 @@ later(function()
   end
   vim.lsp.enable(vim.tbl_keys(servers))
 
-  -- Format on save
   lsp.opts = {
     autoformat = true,
     format_notify = false,
@@ -491,7 +467,6 @@ later(function()
     end,
   })
 
-  -- Diagnostic config
   vim.diagnostic.config({
     underline = true,
     update_in_insert = false,
@@ -502,4 +477,9 @@ later(function()
     },
     severity_sort = true,
   })
+end)
+
+later(function()
+  vim.cmd.packadd("nvim.difftool")
+  vim.keymap.set("n", "<leader>gD", "<cmd>DiffTool<cr>", { desc = "difftool" })
 end)
