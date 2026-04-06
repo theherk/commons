@@ -65,6 +65,7 @@ local keys = {
   { key = "o", mods = "LEADER", action = ws.with_cache("out") },
   { key = "p", mods = "SUPER", action = ws.with_cache("switcher") },
   { key = "P", mods = "SUPER|SHIFT", action = act.ActivateCommandPalette },
+  { key = "X", mods = "LEADER", action = act.EmitEvent("smart_workspace_switcher.workspace_switcher.invalidate_cache") },
   { key = "\t", mods = "LEADER", action = ws.with_cache("prev") },
 
   {

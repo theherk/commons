@@ -11,6 +11,34 @@ local prev_pos = 1
 local stack = { "default" }
 local stack_pos = 1
 
+local workspace_exists = function(name)
+  for _, ws in ipairs(wezterm.mux.get_workspace_names()) do
+    if ws == name then return true end
+  end
+  return false
+end
+
+local stack_prune = function()
+  local pruned = {}
+  local new_pos = 1
+  local new_prev = 1
+  for i, name in ipairs(stack) do
+    if workspace_exists(name) then
+      table.insert(pruned, name)
+      if i == stack_pos then new_pos = #pruned end
+      if i == prev_pos then new_prev = #pruned end
+    end
+  end
+  if #pruned == 0 then
+    pruned = { "default" }
+    new_pos = 1
+    new_prev = 1
+  end
+  stack = pruned
+  stack_pos = math.min(new_pos, #stack)
+  prev_pos = math.min(new_prev, #stack)
+end
+
 module.with_cache = function(dest)
   if dest == "default" then
     return wezterm.action_callback(function(window, pane) window:perform_action(act.EmitEvent("stack-default"), pane) end)
@@ -60,6 +88,7 @@ end)
 wezterm.on("stack-log", function() stack_log() end)
 
 wezterm.on("stack-in", function(window, pane)
+  stack_prune()
   if stack_pos < #stack then
     prev_pos = stack_pos
     stack_pos = stack_pos + 1
@@ -70,6 +99,7 @@ end)
 wezterm.on("stack-insert", function() stack_insert() end)
 
 wezterm.on("stack-out", function(window, pane)
+  stack_prune()
   if stack_pos ~= 1 then
     prev_pos = stack_pos
     stack_pos = stack_pos - 1
@@ -78,13 +108,16 @@ wezterm.on("stack-out", function(window, pane)
 end)
 
 wezterm.on("stack-prev", function(window, pane)
-  local target_pos = prev_pos
-  prev_pos = stack_pos
-  stack_pos = target_pos
-  window:perform_action(act.SwitchToWorkspace({ name = stack[target_pos] }), pane)
+  stack_prune()
+  if prev_pos >= 1 and prev_pos <= #stack then
+    local target_pos = prev_pos
+    prev_pos = stack_pos
+    stack_pos = target_pos
+    window:perform_action(act.SwitchToWorkspace({ name = stack[target_pos] }), pane)
+  end
 end)
 
-wezterm.on("stack-switcher", function(window, pane) window:perform_action(workspace_switcher.switch_workspace(rg_pipe), pane) end)
+wezterm.on("stack-switcher", function(window, pane) window:perform_action(workspace_switcher.switch_workspace(rg_pipe, 86400), pane) end)
 
 workspace_switcher.set_workspace_formatter(function(label)
   return wezterm.format({
