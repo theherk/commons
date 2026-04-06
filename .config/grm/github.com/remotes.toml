@@ -48,3 +48,16 @@ name = "upstream"
 url = "https://github.com/karinushka/paneru"
 type = "https"
 
+[[trees.repos]]
+name = "theherk/smart_workspace_switcher.wezterm"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "git@github.com:theherk/smart_workspace_switcher.wezterm.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "https://github.com/MLFlexer/smart_workspace_switcher.wezterm.git"
+type = "https"
+
