@@ -94,34 +94,39 @@ function module.titled_cmd(args)
 end
 
 function module.update_right_status(window, pane)
-  local text = {}
-  module.tconcat(text, {
-    { Attribute = { Italic = true } },
-    { Foreground = { Color = theme.colors.hl_1 } },
-    { Text = "󱂬  " },
-    { Foreground = { Color = theme.colors.hl_2 } },
-    { Text = base_path_name(window:active_workspace()) },
-  })
-  if window:active_key_table() then
+  local ok, _ = pcall(function()
+    local text = {}
     module.tconcat(text, {
+      { Attribute = { Italic = true } },
       { Foreground = { Color = theme.colors.hl_1 } },
-      { Text = " | ⌨ " },
+      { Text = "󱂬  " },
       { Foreground = { Color = theme.colors.hl_2 } },
-      { Text = window:active_key_table() },
+      { Text = base_path_name(window:active_workspace()) },
     })
+    if window:active_key_table() then
+      module.tconcat(text, {
+        { Foreground = { Color = theme.colors.hl_1 } },
+        { Text = " | ⌨ " },
+        { Foreground = { Color = theme.colors.hl_2 } },
+        { Text = window:active_key_table() },
+      })
+    end
+    local tab = pane:tab()
+    if tab ~= nil then
+      for _, p in ipairs(tab:panes_with_info()) do
+        if p.is_zoomed then module.tconcat(text, {
+          { Text = " 🔍" },
+        }) end
+      end
+    end
+    module.tconcat(text, {
+      { Text = " " },
+    })
+    window:set_right_status(wezterm.format(text))
+  end)
+  if not ok then
+    window:set_right_status("")
   end
-  local tab = pane:tab()
-  if tab == nil then return end
-  for _, p in ipairs(tab:panes_with_info()) do
-    -- wezterm.log_info("zoomed: " .. tostring(p.is_zoomed))
-    if p.is_zoomed then module.tconcat(text, {
-      { Text = " 🔍" },
-    }) end
-  end
-  module.tconcat(text, {
-    { Text = " " },
-  })
-  window:set_right_status(wezterm.format(text))
 end
 
 function module.toggle_raicode()
