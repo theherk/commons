@@ -5,15 +5,8 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
   group = augroup("checktime"),
   callback = function()
     if vim.fn.getcmdwintype() ~= "" or vim.fn.mode() ~= "n" then return end
-    local bufnr = vim.api.nvim_get_current_buf()
-    local filename = vim.fn.expand("%")
-    if vim.bo[bufnr].buftype ~= "" or not vim.fn.filereadable(filename) == 1 then return end
-    local cursor_pos = vim.fn.getcurpos()
+    if vim.bo.buftype ~= "" then return end
     vim.cmd("checktime")
-    if not vim.bo[bufnr].modified and vim.fn.getftime(filename) > vim.b[bufnr].changedtick then
-      vim.cmd("edit")
-      vim.fn.setpos(".", cursor_pos)
-    end
   end,
 })
 
