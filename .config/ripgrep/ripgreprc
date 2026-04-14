@@ -1,6 +1,6 @@
 --hidden
 --glob=!.git/*
---color=always
+--color=auto
 --line-number
 --smart-case
 
