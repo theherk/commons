@@ -97,6 +97,7 @@ local keys = {
   -- Pane Management
   { key = "s", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
   { key = "v", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+  { key = "Q", mods = "LEADER", action = util.close_all_panes() },
   { key = "w", mods = "LEADER", action = act.CloseCurrentPane({ confirm = false }) },
   { key = "H", mods = "LEADER", action = act.AdjustPaneSize({ "Left", 5 }) },
   { key = "J", mods = "LEADER", action = act.AdjustPaneSize({ "Down", 5 }) },

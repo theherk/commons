@@ -247,6 +247,45 @@ function module.open_daily_note()
   end)
 end
 
+function module.close_all_panes()
+  local shells = { fish = true, zsh = true, bash = true }
+  return wezterm.action_callback(function(window, _)
+    for _, mux_win in ipairs(wezterm.mux.all_windows()) do
+      for _, tab in ipairs(mux_win:tabs()) do
+        for _, p in ipairs(tab:panes()) do
+          local title = p:get_title() or ""
+          if shells[title] then
+            p:send_text("exit\r")
+          else
+            p:send_text("\x03")
+            local cwd = p:get_current_working_dir()
+            if cwd then
+              local dir = cwd.file_path or cwd:gsub("^file://[^/]*", "")
+              wezterm.background_child_process({
+                "/opt/homebrew/bin/nvim",
+                "--server", dir .. "/_neovim",
+                "--remote-send", "<Cmd>qall!<CR>",
+              })
+            end
+          end
+        end
+      end
+    end
+    wezterm.time.call_after(0.5, function()
+      for _, mux_win in ipairs(wezterm.mux.all_windows()) do
+        for _, tab in ipairs(mux_win:tabs()) do
+          for _, p in ipairs(tab:panes()) do
+            local title = p:get_title() or ""
+            if shells[title] then
+              p:send_text("exit\r")
+            end
+          end
+        end
+      end
+    end)
+  end)
+end
+
 function module.user_var_changed(window, pane, name, value)
   local overrides = window:get_config_overrides() or {}
   if name == "ZEN_MODE" then
