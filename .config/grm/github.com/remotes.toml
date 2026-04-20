@@ -61,3 +61,16 @@ name = "upstream"
 url = "https://github.com/MLFlexer/smart_workspace_switcher.wezterm.git"
 type = "https"
 
+[[trees.repos]]
+name = "theherk/wezterm"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "git@github.com:theherk/wezterm.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "https://github.com/wez/wezterm"
+type = "https"
+
