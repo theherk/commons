@@ -93,22 +93,8 @@ presentation = 'auto'
     carbonModifiers = 2048
 
 [[leaderMode.bindings]]
-key = '0'
-url = 'tuna://run/path.%252FApplications%252FSlack.app/Open'
-
-[[leaderMode.bindings]]
-key = '1'
-url = 'tuna://run/path.%252FApplications%252FZen.app/Open'
-
-[[leaderMode.bindings]]
-key = '2'
-url = 'tuna://run/path.%252FApplications%252FWezTerm.app/Open'
-
-[[leaderMode.bindings]]
-iconPath = 'globe'
 key = 'b'
-label = 'Browse Repos'
-url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fbrowse-repos.sh/Run%20Text%20as%20Shell%20Command'
+url = 'tuna://run/path.%252FApplications%252FZen.app/Open'
 
 [[leaderMode.bindings]]
 iconPath = '/Applications/Zen.app'
@@ -137,7 +123,7 @@ label = 'Comms'
     url = 'tuna://run/path.%252FApplications%252FDiscord.app/Open'
 
     [[leaderMode.bindings.children]]
-    key = 'm'
+    key = 'e'
     url = 'tuna://run/path.%252FApplications%252FElement.app/Open'
 
     [[leaderMode.bindings.children]]
@@ -156,6 +142,12 @@ label = 'Comms'
 iconPath = 'lightswitch.off'
 key = 'm'
 label = 'Misc / Toggle'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'globe'
+    key = 'b'
+    label = 'Browse Repos'
+    url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fbrowse-repos.sh/Run%20Text%20as%20Shell%20Command'
 
     [[leaderMode.bindings.children]]
     iconPath = '/Applications/KeepingYouAwake.app'
@@ -231,6 +223,10 @@ iconPath = 'folder'
 key = 'p'
 label = 'Switch Project'
 url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fbrowse-projects.sh/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings]]
+key = 't'
+url = 'tuna://run/path.%252FApplications%252FWezTerm.app/Open'
 
 [[leaderMode.bindings]]
 iconPath = 'apple.terminal'
