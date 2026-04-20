@@ -275,10 +275,8 @@ function module.close_all_panes()
       for _, mux_win in ipairs(wezterm.mux.all_windows()) do
         for _, tab in ipairs(mux_win:tabs()) do
           for _, p in ipairs(tab:panes()) do
-            local title = p:get_title() or ""
-            if shells[title] then
-              p:send_text("exit\r")
-            end
+            p:send_text("\x03")
+            p:send_text("exit\r")
           end
         end
       end
