@@ -97,8 +97,18 @@ key = '0'
 url = 'tuna://run/path.%252FApplications%252FSlack.app/Open'
 
 [[leaderMode.bindings]]
-key = 'b'
+key = '1'
 url = 'tuna://run/path.%252FApplications%252FZen.app/Open'
+
+[[leaderMode.bindings]]
+key = '2'
+url = 'tuna://run/path.%252FApplications%252FWezTerm.app/Open'
+
+[[leaderMode.bindings]]
+iconPath = 'globe'
+key = 'b'
+label = 'Browse Repos'
+url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fbrowse-repos.sh/Run%20Text%20as%20Shell%20Command'
 
 [[leaderMode.bindings]]
 iconPath = '/Applications/Zen.app'
@@ -217,20 +227,10 @@ label = 'Notes'
     url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fdaily-note.sh/Run%20Text%20as%20Shell%20Command'
 
 [[leaderMode.bindings]]
-key = 't'
-url = 'tuna://run/path.%252FApplications%252FWezTerm.app/Open'
-
-[[leaderMode.bindings]]
 iconPath = 'folder'
 key = 'p'
 label = 'Switch Project'
-url = 'tuna://run/text.%252FUsers%252Fh4s%252F.config%252Ftuna%252Fscripts%252Flist-projects.sh/Run%20Text%20as%20Shell%20Command'
-
-[[leaderMode.bindings]]
-iconPath = 'globe'
-key = 'r'
-label = 'Browse Repos'
-url = 'tuna://run/text.%252FUsers%252Fh4s%252F.config%252Ftuna%252Fscripts%252Flist-forges.sh/Run%20Text%20as%20Shell%20Command'
+url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fbrowse-projects.sh/Run%20Text%20as%20Shell%20Command'
 
 [[leaderMode.bindings]]
 iconPath = 'apple.terminal'
