@@ -29,7 +29,6 @@ later(function()
       template = "journal",
     },
     frontmatter = {
-      enabled = false,
       func = function(note)
         local out = { tags = note.tags }
         if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
@@ -60,19 +59,31 @@ later(function()
     ui = { enable = false },
     workspaces = workspaces(),
   })
+  local function insert_link()
+    Obsidian.picker.find_notes({
+      prompt_title = "Insert link",
+      no_default_mappings = true,
+      callback = function(path)
+        local note = require("obsidian.note").from_file(path)
+        vim.api.nvim_put({ note:format_link() }, "", false, true)
+      end,
+    })
+  end
+  vim.keymap.set("n", "<leader>nll", insert_link, { desc = "obsidian insert link" })
   vim.keymap.set("n", "<leader>nb", "<cmd>Obsidian backlinks<cr>", { desc = "obsidian backlinks" })
   vim.keymap.set("n", "<leader>nf", "<cmd>Obsidian quick_switch<cr>", { desc = "obsidian find" })
   vim.keymap.set("n", "<leader>ni", "<cmd>Obsidian paste_img<cr>", { desc = "obsidian img" })
   vim.keymap.set("n", "<leader>njm", "<cmd>Obsidian tomorrow<cr>", { desc = "obsidian tomorrow" })
   vim.keymap.set("n", "<leader>njt", "<cmd>Obsidian today<cr>", { desc = "obsidian today" })
   vim.keymap.set("n", "<leader>njy", "<cmd>Obsidian yesterday<cr>", { desc = "obsidian yesterday" })
-  vim.keymap.set("n", "<leader>nll", "<cmd>Obsidian link<cr>", { desc = "obsidian link" })
-  vim.keymap.set("n", "<leader>nln", "<cmd>Obsidian link_new<cr>", { desc = "obsidian link new" })
+  vim.keymap.set("v", "<leader>nll", "<cmd>Obsidian link<cr>", { desc = "obsidian link" })
+  vim.keymap.set("v", "<leader>nln", "<cmd>Obsidian link_new<cr>", { desc = "obsidian link new" })
   vim.keymap.set("n", "<leader>nn", "<cmd>Obsidian new<cr>", { desc = "obsidian new" })
   vim.keymap.set("n", "<leader>no", "<cmd>Obsidian open<cr>", { desc = "obsidian open" })
   vim.keymap.set("n", "<leader>nr", "<cmd>Obsidian rename<cr>", { desc = "obsidian rename" })
   vim.keymap.set("n", "<leader>ns", "<cmd>Obsidian search<cr>", { desc = "obsidian search" })
   vim.keymap.set("n", "<leader>nt", "<cmd>Obsidian tags<cr>", { desc = "obsidian tags" })
+  vim.keymap.set("n", "<leader>nT", "<cmd>Obsidian template<cr>", { desc = "obsidian template" })
   vim.keymap.set("n", "<leader>nwb", "<cmd>Obsidian workspace brain<cr>", { desc = "select workspace brain" })
   vim.keymap.set("n", "<leader>nwd", "<cmd>Obsidian workspace dnbrain<cr>", { desc = "select workspace dnbrain" })
   vim.keymap.set("n", "<localleader>mx", require("obsidian.util").toggle_checkbox, { desc = "mark complete" })
