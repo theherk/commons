@@ -38,6 +38,7 @@ later(function()
         end
         return out
       end,
+      sort = { "id", "aliases", "start", "created", "modified", "tags" },
     },
     legacy_commands = false,
     note_id_func = function(title)
