@@ -219,10 +219,20 @@ label = 'Notes'
     url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fdaily-note.sh/Run%20Text%20as%20Shell%20Command'
 
 [[leaderMode.bindings]]
-iconPath = 'folder'
 key = 'p'
 label = 'Switch Project'
 url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fbrowse-projects.sh/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings]]
+iconPath = 'magnifyingglass.circle'
+key = 's'
+label = 'Search'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'magnifyingglass.circle'
+    key = 'c'
+    label = 'Confluence'
+    url = 'tuna://run/TunaSmartLinks.SmartLinksCatalog.Confluence/TunaSmartLinks.SmartLinksActionsCatalog.Open%20Smart%20Link%E2%80%A6/Tuna.CurrentSelectionCatalog.Current%20Text%20Selection'
 
 [[leaderMode.bindings]]
 key = 't'
@@ -250,6 +260,42 @@ leaderModeThemeStyle = 'cheatsheet'
 resultListNavigationBindings = 'vimStyle'
 screenPreference = 'activeWindow'
 themeIdentifier = 'com.brnbw.tuna.themes.default'
+
+[[smartLinks.entries]]
+enabled = true
+name = 'Confluence'
+requiresInput = true
+template = 'https://dnb-asa.atlassian.net/wiki/search?text={{input}}&spaces=PCBF&product=confluence'
+
+[[smartLinks.entries]]
+enabled = true
+name = 'DuckDuckGo'
+requiresInput = true
+template = 'https://duckduckgo.com/?q={{input}}'
+
+[[smartLinks.entries]]
+enabled = true
+name = 'GitHub'
+requiresInput = true
+template = 'https://github.com/search?q={{input}}'
+
+[[smartLinks.entries]]
+enabled = true
+name = 'Kagi'
+requiresInput = true
+template = 'https://kagi.com/search?q={{input}}'
+
+[[smartLinks.entries]]
+enabled = true
+name = 'Wikipedia'
+requiresInput = true
+template = 'https://en.wikipedia.org/wiki/Special:Search?search={{input}}'
+
+[[smartLinks.entries]]
+enabled = true
+name = 'YouTube'
+requiresInput = true
+template = 'https://www.youtube.com/results?search_query={{input}}'
 
 [[catalogSettings]]
 catalogIdentifier = 'com.brnbw.tuna.themes.default'
