@@ -27,7 +27,6 @@ While this configuration does prepare a great many tools, it revolves primarily 
 - [caddy](https://github.com/caddyserver/caddy): Simple file server.
 - [carapace](https://github.com/carapace-sh/carapace): Multi-shell completion bridge.
 - [coreutils](https://www.gnu.org/software/coreutils/): GNU core utilities.
-- [mise](https://github.com/jdx/mise): Polyglot runtime version manager and environment management.
 - [doll](https://github.com/xiaogdgenuine/Doll): Move dock applications to menu bar.
 - [dozer](https://github.com/Mortennn/Dozer): Hide menu bar icons on macOS.
 - [dua](https://github.com/Byron/dua-cli): Disk usage analyzer cli with interactive option.
@@ -44,6 +43,7 @@ While this configuration does prepare a great many tools, it revolves primarily 
 - [kindavim](https://github.com/godbout/kindavim): Vim-style navigation for macOS.
 - [lazydocker](https://github.com/jesseduffield/lazydocker): Container management TUI.
 - [lazygit](https://github.com/jesseduffield/lazygit): The best git interface outside emacs.
+- [mise](https://github.com/jdx/mise): Polyglot runtime version manager and environment management.
 - [navi](https://github.com/denisidoro/navi): Interactive cheatsheet tool for the command-line.
 - [Neovide](https://neovide.dev/): Smooth-scrolling Neovim GUI; occasional use.
 - [NeovideProject](https://github.com/theherk/NeovideProject): Project switching with [Zoxide Git Projects](https://www.raycast.com/theherk/zoxide-git-projects).
