@@ -1,3 +1,10 @@
+[settings]
+trusted_config_paths = [
+  "~/projects/dnb.ghe.com/",
+  "~/projects/github.com/",
+  "~/projects/gitlab.tech.dnb.no/",
+]
+
 [tools]
 python = "latest"
 node = "lts"

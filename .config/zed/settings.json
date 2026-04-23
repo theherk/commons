@@ -149,7 +149,7 @@
       },
     },
   },
-  "load_direnv": "shell_hook",
+
   "lsp": {
     "jdtls": {
       "initialization_options": {

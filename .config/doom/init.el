@@ -58,7 +58,6 @@
        spell
 
        :tools
-       direnv
        editorconfig
        lookup
        (lsp +peek)

@@ -39,7 +39,7 @@ if [ -f $HOME/.local-exports ]; then
 fi
 
 eval "$(atuin init zsh --disable-up-arrow)"
-eval "$(direnv hook zsh)"
+
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"

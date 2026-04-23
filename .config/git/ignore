@@ -20,6 +20,8 @@
 .emacs.d/recentf
 .emacs.d/tramp
 .envrc
+.mise.local
+.mise.toml
 .pypirc
 .shadowenv.d
 .tox

@@ -10,6 +10,8 @@
 .direnv
 .DS_Store
 .envrc
+.mise.local
+.mise.toml
 .pypirc
 .shadowenv.d
 .zed/settings.json

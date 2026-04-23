@@ -13,7 +13,7 @@ if status is-login
     set -gx EDITOR nvim
     set -gx VISUAL nvim
     set -gx CARGO_HOME $HOME/.cargo
-    set -gx DIRENV_LOG_FORMAT ""
+
     set -gx VENVS $HOME/.venvs
     set -gx P $HOME/projects
     set -gx GOPATH $P/go
@@ -97,6 +97,5 @@ end
 
 alias ls=eza
 
-direnv hook fish | source
 mise activate fish | source
 zoxide init fish | source
