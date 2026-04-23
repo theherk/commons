@@ -1,0 +1,7 @@
+[[snippets]]
+trigger = "!@dnb"
+replace = "adam.lawrence.sherwood@dnb.no"
+
+[[snippets]]
+trigger = "!@thg"
+replace = "theherk@gmail.com"
