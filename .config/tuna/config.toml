@@ -232,7 +232,25 @@ label = 'Search'
     iconPath = 'magnifyingglass.circle'
     key = 'c'
     label = 'Confluence'
-    url = 'tuna://run/TunaSmartLinks.SmartLinksCatalog.Confluence/TunaSmartLinks.SmartLinksActionsCatalog.Open%20Smart%20Link%E2%80%A6/Tuna.CurrentSelectionCatalog.Current%20Text%20Selection'
+    url = 'tuna://stage/TunaSmartLinks.SmartLinksCatalog.Confluence/TunaSmartLinks.SmartLinksActionsCatalog.Open%20Smart%20Link%E2%80%A6'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'magnifyingglass.circle'
+    key = 'C'
+    label = 'Confluence (Selection)'
+    url = 'tuna://run/Tuna.CurrentSelectionCatalog.Current%20Text%20Selection/TunaSmartLinks.SmartLinksActionsCatalog.Send%20to%20Smart%20Link%E2%80%A6/TunaSmartLinks.SmartLinksCatalog.Confluence'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'ticket'
+    key = 'j'
+    label = 'Jira'
+    url = 'tuna://stage/TunaSmartLinks.SmartLinksCatalog.Jira/TunaSmartLinks.SmartLinksActionsCatalog.Open%20Smart%20Link%E2%80%A6'
+
+    [[leaderMode.bindings.children]]
+    iconPath = 'ticket'
+    key = 'J'
+    label = 'Jira (Selection)'
+    url = 'tuna://run/Tuna.CurrentSelectionCatalog.Current%20Selection/TunaSmartLinks.SmartLinksActionsCatalog.Send%20to%20Smart%20Link%E2%80%A6/TunaSmartLinks.SmartLinksCatalog.Jira'
 
 [[leaderMode.bindings]]
 key = 't'
@@ -278,6 +296,12 @@ enabled = true
 name = 'GitHub'
 requiresInput = true
 template = 'https://github.com/search?q={{input}}'
+
+[[smartLinks.entries]]
+enabled = true
+name = 'Jira'
+requiresInput = true
+template = 'https://dnb-asa.atlassian.net/browse/{{input}}'
 
 [[smartLinks.entries]]
 enabled = true
