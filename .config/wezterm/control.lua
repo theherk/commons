@@ -19,28 +19,21 @@ local key_tables = {
   copy_mode = copy_mode,
 
   launch_split = {
+    { key = "a", action = util.launch_split({ "raicode", "-c" }) },
     { key = "b", action = util.launch_split({ "repo-browse.sh" }) },
+    { key = "e", action = util.launch_split({ "nvp" }) },
     { key = "f", action = util.launch_split({ "yazi" }) },
     { key = "g", action = util.launch_split({ "lazygit" }) },
-    { key = "r", action = util.launch_split({ "raicode" }) },
     { key = "u", action = util.launch_split({ "jjui" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
 
-  launch_tab = {
-    { key = "b", action = util.launch({ "repo-browse.sh" }) },
-    { key = "f", action = util.launch({ "yazi" }) },
-    { key = "g", action = util.launch({ "lazygit" }) },
-    { key = "r", action = util.launch({ "raicode" }) },
-    { key = "u", action = util.launch({ "jjui" }) },
-    { key = "Escape", action = "PopKeyTable" },
-  },
-
   launch_vertical = {
+    { key = "a", action = util.launch_vertical({ "raicode", "-c" }) },
     { key = "b", action = util.launch_vertical({ "repo-browse.sh" }) },
+    { key = "e", action = util.launch_vertical({ "nvp" }) },
     { key = "f", action = util.launch_vertical({ "yazi" }) },
     { key = "g", action = util.launch_vertical({ "lazygit" }) },
-    { key = "r", action = util.launch_vertical({ "raicode" }) },
     { key = "u", action = util.launch_vertical({ "jjui" }) },
     { key = "Escape", action = "PopKeyTable" },
   },
@@ -129,20 +122,8 @@ local keys = {
   { key = "0", mods = "LEADER", action = act.ActivateTab(-1) },
   { key = "0", mods = "SUPER", action = act.ActivateTab(-1) },
 
-  -- Browse repos
-  { key = "b", mods = "SUPER", action = util.launch({ "repo-browse.sh" }) },
-
-  -- Daily note
-  { key = "d", mods = "SUPER", action = util.open_daily_note() },
-
-  -- Toggle raicode
+  -- Toggle raicode side panel
   { key = "r", mods = "SUPER", action = util.toggle_raicode() },
-
-  -- Switch to raicode tab
-  { key = "R", mods = "SUPER|SHIFT", action = util.switch_to_tab("raicode-select.sh") },
-
-  -- Switch to nvp tab
-  { key = "e", mods = "SUPER", action = util.switch_to_tab("nvp") },
 
   -- Scrolling
   { key = "j", mods = "SUPER", action = act.ScrollByPage(0.5) },
@@ -150,15 +131,22 @@ local keys = {
   { key = "J", mods = "SUPER", action = act.ScrollByPage(1) },
   { key = "K", mods = "SUPER", action = act.ScrollByPage(-1) },
 
-  -- Launch
-  { key = "e", mods = "LEADER", action = util.launch({ "nvp" }) },
-  { key = "f", mods = "LEADER", action = util.launch({ "yazi" }) },
-  { key = "g", mods = "LEADER", action = util.launch({ "lazygit" }) },
-  { key = "R", mods = "LEADER", action = util.launch({ "raicode" }) },
+  -- Launch (switch-to-or-create tab)
+  { key = "a", mods = "LEADER", action = util.switch_to_tab("raicode", "raicode -c") },
+  { key = "b", mods = "LEADER", action = util.switch_to_tab("repo-browse.sh") },
+  { key = "e", mods = "LEADER", action = util.switch_to_tab("nvp") },
+  { key = "f", mods = "LEADER", action = util.switch_to_tab("yazi") },
+  { key = "g", mods = "LEADER", action = util.switch_to_tab("lazygit") },
+  { key = "t", mods = "LEADER", action = util.open_daily_note() },
+  { key = "u", mods = "LEADER", action = util.switch_to_tab("jjui") },
   { key = "S", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch_split", one_shot = true, until_unknown = true }) },
-  { key = "T", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch_tab", one_shot = true, until_unknown = true }) },
-  { key = "u", mods = "LEADER", action = util.launch({ "jjui" }) },
   { key = "V", mods = "LEADER", action = act.ActivateKeyTable({ name = "launch_vertical", one_shot = true, until_unknown = true }) },
+
+  -- Quick switch (Cmd)
+  { key = "a", mods = "SUPER", action = util.switch_to_tab("raicode", "raicode -c") },
+  { key = "e", mods = "SUPER", action = util.switch_to_tab("nvp") },
+  { key = "g", mods = "SUPER", action = util.switch_to_tab("lazygit") },
+  { key = "u", mods = "SUPER", action = util.switch_to_tab("jjui") },
 }
 
 function module.apply_to_config(config)

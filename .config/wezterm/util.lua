@@ -67,7 +67,7 @@ end
 --- rather than the layout of the newly launched pane.
 function module.launch_split(args)
   return act.SplitVertical({
-    args = { os.getenv("SHELL"), "-c", table.unpack(args) },
+    args = { os.getenv("SHELL"), "-c", table.concat(args, " ") },
     domain = "CurrentPaneDomain",
   })
 end
@@ -77,7 +77,7 @@ end
 --- rather than the layout of the newly launched pane.
 function module.launch_vertical(args)
   return act.SplitHorizontal({
-    args = { os.getenv("SHELL"), "-c", table.unpack(args) },
+    args = { os.getenv("SHELL"), "-c", table.concat(args, " ") },
     domain = "CurrentPaneDomain",
   })
 end
@@ -150,7 +150,7 @@ function module.toggle_raicode()
             "/opt/homebrew/bin/fish",
             "-l",
             "-c",
-            "printf '\\e]1337;SetUserVar=%s=%s\\a' RAICODE (echo -n 1 | base64); raicode-select.sh",
+            "printf '\\e]1337;SetUserVar=%s=%s\\a' RAICODE (echo -n 1 | base64); raicode -c",
           },
           domain = "CurrentPaneDomain",
         }),
