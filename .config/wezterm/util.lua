@@ -88,9 +88,9 @@ function module.tconcat(t1, t2)
   end
 end
 
-function module.titled_cmd(args)
-  local title = args[1]
-  return string.format("wezterm cli set-tab-title %s && %s", title, table.concat(args, " "))
+function module.titled_cmd(args, title)
+  title = title or args[1]
+  return string.format("wezterm cli set-tab-title %q && %s", title, table.concat(args, " "))
 end
 
 function module.update_right_status(window, pane)
@@ -191,7 +191,7 @@ function module.switch_to_tab(title, cmd)
     end
     local spawn_cmd = cmd or title
     mux_window:spawn_tab({
-      args = { os.getenv("SHELL"), "-l", "-c", module.titled_cmd({ spawn_cmd }) },
+      args = { os.getenv("SHELL"), "-l", "-c", module.titled_cmd({ spawn_cmd }, title) },
     })
   end)
 end
