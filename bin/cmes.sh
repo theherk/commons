@@ -48,11 +48,11 @@ else
 	fi
 fi
 
-MAX_DIFF_LINES=500
+MAX_DIFF_LINES=2000
 DIFF_LINES=$(echo "$DIFF" | wc -l)
 if [ "$DIFF_LINES" -gt "$MAX_DIFF_LINES" ]; then
 	echo "Warning: Diff is $DIFF_LINES lines, truncating to $MAX_DIFF_LINES." >&2
-	DIFF=$(echo "$DIFF" | head -n "$MAX_DIFF_LINES")
+	DIFF=$(echo "$DIFF" | head -n "$MAX_DIFF_LINES" || true)
 fi
 
 read -r -d '' PROMPT <<'EOF' || true
