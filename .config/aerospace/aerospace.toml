@@ -117,7 +117,7 @@ d = [ # desk layout when multimonitor is in play
     'workspace 🌀',
     'layout h_tiles',
     'workspace 📬',
-    'layout h_tiles',
+    'layout h_accordion',
     'workspace 🗨️',
     'layout h_accordion',
     'workspace 📡',
@@ -246,6 +246,10 @@ run = ['move-node-to-workspace ✏️']
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = ['move-node-to-workspace 📓']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = ['move-node-to-workspace 📬']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Outlook'
