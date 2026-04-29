@@ -131,6 +131,10 @@ label = 'Comms'
     url = 'tuna://run/path.%252FApplications%252FMicrosoft%2520Outlook.app/Open'
 
     [[leaderMode.bindings.children]]
+    key = 'm'
+    url = 'tuna://run/path.%252FSystem%252FApplications%252FMail.app/Open'
+
+    [[leaderMode.bindings.children]]
     key = 's'
     url = 'tuna://run/path.%252FApplications%252FSlack.app/Open'
 
