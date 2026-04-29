@@ -36,7 +36,7 @@ abbr -a not --position command rg -v
 abbr -a nv --position command neovide --fork
 abbr -a of --position command onefetch
 abbr -a pc --position anywhere --set-cursor "%| pbcopy"
-abbr -a pim --position command "$PIM"
+abbr -a pim --position command "$PIM -g"
 abbr -a r --position command rsync -rltvz -e ssh --progress
 abbr -a rcal --position command rusti-cal -c --starting-day 1
 abbr -a slackdev --position command "export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app"
