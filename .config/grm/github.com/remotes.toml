@@ -74,3 +74,15 @@ name = "upstream"
 url = "https://github.com/wez/wezterm"
 type = "https"
 
+[[trees.repos]]
+name = "dnbexperience/eufemia"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "git@github.com:theherk/eufemia.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "https://github.com/dnbexperience/eufemia"
+type = "https"
