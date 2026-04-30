@@ -52,7 +52,13 @@ end
 
 if status is-interactive
     function fish_title
-        echo (string replace $HOME '~' $PWD)
+        string replace $HOME '~' $PWD
+    end
+
+    if set -q ZELLIJ_SESSION_NAME
+        function __zellij_tab_name --on-variable PWD
+            command zellij action rename-tab (prompt_pwd)
+        end
     end
 
     set fzf_diff_highlighter delta --paging=never --width=20

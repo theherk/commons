@@ -1,6 +1,9 @@
 layout {
-    tab name="raicode" focus=true {
-        pane command="raicode" borderless=true close_on_exit=true focus=true
+    tab name="agent" focus=true {
+        pane borderless=true close_on_exit=true focus=true {
+            command "raicode"
+            args "-c"
+        }
         pane size=1 borderless=true {
             plugin location="file:~/bin/zjstatus.wasm" {
                 format_left   "{mode} {tabs}"
@@ -29,10 +32,10 @@ layout {
                 mode_prompt       "#[bg=blue] #[fg=blue, bold] {name}"
                 mode_tmux         "#[bg=green] #[fg=green, bold] {name}"
 
-                tab_normal            "#[fg=blue]|#[fg=yellow] {name} "
-                tab_normal_fullscreen "#[fg=blue]|#[fg=yellow] 🔍 {name} "
-                tab_active            "#[fg=blue]|#[bg=#414559,fg=magenta,bold,italic] {name} "
-                tab_active_fullscreen "#[fg=blue]|#[bg=#414559,fg=magenta,bold,italic] 🔍 {name} "
+                tab_normal            "#[fg=blue]|#[fg=yellow] {index}: {name} "
+                tab_normal_fullscreen "#[fg=blue]|#[fg=yellow] 🔍 {index}: {name} "
+                tab_active            "#[fg=blue]|#[bg=#414559,fg=magenta,bold,italic] {index}: {name} "
+                tab_active_fullscreen "#[fg=blue]|#[bg=#414559,fg=magenta,bold,italic] 🔍 {index}: {name} "
               }
         }
     }

@@ -2,12 +2,17 @@ copy_on_select false
 show_startup_tips false
 simplified_ui true
 theme "catppuccin-frappe"
+default_layout "default"
 
 keybinds {
     unbind "Ctrl n"
+    unbind "Ctrl t"
+    shared_except "locked" {
+        bind "Ctrl a" { SwitchToMode "tab"; }
+    }
     normal {
-      bind "Ctrl Shift r" { SwitchToMode "resize"; }
-      unbind "Ctrl q"
+        bind "Ctrl Shift r" { SwitchToMode "resize"; }
+        unbind "Ctrl q"
     }
     pane {
         bind "e" { Run "nvp" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
@@ -23,33 +28,48 @@ keybinds {
     }
     session {
         bind "p" { SwitchToMode "normal"; Run "zellij-project.fish" { floating true; close_on_exit true; }; }
+        bind "?" { LaunchOrFocusPlugin "zellij:about" { floating true; }; SwitchToMode "Normal"; }
     }
     tab {
-        bind "b" { NewTab { name "help"; layout "help"; }; SwitchToMode "normal"; }
-        bind "e" { NewTab { name "editor"; layout "editor"; }; SwitchToMode "normal"; }
-        bind "f" { NewTab { name "files"; layout "yazi"; }; SwitchToMode "normal"; }
-        bind "g" { NewTab { name "git"; layout "lazygit"; }; SwitchToMode "normal"; }
+        bind "a" {
+            MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
+                name "switch-tab"
+                payload "agent raicode"
+            }; SwitchToMode "normal";
+        }
+        bind "e" {
+            MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
+                name "switch-tab"
+                payload "editor editor"
+            }; SwitchToMode "normal";
+        }
+        bind "f" {
+            MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
+                name "switch-tab"
+                payload "files yazi"
+            }; SwitchToMode "normal";
+        }
+        bind "g" {
+            MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
+                name "switch-tab"
+                payload "git lazygit"
+            }; SwitchToMode "normal";
+        }
+        bind "u" {
+            MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
+                name "switch-tab"
+                payload "jj jjui"
+            }; SwitchToMode "normal";
+        }
         bind "n" { NewTab { layout "default"; }; SwitchToMode "normal"; }
-        bind "r" { NewTab { name "raicode"; layout "raicode"; }; SwitchToMode "normal"; }
-        bind "u" { NewTab { name "jj"; layout "jjui"; }; SwitchToMode "normal"; }
     }
 }
 
 plugins {
     about location="zellij:about"
-    compact-bar location="zellij:compact-bar"
-    configuration location="zellij:configuration"
-    filepicker location="zellij:strider" {
-        cwd "/"
-    }
-    plugin-manager location="zellij:plugin-manager"
     session-manager location="zellij:session-manager"
-    status-bar location="zellij:status-bar"
-    strider location="zellij:strider"
-    tab-bar location="zellij:tab-bar"
-    welcome-screen location="zellij:session-manager" {
-        welcome_screen true
-    }
 }
 
-load_plugins { }
+load_plugins {
+    "file:~/bin/zellij-tab-switcher.wasm"
+}
