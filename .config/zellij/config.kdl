@@ -37,6 +37,12 @@ keybinds {
                 payload "agent raicode"
             }; SwitchToMode "normal";
         }
+        bind "b" {
+            MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
+                name "switch-tab"
+                payload "browse-repos browse"
+            }; SwitchToMode "normal";
+        }
         bind "e" {
             MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
                 name "switch-tab"
