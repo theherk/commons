@@ -30,10 +30,10 @@ layout {
                 mode_prompt       "#[bg=blue] #[fg=blue, bold] {name}"
                 mode_tmux         "#[bg=green] #[fg=green, bold] {name}"
 
-                tab_normal            "#[fg=blue]|#[fg=yellow] {index}: {name} "
-                tab_normal_fullscreen "#[fg=blue]|#[fg=yellow] 🔍 {index}: {name} "
-                tab_active            "#[fg=blue]|#[bg=#414559,fg=magenta,bold,italic] {index}: {name} "
-                tab_active_fullscreen "#[fg=blue]|#[bg=#414559,fg=magenta,bold,italic] 🔍 {index}: {name} "
+                tab_normal            "#[fg=blue]|#[fg=blue] {index}#[fg=cyan]: #[fg=yellow]{name} "
+                tab_normal_fullscreen "#[fg=blue]|#[fg=blue] {index}#[fg=cyan]: #[fg=yellow]🔍 {name} "
+                tab_active            "#[fg=blue]|#[bg=#414559,fg=blue,bold] {index}#[bg=#414559,fg=cyan]: #[bg=#414559,fg=yellow]{name} "
+                tab_active_fullscreen "#[fg=blue]|#[bg=#414559,fg=blue,bold] {index}#[bg=#414559,fg=cyan]: #[bg=#414559,fg=yellow]🔍 {name} "
               }
         }
     }

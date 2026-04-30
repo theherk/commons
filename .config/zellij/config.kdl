@@ -34,7 +34,7 @@ keybinds {
         bind "a" {
             MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
                 name "switch-tab"
-                payload "agent raicode"
+                payload "agent agent"
             }; SwitchToMode "normal";
         }
         bind "b" {
