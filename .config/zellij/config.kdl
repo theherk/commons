@@ -68,6 +68,8 @@ keybinds {
             }; SwitchToMode "normal";
         }
         bind "n" { NewTab { layout "default"; }; SwitchToMode "normal"; }
+        bind "[" { GoToPreviousTab; SwitchToMode "normal"; }
+        bind "]" { GoToNextTab; SwitchToMode "normal"; }
     }
 }
 
