@@ -43,6 +43,12 @@ keybinds {
                 payload "browse-repos browse"
             }; SwitchToMode "normal";
         }
+        bind "m" {
+            MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
+                name "switch-tab"
+                payload "main default"
+            }; SwitchToMode "normal";
+        }
         bind "e" {
             MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
                 name "switch-tab"
