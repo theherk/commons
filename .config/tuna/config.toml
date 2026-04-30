@@ -86,7 +86,7 @@ presentation = 'auto'
 
     [hotkeys.custom.command]
     actionIdentifier = 'TunaCore.CommonActionsCatalog.Open'
-    subjectIdentifier = 'TunaCore.AllApplicationsCatalog.WezTerm'
+    subjectIdentifier = 'TunaCore.AllApplicationsCatalog.Ghostty'
 
     [hotkeys.custom.shortcut]
     carbonKeyCode = 19
@@ -258,7 +258,7 @@ label = 'Search'
 
 [[leaderMode.bindings]]
 key = 't'
-url = 'tuna://run/path.%252FApplications%252FWezTerm.app/Open'
+url = 'tuna://run/path.%252FApplications%252FGhostty.app/Open'
 
 [[leaderMode.bindings]]
 iconPath = 'apple.terminal'
