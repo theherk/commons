@@ -9,3 +9,4 @@ trusted_config_paths = [
 python = "latest"
 node = "lts"
 java = "latest"
+terraform = "1.6"
