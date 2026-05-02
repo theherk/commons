@@ -15,6 +15,7 @@ unfocused-split-opacity = 0.54
 # custom-shader = shaders/in-game-crt.glsl
 # custom-shader = shaders/glow-rgbsplit-twitchy.glsl
 
+# custom-shader = shaders/expanse-ring-gate.glsl
 custom-shader = shaders/gears-and-belts.glsl
 
 # custom-shader = shaders/inside-the-matrix.glsl
