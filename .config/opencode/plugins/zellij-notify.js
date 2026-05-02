@@ -6,7 +6,7 @@ export const ZellijNotifyPlugin = async ({ $ }) => {
         const sessions = await $`zellij list-sessions -ns`.quiet().text()
         for (const session of sessions.trim().split("\n").filter(Boolean)) {
           const msg = session === current
-            ? "zjstatus::notify::"
+            ? "zjstatus::notify:: "
             : "zjstatus::notify:: " + current
           await $`zellij --session ${session} pipe -- ${msg}`.quiet().nothrow()
         }
