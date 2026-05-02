@@ -12,11 +12,197 @@ folderDepthOverrides = []
 catalogIdentifier = 'Tuna.FileSystemBrowseSort'
 sortOrder = 'capturedAt.desc'
 
+[[comboMode.bindings]]
+key = 'b'
+url = 'tuna://run/path.%252FApplications%252FZen.app/Open'
+
+[[comboMode.bindings]]
+iconPath = '/Applications/Zen.app'
+key = 'B'
+label = 'Browsers'
+
+    [[comboMode.bindings.children]]
+    key = 'o'
+    url = 'tuna://run/path.%252FApplications%252FOrion.app/Open'
+
+    [[comboMode.bindings.children]]
+    key = 's'
+    url = 'tuna://run/path.%252FSystem%252FVolumes%252FPreboot%252FCryptexes%252FApp%252FSystem%252FApplications%252FSafari.app/Open'
+
+    [[comboMode.bindings.children]]
+    key = 'z'
+    url = 'tuna://run/path.%252FApplications%252FZen.app/Open'
+
+[[comboMode.bindings]]
+iconPath = 'bubble'
+key = 'c'
+label = 'Comms'
+
+    [[comboMode.bindings.children]]
+    key = 'd'
+    url = 'tuna://run/path.%252FApplications%252FDiscord.app/Open'
+
+    [[comboMode.bindings.children]]
+    key = 'e'
+    url = 'tuna://run/path.%252FApplications%252FElement.app/Open'
+
+    [[comboMode.bindings.children]]
+    key = 'o'
+    url = 'tuna://run/path.%252FApplications%252FMicrosoft%2520Outlook.app/Open'
+
+    [[comboMode.bindings.children]]
+    key = 'm'
+    url = 'tuna://run/path.%252FSystem%252FApplications%252FMail.app/Open'
+
+    [[comboMode.bindings.children]]
+    key = 's'
+    url = 'tuna://run/path.%252FApplications%252FSlack.app/Open'
+
+    [[comboMode.bindings.children]]
+    key = 't'
+    url = 'tuna://run/path.%252FApplications%252FMicrosoft%2520Teams.app/Open'
+
+[[comboMode.bindings]]
+iconPath = 'lightswitch.off'
+key = 'm'
+label = 'Misc / Toggle'
+
+    [[comboMode.bindings.children]]
+    iconPath = 'globe'
+    key = 'b'
+    label = 'Browse Repos'
+    url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fbrowse-repos.sh/Run%20Text%20as%20Shell%20Command'
+
+    [[comboMode.bindings.children]]
+    iconPath = '/Applications/KeepingYouAwake.app'
+    key = 'c'
+    label = 'Caffeinate'
+    url = 'tuna://run/url.keepingyouawake:%252F%252F%252Ftoggle/Open%20URL'
+
+    [[comboMode.bindings.children]]
+    iconPath = 'sun.max'
+    key = 'l'
+    label = 'Light/Dark Toggle'
+    url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Flight-dark-toggle.sh/Run%20Text%20as%20Shell%20Command'
+
+    [[comboMode.bindings.children]]
+    iconPath = 'book'
+    key = 'd'
+    label = 'Define Word'
+    url = 'tuna://run/text.%252FUsers%252Fh4s%252F.config%252Ftuna%252Fscripts%252Fdefine-word.sh/Run%20Text%20as%20Shell%20Command'
+
+    [[comboMode.bindings.children]]
+    iconPath = '/System/Applications/Utilities/Screenshot.app'
+    key = 's'
+    label = 'Screenshot'
+
+        [[comboMode.bindings.children.children]]
+        iconPath = 'square.dashed'
+        key = 'a'
+        label = 'Screenshot Area'
+        url = 'tuna://run/text.screencapture%2520-ic/Run%20Text%20as%20Shell%20Command'
+
+        [[comboMode.bindings.children.children]]
+        iconPath = 'desktopcomputer'
+        key = 's'
+        label = 'Screenshot Screen'
+        url = 'tuna://run/text.screencapture%2520-c/Run%20Text%20as%20Shell%20Command'
+
+        [[comboMode.bindings.children.children]]
+        iconPath = 'macwindow'
+        key = 'w'
+        label = 'Screenshot Window'
+        url = 'tuna://run/text.screencapture%2520-wic/Run%20Text%20as%20Shell%20Command'
+
+        [[comboMode.bindings.children.children]]
+        iconPath = '/System/Applications/Utilities/Screenshot.app'
+        key = 'S'
+        url = 'tuna://run/TunaCore.SystemApplicationsCatalog.Screenshot/Open'
+
+    [[comboMode.bindings.children]]
+    iconPath = '/Applications/Proton Pass.app'
+    key = 'p'
+    url = 'tuna://run/Tuna.Internal.RecentObjectsCatalog.Proton%20Pass/Open'
+
+[[comboMode.bindings]]
+iconPath = '/Applications/Obsidian.app'
+key = 'n'
+label = 'Notes'
+
+    [[comboMode.bindings.children]]
+    iconPath = 'brain'
+    key = 'b'
+    label = 'brain'
+    url = 'tuna://run/url.obsidian:%252F%252Fopen%253Fvault=brain/Open%20URL'
+
+    [[comboMode.bindings.children]]
+    iconPath = 'danishkronesign.bank.building'
+    key = 'd'
+    label = 'dnbrain'
+    url = 'tuna://run/url.obsidian:%252F%252Fopen%253Fvault=dnbrain/Open%20URL'
+
+    [[comboMode.bindings.children]]
+    iconPath = 'pencil.line'
+    key = 't'
+    label = 'Today'
+    url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fdaily-note.sh/Run%20Text%20as%20Shell%20Command'
+
+[[comboMode.bindings]]
+key = 'p'
+label = 'Switch Project'
+url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fbrowse-projects.sh/Run%20Text%20as%20Shell%20Command'
+
+[[comboMode.bindings]]
+iconPath = 'magnifyingglass.circle'
+key = 's'
+label = 'Search'
+
+    [[comboMode.bindings.children]]
+    iconPath = 'magnifyingglass.circle'
+    key = 'c'
+    label = 'Confluence'
+    url = 'tuna://stage/TunaSmartLinks.SmartLinksCatalog.Confluence/TunaSmartLinks.SmartLinksActionsCatalog.Open%20Smart%20Link%E2%80%A6'
+
+    [[comboMode.bindings.children]]
+    iconPath = 'magnifyingglass.circle'
+    key = 'C'
+    label = 'Confluence (Selection)'
+    url = 'tuna://run/Tuna.CurrentSelectionCatalog.Current%20Text%20Selection/TunaSmartLinks.SmartLinksActionsCatalog.Send%20to%20Smart%20Link%E2%80%A6/TunaSmartLinks.SmartLinksCatalog.Confluence'
+
+    [[comboMode.bindings.children]]
+    iconPath = 'ticket'
+    key = 'j'
+    label = 'Jira'
+    url = 'tuna://stage/TunaSmartLinks.SmartLinksCatalog.Jira/TunaSmartLinks.SmartLinksActionsCatalog.Open%20Smart%20Link%E2%80%A6'
+
+    [[comboMode.bindings.children]]
+    iconPath = 'ticket'
+    key = 'J'
+    label = 'Jira (Selection)'
+    url = 'tuna://run/Tuna.CurrentSelectionCatalog.Current%20Selection/TunaSmartLinks.SmartLinksActionsCatalog.Send%20to%20Smart%20Link%E2%80%A6/TunaSmartLinks.SmartLinksCatalog.Jira'
+
+[[comboMode.bindings]]
+key = 't'
+url = 'tuna://run/path.%252FApplications%252FGhostty.app/Open'
+
+[[comboMode.bindings]]
+iconPath = 'apple.terminal'
+key = 'T'
+label = 'Terminals'
+
+    [[comboMode.bindings.children]]
+    key = 'w'
+    url = 'tuna://run/path.%252FApplications%252FWezTerm.app/Open'
+
+    [[comboMode.bindings.children]]
+    key = 'g'
+    url = 'tuna://run/path.%252FApplications%252FGhostty.app/Open'
+
 [hotkeys.app.activate]
 carbonKeyCode = 49
 carbonModifiers = 256
 
-[hotkeys.app.leaderMode]
+[hotkeys.app.comboMode]
 carbonKeyCode = 3
 carbonModifiers = 4096
 
@@ -92,193 +278,12 @@ presentation = 'auto'
     carbonKeyCode = 19
     carbonModifiers = 2048
 
-[[leaderMode.bindings]]
-key = 'b'
-url = 'tuna://run/path.%252FApplications%252FZen.app/Open'
-
-[[leaderMode.bindings]]
-iconPath = '/Applications/Zen.app'
-key = 'B'
-label = 'Browsers'
-
-    [[leaderMode.bindings.children]]
-    key = 'o'
-    url = 'tuna://run/path.%252FApplications%252FOrion.app/Open'
-
-    [[leaderMode.bindings.children]]
-    key = 's'
-    url = 'tuna://run/path.%252FSystem%252FVolumes%252FPreboot%252FCryptexes%252FApp%252FSystem%252FApplications%252FSafari.app/Open'
-
-    [[leaderMode.bindings.children]]
-    key = 'z'
-    url = 'tuna://run/path.%252FApplications%252FZen.app/Open'
-
-[[leaderMode.bindings]]
-iconPath = 'bubble'
-key = 'c'
-label = 'Comms'
-
-    [[leaderMode.bindings.children]]
-    key = 'd'
-    url = 'tuna://run/path.%252FApplications%252FDiscord.app/Open'
-
-    [[leaderMode.bindings.children]]
-    key = 'e'
-    url = 'tuna://run/path.%252FApplications%252FElement.app/Open'
-
-    [[leaderMode.bindings.children]]
-    key = 'o'
-    url = 'tuna://run/path.%252FApplications%252FMicrosoft%2520Outlook.app/Open'
-
-    [[leaderMode.bindings.children]]
-    key = 'm'
-    url = 'tuna://run/path.%252FSystem%252FApplications%252FMail.app/Open'
-
-    [[leaderMode.bindings.children]]
-    key = 's'
-    url = 'tuna://run/path.%252FApplications%252FSlack.app/Open'
-
-    [[leaderMode.bindings.children]]
-    key = 't'
-    url = 'tuna://run/path.%252FApplications%252FMicrosoft%2520Teams.app/Open'
-
-[[leaderMode.bindings]]
-iconPath = 'lightswitch.off'
-key = 'm'
-label = 'Misc / Toggle'
-
-    [[leaderMode.bindings.children]]
-    iconPath = 'globe'
-    key = 'b'
-    label = 'Browse Repos'
-    url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fbrowse-repos.sh/Run%20Text%20as%20Shell%20Command'
-
-    [[leaderMode.bindings.children]]
-    iconPath = '/Applications/KeepingYouAwake.app'
-    key = 'c'
-    label = 'Caffeinate'
-    url = 'tuna://run/url.keepingyouawake:%252F%252F%252Ftoggle/Open%20URL'
-
-    [[leaderMode.bindings.children]]
-    iconPath = 'sun.max'
-    key = 'l'
-    label = 'Light/Dark Toggle'
-    url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Flight-dark-toggle.sh/Run%20Text%20as%20Shell%20Command'
-
-    [[leaderMode.bindings.children]]
-    iconPath = 'book'
-    key = 'd'
-    label = 'Define Word'
-    url = 'tuna://run/text.%252FUsers%252Fh4s%252F.config%252Ftuna%252Fscripts%252Fdefine-word.sh/Run%20Text%20as%20Shell%20Command'
-
-    [[leaderMode.bindings.children]]
-    iconPath = '/System/Applications/Utilities/Screenshot.app'
-    key = 's'
-    label = 'Screenshot'
-
-        [[leaderMode.bindings.children.children]]
-        iconPath = 'square.dashed'
-        key = 'a'
-        label = 'Screenshot Area'
-        url = 'tuna://run/text.screencapture%2520-ic/Run%20Text%20as%20Shell%20Command'
-
-        [[leaderMode.bindings.children.children]]
-        iconPath = 'desktopcomputer'
-        key = 's'
-        label = 'Screenshot Screen'
-        url = 'tuna://run/text.screencapture%2520-c/Run%20Text%20as%20Shell%20Command'
-
-        [[leaderMode.bindings.children.children]]
-        iconPath = 'macwindow'
-        key = 'w'
-        label = 'Screenshot Window'
-        url = 'tuna://run/text.screencapture%2520-wic/Run%20Text%20as%20Shell%20Command'
-
-        [[leaderMode.bindings.children.children]]
-        iconPath = '/System/Applications/Utilities/Screenshot.app'
-        key = 'S'
-        url = 'tuna://run/TunaCore.SystemApplicationsCatalog.Screenshot/Open'
-
-[[leaderMode.bindings]]
-iconPath = '/Applications/Obsidian.app'
-key = 'n'
-label = 'Notes'
-
-    [[leaderMode.bindings.children]]
-    iconPath = 'brain'
-    key = 'b'
-    label = 'brain'
-    url = 'tuna://run/url.obsidian:%252F%252Fopen%253Fvault=brain/Open%20URL'
-
-    [[leaderMode.bindings.children]]
-    iconPath = 'danishkronesign.bank.building'
-    key = 'd'
-    label = 'dnbrain'
-    url = 'tuna://run/url.obsidian:%252F%252Fopen%253Fvault=dnbrain/Open%20URL'
-
-    [[leaderMode.bindings.children]]
-    iconPath = 'pencil.line'
-    key = 't'
-    label = 'Today'
-    url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fdaily-note.sh/Run%20Text%20as%20Shell%20Command'
-
-[[leaderMode.bindings]]
-key = 'p'
-label = 'Switch Project'
-url = 'tuna://run/text.%252FUsers%252Fh4s%252Fbin%252Fbrowse-projects.sh/Run%20Text%20as%20Shell%20Command'
-
-[[leaderMode.bindings]]
-iconPath = 'magnifyingglass.circle'
-key = 's'
-label = 'Search'
-
-    [[leaderMode.bindings.children]]
-    iconPath = 'magnifyingglass.circle'
-    key = 'c'
-    label = 'Confluence'
-    url = 'tuna://stage/TunaSmartLinks.SmartLinksCatalog.Confluence/TunaSmartLinks.SmartLinksActionsCatalog.Open%20Smart%20Link%E2%80%A6'
-
-    [[leaderMode.bindings.children]]
-    iconPath = 'magnifyingglass.circle'
-    key = 'C'
-    label = 'Confluence (Selection)'
-    url = 'tuna://run/Tuna.CurrentSelectionCatalog.Current%20Text%20Selection/TunaSmartLinks.SmartLinksActionsCatalog.Send%20to%20Smart%20Link%E2%80%A6/TunaSmartLinks.SmartLinksCatalog.Confluence'
-
-    [[leaderMode.bindings.children]]
-    iconPath = 'ticket'
-    key = 'j'
-    label = 'Jira'
-    url = 'tuna://stage/TunaSmartLinks.SmartLinksCatalog.Jira/TunaSmartLinks.SmartLinksActionsCatalog.Open%20Smart%20Link%E2%80%A6'
-
-    [[leaderMode.bindings.children]]
-    iconPath = 'ticket'
-    key = 'J'
-    label = 'Jira (Selection)'
-    url = 'tuna://run/Tuna.CurrentSelectionCatalog.Current%20Selection/TunaSmartLinks.SmartLinksActionsCatalog.Send%20to%20Smart%20Link%E2%80%A6/TunaSmartLinks.SmartLinksCatalog.Jira'
-
-[[leaderMode.bindings]]
-key = 't'
-url = 'tuna://run/path.%252FApplications%252FGhostty.app/Open'
-
-[[leaderMode.bindings]]
-iconPath = 'apple.terminal'
-key = 'T'
-label = 'Terminals'
-
-    [[leaderMode.bindings.children]]
-    key = 'w'
-    url = 'tuna://run/path.%252FApplications%252FWezTerm.app/Open'
-
-    [[leaderMode.bindings.children]]
-    key = 'g'
-    url = 'tuna://run/path.%252FApplications%252FGhostty.app/Open'
-
 [settings]
 backspaceBehavior = 'deleteCharacters'
-leaderModeCheatsheetDelayMS = 666
-leaderModeCheatsheetShowDetails = false
-leaderModeModifierTrigger = 'rightCommand'
-leaderModeThemeStyle = 'cheatsheet'
+comboModeCheatsheetDelayMS = 666
+comboModeCheatsheetShowDetails = false
+comboModeModifierTrigger = 'rightCommand'
+comboModeThemeStyle = 'cheatsheet'
 resultListNavigationBindings = 'vimStyle'
 screenPreference = 'activeWindow'
 themeIdentifier = 'com.brnbw.tuna.themes.default'
