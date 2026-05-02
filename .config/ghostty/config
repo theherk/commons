@@ -1,8 +1,7 @@
-background-blur-radius = 23
+background-blur-radius = 13
 background-opacity = 1
 custom-shader = shaders/cursor-warp.glsl
-# custom-shader = shaders/inside-the-matrix.glsl
-cursor-color = #bb9af7
+cursor-color = #85c1dc
 font-family = VictorMono NF
 font-size = 17
 macos-titlebar-style = hidden
@@ -17,6 +16,6 @@ unfocused-split-opacity = 0.54
 
 # custom-shader = shaders/expanse-ring-gate.glsl
 custom-shader = shaders/gears-and-belts.glsl
-
 # custom-shader = shaders/inside-the-matrix.glsl
+
 keybind = shift+enter=text:\x1b\r
