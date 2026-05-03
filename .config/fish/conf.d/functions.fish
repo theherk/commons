@@ -111,6 +111,15 @@ function util-stop # stop util bastion
     aws ec2 stop-instances --instance-ids $argv
 end
 
+function _notify_tf_done --on-event fish_postexec
+    test $CMD_DURATION -gt 5000; or return
+    string match -qr '^(terraform|tofu)\b' -- $argv[1]; or return
+    set -q ZELLIJ_SESSION_NAME; or return
+    for session in (zellij list-sessions -ns | string split \n)
+        zellij --session $session pipe -- "zjstatus::notify:: tf done" 2>/dev/null
+    end
+end
+
 function venv3
     python3 -m venv .venv
     venvact .venv
