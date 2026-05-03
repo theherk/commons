@@ -1,6 +1,7 @@
 [flavor]
-use = "catppuccin-frappe"
+dark  = "catppuccin-frappe"
+light = "catppuccin-latte"
 
 [status]
-separator_open = ""
-separator_close = ""
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
