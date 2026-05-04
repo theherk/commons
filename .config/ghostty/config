@@ -1,6 +1,7 @@
 background-blur-radius = 13
 background-opacity = 1
 custom-shader = shaders/cursor-warp.glsl
+custom-shader-animation = always
 cursor-color = #85c1dc
 font-family = VictorMono NF
 font-size = 17
