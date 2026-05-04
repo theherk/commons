@@ -350,28 +350,30 @@ vec3 drawGearsAndItems(vec2 p, vec3 col, float size){
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
     vec2 p = (fragCoord-0.5*iResolution.xy)/iResolution.y;
-    // set speed of downwards motion
     p.y+=iTime*0.0145;
 
     float size = 4.;
     vec3 col = vec3(0.);
 
-    // Modify the colors to be darker by multiplying with a small factor
-    vec3 darkFactor = vec3(.5); // This makes everything 50% as bright
-
-    // Get the original colors but make them darker
+    vec3 darkFactor = vec3(.5);
     col = drawBelt(p, col, size) * darkFactor;
     col = drawGearsAndItems(p, col, size) * darkFactor;
-
-    // Additional option: you can add a color tint to make it less stark white
-    vec3 tint = vec3(0.1, 0.12, 0.15); // Slight blue-ish dark tint
-    col = col * tint;
 
     vec2 uv = fragCoord/iResolution.xy;
     vec4 terminalColor = texture(iChannel0, uv);
 
-    // Blend with reduced opacity for the shader elements
-    vec3 blendedColor = terminalColor.rgb + col.rgb * 0.333; // Reduced blend factor
+    float bgLuminance = dot(terminalColor.rgb, vec3(0.299, 0.587, 0.114));
+    bool isLight = bgLuminance > 0.5;
 
-    fragColor = vec4(blendedColor, terminalColor.a);
+    if (isLight) {
+        vec3 tint = vec3(0.15, 0.12, 0.1);
+        col = col * tint;
+        vec3 blendedColor = terminalColor.rgb - col.rgb * 0.8;
+        fragColor = vec4(blendedColor, terminalColor.a);
+    } else {
+        vec3 tint = vec3(0.1, 0.12, 0.15);
+        col = col * tint;
+        vec3 blendedColor = terminalColor.rgb + col.rgb * 0.333;
+        fragColor = vec4(blendedColor, terminalColor.a);
+    }
 }
