@@ -37,12 +37,7 @@ keybinds {
                 payload "agent agent"
             }; SwitchToMode "normal";
         }
-        bind "b" {
-            MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
-                name "switch-tab"
-                payload "browse-repos browse"
-            }; SwitchToMode "normal";
-        }
+        bind "b" { SwitchToMode "normal"; Run "repo-browse.sh" { floating true; close_on_exit true; }; }
         bind "m" {
             MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
                 name "switch-tab"
