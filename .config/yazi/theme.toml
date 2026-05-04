@@ -2,6 +2,9 @@
 dark  = "catppuccin-frappe"
 light = "catppuccin-latte"
 
+[indicator]
+padding = { open = "▎", close = "" }
+
 [status]
 sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
