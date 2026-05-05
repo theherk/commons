@@ -2,19 +2,36 @@
 
 # Parse arguments
 set -l attach_mode 0
+set -l running_mode 0
 if contains -- -a $argv
     set attach_mode 1
 end
+if contains -- --running $argv
+    set running_mode 1
+end
 
-if test $attach_mode -eq 1
-    # Try to get the most recent active session
+if test $running_mode -eq 1
     set -l sessions (zellij list-sessions -n | string match -rv 'EXITED')
     if test -z "$sessions"
         echo "No active zellij sessions found."
         exit 1
     end
 
-    # Get the first (most recent) session
+    set -l session_name (printf '%s\n' $sessions | fzf --reverse | cut -d' ' -f1)
+    if test -z "$session_name"
+        exit 1
+    end
+    zellij attach $session_name
+    exit 0
+end
+
+if test $attach_mode -eq 1
+    set -l sessions (zellij list-sessions -n | string match -rv 'EXITED')
+    if test -z "$sessions"
+        echo "No active zellij sessions found."
+        exit 1
+    end
+
     set -l session_name (echo $sessions[1] | cut -d':' -f2 | cut -d' ' -f1)
     zellij attach $session_name
     exit 0

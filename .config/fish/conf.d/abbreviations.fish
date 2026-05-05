@@ -62,6 +62,7 @@ abbr -a wezi --position command wezterm imgcat
 abbr -a wow --position command git status
 abbr -a xc --position anywhere --set-cursor "%| xclip -sel clip"
 abbr -a zp --position command zellij-project.fish
+abbr -a zpr --position command "zellij-project.fish --running"
 abbr -a rgh --position command "repo-browse.sh gh"
 abbr -a rghe --position command "repo-browse.sh ghe"
 abbr -a rgl --position command "repo-browse.sh gl"
