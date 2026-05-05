@@ -44,17 +44,32 @@ function p # Get git project directory from .projects. See alias repocache.
     end
 end
 
-set -l all_sessions (zellij list-sessions -n)
-set -l running_sessions (printf '%s\n' $all_sessions | string match -rv 'EXITED' | cut -d' ' -f1)
-set -l exited_sessions (printf '%s\n' $all_sessions | string match -r 'EXITED' | cut -d' ' -f1)
+set -l all_sessions (zellij list-sessions -n 2>/dev/null)
+set -l running_sessions
+set -l exited_sessions
+for s in $all_sessions
+    if string match -rq 'EXITED' $s
+        set -a exited_sessions (echo $s | cut -d' ' -f1)
+    else
+        set -a running_sessions (echo $s | cut -d' ' -f1)
+    end
+end
 set -l repos (zoxide query -l | rg --color=never -FxNf ~/.projects | sed s:"$HOME":~:)
 set -l filter_names $running_sessions
 if set -q ZELLIJ_SESSION_NAME
     set running_sessions (printf '%s\n' $running_sessions | string match -v $ZELLIJ_SESSION_NAME)
     set -a filter_names $ZELLIJ_SESSION_NAME
 end
-set -l filtered (printf '%s\n' $repos | rg -Nv '/'(string join '|/' $filter_names))
-set -l labeled_sessions (printf '󱂬 %s\n' $running_sessions)
+set -l filtered
+if test (count $filter_names) -gt 0
+    set filtered (printf '%s\n' $repos | rg -Nv '/'(string join '|/' $filter_names))
+else
+    set filtered $repos
+end
+set -l labeled_sessions
+if test (count $running_sessions) -gt 0
+    set labeled_sessions (printf '󱂬 %s\n' $running_sessions)
+end
 set -l selection (printf '%s\n' $labeled_sessions $filtered | fzf --reverse | string replace '󱂬 ' '')
 if test -z "$selection"
     exit 1
