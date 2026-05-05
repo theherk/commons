@@ -48,9 +48,14 @@ set -l all_sessions (zellij list-sessions -n)
 set -l running_sessions (printf '%s\n' $all_sessions | string match -rv 'EXITED' | cut -d' ' -f1)
 set -l exited_sessions (printf '%s\n' $all_sessions | string match -r 'EXITED' | cut -d' ' -f1)
 set -l repos (zoxide query -l | rg --color=never -FxNf ~/.projects | sed s:"$HOME":~:)
-set -l filtered (printf '%s\n' $repos | rg -Nv '/'(string join '|/' $running_sessions))
+set -l filter_names $running_sessions
+if set -q ZELLIJ_SESSION_NAME
+    set running_sessions (printf '%s\n' $running_sessions | string match -v $ZELLIJ_SESSION_NAME)
+    set -a filter_names $ZELLIJ_SESSION_NAME
+end
+set -l filtered (printf '%s\n' $repos | rg -Nv '/'(string join '|/' $filter_names))
 set -l labeled_sessions (printf '󱂬 %s\n' $running_sessions)
-set -l selection (printf '%s\n' $labeled_sessions $filtered | fzf --reverse --nth=2.. | string replace '󱂬 ' '')
+set -l selection (printf '%s\n' $labeled_sessions $filtered | fzf --reverse | string replace '󱂬 ' '')
 if test -z "$selection"
     exit 1
 end
