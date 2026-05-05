@@ -13,6 +13,7 @@ if status is-login
     set -gx EDITOR nvim
     set -gx VISUAL nvim
     set -gx CARGO_HOME $HOME/.cargo
+    set -gx ZELLIJ_SOCKET_DIR /tmp/zellij
 
     set -gx VENVS $HOME/.venvs
     set -gx P $HOME/projects
