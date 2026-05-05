@@ -1,4 +1,4 @@
-copy_on_select false
+copy_on_select true
 show_startup_tips false
 simplified_ui true
 theme "catppuccin-frappe"
@@ -24,7 +24,11 @@ keybinds {
         bind "v" { NewPane "Right"; SwitchToMode "Normal"; }
     }
     scroll {
+        bind "/" { SwitchToMode "entersearch"; }
         bind "y" { Copy; SwitchToMode "normal"; }
+    }
+    search {
+        bind "Esc" { SwitchToMode "scroll"; }
     }
     session {
         bind "p" { SwitchToMode "normal"; Run "zellij-project.fish" { floating true; close_on_exit true; }; }
