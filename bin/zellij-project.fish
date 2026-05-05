@@ -44,9 +44,25 @@ function p # Get git project directory from .projects. See alias repocache.
     end
 end
 
-set -l pdir (p)
-if test -z "$pdir"
+set -l all_sessions (zellij list-sessions -n)
+set -l running_sessions (printf '%s\n' $all_sessions | string match -rv 'EXITED' | cut -d' ' -f1)
+set -l exited_sessions (printf '%s\n' $all_sessions | string match -r 'EXITED' | cut -d' ' -f1)
+set -l repos (zoxide query -l | rg --color=never -FxNf ~/.projects | sed s:"$HOME":~:)
+set -l filtered (printf '%s\n' $repos | rg -Nv '/'(string join '|/' $running_sessions))
+set -l labeled_sessions (printf '󱂬 %s\n' $running_sessions)
+set -l selection (printf '%s\n' $labeled_sessions $filtered | fzf --reverse --nth=2.. | string replace '󱂬 ' '')
+if test -z "$selection"
     exit 1
+end
+set -l pdir
+if string match -rq '^~|^/' $selection
+    set pdir (string replace '~' $HOME $selection)
+else
+    set pdir (printf '%s\n' $repos | rg "/$selection\$" | head -1 | string replace '~' $HOME)
+    if test -z "$pdir"
+        echo "Could not resolve path for session: $selection"
+        exit 1
+    end
 end
 
 set -l pname (basename $pdir)
@@ -57,13 +73,11 @@ if set -q ZELLIJ_SESSION_NAME
     end
 else
     cd $pdir
-    if contains $pname (zellij list-sessions -ns)
-        if contains $pname (zellij list-sessions -n | rg EXITED | cut -d' ' -f1 | cut -d':' -f2)
-            zellij delete-session $pname
-            zellij -s $pname
-        else
-            zellij attach $pname
-        end
+    if contains $pname $running_sessions
+        zellij attach $pname
+    else if contains $pname $exited_sessions
+        zellij delete-session $pname
+        zellij -s $pname
     else
         zellij -s $pname
     end
