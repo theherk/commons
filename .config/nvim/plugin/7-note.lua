@@ -1,5 +1,5 @@
 local add = vim.pack.add
-local later = Config.later
+local now, later = Config.now, Config.later
 
 local onedrive = os.getenv("ONEDRIVE") or "/Users/h4s/Library/CloudStorage/OneDrive"
 local function workspaces()
@@ -14,7 +14,7 @@ local function workspaces()
   return _workspaces
 end
 
-later(function()
+now(function()
   add({
     "https://github.com/echasnovski/mini.nvim",
     "https://github.com/nvim-lua/plenary.nvim",

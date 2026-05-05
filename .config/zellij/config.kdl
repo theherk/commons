@@ -28,6 +28,7 @@ keybinds {
     }
     session {
         bind "p" { SwitchToMode "normal"; Run "zellij-project.fish" { floating true; close_on_exit true; }; }
+        bind "t" { SwitchToMode "normal"; Run "obsidian-daily.sh" { floating true; close_on_exit true; }; }
         bind "?" { LaunchOrFocusPlugin "zellij:about" { floating true; }; SwitchToMode "Normal"; }
     }
     tab {
