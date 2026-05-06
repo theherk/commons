@@ -13,7 +13,7 @@ layout {
                 border_format   "#[fg=magenta]{char}"
                 border_position "top"
 
-                hide_frame_for_single_pane "true"
+                hide_frame_for_single_pane "false"
 
                 notification_format_unread           "#[fg=magenta,italic] {message}"
                 notification_format_no_notifications ""

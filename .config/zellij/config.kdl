@@ -1,4 +1,6 @@
 copy_on_select true
+osc8_hyperlinks true
+pane_frames false
 session_serialization false
 show_startup_tips false
 simplified_ui true
