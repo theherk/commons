@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "external_directory": {
+      "~/vaults/brain/*": "allow",
+      "~/Library/CloudStorage/OneDrive-DNBBankASA/dnbrain/*": "allow",
+      "~/projects/*": "allow"
+    }
+  }
+}

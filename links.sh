@@ -27,6 +27,7 @@ ln -sf ~/commons/.config/mise/ ~/.config/
 ln -sf ~/commons/.config/neovide/ ~/.config/
 ln -sf ~/commons/.config/nvim/ ~/.config/
 ln -sf ~/commons/.config/nushell/ ~/.config/
+ln -sf ~/commons/.config/opencode/config.json ~/.config/opencode/config.json
 ln -sf ~/commons/.config/opencode/tui.json ~/.config/opencode/tui.json
 ln -sf ~/commons/.config/opencode/package.json ~/.config/opencode/package.json
 ln -sf ~/commons/.config/opencode/plugins/ ~/.config/opencode/
