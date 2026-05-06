@@ -7,3 +7,4 @@ gpt-commit.py
 .config/nvim/pack/
 lazy-lock.json
 tmp.*
+skills-lock.json

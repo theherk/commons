@@ -30,6 +30,7 @@ ln -sf ~/commons/.config/nushell/ ~/.config/
 ln -sf ~/commons/.config/opencode/config.json ~/.config/opencode/config.json
 ln -sf ~/commons/.config/opencode/tui.json ~/.config/opencode/tui.json
 ln -sf ~/commons/.config/opencode/package.json ~/.config/opencode/package.json
+ln -sf ~/commons/.config/opencode/agents/ ~/.config/opencode/
 ln -sf ~/commons/.config/opencode/plugins/ ~/.config/opencode/
 ln -sf ~/commons/.config/paneru/ ~/.config/
 ln -sf ~/commons/.config/pipes-rs/ ~/.config/
