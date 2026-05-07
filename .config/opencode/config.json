@@ -36,7 +36,12 @@
         },
         "read": "allow",
         "glob": "allow",
-        "grep": "allow"
+        "grep": "allow",
+        "skill": "allow",
+        "task": {
+          "*": "deny",
+          "jira-work": "allow"
+        }
       }
     },
     "plan": {
