@@ -62,7 +62,7 @@ if set -q ZELLIJ_SESSION_NAME
 end
 set -l filtered
 if test (count $filter_names) -gt 0
-    set filtered (printf '%s\n' $repos | rg -Nv '/'(string join '|/' $filter_names))
+    set filtered (printf '%s\n' $repos | rg -Nv '/'(string join '$|/' $filter_names)'$')
 else
     set filtered $repos
 end
