@@ -48,6 +48,9 @@ ZELLIJ_TAB_ACTIVE_BG_LIGHT="#ccd0da"
 ENHANCE_THEME_DARK="catppuccin_frappe"
 ENHANCE_THEME_LIGHT="catppuccin_latte"
 
+FZF_COLORS_DARK="--color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#ef9f76 --color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#99d1db --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#ef9f76 --color=selected-bg:#51576d --color=border:#737994,label:#c6d0f5"
+FZF_COLORS_LIGHT="--color=bg+:#ccd0da,bg:#eff1f5,spinner:#dc8a78,hl:#fe640b --color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#04a5e5 --color=marker:#dc8a78,fg+:#4c4f69,prompt:#8839ef,hl+:#fe640b --color=selected-bg:#bcc0cc --color=border:#9ca0b0,label:#4c4f69"
+
 GH_DASH_DARK='theme:
   colors:
     text:
@@ -198,6 +201,7 @@ darken() {
 	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_DARK"'"/' .config/zellij/config.kdl
 	sed -i '' '/tab_active/s/bg=#[^,]*/bg='"$ZELLIJ_TAB_ACTIVE_BG_DARK"'/g' .config/zellij/layouts/*.kdl
 	fish -c "set -Ux ENHANCE_THEME $ENHANCE_THEME_DARK"
+	fish -c "set -Ux FZF_DEFAULT_OPTS '$FZF_COLORS_DARK'"
 	sed -i '' 's/"theme": "light"/"theme": "dark"/' ~/.claude.json
 	sed -i '' 's/\("theme": \)".*"/\1"'"$OPENCODE_DARK"'"/' ~/.config/opencode/tui.json
 	sed -i '' 's/\(diff: delta --paging always\) --light/\1 --diff-so-fancy/' .config/gh-dash/config.yml
@@ -235,6 +239,7 @@ lighten() {
 	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_LIGHT"'"/' .config/zellij/config.kdl
 	sed -i '' '/tab_active/s/bg=#[^,]*/bg='"$ZELLIJ_TAB_ACTIVE_BG_LIGHT"'/g' .config/zellij/layouts/*.kdl
 	fish -c "set -Ux ENHANCE_THEME $ENHANCE_THEME_LIGHT"
+	fish -c "set -Ux FZF_DEFAULT_OPTS '$FZF_COLORS_LIGHT'"
 	sed -i '' 's/"theme": "dark"/"theme": "light"/' ~/.claude.json
 	sed -i '' 's/\("theme": \)".*"/\1"'"$OPENCODE_LIGHT"'"/' ~/.config/opencode/tui.json
 	sed -i '' 's/\(diff: delta --paging always\) --diff-so-fancy/\1 --light/' .config/gh-dash/config.yml
