@@ -31,6 +31,7 @@ _cover.*
 _plan*
 _update.md
 _update.sh
+AGENTS.md
 bin/bfg*
 CLAUDE.md
 GPATH
