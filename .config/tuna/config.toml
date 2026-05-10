@@ -97,27 +97,55 @@ label = 'Misc / Toggle'
     label = 'Screenshot'
 
         [[comboMode.bindings.children.children]]
-        iconPath = 'square.dashed'
-        key = 'a'
-        label = 'Screenshot Area'
-        url = 'tuna://run/text.screencapture%2520-ic/Run%20Text%20as%20Shell%20Command'
-
-        [[comboMode.bindings.children.children]]
-        iconPath = 'desktopcomputer'
-        key = 's'
-        label = 'Screenshot Screen'
-        url = 'tuna://run/text.screencapture%2520-c/Run%20Text%20as%20Shell%20Command'
-
-        [[comboMode.bindings.children.children]]
-        iconPath = 'macwindow'
-        key = 'w'
-        label = 'Screenshot Window'
-        url = 'tuna://run/text.screencapture%2520-wic/Run%20Text%20as%20Shell%20Command'
-
-        [[comboMode.bindings.children.children]]
         iconPath = '/System/Applications/Utilities/Screenshot.app'
         key = 'S'
         url = 'tuna://run/TunaCore.SystemApplicationsCatalog.Screenshot/Open'
+
+        [[comboMode.bindings.children.children]]
+        iconPath = 'doc.on.clipboard'
+        key = 'c'
+        label = 'Clip'
+
+            [[comboMode.bindings.children.children.children]]
+            iconPath = 'square.dashed'
+            key = 'a'
+            label = 'Area'
+            url = 'tuna://run/text.screencapture%2520-ic/Run%20Text%20as%20Shell%20Command'
+
+            [[comboMode.bindings.children.children.children]]
+            iconPath = 'desktopcomputer'
+            key = 's'
+            label = 'Screen'
+            url = 'tuna://run/text.screencapture%2520-c/Run%20Text%20as%20Shell%20Command'
+
+            [[comboMode.bindings.children.children.children]]
+            iconPath = 'macwindow'
+            key = 'w'
+            label = 'Window'
+            url = 'tuna://run/text.screencapture%2520-wic/Run%20Text%20as%20Shell%20Command'
+
+        [[comboMode.bindings.children.children]]
+        iconPath = 'folder'
+        key = 's'
+        label = 'Store'
+
+            [[comboMode.bindings.children.children.children]]
+            iconPath = 'square.dashed'
+            key = 'a'
+            label = 'Area'
+            url = 'tuna://run/text.screencapture%2520-i%2520%252FUsers%252Fh4s%252FLibrary%252FMobile%255C%2520Documents%252Fcom%255C~apple%255C~CloudDocs%252FPictures%252Fscreenshots%252F/Run%20Text%20as%20Shell%20Command'
+
+            [[comboMode.bindings.children.children.children]]
+            iconPath = 'desktopcomputer'
+            key = 's'
+            label = 'Screen'
+            url = 'tuna://run/text.screencapture%2520%252FUsers%252Fh4s%252FLibrary%252FMobile%255C%2520Documents%252Fcom%255C~apple%255C~CloudDocs%252FPictures%252Fscreenshots%252F/Run%20Text%20as%20Shell%20Command'
+
+            [[comboMode.bindings.children.children.children]]
+            iconPath = 'macwindow'
+            key = 'w'
+            label = 'Window'
+            url = 'tuna://run/text.screencapture%2520-wi%2520%252FUsers%252Fh4s%252FLibrary%252FMobile%255C%2520Documents%252Fcom%255C~apple%255C~CloudDocs%252FPictures%252Fscreenshots%252F/Run%20Text%20as%20Shell%20Command'
 
     [[comboMode.bindings.children]]
     iconPath = '/Applications/Proton Pass.app'
@@ -280,6 +308,7 @@ presentation = 'auto'
 
 [settings]
 backspaceBehavior = 'deleteCharacters'
+comboModeBackspaceBehavior = 'stepBack'
 comboModeCheatsheetDelayMS = 666
 comboModeCheatsheetShowDetails = false
 comboModeModifierTrigger = 'rightCommand'
