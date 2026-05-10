@@ -4,7 +4,7 @@ layout {
         pane size=1 borderless=true {
             plugin location="file:~/bin/zjstatus.wasm" {
                 format_left   "{mode} {tabs}"
-                format_right  "{notifications} #[fg=blue]󱂬  #[fg=yellow,italic]{session} "
+                format_right  "{pipe_heartbeat}{notifications} #[fg=blue]󱂬  #[fg=yellow,italic]{session} "
                 format_space  ""
 
                 border_enabled  "false"
@@ -13,6 +13,9 @@ layout {
                 border_position "top"
 
                 hide_frame_for_single_pane "false"
+
+                pipe_heartbeat_format      ""
+                pipe_heartbeat_rendermode  "static"
 
                 notification_format_unread           "#[fg=magenta,italic] {message}"
                 notification_format_no_notifications ""

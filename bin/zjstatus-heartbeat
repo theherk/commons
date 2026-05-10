@@ -1,0 +1,8 @@
+#!/bin/sh
+# Feeds current time to zjstatus pipe_heartbeat widget every second.
+# This drives periodic re-renders, enabling notification expiry and live clock.
+# Guarded by pgrep in fish config to ensure only one instance runs per machine.
+while true; do
+    zellij pipe "zjstatus::pipe::pipe_heartbeat::$(date +%H:%M:%S)"
+    sleep 1
+done

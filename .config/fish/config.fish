@@ -69,6 +69,11 @@ if status is-interactive
         function __zellij_tab_name --on-variable PWD
             command zellij action rename-tab (prompt_pwd)
         end
+
+        if not pgrep -f zjstatus-heartbeat >/dev/null
+            zjstatus-heartbeat &
+            disown
+        end
     end
 
     set fzf_diff_highlighter delta --paging=never --width=20
