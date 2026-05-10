@@ -54,9 +54,16 @@ function _tf_abbr
 end
 
 function p # Switch to git project directory from .projects. See alias repocache.
+    argparse c/clip -- $argv
     set REPO "$(zoxide query -l | rg --color=never -FxNf ~/.projects | sed s:"$HOME":~: | fzf --reverse)"
     if test -n "$REPO"
-        z (string replace '~' $HOME $REPO)
+        set -l dir (string replace '~' $HOME $REPO)
+        if set -q _flag_clip
+            echo -n $dir | pbcopy
+            echo "Copied: $dir"
+        else
+            z $dir
+        end
     end
 end
 

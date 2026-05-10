@@ -34,8 +34,10 @@ keybinds {
         bind "Esc" { SwitchToMode "scroll"; }
     }
     session {
+        bind "b" { SwitchToMode "normal"; Run "repo-browse.sh" { floating true; close_on_exit true; }; }
         bind "p" { SwitchToMode "normal"; Run "zellij-project.fish" { floating true; close_on_exit true; }; }
         bind "t" { SwitchToMode "normal"; Run "obsidian-daily.sh" { floating true; close_on_exit true; }; }
+        bind "y" { SwitchToMode "normal"; Run "fish" "-c" "source ~/.config/fish/conf.d/functions.fish; p -c" { floating true; close_on_exit true; }; }
         bind "?" { LaunchOrFocusPlugin "zellij:about" { floating true; }; SwitchToMode "Normal"; }
     }
     tab {
@@ -45,7 +47,6 @@ keybinds {
                 payload "agent agent"
             }; SwitchToMode "normal";
         }
-        bind "b" { SwitchToMode "normal"; Run "repo-browse.sh" { floating true; close_on_exit true; }; }
         bind "m" {
             MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
                 name "switch-tab"
