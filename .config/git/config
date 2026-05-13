@@ -34,9 +34,9 @@
 [pull]
 	rebase = true
 [user]
-	email = theherk@gmail.com
+	email = herk@theherk.com
 	name = Adam Sherwood
-	signingkey = theherk@gmail.com
+	signingkey = herk@theherk.com
 
 [includeIf "gitdir:~/projects/github.com/dnb-asa/"]
 	path = ~/.config/git/dnb.no
