@@ -203,7 +203,7 @@ darken() {
 	fish -c "set -Ux ENHANCE_THEME $ENHANCE_THEME_DARK"
 	fish -c "set -Ux FZF_DEFAULT_OPTS '$FZF_COLORS_DARK'"
 	sed -i '' 's/"theme": "light"/"theme": "dark"/' ~/.claude.json
-	sed -i '' 's/\("theme": \)".*"/\1"'"$OPENCODE_DARK"'"/' ~/.config/opencode/tui.json
+	sed -i '' 's/\("theme": \)".*"/\1"'"$OPENCODE_DARK"'"/' .config/opencode/tui.json
 	sed -i '' 's/\(diff: delta --paging always\) --light/\1 --diff-so-fancy/' .config/gh-dash/config.yml
 	sed -i '' '/^theme:/,$d' .config/gh-dash/config.yml
 	echo "$GH_DASH_DARK" >>.config/gh-dash/config.yml
@@ -241,7 +241,7 @@ lighten() {
 	fish -c "set -Ux ENHANCE_THEME $ENHANCE_THEME_LIGHT"
 	fish -c "set -Ux FZF_DEFAULT_OPTS '$FZF_COLORS_LIGHT'"
 	sed -i '' 's/"theme": "dark"/"theme": "light"/' ~/.claude.json
-	sed -i '' 's/\("theme": \)".*"/\1"'"$OPENCODE_LIGHT"'"/' ~/.config/opencode/tui.json
+	sed -i '' 's/\("theme": \)".*"/\1"'"$OPENCODE_LIGHT"'"/' .config/opencode/tui.json
 	sed -i '' 's/\(diff: delta --paging always\) --diff-so-fancy/\1 --light/' .config/gh-dash/config.yml
 	sed -i '' '/^theme:/,$d' .config/gh-dash/config.yml
 	echo "$GH_DASH_LIGHT" >>.config/gh-dash/config.yml
