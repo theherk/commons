@@ -36,7 +36,7 @@ keybinds {
     session {
         bind "b" { SwitchToMode "normal"; Run "repo-browse.sh" { floating true; close_on_exit true; }; }
         bind "p" { SwitchToMode "normal"; Run "zellij-project.fish" { floating true; close_on_exit true; }; }
-        bind "t" { SwitchToMode "normal"; Run "obsidian-daily.sh" { floating true; close_on_exit true; }; }
+        bind "t" { SwitchToMode "normal"; Run "obsidian-daily.sh" { floating true; close_on_exit true; width "73%"; height "81%"; pinned true; }; }
         bind "y" { SwitchToMode "normal"; Run "fish" "-c" "source ~/.config/fish/conf.d/functions.fish; p -c" { floating true; close_on_exit true; }; }
         bind "?" { LaunchOrFocusPlugin "zellij:about" { floating true; }; SwitchToMode "Normal"; }
     }
