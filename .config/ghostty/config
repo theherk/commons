@@ -4,7 +4,7 @@ custom-shader = shaders/cursor-warp.glsl
 custom-shader-animation = always
 cursor-color = #85c1dc
 font-family = VictorMono NF
-font-size = 17
+font-size = 18
 macos-titlebar-style = hidden
 theme = dark:Catppuccin Frappe,light:Catppuccin Latte
 unfocused-split-opacity = 0.54
@@ -20,3 +20,4 @@ custom-shader = shaders/gears-and-belts.glsl
 # custom-shader = shaders/inside-the-matrix.glsl
 
 keybind = shift+enter=text:\x1b\r
+
