@@ -68,9 +68,22 @@ else
 end
 set -l labeled_sessions
 if test (count $running_sessions) -gt 0
-    set labeled_sessions (printf '󱂬 %s\n' $running_sessions)
+    for session in $running_sessions
+        set -l has_nvim 0
+        for sdir in (printf '%s\n' $repos | rg -N "/$session\$" | string replace '~' $HOME)
+            if test -S "$sdir/_neovim"
+                set has_nvim 1
+                break
+            end
+        end
+        if test $has_nvim -eq 1
+            set -a labeled_sessions "󱂬 $session "
+        else
+            set -a labeled_sessions "󱂬 $session"
+        end
+    end
 end
-set -l selection (printf '%s\n' $labeled_sessions $filtered | fzf --reverse | string replace '󱂬 ' '')
+set -l selection (printf '%s\n' $labeled_sessions $filtered | fzf --reverse | string replace -r '^󱂬 ' '' | string replace -r ' $' '')
 if test -z "$selection"
     exit 1
 end
