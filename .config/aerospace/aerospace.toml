@@ -21,8 +21,6 @@ cmd-h = []
 alt-slash = []
 alt-comma = []
 
-alt-3 = 'workspace ✏️'
-
 alt-h = 'focus left --boundaries-action stop'
 alt-j = 'focus down --boundaries-action stop'
 alt-k = 'focus up --boundaries-action stop'
@@ -37,8 +35,13 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 alt-shift-b = 'resize smart +333'
 
-alt-shift-p = 'mode pane'
-alt-x = 'mode empty'
+alt-x = 'mode empty' # disabling some keymaps
+alt-shift-p = 'mode pane' # window / pane controls
+ctrl-a = 'mode launch' # launch leader
+
+alt-1 = ['exec-and-forget open -a "Zen"', 'mode main']
+alt-2 = ['exec-and-forget open -a "Ghostty"', 'mode main']
+alt-0 = ['exec-and-forget open -a "Slack"', 'mode main']
 
 alt-shift-1 = 'workspace 🌎'
 alt-shift-2 = 'workspace 💻'
@@ -67,11 +70,85 @@ alt-shift-tab = []
 
 [mode.empty.binding]
 esc = 'mode main'
+
 cmd-h = []
 
-[mode.pane.binding]
-alt-c = ['reload-config', 'mode main']
+[mode.launch.binding]
 esc = 'mode main'
+
+b = ['exec-and-forget open -a "Zen"', 'mode main']
+shift-b = 'mode browser'
+c = 'mode comms'
+m = 'mode misc'
+n = 'mode note'
+s = 'mode screenshot'
+t = ['exec-and-forget open -a "Ghostty"', 'mode main']
+shift-t = 'mode terminal'
+0 = ['exec-and-forget open -a "Slack"', 'mode main']
+
+[mode.browser.binding]
+esc = 'mode main'
+
+o = ['exec-and-forget open -a "Orion"', 'mode main']
+s = ['exec-and-forget open -a "Safari"', 'mode main']
+z = ['exec-and-forget open -a "Zen"', 'mode main']
+
+[mode.comms.binding]
+esc = 'mode main'
+
+d = ['exec-and-forget open -a "Discord"', 'mode main']
+e = ['exec-and-forget open -a "Element"', 'mode main']
+m = ['exec-and-forget open -a "Mail"', 'mode main']
+o = ['exec-and-forget open -a "Microsoft Outlook"', 'mode main']
+s = ['exec-and-forget open -a "Slack"', 'mode main']
+t = ['exec-and-forget open -a "Microsoft Teams"', 'mode main']
+
+[mode.terminal.binding]
+esc = 'mode main'
+
+g = ['exec-and-forget open -a "Ghostty"', 'mode main']
+w = ['exec-and-forget open -a "WezTerm"', 'mode main']
+
+[mode.misc.binding]
+esc = 'mode main'
+
+b = ['exec-and-forget /Users/h4s/bin/browse-repos.sh', 'mode main']
+c = ['exec-and-forget open "keepingyouawake:///toggle"', 'mode main']
+d = ['exec-and-forget /Users/h4s/.config/tuna/scripts/define-word.sh', 'mode main']
+l = ['exec-and-forget /Users/h4s/bin/light-dark-toggle.sh', 'mode main']
+p = ['exec-and-forget open -a "Proton Pass"', 'mode main']
+
+[mode.screenshot.binding]
+esc = 'mode main'
+
+c = 'mode screenshot-clip'
+s = 'mode screenshot-store'
+
+[mode.screenshot-clip.binding]
+esc = 'mode main'
+
+a = ['exec-and-forget screencapture -ic', 'mode main']
+s = ['exec-and-forget screencapture -c', 'mode main']
+w = ['exec-and-forget screencapture -wic', 'mode main']
+
+[mode.screenshot-store.binding]
+esc = 'mode main'
+
+a = ['exec-and-forget screencapture -i ~/Library/Mobile\ Documents/com~apple~CloudDocs/Pictures/screenshots/', 'mode main']
+s = ['exec-and-forget screencapture ~/Library/Mobile\ Documents/com~apple~CloudDocs/Pictures/screenshots/', 'mode main']
+w = ['exec-and-forget screencapture -wi ~/Library/Mobile\ Documents/com~apple~CloudDocs/Pictures/screenshots/', 'mode main']
+
+[mode.note.binding]
+esc = 'mode main'
+
+b = ['exec-and-forget open "obsidian://open?vault=brain"', 'mode main']
+d = ['exec-and-forget open "obsidian://open?vault=dnbrain"', 'mode main']
+t = ['exec-and-forget /Users/h4s/bin/daily-note.sh', 'mode main']
+
+[mode.pane.binding]
+esc = 'mode main'
+
+alt-c = ['reload-config', 'mode main']
 cmd-enter = ['fullscreen', 'mode main']
 cmd-h = []
 f = ['layout floating', 'mode main']
@@ -82,7 +159,6 @@ shift-f = ['flatten-workspace-tree', 'mode main']
 shift-s = ['layout horizontal', 'mode main']
 shift-t = ['layout tiles', 'mode main']
 shift-v = ['layout vertical', 'mode main']
-
 
 # Change some workspaces between accordion and tiles.
 a = [ # mostly accordion
