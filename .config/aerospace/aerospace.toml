@@ -114,7 +114,7 @@ esc = 'mode main'
 
 b = ['exec-and-forget /Users/h4s/bin/browse-repos.sh', 'mode main']
 c = ['exec-and-forget open "keepingyouawake:///toggle"', 'mode main']
-d = ['exec-and-forget /Users/h4s/.config/tuna/scripts/define-word.sh', 'mode main']
+d = ['exec-and-forget open -a "Dictionary"', 'mode main']
 l = ['exec-and-forget /Users/h4s/bin/light-dark-toggle.sh', 'mode main']
 p = ['exec-and-forget open -a "Proton Pass"', 'mode main']
 
