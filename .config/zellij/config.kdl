@@ -25,6 +25,8 @@ keybinds {
         bind "s" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "u" { Run "jjui" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
         bind "v" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "[" { FocusPreviousPane; SwitchToMode "Normal"; }
+        bind "]" { FocusNextPane; SwitchToMode "Normal"; }
     }
     scroll {
         bind "/" { SwitchToMode "entersearch"; }
