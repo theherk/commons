@@ -135,12 +135,15 @@ if test (count $running_sessions) -gt 0
         end
     end
 end
-set -l sorted_sessions (printf '%s\n' $labeled_sessions | sort)
+set -l sorted_sessions
+if test (count $labeled_sessions) -gt 0
+    set sorted_sessions (printf '%s\n' $labeled_sessions | sort)
+end
 set -l fzf_items $sorted_sessions
 if test $active_mode -eq 0
     set -a fzf_items $filtered
 end
-set -l selection (printf '%s\n' $fzf_items | fzf --reverse | string replace -r '^󱂬 ' '' | string replace -r ' $' '')
+set -l selection (printf '%s\n' $fzf_items | string match -rv '^\ *$' | fzf --reverse | string replace -r '^󱂬 ' '' | string replace -r ' $' '')
 if test -z "$selection"
     exit 1
 end
