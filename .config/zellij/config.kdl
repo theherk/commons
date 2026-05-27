@@ -35,10 +35,10 @@ keybinds {
     }
     session {
         bind "b" { SwitchToMode "normal"; Run "repo-browse.sh" { floating true; close_on_exit true; }; }
-        bind "k" { SwitchToMode "normal"; Run "zellij-project.fish" "--kill" { floating true; close_on_exit true; }; }
+        bind "k" { SwitchToMode "normal"; Run "zellij-project.fish" "--kill" { floating true; close_on_exit true; pinned true; }; }
         bind "K" { SwitchToMode "normal"; Run "zellij-prune-sessions.fish" { floating true; close_on_exit true; }; }
-        bind "p" { SwitchToMode "normal"; Run "zellij-project.fish" { floating true; close_on_exit true; }; }
-        bind "r" { SwitchToMode "normal"; Run "zellij-project.fish" "--active" { floating true; close_on_exit true; }; }
+        bind "p" { SwitchToMode "normal"; Run "zellij-project.fish" { floating true; close_on_exit true; pinned true; }; }
+        bind "r" { SwitchToMode "normal"; Run "zellij-project.fish" "--active" { floating true; close_on_exit true; pinned true; }; }
         bind "t" { SwitchToMode "normal"; Run "obsidian-daily.sh" { floating true; close_on_exit true; width "73%"; height "81%"; pinned true; }; }
         bind "y" { SwitchToMode "normal"; Run "fish" "-c" "source ~/.config/fish/conf.d/functions.fish; p -c" { floating true; close_on_exit true; }; }
         bind "?" { LaunchOrFocusPlugin "zellij:about" { floating true; }; SwitchToMode "Normal"; }
