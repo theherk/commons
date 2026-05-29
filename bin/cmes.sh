@@ -10,10 +10,13 @@ JJ_REV="@"
 
 for arg in "$@"; do
 	case "$arg" in
-		--oneline) ONELINE=true ;;
-		--provider=*) PROVIDER="${arg#--provider=}" ;;
-		--provider) shift_next=true ;;
-		*) if [ "${shift_next:-}" = true ]; then PROVIDER="$arg"; shift_next=false; else JJ_REV="$arg"; fi ;;
+	--oneline) ONELINE=true ;;
+	--provider=*) PROVIDER="${arg#--provider=}" ;;
+	--provider) shift_next=true ;;
+	*) if [ "${shift_next:-}" = true ]; then
+		PROVIDER="$arg"
+		shift_next=false
+	else JJ_REV="$arg"; fi ;;
 	esac
 done
 
@@ -86,7 +89,7 @@ call_raicode() {
 		AUTH_HEADER="x-api-key: ${ANTHROPIC_API_KEY}"
 	fi
 
-	local model="${ANTHROPIC_DEFAULT_SONNET_MODEL:-claude-sonnet-4-20250514}"
+	local model="${ANTHROPIC_DEFAULT_SONNET_MODEL:-claude-sonnet-4-6}"
 
 	local json_payload
 	json_payload=$(jq -n \
@@ -127,9 +130,12 @@ ${USER_PROMPT}" --silent --allow-all | sed '/^Co-authored-by:/d'
 }
 
 case "$PROVIDER" in
-	raicode) COMMIT_MESSAGE=$(call_raicode) ;;
-	copilot) COMMIT_MESSAGE=$(call_copilot) ;;
-	*) echo "Error: Unknown provider '$PROVIDER'. Use 'raicode' or 'copilot'." >&2; exit 1 ;;
+raicode) COMMIT_MESSAGE=$(call_raicode) ;;
+copilot) COMMIT_MESSAGE=$(call_copilot) ;;
+*)
+	echo "Error: Unknown provider '$PROVIDER'. Use 'raicode' or 'copilot'." >&2
+	exit 1
+	;;
 esac
 
 if [ -z "$COMMIT_MESSAGE" ]; then
