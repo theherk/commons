@@ -118,5 +118,9 @@ end
 
 alias ls=eza
 
-mise activate fish | source
-zoxide init fish | source
+if type -q mise
+    mise activate fish | source
+end
+if type -q zoxide
+    zoxide init fish | source
+end
