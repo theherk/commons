@@ -19,14 +19,8 @@ Then add this key to Github. Followed by:
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-## Install zsh.
-
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # install oh-my-zsh
-    git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
 ## Add soft links.
 
-    mkdir -p .config projects
     ./commons/links.sh
 
 That will link all the configurations where they need to be. Then we just need to set about installing things. This is tailored to MacOS, since that is what I use nearly always, now.
@@ -49,6 +43,11 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
     jorgebucaran/fisher \
     PatrickF1/fzf.fish
 ```
+
+## Install zsh.
+
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # install oh-my-zsh
+    git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
 ## Install language runtimes with mise.
 

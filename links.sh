@@ -3,7 +3,10 @@
 mkdir -p \
 	~/.config/atuin \
 	~/.config/fish \
-	~/.config/opencode
+	~/.config/fish/conf.d \
+	~/.config/opencode \
+	~/.config/opencode/agents \
+	~/.config/opencode/plugins
 
 ln -sf ~/commons/.aliases.sh ~/
 ln -sf ~/commons/.bashrc ~/
