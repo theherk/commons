@@ -39,7 +39,7 @@ alt-x = 'mode empty' # disabling some keymaps
 alt-shift-p = 'mode pane' # window / pane controls
 ctrl-a = 'mode launch' # launch leader
 
-alt-1 = ['exec-and-forget open -a "Zen"', 'mode main']
+alt-1 = ['exec-and-forget open -a "Safari"', 'mode main']
 alt-2 = ['exec-and-forget open -a "Ghostty"', 'mode main']
 alt-0 = ['exec-and-forget open -a "Slack"', 'mode main']
 
@@ -76,7 +76,7 @@ cmd-h = []
 [mode.launch.binding]
 esc = 'mode main'
 
-b = ['exec-and-forget open -a "Zen"', 'mode main']
+b = ['exec-and-forget open -a "Safari"', 'mode main']
 shift-b = 'mode browser'
 c = 'mode comms'
 m = 'mode misc'
@@ -282,6 +282,10 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'ch.protonvpn.mac'
 run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = ['move-node-to-workspace 🌎']
 
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
