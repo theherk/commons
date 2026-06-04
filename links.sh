@@ -1,7 +1,9 @@
 #!/bin/sh
 
-mkdir -p ~/.config/fish
-mkdir -p ~/.config/zed
+mkdir -p \
+	~/.config/atuin \
+	~/.config/fish \
+	~/.config/opencode
 
 ln -sf ~/commons/.aliases.sh ~/
 ln -sf ~/commons/.bashrc ~/
@@ -36,12 +38,8 @@ ln -sf ~/commons/.config/paneru/ ~/.config/
 ln -sf ~/commons/.config/pipes-rs/ ~/.config/
 ln -sf ~/commons/.config/ripgrep/ ~/.config/
 ln -sf ~/commons/.config/starship.toml ~/.config/starship.toml
-ln -sf ~/commons/.config/tuna/ ~/.config/
 ln -sf ~/commons/.config/wezterm/ ~/.config/
 ln -sf ~/commons/.config/yazi/ ~/.config/
-ln -sf ~/commons/.config/zed/keymap.json ~/.config/zed/
-ln -sf ~/commons/.config/zed/settings.json ~/.config/zed/settings.json
-ln -sf ~/commons/.config/zed/tasks.json ~/.config/zed/tasks.json
 ln -sf ~/commons/.config/zellij/ ~/.config/
 ln -sf ~/commons/.editorconfig ~/
 ln -sf ~/commons/.eslintrc ~/
