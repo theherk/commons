@@ -1,30 +1,244 @@
 themes {
   catppuccin-latte {
-    bg "#acb0be" // Surface2
-    fg "#4c4f69" // Text
-    red "#d20f39"
-    green "#40a02b"
-    blue "#1e66f5"
-    yellow "#df8e1d"
-    magenta "#ea76cb" // Pink
-    orange "#fe640b" // Peach
-    cyan "#04a5e5" // Sky
-    black "#e6e9ef" // Mantle
-    white "#4c4f69" // Text
+    // Palette references (Catppuccin Latte)
+    // Surface2 #acb0be, Text #4c4f69, Mantle #e6e9ef, Sky #04a5e5
+    text_unselected {
+      base 76 79 105      // Text
+      background 172 176 190 // Surface2
+      emphasis_0 254 100 11  // Peach
+      emphasis_1 4 165 229   // Sky
+      emphasis_2 64 160 43   // Green
+      emphasis_3 234 118 203 // Pink
+    }
+    text_selected {
+      base 76 79 105
+      background 230 233 239 // Mantle
+      emphasis_0 254 100 11
+      emphasis_1 4 165 229
+      emphasis_2 64 160 43
+      emphasis_3 234 118 203
+    }
+    ribbon_selected {
+      base 230 233 239
+      background 4 165 229   // Sky
+      emphasis_0 210 15 57
+      emphasis_1 254 100 11
+      emphasis_2 234 118 203
+      emphasis_3 30 102 245
+    }
+    ribbon_unselected {
+      base 230 233 239
+      background 76 79 105
+      emphasis_0 210 15 57
+      emphasis_1 230 233 239
+      emphasis_2 30 102 245
+      emphasis_3 234 118 203
+    }
+    table_title {
+      base 64 160 43
+      background 0
+      emphasis_0 254 100 11
+      emphasis_1 4 165 229
+      emphasis_2 30 102 245
+      emphasis_3 234 118 203
+    }
+    table_cell_selected {
+      base 76 79 105
+      background 230 233 239
+      emphasis_0 254 100 11
+      emphasis_1 4 165 229
+      emphasis_2 64 160 43
+      emphasis_3 234 118 203
+    }
+    table_cell_unselected {
+      base 76 79 105
+      background 172 176 190
+      emphasis_0 254 100 11
+      emphasis_1 4 165 229
+      emphasis_2 64 160 43
+      emphasis_3 234 118 203
+    }
+    list_selected {
+      base 76 79 105
+      background 230 233 239
+      emphasis_0 254 100 11
+      emphasis_1 4 165 229
+      emphasis_2 64 160 43
+      emphasis_3 234 118 203
+    }
+    list_unselected {
+      base 76 79 105
+      background 172 176 190
+      emphasis_0 254 100 11
+      emphasis_1 4 165 229
+      emphasis_2 64 160 43
+      emphasis_3 234 118 203
+    }
+    frame_selected {
+      base 136 57 239       // Mauve - focused pane outline
+      background 0
+      emphasis_0 254 100 11
+      emphasis_1 30 102 245
+      emphasis_2 234 118 203
+      emphasis_3 0
+    }
+    frame_highlight {
+      base 254 100 11
+      background 0
+      emphasis_0 254 100 11
+      emphasis_1 254 100 11
+      emphasis_2 254 100 11
+      emphasis_3 254 100 11
+    }
+    exit_code_success {
+      base 64 160 43
+      background 0
+      emphasis_0 4 165 229
+      emphasis_1 230 233 239
+      emphasis_2 234 118 203
+      emphasis_3 30 102 245
+    }
+    exit_code_error {
+      base 210 15 57
+      background 0
+      emphasis_0 223 142 29
+      emphasis_1 0
+      emphasis_2 0
+      emphasis_3 0
+    }
+    multiplayer_user_colors {
+      player_1 234 118 203
+      player_2 4 165 229
+      player_3 0
+      player_4 223 142 29
+      player_5 4 165 229
+      player_6 0
+      player_7 210 15 57
+      player_8 0
+      player_9 0
+      player_10 0
+    }
   }
 
   catppuccin-frappe {
-    bg "#626880" // Surface2
-    fg "#c6d0f5" // Text
-    red "#e78284"
-    green "#a6d189"
-    blue "#8caaee"
-    yellow "#e5c890"
-    magenta "#f4b8e4" // Pink
-    orange "#ef9f76" // Peach
-    cyan "#99d1db" // Sky
-    black "#292c3c" // Mantle
-    white "#c6d0f5" // Text
+    // Palette references (Catppuccin Frappé)
+    // Surface2 #626880, Text #c6d0f5, Mantle #292c3c, Sky #99d1db
+    text_unselected {
+      base 198 208 245     // Text
+      background 98 104 128 // Surface2
+      emphasis_0 239 159 118 // Peach
+      emphasis_1 153 209 219 // Sky
+      emphasis_2 166 209 137 // Green
+      emphasis_3 244 184 228 // Pink
+    }
+    text_selected {
+      base 198 208 245
+      background 41 44 60   // Mantle
+      emphasis_0 239 159 118
+      emphasis_1 153 209 219
+      emphasis_2 166 209 137
+      emphasis_3 244 184 228
+    }
+    ribbon_selected {
+      base 41 44 60
+      background 153 209 219 // Sky
+      emphasis_0 231 130 132
+      emphasis_1 239 159 118
+      emphasis_2 244 184 228
+      emphasis_3 140 170 238
+    }
+    ribbon_unselected {
+      base 41 44 60
+      background 198 208 245
+      emphasis_0 231 130 132
+      emphasis_1 41 44 60
+      emphasis_2 140 170 238
+      emphasis_3 244 184 228
+    }
+    table_title {
+      base 166 209 137
+      background 0
+      emphasis_0 239 159 118
+      emphasis_1 153 209 219
+      emphasis_2 140 170 238
+      emphasis_3 244 184 228
+    }
+    table_cell_selected {
+      base 198 208 245
+      background 41 44 60
+      emphasis_0 239 159 118
+      emphasis_1 153 209 219
+      emphasis_2 166 209 137
+      emphasis_3 244 184 228
+    }
+    table_cell_unselected {
+      base 198 208 245
+      background 98 104 128
+      emphasis_0 239 159 118
+      emphasis_1 153 209 219
+      emphasis_2 166 209 137
+      emphasis_3 244 184 228
+    }
+    list_selected {
+      base 198 208 245
+      background 41 44 60
+      emphasis_0 239 159 118
+      emphasis_1 153 209 219
+      emphasis_2 166 209 137
+      emphasis_3 244 184 228
+    }
+    list_unselected {
+      base 198 208 245
+      background 98 104 128
+      emphasis_0 239 159 118
+      emphasis_1 153 209 219
+      emphasis_2 166 209 137
+      emphasis_3 244 184 228
+    }
+    frame_selected {
+      base 202 158 230      // Mauve - focused pane outline
+      background 0
+      emphasis_0 239 159 118
+      emphasis_1 140 170 238
+      emphasis_2 244 184 228
+      emphasis_3 0
+    }
+    frame_highlight {
+      base 239 159 118
+      background 0
+      emphasis_0 239 159 118
+      emphasis_1 239 159 118
+      emphasis_2 239 159 118
+      emphasis_3 239 159 118
+    }
+    exit_code_success {
+      base 166 209 137
+      background 0
+      emphasis_0 153 209 219
+      emphasis_1 41 44 60
+      emphasis_2 244 184 228
+      emphasis_3 140 170 238
+    }
+    exit_code_error {
+      base 231 130 132
+      background 0
+      emphasis_0 229 200 144
+      emphasis_1 0
+      emphasis_2 0
+      emphasis_3 0
+    }
+    multiplayer_user_colors {
+      player_1 244 184 228
+      player_2 153 209 219
+      player_3 0
+      player_4 229 200 144
+      player_5 153 209 219
+      player_6 0
+      player_7 231 130 132
+      player_8 0
+      player_9 0
+      player_10 0
+    }
   }
 
   catppuccin-macchiato {
