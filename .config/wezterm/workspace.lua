@@ -5,7 +5,7 @@ local act = wezterm.action
 local module = {}
 
 local rg_pipe = " | rg --color=never -FxNf ~/.projects"
-local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
+local workspace_switcher = wezterm.plugin.require("https://github.com/theherk/smart_workspace_switcher.wezterm")
 
 local prev_pos = 1
 local stack = { "default" }
@@ -117,14 +117,17 @@ wezterm.on("stack-prev", function(window, pane)
   end
 end)
 
-wezterm.on("stack-switcher", function(window, pane) window:perform_action(workspace_switcher.switch_workspace(rg_pipe, 86400), pane) end)
+wezterm.on("stack-switcher", function(window, pane)
+  wezterm.log_info("workspaces: " .. table.concat(wezterm.mux.get_workspace_names(), ", "))
+  window:perform_action(workspace_switcher.switch_workspace({ extra_args = rg_pipe }, 86400), pane)
+end)
 
-workspace_switcher.set_workspace_formatter(function(label)
+workspace_switcher.workspace_formatter = function(label)
   return wezterm.format({
     { Attribute = { Italic = true } },
     { Foreground = { Color = theme.colors.hl_1 } },
     { Text = "󱂬 " .. label },
   })
-end)
+end
 
 return module
