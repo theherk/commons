@@ -6,7 +6,8 @@ mkdir -p \
 	~/.config/fish/conf.d \
 	~/.config/opencode \
 	~/.config/opencode/agents \
-	~/.config/opencode/plugins
+	~/.config/opencode/plugins \
+	~/"Library/Application Support/Element"
 
 ln -sf ~/commons/.aliases.sh ~/
 ln -sf ~/commons/.bashrc ~/
@@ -16,6 +17,7 @@ ln -sf ~/commons/.config/bat/ ~/.config/
 ln -sf ~/commons/.config/brewfile/ ~/.config/
 ln -sf ~/commons/.config/carapace/ ~/.config/
 ln -sf ~/commons/.config/doom/ ~/.config/
+ln -sf ~/commons/.config/element/config.json ~/"Library/Application Support/Element/config.json"
 ln -sf ~/commons/.config/fish/config.fish ~/.config/fish/config.fish
 ln -sf ~/commons/.config/fish/conf.d/abbreviations.fish ~/.config/fish/conf.d/abbreviations.fish
 ln -sf ~/commons/.config/fish/conf.d/functions.fish ~/.config/fish/conf.d/functions.fish
