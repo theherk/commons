@@ -126,6 +126,18 @@ npm i --pack-lock-only
 npm audit fix # seems to work after package lock
 ```
 
+## Install Ollama from the official source.
+
+Install Ollama directly from the official installer rather than Homebrew. If the Homebrew versions were installed (e.g. via `brew bundle`), remove them first.
+
+```sh
+brew uninstall ollama
+brew uninstall llama.cpp   # no longer needed
+
+# Install official Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
 ## Setup git forge.
 
 This is an optional step, and will merge all owner repositories to their correct homes in `~/projects/`.
