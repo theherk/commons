@@ -11,7 +11,7 @@ keybinds {
     unbind "Ctrl n"
     unbind "Ctrl t"
     shared_except "locked" {
-        bind "Ctrl t" { SwitchToMode "tab"; }
+        bind "Ctrl a" { SwitchToMode "tab"; }
     }
     normal {
         bind "Ctrl Shift r" { SwitchToMode "resize"; }

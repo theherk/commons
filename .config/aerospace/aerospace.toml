@@ -37,7 +37,7 @@ alt-shift-b = 'resize smart +333'
 
 alt-x = 'mode empty' # disabling some keymaps
 alt-shift-p = 'mode pane' # window / pane controls
-ctrl-a = 'mode launch' # launch leader
+ctrl-t = 'mode launch' # launch leader
 
 alt-1 = ['exec-and-forget open -a "Safari"', 'mode main']
 alt-2 = ['exec-and-forget open -a "Ghostty"', 'mode main']
