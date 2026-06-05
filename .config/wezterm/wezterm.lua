@@ -21,12 +21,12 @@ config = {
   check_for_updates = false,
   front_end = "WebGpu",
   max_fps = 120,
-  default_gui_startup_args = { "connect", "unix" },
+  -- default_gui_startup_args = { "connect", "unix" },
   set_environment_variables = {
     LG_CONFIG_FILE = wezterm.home_dir .. "/.config/lazygit/config.yml",
     PATH = table.concat(paths, ":"),
   },
-  unix_domains = { { name = "unix" } },
+  -- unix_domains = { { name = "unix" } },
 }
 
 control.apply_to_config(config)
