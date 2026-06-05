@@ -94,7 +94,6 @@ brew "neovim"
 brew "newman"
 brew "nim"
 brew "nushell"
-brew "ollama", restart_service: :changed
 brew "onefetch"
 brew "opa"
 brew "opentofu"
