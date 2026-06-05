@@ -12,7 +12,7 @@ themes {
     }
     text_selected {
       base 76 79 105
-      background 230 233 239 // Mantle
+      background 172 176 190 // Surface2 (#acb0be) - matches Ghostty selection
       emphasis_0 254 100 11
       emphasis_1 4 165 229
       emphasis_2 64 160 43
@@ -133,7 +133,7 @@ themes {
     }
     text_selected {
       base 198 208 245
-      background 41 44 60   // Mantle
+      background 98 104 128 // Surface2 (#626880) - matches Ghostty selection
       emphasis_0 239 159 118
       emphasis_1 153 209 219
       emphasis_2 166 209 137
