@@ -40,7 +40,7 @@ if status is-login
     end
 
     if not set -q FZF_DEFAULT_OPTS
-        set -Ux FZF_DEFAULT_OPTS "\
+        set -gx FZF_DEFAULT_OPTS "\
 --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#ef9f76 \
 --color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#99d1db \
 --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#ef9f76 \
@@ -118,9 +118,11 @@ end
 
 alias ls=eza
 
-if type -q mise
-    mise activate fish | source
-end
-if type -q zoxide
-    zoxide init fish | source
+if status is-interactive; or status is-login
+    if type -q mise
+        mise activate fish | source
+    end
+    if type -q zoxide
+        zoxide init fish | source
+    end
 end
