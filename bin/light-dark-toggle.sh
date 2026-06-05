@@ -14,8 +14,10 @@ FISH_LIGHT="Catppuccin Latte"
 HELIX_DARK=base16_transparent
 HELIX_LIGHT=catppuccin_latte
 
-LAZYGIT_BG_DARK=#24283b
-LAZYGIT_BG_LIGHT=#e1e2e7
+LAZYGIT_BORDER_DARK=#ef9f76
+LAZYGIT_BORDER_LIGHT=#fe640b
+LAZYGIT_BG_DARK=#414559
+LAZYGIT_BG_LIGHT=#ccd0da
 
 NVIM_COLORSCHEME_DARK="catppuccin"
 NVIM_COLORSCHEME_LIGHT="catppuccin"
@@ -189,6 +191,7 @@ darken() {
 	sed -i '' 's/\(--code-style", "\)catppuccin-[a-z]*/\1catppuccin-'$NVIM_VARIANT_DARK'/' .config/helix/languages.toml
 	sed -i '' 's/\(--theme", "\)light/\1dark/' .config/helix/languages.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_DARK'"]/' .config/lazygit/config.yml
+	sed -i '' 's/\(activeBorderColor: \)\[".*"\]/\1["'$LAZYGIT_BORDER_DARK'", "bold"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(pager: .*\) --light/\1 --diff-so-fancy/' .config/lazygit/config.yml
 	sed -i '' 's/\(vim.cmd.colorscheme\)(".*")/\1("'"$NVIM_COLORSCHEME_DARK"'")/' .config/nvim/plugin/2-display.lua
 	sed -i '' 's/\(flavour = \)".*"/\1"'$NVIM_VARIANT_DARK'"/' .config/nvim/plugin/2-display.lua
@@ -227,6 +230,7 @@ lighten() {
 	sed -i '' 's/\(--code-style", "\)catppuccin-[a-z]*/\1catppuccin-'$NVIM_VARIANT_LIGHT'/' .config/helix/languages.toml
 	sed -i '' 's/\(--theme", "\)dark/\1light/' .config/helix/languages.toml
 	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_LIGHT'"]/' .config/lazygit/config.yml
+	sed -i '' 's/\(activeBorderColor: \)\[".*"\]/\1["'$LAZYGIT_BORDER_LIGHT'", "bold"]/' .config/lazygit/config.yml
 	sed -i '' 's/\(pager: .*\) --diff-so-fancy/\1 --light/' .config/lazygit/config.yml
 	sed -i '' 's/\(vim.cmd.colorscheme\)(".*")/\1("'"$NVIM_COLORSCHEME_LIGHT"'")/' .config/nvim/plugin/2-display.lua
 	sed -i '' 's/\(flavour = \)".*"/\1"'$NVIM_VARIANT_LIGHT'"/' .config/nvim/plugin/2-display.lua

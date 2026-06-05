@@ -51,7 +51,8 @@ gui:
   showCommandLog: false
   showFileTree: false
   theme:
-    selectedLineBgColor: ["#24283b"]
+    activeBorderColor: ["#ef9f76", "bold"]
+    selectedLineBgColor: ["#414559"]
   timeFormat: "2006-01-02"
 git:
   pagers:
