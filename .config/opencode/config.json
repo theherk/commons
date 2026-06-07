@@ -60,6 +60,10 @@
     "semble": {
       "type": "local",
       "command": ["uvx", "--from", "semble[mcp]", "semble"]
+    },
+    "atlassian": {
+      "type": "remote",
+      "url": "https://mcp.atlassian.com/v1/mcp/authv2"
     }
   }
 }
