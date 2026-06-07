@@ -7,7 +7,8 @@ mkdir -p \
 	~/.config/opencode \
 	~/.config/opencode/agents \
 	~/.config/opencode/plugins \
-	~/"Library/Application Support/Element"
+	~/"Library/Application Support/Element" \
+	~/"Library/Application Support/xbar/plugins"
 
 ln -sf ~/commons/.aliases.sh ~/
 ln -sf ~/commons/.bashrc ~/
@@ -54,4 +55,5 @@ ln -sf ~/commons/.tmux.conf ~/
 ln -sf ~/commons/.zprofile ~/
 ln -sf ~/commons/.zshrc ~/
 ln -sf ~/commons/bin/ ~/
+ln -sf ~/commons/bin/xbar/* ~/"Library/Application Support/xbar/plugins/"
 ln -sf ~/commons/rayscripts/ ~/
