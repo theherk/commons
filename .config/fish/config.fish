@@ -118,6 +118,9 @@ end
 
 alias ls=eza
 
+# Ensure mise shims are always on PATH (covers non-interactive shells too)
+fish_add_path --global "$HOME/.local/share/mise/shims"
+
 if status is-interactive; or status is-login
     if type -q mise
         mise activate fish | source
