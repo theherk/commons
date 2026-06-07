@@ -13,6 +13,7 @@
   },
   "agent": {
     "build": {
+      "color": "error",
       "model": "raicode/claude-opus-4-8",
       "permission": {
         "edit": "allow",
@@ -23,6 +24,7 @@
       }
     },
     "explore": {
+      "color": "success",
       "mode": "primary",
       "description": "Read-only codebase exploration. No writes, minimal bash.",
       "model": "raicode/claude-haiku-4-5-20251001",
@@ -46,6 +48,7 @@
       }
     },
     "plan": {
+      "color": "warning",
       "model": "raicode/claude-opus-4-8",
       "permission": {
         "edit": "deny",
