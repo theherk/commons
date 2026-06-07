@@ -1,7 +1,7 @@
 ---
 description: Independent code reviewer. No access to project memory (Nabu) or vault files. Can read code, run tests/builds, and use git -- but reviews without doer's session context.
 mode: primary
-model: raicode/claude-opus-4-8:max
+model: raicode/claude-opus-4-8
 color: info
 permission:
   edit: deny
