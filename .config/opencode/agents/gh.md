@@ -4,7 +4,37 @@ mode: subagent
 model: raicode/claude-sonnet-4-6
 permission:
   edit: deny
-  bash: allow
+  bash:
+    "*": allow
+    "gh pr create*": ask
+    "gh pr merge*": ask
+    "gh pr close*": ask
+    "gh pr reopen*": ask
+    "gh pr edit*": ask
+    "gh pr review*": ask
+    "gh pr comment*": ask
+    "gh pr ready*": ask
+    "gh issue create*": ask
+    "gh issue close*": ask
+    "gh issue reopen*": ask
+    "gh issue edit*": ask
+    "gh issue comment*": ask
+    "gh issue delete*": ask
+    "gh release create*": ask
+    "gh release edit*": ask
+    "gh release delete*": ask
+    "gh repo create*": ask
+    "gh repo edit*": ask
+    "gh repo delete*": ask
+    "gh repo fork*": ask
+    "gh api*-X POST*": ask
+    "gh api*-X PUT*": ask
+    "gh api*-X PATCH*": ask
+    "gh api*-X DELETE*": ask
+    "gh api*--method POST*": ask
+    "gh api*--method PUT*": ask
+    "gh api*--method PATCH*": ask
+    "gh api*--method DELETE*": ask
   read: allow
   glob: deny
   grep: deny

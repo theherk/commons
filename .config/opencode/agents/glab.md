@@ -4,7 +4,37 @@ mode: subagent
 model: raicode/claude-sonnet-4-6
 permission:
   edit: deny
-  bash: allow
+  bash:
+    "*": allow
+    "glab mr create*": ask
+    "glab mr merge*": ask
+    "glab mr close*": ask
+    "glab mr reopen*": ask
+    "glab mr update*": ask
+    "glab mr approve*": ask
+    "glab mr revoke*": ask
+    "glab mr note*": ask
+    "glab mr delete*": ask
+    "glab issue create*": ask
+    "glab issue close*": ask
+    "glab issue reopen*": ask
+    "glab issue update*": ask
+    "glab issue note*": ask
+    "glab issue delete*": ask
+    "glab release create*": ask
+    "glab release update*": ask
+    "glab release delete*": ask
+    "glab repo create*": ask
+    "glab repo delete*": ask
+    "glab repo fork*": ask
+    "glab api*-X POST*": ask
+    "glab api*-X PUT*": ask
+    "glab api*-X PATCH*": ask
+    "glab api*-X DELETE*": ask
+    "glab api*--method POST*": ask
+    "glab api*--method PUT*": ask
+    "glab api*--method PATCH*": ask
+    "glab api*--method DELETE*": ask
   read: allow
   glob: deny
   grep: deny

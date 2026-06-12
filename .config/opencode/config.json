@@ -3,6 +3,10 @@
   "model": "raicode/claude-opus-4-8",
   "small_model": "raicode/claude-haiku-4-5-20251001",
   "permission": {
+    "bash": {
+      "*": "allow",
+      "git push*": "ask"
+    },
     "external_directory": {
       "~/vaults/brain/*": "allow",
       "~/Library/CloudStorage/OneDrive-DNBBankASA/dnbrain/*": "allow",
