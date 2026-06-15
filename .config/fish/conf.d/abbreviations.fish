@@ -3,7 +3,7 @@ abbr -a awsl --position command aws sso login --profile \$AWS_PROFILE
 abbr -a awsr --position command aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'
 abbr -a awsu --position command set -u AWS_PROFILE
 abbr -a awswhoami --position command aws sts get-caller-identity
-abbr -a bubu --position command "brew update && brew outdated && brew upgrade && brew cleanup"
+abbr -a bubu --position command "brew bundle --upgrade && brew bundle cleanup --force && brew cleanup"
 abbr -a c --position command codium
 abbr -a cd --position command z
 abbr -a clock --position command rsclock -c
