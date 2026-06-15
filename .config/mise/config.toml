@@ -6,7 +6,55 @@ trusted_config_paths = [
 ]
 
 [tools]
-python = "latest"
+# Runtimes
+bun = "latest"
+gleam = "latest"
+go = "latest"
+java = "latest"
+lua = "latest"
 node = "lts"
-terraform = "1.6"
+python = "latest"
+rust = "nightly"
+zig = "latest"
+
+# Runtime-adjacent / infra
 awscli = "2"
+opentofu = "latest"
+terraform = "1.6"
+
+# Dev tools, language servers, linters
+cargo-binstall = "latest"
+jq = "latest"
+kubectl = "latest"
+ruff = "latest"
+rust-analyzer = "latest"
+shellcheck = "latest"
+shfmt = "latest"
+terraform-docs = "latest"
+terraform-ls = "latest"
+tflint = "latest"
+tfsec = "latest"
+uv = "latest"
+yq = "latest"
+
+# Explicit aqua backend (no registry shorthand)
+"aqua:minamijoyo/hcledit" = "latest"
+
+# Go-backed tools
+"go:github.com/cweill/gotests/gotests" = "latest"
+"go:github.com/fatih/gomodifytags" = "latest"
+"go:github.com/go-delve/delve/cmd/dlv" = "latest"
+"go:github.com/hashicorp/hcl/v2/cmd/hclfmt" = "latest"
+"go:github.com/nsf/gocode" = "latest"
+"go:github.com/x-motemen/gore/cmd/gore" = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
+
+# Cargo-backed tools
+"cargo:git-repo-manager" = "latest"
+"cargo:hackernews_tui" = "latest"
+"cargo:markdown-toc" = "latest"
+
+# npm-backed tools
+"npm:corepack" = "latest"
+"npm:js-beautify" = "latest"
+"npm:stylelint" = "latest"

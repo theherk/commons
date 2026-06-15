@@ -43,10 +43,11 @@ While this configuration does prepare a great many tools, it revolves primarily 
 - [kindavim](https://github.com/godbout/kindavim): Vim-style navigation for macOS.
 - [lazydocker](https://github.com/jesseduffield/lazydocker): Container management TUI.
 - [lazygit](https://github.com/jesseduffield/lazygit): The best git interface outside emacs.
-- [mise](https://github.com/jdx/mise): Polyglot runtime version manager and environment management.
+- [mise](https://github.com/jdx/mise): Polyglot runtime version manager and environment management. Manages language runtimes, language servers, linters, and dev tooling (see [config](.config/mise/config.toml)).
 - [navi](https://github.com/denisidoro/navi): Interactive cheatsheet tool for the command-line.
 - [Neovide](https://neovide.dev/): Smooth-scrolling Neovim GUI; occasional use.
 - [NeovideProject](https://github.com/theherk/NeovideProject): Project switching with [Zoxide Git Projects](https://www.raycast.com/theherk/zoxide-git-projects).
+- [opentofu](https://opentofu.org/): Open source infrastructure as code tool.
 - [pandoc](https://pandoc.org/): Universal document converter.
 - [podman](https://podman.io/): Daemonless container engine.
 - [ripgrep](https://github.com/BurntSushi/ripgrep): Amazing search tool.

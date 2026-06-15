@@ -49,13 +49,19 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # install oh-my-zsh
     git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
-## Install language runtimes with mise.
+## Install language runtimes and tooling with mise.
 
 ```sh
 mise install
 ```
 
-This reads `.config/mise/config.toml` and installs the configured Python, Node.js, and Java versions.
+This reads `.config/mise/config.toml` and installs the configured runtimes
+(Python, Node.js, Java, Go, Rust, Zig, Bun, Gleam, Lua), along with the
+language servers, linters, and dev tools managed there (e.g. gopls, delve,
+rust-analyzer, ruff, uv, opentofu, terraform-ls, tflint, tfsec, terraform-docs,
+hcledit, kubectl, jq, yq, shellcheck, shfmt) and the Go/Cargo/npm-backed
+applications (gotests, gomodifytags, hclfmt, gore, gocode, git-repo-manager,
+hackernews_tui, markdown-toc, corepack, js-beautify, stylelint).
 
 ### Set fish colors without storing themes
 
@@ -81,49 +87,12 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 
 ## Install more programming tools.
 
-### Install Go from https://golang.org/doc/install.
-
-Followed by:
-
-```sh
-go install \
-    github.com/cweill/gotests/...@latest \
-    github.com/fatih/gomodifytags@latest \
-    github.com/hashicorp/hcl/v2/cmd/hclfmt@latest \
-    github.com/x-motemen/gore/...@latest \
-    github.com/nsf/gocode@latest \
-    golang.org/x/tools/...@latest
-```
-
-### Install Rust.
+Go, Rust, and their associated tools are installed by `mise install` above
+(see `.config/mise/config.toml`). A few Rust components cannot be expressed in
+mise and must be added manually after the Rust toolchain is present:
 
 ```sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # install rust
-rustup toolchain add nightly
-cargo +nightly install racer
-rustup default nightly
-rustup component add rust-src rustc-dev llvm-tools-preview
-```
-
-Also install [markdown-toc](https://github.com/pbzweihander/markdown-toc).
-
-```sh
-cargo install markdown-toc
-```
-
-Gotta have HN.
-
-```sh
-cargo install hackernews_tui --locked
-```
-
-### Some npm tools.
-
-```sh
-npm i -g js-beautify stylelint
-npm audit fix
-npm i --pack-lock-only
-npm audit fix # seems to work after package lock
+rustup component add llvm-tools-preview rust-src rustc-dev
 ```
 
 ## Install Ollama from the official source.
@@ -142,11 +111,10 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 This is an optional step, and will merge all owner repositories to their correct homes in `~/projects/`.
 
-First, ensure the requisite directories exist, install [git-repo-manager](https://github.com/hakoerber/git-repo-manager), and link the configuration files into the correct locations.
+First, ensure the requisite directories exist and link the configuration files into the correct locations. ([git-repo-manager](https://github.com/hakoerber/git-repo-manager) is installed by `mise install`.)
 
 ```sh
 mkdir -p $P/dnb.ghe.com $P/github.com $P/gitlab.com $P/gitlab.tech.dnb.no
-cargo +nightly install git-repo-manager
 ln -sf ~/commons/.config/grm/dnb.ghe.com/config.toml $P/dnb.ghe.com/config.toml
 ln -sf ~/commons/.config/grm/dnb.ghe.com/remotes.toml $P/dnb.ghe.com/remotes.toml
 ln -sf ~/commons/.config/grm/github.com/config.toml $P/github.com/config.toml
