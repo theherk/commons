@@ -1,3 +1,4 @@
+tap "aquasecurity/trivy", trusted: true
 tap "atlassian/homebrew-acli", trusted: true
 tap "catppuccin/tap", trusted: true
 tap "charmbracelet/tap", trusted: true
@@ -6,6 +7,7 @@ tap "getagentseal/codeburn", trusted: true
 tap "helix-editor/helix", trusted: true
 tap "idoavrah/homebrew", trusted: true
 tap "lhvy/tap", trusted: true
+tap "mhersson/formulas", trusted: true
 tap "minamijoyo/hcledit", trusted: true
 tap "nikitabobko/tap", trusted: true
 tap "oven-sh/bun", trusted: true
@@ -14,6 +16,7 @@ tap "thezoraiz/ascii-image-converter", trusted: true
 tap "wez/wezterm", trusted: true
 brew "amfora"
 brew "anomalyco/tap/opencode"
+brew "aquasecurity/trivy/trivy"
 brew "asciinema"
 brew "aspell"
 brew "atlassian/acli/acli"
@@ -180,6 +183,7 @@ cask "podman-desktop"
 cask "proton-mail-bridge"
 cask "raycast"
 cask "slack"
+cask "tailscale-app"
 cask "terraform-linters/tap/tflint"
 cask "thaw@beta"
 cask "utm"
@@ -188,3 +192,9 @@ cask "wezterm@nightly"
 cask "wooshy"
 cask "xbar"
 cask "zen"
+cargo "git-repo-manager"
+cargo "hackernews_tui"
+cargo "markdown-toc"
+npm "corepack"
+npm "js-beautify"
+npm "stylelint"
