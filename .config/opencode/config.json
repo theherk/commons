@@ -68,8 +68,8 @@
         "baseURL": "http://localhost:11434/v1"
       },
       "models": {
-        "gemma4:26b": {
-          "name": "Gemma 4 26B (MoE - local)"
+        "gemma4-26b-large-ctx": {
+          "name": "Gemma 4 26B (MoE - 256K context)"
         }
       }
     }
