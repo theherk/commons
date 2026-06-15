@@ -1,17 +1,17 @@
-tap "atlassian/homebrew-acli"
-tap "catppuccin/tap"
-tap "charmbracelet/tap"
-tap "d12frosted/emacs-plus"
-tap "getagentseal/codeburn"
-tap "helix-editor/helix"
-tap "idoavrah/homebrew"
-tap "lhvy/tap"
-tap "minamijoyo/hcledit"
-tap "nikitabobko/tap"
-tap "oven-sh/bun"
-tap "terraform-linters/tap"
-tap "thezoraiz/ascii-image-converter"
-tap "wez/wezterm"
+tap "atlassian/homebrew-acli", trusted: true
+tap "catppuccin/tap", trusted: true
+tap "charmbracelet/tap", trusted: true
+tap "d12frosted/emacs-plus", trusted: true
+tap "getagentseal/codeburn", trusted: true
+tap "helix-editor/helix", trusted: true
+tap "idoavrah/homebrew", trusted: true
+tap "lhvy/tap", trusted: true
+tap "minamijoyo/hcledit", trusted: true
+tap "nikitabobko/tap", trusted: true
+tap "oven-sh/bun", trusted: true
+tap "terraform-linters/tap", trusted: true
+tap "thezoraiz/ascii-image-converter", trusted: true
+tap "wez/wezterm", trusted: true
 brew "amfora"
 brew "anomalyco/tap/opencode"
 brew "asciinema"
