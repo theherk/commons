@@ -29,4 +29,5 @@ export PATH=$HOME/.emacs.d/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
+export MISE_TRUSTED_CONFIG_PATHS="$HOME/projects/dnb.ghe.com:$HOME/projects/github.com:$HOME/projects/gitlab.tech.dnb.no"
 eval "$(mise activate zsh --shims)"

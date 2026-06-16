@@ -40,6 +40,8 @@ fi
 
 eval "$(atuin init zsh --disable-up-arrow)"
 
+: "${MISE_TRUSTED_CONFIG_PATHS:=$HOME/projects/dnb.ghe.com:$HOME/projects/github.com:$HOME/projects/gitlab.tech.dnb.no}"
+export MISE_TRUSTED_CONFIG_PATHS
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"

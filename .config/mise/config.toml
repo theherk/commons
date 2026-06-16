@@ -1,9 +1,10 @@
-[settings]
-trusted_config_paths = [
-  "~/projects/dnb.ghe.com/",
-  "~/projects/github.com/",
-  "~/projects/gitlab.tech.dnb.no/",
-]
+# NOTE: trusted_config_paths is intentionally NOT set in this file.
+# This file is symlinked to ~/.config/mise (so it acts as the global config),
+# but whenever cwd resolves under ~/commons/.config/mise, mise also discovers
+# it as a *non-global* config and warns that trusted_config_paths is ignored
+# there for security. To avoid that false-positive warning, the trusted paths
+# are provided via the MISE_TRUSTED_CONFIG_PATHS env var in the shell rc files
+# (.config/fish/config.fish, .zshrc, .zprofile).
 
 [tools]
 # Runtimes

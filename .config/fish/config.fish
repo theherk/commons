@@ -118,6 +118,8 @@ end
 
 alias ls=eza
 
+set -gx MISE_TRUSTED_CONFIG_PATHS "$HOME/projects/dnb.ghe.com:$HOME/projects/github.com:$HOME/projects/gitlab.tech.dnb.no"
+
 # Ensure mise shims are always on PATH (covers non-interactive shells too)
 fish_add_path --global "$HOME/.local/share/mise/shims"
 
