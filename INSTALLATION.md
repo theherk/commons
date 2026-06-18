@@ -59,7 +59,7 @@ This reads `.config/mise/config.toml` and installs the configured runtimes
 (Python, Node.js, Java, Go, Rust, Zig, Bun, Gleam, Lua), along with the
 language servers, linters, and dev tools managed there (e.g. gopls, delve,
 rust-analyzer, ruff, uv, opentofu, terraform-ls, tflint, tfsec, terraform-docs,
-hcledit, kubectl, jq, yq, shellcheck, shfmt) and the Go/Cargo/npm-backed
+hcledit, kubectl, jq, yq, shellcheck, shfmt, actionlint) and the Go/Cargo/npm-backed
 applications (gotests, gomodifytags, hclfmt, gore, gocode, git-repo-manager,
 hackernews_tui, markdown-toc, corepack, js-beautify, stylelint).
 

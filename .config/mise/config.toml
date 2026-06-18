@@ -24,6 +24,7 @@ opentofu = "latest"
 terraform = "1.6"
 
 # Dev tools, language servers, linters
+actionlint = "latest"
 cargo-binstall = "latest"
 jq = "latest"
 kubectl = "latest"
