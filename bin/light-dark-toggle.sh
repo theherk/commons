@@ -184,7 +184,13 @@ darken() {
 
 	# macOS system appearance
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
-	osascript -e "tell application \"System Events\" to tell every desktop to set picture to POSIX file \"$WALLPAPER_DARK\""
+	osascript -e '
+use framework "AppKit"
+set theURL to current application'\''s NSURL'\''s fileURLWithPath:"'"$WALLPAPER_DARK"'"
+set ws to current application'\''s NSWorkspace'\''s sharedWorkspace()
+repeat with scr in (current application'\''s NSScreen'\''s screens() as list)
+    ws'\''s setDesktopImageURL:theURL forScreen:scr options:(current application'\''s NSDictionary'\''s dictionary()) |error|:(missing value)
+end repeat'
 
 	# State marker
 	echo "dark" > .appearance
@@ -239,7 +245,13 @@ lighten() {
 
 	# macOS system appearance
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
-	osascript -e "tell application \"System Events\" to tell every desktop to set picture to POSIX file \"$WALLPAPER_LIGHT\""
+	osascript -e '
+use framework "AppKit"
+set theURL to current application'\''s NSURL'\''s fileURLWithPath:"'"$WALLPAPER_LIGHT"'"
+set ws to current application'\''s NSWorkspace'\''s sharedWorkspace()
+repeat with scr in (current application'\''s NSScreen'\''s screens() as list)
+    ws'\''s setDesktopImageURL:theURL forScreen:scr options:(current application'\''s NSDictionary'\''s dictionary()) |error|:(missing value)
+end repeat'
 
 	# State marker
 	echo "light" > .appearance
