@@ -1,7 +1,21 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
+
+-- Detect macOS appearance for background
+local function detect_appearance()
+  local handle = io.popen("defaults read -g AppleInterfaceStyle 2>/dev/null")
+  if handle then
+    local result = handle:read("*a")
+    handle:close()
+    if result:find("Dark") then
+      return "dark"
+    end
+  end
+  return "light"
+end
+
 vim.opt.autowrite = true
-vim.opt.background = "dark"
+vim.opt.background = detect_appearance()
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = "menuone,noinsert,popup"
 vim.opt.conceallevel = 0

@@ -1,1 +1,3 @@
---theme="Catppuccin Frappe"
+--theme="auto:system"
+--theme-dark="Catppuccin Frappe"
+--theme-light="Catppuccin Latte"

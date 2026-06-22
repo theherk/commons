@@ -17,7 +17,6 @@
 	pager = delta
 [delta]
 	detect-dark-light = false
-	light = false
 	line-numbers = false
 	navigate = true
 	paging = auto

@@ -5,6 +5,8 @@ session_serialization false
 show_startup_tips false
 simplified_ui true
 theme "catppuccin-frappe"
+theme_dark "catppuccin-frappe"
+theme_light "catppuccin-latte"
 default_layout "default"
 
 keybinds {

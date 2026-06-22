@@ -1,9 +1,25 @@
 #!/usr/bin/env sh
 
-PROFILE_DIR="$HOME/Library/Application Support/zen/Profiles/y10w10po.Default (alpha)"
-
-BAT_DARK="Catppuccin Frappe"
-BAT_LIGHT="Catppuccin Latte"
+# Tools that auto-detect system appearance (no action needed here):
+#   - WezTerm (wezterm.gui.get_appearance)
+#   - bat (--theme="auto:system")
+#   - delta (detect-dark-light = auto)
+#   - yazi (theme.toml dark/light flavors)
+#
+# Tools that get live-pushed (no config file edits, runtime signal/socket):
+#   - Neovim (SetAppearance command via --server socket)
+#   - Helix (config sed + USR1 signal for reload)
+#   - Doom Emacs (emacsclient eval)
+#   - Zellij native UI (set-dark-theme/set-light-theme action)
+#
+# Tools that still need config file edits (no native detection):
+#   - fish theme, LS_COLORS, FZF_DEFAULT_OPTS, ENHANCE_THEME (fish universal vars)
+#   - lazygit (border/selection colors)
+#   - zjstatus layouts (hardcoded colors, no live reload)
+#   - gh-dash theme colors
+#   - hn-tui
+#   - OpenCode / Claude CLI
+#   - zellij config.kdl theme name
 
 DOOM_DARK=catppuccin
 DOOM_LIGHT=catppuccin
@@ -19,24 +35,11 @@ LAZYGIT_BORDER_LIGHT=#fe640b
 LAZYGIT_BG_DARK=#414559
 LAZYGIT_BG_LIGHT=#ccd0da
 
-NVIM_COLORSCHEME_DARK="catppuccin"
-NVIM_COLORSCHEME_LIGHT="catppuccin"
-
-# Not needed while using separate plugins.
-NVIM_VARIANT_DARK=frappe
-NVIM_VARIANT_LIGHT=latte
-
 VIVID_DARK="catppuccin-frappe"
 VIVID_LIGHT="catppuccin-latte"
 
 WALLPAPER_DARK="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Pictures/background/catppuccin-frappe-themer-my-color-set-dark-3440x1440.png"
 WALLPAPER_LIGHT="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Pictures/background/catppuccin-latte-themer-my-color-set-light-3440x1440.png"
-
-WEZTERM_DARK="Catppuccin Frappe"
-WEZTERM_LIGHT="Catppuccin Latte (Gogh)"
-
-YAZI_DARK="catppuccin-frappe"
-YAZI_LIGHT="catppuccin-latte"
 
 OPENCODE_DARK="catppuccin-frappe"
 OPENCODE_LIGHT="catppuccin"
@@ -178,84 +181,116 @@ launch_hn = { front = "#40a02b", effect = "bold" }'
 
 darken() {
 	echo "darkening"
+
+	# macOS system appearance
+	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
+	osascript -e "tell application \"System Events\" to tell every desktop to set picture to POSIX file \"$WALLPAPER_DARK\""
+
+	# State marker
+	echo "dark" > .appearance
+
+	# Fish shell (universal vars — instantly visible to all shells)
 	yes | fish -c 'fish_config theme save "'"$FISH_DARK"'"'
 	fish -c "set -Ux LS_COLORS (vivid generate $VIVID_DARK)"
-	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
-	echo "$HN_DARK" >~/.config/hn-tui.toml
-	sed -i '' 's/\(--theme=\)".*"/\1"'"$BAT_DARK"'"/' .config/bat/config
-	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_DARK')/' .config/doom/config.org
-	sed -i '' "s/(setq catppuccin-flavor '[a-z]*)/(setq catppuccin-flavor 'frappe)/" .config/doom/config.org
-	sed -i '' 's/\(.*light =\).*/\1 false/' .config/git/config
-	emacsclient -e "(progn (setq catppuccin-flavor 'frappe) (catppuccin-reload))" 2>/dev/null || true
-	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_DARK'"/' .config/helix/config.toml
-	sed -i '' 's/\(--code-style", "\)catppuccin-[a-z]*/\1catppuccin-'$NVIM_VARIANT_DARK'/' .config/helix/languages.toml
-	sed -i '' 's/\(--theme", "\)light/\1dark/' .config/helix/languages.toml
-	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_DARK'"]/' .config/lazygit/config.yml
-	sed -i '' 's/\(activeBorderColor: \)\[".*"\]/\1["'$LAZYGIT_BORDER_DARK'", "bold"]/' .config/lazygit/config.yml
-	sed -i '' 's/\(pager: .*\) --light/\1 --diff-so-fancy/' .config/lazygit/config.yml
-	sed -i '' 's/\(vim.cmd.colorscheme\)(".*")/\1("'"$NVIM_COLORSCHEME_DARK"'")/' .config/nvim/plugin/2-display.lua
-	sed -i '' 's/\(flavour = \)".*"/\1"'$NVIM_VARIANT_DARK'"/' .config/nvim/plugin/2-display.lua
-	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1catppuccin-'$NVIM_VARIANT_DARK'")/' .config/nvim/plugin/2-display.lua
-	sed -i '' 's/\("--code-style", "catppuccin-\)[a-z]*/\1'$NVIM_VARIANT_DARK'/' .config/nvim/plugin/6-code.lua
-	sed -i '' 's/\("--theme", "\)light/\1dark/' .config/nvim/plugin/6-code.lua
-	sed -i '' 's/\(vim.opt.background = \)".*"/\1"dark"/' .config/nvim/plugin/1-options.lua
-	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_DARK"'"/' .config/wezterm/theme.lua
-	sed -i '' 's/\(use = \)".*"/\1"'"$YAZI_DARK"'"/' .config/yazi/theme.toml
-	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_DARK"'"/' .config/zellij/config.kdl
-	sed -i '' '/tab_active/s/bg=#[^,]*/bg='"$ZELLIJ_TAB_ACTIVE_BG_DARK"'/g' .config/zellij/layouts/*.kdl
 	fish -c "set -Ux ENHANCE_THEME $ENHANCE_THEME_DARK"
 	fish -c "set -Ux FZF_DEFAULT_OPTS '$FZF_COLORS_DARK'"
-	sed -i '' 's/"theme": "light"/"theme": "dark"/' ~/.claude.json
-	sed -i '' 's/\("theme": \)".*"/\1"'"$OPENCODE_DARK"'"/' .config/opencode/tui.json
-	sed -i '' 's/\(diff: delta --paging always\) --light/\1 --diff-so-fancy/' .config/gh-dash/config.yml
+
+	# Doom Emacs (live push + config persist)
+	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_DARK')/' .config/doom/config.org
+	sed -i '' "s/(setq catppuccin-flavor '[a-z]*)/(setq catppuccin-flavor 'frappe)/" .config/doom/config.org
+	emacsclient -e "(progn (setq catppuccin-flavor 'frappe) (catppuccin-reload))" 2>/dev/null || true
+
+	# Helix (config edit + live reload via USR1)
+	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_DARK'"/' .config/helix/config.toml
+	sed -i '' 's/\(--code-style", "\)catppuccin-[a-z]*/\1catppuccin-frappe/' .config/helix/languages.toml
+	sed -i '' 's/\(--theme", "\)light/\1dark/' .config/helix/languages.toml
+	pkill -USR1 hx 2>/dev/null || true
+
+	# Neovim (live push to all running instances)
+	for sock in $(fd --type s --max-depth 1 _neovim $(cat ~/.projects) 2>/dev/null); do
+		nvim --server "$sock" --remote-expr "execute('SetAppearance dark')" 2>/dev/null
+	done
+
+	# Lazygit (border/selection colors only — pager handled by delta auto-detect)
+	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_DARK'"]/' .config/lazygit/config.yml
+	sed -i '' 's/\(activeBorderColor: \)\[".*"\]/\1["'$LAZYGIT_BORDER_DARK'", "bold"]/' .config/lazygit/config.yml
+
+	# Zellij (config persist + live theme switch)
+	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_DARK"'"/' .config/zellij/config.kdl
+	sed -i '' '/tab_active/s/bg=#[^,]*/bg='"$ZELLIJ_TAB_ACTIVE_BG_DARK"'/g' .config/zellij/layouts/*.kdl
+	for session in $(zellij list-sessions -n 2>/dev/null); do
+		zellij --session "$session" action set-dark-theme 2>/dev/null
+	done
+
+	# gh-dash (theme colors — no native detection)
 	sed -i '' '/^theme:/,$d' .config/gh-dash/config.yml
 	echo "$GH_DASH_DARK" >>.config/gh-dash/config.yml
-	osascript -e "tell application \"System Events\" to tell every desktop to set picture to POSIX file \"$WALLPAPER_DARK\""
-	# sed -i '' 's/user_pref("browser\.theme\.content-theme", .);/user_pref("browser.theme.content-theme", 0);/' "$PROFILE_DIR/prefs.js"
-	# sed -i '' 's/user_pref("browser\.theme\.toolbar-theme", .);/user_pref("browser.theme.toolbar-theme", 0);/' "$PROFILE_DIR/prefs.js"
+
+	# hn-tui
+	echo "$HN_DARK" >~/.config/hn-tui.toml
+
+	# Claude / OpenCode
+	sed -i '' 's/"theme": "light"/"theme": "dark"/' ~/.claude.json
+	sed -i '' 's/\("theme": \)".*"/\1"'"$OPENCODE_DARK"'"/' .config/opencode/tui.json
 }
 
 lighten() {
 	echo "lightening"
+
+	# macOS system appearance
+	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
+	osascript -e "tell application \"System Events\" to tell every desktop to set picture to POSIX file \"$WALLPAPER_LIGHT\""
+
+	# State marker
+	echo "light" > .appearance
+
+	# Fish shell
 	yes | fish -c 'fish_config theme save "'"$FISH_LIGHT"'"'
 	fish -c "set -Ux LS_COLORS (vivid generate $VIVID_LIGHT)"
-	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
-	echo "$HN_LIGHT" >~/.config/hn-tui.toml
-	sed -i '' 's/\(--theme=\)".*"/\1"'"$BAT_LIGHT"'"/' .config/bat/config
-	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_LIGHT')/' .config/doom/config.org
-	sed -i '' "s/(setq catppuccin-flavor '[a-z]*)/(setq catppuccin-flavor 'latte)/" .config/doom/config.org
-	sed -i '' 's/\(.*light =\).*/\1 true/' .config/git/config
-	emacsclient -e "(progn (setq catppuccin-flavor 'latte) (catppuccin-reload))" 2>/dev/null || true
-	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_LIGHT'"/' .config/helix/config.toml
-	sed -i '' 's/\(--code-style", "\)catppuccin-[a-z]*/\1catppuccin-'$NVIM_VARIANT_LIGHT'/' .config/helix/languages.toml
-	sed -i '' 's/\(--theme", "\)dark/\1light/' .config/helix/languages.toml
-	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_LIGHT'"]/' .config/lazygit/config.yml
-	sed -i '' 's/\(activeBorderColor: \)\[".*"\]/\1["'$LAZYGIT_BORDER_LIGHT'", "bold"]/' .config/lazygit/config.yml
-	sed -i '' 's/\(pager: .*\) --diff-so-fancy/\1 --light/' .config/lazygit/config.yml
-	sed -i '' 's/\(vim.cmd.colorscheme\)(".*")/\1("'"$NVIM_COLORSCHEME_LIGHT"'")/' .config/nvim/plugin/2-display.lua
-	sed -i '' 's/\(flavour = \)".*"/\1"'$NVIM_VARIANT_LIGHT'"/' .config/nvim/plugin/2-display.lua
-	sed -i '' 's/\(local custom = require("lualine.themes.\).*")/\1catppuccin-'$NVIM_VARIANT_LIGHT'")/' .config/nvim/plugin/2-display.lua
-	sed -i '' 's/\("--code-style", "catppuccin-\)[a-z]*/\1'$NVIM_VARIANT_LIGHT'/' .config/nvim/plugin/6-code.lua
-	sed -i '' 's/\("--theme", "\)dark/\1light/' .config/nvim/plugin/6-code.lua
-	sed -i '' 's/\(vim.opt.background = \)".*"/\1"light"/' .config/nvim/plugin/1-options.lua
-	sed -i '' 's/\(local selected_scheme = \)".*"/\1"'"$WEZTERM_LIGHT"'"/' .config/wezterm/theme.lua
-	sed -i '' 's/\(use = \)".*"/\1"'"$YAZI_LIGHT"'"/' .config/yazi/theme.toml
-	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_LIGHT"'"/' .config/zellij/config.kdl
-	sed -i '' '/tab_active/s/bg=#[^,]*/bg='"$ZELLIJ_TAB_ACTIVE_BG_LIGHT"'/g' .config/zellij/layouts/*.kdl
 	fish -c "set -Ux ENHANCE_THEME $ENHANCE_THEME_LIGHT"
 	fish -c "set -Ux FZF_DEFAULT_OPTS '$FZF_COLORS_LIGHT'"
-	sed -i '' 's/"theme": "dark"/"theme": "light"/' ~/.claude.json
-	sed -i '' 's/\("theme": \)".*"/\1"'"$OPENCODE_LIGHT"'"/' .config/opencode/tui.json
-	sed -i '' 's/\(diff: delta --paging always\) --diff-so-fancy/\1 --light/' .config/gh-dash/config.yml
+
+	# Doom Emacs
+	sed -i '' 's/(\(setq doom-theme '\''\).*)/(\1'$DOOM_LIGHT')/' .config/doom/config.org
+	sed -i '' "s/(setq catppuccin-flavor '[a-z]*)/(setq catppuccin-flavor 'latte)/" .config/doom/config.org
+	emacsclient -e "(progn (setq catppuccin-flavor 'latte) (catppuccin-reload))" 2>/dev/null || true
+
+	# Helix
+	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_LIGHT'"/' .config/helix/config.toml
+	sed -i '' 's/\(--code-style", "\)catppuccin-[a-z]*/\1catppuccin-latte/' .config/helix/languages.toml
+	sed -i '' 's/\(--theme", "\)dark/\1light/' .config/helix/languages.toml
+	pkill -USR1 hx 2>/dev/null || true
+
+	# Neovim
+	for sock in $(fd --type s --max-depth 1 _neovim $(cat ~/.projects) 2>/dev/null); do
+		nvim --server "$sock" --remote-expr "execute('SetAppearance light')" 2>/dev/null
+	done
+
+	# Lazygit
+	sed -i '' 's/\(selected.*BgColor: \)\[".*"\]/\1["'$LAZYGIT_BG_LIGHT'"]/' .config/lazygit/config.yml
+	sed -i '' 's/\(activeBorderColor: \)\[".*"\]/\1["'$LAZYGIT_BORDER_LIGHT'", "bold"]/' .config/lazygit/config.yml
+
+	# Zellij
+	sed -i '' 's/\(theme \)".*"/\1"'"$ZELLIJ_LIGHT"'"/' .config/zellij/config.kdl
+	sed -i '' '/tab_active/s/bg=#[^,]*/bg='"$ZELLIJ_TAB_ACTIVE_BG_LIGHT"'/g' .config/zellij/layouts/*.kdl
+	for session in $(zellij list-sessions -n 2>/dev/null); do
+		zellij --session "$session" action set-light-theme 2>/dev/null
+	done
+
+	# gh-dash
 	sed -i '' '/^theme:/,$d' .config/gh-dash/config.yml
 	echo "$GH_DASH_LIGHT" >>.config/gh-dash/config.yml
-	osascript -e "tell application \"System Events\" to tell every desktop to set picture to POSIX file \"$WALLPAPER_LIGHT\""
-	# sed -i '' 's/user_pref("browser\.theme\.content-theme", .);/user_pref("browser.theme.content-theme", 1);/' "$PROFILE_DIR/prefs.js"
-	# sed -i '' 's/user_pref("browser\.theme\.toolbar-theme", .);/user_pref("browser.theme.toolbar-theme", 1);/' "$PROFILE_DIR/prefs.js"
+
+	# hn-tui
+	echo "$HN_LIGHT" >~/.config/hn-tui.toml
+
+	# Claude / OpenCode
+	sed -i '' 's/"theme": "dark"/"theme": "light"/' ~/.claude.json
+	sed -i '' 's/\("theme": \)".*"/\1"'"$OPENCODE_LIGHT"'"/' .config/opencode/tui.json
 }
 
 cd ~/commons || return
-if grep -q "light = true" ~/.config/git/config; then
+if [ "$(cat .appearance 2>/dev/null)" = "light" ]; then
 	echo "currently: light\nswitch to: dark"
 	darken
 else

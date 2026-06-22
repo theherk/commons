@@ -21,7 +21,7 @@ vim.o.guicursor = table.concat({
 
 now(function()
   add({ { src = "https://github.com/catppuccin/nvim", name = "catppuccin" } })
-  local flavour = "frappe"
+  local flavour = vim.o.background == "dark" and "frappe" or "latte"
   require("catppuccin").setup({
     color_overrides = { all = { green = require("catppuccin.palettes").get_palette(flavour).teal } },
     custom_highlights = function(colors)
@@ -62,6 +62,33 @@ now(function()
   })
   vim.cmd.colorscheme("catppuccin")
   vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE", ctermbg = "NONE" })
+
+  -- Live appearance switching (called remotely via --remote-expr)
+  vim.api.nvim_create_user_command("SetAppearance", function(opts)
+    local mode = opts.args -- "dark" or "light"
+    local flav = mode == "dark" and "frappe" or "latte"
+    vim.o.background = mode
+    require("catppuccin").setup({
+      color_overrides = { all = { green = require("catppuccin.palettes").get_palette(flav).teal } },
+      custom_highlights = function(colors)
+        return {
+          CmpBorder = { fg = colors.surface1 },
+          FloatBorder = { fg = colors.surface1 },
+        }
+      end,
+      flavour = flav,
+      transparent_background = true,
+    })
+    vim.cmd.colorscheme("catppuccin")
+    vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE", ctermbg = "NONE" })
+    -- Refresh lualine with new theme
+    local ok, lualine = pcall(require, "lualine")
+    if ok then
+      local custom = require("lualine.themes.catppuccin-" .. flav)
+      custom.normal.c.bg = "none"
+      lualine.setup({ options = { theme = custom } })
+    end
+  end, { nargs = 1 })
 end)
 
 later(function()
@@ -211,7 +238,8 @@ end)
 
 now(function()
   add({ "https://github.com/nvim-lualine/lualine.nvim" })
-  local custom = require("lualine.themes.catppuccin-frappe")
+  local flav = vim.o.background == "dark" and "frappe" or "latte"
+  local custom = require("lualine.themes.catppuccin-" .. flav)
   custom.normal.c.bg = "none"
   ---@diagnostic disable-next-line: undefined-field
   require("lualine").setup({

@@ -402,8 +402,10 @@ later(function()
     },
   }
 
+  local mpls_theme = vim.o.background == "dark" and "dark" or "light"
+  local mpls_style = vim.o.background == "dark" and "catppuccin-frappe" or "catppuccin-latte"
   vim.lsp.config("mpls", {
-    cmd = { "mpls", "--theme", "dark", "--code-style", "catppuccin-frappe", "--enable-emoji", "--enable-footnotes" },
+    cmd = { "mpls", "--theme", mpls_theme, "--code-style", mpls_style, "--enable-emoji", "--enable-footnotes" },
     filetypes = { "markdown" },
     root_markers = { ".marksman.toml", ".git" },
   })
