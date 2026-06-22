@@ -9,6 +9,7 @@ tap "idoavrah/homebrew", trusted: true
 tap "lhvy/tap", trusted: true
 tap "mhersson/formulas", trusted: true
 tap "nikitabobko/tap", trusted: true
+tap "slp/krun", trusted: true
 tap "thezoraiz/ascii-image-converter", trusted: true
 tap "wez/wezterm", trusted: true
 brew "amfora"
@@ -68,6 +69,7 @@ brew "ispell"
 brew "jdtls"
 brew "jj"
 brew "jjui"
+brew "slp/krun/krunkit"
 brew "lazydocker"
 brew "lazygit"
 brew "libpng"
