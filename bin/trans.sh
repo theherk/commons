@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Translate text using TranslateGemma on oMLX.
+# Uses /v1/completions with raw prompt because TranslateGemma's chat template
+# requires structured content arrays that oMLX doesn't pass through.
 set -euo pipefail
 
 usage() {
@@ -20,10 +23,33 @@ else
   TEXT="$(pbpaste)"
 fi
 
-PROMPT="You are a professional ${SOURCE_LANG} (${SOURCE_CODE}) to ${TARGET_LANG} (${TARGET_CODE}) translator. Your goal is to accurately convey the meaning and nuances of the original ${SOURCE_LANG} text while adhering to ${TARGET_LANG} grammar, vocabulary, and cultural sensitivities.
+OMLX_BASE="${OMLX_URL:-http://localhost:8000/v1}"
+MODEL="${TRANSLATE_MODEL:-mlx-community--translategemma-4b-it-4bit}"
+
+if ! curl -sf "${OMLX_BASE}/models" >/dev/null 2>&1; then
+  echo "error: oMLX server not reachable at ${OMLX_BASE}" >&2
+  exit 1
+fi
+
+# Prompt wraps in Gemma chat markers since we use /v1/completions directly.
+# This matches the official TranslateGemma chat template output verbatim.
+PROMPT="<bos><start_of_turn>user
+You are a professional ${SOURCE_LANG} (${SOURCE_CODE}) to ${TARGET_LANG} (${TARGET_CODE}) translator. Your goal is to accurately convey the meaning and nuances of the original ${SOURCE_LANG} text while adhering to ${TARGET_LANG} grammar, vocabulary, and cultural sensitivities.
 Produce only the ${TARGET_LANG} translation, without any additional explanations or commentary. Please translate the following ${SOURCE_LANG} text into ${TARGET_LANG}:
 
 
-${TEXT}"
+${TEXT}<end_of_turn>
+<start_of_turn>model
+"
 
-ollama run translategemma:4b "${PROMPT}"
+curl -sf "${OMLX_BASE}/completions" \
+  -H "Content-Type: application/json" \
+  -d "$(jq -n \
+    --arg model "$MODEL" \
+    --arg prompt "$PROMPT" '{
+    model: $model,
+    prompt: $prompt,
+    temperature: 0.1,
+    max_tokens: 4096,
+    stop: ["<end_of_turn>"]
+  }')" | jq -r '.choices[0].text'

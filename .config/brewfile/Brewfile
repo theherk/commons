@@ -6,6 +6,7 @@ tap "d12frosted/emacs-plus", trusted: true
 tap "getagentseal/codeburn", trusted: true
 tap "helix-editor/helix", trusted: true
 tap "idoavrah/homebrew", trusted: true
+tap "jundot/omlx", "https://github.com/jundot/omlx", trusted: true
 tap "lhvy/tap", trusted: true
 tap "mhersson/formulas", trusted: true
 tap "nikitabobko/tap", trusted: true
@@ -87,6 +88,7 @@ brew "neovim"
 brew "newman"
 brew "nushell"
 brew "onefetch"
+brew "omlx"
 brew "opa"
 brew "pandoc"
 brew "pinentry-mac"

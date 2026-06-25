@@ -56,6 +56,22 @@ if ai_enabled then
     local config = {
       adapters = {
         copilot = false,
+        http = {
+          omlx = function()
+            return require("codecompanion.adapters").extend("openai_compatible", {
+              name = "omlx",
+              env = {
+                url = "http://localhost:8000",
+                api_key = "OMLX_API_KEY",
+              },
+              schema = {
+                model = {
+                  default = "mlx-community--gemma-4-26b-a4b-it-4bit",
+                },
+              },
+            })
+          end,
+        },
         acp = {
           raicode = function()
             return require("codecompanion.adapters").extend("claude_code", {
@@ -72,7 +88,7 @@ if ai_enabled then
     require("codecompanion").setup(config)
     vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion (toggle)" })
     vim.keymap.set({ "n", "v" }, "<leader>ac", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
-    vim.keymap.set({ "n", "v" }, "<leader>ao", "<cmd>CodeCompanionChat ollama<cr>", { desc = "codecompanion ollama" })
+    vim.keymap.set({ "n", "v" }, "<leader>ao", "<cmd>CodeCompanionChat adapter=omlx<cr>", { desc = "codecompanion omlx" })
     vim.keymap.set({ "n", "v" }, "<leader>ar", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion raicode" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-?>", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-r>", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion (toggle)" })

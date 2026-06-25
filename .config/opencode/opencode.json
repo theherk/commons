@@ -59,15 +59,15 @@
     }
   },
   "provider": {
-    "ollama": {
+    "omlx": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Ollama (local)",
+      "name": "oMLX (local)",
       "options": {
-        "baseURL": "http://localhost:11434/v1"
+        "baseURL": "http://localhost:8000/v1"
       },
       "models": {
-        "gemma4-26b-large-ctx": {
-          "name": "Gemma 4 26B (MoE - 256K context)"
+        "mlx-community--gemma-4-26b-a4b-it-4bit": {
+          "name": "Gemma 4 26B (MLX, 256K context)"
         }
       }
     }

@@ -95,16 +95,34 @@ mise and must be added manually after the Rust toolchain is present:
 rustup component add llvm-tools-preview rust-src rustc-dev
 ```
 
-## Install Ollama from the official source.
+## Install oMLX and download models.
 
-Install Ollama directly from the official installer rather than Homebrew. If the Homebrew versions were installed (e.g. via `brew bundle`), remove them first.
+oMLX is installed via `brew bundle` (from the Brewfile). After install, start the service and download the models:
 
 ```sh
-brew uninstall ollama
-brew uninstall llama.cpp   # no longer needed
+# Start oMLX as a background service
+omlx start
 
-# Install official Ollama
-curl -fsSL https://ollama.com/install.sh | sh
+# Install the HuggingFace CLI (for model downloads)
+uv tool install huggingface-hub
+
+# Authenticate for better download speeds
+hf auth login
+
+# Download the coding model (~15.6GB)
+hf download mlx-community/gemma-4-26b-a4b-it-4bit
+
+# Download the translation model (~3.3GB)
+hf download mlx-community/translategemma-4b-it-4bit
+
+# Restart to discover downloaded models
+omlx restart
+```
+
+oMLX auto-discovers models from the HuggingFace cache (`--hf-cache` is enabled by default). Verify:
+
+```sh
+curl -s http://localhost:8000/v1/models | jq '.data[].id'
 ```
 
 ## Setup git forge.
