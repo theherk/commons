@@ -4,19 +4,19 @@
 set -euo pipefail
 
 choice=$(printf '%s\n' \
+    "resume (raicode)" \
+    "new (raicode)" \
     "resume (opencode)" \
     "new (opencode)" \
-    "opencode" \
-    "opencode -c" \
     "resume (claude code)" \
     "new (claude code)" \
     "select (claude code)" | fzf --reverse --header "agent")
 
 case "$choice" in
-"resume (opencode)") exec raicode --profile oc -c ;;
-"new (opencode)") exec raicode --profile oc ;;
-"opencode") exec opencode ;;
-"opencode -c") exec opencode -c ;;
+"resume (raicode)") exec raicode --profile oc -c ;;
+"new (raicode)") exec raicode --profile oc ;;
+"resume (opencode)") exec opencode -c ;;
+"new (opencode)") exec opencode ;;
 "resume (claude code)") exec raicode --profile cc -c ;;
 "new (claude code)") exec raicode --profile cc ;;
 "select (claude code)") exec raicode --profile cc -r ;;
