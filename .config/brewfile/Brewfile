@@ -7,10 +7,10 @@ tap "getagentseal/codeburn", trusted: true
 tap "helix-editor/helix", trusted: true
 tap "idoavrah/homebrew", trusted: true
 tap "jundot/omlx", "https://github.com/jundot/omlx", trusted: true
+tap "libkrun/krun", trusted: true
 tap "lhvy/tap", trusted: true
 tap "mhersson/formulas", trusted: true
 tap "nikitabobko/tap", trusted: true
-tap "slp/krun", trusted: true
 tap "thezoraiz/ascii-image-converter", trusted: true
 tap "wez/wezterm", trusted: true
 brew "amfora"
@@ -70,7 +70,7 @@ brew "ispell"
 brew "jdtls"
 brew "jj"
 brew "jjui"
-brew "slp/krun/krunkit"
+brew "libkrun/krun/krunkit"
 brew "lazydocker"
 brew "lazygit"
 brew "libpng"
