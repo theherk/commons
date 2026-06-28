@@ -13,3 +13,16 @@ type = "ssh"
 name = "upstream"
 url = "https://dnb.ghe.com/github/github-enterprise-teams.git"
 type = "https"
+
+[[trees.repos]]
+name = "Adam-Lawrence-Sherwood/github-oidc-federation"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "dnb@dnb.ghe.com:Adam-Lawrence-Sherwood/github-oidc-federation.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "dnb@dnb.ghe.com:dnb-tooling/github-oidc-federation.git"
+type = "https"
