@@ -17,6 +17,7 @@ keybinds {
     }
     normal {
         bind "Ctrl Shift r" { SwitchToMode "resize"; }
+        unbind "Ctrl t"
         unbind "Ctrl q"
     }
     pane {
