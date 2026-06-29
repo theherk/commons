@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# alert - Show a dialog with large text. Compiles alert.swift on first run.
+# Usage: alert <title> <message>
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SRC="${SCRIPT_DIR}/alert.swift"
+BIN="${TMPDIR:-/tmp}/alert-bin"
+
+if [[ ! -x "$BIN" ]] || [[ "$SRC" -nt "$BIN" ]]; then
+  swiftc -O "$SRC" -o "$BIN"
+fi
+
+exec "$BIN" "$@"
