@@ -81,6 +81,7 @@ shift-b = 'mode browser'
 c = 'mode comms'
 m = 'mode misc'
 n = 'mode note'
+r = 'mode run'
 s = 'mode screenshot'
 t = ['exec-and-forget open -a "Ghostty"', 'mode main']
 shift-t = 'mode terminal'
@@ -222,6 +223,12 @@ t = [ # mostly tiling
     'workspace 💻',
     'mode main',
 ]
+
+[mode.run.binding]
+esc = 'mode main'
+
+e = ['exec-and-forget /Users/h4s/bin/trans-to-english.sh', 'mode main']
+n = ['exec-and-forget /Users/h4s/bin/trans-til-norsk.sh', 'mode main']
 
 [workspace-to-monitor-force-assignment]
     "🌎" = 'main'
