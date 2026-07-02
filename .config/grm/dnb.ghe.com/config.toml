@@ -5,4 +5,10 @@ token_command = "security find-generic-password -w -s dnb.ghe.com -a adam.lawren
 root = "."
 
 [filters]
-access = true
+owner = true
+groups = [
+  "cbcommon",
+  "ccp",
+  "cppshasl",
+  "dnb-common",
+]
