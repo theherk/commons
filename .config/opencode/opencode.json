@@ -49,6 +49,7 @@
           "jira-work": "allow",
           "nabu": "allow"
         },
+        "webfetch": "allow"
       }
     },
     "plan": {
