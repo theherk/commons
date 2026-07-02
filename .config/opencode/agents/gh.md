@@ -1,7 +1,6 @@
 ---
 description: Interact with GitHub via the gh CLI. Use for PR management, issue tracking, CI/CD status, code review summaries, and repository operations on GitHub. Capable of reasoning about PR diffs, summarising review threads, and interpreting workflow run failures.
 mode: subagent
-model: raicode/claude-sonnet-4-6
 permission:
   edit: deny
   bash:

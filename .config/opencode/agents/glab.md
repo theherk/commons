@@ -1,7 +1,6 @@
 ---
 description: Interact with GitLab via the glab CLI. Use for MR management, pipeline status, issue tracking, CI/CD log inspection, and repository operations on GitLab (including dnb.ghe.com and gitlab.tech.dnb.no). Capable of reasoning about MR diffs, summarising review threads, and interpreting pipeline failures.
 mode: subagent
-model: raicode/claude-sonnet-4-6
 permission:
   edit: deny
   bash:

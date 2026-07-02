@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "github-copilot/claude-opus-4.6",
+  "model": "github-copilot/claude-sonnet-4-6",
   "small_model": "github-copilot/claude-haiku-4.5",
   "permission": {
     "bash": {
@@ -63,6 +63,15 @@
           "nabu": "allow"
         }
       }
+    },
+    "boob": {
+      "model": "github-copilot/claude-haiku-4.5"
+    },
+    "jira-work": {
+      "model": "github-copilot/claude-haiku-4.5"
+    },
+    "sage": {
+      "model": "github-copilot/claude-opus-4.6"
     }
   },
   "provider": {
