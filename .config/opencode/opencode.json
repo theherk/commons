@@ -46,15 +46,21 @@
         "skill": "allow",
         "task": {
           "*": "deny",
-          "jira-work": "allow"
-        }
+          "jira-work": "allow",
+          "nabu": "allow"
+        },
       }
     },
     "plan": {
       "color": "warning",
       "permission": {
         "edit": "deny",
-        "bash": "deny"
+        "bash": "deny",
+        "task": {
+          "*": "deny",
+          "jira-work": "allow",
+          "nabu": "allow"
+        }
       }
     }
   },
