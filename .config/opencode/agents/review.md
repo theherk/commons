@@ -25,7 +25,11 @@ permission:
   task:
     "*": deny
   external_directory:
-    "*": deny
+    "~/vaults/*": deny
+    "~/Library/CloudStorage/OneDrive-DNBBankASA/dnbrain/*": deny
+    "~/projects/*": allow
+    "/tmp/*": allow
+    "/var/folders/*": allow
 ---
 
 {file:///Users/h4s/.claude/skills/review/SKILL.md}
