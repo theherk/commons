@@ -81,6 +81,7 @@ shift-b = 'mode browser'
 c = 'mode comms'
 m = 'mode misc'
 n = 'mode note'
+p = 'mode pane' # window / pane controls
 r = 'mode run'
 s = 'mode screenshot'
 t = ['exec-and-forget open -a "Ghostty"', 'mode main']
