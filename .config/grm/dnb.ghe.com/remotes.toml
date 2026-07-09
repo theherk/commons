@@ -11,8 +11,8 @@ type = "ssh"
 
 [[trees.repos.remotes]]
 name = "upstream"
-url = "https://dnb.ghe.com/github/github-enterprise-teams.git"
-type = "https"
+url = "dnb@dnb.ghe.com:github/github-enterprise-teams.git"
+type = "ssh"
 
 [[trees.repos]]
 name = "Adam-Lawrence-Sherwood/github-oidc-federation"
@@ -25,4 +25,4 @@ type = "ssh"
 [[trees.repos.remotes]]
 name = "upstream"
 url = "dnb@dnb.ghe.com:dnb-tooling/github-oidc-federation.git"
-type = "https"
+type = "ssh"
