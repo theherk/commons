@@ -1,3 +1,4 @@
+tap "anomalyco/tap", trusted: true
 tap "aquasecurity/trivy", trusted: true
 tap "atlassian/homebrew-acli", trusted: true
 tap "catppuccin/tap", trusted: true
@@ -10,6 +11,7 @@ tap "jundot/omlx", "https://github.com/jundot/omlx", trusted: true
 tap "libkrun/krun", trusted: true
 tap "lhvy/tap", trusted: true
 tap "mhersson/formulas", trusted: true
+tap "mikker/tap", trusted: true
 tap "nikitabobko/tap", trusted: true
 tap "thezoraiz/ascii-image-converter", trusted: true
 tap "wez/wezterm", trusted: true
