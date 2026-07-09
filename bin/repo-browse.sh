@@ -15,7 +15,7 @@ fi
 
 SELF="$(realpath "$0")"
 
-GHE_HOST="${GH_HOST:?GH_HOST not set}"
+GHE_HOST="dnb.ghe.com"
 GL_HOST="gitlab.tech.dnb.no"
 
 MODE="${1:-}"
