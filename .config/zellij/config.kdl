@@ -39,6 +39,7 @@ keybinds {
         bind "Esc" { SwitchToMode "scroll"; }
     }
     session {
+        bind "o" { SwitchToMode "normal"; Run "repo-open.sh" { floating true; close_on_exit true; }; }
         bind "b" { SwitchToMode "normal"; Run "repo-browse.sh" { floating true; close_on_exit true; }; }
         bind "k" { SwitchToMode "normal"; Run "zellij-project.fish" "--kill" { floating true; close_on_exit true; pinned true; }; }
         bind "K" { SwitchToMode "normal"; Run "zellij-prune-sessions.fish" { floating true; close_on_exit true; }; }
