@@ -2,6 +2,19 @@
 root = "."
 
 [[trees.repos]]
+name = "theherk/git-repo-manager"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "git@github.com:theherk/git-repo-manager.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "https://github.com/hakoerber/git-repo-manager.git"
+type = "https"
+
+[[trees.repos]]
 name = "nikitabobko/AeroSpace"
 
 [[trees.repos.remotes]]

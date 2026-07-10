@@ -52,7 +52,7 @@ yq = "latest"
 "go:golang.org/x/tools/gopls" = "latest"
 
 # Cargo-backed tools
-"cargo:git-repo-manager" = "latest"
+"cargo:https://github.com/theherk/git-repo-manager" = "branch:master"
 "cargo:hackernews_tui" = "latest"
 "cargo:markdown-toc" = "latest"
 
@@ -60,3 +60,6 @@ yq = "latest"
 "npm:corepack" = "latest"
 "npm:js-beautify" = "latest"
 "npm:stylelint" = "latest"
+
+[settings.cargo]
+binstall = false
