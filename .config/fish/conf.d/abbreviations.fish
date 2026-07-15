@@ -18,11 +18,11 @@ abbr -a ez --position command 7z e
 abbr -a fr --position command find . -iname "*.rar"
 abbr -a fz --position command find . -iname "*.7z"
 abbr -a ghe --position command --set-cursor="@" "gh @ --hostname $GH_HOST" # GH_HOST set in ~/.local-exports
-abbr -a ghl --position command gh run view --log
 abbr -a ghw --position command gh run watch
 abbr -a gl --position command gproxy-auto.sh
 abbr -a gtc --position command 'go test -covermode=count -coverpkg=./... -coverprofile _cover.out -v ./... && go tool cover -html _cover.out -o _cover.html'
 abbr -a gr --position command 'cd (git root)'
+abbr -a gssh --position command 'ghostty +ssh'
 abbr -a hn --position command hackernews_tui
 abbr -a hxr --position command 'hx (fzf --ansi --disabled --reverse --bind '\''change:reload(rg --color=always --hidden --line-number -g '\''!.git'\'' {q} || true)'\'' | cut -d: -f1-2)'
 abbr -a ipy --position command python -c '"import IPython; IPython.terminal.ipapp.launch_new_instance()"'

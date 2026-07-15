@@ -29,6 +29,14 @@ function fester-deployments # List fester deployments in configuration.
     end
 end
 
+function ghl # gh run view with ANSI color fixup
+    script -q /tmp/ghlog.tmp gh run view $argv
+    set -l job_cmd (string match -r 'gh run view --log --job=\d+' < /tmp/ghlog.tmp)
+    if test -n "$job_cmd"
+        eval $job_cmd | perl -pe 's/\^\[\[/\e[/g'
+    end
+end
+
 function last_history_item
     echo $history[1]
 end
