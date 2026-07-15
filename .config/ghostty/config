@@ -6,6 +6,7 @@ cursor-color = #85c1dc
 font-family = VictorMono NF
 font-size = 18
 macos-titlebar-style = hidden
+shell-integration-features = ssh-terminfo
 theme = dark:Catppuccin Frappe,light:Catppuccin Latte
 unfocused-split-opacity = 0.54
 
