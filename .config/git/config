@@ -48,3 +48,6 @@
 	gpgsign = true
 [tag]
 	gpgSign = true
+
+[url "ssh://git@gitlab.tech.dnb.no:2222/"]
+	insteadOf = https://gitlab.tech.dnb.no/
