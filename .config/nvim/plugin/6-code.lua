@@ -443,6 +443,7 @@ later(function()
       vim.keymap.set("i", "<c-k>", "<c-p>", { buffer = bufnr, desc = "prev completion" })
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "go to definition" })
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "go to declaration" })
+      vim.keymap.set("n", "<leader>co", "<c-t>", { buffer = bufnr, desc = "out" })
 
       vim.keymap.set("n", "<leader>cF", function() require("conform").format({ lsp_fallback = true }) end, { buffer = bufnr, desc = "format (direct)" })
     end,
