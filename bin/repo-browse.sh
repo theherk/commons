@@ -7,7 +7,19 @@ if [ "${1:-}" = "--fetch" ]; then
     HOST="$3"
     case "$MODE" in
     gh) GH_HOST=github.com gh api '/user/repos?per_page=100' --paginate -q '.[].full_name' ;;
-    ghe) GH_HOST="$HOST" gh api '/user/repos?per_page=100' --paginate -q '.[].full_name' ;;
+    ghe)
+        GRM_CONFIG="$(dirname "$(realpath "${BASH_SOURCE[0]}")")/../.config/grm/$HOST/config.toml"
+        TMPDIR=$(mktemp -d)
+        trap 'rm -rf "$TMPDIR"' EXIT
+        GH_HOST="$HOST" gh api '/user/repos?per_page=100' --paginate -q '.[].full_name' >"$TMPDIR/user" &
+        if [ -f "$GRM_CONFIG" ]; then
+            while read -r org; do
+                GH_HOST="$HOST" gh api "/orgs/$org/repos?per_page=100" --paginate -q '.[].full_name' >"$TMPDIR/$org" 2>/dev/null &
+            done < <(yq -oy '.filters.groups[]' "$GRM_CONFIG")
+        fi
+        wait
+        sort -u "$TMPDIR"/*
+        ;;
     gl) GITLAB_HOST="$HOST" glab repo list --per-page 100 --output json | jq -r '.[].path_with_namespace' ;;
     esac
     exit 0
