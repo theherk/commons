@@ -4,6 +4,8 @@ function awsp # Set AWS_PROFILE
     switch (count $argv)
         case 1
             set -g -x AWS_PROFILE $argv[1]
+            # Reset mise's env tracking so hook-env treats this as pre-existing
+            set -e __MISE_DIFF
         case '*'
             echo $AWS_PROFILE
     end
