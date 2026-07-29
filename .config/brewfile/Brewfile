@@ -4,6 +4,7 @@ tap "atlassian/homebrew-acli", trusted: true
 tap "catppuccin/tap", trusted: true
 tap "charmbracelet/tap", trusted: true
 tap "d12frosted/emacs-plus", trusted: true
+tap "agavra/tap", trusted: true
 tap "getagentseal/codeburn", trusted: true
 tap "helix-editor/helix", trusted: true
 tap "idoavrah/homebrew", trusted: true
@@ -120,6 +121,7 @@ brew "taplo"
 brew "telnet"
 brew "toilet"
 brew "tokei"
+brew "agavra/tap/tuicr"
 brew "ugit"
 brew "vivid"
 brew "wget"
