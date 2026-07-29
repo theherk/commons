@@ -6,5 +6,7 @@ root = "."
 [filters]
 owner = true
 groups = [
-  "kaizen-do"
+  "bumbling-ninja",
+  "kaizen-do",
+  "theinterstate",
 ]
