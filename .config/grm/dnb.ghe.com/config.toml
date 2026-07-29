@@ -11,5 +11,6 @@ groups = [
   "ccp",
   "cppshasl",
   "dnb-common",
+  "nucleus",
   "payment",
 ]
