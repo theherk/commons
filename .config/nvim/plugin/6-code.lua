@@ -43,47 +43,57 @@ end)
 later(function()
   add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
 
+  -- The `main` branch (pulled by bare-URL vim.pack.add) is a full, incompatible
+  -- rewrite -- `nvim-treesitter.configs` no longer exists at all. The old
+  -- ensure_installed/highlight/indent config below was silently no-op-ing this
+  -- whole time (only a swallowed vim.notify warning), which is why the YAML
+  -- parser was never actually installed and codecompanion's prompt library
+  -- warned "Missing frontmatter, name or interaction" on its built-in .md
+  -- actions -- their frontmatter is fine; the treesitter YAML grammar to parse
+  -- it just was never present. See the plugin's own README for the new API.
+  local parsers = {
+    "bash",
+    "comment",
+    "gleam",
+    "hcl",
+    "html",
+    "javascript",
+    "json",
+    "lua",
+    "markdown",
+    "markdown_inline",
+    "norg",
+    "org",
+    "python",
+    "query",
+    "regex",
+    "terraform",
+    "tsx",
+    "typescript",
+    "vim",
+    "vimdoc",
+    "yaml",
+  }
+
   vim.api.nvim_create_autocmd("VimEnter", {
     once = true,
     callback = function()
-      local ok, configs = pcall(require, "nvim-treesitter.configs")
+      local ok, ts = pcall(require, "nvim-treesitter")
       if not ok then
-        vim.notify("nvim-treesitter.configs not found, skipping setup", vim.log.levels.WARN)
+        vim.notify("nvim-treesitter not found, skipping setup", vim.log.levels.WARN)
         return
       end
 
-      configs.setup({
-        ensure_installed = {
-          "bash",
-          "comment",
-          "gleam",
-          "hcl",
-          "html",
-          "javascript",
-          "json",
-          "lua",
-          "markdown",
-          "markdown_inline",
-          "norg",
-          "org",
-          "python",
-          "query",
-          "regex",
-          "terraform",
-          "tsx",
-          "typescript",
-          "vim",
-          "vimdoc",
-          "yaml",
-        },
-        highlight = { enable = true },
-        indent = { enable = true },
-        modules = {},
-        sync_install = false,
-        ignore_install = {},
-        auto_install = true,
-      })
+      ts.setup()
+      ts.install(parsers)
     end,
+  })
+
+  -- Highlighting and indentation are opt-in per-filetype in the new API (no
+  -- more `highlight = { enable = true }` table). Global autocmd, pcall-guarded
+  -- so filetypes without an installed parser just fall back silently.
+  vim.api.nvim_create_autocmd("FileType", {
+    callback = function() pcall(vim.treesitter.start) end,
   })
 end)
 
@@ -250,6 +260,28 @@ later(function()
   }
   vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {
     callback = function() require("lint").try_lint() end,
+  })
+end)
+
+later(function()
+  -- blink.cmp V2 (tracks `main`, not the stable v1 tag -- bare URLs via vim.pack
+  -- default to the plugin's default branch, which is `main`/V2 for blink.cmp).
+  -- Replaces native `vim.lsp.completion.enable(...)` entirely (removed below in the
+  -- LspAttach callback) and gives codecompanion.nvim real as-you-type autocomplete
+  -- for slash commands/tools/editor context -- codecompanion auto-detects blink.cmp
+  -- once it's `require`-able and registers its own completion source scoped to
+  -- codecompanion buffers, no extra config needed on that side.
+  add({ "https://github.com/saghen/blink.lib", "https://github.com/saghen/blink.cmp" })
+  local blink = require("blink.cmp")
+  blink.build():pwait()
+  blink.setup({
+    keymap = { preset = "default" },
+    completion = { documentation = { auto_show = false } },
+    sources = { default = { "lsp", "path", "snippets", "buffer" } },
+    -- Explicit (not the default prefer_rust_with_warning) so a build failure errors
+    -- loudly instead of silently falling back to the slower/less typo-resistant lua
+    -- matcher. Rust toolchain already available via mise (rust = "nightly").
+    fuzzy = { implementation = "rust" },
   })
 end)
 
@@ -429,10 +461,6 @@ later(function()
       local client = vim.lsp.get_client_by_id(args.data.client_id)
       local bufnr = args.buf
       if not client then return end
-
-      if client:supports_method("textDocument/completion") then
-        vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
-      end
 
       if client.name == "bashls" then
         client.server_capabilities.documentFormattingProvider = false
