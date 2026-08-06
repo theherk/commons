@@ -93,7 +93,7 @@ if ai_enabled then
                 -- provider; no reason this integration should depend on GHE Copilot state.
                 RAICODE_GOOSE_TOKEN = "cmd:cat ~/.config/goose/secrets/rai-token",
                 GOOSE_PROVIDER = "raicode",
-                GOOSE_MODEL = "claude-sonnet-4-6",
+                GOOSE_MODEL = "claude-sonnet-5",
                 -- goose ignores per-model max_tokens in custom_providers/*.json (see
                 -- ~/.local-exports for the same clamp on the CLI side); without this the
                 -- request 400s the moment it exceeds sonnet-4-6's real 34000 output cap.
