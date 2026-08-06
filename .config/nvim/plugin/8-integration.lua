@@ -82,6 +82,38 @@ if ai_enabled then
               },
             })
           end,
+          goose = function()
+            return require("codecompanion.adapters").extend("goose", {
+              env = {
+                -- Self-contained: force RAI Gateway explicitly rather than depending on
+                -- config.yaml's active_provider (CLI state) or inherited shell env, which
+                -- caused it to fall through to whatever github_copilot was last left as,
+                -- then fail ("failed to get api info after 3 attempts") independent of
+                -- ambient GITHUB_COPILOT_HOST. RAI Gateway is the already-proven-reliable
+                -- provider; no reason this integration should depend on GHE Copilot state.
+                RAICODE_GOOSE_TOKEN = "cmd:cat ~/.config/goose/secrets/rai-token",
+                GOOSE_PROVIDER = "raicode",
+                GOOSE_MODEL = "claude-sonnet-4-6",
+                -- goose ignores per-model max_tokens in custom_providers/*.json (see
+                -- ~/.local-exports for the same clamp on the CLI side); without this the
+                -- request 400s the moment it exceeds sonnet-4-6's real 34000 output cap.
+                GOOSE_MAX_TOKENS = "32000",
+              },
+            })
+          end,
+        },
+      },
+      display = {
+        chat = {
+          window = {
+            -- Default (vertical/right split) has no winfixwidth/winfixheight protection
+            -- from codecompanion itself, unlike neo-tree's own sidebar. Combined with
+            -- Neovim's default equalalways=true, any window opening/closing anywhere
+            -- reflows the chat's split unpredictably. `tab` sidesteps the split-equalize
+            -- system entirely (separate tab-local window tree) instead of patching
+            -- around it -- also gives a full-window feel, switch back with gt/gT.
+            layout = "tab",
+          },
         },
       },
     }
@@ -90,7 +122,9 @@ if ai_enabled then
     vim.keymap.set({ "n", "v" }, "<leader>ac", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
     vim.keymap.set({ "n", "v" }, "<leader>ao", "<cmd>CodeCompanionChat adapter=omlx<cr>", { desc = "codecompanion omlx" })
     vim.keymap.set({ "n", "v" }, "<leader>ar", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion raicode" })
+    vim.keymap.set({ "n", "v" }, "<leader>ag", "<cmd>CodeCompanionChat Toggle adapter=goose<cr>", { desc = "codecompanion goose" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-?>", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-r>", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion (toggle)" })
+    vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-g>", "<cmd>CodeCompanionChat Toggle adapter=goose<cr>", { desc = "codecompanion goose (toggle)" })
   end)
 end
