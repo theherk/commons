@@ -234,6 +234,12 @@ now(function()
       },
     },
   })
+  -- codecompanion chat buffers are unlisted (buftype=nofile), so mini.clue's
+  -- BufWinEnter guard skips them. Manually ensure triggers on FileType.
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "codecompanion",
+    callback = function() MiniClue.ensure_buf_triggers() end,
+  })
 end)
 
 now(function()
