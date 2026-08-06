@@ -277,7 +277,7 @@ later(function()
   blink.setup({
     keymap = { preset = "default" },
     completion = { documentation = { auto_show = false } },
-    sources = { default = { "lsp", "path", "snippets", "buffer" } },
+    sources = { default = { "lsp", "path", "snippets" } },
     -- Explicit (not the default prefer_rust_with_warning) so a build failure errors
     -- loudly instead of silently falling back to the slower/less typo-resistant lua
     -- matcher. Rust toolchain already available via mise (rust = "nightly").
