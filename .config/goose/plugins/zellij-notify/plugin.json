@@ -1,0 +1,5 @@
+{
+  "name": "zellij-notify",
+  "version": "0.1.0",
+  "description": "Notify other zellij sessions via zjstatus when a goose turn finishes (idle), mirroring the opencode zellij-notify plugin"
+}

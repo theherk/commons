@@ -1,0 +1,15 @@
+version: "1.0.0"
+title: "Jira Work"
+description: "Query and manage Jira work items via acli. Sprint status lookups, issue transitions, comments, and issue linking on the CCPLAT board."
+instructions: |
+  Load the `jira-work` skill (via the skill tool, or `/skills jira-work`) before doing anything --
+  it contains the full acli command reference and CCPLAT board conventions. Follow it exactly.
+extensions:
+  - type: builtin
+    name: developer
+    timeout: 300
+    bundled: true
+settings:
+  goose_provider: raicode
+  goose_model: claude-haiku-4-5-20251001
+prompt: "Handle the requested Jira operation."

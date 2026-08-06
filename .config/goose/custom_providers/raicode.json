@@ -1,0 +1,29 @@
+{
+  "name": "raicode",
+  "engine": "anthropic",
+  "display_name": "RAI Gateway",
+  "description": "DNB RAI Gateway (Bedrock/Anthropic via raicode)",
+  "api_key_env": "RAICODE_GOOSE_TOKEN",
+  "base_url": "https://gateway.raicode.no",
+  "models": [
+    { "name": "claude-opus-4-6", "context_limit": 1000000, "max_tokens": 34000 },
+    { "name": "claude-opus-4-7", "context_limit": 1000000, "max_tokens": 34000 },
+    { "name": "claude-opus-4-8", "context_limit": 1000000, "max_tokens": 98000 },
+    { "name": "claude-opus-5", "context_limit": 1000000, "max_tokens": 98000 },
+    { "name": "claude-opus-4-5-20251101", "context_limit": 200000, "max_tokens": 34000 },
+    { "name": "claude-sonnet-4-6", "context_limit": 1000000, "max_tokens": 34000 },
+    { "name": "claude-sonnet-5", "context_limit": 1000000, "max_tokens": 98000 },
+    { "name": "claude-sonnet-4-5-20250929", "context_limit": 200000, "max_tokens": 34000 },
+    { "name": "claude-sonnet-4-20250514", "context_limit": 200000, "max_tokens": 34000 },
+    { "name": "claude-haiku-4-5-20251001", "context_limit": 200000, "max_tokens": 34000 },
+    { "name": "gpt-5.4", "context_limit": 272000, "max_tokens": 98000 },
+    { "name": "gpt-5.5", "context_limit": 900000, "max_tokens": 98000 },
+    { "name": "gpt-5.6-luna", "context_limit": 1050000, "max_tokens": 98000 },
+    { "name": "gpt-5.6-sol", "context_limit": 1050000, "max_tokens": 98000 },
+    { "name": "gpt-5.6-terra", "context_limit": 1050000, "max_tokens": 98000 },
+    { "name": "gpt-oss-120b", "context_limit": 128000, "max_tokens": 34000 },
+    { "name": "gpt-oss-20b", "context_limit": 128000, "max_tokens": 98000 }
+  ],
+  "supports_streaming": true,
+  "requires_auth": true
+}
