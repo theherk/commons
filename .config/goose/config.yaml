@@ -87,14 +87,18 @@ extensions:
     display_name: Code Mode
     bundled: true
 GOOSE_THINKING_EFFORT: medium
-active_provider: github_copilot
+active_provider: raicode
 providers:
+  raicode:
+    enabled: true
+    model: claude-sonnet-5
+    configured: true
   github_copilot:
     enabled: true
     model: claude-sonnet-4.6
     configured: true
 GOOSE_TELEMETRY_ENABLED: false
 GOOSE_CLI_THEME: dark
-GOOSE_MAX_TOKENS: 32000
+GOOSE_MAX_TOKENS: 98000
 RANDOM_THINKING_MESSAGES: false
 goose_prompt_editor_always: false
