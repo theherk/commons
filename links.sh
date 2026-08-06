@@ -28,6 +28,7 @@ ln -sf ~/commons/.config/fish/conf.d/theme-enhancements.fish ~/.config/fish/conf
 ln -sf ~/commons/.config/gh-dash/ ~/.config/
 ln -sf ~/commons/.config/ghostty/ ~/.config/
 ln -sf ~/commons/.config/git/ ~/.config/
+ln -sf ~/commons/.config/goose/config.yaml ~/.config/goose/config.yaml
 ln -sf ~/commons/.config/goose/custom_providers/ ~/.config/goose/
 ln -sf ~/commons/.config/goose/recipes/ ~/.config/goose/
 ln -sf ~/commons/.config/goose/agents/ ~/.agents/
