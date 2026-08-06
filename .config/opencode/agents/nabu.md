@@ -18,8 +18,8 @@ Use the `obsidian` CLI for searching, reading, and querying vault structure. Use
 
 ---
 
-{file:///Users/h4s/.claude/skills/nabu/SKILL.md}
+{file:///Users/h4s/.agents/skills/nabu/SKILL.md}
 
 ---
 
-{file:///Users/h4s/.claude/skills/notes/SKILL.md}
+{file:///Users/h4s/.agents/skills/notes/SKILL.md}

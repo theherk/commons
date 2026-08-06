@@ -9,4 +9,4 @@ permission:
   grep: deny
 ---
 
-{file:///Users/h4s/.claude/skills/jira-work/SKILL.md}
+{file:///Users/h4s/.agents/skills/jira-work/SKILL.md}

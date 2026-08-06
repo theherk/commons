@@ -32,7 +32,7 @@ permission:
     "/var/folders/*": allow
 ---
 
-{file:///Users/h4s/.claude/skills/review/SKILL.md}
+{file:///Users/h4s/.agents/skills/review/SKILL.md}
 
 ## Additional constraints
 
