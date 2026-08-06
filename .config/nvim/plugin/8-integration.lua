@@ -118,13 +118,13 @@ if ai_enabled then
       },
     }
     require("codecompanion").setup(config)
-    vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion (toggle)" })
+    vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionChat Toggle adapter=goose<cr>", { desc = "codecompanion (toggle)" })
     vim.keymap.set({ "n", "v" }, "<leader>ac", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
     vim.keymap.set({ "n", "v" }, "<leader>ao", "<cmd>CodeCompanionChat adapter=omlx<cr>", { desc = "codecompanion omlx" })
     vim.keymap.set({ "n", "v" }, "<leader>ar", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion raicode" })
     vim.keymap.set({ "n", "v" }, "<leader>ag", "<cmd>CodeCompanionChat Toggle adapter=goose<cr>", { desc = "codecompanion goose" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-?>", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
-    vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-r>", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion (toggle)" })
+    vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-r>", "<cmd>CodeCompanionChat Toggle adapter=goose<cr>", { desc = "codecompanion (toggle)" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-g>", "<cmd>CodeCompanionChat Toggle adapter=goose<cr>", { desc = "codecompanion goose (toggle)" })
   end)
 end
