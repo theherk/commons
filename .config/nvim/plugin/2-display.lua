@@ -323,7 +323,22 @@ now(function()
       coke.component_gap(),
     },
     buffers = {
-      filter_valid = function(buffer) return buffer.type ~= "terminal" and buffer.type ~= "prompt" end,
+      -- Also excludes empty, unnamed, unmodified scratch buffers -- codecompanion's
+      -- `layout = "tab"` calls `vim.cmd("tabnew")` then immediately replaces that
+      -- window's buffer with the chat buffer via nvim_win_set_buf, but never deletes
+      -- the [No Name] buffer tabnew allocated first. It lingers in the global buffer
+      -- list (still buflisted) with nothing displaying it. Filtering on path=="" and
+      -- unmodified catches this (and any other stray scratch buffer) without hiding
+      -- a genuine unsaved [No Name] buffer you're actually editing.
+      filter_valid = function(buffer)
+        if buffer.type == "terminal" or buffer.type == "prompt" then
+          return false
+        end
+        if buffer.path == "" and not buffer.is_modified then
+          return false
+        end
+        return true
+      end,
     },
     tabs = {
       placement = "right",
