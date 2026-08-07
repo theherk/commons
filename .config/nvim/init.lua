@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
     local name, kind = ev.data.spec.name, ev.data.kind
     if name == "nvim-treesitter" and kind == "update" then
       if not ev.data.active then vim.cmd.packadd("nvim-treesitter") end
-      vim.cmd("TSUpdate")
+      if vim.fn.exists(":TSUpdate") == 2 then vim.cmd("TSUpdate") end
     end
     if name == "markdown-preview" and vim.tbl_contains({ "install", "update" }, kind) then
       if not ev.data.active then vim.cmd.packadd("markdown-preview") end
