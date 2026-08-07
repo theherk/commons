@@ -73,12 +73,15 @@ if ai_enabled then
           end,
         },
         acp = {
-          raicode = function()
-            return require("codecompanion.adapters").extend("claude_code", {
-              commands = {
-                default = {
-                  "raicode-wrapper.sh",
-                },
+          opencode = function()
+            return require("codecompanion.adapters").extend("opencode", {
+              env = {
+                -- Same token used by the bare `opencode` CLI (RAICODE_OPENCODE_TOKEN,
+                -- minted via `raicode manage token create --name opencode`, 30-day
+                -- sliding TTL) -- one credential for both entry points, not a
+                -- separate nvim-only token. Stored at ~/.config/opencode/secrets/rai-token
+                -- (untracked, chmod 600, parent dir 700), same layout as goose's.
+                RAICODE_OPENCODE_TOKEN = "cmd:cat ~/.config/opencode/secrets/rai-token",
               },
             })
           end,
@@ -120,8 +123,8 @@ if ai_enabled then
     require("codecompanion").setup(config)
     vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionChat Toggle adapter=goose<cr>", { desc = "codecompanion (toggle)" })
     vim.keymap.set({ "n", "v" }, "<leader>ac", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
-    vim.keymap.set({ "n", "v" }, "<leader>ao", "<cmd>CodeCompanionChat adapter=omlx<cr>", { desc = "codecompanion omlx" })
-    vim.keymap.set({ "n", "v" }, "<leader>ar", "<cmd>CodeCompanionChat Toggle adapter=raicode<cr>", { desc = "codecompanion raicode" })
+    vim.keymap.set({ "n", "v" }, "<leader>al", "<cmd>CodeCompanionChat adapter=omlx<cr>", { desc = "codecompanion local" })
+    vim.keymap.set({ "n", "v" }, "<leader>ao", "<cmd>CodeCompanionChat Toggle adapter=opencode<cr>", { desc = "codecompanion opencode" })
     vim.keymap.set({ "n", "v" }, "<leader>ag", "<cmd>CodeCompanionChat Toggle adapter=goose<cr>", { desc = "codecompanion goose" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-?>", "<cmd>CodeCompanionChat<cr>", { desc = "codecompanion" })
     vim.keymap.set({ "i", "x", "n", "s", "t" }, "<d-r>", "<cmd>CodeCompanionChat Toggle adapter=goose<cr>", { desc = "codecompanion (toggle)" })
