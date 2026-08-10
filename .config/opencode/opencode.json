@@ -27,6 +27,7 @@
       }
     },
     "explore": {
+      "disable": true,
       "color": "success",
       "mode": "primary",
       "description": "Read-only codebase exploration. No writes, minimal bash.",
