@@ -16,12 +16,14 @@ later(function()
     },
     completions = { lsp = { enabled = true } },
     heading = {
-      enabled = false,
+      enabled = true,
       icons = { "█ ", "██ ", "▓▓▓ ", "▒▒▒▒ ", "░░░░░ ", "░░░░░░ " },
       backgrounds = {},
       position = "inline",
     },
   })
+
+  vim.keymap.set("n", "<leader>tm", function() require("render-markdown").buf_toggle() end, { desc = "markdown render" })
 end)
 
 later(function()
@@ -452,9 +454,7 @@ later(function()
 
   vim.keymap.set("n", "<leader>cf", function() require("conform").format({ lsp_fallback = true }) end, { desc = "format" })
   vim.keymap.set("n", "<leader>tf", function() Lsp.toggle() end, { desc = "format on save" })
-  vim.keymap.set("n", "<leader>th", function()
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-  end, { desc = "inlay hints" })
+  vim.keymap.set("n", "<leader>th", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, { desc = "inlay hints" })
 
   vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
@@ -494,9 +494,7 @@ later(function()
   vim.api.nvim_create_autocmd("BufWritePre", {
     group = vim.api.nvim_create_augroup("Format", {}),
     callback = function(args)
-      if lsp.opts.autoformat then
-        require("conform").format({ bufnr = args.buf, lsp_fallback = true })
-      end
+      if lsp.opts.autoformat then require("conform").format({ bufnr = args.buf, lsp_fallback = true }) end
     end,
   })
 
