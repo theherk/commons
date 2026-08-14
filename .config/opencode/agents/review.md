@@ -8,15 +8,25 @@ permission:
     "*": deny
     "cd *": allow
     "git diff*": allow
+    "rtk git diff*": allow
     "git show*": allow
+    "rtk git show*": allow
     "git log*": allow
+    "rtk git log*": allow
     "git status*": allow
+    "rtk git status*": allow
     "git rev-parse*": allow
+    "rtk git rev-parse*": allow
     "jj diff*": allow
+    "rtk jj diff*": allow
     "jj show*": allow
+    "rtk jj show*": allow
     "jj log*": allow
+    "rtk jj log*": allow
     "ls .jj": allow
+    "rtk ls .jj": allow
     "test -d .jj*": allow
+    "rtk test -d .jj*": allow
   read: allow
   glob: allow
   grep: allow
