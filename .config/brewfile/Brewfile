@@ -6,6 +6,7 @@ tap "charmbracelet/tap", trusted: true
 tap "d12frosted/emacs-plus", trusted: true
 tap "agavra/tap", trusted: true
 tap "getagentseal/codeburn", trusted: true
+tap "gromgit/fuse", trusted: true
 tap "helix-editor/helix", trusted: true
 tap "idoavrah/homebrew", trusted: true
 tap "jundot/omlx", "https://github.com/jundot/omlx", trusted: true
@@ -89,6 +90,7 @@ brew "mole"
 brew "navi"
 brew "neovim"
 brew "newman"
+brew "ntfs-3g-mac"
 brew "nushell"
 brew "onefetch"
 brew "omlx"
@@ -159,6 +161,7 @@ cask "insomnia"
 cask "keepingyouawake"
 cask "keycastr"
 cask "kindavim"
+cask "macfuse"
 cask "mikker/tap/poof"
 cask "neovide-app"
 cask "obsidian"
