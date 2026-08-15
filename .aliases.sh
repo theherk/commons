@@ -14,6 +14,7 @@ alias fz='find . -iname "*.7z"'
 alias g='gitui'
 alias gl='gproxy-auto.sh'
 alias gr='cd $(git root)'
+alias gssh='ghostty +ssh --'
 alias hxr='hx $(fzf --ansi --disabled --reverse --bind '\''change:reload(rg --color=always --hidden --line-number -g '\''!.git'\'' {q} || true)'\'' | cut -d: -f1-2)'
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias l='eza -l --icons'

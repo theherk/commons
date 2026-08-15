@@ -24,6 +24,7 @@ abbr -a gtc --position command 'go test -covermode=count -coverpkg=./... -coverp
 abbr -a gr --position command 'cd (git root)'
 abbr -a grmu --position command 'grm repos sync config && grm repos sync config -c remotes.toml'
 abbr -a gssh --position command 'ghostty +ssh'
+abbr -a gssh --position command 'ghostty +ssh --'
 abbr -a hn --position command hackernews_tui
 abbr -a hxr --position command 'hx (fzf --ansi --disabled --reverse --bind '\''change:reload(rg --color=always --hidden --line-number -g '\''!.git'\'' {q} || true)'\'' | cut -d: -f1-2)'
 abbr -a ipy --position command python -c '"import IPython; IPython.terminal.ipapp.launch_new_instance()"'
