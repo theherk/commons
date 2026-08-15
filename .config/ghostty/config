@@ -1,3 +1,4 @@
+auto-update-channel = tip
 background-blur-radius = 13
 background-opacity = 1
 custom-shader = shaders/cursor-warp.glsl
