@@ -10,13 +10,17 @@ if [ $(git root 2>/dev/null) ]; then
 				*) files="$arg" ;;
 			esac
 		done
-		nvim --server "$(git root)/_neovim" --remote "$files"
+		nvim --server "$(git root)/_neovim" --remote "$files" </dev/null >/dev/null 2>&1
 		if [ -n "$line" ]; then
-			nvim --server "$(git root)/_neovim" --remote-expr "nvim_win_set_cursor(0, [$line, 0])"
+			nvim --server "$(git root)/_neovim" --remote-expr "nvim_win_set_cursor(0, [$line, 0])" </dev/null >/dev/null 2>&1
 		fi
 	else
 		nvim --listen "$(git root)/_neovim" "$@"
 	fi
 else
 	nvim $@
+fi
+
+if [ -n "$YAZI_ID" ]; then
+	ya emit-to "$YAZI_ID" quit >/dev/null 2>&1
 fi
