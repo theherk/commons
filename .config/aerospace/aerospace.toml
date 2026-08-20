@@ -43,7 +43,7 @@ alt-x = 'mode empty' # disabling some keymaps
 alt-shift-p = 'mode pane' # window / pane controls
 ctrl-t = 'mode launch' # launch leader
 
-alt-1 = ['exec-and-forget open -a "Safari"', 'mode main']
+alt-1 = ['exec-and-forget open -a "Firefox"', 'mode main']
 alt-2 = ['exec-and-forget open -a "Ghostty"', 'mode main']
 alt-0 = ['exec-and-forget open -a "Slack"', 'mode main']
 
@@ -80,7 +80,7 @@ cmd-h = []
 [mode.launch.binding]
 esc = 'mode main'
 
-b = ['exec-and-forget open -a "Safari"', 'mode main']
+b = ['exec-and-forget open -a "Firefox"', 'mode main']
 shift-b = 'mode browser'
 c = 'mode comms'
 m = 'mode misc'
@@ -95,6 +95,9 @@ shift-t = 'mode terminal'
 [mode.browser.binding]
 esc = 'mode main'
 
+d = ['exec-and-forget open -a "DuckDuckGo"', 'mode main']
+e = ['exec-and-forget open -a "Edge"', 'mode main']
+f = ['exec-and-forget open -a "Firefox"', 'mode main']
 o = ['exec-and-forget open -a "Orion"', 'mode main']
 s = ['exec-and-forget open -a "Safari"', 'mode main']
 z = ['exec-and-forget open -a "Zen"', 'mode main']
