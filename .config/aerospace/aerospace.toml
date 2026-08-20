@@ -1,9 +1,13 @@
+config-version = 2
+
 start-at-login = true
 after-login-command = []
 after-startup-command = []
 
 accordion-padding = 0
 enable-normalization-flatten-containers = false
+
+persistent-workspaces = ["🌎", "💻", "✏️", "📓", "🌀", "📬", "🗨️", "📡"]
 
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
@@ -283,90 +287,90 @@ slash = 'slash'
 # codesign -dr - /Applications/app.app
 
 [[on-window-detected]]
-if.app-id = 'io.github.keycastr'
+if = 'test %{app-bundle-id} = io.github.keycastr'
 check-further-callbacks = false
 run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'ch.protonvpn.mac'
+if = 'test %{app-bundle-id} = ch.protonvpn.mac'
 run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Safari'
+if = 'test %{app-bundle-id} = com.apple.Safari'
 run = ['move-node-to-workspace 🌎']
 
 [[on-window-detected]]
-if.app-id = 'app.zen-browser.zen'
+if = 'test %{app-bundle-id} = app.zen-browser.zen'
 run = ['move-node-to-workspace 🌎']
 
 [[on-window-detected]]
-if.app-id = 'com.kagi.kagimacOS'
+if = 'test %{app-bundle-id} = com.kagi.kagimacOS'
 run = ['move-node-to-workspace 🌎']
 
 [[on-window-detected]]
-if.window-title-regex-substring = "Orion Preview"
+if = 'test %{window-title} ~= "Orion Preview"'
 run = ['move-node-to-workspace 🌎']
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.firefox'
+if = 'test %{app-bundle-id} = org.mozilla.firefox'
 run = ['move-node-to-workspace 🌎']
 
 [[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
+if = 'test %{app-bundle-id} = com.mitchellh.ghostty'
 run = ['move-node-to-workspace 💻']
 
 [[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
+if = 'test %{app-bundle-id} = com.github.wez.wezterm'
 run = ['move-node-to-workspace 💻']
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Neovide'
+if = 'test %{app-name} ~= Neovide'
 run = ['move-node-to-workspace ✏️']
 
 [[on-window-detected]]
-if.app-id = 'dev.zed.Zed'
+if = 'test %{app-bundle-id} = dev.zed.Zed'
 run = ['move-node-to-workspace ✏️']
 
 [[on-window-detected]]
-if.app-id = 'dev.zed.Zed-Preview'
+if = 'test %{app-bundle-id} = dev.zed.Zed-Preview'
 run = ['move-node-to-workspace ✏️']
 
 [[on-window-detected]]
-if.app-id = 'md.obsidian'
+if = 'test %{app-bundle-id} = md.obsidian'
 run = ['move-node-to-workspace 📓']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.mail'
+if = 'test %{app-bundle-id} = com.apple.mail'
 run = ['move-node-to-workspace 📬']
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.Outlook'
+if = 'test %{app-bundle-id} = com.microsoft.Outlook'
 run = ['move-node-to-workspace 📬']
 
 [[on-window-detected]]
-if.app-id = 'com.hnc.Discord'
+if = 'test %{app-bundle-id} = com.hnc.Discord'
 run = ['move-node-to-workspace 🗨️']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.MobileSMS'
+if = 'test %{app-bundle-id} = com.apple.MobileSMS'
 run = ['move-node-to-workspace 🗨️']
 
 [[on-window-detected]]
-if.app-id = 'org.whispersystems.signal-desktop'
+if = 'test %{app-bundle-id} = org.whispersystems.signal-desktop'
 run = ['move-node-to-workspace 🗨️']
 
 [[on-window-detected]]
-if.app-id = 'im.riot.app'
+if = 'test %{app-bundle-id} = im.riot.app'
 run = ['move-node-to-workspace 🗨️']
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.teams2'
+if = 'test %{app-bundle-id} = com.microsoft.teams2'
 run = ['move-node-to-workspace 📡']
 
 [[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
+if = 'test %{app-bundle-id} = com.tinyspeck.slackmacgap'
 run = ['move-node-to-workspace 📡']
 
 [[on-window-detected]]
-if.app-id = 'com.bitwarden.desktop'
+if = 'test %{app-bundle-id} = com.bitwarden.desktop'
 run = ['layout floating']
