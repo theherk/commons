@@ -26,3 +26,16 @@ type = "ssh"
 name = "upstream"
 url = "dnb@dnb.ghe.com:dnb-tooling/github-oidc-federation.git"
 type = "ssh"
+
+[[trees.repos]]
+name = "Adam-Lawrence-Sherwood/qol-extension"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "dnb@dnb.ghe.com:Adam-Lawrence-Sherwood/qol-extension.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "dnb@dnb.ghe.com:cclm/qol-extension.git"
+type = "ssh"
