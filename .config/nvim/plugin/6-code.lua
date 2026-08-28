@@ -436,21 +436,9 @@ later(function()
     },
   }
 
-  local mpls_theme = vim.o.background == "dark" and "dark" or "light"
-  local mpls_style = vim.o.background == "dark" and "catppuccin-frappe" or "catppuccin-latte"
-  vim.lsp.config("mpls", {
-    cmd = { "mpls", "--theme", mpls_theme, "--code-style", mpls_style, "--enable-emoji", "--enable-footnotes" },
-    filetypes = { "markdown" },
-    root_markers = { ".marksman.toml", ".git" },
-  })
-  vim.keymap.set("n", "<leader>tp", function()
-    local clients = vim.lsp.get_clients({ name = "mpls" })
-    if #clients > 0 then
-      vim.lsp.enable("mpls", false)
-    else
-      vim.lsp.enable("mpls")
-    end
-  end, { desc = "toggle preview" })
+  local Mpls = require("module.mpls")
+  Mpls.configure()
+  vim.keymap.set("n", "<leader>tp", Mpls.toggle, { desc = "toggle preview" })
 
   vim.keymap.set("n", "<leader>cf", function() require("conform").format({ lsp_fallback = true }) end, { desc = "format" })
   vim.keymap.set("n", "<leader>tf", function() Lsp.toggle() end, { desc = "format on save" })

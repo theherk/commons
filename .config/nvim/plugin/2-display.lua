@@ -88,6 +88,9 @@ now(function()
       custom.normal.c.bg = "none"
       lualine.setup({ options = { theme = custom } })
     end
+    -- Restart mpls (markdown preview/presentation) with the matching theme.
+    local mpls_ok, Mpls = pcall(require, "module.mpls")
+    if mpls_ok then Mpls.configure() end
   end, { nargs = 1 })
 end)
 

@@ -208,8 +208,7 @@ end repeat'
 
 	# Helix (config edit + live reload via USR1)
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_DARK'"/' .config/helix/config.toml
-	sed -i '' 's/\(--code-style", "\)catppuccin-[a-z]*/\1catppuccin-frappe/' .config/helix/languages.toml
-	sed -i '' 's/\(--theme", "\)light/\1dark/' .config/helix/languages.toml
+	sed -i '' 's/\(--theme", "\)catppuccin-[a-z]*/\1catppuccin-frappe/' .config/helix/languages.toml
 	pkill -USR1 hx 2>/dev/null || true
 
 	# Neovim (live push to all running instances)
@@ -269,8 +268,7 @@ end repeat'
 
 	# Helix
 	sed -i '' 's/\(theme = \)".*"/\1"'$HELIX_LIGHT'"/' .config/helix/config.toml
-	sed -i '' 's/\(--code-style", "\)catppuccin-[a-z]*/\1catppuccin-latte/' .config/helix/languages.toml
-	sed -i '' 's/\(--theme", "\)dark/\1light/' .config/helix/languages.toml
+	sed -i '' 's/\(--theme", "\)catppuccin-[a-z]*/\1catppuccin-latte/' .config/helix/languages.toml
 	pkill -USR1 hx 2>/dev/null || true
 
 	# Neovim

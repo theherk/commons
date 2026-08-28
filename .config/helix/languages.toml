@@ -5,7 +5,7 @@ formatter = { command = "black", args = ["-", "-q"] }
 
 [language-server.mpls]
 command = "mpls"
-args = ["--theme", "dark", "--code-style", "catppuccin-frappe", "--enable-emoji", "--enable-footnotes"]
+args = ["--theme", "catppuccin-frappe", "--enable-emoji", "--enable-footnotes"]
 
 [[language]]
 name = "markdown"
