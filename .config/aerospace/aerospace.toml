@@ -43,7 +43,7 @@ alt-x = 'mode empty' # disabling some keymaps
 alt-shift-p = 'mode pane' # window / pane controls
 ctrl-t = 'mode launch' # launch leader
 
-alt-1 = ['exec-and-forget open -a "Firefox"', 'mode main']
+alt-1 = ['exec-and-forget open -a "Firefox Developer Edition"', 'mode main']
 alt-2 = ['exec-and-forget open -a "Ghostty"', 'mode main']
 alt-0 = ['exec-and-forget open -a "Slack"', 'mode main']
 
@@ -80,7 +80,7 @@ cmd-h = []
 [mode.launch.binding]
 esc = 'mode main'
 
-b = ['exec-and-forget open -a "Firefox"', 'mode main']
+b = ['exec-and-forget open -a "Firefox Developer Edition"', 'mode main']
 shift-b = 'mode browser'
 c = 'mode comms'
 m = 'mode misc'
@@ -97,9 +97,10 @@ esc = 'mode main'
 
 d = ['exec-and-forget open -a "DuckDuckGo"', 'mode main']
 e = ['exec-and-forget open -a "Edge"', 'mode main']
-f = ['exec-and-forget open -a "Firefox"', 'mode main']
+f = ['exec-and-forget open -a "Firefox Developer Edition"', 'mode main']
 o = ['exec-and-forget open -a "Orion"', 'mode main']
 s = ['exec-and-forget open -a "Safari"', 'mode main']
+x = ['exec-and-forget open -a "Firefox"', 'mode main']
 z = ['exec-and-forget open -a "Zen"', 'mode main']
 
 [mode.comms.binding]
@@ -316,6 +317,10 @@ run = ['move-node-to-workspace 🌎']
 
 [[on-window-detected]]
 if = 'test %{app-bundle-id} = org.mozilla.firefox'
+run = ['move-node-to-workspace 🌎']
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = org.mozilla.firefoxdeveloperedition'
 run = ['move-node-to-workspace 🌎']
 
 [[on-window-detected]]
