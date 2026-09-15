@@ -2,6 +2,19 @@
 root = "."
 
 [[trees.repos]]
+name = "Adam-Lawrence-Sherwood/github-app-installer"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "dnb@dnb.ghe.com:Adam-Lawrence-Sherwood/github-app-installer.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "dnb@dnb.ghe.com:dnb-tooling/github-app-installer.git"
+type = "ssh"
+
+[[trees.repos]]
 name = "Adam-Lawrence-Sherwood/github-enterprise-teams"
 
 [[trees.repos.remotes]]
