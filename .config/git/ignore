@@ -22,6 +22,8 @@
 .emacs.d/tramp
 .envrc
 .mise.local
+.mise.local.toml
+mise.local.toml
 .mise.toml
 .pypirc
 .shadowenv.d
