@@ -1,19 +1,16 @@
 #!/bin/sh
 
 mkdir -p \
-	~/.config/atuin \
 	~/.config/fish \
 	~/.config/fish/conf.d \
 	~/.config/goose \
 	~/.agents \
 	~/.config/opencode \
-	~/.config/opencode/agents \
-	~/.config/opencode/plugins \
 	~/"Library/Application Support/Element" \
 	~/"Library/Application Support/xbar/plugins"
 
-ln -sf ~/commons/.aliases.sh ~/
-ln -sf ~/commons/.bashrc ~/
+ln -sf ~/commons/.aliases.sh ~/.aliases.sh
+ln -sf ~/commons/.bashrc ~/.bashrc
 ln -sf ~/commons/.config/aerospace/ ~/.config/
 ln -sf ~/commons/.config/atuin/ ~/.config/
 ln -sf ~/commons/.config/bat/ ~/.config/
@@ -55,13 +52,13 @@ ln -sf ~/commons/.config/tuicr/ ~/.config/
 ln -sf ~/commons/.config/wezterm/ ~/.config/
 ln -sf ~/commons/.config/yazi/ ~/.config/
 ln -sf ~/commons/.config/zellij/ ~/.config/
-ln -sf ~/commons/.editorconfig ~/
-ln -sf ~/commons/.eslintrc ~/
-ln -sf ~/commons/.functions.sh ~/
-ln -sf ~/commons/.pypirc ~/
-ln -sf ~/commons/.tmux.conf ~/
-ln -sf ~/commons/.zprofile ~/
-ln -sf ~/commons/.zshrc ~/
-ln -sf ~/commons/bin/ ~/
+ln -sf ~/commons/.editorconfig ~/.editorconfig
+ln -sf ~/commons/.eslintrc ~/.eslintrc
+ln -sf ~/commons/.functions.sh ~/.functions.sh
+ln -sf ~/commons/.pypirc ~/.pypirc
+ln -sf ~/commons/.tmux.conf ~/.tmux.conf
+ln -sf ~/commons/.zprofile ~/.zprofile
+ln -sf ~/commons/.zshrc ~/.zshrc
+ln -sfT ~/commons/bin/ ~/bin
 ln -sf ~/commons/bin/xbar/* ~/"Library/Application Support/xbar/plugins/"
-ln -sf ~/commons/rayscripts/ ~/
+ln -sfT ~/commons/rayscripts/ ~/rayscripts
