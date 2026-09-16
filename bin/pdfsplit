@@ -1,0 +1,87 @@
+#!/usr/bin/env -S uv run --quiet --script
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["pymupdf>=1.24.3"]
+# ///
+"""Rasterise every page of a PDF to numbered PNG files.
+
+Usage: pdfsplit <in.pdf> <outdir> [scale]
+
+Scale multiplies the page size in points and defaults to 2.0, so a 720x405
+slide becomes 1440x810. Pages are written as page-01.png, page-02.png and so
+on, zero padded to sort correctly.
+
+Renders without an alpha channel, which composites onto white. Slide decks
+are frequently transparent and would otherwise produce light text on black.
+
+Written for feeding PDFs to models that reject PDF attachments. See the
+"PDF Raster to Image" note in the brain vault for the wider context.
+"""
+
+import sys
+from pathlib import Path
+
+import pymupdf
+
+
+def main() -> int:
+    args = sys.argv[1:]
+
+    if len(args) < 2:
+        print("Usage: pdfsplit <in.pdf> <outdir> [scale]", file=sys.stderr)
+        return 1
+
+    src, out_dir = Path(args[0]), Path(args[1])
+
+    try:
+        scale = float(args[2]) if len(args) > 2 else 2.0
+    except ValueError:
+        print(f"pdfsplit: scale must be a number, got {args[2]!r}", file=sys.stderr)
+        return 1
+
+    if scale <= 0:
+        print("pdfsplit: scale must be greater than zero", file=sys.stderr)
+        return 1
+
+    try:
+        doc = pymupdf.open(src)
+    except Exception as err:
+        print(f"pdfsplit: cannot open {src}: {err}", file=sys.stderr)
+        return 1
+
+    if doc.page_count == 0:
+        print(f"pdfsplit: {src} has no pages", file=sys.stderr)
+        return 1
+
+    if not doc.is_pdf:
+        # PyMuPDF happily opens epub, xps, cbz and even plain text, rendering
+        # them as pages. Refuse, so a mistyped path fails loudly instead of
+        # silently rasterising whatever it found.
+        print(f"pdfsplit: {src} is not a PDF", file=sys.stderr)
+        return 1
+
+    try:
+        out_dir.mkdir(parents=True, exist_ok=True)
+    except OSError as err:
+        print(f"pdfsplit: cannot create {out_dir}: {err}", file=sys.stderr)
+        return 1
+
+    matrix = pymupdf.Matrix(scale, scale)
+    width = max(2, len(str(doc.page_count)))
+    failed = 0
+
+    for index, page in enumerate(doc, start=1):
+        path = out_dir / f"page-{index:0{width}d}.png"
+        try:
+            page.get_pixmap(matrix=matrix, alpha=False).save(path)
+        except Exception as err:
+            print(f"pdfsplit: cannot render page {index}: {err}", file=sys.stderr)
+            failed += 1
+            continue
+        print(path)
+
+    return 1 if failed else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
