@@ -1,7 +1,7 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "raicode/claude-sonnet-5",
-  "small_model": "raicode/claude-haiku-4-5-20251001",
+  "model": "raicode/anthropic/claude-sonnet-5",
+  "small_model": "raicode/anthropic/claude-haiku-4-5",
   "permission": {
     "bash": {
       "*": "allow",
@@ -31,7 +31,7 @@
       "color": "success",
       "mode": "primary",
       "description": "Read-only codebase exploration. No writes, minimal bash.",
-      "model": "raicode/claude-haiku-4-5-20251001",
+      "model": "raicode/anthropic/claude-haiku-4-5",
       "permission": {
         "edit": "deny",
         "bash": {
@@ -66,16 +66,16 @@
       }
     },
     "boob": {
-      "model": "raicode/claude-haiku-4-5-20251001"
+      "model": "raicode/anthropic/claude-haiku-4-5"
     },
     "jira-work": {
-      "model": "raicode/claude-haiku-4-5-20251001"
+      "model": "raicode/anthropic/claude-haiku-4-5"
     },
     "review": {
-      "model": "raicode/claude-opus-4-6"
+      "model": "raicode/anthropic/claude-opus-5-5"
     },
     "sage": {
-      "model": "raicode/claude-opus-4-6"
+      "model": "raicode/anthropic/claude-opus-5-5"
     }
   },
   "provider": {
@@ -93,11 +93,29 @@
     },
     "raicode": {
       "models": {
-        "claude-haiku-4-5-20251001": {
+        "amazon/amazon.titan-embed-text-v2:0": {
+          "attachment": true,
+          "limit": {
+            "context": 8192,
+            "output": 8192
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Amazon Titan Embed Text V2",
+          "tool_call": true
+        },
+        "anthropic/claude-haiku-4-5": {
           "attachment": true,
           "limit": {
             "context": 200000,
-            "output": 34000
+            "output": 64000
           },
           "modalities": {
             "input": [
@@ -108,45 +126,21 @@
               "text"
             ]
           },
-          "name": "Claude Haiku 4.5 (EU)",
+          "name": "Claude Haiku 4.5",
           "tool_call": true,
           "variants": {
-            "high": {
-              "thinking": {
-                "budgetTokens": 16000,
-                "type": "enabled"
-              }
-            },
-            "low": {
-              "thinking": {
-                "budgetTokens": 2048,
-                "type": "enabled"
-              }
-            },
-            "medium": {
-              "thinking": {
-                "budgetTokens": 8192,
-                "type": "enabled"
-              }
-            },
             "none": {
               "thinking": {
                 "type": "disabled"
               }
-            },
-            "xhigh": {
-              "thinking": {
-                "budgetTokens": 30000,
-                "type": "enabled"
-              }
             }
           }
         },
-        "claude-opus-4-5-20251101": {
+        "anthropic/claude-opus-4-5": {
           "attachment": true,
           "limit": {
             "context": 200000,
-            "output": 34000
+            "output": 64000
           },
           "modalities": {
             "input": [
@@ -157,45 +151,21 @@
               "text"
             ]
           },
-          "name": "Claude Opus 4.5 (EU)",
+          "name": "Claude Opus 4.5",
           "tool_call": true,
           "variants": {
-            "high": {
-              "thinking": {
-                "budgetTokens": 16000,
-                "type": "enabled"
-              }
-            },
-            "low": {
-              "thinking": {
-                "budgetTokens": 2048,
-                "type": "enabled"
-              }
-            },
-            "medium": {
-              "thinking": {
-                "budgetTokens": 8192,
-                "type": "enabled"
-              }
-            },
             "none": {
               "thinking": {
                 "type": "disabled"
               }
-            },
-            "xhigh": {
-              "thinking": {
-                "budgetTokens": 30000,
-                "type": "enabled"
-              }
             }
           }
         },
-        "claude-opus-4-6": {
+        "anthropic/claude-opus-4-6": {
           "attachment": true,
           "limit": {
             "context": 1000000,
-            "output": 34000
+            "output": 68000
           },
           "modalities": {
             "input": [
@@ -206,7 +176,7 @@
               "text"
             ]
           },
-          "name": "Claude Opus 4.6 (EU)",
+          "name": "Claude Opus 4.6",
           "tool_call": true,
           "variants": {
             "high": {
@@ -221,6 +191,12 @@
                 "type": "enabled"
               }
             },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
+                "type": "enabled"
+              }
+            },
             "medium": {
               "thinking": {
                 "budgetTokens": 8192,
@@ -231,20 +207,14 @@
               "thinking": {
                 "type": "disabled"
               }
-            },
-            "xhigh": {
-              "thinking": {
-                "budgetTokens": 30000,
-                "type": "enabled"
-              }
             }
           }
         },
-        "claude-opus-4-7": {
+        "anthropic/claude-opus-4-7": {
           "attachment": true,
           "limit": {
             "context": 1000000,
-            "output": 34000
+            "output": 68000
           },
           "modalities": {
             "input": [
@@ -255,7 +225,7 @@
               "text"
             ]
           },
-          "name": "Claude Opus 4.7 (EU)",
+          "name": "Claude Opus 4.7",
           "tool_call": true,
           "variants": {
             "high": {
@@ -267,6 +237,12 @@
             "low": {
               "thinking": {
                 "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
                 "type": "enabled"
               }
             },
@@ -289,11 +265,11 @@
             }
           }
         },
-        "claude-opus-4-8": {
+        "anthropic/claude-opus-4-8": {
           "attachment": true,
           "limit": {
             "context": 1000000,
-            "output": 98000
+            "output": 68000
           },
           "modalities": {
             "input": [
@@ -304,7 +280,7 @@
               "text"
             ]
           },
-          "name": "Claude Opus 4.8 (EU)",
+          "name": "Claude Opus 4.8",
           "tool_call": true,
           "variants": {
             "high": {
@@ -316,6 +292,12 @@
             "low": {
               "thinking": {
                 "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
                 "type": "enabled"
               }
             },
@@ -338,11 +320,11 @@
             }
           }
         },
-        "claude-opus-5": {
+        "anthropic/claude-opus-5": {
           "attachment": true,
           "limit": {
             "context": 1000000,
-            "output": 98000
+            "output": 68000
           },
           "modalities": {
             "input": [
@@ -353,7 +335,7 @@
               "text"
             ]
           },
-          "name": "Claude Opus 5 (EU)",
+          "name": "Claude Opus 5",
           "tool_call": true,
           "variants": {
             "high": {
@@ -365,6 +347,12 @@
             "low": {
               "thinking": {
                 "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
                 "type": "enabled"
               }
             },
@@ -387,11 +375,66 @@
             }
           }
         },
-        "claude-sonnet-4-20250514": {
+        "anthropic/claude-opus-5-5": {
+          "attachment": true,
+          "limit": {
+            "context": 1000000,
+            "output": 68000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Claude Opus 5.5",
+          "tool_call": true,
+          "variants": {
+            "high": {
+              "thinking": {
+                "budgetTokens": 16000,
+                "type": "enabled"
+              }
+            },
+            "low": {
+              "thinking": {
+                "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
+                "type": "enabled"
+              }
+            },
+            "medium": {
+              "thinking": {
+                "budgetTokens": 8192,
+                "type": "enabled"
+              }
+            },
+            "none": {
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "xhigh": {
+              "thinking": {
+                "budgetTokens": 30000,
+                "type": "enabled"
+              }
+            }
+          }
+        },
+        "anthropic/claude-sonnet-4-20250514": {
           "attachment": true,
           "limit": {
             "context": 200000,
-            "output": 34000
+            "output": 64000
           },
           "modalities": {
             "input": [
@@ -402,45 +445,21 @@
               "text"
             ]
           },
-          "name": "Claude Sonnet 4 (EU)",
+          "name": "Claude Sonnet 4",
           "tool_call": true,
           "variants": {
-            "high": {
-              "thinking": {
-                "budgetTokens": 16000,
-                "type": "enabled"
-              }
-            },
-            "low": {
-              "thinking": {
-                "budgetTokens": 2048,
-                "type": "enabled"
-              }
-            },
-            "medium": {
-              "thinking": {
-                "budgetTokens": 8192,
-                "type": "enabled"
-              }
-            },
             "none": {
               "thinking": {
                 "type": "disabled"
               }
-            },
-            "xhigh": {
-              "thinking": {
-                "budgetTokens": 30000,
-                "type": "enabled"
-              }
             }
           }
         },
-        "claude-sonnet-4-5-20250929": {
+        "anthropic/claude-sonnet-4-5": {
           "attachment": true,
           "limit": {
             "context": 200000,
-            "output": 34000
+            "output": 64000
           },
           "modalities": {
             "input": [
@@ -451,45 +470,21 @@
               "text"
             ]
           },
-          "name": "Claude Sonnet 4.5 (EU)",
+          "name": "Claude Sonnet 4.5",
           "tool_call": true,
           "variants": {
-            "high": {
-              "thinking": {
-                "budgetTokens": 16000,
-                "type": "enabled"
-              }
-            },
-            "low": {
-              "thinking": {
-                "budgetTokens": 2048,
-                "type": "enabled"
-              }
-            },
-            "medium": {
-              "thinking": {
-                "budgetTokens": 8192,
-                "type": "enabled"
-              }
-            },
             "none": {
               "thinking": {
                 "type": "disabled"
               }
-            },
-            "xhigh": {
-              "thinking": {
-                "budgetTokens": 30000,
-                "type": "enabled"
-              }
             }
           }
         },
-        "claude-sonnet-4-6": {
+        "anthropic/claude-sonnet-4-6": {
           "attachment": true,
           "limit": {
             "context": 1000000,
-            "output": 34000
+            "output": 4000
           },
           "modalities": {
             "input": [
@@ -500,7 +495,7 @@
               "text"
             ]
           },
-          "name": "Claude Sonnet 4.6 (EU)",
+          "name": "Claude Sonnet 4.6",
           "tool_call": true,
           "variants": {
             "high": {
@@ -515,6 +510,12 @@
                 "type": "enabled"
               }
             },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
+                "type": "enabled"
+              }
+            },
             "medium": {
               "thinking": {
                 "budgetTokens": 8192,
@@ -525,20 +526,14 @@
               "thinking": {
                 "type": "disabled"
               }
-            },
-            "xhigh": {
-              "thinking": {
-                "budgetTokens": 30000,
-                "type": "enabled"
-              }
             }
           }
         },
-        "claude-sonnet-5": {
+        "anthropic/claude-sonnet-5": {
           "attachment": true,
           "limit": {
             "context": 1000000,
-            "output": 98000
+            "output": 68000
           },
           "modalities": {
             "input": [
@@ -549,7 +544,7 @@
               "text"
             ]
           },
-          "name": "Claude Sonnet 5 (EU)",
+          "name": "Claude Sonnet 5",
           "tool_call": true,
           "variants": {
             "high": {
@@ -561,6 +556,12 @@
             "low": {
               "thinking": {
                 "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
                 "type": "enabled"
               }
             },
@@ -583,11 +584,11 @@
             }
           }
         },
-        "gpt-5.4": {
+        "cohere/eu.cohere.embed-v4:0": {
           "attachment": true,
           "limit": {
-            "context": 272000,
-            "output": 98000
+            "context": 512,
+            "output": 512
           },
           "modalities": {
             "input": [
@@ -598,45 +599,14 @@
               "text"
             ]
           },
-          "name": "GPT 5.4 (EU)",
-          "tool_call": true,
-          "variants": {
-            "high": {
-              "thinking": {
-                "budgetTokens": 16000,
-                "type": "enabled"
-              }
-            },
-            "low": {
-              "thinking": {
-                "budgetTokens": 2048,
-                "type": "enabled"
-              }
-            },
-            "medium": {
-              "thinking": {
-                "budgetTokens": 8192,
-                "type": "enabled"
-              }
-            },
-            "none": {
-              "thinking": {
-                "type": "disabled"
-              }
-            },
-            "xhigh": {
-              "thinking": {
-                "budgetTokens": 30000,
-                "type": "enabled"
-              }
-            }
-          }
+          "name": "Cohere Embed V4",
+          "tool_call": true
         },
-        "gpt-5.5": {
+        "microsoft/mai-code-1.1-flash": {
           "attachment": true,
           "limit": {
-            "context": 900000,
-            "output": 98000
+            "context": 256000,
+            "output": 128000
           },
           "modalities": {
             "input": [
@@ -647,41 +617,28 @@
               "text"
             ]
           },
-          "name": "GPT 5.5 (EU)",
-          "tool_call": true,
-          "variants": {
-            "high": {
-              "thinking": {
-                "budgetTokens": 16000,
-                "type": "enabled"
-              }
-            },
-            "low": {
-              "thinking": {
-                "budgetTokens": 2048,
-                "type": "enabled"
-              }
-            },
-            "medium": {
-              "thinking": {
-                "budgetTokens": 8192,
-                "type": "enabled"
-              }
-            },
-            "none": {
-              "thinking": {
-                "type": "disabled"
-              }
-            },
-            "xhigh": {
-              "thinking": {
-                "budgetTokens": 30000,
-                "type": "enabled"
-              }
-            }
-          }
+          "name": "MAI-Code-1.1-Flash",
+          "tool_call": true
         },
-        "gpt-5.6-luna": {
+        "openai/gpt-5.3-codex": {
+          "attachment": true,
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT-5.3 Codex",
+          "tool_call": true
+        },
+        "openai/gpt-5.4": {
           "attachment": true,
           "limit": {
             "context": 1050000,
@@ -696,7 +653,7 @@
               "text"
             ]
           },
-          "name": "GPT 5.6 Luna (EU)",
+          "name": "GPT-5.4",
           "tool_call": true,
           "variants": {
             "high": {
@@ -730,7 +687,56 @@
             }
           }
         },
-        "gpt-5.6-sol": {
+        "openai/gpt-5.4-mini": {
+          "attachment": true,
+          "limit": {
+            "context": 400000,
+            "output": 98000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT-5.4 mini",
+          "tool_call": true,
+          "variants": {
+            "high": {
+              "thinking": {
+                "budgetTokens": 16000,
+                "type": "enabled"
+              }
+            },
+            "low": {
+              "thinking": {
+                "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "medium": {
+              "thinking": {
+                "budgetTokens": 8192,
+                "type": "enabled"
+              }
+            },
+            "none": {
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "xhigh": {
+              "thinking": {
+                "budgetTokens": 30000,
+                "type": "enabled"
+              }
+            }
+          }
+        },
+        "openai/gpt-5.5": {
           "attachment": true,
           "limit": {
             "context": 1050000,
@@ -745,7 +751,7 @@
               "text"
             ]
           },
-          "name": "GPT 5.6 Sol (EU)",
+          "name": "GPT-5.5",
           "tool_call": true,
           "variants": {
             "high": {
@@ -779,11 +785,11 @@
             }
           }
         },
-        "gpt-5.6-terra": {
+        "openai/gpt-5.6-luna": {
           "attachment": true,
           "limit": {
             "context": 1050000,
-            "output": 98000
+            "output": 68000
           },
           "modalities": {
             "input": [
@@ -794,7 +800,7 @@
               "text"
             ]
           },
-          "name": "GPT 5.6 Terra (EU)",
+          "name": "GPT-5.6 Luna",
           "tool_call": true,
           "variants": {
             "high": {
@@ -806,6 +812,12 @@
             "low": {
               "thinking": {
                 "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
                 "type": "enabled"
               }
             },
@@ -828,11 +840,11 @@
             }
           }
         },
-        "gpt-oss-120b": {
+        "openai/gpt-5.6-sol": {
           "attachment": true,
           "limit": {
-            "context": 128000,
-            "output": 34000
+            "context": 1050000,
+            "output": 68000
           },
           "modalities": {
             "input": [
@@ -843,7 +855,7 @@
               "text"
             ]
           },
-          "name": "GPT OSS 120b (EU)",
+          "name": "GPT-5.6 Sol",
           "tool_call": true,
           "variants": {
             "high": {
@@ -855,6 +867,12 @@
             "low": {
               "thinking": {
                 "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
                 "type": "enabled"
               }
             },
@@ -877,11 +895,11 @@
             }
           }
         },
-        "gpt-oss-20b": {
+        "openai/gpt-5.6-terra": {
           "attachment": true,
           "limit": {
-            "context": 128000,
-            "output": 98000
+            "context": 1050000,
+            "output": 68000
           },
           "modalities": {
             "input": [
@@ -892,7 +910,227 @@
               "text"
             ]
           },
-          "name": "GPT OSS 20b (EU)",
+          "name": "GPT-5.6 Terra",
+          "tool_call": true,
+          "variants": {
+            "high": {
+              "thinking": {
+                "budgetTokens": 16000,
+                "type": "enabled"
+              }
+            },
+            "low": {
+              "thinking": {
+                "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
+                "type": "enabled"
+              }
+            },
+            "medium": {
+              "thinking": {
+                "budgetTokens": 8192,
+                "type": "enabled"
+              }
+            },
+            "none": {
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "xhigh": {
+              "thinking": {
+                "budgetTokens": 30000,
+                "type": "enabled"
+              }
+            }
+          }
+        },
+        "openai/gpt-6-astra": {
+          "attachment": true,
+          "limit": {
+            "context": 1050000,
+            "output": 68000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT-6 Astra",
+          "tool_call": true,
+          "variants": {
+            "high": {
+              "thinking": {
+                "budgetTokens": 16000,
+                "type": "enabled"
+              }
+            },
+            "low": {
+              "thinking": {
+                "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
+                "type": "enabled"
+              }
+            },
+            "medium": {
+              "thinking": {
+                "budgetTokens": 8192,
+                "type": "enabled"
+              }
+            },
+            "none": {
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "xhigh": {
+              "thinking": {
+                "budgetTokens": 30000,
+                "type": "enabled"
+              }
+            }
+          }
+        },
+        "openai/gpt-6-luna": {
+          "attachment": true,
+          "limit": {
+            "context": 1050000,
+            "output": 68000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT-6 Luna",
+          "tool_call": true,
+          "variants": {
+            "high": {
+              "thinking": {
+                "budgetTokens": 16000,
+                "type": "enabled"
+              }
+            },
+            "low": {
+              "thinking": {
+                "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
+                "type": "enabled"
+              }
+            },
+            "medium": {
+              "thinking": {
+                "budgetTokens": 8192,
+                "type": "enabled"
+              }
+            },
+            "none": {
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "xhigh": {
+              "thinking": {
+                "budgetTokens": 30000,
+                "type": "enabled"
+              }
+            }
+          }
+        },
+        "openai/gpt-6-sol": {
+          "attachment": true,
+          "limit": {
+            "context": 1050000,
+            "output": 68000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT-6 Sol",
+          "tool_call": true,
+          "variants": {
+            "high": {
+              "thinking": {
+                "budgetTokens": 16000,
+                "type": "enabled"
+              }
+            },
+            "low": {
+              "thinking": {
+                "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
+                "type": "enabled"
+              }
+            },
+            "medium": {
+              "thinking": {
+                "budgetTokens": 8192,
+                "type": "enabled"
+              }
+            },
+            "none": {
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "xhigh": {
+              "thinking": {
+                "budgetTokens": 30000,
+                "type": "enabled"
+              }
+            }
+          }
+        },
+        "openai/gpt-oss-120b": {
+          "attachment": true,
+          "limit": {
+            "context": 131072,
+            "output": 16768
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT OSS 120B",
           "tool_call": true,
           "variants": {
             "high": {
@@ -917,11 +1155,48 @@
               "thinking": {
                 "type": "disabled"
               }
-            },
-            "xhigh": {
+            }
+          }
+        },
+        "openai/gpt-oss-20b": {
+          "attachment": true,
+          "limit": {
+            "context": 131072,
+            "output": 16768
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT OSS 20B",
+          "tool_call": true,
+          "variants": {
+            "high": {
               "thinking": {
-                "budgetTokens": 30000,
+                "budgetTokens": 16000,
                 "type": "enabled"
+              }
+            },
+            "low": {
+              "thinking": {
+                "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "medium": {
+              "thinking": {
+                "budgetTokens": 8192,
+                "type": "enabled"
+              }
+            },
+            "none": {
+              "thinking": {
+                "type": "disabled"
               }
             }
           }

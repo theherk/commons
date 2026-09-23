@@ -6,23 +6,136 @@
   "api_key_env": "RAICODE_GOOSE_TOKEN",
   "base_url": "https://gateway.raicode.no",
   "models": [
-    { "name": "claude-opus-4-6", "context_limit": 1000000, "max_tokens": 34000 },
-    { "name": "claude-opus-4-7", "context_limit": 1000000, "max_tokens": 34000 },
-    { "name": "claude-opus-4-8", "context_limit": 1000000, "max_tokens": 98000 },
-    { "name": "claude-opus-5", "context_limit": 1000000, "max_tokens": 98000 },
-    { "name": "claude-opus-4-5-20251101", "context_limit": 200000, "max_tokens": 34000 },
-    { "name": "claude-sonnet-4-6", "context_limit": 1000000, "max_tokens": 34000 },
-    { "name": "claude-sonnet-5", "context_limit": 1000000, "max_tokens": 98000 },
-    { "name": "claude-sonnet-4-5-20250929", "context_limit": 200000, "max_tokens": 34000 },
-    { "name": "claude-sonnet-4-20250514", "context_limit": 200000, "max_tokens": 34000 },
-    { "name": "claude-haiku-4-5-20251001", "context_limit": 200000, "max_tokens": 34000 },
-    { "name": "gpt-5.4", "context_limit": 272000, "max_tokens": 98000 },
-    { "name": "gpt-5.5", "context_limit": 900000, "max_tokens": 98000 },
-    { "name": "gpt-5.6-luna", "context_limit": 1050000, "max_tokens": 98000 },
-    { "name": "gpt-5.6-sol", "context_limit": 1050000, "max_tokens": 98000 },
-    { "name": "gpt-5.6-terra", "context_limit": 1050000, "max_tokens": 98000 },
-    { "name": "gpt-oss-120b", "context_limit": 128000, "max_tokens": 34000 },
-    { "name": "gpt-oss-20b", "context_limit": 128000, "max_tokens": 98000 }
+    {
+      "name": "amazon/amazon.titan-embed-text-v2:0",
+      "context_limit": 8192,
+      "max_tokens": 8192
+    },
+    {
+      "name": "anthropic/claude-haiku-4-5",
+      "context_limit": 200000,
+      "max_tokens": 64000
+    },
+    {
+      "name": "anthropic/claude-opus-4-5",
+      "context_limit": 200000,
+      "max_tokens": 64000
+    },
+    {
+      "name": "anthropic/claude-opus-4-6",
+      "context_limit": 1000000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "anthropic/claude-opus-4-7",
+      "context_limit": 1000000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "anthropic/claude-opus-4-8",
+      "context_limit": 1000000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "anthropic/claude-opus-5",
+      "context_limit": 1000000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "anthropic/claude-opus-5-5",
+      "context_limit": 1000000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "anthropic/claude-sonnet-4-20250514",
+      "context_limit": 200000,
+      "max_tokens": 64000
+    },
+    {
+      "name": "anthropic/claude-sonnet-4-5",
+      "context_limit": 200000,
+      "max_tokens": 64000
+    },
+    {
+      "name": "anthropic/claude-sonnet-4-6",
+      "context_limit": 1000000,
+      "max_tokens": 4000
+    },
+    {
+      "name": "anthropic/claude-sonnet-5",
+      "context_limit": 1000000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "cohere/eu.cohere.embed-v4:0",
+      "context_limit": 512,
+      "max_tokens": 512
+    },
+    {
+      "name": "microsoft/mai-code-1.1-flash",
+      "context_limit": 256000,
+      "max_tokens": 128000
+    },
+    {
+      "name": "openai/gpt-5.3-codex",
+      "context_limit": 400000,
+      "max_tokens": 128000
+    },
+    {
+      "name": "openai/gpt-5.4",
+      "context_limit": 1050000,
+      "max_tokens": 98000
+    },
+    {
+      "name": "openai/gpt-5.4-mini",
+      "context_limit": 400000,
+      "max_tokens": 98000
+    },
+    {
+      "name": "openai/gpt-5.5",
+      "context_limit": 1050000,
+      "max_tokens": 98000
+    },
+    {
+      "name": "openai/gpt-5.6-luna",
+      "context_limit": 1050000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "openai/gpt-5.6-sol",
+      "context_limit": 1050000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "openai/gpt-5.6-terra",
+      "context_limit": 1050000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "openai/gpt-6-astra",
+      "context_limit": 1050000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "openai/gpt-6-luna",
+      "context_limit": 1050000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "openai/gpt-6-sol",
+      "context_limit": 1050000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "openai/gpt-oss-120b",
+      "context_limit": 131072,
+      "max_tokens": 16768
+    },
+    {
+      "name": "openai/gpt-oss-20b",
+      "context_limit": 131072,
+      "max_tokens": 16768
+    }
   ],
   "supports_streaming": true,
   "requires_auth": true

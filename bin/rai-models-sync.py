@@ -37,7 +37,7 @@ GOOSE_API_KEY_ENV = "RAICODE_GOOSE_TOKEN"
 GOOSE_BASE_URL = "https://gateway.raicode.no"
 
 
-def refresh_raicode_catalog(timeout_secs: float = 6.0, settle_secs: float = 3.0) -> None:
+def refresh_raicode_catalog(timeout_secs: float = 12.0, settle_secs: float = 8.0) -> None:
     """Launch raicode briefly to force it to refresh its model catalog."""
     try:
         proc = subprocess.Popen(

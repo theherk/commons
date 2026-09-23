@@ -22,5 +22,5 @@ extensions:
     bundled: true
 settings:
   goose_provider: raicode
-  goose_model: claude-sonnet-4-6
+  goose_model: anthropic/claude-sonnet-4-6
 prompt: "Handle the requested Nabu / notes operation."

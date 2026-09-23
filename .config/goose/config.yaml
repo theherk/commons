@@ -113,7 +113,7 @@ active_provider: raicode
 providers:
   raicode:
     enabled: true
-    model: claude-sonnet-5
+    model: anthropic/claude-sonnet-5
     configured: true
   github_copilot:
     enabled: true
