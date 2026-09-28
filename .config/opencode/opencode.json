@@ -392,6 +392,11 @@
           },
           "name": "Claude Opus 5.5",
           "tool_call": true,
+          "options": {
+            "thinking": {
+              "blockBinding": false
+            }
+          },
           "variants": {
             "high": {
               "thinking": {
