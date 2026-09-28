@@ -1,7 +1,19 @@
 #!/usr/bin/env sh
 
-if [ $(git root 2>/dev/null) ]; then
-	if [ -e "$(git root)/_neovim" ]; then
+# Note: macOS caps AF_UNIX sun_path at 104 bytes. "$(git root)/_neovim"
+# can exceed that for deeply nested repo paths (e.g. long GitLab group
+# paths), causing `nvim --listen` to fail with "invalid argument". When
+# the in-repo socket path would be too long, we fall back to a short,
+# deterministic path under /tmp keyed by a hash of the repo root, so the
+# same repo always resolves to the same socket.
+
+root=$(git root 2>/dev/null)
+if [ -n "$root" ]; then
+	sock="$root/_neovim"
+	if [ ${#sock} -gt 100 ]; then
+		sock="/tmp/nvim-$(printf '%s' "$root" | md5 -q | cut -c1-16)"
+	fi
+	if [ -e "$sock" ]; then
 		line=""
 		files=""
 		for arg in "$@"; do
@@ -10,12 +22,12 @@ if [ $(git root 2>/dev/null) ]; then
 				*) files="$arg" ;;
 			esac
 		done
-		nvim --server "$(git root)/_neovim" --remote "$files" </dev/null >/dev/null 2>&1
+		nvim --server "$sock" --remote "$files" </dev/null >/dev/null 2>&1
 		if [ -n "$line" ]; then
-			nvim --server "$(git root)/_neovim" --remote-expr "nvim_win_set_cursor(0, [$line, 0])" </dev/null >/dev/null 2>&1
+			nvim --server "$sock" --remote-expr "nvim_win_set_cursor(0, [$line, 0])" </dev/null >/dev/null 2>&1
 		fi
 	else
-		nvim --listen "$(git root)/_neovim" "$@"
+		nvim --listen "$sock" "$@"
 	fi
 else
 	nvim $@
