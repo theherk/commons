@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "raicode/anthropic/claude-sonnet-5",
+  "model": "raicode/anthropic/claude-sonnet-5-5",
   "small_model": "raicode/anthropic/claude-haiku-4-5",
   "permission": {
     "bash": {
@@ -392,11 +392,6 @@
           },
           "name": "Claude Opus 5.5",
           "tool_call": true,
-          "options": {
-            "thinking": {
-              "blockBinding": false
-            }
-          },
           "variants": {
             "high": {
               "thinking": {
@@ -550,6 +545,66 @@
             ]
           },
           "name": "Claude Sonnet 5",
+          "tool_call": true,
+          "variants": {
+            "high": {
+              "thinking": {
+                "budgetTokens": 16000,
+                "type": "enabled"
+              }
+            },
+            "low": {
+              "thinking": {
+                "budgetTokens": 2048,
+                "type": "enabled"
+              }
+            },
+            "max": {
+              "thinking": {
+                "budgetTokens": 60000,
+                "type": "enabled"
+              }
+            },
+            "medium": {
+              "thinking": {
+                "budgetTokens": 8192,
+                "type": "enabled"
+              }
+            },
+            "none": {
+              "thinking": {
+                "type": "disabled"
+              }
+            },
+            "xhigh": {
+              "thinking": {
+                "budgetTokens": 30000,
+                "type": "enabled"
+              }
+            }
+          }
+        },
+        "anthropic/claude-sonnet-5-5": {
+          "attachment": true,
+          "limit": {
+            "context": 1000000,
+            "output": 68000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "thinking": {
+              "blockBinding": false
+            }
+          },
+          "name": "Claude Sonnet 5.5",
           "tool_call": true,
           "variants": {
             "high": {
