@@ -20,12 +20,15 @@ else
     set lavender "114;135;253"
 end
 
-if test $pct -le 20
+if test $pct -lt 20
     set color $red
-else if test $pct -le 50
+    set glyph 󰂎
+else if test $pct -lt 50
     set color $peach
+    set glyph 󰂃
 else
     set color $green
+    set glyph 󰁹
 end
 
 set t (date +%H:%M)
@@ -35,4 +38,4 @@ set icon $esc"[38;2;"$color"m"
 set clock $esc"[38;2;"$lavender"m"
 set txt $esc"[38;2;"$text"m"
 
-echo "$icon󰁹 $txt$pct $clock󰥔 $txt$t | font=VictorMonoNF-Regular ansi=true"
+echo "$icon$glyph $txt$pct $clock󰥔 $txt$t | font=VictorMonoNF-Regular ansi=true"
