@@ -25,4 +25,11 @@ else
     set color $green
 end
 
-echo "  $load[1] $load[2] $load[3] | font=VictorMonoNF-Regular color=$color"
+# Log scale: 2 -> lowest bar, 5 -> half, 20 -> full
+set bars ▁ ▂ ▃ ▄ ▅ ▆ ▇ █
+set r (for l in $load
+    set i (math "min(7, round(7 * (log10(max($l, 2)) - log10(2))))")
+    echo $bars[(math "$i + 1")]
+end)
+
+echo "  $r[1] $r[2] $r[3] | font=VictorMonoNF-Regular color=$color"
