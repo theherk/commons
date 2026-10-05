@@ -127,6 +127,7 @@ c = ['exec-and-forget open "keepingyouawake:///toggle"', 'mode main']
 d = ['exec-and-forget open -a "Dictionary"', 'mode main']
 l = ['exec-and-forget /Users/h4s/bin/light-dark-toggle.sh', 'mode main']
 p = ['exec-and-forget open -a "Proton Pass"', 'mode main']
+s = ['exec-and-forget open -a "System Settings"', 'mode main']
 
 [mode.screenshot.binding]
 esc = 'mode main'
