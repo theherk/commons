@@ -7,7 +7,7 @@ after-startup-command = []
 accordion-padding = 0
 enable-normalization-flatten-containers = false
 
-persistent-workspaces = ["🌎", "💻", "✏️", "📓", "🌀", "📬", "🗨️", "📡"]
+persistent-workspaces = ["🌎", "💻", "✏️", "📓", "🌀", "🎸", "📬", "🗨️", "📡"]
 
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
@@ -52,6 +52,7 @@ alt-shift-2 = 'workspace 💻'
 alt-shift-3 = 'workspace ✏️'
 alt-shift-4 = 'workspace 📓'
 alt-shift-5 = 'workspace 🌀'
+alt-shift-6 = 'workspace 🎸'
 alt-shift-8 = 'workspace 📬'
 alt-shift-9 = 'workspace 🗨️'
 alt-shift-0 = 'workspace 📡'
@@ -63,6 +64,7 @@ alt-ctrl-2 = 'move-node-to-workspace 💻'
 alt-ctrl-3 = 'move-node-to-workspace ✏️'
 alt-ctrl-4 = 'move-node-to-workspace 📓'
 alt-ctrl-5 = 'move-node-to-workspace 🌀'
+alt-ctrl-6 = 'move-node-to-workspace 🎸'
 alt-ctrl-8 = 'move-node-to-workspace 📬'
 alt-ctrl-9 = 'move-node-to-workspace 🗨️'
 alt-ctrl-0 = 'move-node-to-workspace 📡'
@@ -126,6 +128,7 @@ b = ['exec-and-forget /Users/h4s/bin/browse-repos.sh', 'mode main']
 c = ['exec-and-forget open "keepingyouawake:///toggle"', 'mode main']
 d = ['exec-and-forget open -a "Dictionary"', 'mode main']
 l = ['exec-and-forget /Users/h4s/bin/light-dark-toggle.sh', 'mode main']
+m = ['exec-and-forget open -a "Music"', 'mode main']
 p = ['exec-and-forget open -a "Proton Pass"', 'mode main']
 s = ['exec-and-forget open -a "System Settings"', 'mode main']
 
@@ -183,6 +186,8 @@ a = [ # mostly accordion
     'layout h_accordion',
     'workspace 🌀',
     'layout h_accordion',
+    'workspace 🎸',
+    'layout h_accordion',
     'workspace 📬',
     'layout h_accordion',
     'workspace 🗨️',
@@ -203,6 +208,8 @@ d = [ # desk layout when multimonitor is in play
     'layout h_tiles',
     'workspace 🌀',
     'layout h_tiles',
+    'workspace 🎸',
+    'layout h_accordion',
     'workspace 📬',
     'layout h_accordion',
     'workspace 🗨️',
@@ -223,6 +230,8 @@ t = [ # mostly tiling
     'workspace 📓',
     'layout h_tiles',
     'workspace 🌀',
+    'layout h_tiles',
+    'workspace 🎸',
     'layout h_tiles',
     'workspace 📬',
     'layout h_tiles',
@@ -246,6 +255,7 @@ n = ['exec-and-forget /Users/h4s/bin/trans-til-norsk.sh', 'mode main']
     "✏️" = 'main'
     "📓" = 'main'
     "🌀" = 'main'
+    "🎸" = ['secondary', 'main']
     "📬" = ['secondary', 'main']
     "🗨️" = ['secondary', 'main']
     "📡" = ['secondary', 'main']
@@ -299,6 +309,10 @@ run = ['layout floating']
 [[on-window-detected]]
 if = 'test %{app-bundle-id} = ch.protonvpn.mac'
 run = ['layout floating']
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.apple.Music'
+run = ['move-node-to-workspace 🎸']
 
 [[on-window-detected]]
 if = 'test %{app-bundle-id} = com.apple.Safari'
