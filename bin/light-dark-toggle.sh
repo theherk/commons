@@ -30,8 +30,8 @@ FISH_LIGHT="Catppuccin Latte"
 HELIX_DARK=base16_transparent
 HELIX_LIGHT=catppuccin_latte
 
-LAZYGIT_BORDER_DARK=#ef9f76
-LAZYGIT_BORDER_LIGHT=#fe640b
+LAZYGIT_BORDER_DARK=#ca9ee6
+LAZYGIT_BORDER_LIGHT=#8839ef
 LAZYGIT_BG_DARK=#414559
 LAZYGIT_BG_LIGHT=#ccd0da
 
@@ -193,7 +193,7 @@ repeat with scr in (current application'\''s NSScreen'\''s screens() as list)
 end repeat'
 
 	# State marker
-	echo "dark" > .appearance
+	echo "dark" >.appearance
 
 	# Fish shell (universal vars — instantly visible to all shells)
 	yes | fish -c 'fish_config theme save "'"$FISH_DARK"'"'
@@ -253,7 +253,7 @@ repeat with scr in (current application'\''s NSScreen'\''s screens() as list)
 end repeat'
 
 	# State marker
-	echo "light" > .appearance
+	echo "light" >.appearance
 
 	# Fish shell
 	yes | fish -c 'fish_config theme save "'"$FISH_LIGHT"'"'
