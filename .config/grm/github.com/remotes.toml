@@ -23,6 +23,19 @@ url = "git@github.com:nikitabobko/AeroSpace.git"
 type = "ssh"
 
 [[trees.repos]]
+name = "theherk/FirefoxColor"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "git@github.com:theherk/FirefoxColor.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "https://github.com/mozilla/FirefoxColor.git"
+type = "https"
+
+[[trees.repos]]
 name = "theherk/gh-dash"
 
 [[trees.repos.remotes]]
