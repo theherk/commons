@@ -30,7 +30,14 @@ SELF="$(realpath "$0")"
 GHE_HOST="dnb.ghe.com"
 GL_HOST="gitlab.tech.dnb.no"
 
-MODE="${1:-}"
+MODE=""
+ACTIONS=0
+for arg in "$@"; do
+    case "$arg" in
+    -a | --actions | actions) ACTIONS=1 ;;
+    *) MODE="$arg" ;;
+    esac
+done
 if [ -z "$MODE" ]; then
     HOST=$(printf '%s\n' "github.com" "$GHE_HOST" "$GL_HOST" | fzf --reverse --prompt "forge> ") || exit 0
     case "$HOST" in
@@ -65,7 +72,17 @@ fi
 # Always refresh in background for next invocation
 (tmp=$(mktemp) && "$SELF" --fetch "$MODE" "$HOST" >"$tmp" 2>/dev/null && [ -s "$tmp" ] && mv "$tmp" "$CACHE_FILE" || rm -f "$tmp" &) || true
 
-SELECTED=$(cat "$CACHE_FILE" | fzf --reverse --prompt "repo> ") || exit 0
+OUT=$(fzf --reverse --prompt "repo> " --expect=tab --header "enter: open | tab: actions" <"$CACHE_FILE") || exit 0
+KEY=$(sed -n 1p <<<"$OUT")
+SELECTED=$(sed -n 2p <<<"$OUT")
 [ -z "$SELECTED" ] && exit 0
+[ -n "$KEY" ] && ACTIONS=1
 
-open "https://${HOST}/${SELECTED}"
+URL="https://${HOST}/${SELECTED}"
+if [ "$ACTIONS" = 1 ]; then
+    case "$MODE" in
+    gl) URL="$URL/-/pipelines" ;;
+    *) URL="$URL/actions" ;;
+    esac
+fi
+open "$URL"

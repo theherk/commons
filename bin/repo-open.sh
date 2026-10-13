@@ -32,4 +32,14 @@ else
     url="${url%.git}"
 fi
 
+case "${1:-}" in
+-a | --actions | actions)
+    if [[ "$url" == *gitlab* ]]; then
+        url="$url/-/pipelines"
+    else
+        url="$url/actions"
+    fi
+    ;;
+esac
+
 open "$url"
