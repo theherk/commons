@@ -12,6 +12,9 @@ default_layout "default"
 keybinds {
     unbind "Ctrl n"
     unbind "Ctrl t"
+    shared_except "tmux" "locked" {
+        unbind "Ctrl b"
+    }
     shared_except "locked" {
         bind "Ctrl a" { SwitchToMode "tab"; }
     }
