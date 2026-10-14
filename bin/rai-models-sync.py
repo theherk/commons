@@ -76,7 +76,7 @@ def dump_json(path: Path, data: dict) -> None:
         f.write("\n")
 
 
-CLAUDE_VERSION = re.compile(r"claude-(?:opus|sonnet|haiku)-(\d+)-(\d+)")
+CLAUDE_VERSION = re.compile(r"claude-(?:opus|sonnet|haiku)-(\d+)(?:-(\d{1,2}))?(?!\d)")
 
 
 def v2_model(model_id: str, meta: dict) -> dict:
@@ -98,7 +98,7 @@ def v2_model(model_id: str, meta: dict) -> dict:
     # v2 enables binding by ID for those; the override is model-only.
     m = CLAUDE_VERSION.search(model_id)
     if model_id.startswith("anthropic/") and m:
-        major, minor = int(m.group(1)), int(m.group(2))
+        major, minor = int(m.group(1)), int(m.group(2) or 0)
         if (major, minor) >= (5, 1):
             entry["compatibility"] = {"supportsThinkingBlockBinding": False}
     return entry

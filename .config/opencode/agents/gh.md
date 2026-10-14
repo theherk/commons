@@ -95,6 +95,30 @@ permissions:
   - action: shell
     resource: "gh api*--method DELETE *"
     effect: ask
+  - action: shell
+    resource: "gh api *-X *"
+    effect: ask
+  - action: shell
+    resource: "gh api *--method *"
+    effect: ask
+  - action: shell
+    resource: "gh api *--method=*"
+    effect: ask
+  - action: shell
+    resource: "gh api * -f *"
+    effect: ask
+  - action: shell
+    resource: "gh api * -F *"
+    effect: ask
+  - action: shell
+    resource: "gh api *--field *"
+    effect: ask
+  - action: shell
+    resource: "gh api *--raw-field *"
+    effect: ask
+  - action: shell
+    resource: "gh api *--input *"
+    effect: ask
   - action: read
     resource: "*"
     effect: allow

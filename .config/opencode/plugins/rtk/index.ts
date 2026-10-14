@@ -5,8 +5,8 @@ import { Plugin } from "@opencode/plugin"
 // Requires rtk >= 0.23.0 in PATH. All rewrite logic lives in rtk itself
 // (src/discover/registry.rs); edit the Rust registry, not this file.
 //
-// Runs on the shell `create.before` hook, which fires after permission rules
-// have evaluated the original command, so permission rules need no rtk-prefixed twins.
+// Runs on the shell `create.before` hook. Whether permission rules see the
+// original or rewritten command is unverified, so rules keep rtk-prefixed twins.
 
 export default Plugin.define({
   id: "h4s.rtk",

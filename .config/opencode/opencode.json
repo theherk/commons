@@ -58,6 +58,11 @@
       "color": "#f9e2af",
       "permissions": [
         {
+          "action": "edit",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
           "action": "shell",
           "resource": "*",
           "effect": "deny"

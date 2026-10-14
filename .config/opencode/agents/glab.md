@@ -95,6 +95,30 @@ permissions:
   - action: shell
     resource: "glab api*--method DELETE *"
     effect: ask
+  - action: shell
+    resource: "glab api *-X *"
+    effect: ask
+  - action: shell
+    resource: "glab api *--method *"
+    effect: ask
+  - action: shell
+    resource: "glab api *--method=*"
+    effect: ask
+  - action: shell
+    resource: "glab api * -f *"
+    effect: ask
+  - action: shell
+    resource: "glab api * -F *"
+    effect: ask
+  - action: shell
+    resource: "glab api *--field *"
+    effect: ask
+  - action: shell
+    resource: "glab api *--raw-field *"
+    effect: ask
+  - action: shell
+    resource: "glab api *--input *"
+    effect: ask
   - action: read
     resource: "*"
     effect: allow

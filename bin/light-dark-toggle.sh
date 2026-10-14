@@ -239,7 +239,7 @@ end repeat'
 
 	# Claude / OpenCode
 	sed -i '' 's/"theme": "light"/"theme": "dark"/' ~/.claude.json
-	sed 's/\("name": \)".*"/\1"'"$OPENCODE_DARK"'"/' "$OPENCODE_CLI" >"$OPENCODE_CLI".tmp && cat "$OPENCODE_CLI".tmp >"$OPENCODE_CLI" && rm "$OPENCODE_CLI".tmp
+	sed '/"theme"/,/}/ s/\("name": \)".*"/\1"'"$OPENCODE_DARK"'"/' "$OPENCODE_CLI" >"$OPENCODE_CLI".tmp && cat "$OPENCODE_CLI".tmp >"$OPENCODE_CLI" && rm "$OPENCODE_CLI".tmp
 }
 
 lighten() {
@@ -299,7 +299,7 @@ end repeat'
 
 	# Claude / OpenCode
 	sed -i '' 's/"theme": "dark"/"theme": "light"/' ~/.claude.json
-	sed 's/\("name": \)".*"/\1"'"$OPENCODE_LIGHT"'"/' "$OPENCODE_CLI" >"$OPENCODE_CLI".tmp && cat "$OPENCODE_CLI".tmp >"$OPENCODE_CLI" && rm "$OPENCODE_CLI".tmp
+	sed '/"theme"/,/}/ s/\("name": \)".*"/\1"'"$OPENCODE_LIGHT"'"/' "$OPENCODE_CLI" >"$OPENCODE_CLI".tmp && cat "$OPENCODE_CLI".tmp >"$OPENCODE_CLI" && rm "$OPENCODE_CLI".tmp
 }
 
 cd ~/commons || return
