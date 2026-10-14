@@ -8,13 +8,15 @@ client launch. This script triggers that by launching `raicode` briefly in
 the background, waiting for the refresh, then killing it -- before reading
 the resulting model list and writing it into:
 
-  - ~/commons/.config/opencode/opencode.json  (provider.raicode.models, plus
-    name/npm/baseURL/wire_api -- apiKey is left pointing at our own env var,
-    never overwritten with raicode's ephemeral {env:RAICODE_API_KEY})
+  - ~/commons/.config/opencode/opencode.json  (providers.raicode, native
+    OpenCode v2 shape: package/settings/models. apiKey always points at our
+    own env var, never raicode's ephemeral {env:RAICODE_API_KEY}. Embedding
+    models are skipped. Reasoning variants are NOT written: v2 derives them
+    from the model ID for the anthropic package.)
   - ~/commons/.config/goose/custom_providers/raicode.json (models array,
     context_limit/max_tokens derived from limit.context/limit.output)
 
-Both provider.raicode blocks above are generated output: re-run this script
+Both raicode provider blocks above are generated output: re-run this script
 to pick up new/renamed models rather than hand-editing them, or a future
 sync will silently clobber manual changes.
 
@@ -22,6 +24,7 @@ Usage:
   rai-models-sync.py [--dry-run] [--no-refresh]
 """
 import json
+import re
 import subprocess
 import sys
 import time
@@ -32,7 +35,10 @@ RAICODE_CONFIG = HOME / ".raicode" / "opencode.json"
 OPENCODE_CONFIG = HOME / "commons" / ".config" / "opencode" / "opencode.json"
 GOOSE_PROVIDER = HOME / "commons" / ".config" / "goose" / "custom_providers" / "raicode.json"
 
+OPENCODE_API_KEY_ENV = "RAICODE_OPENCODE_TOKEN"
 OPENCODE_APIKEY_TEMPLATE = "{env:RAICODE_OPENCODE_TOKEN}"
+OPENCODE_PACKAGE = "@opencode/ai/providers/anthropic"
+OPENCODE_BASE_URL = "https://gateway.raicode.no/v1"
 GOOSE_API_KEY_ENV = "RAICODE_GOOSE_TOKEN"
 GOOSE_BASE_URL = "https://gateway.raicode.no"
 
@@ -70,22 +76,54 @@ def dump_json(path: Path, data: dict) -> None:
         f.write("\n")
 
 
+CLAUDE_VERSION = re.compile(r"claude-(?:opus|sonnet|haiku)-(\d+)-(\d+)")
+
+
+def v2_model(model_id: str, meta: dict) -> dict:
+    """Translate one raicode (v1-shaped) model into a native v2 model entry."""
+    entry: dict = {"name": meta.get("name", model_id)}
+    limit = meta.get("limit", {})
+    if limit:
+        entry["limit"] = {k: limit[k] for k in ("context", "output") if k in limit}
+    mods = meta.get("modalities")
+    caps = {}
+    if "tool_call" in meta:
+        caps["tools"] = bool(meta["tool_call"])
+    if mods:
+        caps["input"] = mods.get("input", ["text"])
+        caps["output"] = mods.get("output", ["text"])
+    if caps:
+        entry["capabilities"] = caps
+    # RAI Gateway 400s on thinking.adaptive.block_binding for Claude >= 5.1.
+    # v2 enables binding by ID for those; the override is model-only.
+    m = CLAUDE_VERSION.search(model_id)
+    if model_id.startswith("anthropic/") and m:
+        major, minor = int(m.group(1)), int(m.group(2))
+        if (major, minor) >= (5, 1):
+            entry["compatibility"] = {"supportsThinkingBlockBinding": False}
+    return entry
+
+
 def sync_opencode(raicode_cfg: dict, dry_run: bool) -> tuple[set, set]:
-    upstream_provider = raicode_cfg["provider"]["raicode"]
-    upstream_models = upstream_provider["models"]
+    upstream = raicode_cfg["provider"]["raicode"]
+    upstream_models = {
+        k: v for k, v in upstream["models"].items() if "embed" not in k.lower()
+    }
 
     cfg = load_json(OPENCODE_CONFIG)
-    existing_provider = cfg.setdefault("provider", {}).get("raicode", {})
-    existing_models = existing_provider.get("models", {})
+    existing_models = cfg.setdefault("providers", {}).get("raicode", {}).get("models", {})
 
     added = set(upstream_models) - set(existing_models)
     removed = set(existing_models) - set(upstream_models)
 
-    new_provider = dict(upstream_provider)
-    new_provider["options"] = dict(upstream_provider.get("options", {}))
-    new_provider["options"]["apiKey"] = OPENCODE_APIKEY_TEMPLATE
-
-    cfg["provider"]["raicode"] = new_provider
+    base_url = upstream.get("options", {}).get("baseURL", OPENCODE_BASE_URL)
+    cfg["providers"]["raicode"] = {
+        "name": upstream.get("name", "RAI Gateway"),
+        "env": [OPENCODE_API_KEY_ENV],
+        "package": OPENCODE_PACKAGE,
+        "settings": {"baseURL": base_url, "apiKey": OPENCODE_APIKEY_TEMPLATE},
+        "models": {k: v2_model(k, m) for k, m in sorted(upstream_models.items())},
+    }
 
     if not dry_run:
         dump_json(OPENCODE_CONFIG, cfg)

@@ -18,7 +18,7 @@ tap "nikitabobko/tap", trusted: true
 tap "thezoraiz/ascii-image-converter", trusted: true
 tap "wez/wezterm", trusted: true
 brew "amfora"
-brew "anomalyco/tap/opencode"
+brew "anomalyco/tap/opencode-v2"
 brew "aquasecurity/trivy/trivy"
 brew "asciinema"
 brew "aspell"

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": {
+    "name": "catppuccin-frappe"
+  },
+  "keybinds": {
+    "variant.cycle": "ctrl+v",
+    "command.palette.show": "ctrl+shift+p",
+    "prompt.paste": "none"
+  },
+  "session": {
+    "sidebar": "hide"
+  }
+}

@@ -43,6 +43,9 @@ WALLPAPER_LIGHT="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Pictures/bac
 
 OPENCODE_DARK="catppuccin-frappe"
 OPENCODE_LIGHT="catppuccin"
+# Live path: OpenCode rewrites cli.json atomically and can replace the symlink,
+# so always edit what the TUI actually reads (in place, preserving a symlink).
+OPENCODE_CLI=~/.config/opencode/cli.json
 
 ZELLIJ_DARK="catppuccin-frappe"
 ZELLIJ_LIGHT="catppuccin-latte"
@@ -236,7 +239,7 @@ end repeat'
 
 	# Claude / OpenCode
 	sed -i '' 's/"theme": "light"/"theme": "dark"/' ~/.claude.json
-	sed -i '' 's/\("theme": \)".*"/\1"'"$OPENCODE_DARK"'"/' .config/opencode/tui.json
+	sed 's/\("name": \)".*"/\1"'"$OPENCODE_DARK"'"/' "$OPENCODE_CLI" >"$OPENCODE_CLI".tmp && cat "$OPENCODE_CLI".tmp >"$OPENCODE_CLI" && rm "$OPENCODE_CLI".tmp
 }
 
 lighten() {
@@ -296,7 +299,7 @@ end repeat'
 
 	# Claude / OpenCode
 	sed -i '' 's/"theme": "dark"/"theme": "light"/' ~/.claude.json
-	sed -i '' 's/\("theme": \)".*"/\1"'"$OPENCODE_LIGHT"'"/' .config/opencode/tui.json
+	sed 's/\("name": \)".*"/\1"'"$OPENCODE_LIGHT"'"/' "$OPENCODE_CLI" >"$OPENCODE_CLI".tmp && cat "$OPENCODE_CLI".tmp >"$OPENCODE_CLI" && rm "$OPENCODE_CLI".tmp
 }
 
 cd ~/commons || return

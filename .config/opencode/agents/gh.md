@@ -1,42 +1,109 @@
 ---
-description: Interact with GitHub via the gh CLI. Use for PR management, issue tracking, CI/CD status, code review summaries, and repository operations on GitHub. Capable of reasoning about PR diffs, summarising review threads, and interpreting workflow run failures.
+description: "Interact with GitHub via the gh CLI. Use for PR management, issue tracking, CI/CD status, code review summaries, and repository operations on GitHub. Capable of reasoning about PR diffs, summarising review threads, and interpreting workflow run failures."
 mode: subagent
-permission:
-  edit: deny
-  bash:
-    "*": allow
-    "gh pr create*": ask
-    "gh pr merge*": ask
-    "gh pr close*": ask
-    "gh pr reopen*": ask
-    "gh pr edit*": ask
-    "gh pr review*": ask
-    "gh pr comment*": ask
-    "gh pr ready*": ask
-    "gh issue create*": ask
-    "gh issue close*": ask
-    "gh issue reopen*": ask
-    "gh issue edit*": ask
-    "gh issue comment*": ask
-    "gh issue delete*": ask
-    "gh release create*": ask
-    "gh release edit*": ask
-    "gh release delete*": ask
-    "gh repo create*": ask
-    "gh repo edit*": ask
-    "gh repo delete*": ask
-    "gh repo fork*": ask
-    "gh api*-X POST*": ask
-    "gh api*-X PUT*": ask
-    "gh api*-X PATCH*": ask
-    "gh api*-X DELETE*": ask
-    "gh api*--method POST*": ask
-    "gh api*--method PUT*": ask
-    "gh api*--method PATCH*": ask
-    "gh api*--method DELETE*": ask
-  read: allow
-  glob: deny
-  grep: deny
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
+  - action: shell
+    resource: "*"
+    effect: allow
+  - action: shell
+    resource: "gh pr create *"
+    effect: ask
+  - action: shell
+    resource: "gh pr merge *"
+    effect: ask
+  - action: shell
+    resource: "gh pr close *"
+    effect: ask
+  - action: shell
+    resource: "gh pr reopen *"
+    effect: ask
+  - action: shell
+    resource: "gh pr edit *"
+    effect: ask
+  - action: shell
+    resource: "gh pr review *"
+    effect: ask
+  - action: shell
+    resource: "gh pr comment *"
+    effect: ask
+  - action: shell
+    resource: "gh pr ready *"
+    effect: ask
+  - action: shell
+    resource: "gh issue create *"
+    effect: ask
+  - action: shell
+    resource: "gh issue close *"
+    effect: ask
+  - action: shell
+    resource: "gh issue reopen *"
+    effect: ask
+  - action: shell
+    resource: "gh issue edit *"
+    effect: ask
+  - action: shell
+    resource: "gh issue comment *"
+    effect: ask
+  - action: shell
+    resource: "gh issue delete *"
+    effect: ask
+  - action: shell
+    resource: "gh release create *"
+    effect: ask
+  - action: shell
+    resource: "gh release edit *"
+    effect: ask
+  - action: shell
+    resource: "gh release delete *"
+    effect: ask
+  - action: shell
+    resource: "gh repo create *"
+    effect: ask
+  - action: shell
+    resource: "gh repo edit *"
+    effect: ask
+  - action: shell
+    resource: "gh repo delete *"
+    effect: ask
+  - action: shell
+    resource: "gh repo fork *"
+    effect: ask
+  - action: shell
+    resource: "gh api*-X POST *"
+    effect: ask
+  - action: shell
+    resource: "gh api*-X PUT *"
+    effect: ask
+  - action: shell
+    resource: "gh api*-X PATCH *"
+    effect: ask
+  - action: shell
+    resource: "gh api*-X DELETE *"
+    effect: ask
+  - action: shell
+    resource: "gh api*--method POST *"
+    effect: ask
+  - action: shell
+    resource: "gh api*--method PUT *"
+    effect: ask
+  - action: shell
+    resource: "gh api*--method PATCH *"
+    effect: ask
+  - action: shell
+    resource: "gh api*--method DELETE *"
+    effect: ask
+  - action: read
+    resource: "*"
+    effect: allow
+  - action: glob
+    resource: "*"
+    effect: deny
+  - action: grep
+    resource: "*"
+    effect: deny
 ---
 
 You are a GitHub operations assistant with access to the `gh` CLI.

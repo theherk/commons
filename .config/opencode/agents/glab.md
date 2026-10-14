@@ -1,42 +1,109 @@
 ---
-description: Interact with GitLab via the glab CLI. Use for MR management, pipeline status, issue tracking, CI/CD log inspection, and repository operations on GitLab (including dnb.ghe.com and gitlab.tech.dnb.no). Capable of reasoning about MR diffs, summarising review threads, and interpreting pipeline failures.
+description: "Interact with GitLab via the glab CLI. Use for MR management, pipeline status, issue tracking, CI/CD log inspection, and repository operations on GitLab (including dnb.ghe.com and gitlab.tech.dnb.no). Capable of reasoning about MR diffs, summarising review threads, and interpreting pipeline failures."
 mode: subagent
-permission:
-  edit: deny
-  bash:
-    "*": allow
-    "glab mr create*": ask
-    "glab mr merge*": ask
-    "glab mr close*": ask
-    "glab mr reopen*": ask
-    "glab mr update*": ask
-    "glab mr approve*": ask
-    "glab mr revoke*": ask
-    "glab mr note*": ask
-    "glab mr delete*": ask
-    "glab issue create*": ask
-    "glab issue close*": ask
-    "glab issue reopen*": ask
-    "glab issue update*": ask
-    "glab issue note*": ask
-    "glab issue delete*": ask
-    "glab release create*": ask
-    "glab release update*": ask
-    "glab release delete*": ask
-    "glab repo create*": ask
-    "glab repo delete*": ask
-    "glab repo fork*": ask
-    "glab api*-X POST*": ask
-    "glab api*-X PUT*": ask
-    "glab api*-X PATCH*": ask
-    "glab api*-X DELETE*": ask
-    "glab api*--method POST*": ask
-    "glab api*--method PUT*": ask
-    "glab api*--method PATCH*": ask
-    "glab api*--method DELETE*": ask
-  read: allow
-  glob: deny
-  grep: deny
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
+  - action: shell
+    resource: "*"
+    effect: allow
+  - action: shell
+    resource: "glab mr create *"
+    effect: ask
+  - action: shell
+    resource: "glab mr merge *"
+    effect: ask
+  - action: shell
+    resource: "glab mr close *"
+    effect: ask
+  - action: shell
+    resource: "glab mr reopen *"
+    effect: ask
+  - action: shell
+    resource: "glab mr update *"
+    effect: ask
+  - action: shell
+    resource: "glab mr approve *"
+    effect: ask
+  - action: shell
+    resource: "glab mr revoke *"
+    effect: ask
+  - action: shell
+    resource: "glab mr note *"
+    effect: ask
+  - action: shell
+    resource: "glab mr delete *"
+    effect: ask
+  - action: shell
+    resource: "glab issue create *"
+    effect: ask
+  - action: shell
+    resource: "glab issue close *"
+    effect: ask
+  - action: shell
+    resource: "glab issue reopen *"
+    effect: ask
+  - action: shell
+    resource: "glab issue update *"
+    effect: ask
+  - action: shell
+    resource: "glab issue note *"
+    effect: ask
+  - action: shell
+    resource: "glab issue delete *"
+    effect: ask
+  - action: shell
+    resource: "glab release create *"
+    effect: ask
+  - action: shell
+    resource: "glab release update *"
+    effect: ask
+  - action: shell
+    resource: "glab release delete *"
+    effect: ask
+  - action: shell
+    resource: "glab repo create *"
+    effect: ask
+  - action: shell
+    resource: "glab repo delete *"
+    effect: ask
+  - action: shell
+    resource: "glab repo fork *"
+    effect: ask
+  - action: shell
+    resource: "glab api*-X POST *"
+    effect: ask
+  - action: shell
+    resource: "glab api*-X PUT *"
+    effect: ask
+  - action: shell
+    resource: "glab api*-X PATCH *"
+    effect: ask
+  - action: shell
+    resource: "glab api*-X DELETE *"
+    effect: ask
+  - action: shell
+    resource: "glab api*--method POST *"
+    effect: ask
+  - action: shell
+    resource: "glab api*--method PUT *"
+    effect: ask
+  - action: shell
+    resource: "glab api*--method PATCH *"
+    effect: ask
+  - action: shell
+    resource: "glab api*--method DELETE *"
+    effect: ask
+  - action: read
+    resource: "*"
+    effect: allow
+  - action: glob
+    resource: "*"
+    effect: deny
+  - action: grep
+    resource: "*"
+    effect: deny
 ---
 
 You are a GitLab operations assistant with access to the `glab` CLI.

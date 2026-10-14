@@ -1,12 +1,22 @@
 ---
-description: Deep reasoning subagent for hard, isolated problems that benefit from Opus-level judgment. Spawn with @sage when a well-defined task needs stronger inference: algorithm correctness, schema design, security review, architectural tradeoffs. Provide a complete, self-contained prompt.
+description: "Deep reasoning subagent for hard, isolated problems that benefit from Opus-level judgment. Spawn with @sage when a well-defined task needs stronger inference: algorithm correctness, schema design, security review, architectural tradeoffs. Provide a complete, self-contained prompt."
 mode: subagent
-permission:
-  edit: allow
-  bash: allow
-  read: allow
-  glob: allow
-  grep: allow
+permissions:
+  - action: edit
+    resource: "*"
+    effect: allow
+  - action: shell
+    resource: "*"
+    effect: allow
+  - action: read
+    resource: "*"
+    effect: allow
+  - action: glob
+    resource: "*"
+    effect: allow
+  - action: grep
+    resource: "*"
+    effect: allow
 ---
 
 You are a deep reasoning subagent. You are invoked for hard, isolated problems where strong inference matters.

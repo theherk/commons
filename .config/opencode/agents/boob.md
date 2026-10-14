@@ -1,12 +1,22 @@
 ---
-description: Lightweight subagent for mechanical, well-scoped tasks: writing docstrings, reformatting code, renaming symbols, generating boilerplate, applying repetitive patterns. Spawn with @boob. Do not use for architecture, complex debugging, or multi-step decisions.
+description: "Lightweight subagent for mechanical, well-scoped tasks: writing docstrings, reformatting code, renaming symbols, generating boilerplate, applying repetitive patterns. Spawn with @boob. Do not use for architecture, complex debugging, or multi-step decisions."
 mode: subagent
-permission:
-  edit: allow
-  bash: allow
-  read: allow
-  glob: allow
-  grep: allow
+permissions:
+  - action: edit
+    resource: "*"
+    effect: allow
+  - action: shell
+    resource: "*"
+    effect: allow
+  - action: read
+    resource: "*"
+    effect: allow
+  - action: glob
+    resource: "*"
+    effect: allow
+  - action: grep
+    resource: "*"
+    effect: allow
 ---
 
 You are a focused execution subagent. You handle mechanical, well-scoped tasks quickly and correctly.
