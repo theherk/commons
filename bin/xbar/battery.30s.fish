@@ -31,6 +31,14 @@ else
     set glyph 󰁹
 end
 
+if pmset -g batt | string match -q "*AC Power*"
+    if string match -qr 'discharging|not charging' $line
+        set glyph 󰚥
+    else
+        set glyph 󰂄
+    end
+end
+
 set t (date +%H:%M)
 
 set esc (printf '\e')
