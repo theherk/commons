@@ -10,7 +10,6 @@ tap "gromgit/fuse", trusted: true
 tap "helix-editor/helix", trusted: true
 tap "idoavrah/homebrew", trusted: true
 tap "jundot/omlx", "https://github.com/jundot/omlx", trusted: true
-tap "libkrun/krun", trusted: true
 tap "lhvy/tap", trusted: true
 tap "mhersson/formulas", trusted: true
 tap "mikker/tap", trusted: true
@@ -74,7 +73,7 @@ brew "ispell"
 brew "jdtls"
 brew "jj"
 brew "jjui"
-brew "libkrun/krun/krunkit"
+brew "krunkit"
 brew "lazydocker"
 brew "lazygit"
 brew "libpng"
