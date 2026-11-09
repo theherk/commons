@@ -33,6 +33,9 @@ later(function()
       go_curr_heading = "[c",
       go_parent_heading = "[p",
     },
+    inline_surround = {
+      emphasis = { key = "i", txt = "_" },
+    },
     on_attach = function(bufnr)
       vim.keymap.set({ "n", "i" }, "<d-o>", "<cmd>MDListItemBelow<cr>", { buffer = bufnr, desc = "item below" })
       vim.keymap.set({ "n", "i" }, "<d-O>", "<cmd>MDListItemAbove<cr>", { buffer = bufnr, desc = "item above" })

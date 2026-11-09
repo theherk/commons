@@ -165,6 +165,8 @@ later(function()
   }
   vim.g.browser_search_default_engine = "duckduckgo"
   vim.keymap.set("n", "<leader>sb", ":BrowserSearch<space>", { desc = "browser" })
+  vim.keymap.set("n", "<leader>sy", function() require("module.slack").yank_buffer() end, { desc = "slack yank (buffer)" })
+  vim.keymap.set("x", "<leader>sy", function() require("module.slack").yank_selection() end, { desc = "slack yank" })
   vim.keymap.set("n", "<cs-b>", "<Plug>SearchNormal", { desc = "browser search" })
   vim.keymap.set("v", "<cs-b>", "<Plug>SearchVisual", { desc = "browser search" })
 end)
