@@ -1,0 +1,11 @@
+#!/bin/sh
+src="$(dirname "$0")/lockscreen.c"
+dir="${XDG_CACHE_HOME:-$HOME/.cache}/lockscreen"
+bin="$dir/lockscreen"
+
+if [ ! -x "$bin" ] || [ "$src" -nt "$bin" ]; then
+    mkdir -p "$dir"
+    cc -o "$bin" "$src" || exit 1
+fi
+
+exec "$bin"

@@ -88,6 +88,7 @@ c = 'mode comms'
 m = 'mode misc'
 n = 'mode note'
 p = 'mode pane' # window / pane controls
+q = ['exec-and-forget ~/bin/lockscreen', 'mode main'] # lock screen
 r = 'mode run'
 s = 'mode screenshot'
 t = ['exec-and-forget open -a "Ghostty"', 'mode main']
