@@ -146,3 +146,9 @@ end
 function venvact
     source .venv/bin/activate
 end
+
+function zpa # check whether a url is reached through ZPA, one url per call
+    argparse --min-args 1 --max-args 1 -- $argv; or return
+    curl -LIs -o /dev/null -w "CONNECTION: %{urle.host} %{url.host} %{remote_ip}\n" $argv[1] |
+        awk 'BEGIN {fmt="%-8s %-15s %-30s %s\n"; printf fmt, "Status", "IP", "Requested", "Returned"} /^CONNECTION: / {printf fmt, ($2 != $3 ? "ZPA->X" : "ZPA->O"), $4, $3, $2}'
+end
