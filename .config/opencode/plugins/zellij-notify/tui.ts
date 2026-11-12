@@ -21,6 +21,18 @@ export default Plugin.define({
   id: "h4s.zellij-notify",
   setup(context) {
     if (!process.env.ZELLIJ_SESSION_NAME) return
-    return context.data.on("session.execution.succeeded", notify)
+    // The event stream is server-wide: every TUI attached to the shared server
+    // sees every session's events (other panes, subagents). Only notify for a
+    // root session this TUI is actually showing.
+    return context.data.on("session.execution.succeeded", (event: any) => {
+      const id = event?.data?.sessionID ?? event?.sessionID ?? event?.details?.data?.sessionID
+      if (!id) return
+      if (context.data.session.root(id) !== id) return
+      const route: any = context.route?.current
+      const mine = new Set<string>()
+      if (route?.name === "session" && route.params?.sessionID) mine.add(route.params.sessionID)
+      for (const tab of context.ui?.tabs?.list?.() ?? []) mine.add((tab as any).sessionID)
+      if (mine.has(id)) notify()
+    })
   },
 })
