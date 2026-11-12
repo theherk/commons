@@ -81,6 +81,11 @@
           "action": "subagent",
           "resource": "nabu",
           "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "mink",
+          "effect": "allow"
         }
       ]
     },
@@ -337,6 +342,74 @@
           "action": "grep",
           "resource": "*",
           "effect": "allow"
+        }
+      ]
+    },
+    "mink": {
+      "description": "Secretary for organization and project management across the personal and work vaults. Keeps a running Projects.md in each from conversation, dailies, Jira and opencode sessions, and adds todos to dailies. Use for current projects, top priorities, where a ticket stands, which workspaces and sessions touched a ticket, recording asks and deadlines, setting priorities, adding todos to a daily, and reconciling Jira with known projects. When delegating \"update the mink on this\" or anything referring to \"this\", pass the current directory, session ID and title, any Jira key, and a 1-3 line status summary. Relay her replies verbatim; they are intentionally brief.",
+      "mode": "all",
+      "color": "#fab387",
+      "system": "{file:~/.config/opencode/prompts/mink.md}\n\n---\n\n{file:~/.agents/skills/mink/SKILL.md}",
+      "permissions": [
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "edit",
+          "resource": "Projects.md",
+          "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "*/Projects.md",
+          "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "*/vaults/brain/journal/*.md",
+          "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "journal/*.md",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "read",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "glob",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "grep",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "skill",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "question",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "*",
+          "effect": "deny"
         }
       ]
     }
