@@ -104,7 +104,7 @@ extensions:
     type: streamable_http
     name: atlassian
     description: Jira issues, Confluence pages, sprint moves, search, comments, worklogs
-    uri: https://mcp.atlassian.com/v1/mcp/authv2
+    uri: https://mcp.atlassian.com/v2/mcp
     headers: {}
     timeout: 300
     bundled: false
