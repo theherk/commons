@@ -12,57 +12,12 @@
       "max_tokens": 8192
     },
     {
-      "name": "anthropic/claude-haiku-4-5",
-      "context_limit": 200000,
-      "max_tokens": 64000
-    },
-    {
-      "name": "anthropic/claude-opus-4-5",
-      "context_limit": 200000,
-      "max_tokens": 64000
-    },
-    {
-      "name": "anthropic/claude-opus-4-6",
-      "context_limit": 1000000,
-      "max_tokens": 68000
-    },
-    {
-      "name": "anthropic/claude-opus-4-7",
-      "context_limit": 1000000,
-      "max_tokens": 68000
-    },
-    {
-      "name": "anthropic/claude-opus-4-8",
-      "context_limit": 1000000,
-      "max_tokens": 68000
-    },
-    {
-      "name": "anthropic/claude-opus-5",
+      "name": "anthropic/claude-haiku-5-5",
       "context_limit": 1000000,
       "max_tokens": 68000
     },
     {
       "name": "anthropic/claude-opus-5-5",
-      "context_limit": 1000000,
-      "max_tokens": 68000
-    },
-    {
-      "name": "anthropic/claude-sonnet-4-20250514",
-      "context_limit": 200000,
-      "max_tokens": 64000
-    },
-    {
-      "name": "anthropic/claude-sonnet-4-5",
-      "context_limit": 200000,
-      "max_tokens": 64000
-    },
-    {
-      "name": "anthropic/claude-sonnet-4-6",
-      "context_limit": 1000000,
-      "max_tokens": 4000
-    },
-    {
-      "name": "anthropic/claude-sonnet-5",
       "context_limit": 1000000,
       "max_tokens": 68000
     },
@@ -77,44 +32,42 @@
       "max_tokens": 512
     },
     {
+      "name": "dnb/code",
+      "context_limit": 1050000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "dnb/fast",
+      "context_limit": 1000000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "dnb/main",
+      "context_limit": 1000000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "dnb/utility",
+      "context_limit": 131072,
+      "max_tokens": 16768
+    },
+    {
+      "name": "google/gemini-4-argon",
+      "context_limit": 1048576,
+      "max_tokens": 49536
+    },
+    {
+      "name": "google/gemini-4-carbon",
+      "context_limit": 1048576,
+      "max_tokens": 49536
+    },
+    {
+      "name": "microsoft-decision-1"
+    },
+    {
       "name": "microsoft/mai-code-1.1-flash",
       "context_limit": 256000,
       "max_tokens": 128000
-    },
-    {
-      "name": "openai/gpt-5.3-codex",
-      "context_limit": 400000,
-      "max_tokens": 128000
-    },
-    {
-      "name": "openai/gpt-5.4",
-      "context_limit": 1050000,
-      "max_tokens": 98000
-    },
-    {
-      "name": "openai/gpt-5.4-mini",
-      "context_limit": 400000,
-      "max_tokens": 98000
-    },
-    {
-      "name": "openai/gpt-5.5",
-      "context_limit": 1050000,
-      "max_tokens": 98000
-    },
-    {
-      "name": "openai/gpt-5.6-luna",
-      "context_limit": 1050000,
-      "max_tokens": 68000
-    },
-    {
-      "name": "openai/gpt-5.6-sol",
-      "context_limit": 1050000,
-      "max_tokens": 68000
-    },
-    {
-      "name": "openai/gpt-5.6-terra",
-      "context_limit": 1050000,
-      "max_tokens": 68000
     },
     {
       "name": "openai/gpt-6-astra",
@@ -127,7 +80,12 @@
       "max_tokens": 68000
     },
     {
-      "name": "openai/gpt-6-sol",
+      "name": "openai/gpt-6.1-sol",
+      "context_limit": 1050000,
+      "max_tokens": 68000
+    },
+    {
+      "name": "openai/gpt-6.1-terra",
       "context_limit": 1050000,
       "max_tokens": 68000
     },

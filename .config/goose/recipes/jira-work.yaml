@@ -11,5 +11,5 @@ extensions:
     bundled: true
 settings:
   goose_provider: raicode
-  goose_model: anthropic/claude-haiku-4-5
+  goose_model: anthropic/claude-haiku-5-5
 prompt: "Handle the requested Jira operation."

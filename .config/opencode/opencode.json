@@ -93,15 +93,15 @@
       "disabled": true
     },
     "title": {
-      "model": "raicode/anthropic/claude-haiku-4-5"
+      "model": "raicode/anthropic/claude-haiku-5-5"
     },
     "boob": {
-      "model": "raicode/anthropic/claude-haiku-4-5"
+      "model": "raicode/anthropic/claude-haiku-5-5"
     },
     "jira-work": {
       "description": "Query and manage Jira work items via acli. Use for sprint status lookups, issue transitions, comments, and issue linking on the CCPLAT board.",
       "mode": "subagent",
-      "model": "raicode/anthropic/claude-haiku-4-5",
+      "model": "raicode/anthropic/claude-haiku-5-5",
       "system": "{file:~/.agents/skills/jira-work/SKILL.md}",
       "permissions": [
         {
@@ -473,42 +473,8 @@
         "apiKey": "{env:RAICODE_OPENCODE_TOKEN}"
       },
       "models": {
-        "anthropic/claude-haiku-4-5": {
-          "name": "Claude Haiku 4.5",
-          "limit": {
-            "context": 200000,
-            "output": 64000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "anthropic/claude-opus-4-5": {
-          "name": "Claude Opus 4.5",
-          "limit": {
-            "context": 200000,
-            "output": 64000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "anthropic/claude-opus-4-6": {
-          "name": "Claude Opus 4.6",
+        "anthropic/claude-haiku-5-5": {
+          "name": "Claude Haiku 5.5",
           "limit": {
             "context": 1000000,
             "output": 68000
@@ -522,57 +488,9 @@
             "output": [
               "text"
             ]
-          }
-        },
-        "anthropic/claude-opus-4-7": {
-          "name": "Claude Opus 4.7",
-          "limit": {
-            "context": 1000000,
-            "output": 68000
           },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "anthropic/claude-opus-4-8": {
-          "name": "Claude Opus 4.8",
-          "limit": {
-            "context": 1000000,
-            "output": 68000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "anthropic/claude-opus-5": {
-          "name": "Claude Opus 5",
-          "limit": {
-            "context": 1000000,
-            "output": 68000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
+          "compatibility": {
+            "supportsThinkingBlockBinding": false
           }
         },
         "anthropic/claude-opus-5-5": {
@@ -595,74 +513,6 @@
             "supportsThinkingBlockBinding": false
           }
         },
-        "anthropic/claude-sonnet-4-20250514": {
-          "name": "Claude Sonnet 4",
-          "limit": {
-            "context": 200000,
-            "output": 64000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "anthropic/claude-sonnet-4-5": {
-          "name": "Claude Sonnet 4.5",
-          "limit": {
-            "context": 200000,
-            "output": 64000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "anthropic/claude-sonnet-4-6": {
-          "name": "Claude Sonnet 4.6",
-          "limit": {
-            "context": 1000000,
-            "output": 4000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "anthropic/claude-sonnet-5": {
-          "name": "Claude Sonnet 5",
-          "limit": {
-            "context": 1000000,
-            "output": 68000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
         "anthropic/claude-sonnet-5-5": {
           "name": "Claude Sonnet 5.5",
           "limit": {
@@ -683,130 +533,126 @@
             "supportsThinkingBlockBinding": false
           }
         },
+        "dnb/code": {
+          "name": "DNB Code",
+          "limit": {
+            "context": 1050000,
+            "output": 68000
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "dnb/fast": {
+          "name": "DNB Fast",
+          "limit": {
+            "context": 1000000,
+            "output": 68000
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "dnb/main": {
+          "name": "DNB Main",
+          "limit": {
+            "context": 1000000,
+            "output": 68000
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "dnb/utility": {
+          "name": "DNB Utility (background tasks)",
+          "limit": {
+            "context": 131072,
+            "output": 16768
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "google/gemini-4-argon": {
+          "name": "Gemini 4 Argon",
+          "limit": {
+            "context": 1048576,
+            "output": 49536
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "google/gemini-4-carbon": {
+          "name": "Gemini 4 Carbon",
+          "limit": {
+            "context": 1048576,
+            "output": 49536
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "microsoft-decision-1": {
+          "name": "Microsoft Decision 1",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
         "microsoft/mai-code-1.1-flash": {
           "name": "MAI-Code-1.1-Flash",
           "limit": {
             "context": 256000,
             "output": 128000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "openai/gpt-5.3-codex": {
-          "name": "GPT-5.3 Codex",
-          "limit": {
-            "context": 400000,
-            "output": 128000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "openai/gpt-5.4": {
-          "name": "GPT-5.4",
-          "limit": {
-            "context": 1050000,
-            "output": 98000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "openai/gpt-5.4-mini": {
-          "name": "GPT-5.4 mini",
-          "limit": {
-            "context": 400000,
-            "output": 98000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "openai/gpt-5.5": {
-          "name": "GPT-5.5",
-          "limit": {
-            "context": 1050000,
-            "output": 98000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "openai/gpt-5.6-luna": {
-          "name": "GPT-5.6 Luna",
-          "limit": {
-            "context": 1050000,
-            "output": 68000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "openai/gpt-5.6-sol": {
-          "name": "GPT-5.6 Sol",
-          "limit": {
-            "context": 1050000,
-            "output": 68000
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "output": [
-              "text"
-            ]
-          }
-        },
-        "openai/gpt-5.6-terra": {
-          "name": "GPT-5.6 Terra",
-          "limit": {
-            "context": 1050000,
-            "output": 68000
           },
           "capabilities": {
             "tools": true,
@@ -853,8 +699,25 @@
             ]
           }
         },
-        "openai/gpt-6-sol": {
-          "name": "GPT-6 Sol",
+        "openai/gpt-6.1-sol": {
+          "name": "GPT-6.1 Sol",
+          "limit": {
+            "context": 1050000,
+            "output": 68000
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "openai/gpt-6.1-terra": {
+          "name": "GPT-6.1 Terra",
           "limit": {
             "context": 1050000,
             "output": 68000
