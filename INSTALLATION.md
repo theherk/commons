@@ -23,7 +23,7 @@ Then add this key to Github. Followed by:
 
     ./commons/links.sh
 
-That will link all the configurations where they need to be. Then we just need to set about installing things. This is tailored to MacOS, since that is what I use nearly always, now.
+That will link all the configurations where they need to be. Run `./commons/links.sh --check` any time to report missing, wrong, or blocked links, stray links into the repository, and configurations nothing links. Then we just need to set about installing things. This is tailored to MacOS, since that is what I use nearly always, now.
 
     xcode-select --install
     sudo xcodebuild -license accept
@@ -127,21 +127,9 @@ curl -s http://localhost:8000/v1/models | jq '.data[].id'
 
 ## Setup git forge.
 
-This is an optional step, and will merge all owner repositories to their correct homes in `~/projects/`.
+This is an optional step, and will merge all owner repositories to their correct homes in `~/projects/`. `links.sh` already created the forge directories and linked their configuration files. ([git-repo-manager](https://github.com/hakoerber/git-repo-manager) is installed by `mise install`.)
 
-First, ensure the requisite directories exist and link the configuration files into the correct locations. ([git-repo-manager](https://github.com/hakoerber/git-repo-manager) is installed by `mise install`.)
-
-```sh
-mkdir -p $P/dnb.ghe.com $P/github.com $P/gitlab.com $P/gitlab.tech.dnb.no
-ln -sf ~/commons/.config/grm/dnb.ghe.com/config.toml $P/dnb.ghe.com/config.toml
-ln -sf ~/commons/.config/grm/dnb.ghe.com/remotes.toml $P/dnb.ghe.com/remotes.toml
-ln -sf ~/commons/.config/grm/github.com/config.toml $P/github.com/config.toml
-ln -sf ~/commons/.config/grm/github.com/remotes.toml $P/github.com/remotes.toml
-ln -sf ~/commons/.config/grm/gitlab.com/config.toml $P/gitlab.com/config.toml
-ln -sf ~/commons/.config/grm/gitlab.tech.dnb.no/config.toml $P/gitlab.tech.dnb.no/config.toml
-```
-
-Then, you must store personal access tokens in the keyring.
+First, store personal access tokens in the keyring.
 
     pwa dnb.ghe.com adam.lawrence.sherwood@dnb.no
     pwa github.com theherk@gmail.com

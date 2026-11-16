@@ -1,65 +1,194 @@
 #!/bin/sh
+# Link configurations from this repository into $HOME.
+#
+# Usage: links.sh [--check]
+#   --check  Change nothing; report links that are missing, wrong or blocked,
+#            stray links into the repo, and repo configs that nothing links.
+#
+# Only flags portable to both BSD (stock macOS) and GNU ln are used, since
+# this runs before Homebrew installs coreutils.
 
-mkdir -p \
-	~/.config/fish \
-	~/.config/fish/conf.d \
-	~/.config/goose \
-	~/.agents \
-	~/.config/opencode \
-	~/"Library/Application Support/Element" \
-	~/"Library/Application Support/xbar/plugins"
+repo="$HOME/commons"
+nl='
+'
+mode=link
+case "$1" in
+	--check) mode=check ;;
+	"") ;;
+	*)
+		echo "usage: $0 [--check]" >&2
+		exit 2
+		;;
+esac
 
-ln -sf ~/commons/.aliases.sh ~/.aliases.sh
-ln -sf ~/commons/.bashrc ~/.bashrc
-ln -sf ~/commons/.config/aerospace/ ~/.config/
-ln -sf ~/commons/.config/atuin/ ~/.config/
-ln -sf ~/commons/.config/bat/ ~/.config/
-ln -sf ~/commons/.config/brewfile/ ~/.config/
-ln -sf ~/commons/.config/carapace/ ~/.config/
-ln -sf ~/commons/.config/doom/ ~/.config/
-ln -sf ~/commons/.config/element/config.json ~/"Library/Application Support/Element/config.json"
-ln -sf ~/commons/.config/fish/config.fish ~/.config/fish/config.fish
-ln -sf ~/commons/.config/fish/conf.d/abbreviations.fish ~/.config/fish/conf.d/abbreviations.fish
-ln -sf ~/commons/.config/fish/conf.d/functions.fish ~/.config/fish/conf.d/functions.fish
-ln -sf ~/commons/.config/fish/conf.d/theme-enhancements.fish ~/.config/fish/conf.d/theme-enhancements.fish
-ln -sf ~/commons/.config/gh-dash/ ~/.config/
-ln -sf ~/commons/.config/ghostty/ ~/.config/
-ln -sf ~/commons/.config/git/ ~/.config/
-ln -sf ~/commons/.config/goose/config.yaml ~/.config/goose/config.yaml
-ln -sf ~/commons/.config/goose/custom_providers/ ~/.config/goose/
-ln -sf ~/commons/.config/goose/recipes/ ~/.config/goose/
-ln -sf ~/commons/.config/goose/agents/ ~/.agents/
-ln -sf ~/commons/.config/goose/plugins/ ~/.agents/
-ln -sf ~/commons/.config/helix/ ~/.config/
-ln -sf ~/commons/.config/hn-tui.toml ~/.config/hn-tui.toml
-ln -sf ~/commons/.config/jj/ ~/.config/
-ln -sf ~/commons/.config/jjui/ ~/.config/
-ln -sf ~/commons/.config/lazygit/ ~/.config/
-ln -sf ~/commons/.config/mise/ ~/.config/
-ln -sf ~/commons/.config/neovide/ ~/.config/
-ln -sf ~/commons/.config/nvim/ ~/.config/
-ln -sf ~/commons/.config/nushell/ ~/.config/
-ln -sf ~/commons/.config/opencode/opencode.json ~/.config/opencode/opencode.json
-ln -sf ~/commons/.config/opencode/cli.json ~/.config/opencode/cli.json
-ln -sf ~/commons/.config/opencode/package.json ~/.config/opencode/package.json
-ln -sfn ~/commons/.config/opencode/agents ~/.config/opencode/agents
-ln -sfn ~/commons/.config/opencode/plugins ~/.config/opencode/plugins
-ln -sfn ~/commons/.config/opencode/prompts ~/.config/opencode/prompts
-ln -sf ~/commons/.config/paneru/ ~/.config/
-ln -sf ~/commons/.config/pipes-rs/ ~/.config/
-ln -sf ~/commons/.config/ripgrep/ ~/.config/
-ln -sf ~/commons/.config/starship.toml ~/.config/starship.toml
-ln -sf ~/commons/.config/tuicr/ ~/.config/
-ln -sf ~/commons/.config/wezterm/ ~/.config/
-ln -sf ~/commons/.config/yazi/ ~/.config/
-ln -sf ~/commons/.config/zellij/ ~/.config/
-ln -sf ~/commons/.editorconfig ~/.editorconfig
-ln -sf ~/commons/.eslintrc ~/.eslintrc
-ln -sf ~/commons/.functions.sh ~/.functions.sh
-ln -sf ~/commons/.pypirc ~/.pypirc
-ln -sf ~/commons/.tmux.conf ~/.tmux.conf
-ln -sf ~/commons/.zprofile ~/.zprofile
-ln -sf ~/commons/.zshrc ~/.zshrc
-ln -sfT ~/commons/bin/ ~/bin
-ln -sf ~/commons/bin/xbar/* ~/"Library/Application Support/xbar/plugins/"
-ln -sfT ~/commons/rayscripts/ ~/rayscripts
+status=0
+srcs=$nl
+dests=$nl
+
+tilde() {
+	case "$1" in
+		"$HOME"/*) printf '~/%s' "${1#"$HOME"/}" ;;
+		*) printf '%s' "$1" ;;
+	esac
+}
+
+report() {
+	printf '%-9s %s\n' "$1" "$2"
+	status=1
+}
+
+# link SRC [DEST]: SRC is relative to the repo, DEST to $HOME (default SRC).
+link() {
+	src="$repo/$1"
+	dest="$HOME/${2:-$1}"
+	srcs="$srcs$src$nl"
+	dests="$dests$dest$nl"
+
+	if [ "$mode" = link ]; then
+		if [ -d "$dest" ] && [ ! -L "$dest" ]; then
+			report blocked "$(tilde "$dest") is a real directory"
+		else
+			ln -sfn "$src" "$dest"
+		fi
+	elif [ ! -e "$src" ]; then
+		report nosrc "$(tilde "$src")"
+	elif [ -L "$dest" ]; then
+		target=$(readlink "$dest")
+		[ "${target%/}" = "$src" ] || report wrong "$(tilde "$dest") -> $(tilde "${target%/}")"
+	elif [ -e "$dest" ]; then
+		report blocked "$(tilde "$dest")"
+	else
+		report missing "$(tilde "$dest")"
+	fi
+}
+
+# pref DOMAIN KEY SRC: point an app's config directory setting at SRC, for
+# apps that cannot read their config through a symlink.
+pref() {
+	src="$repo/$3"
+	srcs="$srcs$src$nl"
+	current=$(defaults read "$1" "$2" 2>/dev/null)
+
+	if [ "$mode" = link ]; then
+		[ "$current" = "$src" ] || defaults write "$1" "$2" -string "$src"
+	elif [ "$current" != "$src" ]; then
+		report pref "$1 $2 is ${current:-unset}, want $(tilde "$src")"
+	fi
+}
+
+# skip SRC: tracked in the repo, but wired up by hand (e.g. an app's GUI).
+skip() {
+	srcs="$srcs$repo/$1$nl"
+}
+
+if [ "$mode" = link ]; then
+	mkdir -p \
+		~/.config/fish \
+		~/.config/fish/conf.d \
+		~/.config/goose \
+		~/.agents \
+		~/.config/opencode \
+		~/"Library/Application Support/Element" \
+		~/"Library/Application Support/xbar/plugins" \
+		~/projects/dnb.ghe.com \
+		~/projects/github.com \
+		~/projects/gitlab.com \
+		~/projects/gitlab.tech.dnb.no
+fi
+
+link .aliases.sh
+link .bashrc
+link .config/aerospace
+link .config/atuin
+link .config/bat
+link .config/brewfile
+link .config/carapace
+link .config/doom
+link .config/element/config.json "Library/Application Support/Element/config.json"
+link .config/fish/config.fish
+link .config/fish/conf.d/abbreviations.fish
+link .config/fish/conf.d/functions.fish
+link .config/fish/conf.d/theme-enhancements.fish
+link .config/gh-dash
+link .config/ghostty
+link .config/git
+link .config/goose/config.yaml
+link .config/goose/custom_providers
+link .config/goose/recipes
+link .config/goose/agents .agents/agents
+link .config/goose/plugins .agents/plugins
+link .config/grm/dnb.ghe.com/config.toml projects/dnb.ghe.com/config.toml
+link .config/grm/dnb.ghe.com/remotes.toml projects/dnb.ghe.com/remotes.toml
+link .config/grm/github.com/config.toml projects/github.com/config.toml
+link .config/grm/github.com/remotes.toml projects/github.com/remotes.toml
+link .config/grm/gitlab.com/config.toml projects/gitlab.com/config.toml
+link .config/grm/gitlab.tech.dnb.no/config.toml projects/gitlab.tech.dnb.no/config.toml
+link .config/helix
+link .config/hn-tui.toml
+link .config/ispell
+link .config/jj
+link .config/jjui
+link .config/lazygit
+link .config/mise
+link .config/neovide
+link .config/nvim
+link .config/nushell
+link .config/opencode/opencode.json
+link .config/opencode/cli.json
+link .config/opencode/package.json
+link .config/opencode/agents
+link .config/opencode/plugins
+link .config/opencode/prompts
+link .config/paneru
+link .config/pipes-rs
+pref com.brnbw.Poof Poof.configDirectoryPath .config/poof
+link .config/ripgrep
+link .config/starship.toml
+link .config/tuicr
+skip .config/tuna
+link .config/wezterm
+link .config/yazi
+link .config/zellij
+skip .config/zed
+link .editorconfig
+link .eslintrc
+link .functions.sh
+link .pypirc
+link .tmux.conf
+link .zprofile
+link .zshrc
+link bin
+for f in "$repo"/bin/xbar/*; do
+	[ -e "$f" ] || continue
+	link "bin/xbar/${f##*/}" "Library/Application Support/xbar/plugins/${f##*/}"
+done
+link rayscripts
+
+[ "$mode" = check ] || exit $status
+
+for e in "$repo"/.config/*; do
+	case "$srcs" in
+		*"$nl$e$nl"* | *"$nl$e/"*) ;;
+		*) report unlinked "$(tilde "$e")" ;;
+	esac
+done
+
+scanned=$nl
+while IFS= read -r d; do
+	[ -n "$d" ] || continue
+	d=${d%/*}
+	case "$scanned" in *"$nl$d$nl"*) continue ;; esac
+	scanned="$scanned$d$nl"
+	for f in "$d"/* "$d"/.[!.]*; do
+		[ -L "$f" ] || continue
+		case "$dests" in *"$nl$f$nl"*) continue ;; esac
+		target=$(readlink "$f")
+		case "$target" in
+			"$repo" | "$repo"/*) report stray "$(tilde "$f") -> $(tilde "${target%/}")" ;;
+		esac
+	done
+done <<EOF
+$dests
+EOF
+
+exit $status

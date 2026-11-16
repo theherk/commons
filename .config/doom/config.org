@@ -22,6 +22,14 @@ Use a POSIX shell internally to avoid issues with Fish/Nushell in child processe
 (setq-default explicit-shell-file-name "/opt/homebrew/bin/fish")
 #+end_src
 
+** Spelling
+
+Keep the personal dictionary in commons (linked to =~/.config/ispell= by =links.sh=) rather than wherever this Doom version puts =doom-data-dir=.
+
+#+begin_src elisp
+(setq ispell-personal-dictionary (expand-file-name "~/.config/ispell/.pws"))
+#+end_src
+
 ** Display configuration
 
 *** Font
