@@ -44,6 +44,8 @@
 	path = ~/.config/git/dnb.no
 [includeIf "gitdir:~/projects/gitlab.tech.dnb.no/"]
 	path = ~/.config/git/dnb.no
+[includeIf "hasconfig:remote.*.url:https://dnb.ghe.com/**"]
+	path = ~/.config/git/dnb.no
 [commit]
 	gpgsign = true
 [tag]
