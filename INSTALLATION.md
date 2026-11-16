@@ -166,6 +166,10 @@ defaults write com.apple.dock autohide -bool true
 killall Dock
 ```
 
+### Bandcamp
+
+Firefox has no PWA support on MacOS, so Bandcamp runs as a Safari web app. Open bandcamp.com in Safari, then choose File > Add to Dock and name it `Bandcamp`. AeroSpace moves it to the 🎸 workspace with Music by matching the app name, and `ctrl-t`, `m`, `shift-m` launches it.
+
 ### Notifications
 
 Since the dock is usually hidden, use [Doll](https://github.com/xiaogdgenuine/Doll) to load apps into menu bar.
