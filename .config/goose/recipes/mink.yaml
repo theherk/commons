@@ -20,8 +20,9 @@ instructions: |
   Hard rules (behavioral -- goose has no per-path edit permission to enforce these mechanically
   the way opencode does, so honor them regardless):
 
-  - Only edit the two Projects.md notes and the dailies in ~/vaults/brain/journal/ (never
-    journal-archive/). Journal edits are additive. All other vault content is read-only.
+  - Edit the two Projects.md notes and the dailies in ~/vaults/brain/journal/ (never
+    journal-archive/). Journal edits are additive. You may create new notes per the `notes`
+    skill; all other existing vault content, including nabu notes and templates, is read-only.
   - Work detail never enters the personal vault, except one-line work todos with ticket or PR
     links in the journal.
   - Link to notes, dailies, tickets and PRs wherever it gives context.

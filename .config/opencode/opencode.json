@@ -358,6 +358,36 @@
         },
         {
           "action": "edit",
+          "resource": "*/vaults/brain/*.md",
+          "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "*/OneDrive-DNBBankASA/dnbrain/*.md",
+          "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "*/vaults/brain/nabu/*",
+          "effect": "deny"
+        },
+        {
+          "action": "edit",
+          "resource": "*/OneDrive-DNBBankASA/dnbrain/nabu/*",
+          "effect": "deny"
+        },
+        {
+          "action": "edit",
+          "resource": "*/vaults/brain/templates/*",
+          "effect": "deny"
+        },
+        {
+          "action": "edit",
+          "resource": "*/OneDrive-DNBBankASA/dnbrain/templates/*",
+          "effect": "deny"
+        },
+        {
+          "action": "edit",
           "resource": "Projects.md",
           "effect": "allow"
         },
@@ -375,6 +405,11 @@
           "action": "edit",
           "resource": "journal/*.md",
           "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "*journal/journal-archive/*",
+          "effect": "deny"
         },
         {
           "action": "shell",
