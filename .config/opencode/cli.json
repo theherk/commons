@@ -8,6 +8,9 @@
     "command.palette.show": "ctrl+shift+p",
     "prompt.paste": "none"
   },
+  "prompt": {
+    "paste": "full"
+  },
   "session": {
     "sidebar": "hide"
   }
