@@ -785,6 +785,13 @@
         "type": "remote",
         "url": "https://mcp.atlassian.com/v2/mcp"
       },
+      "splunk": {
+        "type": "local",
+        "command": [
+          "node",
+          "/Users/h4s/.raicode/mcp-servers/splunk/splunk-mcp.js"
+        ]
+      },
       "developer-portal": {
         "type": "remote",
         "url": "https://mcp.prod.devportal.tech-03.net/app/mcp",
