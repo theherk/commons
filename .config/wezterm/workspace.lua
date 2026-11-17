@@ -4,8 +4,9 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local module = {}
 
-local rg_pipe = " | rg --color=never -FxNf ~/.projects"
+local rg_pipe = " | " .. os.getenv("HOME") .. "/commons/bin/projects-rank.sh"
 local workspace_switcher = wezterm.plugin.require("https://github.com/theherk/smart_workspace_switcher.wezterm")
+workspace_switcher.zoxide_path = "/opt/homebrew/bin/zoxide"
 
 local prev_pos = 1
 local stack = { "default" }

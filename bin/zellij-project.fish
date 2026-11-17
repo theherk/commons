@@ -48,7 +48,7 @@ if test $kill_mode -eq 1
         echo "No other active sessions."
         exit 0
     end
-    set -l repos (zoxide query -l | rg --color=never -FxNf ~/.projects | sed s:"$HOME":~:)
+    set -l repos (zoxide query -l | projects-rank.sh | sed s:"$HOME":~:)
     set -l killable
     for session in $running_sessions
         set -l has_nvim 0
@@ -90,7 +90,7 @@ if test $attach_mode -eq 1
 end
 
 function p # Get git project directory from .projects. See alias repocache.
-    set REPO (zoxide query -l | rg --color=never -FxNf ~/.projects | sed s:"$HOME":~: | fzf --reverse)
+    set REPO (zoxide query -l | projects-rank.sh | sed s:"$HOME":~: | fzf --reverse)
     if test -n "$REPO"
         string replace '~' $HOME $REPO
     end
@@ -106,7 +106,7 @@ for s in $all_sessions
         set -a running_sessions (echo $s | cut -d' ' -f1)
     end
 end
-set -l repos (zoxide query -l | rg --color=never -FxNf ~/.projects | sed s:"$HOME":~:)
+set -l repos (zoxide query -l | projects-rank.sh | sed s:"$HOME":~:)
 set -l filter_names $running_sessions
 if set -q ZELLIJ_SESSION_NAME
     set running_sessions (printf '%s\n' $running_sessions | string match -v $ZELLIJ_SESSION_NAME)

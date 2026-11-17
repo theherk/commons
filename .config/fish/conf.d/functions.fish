@@ -65,7 +65,7 @@ end
 
 function p # Switch to git project directory from .projects. See alias repocache.
     argparse c/clip -- $argv
-    set REPO "$(zoxide query -l | rg --color=never -FxNf ~/.projects | sed s:"$HOME":~: | fzf --reverse)"
+    set REPO "$(zoxide query -l | projects-rank.sh | sed s:"$HOME":~: | fzf --reverse)"
     if test -n "$REPO"
         set -l dir (string replace '~' $HOME $REPO)
         if set -q _flag_clip

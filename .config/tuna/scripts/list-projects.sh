@@ -5,4 +5,4 @@
 # @tuna.output text
 set -euo pipefail
 
-zoxide query -l | rg --color=never -FxNf ~/.projects | sed "s:$HOME:~:"
+zoxide query -l | projects-rank.sh | sed "s:$HOME:~:"

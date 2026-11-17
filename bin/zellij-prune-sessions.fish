@@ -20,7 +20,7 @@ if test (count $running_sessions) -eq 0
     exit 0
 end
 
-set -l repos (zoxide query -l | rg --color=never -FxNf ~/.projects | sed s:"$HOME":~:)
+set -l repos (zoxide query -l | projects-rank.sh | sed s:"$HOME":~:)
 set -l killed 0
 
 for session in $running_sessions
