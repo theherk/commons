@@ -10,3 +10,4 @@ lazy-lock.json
 tmp.*
 skills-lock.json
 bin/ms365-mcp
+bin/ms365-oauth-shim.py

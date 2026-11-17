@@ -807,6 +807,13 @@
           "X-API-Key": "{env:DEVELOPER_PORTAL_API_KEY}",
           "X-App-Id": "{env:DEVELOPER_PORTAL_APP_ID}"
         }
+      },
+      "ms365": {
+        "type": "remote",
+        "url": "http://127.0.0.1:47366/mcp",
+        "oauth": {
+          "client_id": "f1d379f0-f19d-4232-b463-8f1c81c42096"
+        }
       }
     }
   }
