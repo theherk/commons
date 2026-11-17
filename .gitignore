@@ -9,3 +9,4 @@ gpt-commit.py
 lazy-lock.json
 tmp.*
 skills-lock.json
+bin/ms365-mcp
