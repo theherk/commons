@@ -13,4 +13,5 @@ groups = [
   "dnb-common",
   "nucleus",
   "payment",
+  "radicalAI",
 ]
