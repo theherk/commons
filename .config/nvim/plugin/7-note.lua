@@ -89,4 +89,17 @@ now(function()
   vim.keymap.set("n", "<leader>nwb", "<cmd>Obsidian workspace brain<cr>", { desc = "select workspace brain" })
   vim.keymap.set("n", "<leader>nwd", "<cmd>Obsidian workspace dnbrain<cr>", { desc = "select workspace dnbrain" })
   vim.keymap.set("n", "<localleader>mx", require("obsidian.util").toggle_checkbox, { desc = "mark complete" })
+
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function(args)
+      vim.keymap.set("n", "<CR>", function()
+        local api = require("obsidian.api")
+        if api.cursor_checkbox() then
+          return "<cmd>lua require('obsidian.api').toggle_checkbox()<cr>"
+        end
+        return "<CR>"
+      end, { buffer = args.buf, expr = true, desc = "cycle checkbox" })
+    end,
+  })
 end)
