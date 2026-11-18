@@ -9,10 +9,21 @@ end)
 
 later(function()
   add({ "https://github.com/MeanderingProgrammer/render-markdown.nvim" })
+  vim.api.nvim_set_hl(0, "RenderMarkdownStrikethrough", { strikethrough = true, default = true })
   require("render-markdown").setup({
     code = {
       border = "none",
       conceal_delimiters = false,
+    },
+    checkbox = {
+      checked = { icon = "󰞑 " },
+      custom = {
+        in_progress = { raw = "[/]", rendered = "󱎖 ", highlight = "RenderMarkdownWarn", scope_highlight = nil },
+        forwarded = { raw = "[>]", rendered = "󱄵 ", highlight = "RenderMarkdownInfo", scope_highlight = nil },
+        tilde = { raw = "[~]", rendered = "󰜺 ", highlight = "RenderMarkdownError", scope_highlight = "RenderMarkdownStrikethrough" },
+        todo = { raw = "[-]", rendered = "󰜺 ", highlight = "RenderMarkdownError", scope_highlight = "RenderMarkdownStrikethrough" },
+        important = { raw = "[!]", rendered = "󰀨 ", highlight = "RenderMarkdownError", scope_highlight = nil },
+      },
     },
     completions = { lsp = { enabled = true } },
     heading = {

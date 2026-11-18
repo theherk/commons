@@ -56,6 +56,7 @@ now(function()
       func = function(uri) vim.ui.open(uri, { cmd = { "open", "-a", "/Applications/Obsidian.app" } }) end,
     },
     link = { style = "markdown" },
+    checkbox = { order = { " ", "/", "x", "~" } },
     templates = { folder = "templates" },
     ui = { enable = false },
     workspaces = workspaces(),
