@@ -176,6 +176,20 @@ shift-s = ['layout horizontal', 'mode main']
 shift-t = ['layout tiles', 'mode main']
 shift-v = ['layout vertical', 'mode main']
 
+h = ['focus left --boundaries-action stop', 'mode main']
+j = ['focus down --boundaries-action stop', 'mode main']
+k = ['focus up --boundaries-action stop', 'mode main']
+l = ['focus right --boundaries-action stop', 'mode main']
+
+ctrl-h = ['move left', 'mode main']
+ctrl-j = ['move down', 'mode main']
+ctrl-k = ['move up', 'mode main']
+ctrl-l = ['move right', 'mode main']
+
+shift-minus = ['resize smart -50', 'mode main']
+shift-equal = ['resize smart +50', 'mode main']
+shift-b = ['resize smart +333', 'mode main']
+
 # Change some workspaces between accordion and tiles.
 a = [ # mostly accordion
     'workspace 🌎',
