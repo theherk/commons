@@ -27,9 +27,13 @@ if [ -n "$root" ]; then
 			nvim --server "$sock" --remote-expr "nvim_win_set_cursor(0, [$line, 0])" </dev/null >/dev/null 2>&1
 		fi
 	else
+		# exec unless yazi needs the cleanup below, so terminals see nvim
+		# as the foreground program (Rex picks its tab icon from it).
+		[ -n "$YAZI_ID" ] || exec nvim --listen "$sock" "$@"
 		nvim --listen "$sock" "$@"
 	fi
 else
+	[ -n "$YAZI_ID" ] || exec nvim $@
 	nvim $@
 fi
 
