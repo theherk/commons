@@ -142,6 +142,7 @@ link .config/opencode/prompts
 link .config/paneru
 link .config/pipes-rs
 pref com.brnbw.Poof Poof.configDirectoryPath .config/poof
+link .config/rex
 link .config/ripgrep
 link .config/starship.toml
 link .config/tuicr
