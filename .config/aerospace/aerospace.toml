@@ -44,7 +44,7 @@ alt-shift-p = 'mode pane' # window / pane controls
 ctrl-t = 'mode launch' # launch leader
 
 alt-1 = ['exec-and-forget open -a "Firefox Developer Edition"', 'mode main']
-alt-2 = ['exec-and-forget open -a "Ghostty"', 'mode main']
+alt-2 = ['exec-and-forget open -a "Rex"', 'mode main']
 alt-0 = ['exec-and-forget open -a "Slack"', 'mode main']
 
 alt-shift-1 = 'workspace 🌎'
@@ -91,7 +91,7 @@ n = 'mode note'
 p = 'mode pane' # window / pane controls
 r = 'mode run'
 s = 'mode screenshot'
-t = ['exec-and-forget open -a "Ghostty"', 'mode main']
+t = ['exec-and-forget open -a "Rex"', 'mode main']
 shift-t = 'mode terminal'
 0 = ['exec-and-forget open -a "Slack"', 'mode main']
 
@@ -120,6 +120,7 @@ t = ['exec-and-forget open -a "Microsoft Teams"', 'mode main']
 esc = 'mode main'
 
 g = ['exec-and-forget open -a "Ghostty"', 'mode main']
+r = ['exec-and-forget open -a "Rex"', 'mode main']
 w = ['exec-and-forget open -a "WezTerm"', 'mode main']
 
 [mode.misc.binding]
@@ -360,6 +361,10 @@ run = ['move-node-to-workspace 🌎']
 
 [[on-window-detected]]
 if = 'test %{app-bundle-id} = com.mitchellh.ghostty'
+run = ['move-node-to-workspace 💻']
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.superlogical.rex'
 run = ['move-node-to-workspace 💻']
 
 [[on-window-detected]]
