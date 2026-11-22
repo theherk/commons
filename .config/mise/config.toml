@@ -43,6 +43,9 @@ yq = "latest"
 # Explicit aqua backend (no registry shorthand)
 "aqua:minamijoyo/hcledit" = "latest"
 
+# GitHub release backend (no registry shorthand)
+"github:agavra/tuicr" = "latest"
+
 # Go-backed tools
 "go:github.com/cweill/gotests/gotests" = "latest"
 "go:github.com/fatih/gomodifytags" = "latest"
