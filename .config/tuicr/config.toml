@@ -2,3 +2,4 @@ theme = "catppuccin-frappe"
 leader = " "
 comment_vim = true
 review_watch_interval_ms = 1000 # set to 0 to disable persisted-review polling
+diff_watch_interval_ms = 2000 # refresh the diff while an agent edits

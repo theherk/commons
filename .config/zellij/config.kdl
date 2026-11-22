@@ -27,7 +27,7 @@ keybinds {
         bind "e" { Run "nvp" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
         bind "f" { Run "fish" "-c" "yazi" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
         bind "g" { Run "lazygit" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
-        bind "r" { Run "raicode" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
+        bind "r" { Run "oc-review" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
         bind "s" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "u" { Run "jjui" { close_on_exit true; Direction "Right"; }; SwitchToMode "Normal"; }
         bind "v" { NewPane "Right"; SwitchToMode "Normal"; }
@@ -89,6 +89,12 @@ keybinds {
             MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
                 name "switch-tab"
                 payload "git lazygit"
+            }; SwitchToMode "normal";
+        }
+        bind "r" {
+            MessagePlugin "file:~/bin/zellij-tab-switcher.wasm" {
+                name "switch-tab"
+                payload "review review"
             }; SwitchToMode "normal";
         }
         bind "u" {

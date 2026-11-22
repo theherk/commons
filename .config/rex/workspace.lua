@@ -154,4 +154,44 @@ rex.action({
   end,
 })
 
+-- Pick an opencode session of the focused pane's repository and review its
+-- changes with oc-review, in a split or a "review" tab.
+rex.action({
+  name = "review_open",
+  title = "Review Changes for an opencode Session…",
+  args = { tab = "boolean?" },
+  run = function(ctx, args)
+    rex.client.queue("client.mode.exit_all")
+    local root = util.workspace_root()
+    if not root then error("No working directory for the focused pane.", 0) end
+
+    local r = util.run({ "opencode", "api", "get", "/api/session", "--param", "limit=100" }, { timeout = 10 })
+    if not (r and r.ok) then error("opencode api: " .. ((r and r.stderr) or "failed"), 0) end
+    local items = {}
+    for _, s in ipairs(rex.json.decode(r.stdout).data or {}) do
+      if s.parentID == nil and s.location and s.location.directory == root then
+        items[#items + 1] = { id = s.id, title = s.title, subtitle = s.id, icon = "terminal" }
+      end
+    end
+    if #items == 0 then return "No opencode sessions in " .. util.tilde(root) end
+
+    local id = items[1].id
+    if #items > 1 then
+      id = rex.ui.pick({ title = "Review for session", placeholder = "Filter", items = items })
+      if id == nil then return end
+    end
+
+    local layout = util.terminal_block({ "oc-review", "-s", id }, root)
+    if args.tab then
+      local w, err = rex.session.new_window({ window_label = "review", focus = true, layout = layout })
+      if not w then error(err, 0) end
+      rex.exec({ "/bin/sleep", "0.06" })
+      rex.client.queue("session.select", { session_id = ctx.session_id, window_id = w.window_id })
+    else
+      local _, err = rex.session.new_split({ direction = "horizontal", side = "after", focus = true, layout = layout })
+      if err then error(err, 0) end
+    end
+  end,
+})
+
 return module

@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# oc-review: review changes in tuicr, then queue the exported review into an
+# opencode session.
+#
+# Usage: oc-review [-s SESSION_ID] [tuicr args...]
+#
+# Without tuicr args it reviews uncommitted changes (-w). The session is -s,
+# else $OPENCODE_SESSION_ID, else picked from this repo's root sessions.
+# In tuicr, ZZ (or :wq) exports and quits; :q! quits without sending.
+set -euo pipefail
+
+session="${OPENCODE_SESSION_ID:-}"
+if [ "${1:-}" = "-s" ] || [ "${1:-}" = "--session" ]; then
+	session="$2"
+	shift 2
+fi
+[ $# -gt 0 ] || set -- -w
+
+root=$(jj root 2>/dev/null || git rev-parse --show-toplevel 2>/dev/null || pwd)
+cd "$root"
+
+if [ -z "$session" ]; then
+	session=$(opencode api get /api/session --param limit=100 |
+		jq -r --arg root "$root" '.data[] | select(.location.directory == $root and .parentID == null) | "\(.id)\t\(.title)"' |
+		fzf --with-nth=2 --delimiter='\t' --prompt='session> ' --select-1 --reverse |
+		cut -f1) || true
+	if [ -z "$session" ]; then
+		echo "oc-review: no opencode session for $root" >&2
+		exit 1
+	fi
+fi
+
+out=$(mktemp)
+trap 'rm -f "$out"' EXIT
+
+tuicr --stdout "$@" >"$out"
+[ -s "$out" ] || exit 0
+
+body=$(jq -n --rawfile text "$out" '{text: $text, delivery: "queue"}')
+if ! opencode api post "/api/session/$session/prompt" -d "$body" >/dev/null; then
+	pbcopy <"$out"
+	echo "oc-review: could not send to $session; the review is on the clipboard" >&2
+	read -r -p "Press Enter to close. "
+	exit 1
+fi
