@@ -4,6 +4,9 @@ local theme = require("theme")
 local act = wezterm.action
 local module = {}
 
+-- GUI apps start with a minimal PATH, so use the mise shim by absolute path.
+module.ZOP = wezterm.home_dir .. "/.local/share/mise/shims/zop"
+
 local function base_path_name(str) return string.gsub(str, "(.*[/\\])(.*)", "%2") end
 
 function module.file_exists(file)
@@ -261,11 +264,15 @@ function module.close_all_panes()
             local cwd = p:get_current_working_dir()
             if cwd then
               local dir = cwd.file_path or cwd:gsub("^file://[^/]*", "")
-              wezterm.background_child_process({
-                "/opt/homebrew/bin/nvim",
-                "--server", dir .. "/_neovim",
-                "--remote-send", "<Cmd>qall!<CR>",
-              })
+              local live = wezterm.run_child_process({ module.ZOP, "tmp", dir, "nvim.sock", "--live" })
+              if live then
+                local _, sock = wezterm.run_child_process({ module.ZOP, "tmp", dir, "nvim.sock" })
+                wezterm.background_child_process({
+                  "/opt/homebrew/bin/nvim",
+                  "--server", (sock:gsub("%s+$", "")),
+                  "--remote-send", "<Cmd>qall!<CR>",
+                })
+              end
             end
           end
         end

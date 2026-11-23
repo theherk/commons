@@ -48,17 +48,10 @@ if test $kill_mode -eq 1
         echo "No other active sessions."
         exit 0
     end
-    set -l repos (zoxide query -l | projects-rank.sh | sed s:"$HOME":~:)
+    set -l live (zop list --json --no-tilde --live nvim.sock | jq -r '.projects[].id')
     set -l killable
     for session in $running_sessions
-        set -l has_nvim 0
-        for sdir in (printf '%s\n' $repos | rg -N "/$session\$" | string replace '~' $HOME)
-            if test -S "$sdir/_neovim"
-                set has_nvim 1
-                break
-            end
-        end
-        if test $has_nvim -eq 0
+        if not contains -- $session $live
             set -a killable $session
         end
     end
@@ -89,13 +82,6 @@ if test $attach_mode -eq 1
     exit 0
 end
 
-function p # Get git project directory from .projects. See alias repocache.
-    set REPO (zoxide query -l | projects-rank.sh | sed s:"$HOME":~: | fzf --reverse)
-    if test -n "$REPO"
-        string replace '~' $HOME $REPO
-    end
-end
-
 set -l all_sessions (zellij list-sessions -n 2>/dev/null)
 set -l running_sessions
 set -l exited_sessions
@@ -106,33 +92,23 @@ for s in $all_sessions
         set -a running_sessions (echo $s | cut -d' ' -f1)
     end
 end
-set -l repos (zoxide query -l | projects-rank.sh | sed s:"$HOME":~:)
-set -l filter_names $running_sessions
+# Each project is `id<TAB>path`; the id names the session, so two repos with the same
+# directory name never share one.
+set -l projects (zop list --json --no-tilde | jq -r '.projects[] | [.id, .path] | @tsv')
+set -l live (zop list --json --no-tilde --live nvim.sock | jq -r '.projects[].id')
 if set -q ZELLIJ_SESSION_NAME
     set running_sessions (printf '%s\n' $running_sessions | string match -v $ZELLIJ_SESSION_NAME)
-    set -a filter_names $ZELLIJ_SESSION_NAME
 end
-set -l filtered
-if test (count $filter_names) -gt 0
-    set filtered (printf '%s\n' $repos | rg -Nv '/'(string join '$|/' $filter_names)'$')
-else
-    set filtered $repos
+set -l busy $running_sessions
+if set -q ZELLIJ_SESSION_NAME
+    set -a busy $ZELLIJ_SESSION_NAME
 end
 set -l labeled_sessions
-if test (count $running_sessions) -gt 0
-    for session in $running_sessions
-        set -l has_nvim 0
-        for sdir in (printf '%s\n' $repos | rg -N "/$session\$" | string replace '~' $HOME)
-            if test -S "$sdir/_neovim"
-                set has_nvim 1
-                break
-            end
-        end
-        if test $has_nvim -eq 1
-            set -a labeled_sessions "󱂬 $session "
-        else
-            set -a labeled_sessions "󱂬 $session"
-        end
+for session in $running_sessions
+    if contains -- $session $live
+        set -a labeled_sessions "󱂬 $session "
+    else
+        set -a labeled_sessions "󱂬 $session"
     end
 end
 set -l sorted_sessions
@@ -141,24 +117,40 @@ if test (count $labeled_sessions) -gt 0
 end
 set -l fzf_items $sorted_sessions
 if test $active_mode -eq 0
-    set -a fzf_items $filtered
+    for line in $projects
+        set -l parts (string split \t -- $line)
+        if not contains -- $parts[1] $busy
+            set -a fzf_items "$parts[1]  $parts[2]"
+        end
+    end
 end
-set -l selection (printf '%s\n' $fzf_items | string match -rv '^\ *$' | fzf --reverse | string replace -r '^󱂬 ' '' | string replace -r ' $' '')
+set -l selection (printf '%s\n' $fzf_items | string match -rv '^\ *$' | fzf --reverse --delimiter '  ' --nth 1 | string replace -r '^󱂬 ' '' | string replace -r ' $' '')
 if test -z "$selection"
     exit 1
 end
 set -l pdir
-if string match -rq '^~|^/' $selection
-    set pdir (string replace '~' $HOME $selection)
+set -l pname
+if string match -q '*  /*' -- $selection
+    set -l parts (string split '  ' -- $selection)
+    set pname $parts[1]
+    set pdir $parts[2]
 else
-    set pdir (printf '%s\n' $repos | rg "/$selection\$" | head -1 | string replace '~' $HOME)
+    set pname $selection
+    for line in $projects
+        set -l parts (string split \t -- $line)
+        if test "$parts[1]" = "$pname"
+            set pdir $parts[2]
+            break
+        end
+    end
     if test -z "$pdir"
-        echo "Could not resolve path for session: $selection"
+        echo "Could not resolve path for session: $pname"
         exit 1
     end
 end
 
-set -l pname (basename $pdir)
+
+zop visit $pdir
 
 if set -q ZELLIJ_SESSION_NAME
     if not string match -q "$pname" "$ZELLIJ_SESSION_NAME"

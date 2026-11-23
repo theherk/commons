@@ -45,11 +45,11 @@ def fester-deployments [config_file: path, region?: string] {
     }
 }
 
-# Switch to git project directory from .projects using fzf and zoxide
+# Switch to a project directory, ranked by zop, using fzf
 def --env p [] {
-    let repo = (zoxide query -l | projects-rank.sh | sed $"s:($env.HOME):~:" | fzf --reverse)
+    let repo = (zop list --tilde | fzf --reverse)
     if not ($repo | is-empty) {
-        let full_path = ($repo | str replace '~' $env.HOME)
+        let full_path = ($repo | str replace --regex '^~' $env.HOME)
         z $full_path
     }
 }

@@ -215,7 +215,7 @@ end repeat'
 	pkill -USR1 hx 2>/dev/null || true
 
 	# Neovim (live push to all running instances)
-	for sock in $(fd --type s --max-depth 1 _neovim $(cat ~/.projects) 2>/dev/null); do
+	for sock in $(zop tmp --all nvim.sock --live 2>/dev/null); do
 		nvim --server "$sock" --remote-expr "execute('SetAppearance dark')" 2>/dev/null
 	done
 
@@ -275,7 +275,7 @@ end repeat'
 	pkill -USR1 hx 2>/dev/null || true
 
 	# Neovim
-	for sock in $(fd --type s --max-depth 1 _neovim $(cat ~/.projects) 2>/dev/null); do
+	for sock in $(zop tmp --all nvim.sock --live 2>/dev/null); do
 		nvim --server "$sock" --remote-expr "execute('SetAppearance light')" 2>/dev/null
 	done
 

@@ -1,19 +1,12 @@
 #!/usr/bin/env sh
 
-# Note: macOS caps AF_UNIX sun_path at 104 bytes. "$(git root)/_neovim"
-# can exceed that for deeply nested repo paths (e.g. long GitLab group
-# paths), causing `nvim --listen` to fail with "invalid argument". When
-# the in-repo socket path would be too long, we fall back to a short,
-# deterministic path under /tmp keyed by a hash of the repo root, so the
-# same repo always resolves to the same socket.
+# One nvim per project. The socket lives at a short, private path from `zop tmp`, so
+# every reader (Rex, Zellij, the theme toggle) computes the same one. If a server is
+# listening there, send the files to it; otherwise start nvim listening on it.
 
 root=$(git root 2>/dev/null)
-if [ -n "$root" ]; then
-	sock="$root/_neovim"
-	if [ ${#sock} -gt 100 ]; then
-		sock="/tmp/nvim-$(printf '%s' "$root" | md5 -q | cut -c1-16)"
-	fi
-	if [ -e "$sock" ]; then
+if [ -n "$root" ] && sock=$(zop tmp "$root" nvim.sock --create 2>/dev/null); then
+	if zop tmp "$root" nvim.sock --live; then
 		line=""
 		files=""
 		for arg in "$@"; do
@@ -33,8 +26,8 @@ if [ -n "$root" ]; then
 		nvim --listen "$sock" "$@"
 	fi
 else
-	[ -n "$YAZI_ID" ] || exec nvim $@
-	nvim $@
+	[ -n "$YAZI_ID" ] || exec nvim "$@"
+	nvim "$@"
 fi
 
 if [ -n "$YAZI_ID" ]; then

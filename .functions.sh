@@ -47,8 +47,8 @@ gfixtags() {
     for t in $(gvtags); do git tag -d $t; done
 }
 
-p() { # Switch to git project directory from .projects. See alias repocache.
-    REPO="$(zoxide query -l | projects-rank.sh | sed s:"$HOME":~: | fzf --reverse)"
+p() { # Switch to a project directory, ranked by zop.
+    REPO="$(zop list --tilde | fzf --reverse)"
     [ "$REPO" = "" ] || cd "${REPO/\~/$HOME}" || return
 }
 

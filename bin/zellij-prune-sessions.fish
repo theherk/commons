@@ -20,18 +20,11 @@ if test (count $running_sessions) -eq 0
     exit 0
 end
 
-set -l repos (zoxide query -l | projects-rank.sh | sed s:"$HOME":~:)
+set -l live (zop list --json --no-tilde --live nvim.sock | jq -r '.projects[].id')
 set -l killed 0
 
 for session in $running_sessions
-    set -l has_nvim 0
-    for sdir in (printf '%s\n' $repos | rg -N "/$session\$" | string replace '~' $HOME)
-        if test -S "$sdir/_neovim"
-            set has_nvim 1
-            break
-        end
-    end
-    if test $has_nvim -eq 0
+    if not contains -- $session $live
         zellij delete-session $session --force
         set killed (math $killed + 1)
         echo "Killed: $session"

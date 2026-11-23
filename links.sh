@@ -149,6 +149,7 @@ link .config/tuicr
 skip .config/tuna
 link .config/wezterm
 link .config/yazi
+link .config/zop
 link .config/zellij
 skip .config/zed
 link .editorconfig

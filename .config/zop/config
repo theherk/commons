@@ -1,0 +1,11 @@
+# zop: https://github.com/theherk/zop
+[refresh]
+--root=~/projects
+--add=~/commons
+--add=~/vaults/brain
+--add=~/org/neorg
+--add=~/org/slides
+--add=$ONEDRIVE/dnbrain
+
+[list]
+--refresh-if-older=1d

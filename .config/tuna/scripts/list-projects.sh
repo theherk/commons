@@ -5,4 +5,4 @@
 # @tuna.output text
 set -euo pipefail
 
-zoxide query -l | projects-rank.sh | sed "s:$HOME:~:"
+zop list --tilde

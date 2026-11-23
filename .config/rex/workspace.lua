@@ -3,12 +3,15 @@ local util = require("util")
 
 local module = {}
 
--- Project directories, ranked as `zoxide query -l | projects-rank.sh` does.
+-- Projects, ranked by zop. Each has a path and an id; the id names the session.
 local function projects()
-  local r = util.run({ "sh", "-c", "zoxide query -l | projects-rank.sh" })
+  local r = util.run({ "zop", "list", "--json", "--no-tilde" })
   local list = {}
   if r and r.ok then
-    for line in r.stdout:gmatch("[^\n]+") do list[#list + 1] = line end
+    local doc = rex.json.decode(r.stdout)
+    for _, p in ipairs(doc.projects or {}) do
+      list[#list + 1] = { path = p.path, id = p.id }
+    end
   end
   return list
 end
@@ -19,22 +22,21 @@ local function sessions()
   return r.sessions or {}
 end
 
--- A session runs nvim when a project named like it has a _neovim socket.
-local function has_nvim(label, repos)
-  for _, dir in ipairs(repos) do
-    if util.basename(dir) == label then
-      local r = util.run({ "test", "-S", dir .. "/_neovim" })
-      if r and r.ok then return true end
-    end
+-- Labels of the sessions whose project has a live nvim, from one zop call.
+local function nvim_labels()
+  local r = util.run({ "zop", "list", "--json", "--no-tilde", "--live", "nvim.sock" })
+  local set = {}
+  if r and r.ok then
+    for _, p in ipairs(rex.json.decode(r.stdout).projects or {}) do set[p.id] = true end
   end
-  return false
+  return set
 end
 
 local function killable_sessions(ctx)
-  local repos = projects()
+  local live = nvim_labels()
   local out = {}
   for _, s in ipairs(sessions()) do
-    if s.session_id ~= ctx.session_id and not has_nvim(s.label, repos) then
+    if s.session_id ~= ctx.session_id and not live[s.label] then
       out[#out + 1] = s
     end
   end
@@ -54,6 +56,7 @@ rex.action({
     end
 
     local repos = projects()
+    local live = nvim_labels()
     local items = {}
     for _, s in ipairs(all) do
       if s.session_id ~= ctx.session_id then
@@ -61,15 +64,15 @@ rex.action({
           id = s.session_id,
           title = s.label,
           icon = "terminal",
-          detail = has_nvim(s.label, repos) and "nvim" or nil,
+          detail = live[s.label] and "nvim" or nil,
         }
       end
     end
     table.sort(items, function(a, b) return a.title < b.title end)
     if not args.active then
-      for _, dir in ipairs(repos) do
-        if not by_label[util.basename(dir)] then
-          items[#items + 1] = { id = dir, title = util.basename(dir), subtitle = util.tilde(dir), icon = "folder" }
+      for _, p in ipairs(repos) do
+        if not by_label[p.id] then
+          items[#items + 1] = { id = p.path, title = p.id, subtitle = util.tilde(p.path), icon = "folder" }
         end
       end
     end
@@ -86,10 +89,15 @@ rex.action({
       return
     end
 
-    local name = util.basename(choice)
+    local name
+    for _, p in ipairs(repos) do
+      if p.path == choice then name = p.id break end
+    end
+    name = name or util.basename(choice)
     if name == current then return end
     if by_label[name] then
       rex.client.queue("session.select", { session_id = by_label[name].session_id })
+      util.run({ "zop", "visit", choice })
       return
     end
     local s, err = rex.call("session.create", {
@@ -98,6 +106,7 @@ rex.action({
     })
     if not s then error(err, 0) end
     rex.client.queue("session.select", { session_id = s.session_id })
+    util.run({ "zop", "visit", choice })
   end,
 })
 
@@ -131,8 +140,8 @@ rex.action({
   title = "Copy Project Path…",
   run = function(ctx, args)
     local items = {}
-    for _, dir in ipairs(projects()) do
-      items[#items + 1] = { id = dir, title = util.tilde(dir), icon = "folder" }
+    for _, p in ipairs(projects()) do
+      items[#items + 1] = { id = p.path, title = util.tilde(p.path), icon = "folder" }
     end
     local dir = rex.ui.pick({ title = "Copy project path", items = items })
     if dir == nil then return end

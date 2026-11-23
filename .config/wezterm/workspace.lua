@@ -4,9 +4,12 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local module = {}
 
-local rg_pipe = " | " .. os.getenv("HOME") .. "/commons/bin/projects-rank.sh"
 local workspace_switcher = wezterm.plugin.require("https://github.com/theherk/smart_workspace_switcher.wezterm")
+-- GUI apps start with a minimal PATH, so use the mise shim by absolute path.
+local zop = wezterm.home_dir .. "/.local/share/mise/shims/zop"
 workspace_switcher.zoxide_path = "/opt/homebrew/bin/zoxide"
+workspace_switcher.list_command = zop .. " list --no-tilde"
+workspace_switcher.visit_command = zop .. " visit"
 
 local prev_pos = 1
 local stack = { "default" }
@@ -120,7 +123,7 @@ end)
 
 wezterm.on("stack-switcher", function(window, pane)
   wezterm.log_info("workspaces: " .. table.concat(wezterm.mux.get_workspace_names(), ", "))
-  window:perform_action(workspace_switcher.switch_workspace({ extra_args = rg_pipe }, 86400), pane)
+  window:perform_action(workspace_switcher.switch_workspace({}, 300), pane)
 end)
 
 workspace_switcher.workspace_formatter = function(label)

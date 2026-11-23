@@ -63,11 +63,11 @@ function _tf_abbr
     end
 end
 
-function p # Switch to git project directory from .projects. See alias repocache.
+function p # Switch to a project directory, ranked by zop.
     argparse c/clip -- $argv
-    set REPO "$(zoxide query -l | projects-rank.sh | sed s:"$HOME":~: | fzf --reverse)"
+    set REPO (zop list --tilde | fzf --reverse)
     if test -n "$REPO"
-        set -l dir (string replace '~' $HOME $REPO)
+        set -l dir (string replace -r '^~' $HOME $REPO)
         if set -q _flag_clip
             echo -n $dir | pbcopy
             echo "Copied: $dir"
