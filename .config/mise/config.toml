@@ -57,7 +57,7 @@ yq = "latest"
 
 # Cargo-backed tools
 "cargo:https://github.com/theherk/git-repo-manager" = "branch:master"
-"cargo:https://github.com/theherk/zop" = "branch:main"
+"github:theherk/zop" = "latest"
 "cargo:hackernews_tui" = "latest"
 "cargo:markdown-toc" = "latest"
 
