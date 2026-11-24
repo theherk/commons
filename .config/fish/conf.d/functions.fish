@@ -65,7 +65,7 @@ end
 
 function p # Switch to a project directory, ranked by zop.
     argparse c/clip -- $argv
-    set REPO (zop list --tilde | fzf --reverse)
+    set REPO (zop list --tilde | fzf --reverse --tiebreak=index)
     if test -n "$REPO"
         set -l dir (string replace -r '^~' $HOME $REPO)
         if set -q _flag_clip
