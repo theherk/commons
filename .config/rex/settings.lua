@@ -59,6 +59,9 @@ rex.action({
   description = "Set the app settings kept in ~/commons/.config/rex/settings.lua.",
   run = function(ctx, args)
     for _, s in ipairs(SETTINGS) do rex.client.queue(s[1], s[2]) end
+    -- No client.setting action covers Remote Control, so write the preference.
+    -- rex-project.fish needs it to switch sessions from a popup.
+    util.run({ "defaults", "write", "com.superlogical.rex", "rex.client.remoteControl", "-bool", "true" })
   end,
 })
 
