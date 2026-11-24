@@ -45,18 +45,51 @@ rex.action({
   end,
 })
 
+-- Width of the active window in terminal columns, from the focused pane's
+-- columns and the share of the window it covers. Nil when it can't be told.
+local function window_columns()
+  local view = rex.session.view({})
+  local sz = rex.block.call(util.TERMINAL, "size", {})
+  if not (view and sz and sz.columns) then return nil end
+  local function share(node, id)
+    if node.block_id == id then return node.rect and node.rect[3] end
+    for _, key in ipairs({ "before", "after" }) do
+      local child = node.split and node.split[key]
+      if child then
+        local found = share(child, id)
+        if found then return found end
+      end
+    end
+  end
+  for _, win in ipairs(view.windows or {}) do
+    if win.window_id == view.active_window_id then
+      local tiled = win.layers and win.layers[1]
+      local w = tiled and tiled.layout and share(tiled.layout, win.focused_block_id)
+      if w and w > 0 then return sz.columns / w end
+    end
+  end
+end
+
+-- width is a fraction of the window; min_cols and max_cols clamp it in columns.
 rex.action({
   name = "float_run",
   title = "Run Command in Floating Pane",
-  args = { command = "array", width = "number?", height = "number?" },
+  args = { command = "array", width = "number?", height = "number?", min_cols = "number?", max_cols = "number?" },
   run = function(ctx, args)
     local w, h = args.width or 0.5, args.height or 0.5
+    local cols = (args.min_cols or args.max_cols) and window_columns()
+    if cols then
+      if args.min_cols and w * cols < args.min_cols then w = args.min_cols / cols end
+      if args.max_cols and w * cols > args.max_cols then w = args.max_cols / cols end
+    end
+    w = math.min(w, 1)
     local _, err = rex.session.new_layer({
-      bounds = { (1 - w) / 2, (1 - h) / 2, w, h },
+      bounds = { (1 - w) / 2, 0.04, w, h },
       focus = true,
       layout = util.terminal_block(args.command, util.pane_cwd()),
     })
     if err then error(err, 0) end
+    rex.client.queue("client.mode.exit_all")
   end,
 })
 
@@ -90,9 +123,7 @@ rex.action({
 -- Replaces zellij-tab-switcher.wasm: show the tab with this label, or open it.
 -- The app chooses which tab it shows; client.tab.goto counts every tab in the
 -- sidebar, so name the session and window instead.
-local function goto_window(ctx, window_id)
-  rex.client.queue("session.select", { session_id = ctx.session_id, window_id = window_id })
-end
+local function goto_window(ctx, window_id) rex.client.queue("session.select", { session_id = ctx.session_id, window_id = window_id }) end
 
 rex.action({
   name = "tab_open",
@@ -177,14 +208,23 @@ rex.bind("tab/shift+]", "then_normal", { action = "client.tab.move", args = { di
 rex.mode("session", { exclusive = true })
 rex.bind("session/o", "repo_open")
 rex.bind("session/a", "repo_open", { actions = true })
-rex.bind("session/b", "float_run", { command = { "repo-browse.sh" } })
-rex.bind("session/shift+b", "float_run", { command = { "repo-browse.sh", "actions" } })
+rex.bind("session/b", "float_run", { command = { "repo-browse.sh" }, width = 0.25, min_cols = 60 })
+rex.bind("session/shift+b", "float_run", { command = { "repo-browse.sh", "actions" }, width = 0.25, min_cols = 60 })
 rex.bind("session/k", "project_kill")
 rex.bind("session/shift+k", "project_kill", { all = true })
-rex.bind("session/p", "project_switch")
-rex.bind("session/r", "project_switch", { active = true })
-rex.bind("session/t", "float_run", { command = { "obsidian-daily.sh" }, width = 0.73, height = 0.81 })
-rex.bind("session/y", "project_copy")
+rex.bind("session/p", "float_run", { command = { "rex-project.fish" }, width = 0.25, min_cols = 60 })
+rex.bind("session/r", "float_run", { command = { "rex-project.fish", "--active" }, width = 0.25, min_cols = 60 })
+rex.bind("session/t", "float_run", { command = { "obsidian-daily.sh" }, width = 0.66, height = 0.65, min_cols = 100, max_cols = 140 })
+rex.bind("session/y", "float_run", { command = { "fish", "-c", "source ~/.config/fish/conf.d/functions.fish; p -c" }, width = 0.33, min_cols = 60 })
+rex.bind("session/n", "switch_mode", { name = "native" })
+
+-- Native picker versions: c-o n <key>.
+rex.mode("native", { exclusive = true })
+rex.bind("native/b", "then_normal", { action = "repo_browse" })
+rex.bind("native/shift+b", "then_normal", { action = "repo_browse", args = { actions = true } })
+rex.bind("native/p", "then_normal", { action = "project_switch" })
+rex.bind("native/r", "then_normal", { action = "project_switch", args = { active = true } })
+rex.bind("native/y", "then_normal", { action = "project_copy" })
 
 -- Resize mode
 
