@@ -106,7 +106,7 @@ end
 set -l labeled_sessions
 for session in $running_sessions
     if contains -- $session $live
-        set -a labeled_sessions "󱂬 $session "
+        set -a labeled_sessions "󱂬 $session "
     else
         set -a labeled_sessions "󱂬 $session"
     end
@@ -124,7 +124,7 @@ if test $active_mode -eq 0
         end
     end
 end
-set -l selection (printf '%s\n' $fzf_items | string match -rv '^\ *$' | fzf --reverse --delimiter '  ' --nth 1 | string replace -r '^󱂬 ' '' | string replace -r ' $' '')
+set -l selection (printf '%s\n' $fzf_items | string match -rv '^\ *$' | fzf --reverse --delimiter '  ' --nth 1 | string replace -r '^󱂬 ' '' | string replace -r ' $' '')
 if test -z "$selection"
     exit 1
 end
