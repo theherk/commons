@@ -74,9 +74,9 @@ end
 rex.action({
   name = "float_run",
   title = "Run Command in Floating Pane",
-  args = { command = "array", width = "number?", height = "number?", min_cols = "number?", max_cols = "number?" },
+  args = { command = "array", width = "number?", height = "number?", top = "number?", min_cols = "number?", max_cols = "number?" },
   run = function(ctx, args)
-    local w, h = args.width or 0.5, args.height or 0.5
+    local w, h, top = args.width or 0.5, args.height or 0.3, args.top or 0.12
     local cols = (args.min_cols or args.max_cols) and window_columns()
     if cols then
       if args.min_cols and w * cols < args.min_cols then w = args.min_cols / cols end
@@ -84,7 +84,7 @@ rex.action({
     end
     w = math.min(w, 1)
     local _, err = rex.session.new_layer({
-      bounds = { (1 - w) / 2, 0.04, w, h },
+      bounds = { (1 - w) / 2, top, w, h },
       focus = true,
       layout = util.terminal_block(args.command, util.pane_cwd()),
     })
@@ -207,15 +207,16 @@ rex.bind("tab/shift+]", "then_normal", { action = "client.tab.move", args = { di
 
 rex.mode("session", { exclusive = true })
 rex.bind("session/o", "repo_open")
-rex.bind("session/a", "repo_open", { actions = true })
-rex.bind("session/b", "float_run", { command = { "repo-browse.sh" }, width = 0.25, min_cols = 60 })
-rex.bind("session/shift+b", "float_run", { command = { "repo-browse.sh", "actions" }, width = 0.25, min_cols = 60 })
+rex.bind("session/shift+a", "repo_open", { actions = true })
+rex.bind("session/a", "float_run", { command = { "rex-activity.sh" }, width = 0.25, min_cols = 53 })
+rex.bind("session/b", "float_run", { command = { "repo-browse.sh" }, width = 0.25, min_cols = 53 })
+rex.bind("session/shift+b", "float_run", { command = { "repo-browse.sh", "actions" }, width = 0.25, min_cols = 53 })
 rex.bind("session/k", "project_kill")
 rex.bind("session/shift+k", "project_kill", { all = true })
-rex.bind("session/p", "float_run", { command = { "rex-project.fish" }, width = 0.25, min_cols = 60 })
-rex.bind("session/r", "float_run", { command = { "rex-project.fish", "--active" }, width = 0.25, min_cols = 60 })
-rex.bind("session/t", "float_run", { command = { "obsidian-daily.sh" }, width = 0.66, height = 0.65, min_cols = 100, max_cols = 140 })
-rex.bind("session/y", "float_run", { command = { "fish", "-c", "source ~/.config/fish/conf.d/functions.fish; p -c" }, width = 0.33, min_cols = 60 })
+rex.bind("session/p", "float_run", { command = { "rex-project.fish" }, width = 0.25, min_cols = 53 })
+rex.bind("session/r", "float_run", { command = { "rex-project.fish", "--active" }, width = 0.25, min_cols = 53 })
+rex.bind("session/t", "float_run", { command = { "obsidian-daily.sh" }, width = 0.66, height = 0.65, top = 0.04, min_cols = 100, max_cols = 140 })
+rex.bind("session/y", "float_run", { command = { "fish", "-c", "source ~/.config/fish/conf.d/functions.fish; p -c" }, width = 0.33, min_cols = 53 })
 rex.bind("session/n", "switch_mode", { name = "native" })
 
 -- Native picker versions: c-o n <key>.
