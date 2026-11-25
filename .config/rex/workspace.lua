@@ -158,7 +158,7 @@ rex.action({
   run = function(ctx, args)
     local items = {}
     for _, p in ipairs(projects()) do
-      items[#items + 1] = { id = p.path, title = util.tilde(p.path), icon = "folder" }
+      items[#items + 1] = { id = p.path, title = p.id, icon = "folder" }
     end
     local dir = rex.ui.pick({ title = "Copy project path", items = items })
     if dir == nil then return end

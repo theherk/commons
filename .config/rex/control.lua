@@ -216,7 +216,7 @@ rex.bind("session/shift+k", "project_kill", { all = true })
 rex.bind("session/p", "float_run", { command = { "rex-project.fish" }, width = 0.25, min_cols = 53 })
 rex.bind("session/r", "float_run", { command = { "rex-project.fish", "--active" }, width = 0.25, min_cols = 53 })
 rex.bind("session/t", "float_run", { command = { "obsidian-daily.sh" }, width = 0.66, height = 0.65, top = 0.04, min_cols = 100, max_cols = 140 })
-rex.bind("session/y", "float_run", { command = { "fish", "-c", "source ~/.config/fish/conf.d/functions.fish; p -c" }, width = 0.33, min_cols = 53 })
+rex.bind("session/y", "float_run", { command = { "copy-project-path.sh" }, width = 0.25, min_cols = 53 })
 rex.bind("session/n", "switch_mode", { name = "native" })
 
 -- Native picker versions: c-o n <key>.
