@@ -221,6 +221,7 @@ rex.bind("session/n", "switch_mode", { name = "native" })
 
 -- Native picker versions: c-o n <key>.
 rex.mode("native", { exclusive = true })
+rex.bind("native/a", "then_normal", { action = "pane.view_activity" })
 rex.bind("native/b", "then_normal", { action = "repo_browse" })
 rex.bind("native/shift+b", "then_normal", { action = "repo_browse", args = { actions = true } })
 rex.bind("native/p", "then_normal", { action = "project_switch" })
