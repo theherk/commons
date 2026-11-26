@@ -41,8 +41,8 @@ VIVID_LIGHT="catppuccin-latte"
 WALLPAPER_DARK="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Pictures/background/catppuccin-frappe-themer-my-color-set-dark-3440x1440.png"
 WALLPAPER_LIGHT="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Pictures/background/catppuccin-latte-themer-my-color-set-light-3440x1440.png"
 
-OPENCODE_DARK="catppuccin-frappe"
-OPENCODE_LIGHT="catppuccin"
+OPENCODE_DARK="catppuccin-frappe-sapphire"
+OPENCODE_LIGHT="catppuccin-latte-sapphire"
 # Live path: OpenCode rewrites cli.json atomically and can replace the symlink,
 # so always edit what the TUI actually reads (in place, preserving a symlink).
 OPENCODE_CLI=~/.config/opencode/cli.json
