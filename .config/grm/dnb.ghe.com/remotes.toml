@@ -65,3 +65,16 @@ type = "ssh"
 name = "upstream"
 url = "dnb@dnb.ghe.com:cclm/qol-extension.git"
 type = "ssh"
+
+[[trees.repos]]
+name = "Adam-Lawrence-Sherwood/change-governance"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "dnb@dnb.ghe.com:Adam-Lawrence-Sherwood/change-governance.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "dnb@dnb.ghe.com:AutoGov/change-governance.git"
+type = "ssh"
