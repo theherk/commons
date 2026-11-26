@@ -1,17 +1,40 @@
 {
   "$schema": "https://opencode.ai/v2/cli.json",
   "theme": {
-    "name": "catppuccin-frappe"
+    "name": "catppuccin-frappe-sapphire"
   },
   "keybinds": {
     "variant.cycle": "ctrl+v",
     "command.palette.show": "ctrl+shift+p",
-    "prompt.paste": "none"
+    "prompt.paste": "none",
+    "session.tab.next": [
+      "ctrl+tab",
+      "alt+down",
+      "<leader>]"
+    ],
+    "session.tab.previous": [
+      "ctrl+shift+tab",
+      "alt+up",
+      "<leader>["
+    ],
+    "prompt.skills": "<leader>p"
   },
   "prompt": {
     "paste": "full"
   },
+  "scroll": {
+    "acceleration": true
+  },
+  "tabs": {
+    "mode": "on",
+    "layout": "horizontal"
+  },
   "session": {
-    "sidebar": "hide"
+    "submit_scroll": "keep",
+    "sidebar": "hide",
+    "thinking": "hide",
+    "markdown": "rendered",
+    "grouping": "auto",
+    "verbosity": "medium"
   }
 }
