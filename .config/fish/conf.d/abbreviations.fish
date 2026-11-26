@@ -71,3 +71,4 @@ abbr -a rgh --position command "repo-browse.sh gh"
 abbr -a rghe --position command "repo-browse.sh ghe"
 abbr -a rgl --position command "repo-browse.sh gl"
 abbr -a zclean --position command 'begin; zellij kill-all-sessions; zellij delete-all-sessions; end'
+abbr -a rr --position command "rusty-rain -g jap -C 133,193,220 -H '#f4b8e4' -s -G '#babbf1'"

@@ -60,6 +60,7 @@ yq = "latest"
 "github:theherk/zop" = "latest"
 "cargo:hackernews_tui" = "latest"
 "cargo:markdown-toc" = "latest"
+"cargo:rusty-rain" = "latest"
 
 # npm-backed tools
 "npm:corepack" = "latest"
