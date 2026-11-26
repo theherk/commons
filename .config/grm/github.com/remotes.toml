@@ -138,3 +138,16 @@ type = "ssh"
 name = "upstream"
 url = "https://github.com/dnbexperience/eufemia"
 type = "https"
+
+[[trees.repos]]
+name = "theherk/opencode"
+
+[[trees.repos.remotes]]
+name = "origin"
+url = "git@github.com:theherk/opencode.git"
+type = "ssh"
+
+[[trees.repos.remotes]]
+name = "upstream"
+url = "https://github.com/catppuccin/opencode.git"
+type = "https"
